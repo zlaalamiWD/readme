@@ -14,10 +14,10 @@ next:
 
 View the [Order Status](ref:get_v1-prescriptionrequest-orderstatus) API Reference for detailed request body information.
 
-This endpoint should be used to obtain the status of ALL prescription and/or refill requests previously submitted which had an unretrieved status update. No request body is required.  
-HealthDyne employs a mailbox style order status reporting methodology. Therefore, when an order has a status update, the status message is delivered to the partner’s mailbox. This status message remains in the mailbox until the status message is retrieved by the partner and receipt of the message is acknowledged.  
-A maximum of 25 status messages will be returned with a single request. Multiple requests may be necessary to receive all outstanding status messages. Please refer to the Status Codes returned to determine if all messages have been retrieved.  
-Note, the status messages are not considered delivered and removed from the mailbox until the receipt of the message is acknowledged using the StatusReceived endpoint. Hence, another status request should not be submitted until the previous status response is acknowledged.  
+This endpoint should be used to obtain the status of ALL prescription and/or refill requests previously submitted which had an unretrieved status update. No request body is required.\
+HealthDyne employs a mailbox style order status reporting methodology. Therefore, when an order has a status update, the status message is delivered to the partner’s mailbox. This status message remains in the mailbox until the status message is retrieved by the partner and receipt of the message is acknowledged.\
+A maximum of 25 status messages will be returned with a single request. Multiple requests may be necessary to receive all outstanding status messages. Please refer to the Status Codes returned to determine if all messages have been retrieved.\
+Note, the status messages are not considered delivered and removed from the mailbox until the receipt of the message is acknowledged using the StatusReceived endpoint. Hence, another status request should not be submitted until the previous status response is acknowledged.\
 The description below provides a management overview of the request message which only contains a header. Detailed descriptions of the entities contained within the request can be found in the Appendix section of this document as well as the API Reference.
 
 The Order Status API will create the following order status messages to support the standard workflow:
@@ -33,10 +33,10 @@ Order Status messages will be configurable so the Client can send an Order Statu
 
 ### Server
 
-| Request Type | Endpoint                                                                     | Query String                   |
-| :----------- | :--------------------------------------------------------------------------- | :----------------------------- |
-| Get (Test)   | <https://partner.UAT-WellDyne.com/v1/prescriptionrequest/orderstatus/limit*> | \*Optional. Default 5. Max 25. |
-| Get (Test)   | <https://partner.UAT-WellDyne.com/v1/prescriptionrequest/orderstatus/limit*> | \*Optional. Default 5. Max 25. |
+| Request Type | Endpoint                                                                                                                                                  | Query String                   |
+| :----------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------- |
+| Get (Test)   | [https://partner.UAT-WellDyne.com/v1/prescriptionrequest/orderstatus/limit\*](https://partner.UAT-WellDyne.com/v1/prescriptionrequest/orderstatus/limit*) | \*Optional. Default 5. Max 25. |
+| Get (Test)   | [https://partner.UAT-WellDyne.com/v1/prescriptionrequest/orderstatus/limit\*](https://partner.UAT-WellDyne.com/v1/prescriptionrequest/orderstatus/limit*) | \*Optional. Default 5. Max 25. |
 
 ### Header
 
@@ -205,8 +205,6 @@ The description below provides a management overview of the response message ret
 
 }
 ```
-
-
 
 # Refill Reminder Status
 
