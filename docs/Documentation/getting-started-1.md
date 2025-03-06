@@ -12,18 +12,18 @@ next:
 ---
 ## Context of this guide
 
-This API Guide is an instruction manual for using HealthDyne API and building functional integration quickly and  
-easily. The document contains examples of commonly used API, how they work and behave, and best practices  
+This API Guide is an instruction manual for using HealthDyne API and building functional integration quickly and\
+easily. The document contains examples of commonly used API, how they work and behave, and best practices\
 for integrating into developer code.
 
 ## Intended audience
 
-The API Guide is for internal and external use. The primary audience is HealthDyne client software development  
+The API Guide is for internal and external use. The primary audience is HealthDyne client software development\
 teams and the HealthDyne Common Services Delivery team as well as prospective and current clients.
 
 ## Support Contact
 
-Your Client Account team will serve as the point of contact and will be responsible for facilitating communication  
+Your Client Account team will serve as the point of contact and will be responsible for facilitating communication\
 between you and our IT team.
 
 ## HIPAA and Security
@@ -54,17 +54,4 @@ The diagram below represents how [New Prescription](https://docs.healthdyne.com/
 
 The diagram below represents how [Refill Prescription Request](doc:refill-prescription-request) will be received and processed through HealthDyne systems.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/e111c64-image.png",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/e111c64-image.png" />
