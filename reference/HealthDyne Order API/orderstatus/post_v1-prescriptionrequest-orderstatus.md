@@ -21,8 +21,41 @@ HealthDyne secures access to its APIs via an API subscription key which is to be
 
 ### Header
 
-| Key                         | Value                            |
-| :-------------------------- | :------------------------------- |
-| Accept                      | application/json                 |
-| Content-Type                | application/json                 |
-| HealthDyne-Subscription-Key | <API KEY> Provided by HealthDyne |
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Key
+      </th>
+      <th>
+        Value
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Accept
+      </td>
+      <td>
+        application/json
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Content-Type
+      </td>
+      <td>
+        application/json
+      </td>
+    </tr>
+    <tr>
+      <td>
+        HealthDyne-Subscription-Key
+      </td>
+      <td>
+        &lt;API KEY&gt; Provided by HealthDyne
+      </td>
+    </tr>
+  </tbody>
+</Table>
