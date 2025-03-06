@@ -14,7 +14,7 @@ next:
 
 View the [Cancel Request](ref:post_v1-prescriptionrequest-cancel) API Reference for detailed request body information.
 
-This endpoint should be used to submit a cancel request when a new prescription needs to be canceled. The prescription can be canceled before the dispensing process begins in the pharmacy. The description below provides a high-level overview of the request message. Detailed descriptions of the entities contained within the request can be found in the Appendix as well as the API Reference.  
+This endpoint should be used to submit a cancel request when a new prescription needs to be canceled. The prescription can be canceled before the dispensing process begins in the pharmacy. The description below provides a high-level overview of the request message. Detailed descriptions of the entities contained within the request can be found in the Appendix as well as the API Reference.\
 The Cancel Request API is a client configurable API that accepts:
 
 1. RequestID
@@ -22,10 +22,10 @@ The Cancel Request API is a client configurable API that accepts:
 
 ### Server
 
-| REQUEST TYPE | ENDPOINT                                                         |
-| :----------- | :--------------------------------------------------------------- |
-| Post (Test)  | <https://partner.UAT-WellDyne.com/v1/prescriptionrequest/cancel> |
-| Post (Prod)  | <https://partner.WellDyne.com/v1/prescriptionrequest/cancel>     |
+| REQUEST TYPE | ENDPOINT                                                                                                                         |
+| :----------- | :------------------------------------------------------------------------------------------------------------------------------- |
+| Post (Test)  | [https://partner.UAT-WellDyne.com/v1/prescriptionrequest/cancel](https://partner.UAT-WellDyne.com/v1/prescriptionrequest/cancel) |
+| Post (Prod)  | [https://partner.WellDyne.com/v1/prescriptionrequest/cancel](https://partner.WellDyne.com/v1/prescriptionrequest/cancel)         |
 
 ### Header
 
@@ -50,8 +50,6 @@ The Cancel Request API is a client configurable API that accepts:
   "CancelReason": "Cancel"
 }
 ```
-
-
 
 # Cancel Response
 
