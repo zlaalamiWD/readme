@@ -14,21 +14,21 @@ next:
 
 View the [Prescription Request](ref:post_v1-prescriptionrequest) API Reference for detailed request body information.
 
-This endpoint should be used to submit a new prescription request. The description below provides a management overview of the request message.  Detailed descriptions of the entities contained within the request can be found in the Appendix section of this document as well as the API Reference.  
+This endpoint should be used to submit a new prescription request. The description below provides a management overview of the request message.  Detailed descriptions of the entities contained within the request can be found in the Appendix section of this document as well as the API Reference.\
 The Prescription API is a client configurable API that accepts Order and Patient/Customer Data to include:
 
 1. Patient/Customer verification including allergies, External medications
 2. Insurance verification including policy holder ID, relationship code, BIN, group ID, PCN
 3. GPI, NDC, Provider and Pharmacy information
-4. Shipping information  
+4. Shipping information\
    The API allows for multiple Member and Prescription requests to be received from a client. Once the order request is received and validated in the HealthDyne system, a patient profile with a unique Member ID is created with HealthDyne which is shared with the client for future new order/refill requests.
 
 ### Server
 
-| REQUEST TYPE | ENDPOINT                                                  |
-| :----------- | :-------------------------------------------------------- |
-| Post (Test)  | <https://partner.UAT-WellDyne.com/v1/prescriptionrequest> |
-| Post (Prod)  | <https://partner.WellDyne.com/v1/prescriptionrequest>     |
+| REQUEST TYPE | ENDPOINT                                                                                                           |
+| :----------- | :----------------------------------------------------------------------------------------------------------------- |
+| Post (Test)  | [https://partner.UAT-WellDyne.com/v1/prescriptionrequest](https://partner.UAT-WellDyne.com/v1/prescriptionrequest) |
+| Post (Prod)  | [https://partner.WellDyne.com/v1/prescriptionrequest](https://partner.WellDyne.com/v1/prescriptionrequest)         |
 
 ### Header
 
@@ -112,8 +112,6 @@ The Prescription API is a client configurable API that accepts Order and Patient
   }
 }
 ```
-
-
 
 # Prescription Response
 
