@@ -1,0 +1,107 @@
+---
+title: Insurance
+excerpt: ''
+deprecated: false
+hidden: false
+metadata:
+  title: ''
+  description: ''
+  robots: index
+next:
+  description: ''
+---
+# Insurance Plan Request:
+
+See the [Insurance](ref:get_v2-patient-insurance) API reference for request message fields.
+
+This API lets clients define and update insurance information in the HealthDyne system.
+
+Use POST method to add/create an insurance plan and assign to an existing patientKey. Use the GET method to retrieve insurance plan information for a patient. The DELETE method can be used to set an insurance plan to inactive for a patient.
+
+### Server
+
+##### Only https connections are accepted.
+
+| REQUEST TYPE                | ENDPOINT                                    |
+| :-------------------------- | :------------------------------------------ |
+| GET, POST, or DELETE (Test) | api.uat-healthdyne.com/v2/patient/insurance |
+| GET, POST, or DELETE (Prod) | api.healthdyne.com/v2/patient/insurance     |
+
+### Header
+
+| Key                         | Value                  |
+| :-------------------------- | :--------------------- |
+| Accept                      | application/json       |
+| Content-Type                | application/json       |
+| HealthDyne-Subscription-Key | Provided by HealthDyne |
+
+### Sample Insurance Plan GET Request
+
+<https://api.uat-healthdyne.com/v2/patient/insurance?patientKey=ds76sa5765sad>
+
+### Sample Insurance Plan Response
+
+```json
+{
+  "patientKey": "ds76sa5765sad",
+  "insurance":[
+    {
+      "planNumber":"209235",
+      "bin": "123456",
+      "groupId": "123456789",
+      "pcn": "15948546"
+    },
+    {
+      "planNumber":"204152",
+      "bin": "121234",
+      "groupId": "1232165"
+    }
+  ]
+}
+```
+
+# POST / Create
+
+### Sample Insurance Plan POST Request
+
+```json
+{
+  "patientKey": "ds76sa5765sad",
+  "insurance": {
+    "policyHolderId": "68945143",
+    "bin": "123456", 
+    "groupId": "123456789",
+    "pcn": "15948546",
+    "personCode": "1",
+    "relationshipCode": "1"
+  }
+}
+```
+
+# Successful Response Messages
+
+#### Patient Added
+
+```json
+{
+  "patientKey": "ds76sa5765sad",
+  "planNumber": "209235",
+  "message": "Plannumber was succussfully added to patient"
+}
+```
+
+# DELETE
+
+### Sample DELETE insurance plan request
+
+<https://api.uat-healthdyne.com/v2/patient/insurance?patientKey=ds76sa5765sad&planNumber=209235>
+
+### Successful DELETE Response Message
+
+```json
+{
+  "patientKey": "ds76sa5765sad",
+  "planNumber": "209235",
+  "message": "Plannumber was succussfully removed"
+}
+```
