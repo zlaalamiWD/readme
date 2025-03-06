@@ -39,7 +39,7 @@ The Script API (GET) allows clients to retrieve prescription information for a s
 
 #### Sample GET Request
 
-> <https://api.uat-healthdyne.com/v2/script?scriptkey=092723-123876A>
+> [https://api.uat-healthdyne.com/v2/script?scriptkey=092723-123876A](https://api.uat-healthdyne.com/v2/script?scriptkey=092723-123876A)
 
 This tells the API to query for scriptKey 092723-123876A and return relevant details.
 
@@ -133,7 +133,7 @@ The "Get Patient script/Prescription" endpoint allows retrieval of all scripts a
 
 #### Sample GET Request
 
-> \<<https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece>
+> \<[https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece](https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece)
 
 This tells the API to query for patientKey 4e1e76ca-520f-4e7a-a6c7-d837a9e3cece  and return relevant details.
 
