@@ -168,7 +168,7 @@ The Fill Request API (GET) allows clients to retrieve status and event summary f
 
 #### Sample GET Request
 
-> <https://api.uat-healthdyne.com/v2/Fill/fillRequest?fillRequestKey=NewNSCP24FILLREQUEST987660102>
+> [https://api.uat-healthdyne.com/v2/Fill/fillRequest?fillRequestKey=NewNSCP24FILLREQUEST987660102](https://api.uat-healthdyne.com/v2/Fill/fillRequest?fillRequestKey=NewNSCP24FILLREQUEST987660102)
 
 This tells the API to query for fillRequestKey NewNSCP24FILLREQUEST987660102 and return relevant details.
 
