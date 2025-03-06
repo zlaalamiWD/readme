@@ -14,7 +14,7 @@ next:
 
 View the [Refill Request](ref:post_v1-refill) API Reference for detailed request body information.
 
-This endpoint should be used to submit a refill request. The description below provides a management overview of the refill request message. Detailed descriptions of the entities contained within the request can be found in the Appendix section of this document as well as the API Reference.  
+This endpoint should be used to submit a refill request. The description below provides a management overview of the refill request message. Detailed descriptions of the entities contained within the request can be found in the Appendix section of this document as well as the API Reference.\
 The Refill API is a client configurable API that accepts Prescription Refill and Consumer Data:
 
 1. Member/Patient verification including allergies
@@ -23,10 +23,10 @@ The Refill API is a client configurable API that accepts Prescription Refill and
 
 ### Server
 
-| REQUEST TYPE | ENDPOINT                                            |
-| :----------- | :-------------------------------------------------- |
-| Post (Test)  | <https://partner.UAT-WellDyne.com/v1/orders/refill> |
-| Post (Prod)  | <https://partner.WellDyne.com/v1/orders/refill>     |
+| REQUEST TYPE | ENDPOINT                                                                                               |
+| :----------- | :----------------------------------------------------------------------------------------------------- |
+| Post (Test)  | [https://partner.UAT-WellDyne.com/v1/orders/refill](https://partner.UAT-WellDyne.com/v1/orders/refill) |
+| Post (Prod)  | [https://partner.WellDyne.com/v1/orders/refill](https://partner.WellDyne.com/v1/orders/refill)         |
 
 ### Header
 
@@ -84,8 +84,6 @@ The Refill API is a client configurable API that accepts Prescription Refill and
   }
 }
 ```
-
-
 
 # Refill Response
 
