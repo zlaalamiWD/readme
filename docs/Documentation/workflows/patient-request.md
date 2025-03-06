@@ -108,7 +108,7 @@ Once a patient has been registered successfully, the GET Patient API allows clie
 
 #### Sample GET Request
 
-> <https://partner.uat-welldyne.com/v2/Patient?PatientKey=TestreadPatient171>
+> [https://partner.uat-welldyne.com/v2/Patient?PatientKey=TestreadPatient171](https://partner.uat-welldyne.com/v2/Patient?PatientKey=TestreadPatient171)
 
 This tells the API to query for PatientKey TESTREADPATIENT171 and return relevant details.
 
@@ -190,7 +190,7 @@ The Find Patient API (GET method) allows clients to lookup patientKey in HD syst
 
 #### Sample GET Request
 
-> <https://partner.uat-welldyne.com/v2/Patient/find?FirstName=ABC&LastName=XYZ&Birthdate=1981-01-01&ZipCode=80017>
+> [https://partner.uat-welldyne.com/v2/Patient/find?FirstName=ABC\&LastName=XYZ\&Birthdate=1981-01-01\&ZipCode=80017](https://partner.uat-welldyne.com/v2/Patient/find?FirstName=ABC\&LastName=XYZ\&Birthdate=1981-01-01\&ZipCode=80017)
 
 # Find Patient Response
 
@@ -240,7 +240,7 @@ The "Get Patient script/Prescription" endpoint allows retrieval of all scripts a
 
 #### Sample GET Request
 
-> \<<https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece>
+> \<[https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece](https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece)
 
 This tells the API to query for patientKey 4e1e76ca-520f-4e7a-a6c7-d837a9e3cece  and return relevant details.
 
