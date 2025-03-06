@@ -14,7 +14,7 @@ next:
 
 View the [Cancel Refill](ref:post_v1-refill-cancelrefill) API Reference for detailed request body information.
 
-This endpoint should be used to submit a cancel request when a refill prescription needs to be canceled. The description below provides a management overview of the request message. Detailed descriptions of the entities contained within the request can be found in the Appendix section of this document as well as the API Reference.  
+This endpoint should be used to submit a cancel request when a refill prescription needs to be canceled. The description below provides a management overview of the request message. Detailed descriptions of the entities contained within the request can be found in the Appendix section of this document as well as the API Reference.\
 The Cancel Request API is a client configurable API that accepts:
 
 1. RequestID
