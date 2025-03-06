@@ -12,8 +12,6 @@ next:
 ---
 A prescription request can be rejected for many reasons, below are the top reasons. For a full list please contact your account team.
 
-
-
 | Reject Reason                                  | Reject Code |
 | :--------------------------------------------- | :---------- |
 | Missing or Incorrect BIN                       | 01          |
