@@ -12,46 +12,67 @@ next:
 ---
 # Order Status
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Field",
-    "h-1": "Type",
-    "h-2": "Character Limit",
-    "h-3": "Required/Optional",
-    "h-4": "Description",
-    "0-0": "Batch ID",
-    "0-1": "String",
-    "0-2": "",
-    "0-3": "Required",
-    "0-4": "Unique Batch ID of the responses",
-    "1-0": "Count",
-    "1-1": "Integer",
-    "1-2": "3",
-    "1-3": "Required",
-    "1-4": "The number of Status Results",
-    "2-0": "Approximate Remaining  \nStatuses",
-    "2-1": "Integer",
-    "2-2": "9",
-    "2-3": "Required",
-    "2-4": "The approximate number of remaining statuses",
-    "3-0": "Results",
-    "3-1": "String",
-    "3-2": "",
-    "3-3": "Required",
-    "3-4": "statuses"
-  },
-  "cols": 5,
-  "rows": 4,
-  "align": [
-    "left",
-    "left",
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+<HTMLBlock>{`
+<table style="width: 100%; border-collapse: collapse;">
+<thead>
+<tr>
+  <th style="border: 1px solid #ddd; padding: 8px;">Field</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Type</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Character Limit</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Required/Optional</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Batch ID</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Unique Batch ID of the responses</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Count</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Integer</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>3</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>The number of Status Results</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Approximate Remaining<br>Statuses</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Integer</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>9</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>The approximate number of remaining statuses</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Results</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>statuses</p>
+</td>
+</tr>
+</tbody>
+</table>
+`}</HTMLBlock>
 
 # Status Result
 
@@ -71,32 +92,55 @@ next:
 
 # Status Reasons
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "h-1": "Description",
-    "0-0": "Acknowledged",
-    "0-1": "Request has been received",
-    "1-0": "Rejected",
-    "1-1": "Prescription was not received for the order  \nThe requested drug did not match the prescription  \nNo inventory exists to fulfill the order  \n  \nSee [Top Reject Reasons](doc:top-reject-reasons)",
-    "2-0": "Rx Verified",
-    "2-1": "Prescription has been verified by the pharmacy",
-    "3-0": "Canceled",
-    "3-1": "Request received for order to be canceled",
-    "4-0": "Dispensed",
-    "4-1": "Order has been shipped",
-    "5-0": "Refill Reminder",
-    "5-1": "Reminder for submitting refill request"
-  },
-  "cols": 2,
-  "rows": 6,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
+<HTMLBlock>{`
+<table style="width: 100%; border-collapse: collapse;">
+<thead>
+<tr>
+  <th style="border: 1px solid #ddd; padding: 8px;">Type</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Acknowledged</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Request has been received</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Rejected</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Prescription was not received for the order<br>The requested drug did not match the prescription<br>No inventory exists to fulfill the order  </p>
+<p>See <a href="doc:top-reject-reasons">Top Reject Reasons</a></p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Rx Verified</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Prescription has been verified by the pharmacy</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Canceled</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Request received for order to be canceled</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Dispensed</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Order has been shipped</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Refill Reminder</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Reminder for submitting refill request</p>
+</td>
+</tr>
+</tbody>
+</table>
+`}</HTMLBlock>
 
 # Prescription
 
