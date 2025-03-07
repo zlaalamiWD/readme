@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-> 📃 Note:
+> 📃 Note: 
 > 
 > An empty string "" is considered a value and validation rules will apply (length/valid code/etc). Only null or missing elements will use default values.
 
