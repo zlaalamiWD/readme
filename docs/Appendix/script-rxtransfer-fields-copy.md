@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-> 📃 Note:
+> 📃 Note: 
 > 
 > An empty string "" is considered a value and validation rules will apply (length/valid code/etc). Only null or missing elements will use default values.
 
@@ -67,146 +67,300 @@ next:
 
 # Prescription
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Field",
-    "h-1": "Type",
-    "h-2": "Character Limit",
-    "h-3": "Required/Optional",
-    "h-4": "Description",
-    "0-0": "prescriber",
-    "0-1": "Object",
-    "0-2": "",
-    "0-3": "Required",
-    "0-4": "Object containing prescriber information. See [Prescriber](doc:script-rxtransfer-fields#prescriber) table.",
-    "1-0": "rxNumber",
-    "1-1": "String",
-    "1-2": "12",
-    "1-3": "Required",
-    "1-4": "Rx number of the prescription as per client's system.",
-    "2-0": "prescribedDrugName",
-    "2-1": "String",
-    "2-2": "60",
-    "2-3": "Required",
-    "2-4": "Name of the medication as prescribed by the prescriber.",
-    "3-0": "prescribedNdc",
-    "3-1": "String",
-    "3-2": "11",
-    "3-3": "Required",
-    "3-4": "NDC prescribed by the prescriber.",
-    "4-0": "dispenseNdc",
-    "4-1": "String",
-    "4-2": "11",
-    "4-3": "Required",
-    "4-4": "NDC dispensed by the pharmacy.",
-    "5-0": "dispenseDrugName",
-    "5-1": "String",
-    "5-2": "60",
-    "5-3": "Required",
-    "5-4": "Name of the medication to be dispensed.",
-    "6-0": "drugDosageForm",
-    "6-1": "String",
-    "6-2": "30",
-    "6-3": "Required",
-    "6-4": "Dosage form for the dispensed medication. For example: TABS,SWAB,CHEW etc.",
-    "7-0": "drugStrength",
-    "7-1": "String",
-    "7-2": "15",
-    "7-3": "Required",
-    "7-4": "Medication Strength corresponding to dispensed drug as prescribed by provider.",
-    "8-0": "daysSupply",
-    "8-1": "Int32",
-    "8-2": "",
-    "8-3": "Required",
-    "8-4": "Number of days the medication covers as prescribed by the provider.",
-    "9-0": "quantityWritten",
-    "9-1": "Double",
-    "9-2": "",
-    "9-3": "Required",
-    "9-4": "Total Quantity (in Metric units) as prescribed by the provider.",
-    "10-0": "firstFillDispensedQuantity",
-    "10-1": "Double",
-    "10-2": "",
-    "10-3": "Required",
-    "10-4": "Quantity (in Metric units) that has been dispensed by the pharmacy in the** first fill**. Populate 0 if the transferring pharmacy has not dispensed any medication for the Rx.",
-    "11-0": "quantityDispensedToDate",
-    "11-1": "Double",
-    "11-2": "",
-    "11-3": "Required",
-    "11-4": "Quantity (in Metric units) that has been dispensed by the pharmacy till Date. Populate 0 if the transferring pharmacy has not dispensed any medication for the Rx.",
-    "12-0": "remainingQuantity",
-    "12-1": "Double",
-    "12-2": "",
-    "12-3": "Required",
-    "12-4": "Quantity (in Metric units) that is yet to be dispensed. It must be equal to quantityWritten - quantityDispensedtoDate.",
-    "13-0": "labelDirections",
-    "13-1": "String",
-    "13-2": "200",
-    "13-3": "Required",
-    "13-4": "Prescription usage instructions. Also commonly referred to as the Instructions/Signature. This must be populated in English language and must not contain following characters:  \n| (Pipe), ^ (component separator), ~ (field repetition separator), \\(escape character), & (Sub-component separator)",
-    "14-0": "writtenDate",
-    "14-1": "Date-time",
-    "14-2": "YYYY-MM-DD",
-    "14-3": "Required",
-    "14-4": "Written date of the prescription; Format YYYYMMDD.",
-    "15-0": "expirationDate",
-    "15-1": "Date-time",
-    "15-2": "YYYY-MM-DD",
-    "15-3": "Required",
-    "15-4": "Prescription’s expiration date; Format YYYYMMDD.",
-    "16-0": "dawCode",
-    "16-1": "String",
-    "16-2": "1",
-    "16-3": "Required",
-    "16-4": "DAW code as prescriber by prescriber.",
-    "17-0": "refillsAuthorized",
-    "17-1": "String",
-    "17-2": "2",
-    "17-3": "Required",
-    "17-4": "Counts of **refills** authorized by prescriber.  \nIf the prescriber authorized 4 refills, populate 4",
-    "18-0": "lastFillDate",
-    "18-1": "Date-time",
-    "18-2": "YYYY-MM-DD",
-    "18-3": "Optional",
-    "18-4": "Date when **last** fill occurred. Format YYYY-MM-DD. Must populate for Transfer.  \nIf the transfer pharmacy has not fulfilled any order yet, then populate NULL.",
-    "19-0": "firstFillDate",
-    "19-1": "Date-time",
-    "19-2": "YYYY-MM-DD",
-    "19-3": "Optional",
-    "19-4": "Date when **first** fill occurred. Format YYYY-MM-DD.Must populate for Transfer.  \nIf the transfer pharmacy has not fulfilled any order yet, then populate NULL.",
-    "20-0": "fillsToDate",
-    "20-1": "Int32",
-    "20-2": "",
-    "20-3": "Required",
-    "20-4": "Total number of fills fulfilled for the Rx till Date. If the transfer pharmacy has not fulfilled any order yet, then populate 0.  \nIf the provider authorized 4 refills and 2 fills have been fulfilled, then populate 2",
-    "21-0": "refillsLeft",
-    "21-1": "Int32",
-    "21-2": "",
-    "21-3": "Required",
-    "21-4": "Total number of fills remaining. Should be equal to fillsAuthorized -fillsToDate.",
-    "22-0": "refillsTransferred",
-    "22-1": "Int32",
-    "22-2": "",
-    "22-3": "Required",
-    "22-4": "Number of refills being transferred to HD for fulfillment.  \nIf the provider authorized 4 refills and 2 fills have been fulfilled, then populate 3",
-    "23-0": "currentFillNumber",
-    "23-1": "String",
-    "23-2": "2",
-    "23-3": "Required",
-    "23-4": "Populate the current fill number. If there is no order fulfilled yet, populate 00.  \nIf the provider authorized 4 refills and 2 fills have been fulfilled, then populate 02"
-  },
-  "cols": 5,
-  "rows": 24,
-  "align": [
-    "left",
-    "left",
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+<HTMLBlock>{`
+<table style="width: 100%; border-collapse: collapse;">
+<thead>
+<tr>
+  <th style="border: 1px solid #ddd; padding: 8px;">Field</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Type</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Character Limit</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Required/Optional</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>prescriber</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Object</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Object containing prescriber information. See <a href="doc:script-rxtransfer-fields#prescriber">Prescriber</a> table.</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>rxNumber</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>12</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Rx number of the prescription as per client&#39;s system.</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>prescribedDrugName</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>60</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Name of the medication as prescribed by the prescriber.</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>prescribedNdc</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>11</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>NDC prescribed by the prescriber.</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>dispenseNdc</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>11</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>NDC dispensed by the pharmacy.</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>dispenseDrugName</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>60</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Name of the medication to be dispensed.</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>drugDosageForm</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>30</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Dosage form for the dispensed medication. For example: TABS,SWAB,CHEW etc.</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>drugStrength</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>15</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Medication Strength corresponding to dispensed drug as prescribed by provider.</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>daysSupply</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Int32</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Number of days the medication covers as prescribed by the provider.</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>quantityWritten</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Double</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Total Quantity (in Metric units) as prescribed by the provider.</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>firstFillDispensedQuantity</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Double</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Quantity (in Metric units) that has been dispensed by the pharmacy in the** first fill**. Populate 0 if the transferring pharmacy has not dispensed any medication for the Rx.</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>quantityDispensedToDate</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Double</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Quantity (in Metric units) that has been dispensed by the pharmacy till Date. Populate 0 if the transferring pharmacy has not dispensed any medication for the Rx.</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>remainingQuantity</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Double</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Quantity (in Metric units) that is yet to be dispensed. It must be equal to quantityWritten - quantityDispensedtoDate.</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>labelDirections</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>200</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Prescription usage instructions. Also commonly referred to as the Instructions/Signature. This must be populated in English language and must not contain following characters:<br>| (Pipe), ^ (component separator), ~ (field repetition separator), (escape character), &amp; (Sub-component separator)</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>writtenDate</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Date-time</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>YYYY-MM-DD</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Written date of the prescription; Format YYYYMMDD.</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>expirationDate</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Date-time</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>YYYY-MM-DD</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Prescription’s expiration date; Format YYYYMMDD.</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>dawCode</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>1</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>DAW code as prescriber by prescriber.</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>refillsAuthorized</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>2</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Counts of <strong>refills</strong> authorized by prescriber.<br>If the prescriber authorized 4 refills, populate 4</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>lastFillDate</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Date-time</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>YYYY-MM-DD</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Optional</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Date when <strong>last</strong> fill occurred. Format YYYY-MM-DD. Must populate for Transfer.<br>If the transfer pharmacy has not fulfilled any order yet, then populate NULL.</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>firstFillDate</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Date-time</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>YYYY-MM-DD</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Optional</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Date when <strong>first</strong> fill occurred. Format YYYY-MM-DD.Must populate for Transfer.<br>If the transfer pharmacy has not fulfilled any order yet, then populate NULL.</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>fillsToDate</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Int32</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Total number of fills fulfilled for the Rx till Date. If the transfer pharmacy has not fulfilled any order yet, then populate 0.<br>If the provider authorized 4 refills and 2 fills have been fulfilled, then populate 2</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>refillsLeft</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Int32</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Total number of fills remaining. Should be equal to fillsAuthorized -fillsToDate.</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>refillsTransferred</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Int32</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Number of refills being transferred to HD for fulfillment.<br>If the provider authorized 4 refills and 2 fills have been fulfilled, then populate 3</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>currentFillNumber</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>2</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Required</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Populate the current fill number. If there is no order fulfilled yet, populate 00.<br>If the provider authorized 4 refills and 2 fills have been fulfilled, then populate 02</p>
+</td>
+</tr>
+</tbody>
+</table>
+`}</HTMLBlock>
 
 # Prescriber
 
