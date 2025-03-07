@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-# Status Request
+# Status Request 
 
 View the [MailBox](ref:post_v2-mailbox) API Reference for detailed request body information.
 
@@ -40,7 +40,7 @@ Note, the status messages are not considered delivered and removed from the mail
 
 #### Sample GET Request
 
-> <https://api.uat-healthdyne.com/v2/mailbox?messageCount=10>
+> `<https://api.uat-healthdyne.com/v2/mailbox?messageCount=10>`
 
 This tells the API to only respond with 10 messages. The default message count is 25 messages.
 
@@ -97,7 +97,7 @@ The below table lists the potential response codes that can be received in respo
 
 #### Sample POST Request
 
-> <https://api.uat-healthdyne.com/v2/mailbox?batchId=6be689c3-3306-4a75-b0d3-a769be788c99>
+> `<https://api.uat-healthdyne.com/v2/mailbox?batchId=6be689c3-3306-4a75-b0d3-a769be788c99>`
 
 #### Sample POST Response
 
