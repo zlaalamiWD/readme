@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-# Prescription Request
+# Prescription Request 
 
 | Field          | Type         | Character Limit | Required/Optional | Description                           |
 | :------------- | :----------- | :-------------- | :---------------- | :------------------------------------ |
