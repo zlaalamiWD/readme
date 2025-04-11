@@ -87,8 +87,6 @@ Click here to see [Get Insurance Data Object](https://docs.healthdyne.com/v2.171
 }
 ```
 
-# Successful Response Messages
-
 #### Successful Create Insurance Plan Response Message
 
 ```json
