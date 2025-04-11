@@ -67,6 +67,8 @@ Use POST method to add/create an insurance plan and assign to an existing patien
 }
 ```
 
+Click here to see data object [Insurance](ref:get_v2-patient-insurance)
+
 # POST / Create
 
 ### Sample Insurance Plan POST Request
