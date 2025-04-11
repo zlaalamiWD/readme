@@ -22,12 +22,12 @@ next:
 
 # Get Insurance Response Data Object
 
-| Field      |    | Type                                                                                                                 | Character Limit | Required/Optional | Description                                        |
-| :--------- | :- | :------------------------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------- |
-| patientKey |    | String                                                                                                               | 50              | Required          | Unique patient ID in Client system.                |
-| insurance  |    | Object\[[InsuranceDataObject](https://docs.healthdyne.com/v2.171/docs/insurance-request-fields#insurancedataobject)] |                 | Required          | Object containing patient's insurance information. |
+| Field      |    | Type                                                                                                                    | Character Limit | Required/Optional | Description                                        |
+| :--------- | :- | :---------------------------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------- |
+| patientKey |    | String                                                                                                                  | 50              | Required          | Unique patient ID in Client system.                |
+| insurance  |    | Object\[[GetInsuranceDataObject](https://docs.healthdyne.com/v2.171/docs/insurance-request-fields#insurancedataobject)] |                 | Required          | Object containing patient's insurance information. |
 
-# InsuranceDataObject
+# GetInsuranceDataObject
 
 | Field             | Type   | Character Limit | Required/Optional | Description                                                                                                                                 |
 | :---------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -53,22 +53,29 @@ next:
 | 7    | Relation is ADULT DEPENDENT    |
 | 8    | Relation is SIGNIFICANT OTHER  |
 
-<br />
+# Create Insurance Request Data Object
 
-# Get Insurance Request Data Object
+| Field      | Type                                                                                                                        | Character Limit | Required/Optional | Description                                        |
+| :--------- | :-------------------------------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------- |
+| patientKey | String                                                                                                                      | 50              | Required          | Unique patient ID in Client system.                |
+| insurance  | Object\[[CreateInsuranceDataObject](https://docs.healthdyne.com/v2.171/docs/insurance-request-fields#insurancedataobject) ] |                 | Required          | Object containing patient's insurance information. |
 
-| Field      | Type   | Character Limit | Required/Optional | Description                                        |
-| :--------- | :----- | :-------------- | :---------------- | :------------------------------------------------- |
-| patientKey | String | 50              | Required          | Unique patient ID in Client system.                |
-| insurance  | object |                 | Required          | Object containing patient's insurance information. |
+# CreateInsuranceDataObject
 
-# Get Insurance Response Data Object
+| Field             | Type   | Character Limit | Required/Optional | Description                                              |
+| :---------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------- |
+| policyHolderId    | string | 20              | Required          | Insurance policy/member ID.                              |
+| bin               | String | 4-6             | Required          | Insurance BIN information. Minimum of 4 digits required. |
+| groupId           | String | 15              | Optional          | Insurance group Id information.                          |
+| pcn               | String | 10              | Optional          | Insurance PCN information.                               |
+| personCode        | String | 3               | Optional          | Number 0 to 9.                                           |
+| relationshipCode  | String | 1               | Optional          | Number 0 to 9. See relationship code table below.        |
+| insuranceMemberID | String |                 | Optional          |                                                          |
 
-| Field            | Type   | Character Limit | Required/Optional | Description                                              |
-| :--------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------- |
-| policyHolderId   | string | 20              | Required          | Insurance policy/member ID.                              |
-| bin              | String | 4-6             | Required          | Insurance BIN information. Minimum of 4 digits required. |
-| groupId          | String | 15              | Optional          | Insurance group Id information.                          |
-| pcn              | String | 10              | Optional          | Insurance PCN information.                               |
-| personCode       | String | 3               | Optional          | Number 0 to 9.                                           |
-| relationshipCode | String | 1               | Optional          | Number 0 to 9. See relationship code table below.        |
+# Create Insurance Response Data Object
+
+| Field      | Type   | Character Limit | Required/Optional | Description                         |
+| :--------- | :----- | :-------------- | :---------------- | :---------------------------------- |
+| patientKey | String | 50              | Required          | Unique patient ID in Client system. |
+| planNumber | String |                 | Required          | Insurance Plan Number               |
+| message    | String |                 | Required          | Plan added to patient profile.      |
