@@ -52,16 +52,16 @@ Use POST method to add/create an insurance plan and assign to an existing patien
       "pcn": "15948546",
       "personCode": "001",
       "relationshipCode": "1",
-      "insuranceMemberID": null
+      "insuranceMemberID": "23456"
     },
     {
       "planNumber": "162311",
       "bin": "",
-      "groupId": "VARIES",
+      "groupId": "ABCD123",
       "pcn": "",
       "personCode": "001",
       "relationshipCode": "1",
-      "insuranceMemberID": null
+      "insuranceMemberID": "67844"
     }
   ]
 }
