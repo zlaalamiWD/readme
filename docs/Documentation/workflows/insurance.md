@@ -80,13 +80,13 @@ Use POST method to add/create an insurance plan and assign to an existing patien
 
 # Successful Response Messages
 
-#### Patient Added
+#### Successful Create Response Message
 
 ```json
 {
   "patientKey": "ds76sa5765sad",
   "planNumber": "209235",
-  "message": "Plannumber was succussfully added to patient"
+  "message": "Plan added to patient profile."
 }
 ```
 
@@ -102,6 +102,6 @@ Use POST method to add/create an insurance plan and assign to an existing patien
 {
   "patientKey": "ds76sa5765sad",
   "planNumber": "209235",
-  "message": "Plannumber was succussfully removed"
+  "message": "Patient Insurance plan number is inactivated successfully"
 }
 ```
