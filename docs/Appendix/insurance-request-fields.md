@@ -79,3 +79,18 @@ next:
 | patientKey | String | 50              | Required          | Unique patient ID in Client system. |
 | planNumber | String |                 | Required          | Insurance Plan Number               |
 | message    | String |                 | Required          | Plan added to patient profile.      |
+
+# Delete Insurance Request Path Query Parameter
+
+| Parameter  |    | Type   | Character Limit | Required/Optional | Description                         |
+| :--------- | :- | :----- | :-------------- | :---------------- | :---------------------------------- |
+| patientKey |    | String | 50              | Required          | Unique patient ID in Client system. |
+| planNumber |    | String |                 | Required          | Insurance Plan Number               |
+
+# Delete Insurance Response Data Object
+
+| Field      | Type   | Character Limit | Required/Optional | Description                                               |
+| :--------- | :----- | :-------------- | :---------------- | :-------------------------------------------------------- |
+| patientKey | String | 50              | Required          | Unique patient ID in Client system.                       |
+| planNumber | String |                 | Required          | Insurance Plan Number                                     |
+| message    | String |                 | Required          | Patient Insurance plan number is inactivated successfully |
