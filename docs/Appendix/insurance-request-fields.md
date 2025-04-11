@@ -23,14 +23,14 @@ next:
 
 # Insurance Object
 
-| Field            | Type    | Character Limit | Required/Optional | Description                                              |
-| :--------------- | :------ | :-------------- | :---------------- | :------------------------------------------------------- |
-| policyHolderId   | string  | 20              | Required          | Insurance policy/member ID.                              |
-| bin              | String  | 4-6             | Required          | Insurance BIN information. Minimum of 4 digits required. |
-| groupId          | String  | 15              | Optional          | Insurance group Id information.                          |
-| pcn              | String  | 10              | Optional          | Insurance PCN information.                               |
-| personCode       | Numeric | 3               | Optional          | Person code provided by insurance plan.                  |
-| relationshipCode | Numeric | 1               | Optional          | See relationship code table below.                       |
+| Field            | Type   | Character Limit | Required/Optional | Description                                              |
+| :--------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------- |
+| policyHolderId   | string | 20              | Required          | Insurance policy/member ID.                              |
+| bin              | String | 4-6             | Required          | Insurance BIN information. Minimum of 4 digits required. |
+| groupId          | String | 15              | Optional          | Insurance group Id information.                          |
+| pcn              | String | 10              | Optional          | Insurance PCN information.                               |
+| personCode       | String | 3               | Optional          | Number 0 to 9.                                           |
+| relationshipCode | String | 1               | Optional          | Number 0 to 9. See relationship code table below.        |
 
 # Relationship Codes
 
@@ -45,17 +45,3 @@ next:
 | 6    | Relation is DISABLED DEPENDENT |
 | 7    | Relation is ADULT DEPENDENT    |
 | 8    | Relation is SIGNIFICANT OTHER  |
-
-### Sample POST request.
-
-```json
-{
-  "patientKey": "ds76sa5765sad",
-  "insurance": {
-    "policyHolderId": "68945143",
-    "bin": "123456", 
-    "groupId": "123456789",
-    "pcn": "15948546"
-  }
-}
-```
