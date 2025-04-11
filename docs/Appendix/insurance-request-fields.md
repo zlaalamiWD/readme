@@ -14,20 +14,20 @@ next:
 >
 > An empty string "" is considered a value and validation rules will apply (length/valid code/etc). Only null or missing elements will use default values.
 
-# Get Insurance Request Path Parameter
+# Get Insurance Request Path Query Parameter
 
 | Parameter  |    | Type   | Character Limit | Required/Optional | Description                         |
 | :--------- | :- | :----- | :-------------- | :---------------- | :---------------------------------- |
 | patientKey |    | String | 50              | Required          | Unique patient ID in Client system. |
 
-# Get Insurance Request Data Object
-
-| Field      |    | Type   | Character Limit | Required/Optional | Description                                        |
-| :--------- | :- | :----- | :-------------- | :---------------- | :------------------------------------------------- |
-| patientKey |    | String | 50              | Required          | Unique patient ID in Client system.                |
-| insurance  |    | object |                 | Required          | Object containing patient's insurance information. |
-
 # Get Insurance Response Data Object
+
+| Field      |    | Type                                                                                               | Character Limit | Required/Optional | Description                                        |
+| :--------- | :- | :------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------- |
+| patientKey |    | String                                                                                             | 50              | Required          | Unique patient ID in Client system.                |
+| insurance  |    | Object\[[InsuranceDataObject](https://docs.healthdyne.com/v2.171/docs/insurance-request-fields#/)] |                 | Required          | Object containing patient's insurance information. |
+
+# InsuranceDataObject
 
 | Field             | Type   | Character Limit | Required/Optional | Description                                              |
 | :---------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------- |
