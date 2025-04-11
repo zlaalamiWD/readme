@@ -116,4 +116,4 @@ Click here to see [Create Insurance Data Object](https://docs.healthdyne.com/v2.
 }
 ```
 
-Click here to see [Delete Insurance Data Object](https://docs.healthdyne.com/v2.171/docs/insurance-request-fields#/)
+Click here to see [Delete Insurance Data Object](https://docs.healthdyne.com/v2.171/docs/insurance-request-fields#delete-insurance-request-path-query-parameter)
