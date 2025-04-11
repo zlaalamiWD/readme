@@ -67,7 +67,7 @@ Use POST method to add/create an insurance plan and assign to an existing patien
 }
 ```
 
-Click here to see data object [Insurance Data Object](https://docs.healthdyne.com/v2.171/docs/insurance-request-fields#/)
+Click here to see data object [Get Insurance Data Object](https://docs.healthdyne.com/v2.171/docs/insurance-request-fields#/)
 
 # POST / Create
 
@@ -99,6 +99,8 @@ Click here to see data object [Insurance Data Object](https://docs.healthdyne.co
 }
 ```
 
+Click here to see data object [Create Insurance Data Object](https://docs.healthdyne.com/v2.171/docs/insurance-request-fields#/)
+
 # DELETE
 
 ### Sample DELETE insurance plan request
@@ -114,3 +116,5 @@ Click here to see data object [Insurance Data Object](https://docs.healthdyne.co
   "message": "Patient Insurance plan number is inactivated successfully"
 }
 ```
+
+Click here to see data object [Delete Insurance Data Object](https://docs.healthdyne.com/v2.171/docs/insurance-request-fields#/)
