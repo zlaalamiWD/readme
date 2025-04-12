@@ -22,10 +22,10 @@ next:
 
 # Get Insurance Response Data Object
 
-| Field      |    | Type                                                                                                                    | Character Limit | Required/Optional | Description                                        |
-| :--------- | :- | :---------------------------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------- |
-| patientKey |    | String                                                                                                                  | 50              | Required          | Unique patient ID in Client system.                |
-| insurance  |    | Object\[[InsuranceDataObject](https://docs.healthdyne.com/v2.171/docs/insurance-request-fields#getinsurancedataobject)] |                 | Required          | Object containing patient's insurance information. |
+| Field      |    | Type                                                                                                                 | Character Limit | Required/Optional | Description                                        |
+| :--------- | :- | :------------------------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------- |
+| patientKey |    | String                                                                                                               | 50              | Required          | Unique patient ID in Client system.                |
+| insurance  |    | Object\[[InsuranceDataObject](https://docs.healthdyne.com/v2.171/docs/insurance-request-fields#insurancedataobject)] |                 | Required          | Object containing patient's insurance information. |
 
 # InsuranceDataObject
 
