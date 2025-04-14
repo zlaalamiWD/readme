@@ -20,7 +20,7 @@ next:
 
 | Field        | Type     | Character Limit | Required/Optional | Description                                                                            |
 | :----------- | :------- | :-------------- | :---------------- | :------------------------------------------------------------------------------------- |
-| eventId      |          |                 | Required          | TBD                                                                                    |
+| eventId      | String   |                 | Required          | TBD                                                                                    |
 | eventDateUtc | DateTime |                 | Required          | TBD                                                                                    |
 | scriptKeys   | Array    |                 | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
 
@@ -28,7 +28,7 @@ next:
 
 | Field         | Type     | Character Limit | Required/Optional | Description |
 | :------------ | :------- | :-------------- | :---------------- | :---------- |
-| eventId       |          |                 | Required          | TBD         |
+| eventId       | String   |                 | Required          | TBD         |
 | eventDateUtc  | DateTime |                 | Required          | TBD         |
 | scriptKey     | String   |                 | Required          |             |
 | verifiedDate  | DateTime |                 | Required          |             |
@@ -38,7 +38,7 @@ next:
 
 | Field          | Type     | Character Limit | Required/Optional | Description |
 | :------------- | :------- | :-------------- | :---------------- | :---------- |
-| eventId        |          |                 | Required          | TBD         |
+| eventId        | String   |                 | Required          | TBD         |
 | eventDateUtc   | DateTime |                 | Required          | TBD         |
 | scriptKey      | String   |                 | Required          |             |
 | shipmentDate   | DateTime |                 | Required          |             |
@@ -48,7 +48,7 @@ next:
 
 | Field        | Type     | Character Limit | Required/Optional | Description |
 | :----------- | :------- | :-------------- | :---------------- | :---------- |
-| eventId      |          |                 | Required          | TBD         |
+| eventId      | String   |                 | Required          | TBD         |
 | eventDateUtc | DateTime |                 | Required          | TBD         |
 | scriptKey    | String   |                 | Required          |             |
 | issueMessage | String   |                 | Required          |             |
@@ -57,7 +57,7 @@ next:
 
 | Field         | Type     | Character Limit | Required/Optional | Description |
 | :------------ | :------- | :-------------- | :---------------- | :---------- |
-| eventId       |          |                 | Required          | TBD         |
+| eventId       | String   |                 | Required          | TBD         |
 | eventDateUtc  | DateTime |                 | Required          | TBD         |
 | scriptKey     | String   |                 | Required          |             |
 | statusMessage | String   |                 | Required          |             |
