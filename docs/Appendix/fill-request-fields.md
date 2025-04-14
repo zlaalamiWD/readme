@@ -67,3 +67,37 @@ next:
 | planNumber        | String | 40              | Required          | Insurance plan number to be used on order that was previously provided by HealthDyne on a create Insurance response. |
 | coPay             | String | 6               | Required          | Payment collected from the patient at checkout. Format "xx.xx" or "xxx.xx"                                           |
 | transactionNumber | String |                 | Required          | The payment transaction number. This should be the stripe transaction number if payment is managed by HealthDyne.    |
+
+<br />
+
+## GET Fill Request
+
+### Query Parameter
+
+### Request Object
+
+### Response Object
+
+<br />
+
+## SUBMIT Fill Request
+
+### Request Object
+
+### Response Object
+
+<br />
+
+## UPDATE Fill Request
+
+### Request Object
+
+### Response Object
+
+<br />
+
+## CANCEL Fill Request
+
+### Request Object
+
+### Response Object
