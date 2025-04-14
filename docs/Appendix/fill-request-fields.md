@@ -72,13 +72,13 @@ next:
 
 ## GET Fill Request
 
-### Query Parameter
+#### Query Parameter
 
 | Field          | Type   | Character Limit | Required/Optional | Description                                                               |
 | :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
 | fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
 
-### Response Object
+#### Response Object
 
 | Field                      | Type   | Character Limit | Required/Optional | Description                                                               |
 | :------------------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
@@ -89,7 +89,7 @@ next:
 
 ## SUBMIT Fill Request
 
-### Request Object
+#### Request Object
 
 | Field          | Type   | Character Limit | Required/Optional | Description                                                                                                   |
 | :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------ |
@@ -98,7 +98,7 @@ next:
 | shipping       | Object |                 | Required          | Object containing shipping information for the order. See [Shipping](doc:fill-request-fields#shipping) table. |
 | insurance      | Object |                 | Optional          | Optionally specify insurance information to be used on the fill request.                                      |
 
-### Response Object
+#### Response Object
 
 | Field          | Type   | Character Limit | Required/Optional | Description                                                               |
 | :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
@@ -109,7 +109,7 @@ next:
 
 ## UPDATE Fill Request
 
-### Request Object
+#### Request Object
 
 | Field          | Type   | Character Limit | Required/Optional | Description                                                                                                   |
 | :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------ |
@@ -117,7 +117,7 @@ next:
 | scriptKeys     | Array  |                 | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request).                        |
 | shipping       | Object |                 | Required          | Object containing shipping information for the order. See [Shipping](doc:fill-request-fields#shipping) table. |
 
-### Response Object
+#### Response Object
 
 | Field          | Type   | Character Limit | Required/Optional | Description                                                               |
 | :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
@@ -128,7 +128,7 @@ next:
 
 ## CANCEL Fill Request
 
-### Request Object
+#### Request Object
 
 | Field          | Type   | Character Limit | Required/Optional | Description                                                                            |
 | :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------------- |
@@ -136,7 +136,7 @@ next:
 | scriptKeys     | Array  |                 | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
 | cancelReason   | String |                 | Required          | TBD                                                                                    |
 
-### Response Object
+#### Response Object
 
 | Field          | Type   | Character Limit | Required/Optional | Description                                                               |
 | :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
