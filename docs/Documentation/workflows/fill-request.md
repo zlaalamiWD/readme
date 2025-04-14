@@ -39,7 +39,7 @@ The GET Fill Request Status API lets clients retrieve the status and event summa
 
 #### Sample GET Status Request
 
-> \[GET https\://(ENDPOINT)/v2/fill/fillRequest?fillRequestKey= FillPatientSample1404]\(https\://(ENDPOINT)/v2/fill/fillRequest?fillRequestKey= FillPatientSample1404)
+\[GET https\://(ENDPOINT)/v2/fill/fillRequest?fillRequestKey= FillPatientSample1404]\(https\://(ENDPOINT)/v2/fill/fillRequest?fillRequestKey= FillPatientSample1404)
 
 This tells the API to query for fillRequestKey FillPatientSample1404 and return relevant details.
 
