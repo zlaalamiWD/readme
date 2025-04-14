@@ -39,15 +39,15 @@ The GET Fill Request Status API lets clients retrieve the status and event summa
 
 #### Sample GET Status Request
 
-> \[GET https\://(ENDPOINT)/v2/fill/fillRequest?fillRequestKey= FillPatientCancel2723]\(https\://(ENDPOINT)/v2/fill/fillRequest?fillRequestKey= FillPatientCancel2723)
+> \[GET https\://(ENDPOINT)/v2/fill/fillRequest?fillRequestKey= FillPatientSample1404]\(https\://(ENDPOINT)/v2/fill/fillRequest?fillRequestKey= FillPatientSample1404)
 
-This tells the API to query for fillRequestKey FillPatientCancel2723 and return relevant details.
+This tells the API to query for fillRequestKey FillPatientSample1404 and return relevant details.
 
 #### Sample GET Status Response
 
 ```json
 {
-    "fillRequestKey": "FillPatientCancel2723",
+    "fillRequestKey": "FillPatientSample1404",
     "submitted": [
         {
             "eventId": "289526",
@@ -112,8 +112,8 @@ Client must send a Fill request with following details:
 
 ```json
 {
-  "fillRequestKey": "FillPatientCancel2723",
-  "scriptKeys": ["SecondaryLogicPt7"],
+  "fillRequestKey": "FillPatientSample1404",
+  "scriptKeys": ["TestScriptKey1404"],
   "shipping": {
     "address": {
       "line1": "500 Eagles Landin Dr",
@@ -142,7 +142,7 @@ Client must send a Fill request with following details:
 
 ```json
 {
-    "fillRequestKey": "FillPatientCancel2723",
+    "fillRequestKey": "FillPatientSample1404",
     "message": "The fill request was accepted"
 }
 ```
@@ -168,9 +168,9 @@ Once an order has been created in HD system (using a Fill request), the update A
 
 ```json
 {
-    "fillRequestKey": "FillPatientCancel2723",
+    "fillRequestKey": "FillPatientSample1404",
     "scriptKeys": [
-        "SecondaryLogicPt7"
+        "TestScriptKey1404"
     ],
     "shipping": {
         "address": {
@@ -193,7 +193,7 @@ Once an order has been created in HD system (using a Fill request), the update A
 
 ```json
 {
-    "fillRequestKey": "FillPatientCancel2723",
+    "fillRequestKey": "FillPatientSample1404",
     "message": "The fill update request was accepted"
 }
 ```
@@ -219,9 +219,9 @@ Once an order has been created in the HealthDyne system (using a Fill request), 
 
 ```json
 {
-    "fillRequestKey": "FillPatientCancel2723",
+    "fillRequestKey": "FillPatientSample1404",
     "scriptKeys": [
-        "SecondaryLogicPt7"
+        "TestScriptKey1404"
     ],
    "cancelReason" : "Cancelled"
 }
@@ -231,8 +231,8 @@ Once an order has been created in the HealthDyne system (using a Fill request), 
 
 ```json
 {
-    "fillRequestKey": "FillPatientCancel2723",
-    "message": "Prescription fill for [SecondaryLogicPt7] under Fill request [FillPatientCancel2723] has been canceled."
+    "fillRequestKey": "FillPatientSample1404",
+    "message": "Prescription fill for [TestScriptKey1404] under Fill request [FillPatientSample1404] has been canceled."
 }
 ```
 
