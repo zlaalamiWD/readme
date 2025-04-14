@@ -175,20 +175,26 @@ Once an order has been created in the HealthDyne system (using a Fill request), 
 
 ```
 
-# Update a Fill Request:
+# Update Fill Request
 
 Once an order has been created in HD system (using a Fill request), the update API endpoint allows client to update shipping address or shipping code for previously submitted fill request. NOTE: The update will be applied as long as order has not been sent to our dispensing system for fulfillment.
 
-### Server
+#### Server
 
-##### Only https connections are accepted.
+##### Only HTTPS connections are accepted.
 
 | REQUEST TYPE | ENDPOINT                         |
 | :----------- | :------------------------------- |
 | PUT (Test)   | partner.uat-welldyne.com/v2/fill |
 | PUT (Prod)   | partner.welldyne.com/v2/fill     |
 
-### Sample Fill Request
+<br />
+
+#### Sample Update Fill Request
+
+> [PUT https://(ENDPOINT)/v2/fill](https://\(ENDPOINT\)/v2/fill)
+
+#### Sample Update Fill Request Body
 
 ```json
 {
@@ -211,7 +217,7 @@ Once an order has been created in HD system (using a Fill request), the update A
 }
 ```
 
-#### Sample Status Response
+#### Sample Update Fill Response
 
 ```json
 {
@@ -244,6 +250,8 @@ Once an order has been created in HD system (using a Fill request), the update A
     "rejected": []
 }
 ```
+
+<br />
 
 # Fill Request Status Mailbox Events
 
