@@ -14,7 +14,7 @@ next:
 
 See [Fill](ref:post_v2-fill) API reference for request message fields.
 
-This API lets client define when the order needs to be initiated in HD system and also defines the number of prescription/scripts that needs to be consolidated in one order. A client can also use the GET method of Fill Request to retrieve current status.
+This API lets client define when the order needs to be initiated in HD system and also defines the number of prescriptions/scripts that need to be consolidated in one order. A client can also use the GET method of Fill Request to retrieve current status.
 
 # Get Fill Request Status
 
@@ -39,14 +39,59 @@ The GET Fill Request Status API lets clients retrieve the status and event summa
 
 #### Sample GET Status Request
 
-> [GET https://(ENDPOINT)/v2/fill/fillRequest?fillRequestKey=NewNSCP24FILLREQUEST987660102](https://\(ENDPOINT\)/v2/fill/fillRequest?fillRequestKey=NewNSCP24FILLREQUEST987660102)
+> \[GET https\://(ENDPOINT)/v2/fill/fillRequest?fillRequestKey= FillPatientCancel2723]\(https\://(ENDPOINT)/v2/fill/fillRequest?fillRequestKey= FillPatientCancel2723)
 
 This tells the API to query for fillRequestKey NewNSCP24FILLREQUEST987660102 and return relevant details.
 
 #### Sample GET Status Response
 
 ```json
-TBD
+{
+    "fillRequestKey": "FillPatientCancel2723",
+    "submitted": [
+        {
+            "eventId": "289526",
+            "eventDateUtc": "2025-04-14T08:40:37.328768Z",
+            "scriptKeys": []
+        }
+    ],
+    "rxVerified": [],
+    "rxShipped": [],
+    "rxIssue": [],
+    "rxCanceled": [],
+    "rejected": []
+}
+```
+```Text json
+{
+    "fillRequestKey": "NewNSCP24FILLREQUEST987660102",
+    "submitted": [
+        {
+            "eventId": "116957",
+            "eventDateUtc": "2024-03-27T16:22:17.760822Z",
+            "scriptKeys": []
+        }
+    ],
+    "rxVerified": [],
+    "rxShipped": [],
+    "rxIssue": [
+        {
+            "eventId": "116959",
+            "eventDateUtc": "2024-03-27T16:25:35.333628Z",
+            "scriptKey": "3081ccf283ed41b2977a7e67649f8374",
+            "issueMessage": "REJECTED 533 HEALTHDYNE RX REJECTED - TEST FOR ORDER DETAIL"
+        }
+    ],
+    "rxCanceled": [
+        {
+            "eventId": "116960",
+            "eventDateUtc": "2024-03-27T16:30:56.077151Z",
+            "scriptKey": "3081ccf283ed41b2977a7e67649f8374",
+            "statusMessage": "ORDER CANCELED"
+        }
+    ],
+    "rejected": []
+}
 ```
 
 The table below lists the potential response codes that can be received in response to a GET request.
@@ -97,13 +142,40 @@ Client must send a Fill request with following details:
 #### Sample Submit Fill Request Body
 
 ```json
-TBD
+{
+  "fillRequestKey": "FillPatientCancel2723",
+  "scriptKeys": ["SecondaryLogicPt7"],
+  "shipping": {
+    "address": {
+      "line1": "500 Eagles Landin Dr",
+      "line2": null,
+      "line3": null,
+      "city": "Lakeland",
+      "state": "FL",
+      "zipCode": "33810",
+      "countryCode": "US"
+    },
+    "shippingCode": "UPS 1D",
+    "saturdayDelivery": true,
+    "signatureRequired": true
+  },
+  "insurance": {
+    "planNumber":"209235",
+    "coPay":"32.50",
+    "transactionNumber":"pi_305qndABfMSbKdKQ0NA1r4L5",
+	"personCode": "001",
+    "relationshipCode": "02"
+  }
+}
 ```
 
 #### Sample Submit Fill Response
 
 ```json
-TBD
+{
+    "fillRequestKey": "FillPatientCancel2723",
+    "message": "The fill request was accepted"
+}
 ```
 
 # Update Fill Request
@@ -126,13 +198,35 @@ Once an order has been created in HD system (using a Fill request), the update A
 #### Sample Update Fill Request Body
 
 ```json
-TBD
+{
+    "fillRequestKey": "FillPatientCancel2723",
+    "scriptKeys": [
+        "SecondaryLogicPt7"
+    ],
+    "shipping": {
+        "address": {
+            "line1": "UpdateAgain1",
+            "line2": null,
+            "line3": null,
+            "city": "LAKELAND",
+            "state": "FL",
+            "zipCode": "33810",
+            "countryCode": "US"
+        },
+        "shippingCode": "POS 1C",
+        "saturdayDelivery": false,
+        "signatureRequired": false
+    }
+}
 ```
 
 #### Sample Update Fill Response
 
 ```json
-TBD
+{
+    "fillRequestKey": "FillPatientCancel2723",
+    "message": "The fill update request was accepted"
+}
 ```
 
 # Cancel Fill Request
@@ -155,13 +249,22 @@ Once an order has been created in the HealthDyne system (using a Fill request), 
 #### Sample Cancel Fill Request Body
 
 ```json
-TBD
+{
+    "fillRequestKey": "FillPatientCancel2723",
+    "scriptKeys": [
+        "SecondaryLogicPt7"
+    ],
+   "cancelReason" : "Cancelled"
+}
 ```
 
 #### Sample Cancel Fill Request Response
 
 ```json
-TBD
+{
+    "fillRequestKey": "FillPatientCancel2723",
+    "message": "Prescription fill for [SecondaryLogicPt7] under Fill request [FillPatientCancel2723] has been canceled."
+}
 ```
 
 <br />
