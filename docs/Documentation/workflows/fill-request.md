@@ -89,10 +89,10 @@ Client must send a Fill request with following details:
 
 ##### Only HTTPS connections are accepted.
 
-| METHOD TYPE | ENDPOINT                       |
-| :---------- | :----------------------------- |
-| POST (Test) | api.uat-healthdyne.com/v2/fill |
-| POST (Prod) | api.healthdyne.com/v2/fill     |
+| METHOD TYPE | ENDPOINT                         |
+| :---------- | :------------------------------- |
+| POST (Test) | partner.uat-welldyne.com/v2/fill |
+| POST (Prod) | partner.welldyne.com/v2/fill     |
 
 #### Header
 
