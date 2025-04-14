@@ -169,14 +169,22 @@ The "Get Patient script/Prescription" endpoint allows retrieval of all scripts a
 
 ##### Only https connections are accepted.
 
-| REQUEST TYPE | ENDPOINT                                                                |
-| :----------- | :---------------------------------------------------------------------- |
-| GET (Test)   | api.uat-healthdyne.com/v2/patient/prescription?patientKey=\<patientKey> |
-| GET (Prod)   | api.healthdyne.com/v2/patient/prescription?patientKey=\<patientKey>     |
+| REQUEST TYPE | ENDPOINT                                                                    |
+| :----------- | :-------------------------------------------------------------------------- |
+| GET (Test)   | partner.uat-healthdyne.com/v2/patient/prescription?patientKey=\<patientKey> |
+| GET (Prod)   | partner.healthdyne.com/v2/patient/prescription?patientKey=\<patientKey>     |
+
+### Header
+
+| Key                         | Value                  |
+| :-------------------------- | :--------------------- |
+| Accept                      | application/json       |
+| Content-Type                | application/json       |
+| HealthDyne-Subscription-Key | Provided by HealthDyne |
 
 #### Sample GET Request
 
-> \<[https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece](https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece)
+> \<[https://partner.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece](https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece)
 
 This tells the API to query for patientKey 4e1e76ca-520f-4e7a-a6c7-d837a9e3cece  and return relevant details.
 
