@@ -177,7 +177,7 @@ Client must send a Fill request with following details:
 }
 ```
 
-Click here to see \[Submit Fill Request Data Object] ([https://docs.healthdyne.com/v2.171/docs/fill-request-fields#request-object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#request-object))
+Click here to see [Get Fill Request Data Object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#request-object)
 
 #### Sample Submit Fill Response
 
