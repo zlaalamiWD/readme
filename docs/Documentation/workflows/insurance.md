@@ -22,10 +22,10 @@ Use POST method to add/create an insurance plan and assign to an existing patien
 
 ##### Only https connections are accepted.
 
-| REQUEST TYPE                | ENDPOINT                                    |
-| :-------------------------- | :------------------------------------------ |
-| GET, POST, or DELETE (Test) | api.uat-healthdyne.com/v2/patient/insurance |
-| GET, POST, or DELETE (Prod) | api.healthdyne.com/v2/patient/insurance     |
+| REQUEST TYPE                | ENDPOINT                                        |
+| :-------------------------- | :---------------------------------------------- |
+| GET, POST, or DELETE (Test) | partner.uat-healthdyne.com/v2/patient/insurance |
+| GET, POST, or DELETE (Prod) | partner.healthdyne.com/v2/patient/insurance     |
 
 ### Header
 
