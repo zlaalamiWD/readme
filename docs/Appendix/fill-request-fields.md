@@ -22,7 +22,7 @@ next:
 | :----------- | :------- | :-------------- | :---------------- | :------------------------------------------------------------------------------------- |
 | eventId      | String   |                 | Required          | TBD                                                                                    |
 | eventDateUtc | DateTime |                 | Required          | TBD                                                                                    |
-| scriptKeys   | Array    |                 | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
+| scriptKeys   | Array    | 50              | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
 
 ### RxVerified
 
@@ -30,7 +30,7 @@ next:
 | :------------ | :------- | :-------------- | :---------------- | :---------- |
 | eventId       | String   |                 | Required          | TBD         |
 | eventDateUtc  | DateTime |                 | Required          | TBD         |
-| scriptKey     | String   |                 | Required          |             |
+| scriptKey     | String   | 50              | Required          |             |
 | verifiedDate  | DateTime |                 | Required          |             |
 | statusMessage | String   | Max             | Required          |             |
 
@@ -40,7 +40,7 @@ next:
 | :------------- | :------- | :-------------- | :---------------- | :---------- |
 | eventId        | String   |                 | Required          | TBD         |
 | eventDateUtc   | DateTime |                 | Required          | TBD         |
-| scriptKey      | String   |                 | Required          |             |
+| scriptKey      | String   | 50              | Required          |             |
 | shipmentDate   | DateTime |                 | Required          |             |
 | trackingNumber | String   | 40              | Required          |             |
 
@@ -50,7 +50,7 @@ next:
 | :----------- | :------- | :-------------- | :---------------- | :---------- |
 | eventId      | String   |                 | Required          | TBD         |
 | eventDateUtc | DateTime |                 | Required          | TBD         |
-| scriptKey    | String   |                 | Required          |             |
+| scriptKey    | String   | 50              | Required          |             |
 | issueMessage | String   | Max             | Required          |             |
 
 ### RxCanceled
@@ -59,7 +59,7 @@ next:
 | :------------ | :------- | :-------------- | :---------------- | :---------- |
 | eventId       | String   |                 | Required          | TBD         |
 | eventDateUtc  | DateTime |                 | Required          | TBD         |
-| scriptKey     | String   |                 | Required          |             |
+| scriptKey     | String   | 50              | Required          |             |
 | statusMessage | String   | Max             | Required          |             |
 
 # Fill Request Data Object
@@ -67,7 +67,7 @@ next:
 | Field          | Type   | Character Limit | Required/Optional | Description                                                                                                   |
 | :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------ |
 | fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking.                                     |
-| scriptKeys     | Array  |                 | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request).                        |
+| scriptKeys     | Array  | 50              | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request).                        |
 | shipping       | Object |                 | Required          | Object containing shipping information for the order. See [Shipping](doc:fill-request-fields#shipping) table. |
 | insurance      | Object |                 | Optional          | Optionally specify insurance information to be used on the fill request.                                      |
 
@@ -157,7 +157,7 @@ next:
 | Field          | Type   | Character Limit | Required/Optional | Description                                                               |
 | :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
 | fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
-| message        | String |                 | Required          | Status messages string.                                                   |
+| message        | String | Max             | Required          | Status messages string.                                                   |
 
 <br />
 
@@ -176,7 +176,7 @@ next:
 | Field          | Type   | Character Limit | Required/Optional | Description                                                               |
 | :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
 | fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
-| message        | String |                 | Required          | Status messages string.                                                   |
+| message        | String | Max             | Required          | Status messages string.                                                   |
 
 <br />
 
@@ -188,11 +188,11 @@ next:
 | :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------------- |
 | fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking.              |
 | scriptKeys     | Array  |                 | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
-| cancelReason   | String |                 | Required          | TBD                                                                                    |
+| cancelReason   | String | Max             | Required          | TBD                                                                                    |
 
 #### Response Object
 
 | Field          | Type   | Character Limit | Required/Optional | Description                                                               |
 | :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
 | fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
-| message        | String |                 | Required          | Status messages string.                                                   |
+| message        | String | Max             | Required          | Status messages string.                                                   |
