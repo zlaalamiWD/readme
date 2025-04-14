@@ -285,7 +285,7 @@ Click here to see [Cancel Fill Request Data Object](https://docs.healthdyne.com/
 }
 ```
 
-Click here to see \[Cancel Response Data Object] ([https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object-3](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object-3))
+Click here to see [Cancel Response Data Object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object-3)
 
 # Fill Request Status Mailbox Events
 
