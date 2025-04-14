@@ -288,4 +288,4 @@ The below table lists the potential response codes that can be received in respo
 }
 ```
 
-Click here to see Patient Request Fields
+Click here to see [Patient Request Fields](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#/)
