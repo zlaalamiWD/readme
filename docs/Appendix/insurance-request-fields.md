@@ -55,7 +55,7 @@ next:
 | 7    | Relation is ADULT DEPENDENT    |
 | 8    | Relation is SIGNIFICANT OTHER  |
 
-# Create Insurance Request Data Object
+# Create Insurance Data Object
 
 #### Request Object
 
@@ -84,14 +84,16 @@ next:
 | planNumber | String | 40              | Required          | Insurance Plan Number               |
 | message    | String | Max             | Required          | Plan added to patient profile.      |
 
-# Delete Insurance Request Path Query Parameter
+# Delete Insurance Data Object
+
+#### Query Parameter
 
 | Parameter  |    | Type   | Character Limit | Required/Optional | Description                         |
 | :--------- | :- | :----- | :-------------- | :---------------- | :---------------------------------- |
 | patientKey |    | String | 50              | Required          | Unique patient ID in Client system. |
 | planNumber |    | String | 40              | Required          | Insurance Plan Number               |
 
-# Delete Insurance Response Data Object
+#### Response Object
 
 | Field      | Type   | Character Limit | Required/Optional | Description                                               |
 | :--------- | :----- | :-------------- | :---------------- | :-------------------------------------------------------- |
