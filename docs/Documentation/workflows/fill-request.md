@@ -14,7 +14,7 @@ next:
 
 See [Fill](ref:post_v2-fill) API reference for request message fields.
 
-This API lets client define when the order needs to be initiated in HD system and also defines the number of prescriptions/scripts that need to be consolidated in one order. A client can also use the GET method of Fill Request to retrieve current status.
+This API lets client define when the order needs to be initiated in HealthDyne system and also defines the number of prescriptions/scripts that need to be consolidated in one order. A client can also use the GET method of Fill Request to retrieve current status.
 
 # Get Fill Request Status
 
@@ -24,10 +24,10 @@ The GET Fill Request Status API lets clients retrieve the status and event summa
 
 ##### Only HTTPS connections are accepted.
 
-| METHOD TYPE | ENDPOINT                                                                    |
-| :---------- | :-------------------------------------------------------------------------- |
-| GET (Test)  | api.uat-healthdyne.com/v2/FILL/fillRequest?fillRequestKey=\<fillRequestKey> |
-| GET (Prod)  | api.healthdyne.com/v2/FILL/fillRequest?fillRequestKey=\<fillRequestKey>     |
+| METHOD TYPE | ENDPOINT                                                                      |
+| :---------- | :---------------------------------------------------------------------------- |
+| GET (Test)  | partner.uat-welldyne.com/v2/FILL/fillRequest?fillRequestKey=\<fillRequestKey> |
+| GET (Prod)  | partner.welldyne.com/v2/FILL/fillRequest?fillRequestKey=\<fillRequestKey>     |
 
 #### Header
 
