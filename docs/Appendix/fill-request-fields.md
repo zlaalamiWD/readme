@@ -116,6 +116,8 @@ next:
 | coPay             | String | 6               | Required          | Payment collected from the patient at checkout. Format "xx.xx" or "xxx.xx"                                           |
 | transactionNumber | String |                 | Required          | The payment transaction number. This should be the stripe transaction number if payment is managed by HealthDyne.    |
 
+***
+
 <br />
 
 ## GET Fill Request
