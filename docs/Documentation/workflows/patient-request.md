@@ -33,8 +33,6 @@ Once a patient has been registered successfully, the GET Patient API allows clie
 | GET (Test)   | partner.uat-welldyne.com/v2/Patient? |
 | GET (Prod)   | partner.welldyne.com/v2/Patient?     |
 
-<br />
-
 ### Header
 
 | Key                         | Value                  |
@@ -125,6 +123,13 @@ The Find Patient API (GET method) allows clients to lookup patientKey in HD syst
 | :----------- | :---------------------------------------- |
 | GET (Test)   | partner.uat-welldyne.com/v2/Patient/find? |
 | GET (Prod)   | partner.welldyne.com/v2/Patient/find?     |
+
+### Header
+
+| Key                         | Value                  |
+| :-------------------------- | :--------------------- |
+| Content-Type                | application/json       |
+| HealthDyne-Subscription-Key | Provided by HealthDyne |
 
 #### Sample GET Request
 
