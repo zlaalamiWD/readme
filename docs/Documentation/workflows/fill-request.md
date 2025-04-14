@@ -41,7 +41,7 @@ The GET Fill Request Status API lets clients retrieve the status and event summa
 
 > \[GET https\://(ENDPOINT)/v2/fill/fillRequest?fillRequestKey= FillPatientSample1404] (https\://(ENDPOINT)/v2/fill/fillRequest?fillRequestKey= FillPatientSample1404)
 
-Click here to see \[GET Fill Request Query Data] ([https://docs.healthdyne.com/v2.171/docs/fill-request-fields#query-parameter](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#query-parameter))
+Click here to see [GET Fill Request Query Data](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#query-parameter)
 
 GET Fill Request
 
