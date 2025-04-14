@@ -111,6 +111,10 @@ The table below lists the potential response codes that can be received in respo
 | 401  | Unauthorized                                             |
 | 500  | Internal Server Error                                    |
 
+***
+
+<br />
+
 # Submit Fill Request
 
 API field validation information in Appendix [Fill Request Fields](doc:fill-request-fields)
@@ -190,6 +194,10 @@ Click here to see [Get Fill Request Data Object](https://docs.healthdyne.com/v2.
 
 Click here to see [Submit Fill Response Data Object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object-1)
 
+***
+
+<br />
+
 # Update Fill Request
 
 Once an order has been created in HD system (using a Fill request), the update API endpoint allows client to update shipping address or shipping code for previously submitted fill request. NOTE: The update will be applied as long as order has not been sent to our dispensing system for fulfillment.
@@ -244,6 +252,10 @@ Click here to see [Update Fill Request Data Object](https://docs.healthdyne.com/
 ```
 
 Click here to see [Update Fill Response Data Object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object-2)
+
+***
+
+<br />
 
 # Cancel Fill Request
 
