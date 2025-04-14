@@ -130,14 +130,14 @@ next:
 
 #### Response Object
 
-| Field          | Type   | Character Limit | Required/Optional | Description                                                                                |
-| :------------- | :----- | :-------------- | :---------------- | :----------------------------------------------------------------------------------------- |
-| fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking.                  |
-| submitted      | Array  |                 | Optional          | [Submitted](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#submitted)  Object |
-| rxVerified     | Array  |                 | Optional          | [Verified](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#rxverified)  Object |
-| rxShipped      | Array  |                 | Optional          | [Shipped](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#rxshipped)  Object   |
-| rxIssue        | Array  |                 | Optional          | [Issued](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#rxissue)  Object      |
-| rxCanceled     | Array  |                 | Optional          | [Canceled](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#rxcanceled)  Object |
+| Field          | Type               | Character Limit | Required/Optional | Description                                                                                                                         |
+| :------------- | :----------------- | :-------------- | :---------------- | :---------------------------------------------------------------------------------------------------------------------------------- |
+| fillRequestKey | String             | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking.                                                           |
+| submitted      | Array \[submitted] |                 | Optional          | Array of [Submitted](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#submitted)  Objects containing event details.      |
+| rxVerified     | Array              |                 | Optional          | [Verified](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#rxverified)  Object                                          |
+| rxShipped      | Array              |                 | Optional          | [Shipped](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#rxshipped)  Objects containing tracking/shipping information. |
+| rxIssue        | Array              |                 | Optional          | [Issued](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#rxissue)  Object                                               |
+| rxCanceled     | Array              |                 | Optional          | [Canceled](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#rxcanceled)  Object                                          |
 
 <br />
 
