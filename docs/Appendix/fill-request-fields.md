@@ -18,49 +18,49 @@ next:
 
 ### Submitted
 
-| Field        | Type  | Character Limit | Required/Optional | Description                                                                            |
-| :----------- | :---- | :-------------- | :---------------- | :------------------------------------------------------------------------------------- |
-| eventId      |       |                 | Required          | TBD                                                                                    |
-| eventDateUtc | Date  |                 | Required          | TBD                                                                                    |
-| scriptKeys   | Array |                 | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
+| Field        | Type     | Character Limit | Required/Optional | Description                                                                            |
+| :----------- | :------- | :-------------- | :---------------- | :------------------------------------------------------------------------------------- |
+| eventId      |          |                 | Required          | TBD                                                                                    |
+| eventDateUtc | DateTime |                 | Required          | TBD                                                                                    |
+| scriptKeys   | Array    |                 | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
 
 ### RxVerified
 
-| Field         | Type   | Character Limit | Required/Optional | Description |
-| :------------ | :----- | :-------------- | :---------------- | :---------- |
-| eventId       |        |                 | Required          | TBD         |
-| eventDateUtc  | Date   |                 | Required          | TBD         |
-| scriptKey     | String |                 | Required          |             |
-| verifiedDate  | Date   |                 | Required          |             |
-| statusMessage | String |                 | Required          |             |
+| Field         | Type     | Character Limit | Required/Optional | Description |
+| :------------ | :------- | :-------------- | :---------------- | :---------- |
+| eventId       |          |                 | Required          | TBD         |
+| eventDateUtc  | DateTime |                 | Required          | TBD         |
+| scriptKey     | String   |                 | Required          |             |
+| verifiedDate  | DateTime |                 | Required          |             |
+| statusMessage | String   |                 | Required          |             |
 
 ### RxShipped
 
-| Field          | Type   | Character Limit | Required/Optional | Description |
-| :------------- | :----- | :-------------- | :---------------- | :---------- |
-| eventId        |        |                 | Required          | TBD         |
-| eventDateUtc   | Date   |                 | Required          | TBD         |
-| scriptKey      | String |                 | Required          |             |
-| shipmentDate   | Date   |                 | Required          |             |
-| trackingNumber | String |                 | Required          |             |
+| Field          | Type     | Character Limit | Required/Optional | Description |
+| :------------- | :------- | :-------------- | :---------------- | :---------- |
+| eventId        |          |                 | Required          | TBD         |
+| eventDateUtc   | DateTime |                 | Required          | TBD         |
+| scriptKey      | String   |                 | Required          |             |
+| shipmentDate   | DateTime |                 | Required          |             |
+| trackingNumber | String   |                 | Required          |             |
 
 ### RxIssue
 
-| Field        | Type   | Character Limit | Required/Optional | Description |
-| :----------- | :----- | :-------------- | :---------------- | :---------- |
-| eventId      |        |                 | Required          | TBD         |
-| eventDateUtc | Date   |                 | Required          | TBD         |
-| scriptKey    | String |                 | Required          |             |
-| issueMessage | String |                 | Required          |             |
+| Field        | Type     | Character Limit | Required/Optional | Description |
+| :----------- | :------- | :-------------- | :---------------- | :---------- |
+| eventId      |          |                 | Required          | TBD         |
+| eventDateUtc | DateTime |                 | Required          | TBD         |
+| scriptKey    | String   |                 | Required          |             |
+| issueMessage | String   |                 | Required          |             |
 
 ### RxCanceled
 
-| Field         | Type   | Character Limit | Required/Optional | Description |
-| :------------ | :----- | :-------------- | :---------------- | :---------- |
-| eventId       |        |                 | Required          | TBD         |
-| eventDateUtc  | Date   |                 | Required          | TBD         |
-| scriptKey     | String |                 | Required          |             |
-| statusMessage | String |                 | Required          |             |
+| Field         | Type     | Character Limit | Required/Optional | Description |
+| :------------ | :------- | :-------------- | :---------------- | :---------- |
+| eventId       |          |                 | Required          | TBD         |
+| eventDateUtc  | DateTime |                 | Required          | TBD         |
+| scriptKey     | String   |                 | Required          |             |
+| statusMessage | String   |                 | Required          |             |
 
 # Fill Request Data Object
 
