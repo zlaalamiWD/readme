@@ -42,7 +42,7 @@ next:
 | eventDateUtc   | DateTime |                 | Required          | TBD         |
 | scriptKey      | String   |                 | Required          |             |
 | shipmentDate   | DateTime |                 | Required          |             |
-| trackingNumber | String   |                 | Required          |             |
+| trackingNumber | String   | 40              | Required          |             |
 
 ### RxIssue
 
