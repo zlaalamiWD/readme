@@ -145,8 +145,6 @@ Client must send a Fill request with following details:
 | Content-Type                | application/json       |
 | HealthDyne-Subscription-Key | Provided by HealthDyne |
 
-<br />
-
 #### Sample Submit Fill Request
 
 > [POST https://(ENDPOINT)/v2/fill](https://\(ENDPOINT\)/v2/fill)
