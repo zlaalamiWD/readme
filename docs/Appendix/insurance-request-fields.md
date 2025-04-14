@@ -29,7 +29,7 @@ next:
 | patientKey |    | String                                                                                                               | 50              | Required          | Unique patient ID in Client system.                |
 | insurance  |    | Object\[[InsuranceDataObject](https://docs.healthdyne.com/v2.171/docs/insurance-request-fields#insurancedataobject)] |                 | Required          | Object containing patient's insurance information. |
 
-**InsuranceDataObject**
+#### InsuranceDataObject
 
 | Field             | Type   | Character Limit | Required/Optional | Description                                                                                                                                |
 | :---------------- | :----- | :-------------- | :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------- |
