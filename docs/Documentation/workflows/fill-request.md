@@ -41,7 +41,7 @@ The GET Fill Request Status API lets clients retrieve the status and event summa
 
 > \[GET https\://(ENDPOINT)/v2/fill/fillRequest?fillRequestKey= FillPatientSample1404] (https\://(ENDPOINT)/v2/fill/fillRequest?fillRequestKey= FillPatientSample1404)
 
-This tells the API to query for fillRequestKey FillPatientSample1404 and return relevant details.
+Click here to see \[GET Fill Request Query Data] ([https://docs.healthdyne.com/v2.171/docs/fill-request-fields#query-parameter](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#query-parameter))
 
 GET Fill Request
 
@@ -101,6 +101,8 @@ GET Fill Request
     ]
 }
 ```
+
+Click here to see \[Get Fill Request Data Object] ([https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object))
 
 The table below lists the potential response codes that can be received in response to a GET request.
 
@@ -177,6 +179,8 @@ Client must send a Fill request with following details:
 }
 ```
 
+Click here to see \[Submit Fill Request Data Object] ([https://docs.healthdyne.com/v2.171/docs/fill-request-fields#request-object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#request-object))
+
 #### Sample Submit Fill Response
 
 ```json
@@ -185,6 +189,8 @@ Client must send a Fill request with following details:
     "message": "The fill request was accepted"
 }
 ```
+
+Click here to see \[Submit Fill Response Data Object] ([https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object-1](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object-1))
 
 # Update Fill Request
 
@@ -228,6 +234,8 @@ Once an order has been created in HD system (using a Fill request), the update A
 }
 ```
 
+Click here to see \[Update Fill Request Data Object] ([https://docs.healthdyne.com/v2.171/docs/fill-request-fields#request-object-1](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#request-object-1))
+
 #### Sample Update Fill Response
 
 ```json
@@ -236,6 +244,8 @@ Once an order has been created in HD system (using a Fill request), the update A
     "message": "The fill update request was accepted"
 }
 ```
+
+Click here to see \[Update Fill Response Data Object] ([https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object-2](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object-2))
 
 # Cancel Fill Request
 
@@ -266,6 +276,8 @@ Once an order has been created in the HealthDyne system (using a Fill request), 
 }
 ```
 
+Click here to see \[Cancel Fill Request Data Object] ([https://docs.healthdyne.com/v2.171/docs/fill-request-fields#request-object-2](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#request-object-2))
+
 #### Sample Cancel Fill Request Response
 
 ```json
@@ -275,7 +287,7 @@ Once an order has been created in the HealthDyne system (using a Fill request), 
 }
 ```
 
-<br />
+Click here to see \[Cancel Response Data Object] ([https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object-3](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object-3))
 
 # Fill Request Status Mailbox Events
 
