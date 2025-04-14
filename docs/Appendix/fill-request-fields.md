@@ -74,9 +74,16 @@ next:
 
 ### Query Parameter
 
-### Request Object
+| Field          | Type   | Character Limit | Required/Optional | Description                                                               |
+| :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
+| fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
 
 ### Response Object
+
+| Field                      | Type   | Character Limit | Required/Optional | Description                                                               |
+| :------------------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
+| fillRequestKey             | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
+| FillRequestStatusConstants | Array  |                 |                   | TBD                                                                       |
 
 <br />
 
@@ -84,7 +91,19 @@ next:
 
 ### Request Object
 
+| Field          | Type   | Character Limit | Required/Optional | Description                                                                                                   |
+| :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------ |
+| fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking.                                     |
+| scriptKeys     | Array  |                 | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request).                        |
+| shipping       | Object |                 | Required          | Object containing shipping information for the order. See [Shipping](doc:fill-request-fields#shipping) table. |
+| insurance      | Object |                 | Optional          | Optionally specify insurance information to be used on the fill request.                                      |
+
 ### Response Object
+
+| Field          | Type   | Character Limit | Required/Optional | Description                                                               |
+| :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
+| fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
+| message        | String |                 | Required          | Status messages string.                                                   |
 
 <br />
 
@@ -92,7 +111,18 @@ next:
 
 ### Request Object
 
+| Field          | Type   | Character Limit | Required/Optional | Description                                                                                                   |
+| :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------ |
+| fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking.                                     |
+| scriptKeys     | Array  |                 | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request).                        |
+| shipping       | Object |                 | Required          | Object containing shipping information for the order. See [Shipping](doc:fill-request-fields#shipping) table. |
+
 ### Response Object
+
+| Field          | Type   | Character Limit | Required/Optional | Description                                                               |
+| :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
+| fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
+| message        | String |                 | Required          | Status messages string.                                                   |
 
 <br />
 
@@ -100,4 +130,15 @@ next:
 
 ### Request Object
 
+| Field          | Type   | Character Limit | Required/Optional | Description                                                                            |
+| :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------------- |
+| fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking.              |
+| scriptKeys     | Array  |                 | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
+| cancelReason   | String |                 | Required          | TBD                                                                                    |
+
 ### Response Object
+
+| Field          | Type   | Character Limit | Required/Optional | Description                                                               |
+| :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
+| fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
+| message        | String |                 | Required          | Status messages string.                                                   |
