@@ -136,45 +136,6 @@ The table below lists the potential response codes that can be received in respo
 | 401  | Unauthorized                                             |
 | 500  | Internal Server Error                                    |
 
-# Cancel Fill Request
-
-Once an order has been created in the HealthDyne system (using a Fill request), the Cancel API endpoint allows the client to cancel a fill request or specific script(s) within a Fill Request. **NOTE: The cancelation will be applied if the order has not been sent to our dispensing system for fulfillment.**
-
-#### Server
-
-##### Only HTTPS connections are accepted.
-
-| REQUEST TYPE | ENDPOINT                                |
-| :----------- | :-------------------------------------- |
-| POST (Test)  | partner.uat-welldyne.com/v2/fill/cancel |
-| POST (Prod)  | partner.welldyne.com/v2/fill/cancel     |
-
-#### Sample Cancel Fill Request
-
-> [POST https://(ENDPOINT)/v2/fill/cancel](https://\(ENDPOINT\)/v2/fill/cancel)
-
-#### Sample Cancel Fill Request Body
-
-```json
-{
-  "FillRequestKey": "FR178899",
-  "ScriptKeys": [
-    " 77351bb76d194f338c567b11ab8a789c"
-  ],
-  "CancelReason": "TEST"
-}
-```
-
-#### Sample Cancel Fill Request Response
-
-```json
-{
-    "fillRequestKey": "FR178899",
-    "message": "Order for Fill request Key [FR178899] has been canceled"
-}
-
-```
-
 # Update Fill Request
 
 Once an order has been created in HD system (using a Fill request), the update API endpoint allows client to update shipping address or shipping code for previously submitted fill request. NOTE: The update will be applied as long as order has not been sent to our dispensing system for fulfillment.
@@ -187,8 +148,6 @@ Once an order has been created in HD system (using a Fill request), the update A
 | :----------- | :------------------------------- |
 | PUT (Test)   | partner.uat-welldyne.com/v2/fill |
 | PUT (Prod)   | partner.welldyne.com/v2/fill     |
-
-<br />
 
 #### Sample Update Fill Request
 
@@ -251,7 +210,67 @@ Once an order has been created in HD system (using a Fill request), the update A
 }
 ```
 
+# Cancel Fill Request
+
+Once an order has been created in the HealthDyne system (using a Fill request), the Cancel API endpoint allows the client to cancel a fill request or specific script(s) within a Fill Request. **NOTE: The cancelation will be applied if the order has not been sent to our dispensing system for fulfillment.**
+
+#### Server
+
+##### Only HTTPS connections are accepted.
+
+| REQUEST TYPE | ENDPOINT                                |
+| :----------- | :-------------------------------------- |
+| POST (Test)  | partner.uat-welldyne.com/v2/fill/cancel |
+| POST (Prod)  | partner.welldyne.com/v2/fill/cancel     |
+
+#### Sample Cancel Fill Request
+
+> [POST https://(ENDPOINT)/v2/fill/cancel](https://\(ENDPOINT\)/v2/fill/cancel)
+
+#### Sample Cancel Fill Request Body
+
+```json
+{
+  "FillRequestKey": "FR178899",
+  "ScriptKeys": [
+    " 77351bb76d194f338c567b11ab8a789c"
+  ],
+  "CancelReason": "TEST"
+}
+```
+
+#### Sample Cancel Fill Request Response
+
+```json
+{
+    "fillRequestKey": "FR178899",
+    "message": "Order for Fill request Key [FR178899] has been canceled"
+}
+
+```
+
 <br />
+
+```json
+{
+    "FillRequestKey": "NewNSCP24FILLREQUEST987660117",
+    "Shipping": {
+        "Address": {
+            "Line1": "UpdateAgain1",
+            "Line2": null,
+            "Line3": null,
+            "City": "LAKELAND",
+            "State": "FL",
+            "ZipCode": "33810",
+            "CountryCode": "US",
+            "ZipCodeFour": null
+        },
+        "ShippingCode": "UPS 2D",
+       "SaturdayDelivery": false,
+       "SignatureRequired": false
+    }
+}
+```
 
 # Fill Request Status Mailbox Events
 
