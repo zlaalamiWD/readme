@@ -251,7 +251,7 @@ Once an order has been created in the HealthDyne system (using a Fill request), 
 
 #### Server
 
-##### Only HTTPS connections are accepted.
+###### Only HTTPS connections are accepted.
 
 | METHOD TYPE | ENDPOINT                                |
 | :---------- | :-------------------------------------- |
