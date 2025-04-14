@@ -232,7 +232,7 @@ Once an order has been created in HD system (using a Fill request), the update A
 }
 ```
 
-Click here to see \[Update Fill Request Data Object] ([https://docs.healthdyne.com/v2.171/docs/fill-request-fields#request-object-1](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#request-object-1))
+Click here to see [Update Fill Request Data Object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#request-object-1)
 
 #### Sample Update Fill Response
 
