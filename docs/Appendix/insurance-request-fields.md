@@ -57,12 +57,14 @@ next:
 
 # Create Insurance Request Data Object
 
+#### Request Object
+
 | Field      | Type                                                                                                                              | Character Limit | Required/Optional | Description                                        |
 | :--------- | :-------------------------------------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------- |
 | patientKey | String                                                                                                                            | 50              | Required          | Unique patient ID in Client system.                |
 | insurance  | Object\[[CreateInsuranceDataObject](https://docs.healthdyne.com/v2.171/docs/insurance-request-fields#createinsurancedataobject) ] |                 | Required          | Object containing patient's insurance information. |
 
-# CreateInsuranceDataObject
+#### CreateInsuranceDataObject
 
 | Field             | Type   | Character Limit | Required/Optional | Description                                              |
 | :---------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------- |
@@ -74,7 +76,7 @@ next:
 | relationshipCode  | String | 1               | Optional          | Number 0 to 9. See relationship code table below.        |
 | insuranceMemberID | String | 20              | Optional          |                                                          |
 
-# Create Insurance Response Data Object
+#### Response Object
 
 | Field      | Type   | Character Limit | Required/Optional | Description                         |
 | :--------- | :----- | :-------------- | :---------------- | :---------------------------------- |
