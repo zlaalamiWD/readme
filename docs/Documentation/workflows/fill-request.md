@@ -57,57 +57,13 @@ Client must send a Fill request with following details:
 #### Sample Submit Fill Request Body
 
 ```json
-{
-  "fillRequestKey": "8a97815e-ef31-43ee-af87",
-  "scriptKeys": ["e156daa5-1905-42c5-9e2e"],
-  "shipping": {
-    "address": {
-      "line1": "500 Eagles Landin Dr",
-      "line2": null,
-      "line3": null,
-      "city": "Lakeland",
-      "state": "FL",
-      "zipCode": "33810",
-      "countryCode": "US"
-    },
-    "shippingCode": "UPS 1D",
-    "saturdayDelivery": true,
-    "signatureRequired": true
-  },
-  "insurance": {
-    "planNumber":"209235",
-    "coPay":"32.50",
-    "transactionNumber":"pi_305qndABfMSbKdKQ0NA1r4L5"
-  }
-}
+TBD
 ```
 
 #### Sample Submit Fill Response
 
 ```json
-{
-  "fillRequestKey": "8a97815e-ef31-43ee-af87",
-  "scriptKeys": ["e156daa5-1905-42c5-9e2e"],
-  "shipping": {
-    "address": {
-      "line1": "500 Eagles Landin Dr",
-      "line2": null,
-      "line3": null,
-      "city": "Lakeland",
-      "state": "FL",
-      "zipCode": "33810",
-      "countryCode": "US"
-    },
-    "shippingCode": "UPS 1D",
-    "saturdayDelivery": true,
-    "signatureRequired": true
-  },
-  "insurance": {
-    "planNumber":"209235",
-    "coPay":"32.50",
-    "transactionNumber":"pi_305qndABfMSbKdKQ0NA1r4L5"
-  }
-}
+TBD
 ```
 
 # Get Fill Request Status
