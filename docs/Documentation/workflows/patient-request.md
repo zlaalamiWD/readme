@@ -20,80 +20,6 @@ Use POST method to add/create a patient and PUT method to update existing patien
 
 API field validation information in Appendix [Patient Request Fields](doc:patient-request-fields)
 
-### Server
-
-##### Only https connections are accepted.
-
-| REQUEST TYPE       | ENDPOINT                          |
-| :----------------- | :-------------------------------- |
-| POST or PUT (Test) | api.uat-healthdyne.com/v2/patient |
-| POST or PUT (Prod) | api.healthdyne.com/v2/patient     |
-
-### Header
-
-| Key                         | Value                  |
-| :-------------------------- | :--------------------- |
-| Accept                      | application/json       |
-| Content-Type                | application/json       |
-| HealthDyne-Subscription-Key | Provided by HealthDyne |
-
-### Sample Patient Request
-
-```json
-{
-  "patient": {
-    "patientKey":"12389990",
-    "firstName": "JANE",
-    "lastName": "DOE",
-    "birthDate": "1956-03-02",
-    "gender": "F",
-    "address": {
-      "addressType": "HOME",
-      "line1": "100 Rivers Edge Dr.",
-      "line2": null,
-      "line3": null,
-      "city": "Temple Terrace",
-      "state": "FL",
-      "zipCode": "02155",
-      "countryCode": "US",
-      "defaultAddress":True
-    },
-    "contact": {
-      "contactType": "PHONE",
-      "contactAddress": "5712345678"
-    },
-    "allergies": ["Amoxicillin"],
-    "externalMedications": [
-      {
-        "ndc": "00045049660",
-        "startDate": "2022-03-02",
-        "endDate": "2022-04-02"
-      }
-    ]
-  }
-}
-```
-
-# Successful Response Messages
-
-#### Patient Added
-
-```json
-{
-  "patientKey": "12389990",
-  "message": "The patient was added."
-}
-```
-
-#### Patient Updated
-
-```json
-{
-  "patientKey": "12389990",
-  "message": "The patient was updated."
-}
-```
-
 # Get Patient
 
 Once a patient has been registered successfully, the GET Patient API allows clients to retrieve patient details (active details) from HD pharmacy system using PatientKey.
@@ -178,7 +104,7 @@ The below table lists the potential response codes that can be received in respo
 
 # Find Patient
 
-The Find Patient API (GET method) allows clients to lookup patientKey in HD system using following parameters: First Name, Last Name, DOB and Zip code. NOTE: The parameter fields should be separated with an ampersand (&) when using the API endpoint. If a match is found, HD returns matching patientKey to retrieve details using Get Patient API. 
+The Find Patient API (GET method) allows clients to lookup patientKey in HD system using following parameters: First Name, Last Name, DOB and Zip code. NOTE: The parameter fields should be separated with an ampersand (&) when using the API endpoint. If a match is found, HD returns matching patientKey to retrieve details using Get Patient API.
 
 ### Server
 
@@ -225,10 +151,10 @@ The "Get Patient script/Prescription" endpoint allows retrieval of all scripts a
 
 ##### Only https connections are accepted.
 
-| REQUEST TYPE | ENDPOINT                                                                 |
-| :----------- | :----------------------------------------------------------------------- |
-| GET (Test)   | api.uat-healthdyne.com/v2/patient/prescription?patientKey=\<patientKey\> |
-| GET (Prod)   | api.healthdyne.com/v2/patient/prescription?patientKey=\<patientKey\>     |
+| REQUEST TYPE | ENDPOINT                                                                |
+| :----------- | :---------------------------------------------------------------------- |
+| GET (Test)   | api.uat-healthdyne.com/v2/patient/prescription?patientKey=\<patientKey> |
+| GET (Prod)   | api.healthdyne.com/v2/patient/prescription?patientKey=\<patientKey>     |
 
 ### Header
 
@@ -263,5 +189,83 @@ The below table lists the potential response codes that can be received in respo
     "scriptKeys": [
         "0ed290dbb11224ea0f9e27"
     ]
+}
+```
+
+<br />
+
+# Post Patient
+
+### Server
+
+##### Only https connections are accepted.
+
+| REQUEST TYPE       | ENDPOINT                          |
+| :----------------- | :-------------------------------- |
+| POST or PUT (Test) | api.uat-healthdyne.com/v2/patient |
+| POST or PUT (Prod) | api.healthdyne.com/v2/patient     |
+
+### Header
+
+| Key                         | Value                  |
+| :-------------------------- | :--------------------- |
+| Accept                      | application/json       |
+| Content-Type                | application/json       |
+| HealthDyne-Subscription-Key | Provided by HealthDyne |
+
+### Sample Patient Request
+
+```json
+{
+  "patient": {
+    "patientKey":"12389990",
+    "firstName": "JANE",
+    "lastName": "DOE",
+    "birthDate": "1956-03-02",
+    "gender": "F",
+    "address": {
+      "addressType": "HOME",
+      "line1": "100 Rivers Edge Dr.",
+      "line2": null,
+      "line3": null,
+      "city": "Temple Terrace",
+      "state": "FL",
+      "zipCode": "02155",
+      "countryCode": "US",
+      "defaultAddress":True
+    },
+    "contact": {
+      "contactType": "PHONE",
+      "contactAddress": "5712345678"
+    },
+    "allergies": ["Amoxicillin"],
+    "externalMedications": [
+      {
+        "ndc": "00045049660",
+        "startDate": "2022-03-02",
+        "endDate": "2022-04-02"
+      }
+    ]
+  }
+}
+```
+
+# Successful Response Messages
+
+#### Patient Added
+
+```json
+{
+  "patientKey": "12389990",
+  "message": "The patient was added."
+}
+```
+
+#### Patient Updated
+
+```json
+{
+  "patientKey": "12389990",
+  "message": "The patient was updated."
 }
 ```
