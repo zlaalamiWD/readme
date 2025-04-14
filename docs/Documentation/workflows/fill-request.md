@@ -75,10 +75,10 @@ Client must send a Fill request with following details:
 
 ##### Only HTTPS connections are accepted.
 
-| REQUEST TYPE | ENDPOINT                       |
-| :----------- | :----------------------------- |
-| POST (Test)  | api.uat-healthdyne.com/v2/fill |
-| POST (Prod)  | api.healthdyne.com/v2/fill     |
+| METHOD TYPE | ENDPOINT                       |
+| :---------- | :----------------------------- |
+| POST (Test) | api.uat-healthdyne.com/v2/fill |
+| POST (Prod) | api.healthdyne.com/v2/fill     |
 
 #### Header
 
@@ -114,10 +114,10 @@ Once an order has been created in HD system (using a Fill request), the update A
 
 ##### Only HTTPS connections are accepted.
 
-| REQUEST TYPE | ENDPOINT                         |
-| :----------- | :------------------------------- |
-| PUT (Test)   | partner.uat-welldyne.com/v2/fill |
-| PUT (Prod)   | partner.welldyne.com/v2/fill     |
+| METHOD TYPE | ENDPOINT                         |
+| :---------- | :------------------------------- |
+| PUT (Test)  | partner.uat-welldyne.com/v2/fill |
+| PUT (Prod)  | partner.welldyne.com/v2/fill     |
 
 #### Sample Update Fill Request
 
@@ -143,10 +143,10 @@ Once an order has been created in the HealthDyne system (using a Fill request), 
 
 ##### Only HTTPS connections are accepted.
 
-| REQUEST TYPE | ENDPOINT                                |
-| :----------- | :-------------------------------------- |
-| POST (Test)  | partner.uat-welldyne.com/v2/fill/cancel |
-| POST (Prod)  | partner.welldyne.com/v2/fill/cancel     |
+| METHOD TYPE | ENDPOINT                                |
+| :---------- | :-------------------------------------- |
+| POST (Test) | partner.uat-welldyne.com/v2/fill/cancel |
+| POST (Prod) | partner.welldyne.com/v2/fill/cancel     |
 
 #### Sample Cancel Fill Request
 
