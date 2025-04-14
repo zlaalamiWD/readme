@@ -14,6 +14,54 @@ next:
 >
 > An empty string "" is considered a value and validation rules will apply (length/valid code/etc). Only null or missing elements will use default values.
 
+# Fill Request Status Constant Data Objects
+
+### Submitted
+
+| Field        | Type  | Character Limit | Required/Optional | Description                                                                            |
+| :----------- | :---- | :-------------- | :---------------- | :------------------------------------------------------------------------------------- |
+| eventId      |       |                 | Required          | TBD                                                                                    |
+| eventDateUtc | Date  |                 | Required          | TBD                                                                                    |
+| scriptKeys   | Array |                 | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
+
+### RxVerified
+
+| Field         | Type   | Character Limit | Required/Optional | Description |
+| :------------ | :----- | :-------------- | :---------------- | :---------- |
+| eventId       |        |                 | Required          | TBD         |
+| eventDateUtc  | Date   |                 | Required          | TBD         |
+| scriptKey     | String |                 | Required          |             |
+| verifiedDate  | Date   |                 | Required          |             |
+| statusMessage | String |                 | Required          |             |
+
+### RxShipped
+
+| Field          | Type   | Character Limit | Required/Optional | Description |
+| :------------- | :----- | :-------------- | :---------------- | :---------- |
+| eventId        |        |                 | Required          | TBD         |
+| eventDateUtc   | Date   |                 | Required          | TBD         |
+| scriptKey      | String |                 | Required          |             |
+| shipmentDate   | Date   |                 | Required          |             |
+| trackingNumber | String |                 | Required          |             |
+
+### RxIssue
+
+| Field        | Type   | Character Limit | Required/Optional | Description |
+| :----------- | :----- | :-------------- | :---------------- | :---------- |
+| eventId      |        |                 | Required          | TBD         |
+| eventDateUtc | Date   |                 | Required          | TBD         |
+| scriptKey    | String |                 | Required          |             |
+| issueMessage | String |                 | Required          |             |
+
+### RxCanceled
+
+| Field         | Type   | Character Limit | Required/Optional | Description |
+| :------------ | :----- | :-------------- | :---------------- | :---------- |
+| eventId       |        |                 | Required          | TBD         |
+| eventDateUtc  | Date   |                 | Required          | TBD         |
+| scriptKey     | String |                 | Required          |             |
+| statusMessage | String |                 | Required          |             |
+
 # Fill Request Data Object
 
 | Field          | Type   | Character Limit | Required/Optional | Description                                                                                                   |
