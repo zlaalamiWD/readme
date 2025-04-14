@@ -16,7 +16,7 @@ next:
 
 # Get Insurance
 
-**Query Parameter**
+# Query Parameter
 
 | Parameter  |    | Type   | Character Limit | Required/Optional | Description                         |
 | :--------- | :- | :----- | :-------------- | :---------------- | :---------------------------------- |
