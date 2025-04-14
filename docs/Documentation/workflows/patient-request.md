@@ -33,6 +33,16 @@ Once a patient has been registered successfully, the GET Patient API allows clie
 | GET (Test)   | partner.uat-welldyne.com/v2/Patient? |
 | GET (Prod)   | partner.welldyne.com/v2/Patient?     |
 
+<br />
+
+### Header
+
+| Key                         | Value                  |
+| :-------------------------- | :--------------------- |
+| Accept                      | application/json       |
+| Content-Type                | application/json       |
+| HealthDyne-Subscription-Key | Provided by HealthDyne |
+
 #### Sample GET Request
 
 > [https://partner.uat-welldyne.com/v2/Patient?PatientKey=TestreadPatient171](https://partner.uat-welldyne.com/v2/Patient?PatientKey=TestreadPatient171)
@@ -157,13 +167,7 @@ The "Get Patient script/Prescription" endpoint allows retrieval of all scripts a
 | GET (Test)   | api.uat-healthdyne.com/v2/patient/prescription?patientKey=\<patientKey> |
 | GET (Prod)   | api.healthdyne.com/v2/patient/prescription?patientKey=\<patientKey>     |
 
-### Header
 
-| Key                         | Value                  |
-| :-------------------------- | :--------------------- |
-| Accept                      | application/json       |
-| Content-Type                | application/json       |
-| HealthDyne-Subscription-Key | Provided by HealthDyne |
 
 #### Sample GET Request
 
