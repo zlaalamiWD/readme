@@ -128,6 +128,7 @@ The Find Patient API (GET method) allows clients to lookup patientKey in HD syst
 
 | Key                         | Value                  |
 | :-------------------------- | :--------------------- |
+| Accept                      | application/json       |
 | Content-Type                | application/json       |
 | HealthDyne-Subscription-Key | Provided by HealthDyne |
 
