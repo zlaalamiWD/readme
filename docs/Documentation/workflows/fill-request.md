@@ -99,7 +99,7 @@ The GET Fill Request Status API lets clients retrieve the status and event summa
 
 #### Sample GET Status Request
 
-> [https://api.uat-healthdyne.com/v2/Fill/fillRequest?fillRequestKey=NewNSCP24FILLREQUEST987660102](https://api.uat-healthdyne.com/v2/Fill/fillRequest?fillRequestKey=NewNSCP24FILLREQUEST987660102)
+> \[GET https\://(ENDPOINT)/v2/Fill/fillRequest?fillRequestKey=NewNSCP24FILLREQUEST987660102]\(GET https\:/(ENDPOINT)/v2/Fill/fillRequest?fillRequestKey=NewNSCP24FILLREQUEST987660102)
 
 This tells the API to query for fillRequestKey NewNSCP24FILLREQUEST987660102 and return relevant details.
 
@@ -160,6 +160,10 @@ Once an order has been created in the HealthDyne system (using a Fill request), 
 | POST (Prod)  | partner.welldyne.com/v2/fill/cancel     |
 
 #### Sample Cancel Fill Request
+
+> [POST https://(ENDPOINT)/v2/fill/cancel](https://\(ENDPOINT\)/v2/fill/cancel)
+
+#### Sample Cancel Fill Request Body
 
 ```json
 {
