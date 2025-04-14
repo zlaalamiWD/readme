@@ -243,7 +243,7 @@ Click here to see [Update Fill Request Data Object](https://docs.healthdyne.com/
 }
 ```
 
-Click here to see \[Update Fill Response Data Object] ([https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object-2](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object-2))
+Click here to see [Update Fill Response Data Object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object-2)
 
 # Cancel Fill Request
 
