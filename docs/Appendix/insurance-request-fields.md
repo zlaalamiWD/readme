@@ -14,7 +14,9 @@ next:
 >
 > An empty string "" is considered a value and validation rules will apply (length/valid code/etc). Only null or missing elements will use default values.
 
-# Get Insurance Request Path Query Parameter
+# Get Insurance
+
+**Query Parameter**
 
 | Parameter  |    | Type   | Character Limit | Required/Optional | Description                         |
 | :--------- | :- | :----- | :-------------- | :---------------- | :---------------------------------- |
