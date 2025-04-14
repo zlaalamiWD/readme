@@ -31,6 +31,7 @@ Once a patient has been registered successfully, the GET Patient API allows clie
 | REQUEST TYPE | ENDPOINT                             |
 | :----------- | :----------------------------------- |
 | GET (Test)   | partner.uat-welldyne.com/v2/Patient? |
+| GET (Prod)   | partner.welldyne.com/v2/Patient?     |
 
 #### Sample GET Request
 
