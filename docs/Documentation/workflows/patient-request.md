@@ -124,6 +124,7 @@ The Find Patient API (GET method) allows clients to lookup patientKey in HD syst
 | REQUEST TYPE | ENDPOINT                                  |
 | :----------- | :---------------------------------------- |
 | GET (Test)   | partner.uat-welldyne.com/v2/Patient/find? |
+| GET (Prod)   | partner.welldyne.com/v2/Patient/find?     |
 
 #### Sample GET Request
 
@@ -166,8 +167,6 @@ The "Get Patient script/Prescription" endpoint allows retrieval of all scripts a
 | :----------- | :---------------------------------------------------------------------- |
 | GET (Test)   | api.uat-healthdyne.com/v2/patient/prescription?patientKey=\<patientKey> |
 | GET (Prod)   | api.healthdyne.com/v2/patient/prescription?patientKey=\<patientKey>     |
-
-
 
 #### Sample GET Request
 
