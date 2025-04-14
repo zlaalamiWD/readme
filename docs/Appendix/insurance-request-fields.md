@@ -14,7 +14,7 @@ next:
 >
 > An empty string "" is considered a value and validation rules will apply (length/valid code/etc). Only null or missing elements will use default values.
 
-# Get Insurance
+# Get Insurance Data Object
 
 #### Query Parameter
 
