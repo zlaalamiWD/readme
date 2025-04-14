@@ -146,20 +146,20 @@ The table below lists the potential response codes that can be received in respo
 | 401  | Unauthorized                                             |
 | 500  | Internal Server Error                                    |
 
-# Cancel Fill Request:
+# Cancel Fill Request
 
-Once an order has been created in HD system (using a Fill request), the Cancel API endpoint allows client to cancel a fill request or specific script(s) within a Fill Request. NOTE: The cancelation will be applied as long as order has not been sent to our dispensing system for fulfillment.
+Once an order has been created in the HealthDyne system (using a Fill request), the Cancel API endpoint allows the client to cancel a fill request or specific script(s) within a Fill Request. **NOTE: The cancelation will be applied if the order has not been sent to our dispensing system for fulfillment.**
 
-### Server
+#### Server
 
-##### Only https connections are accepted.
+##### Only HTTPS connections are accepted.
 
 | REQUEST TYPE | ENDPOINT                                |
 | :----------- | :-------------------------------------- |
 | POST (Test)  | partner.uat-welldyne.com/v2/fill/cancel |
 | POST (Prod)  | partner.welldyne.com/v2/fill/cancel     |
 
-### Sample Cancel Fill Request
+#### Sample Cancel Fill Request
 
 ```json
 {
@@ -171,7 +171,7 @@ Once an order has been created in HD system (using a Fill request), the Cancel A
 }
 ```
 
-### Sample Cancel Fill Request Response
+#### Sample Cancel Fill Request Response
 
 ```json
 {
@@ -216,8 +216,6 @@ Once an order has been created in HD system (using a Fill request), the update A
     }
 }
 ```
-
-
 
 #### Sample Status Response
 
