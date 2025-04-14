@@ -10,8 +10,8 @@ metadata:
 next:
   description: ''
 ---
-> 📃 Note: 
-> 
+> 📃 Note:
+>
 > An empty string "" is considered a value and validation rules will apply (length/valid code/etc). Only null or missing elements will use default values.
 
 # Patient
@@ -47,15 +47,15 @@ next:
 | Field          | Type   | Character Limit | Required/Optional | Description                                                                                        |
 | :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------- |
 | contactType    | String | 15              | Optional          | Patient Contact – Phone, Home Phone, Day Phone, Work Phone, Fax Number, Cellular Number, Alternate |
-| contactAddress | String | 10              | Required\*        | Contact Details. For instance: Populate phone number if contact type is phone. Format:XXXXXXXXXX   |
+| contactAddress | String | 10              | Required          | Contact Details. For instance: Populate phone number if contact type is phone. Format:XXXXXXXXXX   |
 
 \*Required if the Contact object is being provided in the Patient object.
 
 # Allergies
 
-| Field     | Type           | Character Limit | Required/Optional | Description                                                                                                 |
-| :-------- | :------------- | :-------------- | :---------------- | :---------------------------------------------------------------------------------------------------------- |
-| allergies | String/[Array] | 40(each)        | Required          | See valid allergy types below. The allergies field is required, if patient has no allergies pass "NO KNOWN" |
+| Field     | Type            | Character Limit | Required/Optional | Description                                                                                                 |
+| :-------- | :-------------- | :-------------- | :---------------- | :---------------------------------------------------------------------------------------------------------- |
+| allergies | String/\[Array] | 40(each)        | Required          | See valid allergy types below. The allergies field is required, if patient has no allergies pass "NO KNOWN" |
 
 |                        |                                        |                          |
 | :--------------------- | :------------------------------------- | :----------------------- |
@@ -69,7 +69,7 @@ next:
 | SULFA                  | TETRACYCLINES                          | IBUPROFEN                |
 
 > 📃 Additional Allergy Information
-> 
+>
 > Allergy information not matching the defined allergy list will still be accepted. However the information will be added in the HealthDyne system under the "notes" section of the Patient's profile for pharmacist to review. Each non-defined allergy list entry has a 40 character limit.
 
 # External Medications
