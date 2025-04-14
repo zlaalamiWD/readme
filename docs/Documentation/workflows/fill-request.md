@@ -132,7 +132,7 @@ Client must send a Fill request with following details:
     "planNumber":"209235",
     "coPay":"32.50",
     "transactionNumber":"pi_305qndABfMSbKdKQ0NA1r4L5",
-	"personCode": "001",
+		"personCode": "001",
     "relationshipCode": "02"
   }
 }
