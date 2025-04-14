@@ -41,7 +41,7 @@ The GET Fill Request Status API lets clients retrieve the status and event summa
 
 > \[GET https\://(ENDPOINT)/v2/fill/fillRequest?fillRequestKey= FillPatientCancel2723]\(https\://(ENDPOINT)/v2/fill/fillRequest?fillRequestKey= FillPatientCancel2723)
 
-This tells the API to query for fillRequestKey NewNSCP24FILLREQUEST987660102 and return relevant details.
+This tells the API to query for fillRequestKey FillPatientCancel2723 and return relevant details.
 
 #### Sample GET Status Response
 
@@ -59,37 +59,6 @@ This tells the API to query for fillRequestKey NewNSCP24FILLREQUEST987660102 and
     "rxShipped": [],
     "rxIssue": [],
     "rxCanceled": [],
-    "rejected": []
-}
-```
-```Text json
-{
-    "fillRequestKey": "NewNSCP24FILLREQUEST987660102",
-    "submitted": [
-        {
-            "eventId": "116957",
-            "eventDateUtc": "2024-03-27T16:22:17.760822Z",
-            "scriptKeys": []
-        }
-    ],
-    "rxVerified": [],
-    "rxShipped": [],
-    "rxIssue": [
-        {
-            "eventId": "116959",
-            "eventDateUtc": "2024-03-27T16:25:35.333628Z",
-            "scriptKey": "3081ccf283ed41b2977a7e67649f8374",
-            "issueMessage": "REJECTED 533 HEALTHDYNE RX REJECTED - TEST FOR ORDER DETAIL"
-        }
-    ],
-    "rxCanceled": [
-        {
-            "eventId": "116960",
-            "eventDateUtc": "2024-03-27T16:30:56.077151Z",
-            "scriptKey": "3081ccf283ed41b2977a7e67649f8374",
-            "statusMessage": "ORDER CANCELED"
-        }
-    ],
     "rejected": []
 }
 ```
