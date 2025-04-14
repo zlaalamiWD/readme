@@ -16,7 +16,47 @@ See [Fill](ref:post_v2-fill) API reference for request message fields.
 
 This API lets client define when the order needs to be initiated in HD system and also defines the number of prescription/scripts that needs to be consolidated in one order. A client can also use the GET method of Fill Request to retrieve current status.
 
-<br />
+# Get Fill Request Status
+
+The GET Fill Request Status API lets clients retrieve the status and event summary for previously submitted Fill Requests.
+
+#### Server
+
+##### Only HTTPS connections are accepted.
+
+| METHOD TYPE | ENDPOINT                                                                    |
+| :---------- | :-------------------------------------------------------------------------- |
+| GET (Test)  | api.uat-healthdyne.com/v2/FILL/fillRequest?fillRequestKey=\<fillRequestKey> |
+| GET (Prod)  | api.healthdyne.com/v2/FILL/fillRequest?fillRequestKey=\<fillRequestKey>     |
+
+#### Header
+
+| Key                         | Value                  |
+| :-------------------------- | :--------------------- |
+| Accept                      | application/json       |
+| Content-Type                | application/json       |
+| HealthDyne-Subscription-Key | Provided by HealthDyne |
+
+#### Sample GET Status Request
+
+> [GET https://(ENDPOINT)/v2/fill/fillRequest?fillRequestKey=NewNSCP24FILLREQUEST987660102](https://\(ENDPOINT\)/v2/fill/fillRequest?fillRequestKey=NewNSCP24FILLREQUEST987660102)
+
+This tells the API to query for fillRequestKey NewNSCP24FILLREQUEST987660102 and return relevant details.
+
+#### Sample GET Status Response
+
+```json
+TBD
+```
+
+The table below lists the potential response codes that can be received in response to a GET request.
+
+| Code | Description                                              |
+| :--- | :------------------------------------------------------- |
+| 200  | Fill Request status details returned \| No records found |
+| 400  | Bad Request – typically header is missing key            |
+| 401  | Unauthorized                                             |
+| 500  | Internal Server Error                                    |
 
 # Submit Fill Request
 
@@ -66,76 +106,6 @@ TBD
 TBD
 ```
 
-# Get Fill Request Status
-
-The GET Fill Request Status API lets clients retrieve the status and event summary for previously submitted Fill Requests.
-
-#### Server
-
-##### Only HTTPS connections are accepted.
-
-| METHOD TYPE | ENDPOINT                                                                    |
-| :---------- | :-------------------------------------------------------------------------- |
-| GET (Test)  | api.uat-healthdyne.com/v2/FILL/fillRequest?fillRequestKey=\<fillRequestKey> |
-| GET (Prod)  | api.healthdyne.com/v2/FILL/fillRequest?fillRequestKey=\<fillRequestKey>     |
-
-#### Header
-
-| Key                         | Value                  |
-| :-------------------------- | :--------------------- |
-| Accept                      | application/json       |
-| Content-Type                | application/json       |
-| HealthDyne-Subscription-Key | Provided by HealthDyne |
-
-#### Sample GET Status Request
-
-> [GET https://(ENDPOINT)/v2/fill/fillRequest?fillRequestKey=NewNSCP24FILLREQUEST987660102](https://\(ENDPOINT\)/v2/fill/fillRequest?fillRequestKey=NewNSCP24FILLREQUEST987660102)
-
-This tells the API to query for fillRequestKey NewNSCP24FILLREQUEST987660102 and return relevant details.
-
-#### Sample GET Status Response
-
-```json
-{
-    "fillRequestKey": "NewNSCP24FILLREQUEST987660102",
-    "submitted": [
-        {
-            "eventId": "116957",
-            "eventDateUtc": "2024-03-27T16:22:17.760822Z",
-            "scriptKeys": []
-        }
-    ],
-    "rxVerified": [],
-    "rxShipped": [],
-    "rxIssue": [
-        {
-            "eventId": "116959",
-            "eventDateUtc": "2024-03-27T16:25:35.333628Z",
-            "scriptKey": "3081ccf283ed41b2977a7e67649f8374",
-            "issueMessage": "REJECTED 533 HEALTHDYNE RX REJECTED - TEST FOR ORDER DETAIL"
-        }
-    ],
-    "rxCanceled": [
-        {
-            "eventId": "116960",
-            "eventDateUtc": "2024-03-27T16:30:56.077151Z",
-            "scriptKey": "3081ccf283ed41b2977a7e67649f8374",
-            "statusMessage": "ORDER CANCELED"
-        }
-    ],
-    "rejected": []
-}
-```
-
-The table below lists the potential response codes that can be received in response to a GET request.
-
-| Code | Description                                              |
-| :--- | :------------------------------------------------------- |
-| 200  | Fill Request status details returned \| No records found |
-| 400  | Bad Request – typically header is missing key            |
-| 401  | Unauthorized                                             |
-| 500  | Internal Server Error                                    |
-
 # Update Fill Request
 
 Once an order has been created in HD system (using a Fill request), the update API endpoint allows client to update shipping address or shipping code for previously submitted fill request. NOTE: The update will be applied as long as order has not been sent to our dispensing system for fulfillment.
@@ -156,58 +126,13 @@ Once an order has been created in HD system (using a Fill request), the update A
 #### Sample Update Fill Request Body
 
 ```json
-{
-    "FillRequestKey": "NewNSCP24FILLREQUEST987660117",
-    "Shipping": {
-        "Address": {
-            "Line1": "UpdateAgain1",
-            "Line2": null,
-            "Line3": null,
-            "City": "LAKELAND",
-            "State": "FL",
-            "ZipCode": "33810",
-            "CountryCode": "US",
-            "ZipCodeFour": null
-        },
-        "ShippingCode": "UPS 2D",
-       "SaturdayDelivery": false,
-       "SignatureRequired": false
-    }
-}
+TBD
 ```
 
 #### Sample Update Fill Response
 
 ```json
-{
-    "fillRequestKey": "NewNSCP24FILLREQUEST987660102",
-    "submitted": [
-        {
-            "eventId": "116957",
-            "eventDateUtc": "2024-03-27T16:22:17.760822Z",
-            "scriptKeys": []
-        }
-    ],
-    "rxVerified": [],
-    "rxShipped": [],
-    "rxIssue": [
-        {
-            "eventId": "116959",
-            "eventDateUtc": "2024-03-27T16:25:35.333628Z",
-            "scriptKey": "3081ccf283ed41b2977a7e67649f8374",
-            "issueMessage": "REJECTED 533 HEALTHDYNE RX REJECTED - TEST FOR ORDER DETAIL"
-        }
-    ],
-    "rxCanceled": [
-        {
-            "eventId": "116960",
-            "eventDateUtc": "2024-03-27T16:30:56.077151Z",
-            "scriptKey": "3081ccf283ed41b2977a7e67649f8374",
-            "statusMessage": "ORDER CANCELED"
-        }
-    ],
-    "rejected": []
-}
+TBD
 ```
 
 # Cancel Fill Request
@@ -230,47 +155,16 @@ Once an order has been created in the HealthDyne system (using a Fill request), 
 #### Sample Cancel Fill Request Body
 
 ```json
-{
-  "FillRequestKey": "FR178899",
-  "ScriptKeys": [
-    " 77351bb76d194f338c567b11ab8a789c"
-  ],
-  "CancelReason": "TEST"
-}
+TBD
 ```
 
 #### Sample Cancel Fill Request Response
 
 ```json
-{
-    "fillRequestKey": "FR178899",
-    "message": "Order for Fill request Key [FR178899] has been canceled"
-}
-
+TBD
 ```
 
 <br />
-
-```json
-{
-    "FillRequestKey": "NewNSCP24FILLREQUEST987660117",
-    "Shipping": {
-        "Address": {
-            "Line1": "UpdateAgain1",
-            "Line2": null,
-            "Line3": null,
-            "City": "LAKELAND",
-            "State": "FL",
-            "ZipCode": "33810",
-            "CountryCode": "US",
-            "ZipCodeFour": null
-        },
-        "ShippingCode": "UPS 2D",
-       "SaturdayDelivery": false,
-       "SignatureRequired": false
-    }
-}
-```
 
 # Fill Request Status Mailbox Events
 
