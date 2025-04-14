@@ -188,7 +188,7 @@ Click here to see [Get Fill Request Data Object](https://docs.healthdyne.com/v2.
 }
 ```
 
-Click here to see \[Submit Fill Response Data Object] ([https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object-1](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object-1))
+Click here to see [Submit Fill Response Data Object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object-1)
 
 # Update Fill Request
 
