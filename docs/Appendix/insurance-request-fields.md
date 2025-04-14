@@ -39,7 +39,7 @@ next:
 | pcn               | String | 10              | Optional          | Insurance PCN information.                                                                                                                 |
 | personCode        | String | 3               | Optional          | Number 0 to 9.                                                                                                                             |
 | relationshipCode  | String | 1               | Optional          | Number 0 to 9. See relationship code table \[[below](https://docs.healthdyne.com/v2.171/docs/insurance-request-fields#relationship-codes)] |
-| insuranceMemberId | String |                 | Optional          |                                                                                                                                            |
+| insuranceMemberId | String | 20              | Optional          |                                                                                                                                            |
 
 # Relationship Codes
 
@@ -72,27 +72,27 @@ next:
 | pcn               | String | 10              | Optional          | Insurance PCN information.                               |
 | personCode        | String | 3               | Optional          | Number 0 to 9.                                           |
 | relationshipCode  | String | 1               | Optional          | Number 0 to 9. See relationship code table below.        |
-| insuranceMemberID | String |                 | Optional          |                                                          |
+| insuranceMemberID | String | 20              | Optional          |                                                          |
 
 # Create Insurance Response Data Object
 
 | Field      | Type   | Character Limit | Required/Optional | Description                         |
 | :--------- | :----- | :-------------- | :---------------- | :---------------------------------- |
 | patientKey | String | 50              | Required          | Unique patient ID in Client system. |
-| planNumber | String |                 | Required          | Insurance Plan Number               |
-| message    | String |                 | Required          | Plan added to patient profile.      |
+| planNumber | String | 40              | Required          | Insurance Plan Number               |
+| message    | String | Max             | Required          | Plan added to patient profile.      |
 
 # Delete Insurance Request Path Query Parameter
 
 | Parameter  |    | Type   | Character Limit | Required/Optional | Description                         |
 | :--------- | :- | :----- | :-------------- | :---------------- | :---------------------------------- |
 | patientKey |    | String | 50              | Required          | Unique patient ID in Client system. |
-| planNumber |    | String |                 | Required          | Insurance Plan Number               |
+| planNumber |    | String | 40              | Required          | Insurance Plan Number               |
 
 # Delete Insurance Response Data Object
 
 | Field      | Type   | Character Limit | Required/Optional | Description                                               |
 | :--------- | :----- | :-------------- | :---------------- | :-------------------------------------------------------- |
 | patientKey | String | 50              | Required          | Unique patient ID in Client system.                       |
-| planNumber | String |                 | Required          | Insurance Plan Number                                     |
-| message    | String |                 | Required          | Patient Insurance plan number is inactivated successfully |
+| planNumber | String | 40              | Required          | Insurance Plan Number                                     |
+| message    | String | Max             | Required          | Patient Insurance plan number is inactivated successfully |
