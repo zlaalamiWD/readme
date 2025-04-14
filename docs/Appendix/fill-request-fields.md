@@ -32,7 +32,7 @@ next:
 | eventDateUtc  | DateTime |                 | Required          | TBD         |
 | scriptKey     | String   |                 | Required          |             |
 | verifiedDate  | DateTime |                 | Required          |             |
-| statusMessage | String   |                 | Required          |             |
+| statusMessage | String   | Max             | Required          |             |
 
 ### RxShipped
 
@@ -51,7 +51,7 @@ next:
 | eventId      | String   |                 | Required          | TBD         |
 | eventDateUtc | DateTime |                 | Required          | TBD         |
 | scriptKey    | String   |                 | Required          |             |
-| issueMessage | String   |                 | Required          |             |
+| issueMessage | String   | Max             | Required          |             |
 
 ### RxCanceled
 
@@ -60,7 +60,7 @@ next:
 | eventId       | String   |                 | Required          | TBD         |
 | eventDateUtc  | DateTime |                 | Required          | TBD         |
 | scriptKey     | String   |                 | Required          |             |
-| statusMessage | String   |                 | Required          |             |
+| statusMessage | String   | Max             | Required          |             |
 
 # Fill Request Data Object
 
