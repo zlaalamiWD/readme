@@ -10,11 +10,11 @@ metadata:
 next:
   description: ''
 ---
-> 📃 Note: 
-> 
+> 📃 Note:
+>
 > An empty string "" is considered a value and validation rules will apply (length/valid code/etc). Only null or missing elements will use default values.
 
-# Fill Request
+# Fill Request Data Object
 
 | Field          | Type   | Character Limit | Required/Optional | Description                                                                                                   |
 | :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------ |
@@ -23,7 +23,7 @@ next:
 | shipping       | Object |                 | Required          | Object containing shipping information for the order. See [Shipping](doc:fill-request-fields#shipping) table. |
 | insurance      | Object |                 | Optional          | Optionally specify insurance information to be used on the fill request.                                      |
 
-# Shipping
+# Shipping Data Object
 
 | Field             | Type    | Character Limit | Required/Optional | Description                                                                                                                                                                                                        |
 | :---------------- | :------ | :-------------- | :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -48,7 +48,7 @@ next:
 | UPS 3DS  | UPS 3 Day Select                          | Saturday delivery |
 | UPS USG  | UPS-USPS Sure Post                        | Saturday delivery |
 
-# Address
+# Address Data Object
 
 | Field       | Type   | Character Limit | Required/Optional | Description                                        |
 | :---------- | :----- | :-------------- | :---------------- | :------------------------------------------------- |
@@ -60,7 +60,7 @@ next:
 | zipCode     | String | 10              | Required          | Format NNNNN or NNNNN-NNNN                         |
 | countryCode | String | 2               | Optional          | ISO-3166 2 character country code. Defaults to US. |
 
-# Insurance
+# Insurance Data Object
 
 | Field             | Type   | Character Limit | Required/Optional | Description                                                                                                          |
 | :---------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------------- |
