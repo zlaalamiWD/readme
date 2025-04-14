@@ -287,3 +287,5 @@ The below table lists the potential response codes that can be received in respo
   "message": "The patient was updated."
 }
 ```
+
+Click here to see Patient Request Fields
