@@ -130,10 +130,14 @@ next:
 
 #### Response Object
 
-| Field                      | Type   | Character Limit | Required/Optional | Description                                                               |
-| :------------------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
-| fillRequestKey             | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
-| FillRequestStatusConstants | Array  |                 |                   | TBD                                                                       |
+| Field          | Type   | Character Limit | Required/Optional | Description                                                               |
+| :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
+| fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
+| submitted      | Array  |                 | Optional          | Submitted                                                                 |
+| rxVerified     | Array  |                 | Optional          | Verified Object                                                           |
+| rxShipped      | Array  |                 | Optional          | Shipped Object                                                            |
+| rxIssue        | Array  |                 | Optional          | Issued Object                                                             |
+| rxCanceled     | Array  |                 | Optional          | Canceled Object                                                           |
 
 <br />
 
