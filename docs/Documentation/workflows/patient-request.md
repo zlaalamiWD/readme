@@ -195,7 +195,7 @@ The below table lists the potential response codes that can be received in respo
 | Code | Description                                   |
 | :--- | :-------------------------------------------- |
 | 200  | Prescription details returned                 |
-| 204  | No Prescription found                         |
+| 200  | No Prescription found                         |
 | 400  | Bad Request – typically header is missing key |
 | 401  | Unauthorized                                  |
 | 500  | Internal Server Error                         |
