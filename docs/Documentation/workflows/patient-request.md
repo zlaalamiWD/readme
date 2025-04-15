@@ -297,7 +297,7 @@ Click here to see [Create Patient Response Data Object](https://docs.healthdyne.
 
 ### Server
 
-##### Only https connections are accepted.
+##### Only HTTPS connections are accepted.
 
 | REQUEST TYPE | ENDPOINT                              |
 | :----------- | :------------------------------------ |
