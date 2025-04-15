@@ -290,6 +290,7 @@ A "RxVerified" event will be generated once a Pharmacist has completed PV1 and r
   "detail": {
     "orderNumber": "12345",
     "scriptKey": "1000004",
+    "fillNumber": 0,
     "dispenseDrug": {
       "dispenseNDC": "780000001290",
       "dispenseDrugName": "Tylenol",
