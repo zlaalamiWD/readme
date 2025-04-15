@@ -258,8 +258,6 @@ Click here to see [Submit Fill Response Data Object](https://docs.healthdyne.com
 
 ***
 
-<br />
-
 # Update Fill Request
 
 Once an order has been created in HealthDyne system (using a Fill request), the update API endpoint allows client to update shipping address or shipping code for a previously submitted fill request. NOTE: The update will be applied as long as order has not been sent to our dispensing system for fulfillment.
