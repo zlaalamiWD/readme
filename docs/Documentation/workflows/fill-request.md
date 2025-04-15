@@ -179,8 +179,6 @@ The table below lists the potential response codes that can be received in respo
 
 ***
 
-<br />
-
 # Submit Fill Request
 
 API field validation information in Appendix [Fill Request Fields](doc:fill-request-fields)
