@@ -237,7 +237,11 @@ The below table lists the potential response codes that can be received in respo
 | Content-Type                | application/json       |
 | HealthDyne-Subscription-Key | Provided by HealthDyne |
 
-### Sample Patient Request
+### Sample Create Patient Request
+
+`POST https://partner.uat-healthdyne.com/v2/patient`
+
+### Sample Create Patient Request Body
 
 ```json
 {
