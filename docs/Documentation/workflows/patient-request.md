@@ -239,7 +239,7 @@ The below table lists the potential response codes that can be received in respo
 
 ### Sample Create Patient Request
 
-`POST https://partner.uat-healthdyne.com/v2/patient`
+`POST https://partner.uat-welldyne.com/v2/patient`
 
 ### Sample Create Patient Request Body
 
