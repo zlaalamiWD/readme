@@ -88,15 +88,13 @@ Click here to see [Get Insurance Data Object](https://docs.healthdyne.com/v2.171
 }
 ```
 
-# Successful Response Messages
-
-#### Patient Added
+### Sample ADD Insurance Plan Response Message
 
 ```json
 {
-  "patientKey": "ds76sa5765sad",
+  "patientKey": "ds76sa5765sad",
   "planNumber": "209235",
-  "message": "Plannumber was succussfully added to patient"
+  "message": "Plan added to patient profile."
 }
 ```
 
