@@ -16,7 +16,7 @@ View the [MailBox](ref:post_v2-mailbox) API Reference for detailed request body 
 
 This endpoint should be used to obtain the status of Script and/or Fill requests previously submitted. No request body is required.\
 HealthDyne employs a mailbox style order status reporting methodology. Therefore, when an order has a status update, the status message is delivered to the partner’s mailbox. This status message remains in the mailbox until the status message is retrieved by the partner and receipt of the message is acknowledged.
-A maximum of 100 status messages will be returned with a single request. Multiple requests may be necessary to receive all outstanding status messages. Please refer to the Status Codes returned to determine if all messages have been retrieved.
+A maximum of 100 status messages will be returned with a single request. Each request will have the same batch id and messages until marked as delivered. To receive the next set of messages, the current batch id need to be confirmed as delivered through the POST call. Multiple requests may be necessary to receive all outstanding status messages. Please refer to the Status Codes returned to determine if all messages have been retrieved.
 Note, the status messages are not considered delivered and removed from the mailbox until the receipt of the message is acknowledged by using a POST method with the batchId as a query parameter. Hence, another status request should not be submitted until the previous status response is acknowledged.
 
 ### Server
@@ -40,7 +40,7 @@ Note, the status messages are not considered delivered and removed from the mail
 
 #### Sample GET Request
 
-> `<https://partner.uat-healthdyne.com/v2/mailbox?messageCount=10>`
+> '[https://partner.uat-healthdyne.com/v2/mailbox?messageCount=10](https://partner.uat-healthdyne.com/v2/mailbox?messageCount=10)'
 
 This tells the API to only respond with 10 messages. The default message count is 100 messages. The Mailbox only allows 100 messages to be pulled at a time.
 
