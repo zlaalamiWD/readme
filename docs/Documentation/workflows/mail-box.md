@@ -411,6 +411,7 @@ Once the Rx has been shipped successfully by pharmacy, then send update for each
     "orderNumber": "12345",
     "scriptKey": "1000004",
     "shipments": [{
+      	"address": null,
         "cost": 4.88,
         "weight": 0.6,
         "daysSupply": "45",
