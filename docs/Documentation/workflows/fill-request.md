@@ -43,8 +43,25 @@ The GET Fill Request Status API lets clients retrieve the status and event summa
 
 Click here to see [GET Fill Request Query Data](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#query-parameter)
 
-#### Sample GET Status Response
+#### Sample GET Status Response (Single Rx)
 
+```json
+{
+    "fillRequestKey": "FillPatientSample1404",
+    "submitted": [
+        {
+            "eventId": "289526",
+            "eventDateUtc": "2025-04-14T08:40:37.328768Z",
+            "scriptKeys": []
+        }
+    ],
+    "rxVerified": ],
+    "rxShipped": [],
+    "rxIssue": [],
+    "rxCanceled": [],
+    "rejected": []
+}
+```
 ```json
 {
     "fillRequestKey": "FillPatientSample1404",
@@ -147,24 +164,104 @@ Click here to see [GET Fill Request Query Data](https://docs.healthdyne.com/v2.1
     ]
 }
 ```
+
+> 📘 NOTE: For a Single-line Rx.
+
+<br />
+
+#### Sample GET Status Response (Multiline Rx)
+
 ```json
 {
     "fillRequestKey": "FillPatientSample1404",
-    "submitted": [
+    "submitted": [],
+    "rxVerified": [
         {
-            "eventId": "289526",
-            "eventDateUtc": "2025-04-14T08:40:37.328768Z",
-            "scriptKeys": []
+            "eventId": "288774",
+            "eventDateUtc": "2025-04-11T18:43:07.995451Z",
+            "scriptKey": "TestScriptKey1401",
+            "verifiedDate": null,
+            "statusMessage": "The Rx has been verified by the pharmacist (PV1)"
         }
     ],
-    "rxVerified": ],
-    "rxShipped": [],
+    "rxShipped": [
+        {
+            "eventId": "288779",
+            "eventDateUtc": "2025-04-11T18:46:39.670751Z",
+            "scriptKey": "TestScriptKey1402",
+            "shipmentDate": "2025-04-11T21:55:26Z",
+            "trackingNumber": "75474170000"
+        }
+    ],
     "rxIssue": [],
-    "rxCanceled": [],
-    "rejected": []
+    "rxCanceled": [
+        {
+            "eventId": "288784",
+            "eventDateUtc": "2025-04-11T18:50:00.418881Z",
+            "scriptKey": "TestScriptKey1403",
+            "statusMessage": "Cancelled"
+        }
+    ],
+    "rejected": [
+        {
+            "eventId": "156270",
+            "eventDateUtc": "2025-02-18T13:36:57.776842Z",
+            "scriptKeys": [],
+            "statusMessage": "RX: 10524420 found on OPEN order with External ID: NULL; "
+        }
+    ]
 }
-NOTE: For a Single-line Rx.
 ```
+```json
+{
+    "fillRequestKey": "FillPatientSample1404",
+    "submitted": [],
+    "rxVerified": [
+        {
+            "eventId": "288774",
+            "eventDateUtc": "2025-04-11T18:43:07.995451Z",
+            "scriptKey": "SecondaryLogicPt7",
+            "verifiedDate": null,
+            "statusMessage": "The Rx has been verified by the pharmacist (PV1)"
+        }
+    ],
+    "rxShipped": [
+        {
+            "eventId": "288779",
+            "eventDateUtc": "2025-04-11T18:46:39.670751Z",
+            "scriptKey": "TestScriptKey1404",
+            "shipmentDate": "2025-04-11T21:55:26Z",
+            "trackingNumber": "75474170000"
+        }
+    ],
+    "rxIssue": [
+        {
+            "eventId": "104390",
+            "eventDateUtc": "2023-07-16T02:50:53.956384Z",
+            "scriptKey": "TestScriptKey1404",
+            "issueMessage": "REJECTED 533 HEALTHDYNE RX REJECTED - TEST"
+        }
+    ],
+    "rxCanceled": [
+        {
+            "eventId": "288784",
+            "eventDateUtc": "2025-04-11T18:50:00.418881Z",
+            "scriptKey": "TestScriptKey1404",
+            "statusMessage": "Cancelled"
+        }
+    ],
+    "rejected": [
+        {
+            "eventId": "156270",
+            "eventDateUtc": "2025-02-18T13:36:57.776842Z",
+            "scriptKeys": [],
+            "statusMessage": "RX: 10524420 found on OPEN order with External ID: NULL; "
+        }
+    ]
+}
+```
+
+> 📘 NOTE: For a Multiline Rx with different ScriptKeys.
 
 Click here to see [Get Fill Request Data Object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object)
 
