@@ -18,7 +18,7 @@ This API lets clients define and update patient information in the HealthDyne sy
 
 Use POST method to add/create a patient and PUT method to update existing patient details.
 
-# Get Patient
+# Get Patient:
 
 Once a patient has been registered successfully, the GET Patient API allows clients to retrieve patient details (active details) from HD pharmacy system using PatientKey.
 
@@ -113,7 +113,7 @@ The below table lists the potential response codes that can be received in respo
 
 <br />
 
-# Find Patient
+# Find Patient:
 
 The Find Patient API (GET method) allows clients to lookup patientKey in HD system using following parameters: First Name, Last Name, DOB and Zip code. NOTE: The parameter fields should be separated with an ampersand (&) when using the API endpoint. If a match is found, HD returns matching patientKey to retrieve details using Get Patient API.
 
@@ -163,7 +163,7 @@ The below table lists the potential response codes that can be received in respo
 }
 ```
 
-# Get Patient Scripts/Prescriptions
+# Get Patient Scripts/Prescriptions:
 
 The "Get Patient Script/Prescription" endpoint allows retrieval of all scripts associated with a specific patient key. If no prescriptions are found for the provided patient key, the endpoint will return a 200 status with the message "No record found."
 
@@ -214,7 +214,7 @@ The below table lists the potential response codes that can be received in respo
 
 <br />
 
-# Post Patient
+# Create Patient:
 
 ### Server
 
@@ -285,7 +285,7 @@ Click here to see [Patient Request Fields](https://docs.healthdyne.com/v2.171/do
 
 <br />
 
-# Put Patient
+# Update Patient:
 
 ### Server
 
