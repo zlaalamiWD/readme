@@ -24,10 +24,10 @@ The GET Fill Request Status API lets clients retrieve the status and event summa
 
 ##### Only HTTPS connections are accepted.
 
-| METHOD TYPE | ENDPOINT                                                                      |
-| :---------- | :---------------------------------------------------------------------------- |
-| GET (Test)  | partner.uat-welldyne.com/v2/FILL/fillRequest?fillRequestKey=\<fillRequestKey> |
-| GET (Prod)  | partner.welldyne.com/v2/FILL/fillRequest?fillRequestKey=\<fillRequestKey>     |
+| METHOD TYPE | ENDPOINT                                                                    |
+| :---------- | :-------------------------------------------------------------------------- |
+| GET (Test)  | api.uat-healthdyne.com/v2/FILL/fillRequest?fillRequestKey=\<fillRequestKey> |
+| GET (Prod)  | api.healthdyne.com/v2/FILL/fillRequest?fillRequestKey=\<fillRequestKey>     |
 
 #### Header
 
@@ -39,7 +39,7 @@ The GET Fill Request Status API lets clients retrieve the status and event summa
 
 #### Sample GET Status Request
 
-`GET https://partner.uat-welldyne.com/v2/fill/fillRequest?fillRequestKey= FillPatientSample1404`
+`GET https://api.uat-healthdyne.com/v2/fill/fillRequest?fillRequestKey=FillPatientSample1404`
 
 Click here to see [GET Fill Request Query Data](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#query-parameter)
 
@@ -198,10 +198,10 @@ Client must send a Fill request with following details:
 
 ##### Only HTTPS connections are accepted.
 
-| METHOD TYPE | ENDPOINT                         |
-| :---------- | :------------------------------- |
-| POST (Test) | partner.uat-welldyne.com/v2/fill |
-| POST (Prod) | partner.welldyne.com/v2/fill     |
+| METHOD TYPE | ENDPOINT                       |
+| :---------- | :----------------------------- |
+| POST (Test) | api.uat-healthdyne.com/v2/fill |
+| POST (Prod) | api.healthdyne.com/v2/fill     |
 
 #### Header
 
@@ -213,7 +213,7 @@ Client must send a Fill request with following details:
 
 #### Sample Submit Fill Request
 
-`POST https://partner.uat-welldyne.com/v2/fill`
+`POST https://api.uat-healthdyne.com/v2/fill`
 
 #### Sample Submit Fill Request Body
 
@@ -270,14 +270,14 @@ Once an order has been created in HealthDyne system (using a Fill request), the 
 
 ##### Only HTTPS connections are accepted.
 
-| METHOD TYPE | ENDPOINT                         |
-| :---------- | :------------------------------- |
-| PUT (Test)  | partner.uat-welldyne.com/v2/fill |
-| PUT (Prod)  | partner.welldyne.com/v2/fill     |
+| METHOD TYPE | ENDPOINT                       |
+| :---------- | :----------------------------- |
+| PUT (Test)  | api.uat-healthdyne.com/v2/fill |
+| PUT (Prod)  | api.healthdyne.com/v2/fill     |
 
 #### Sample Update Fill Request
 
-`PUT https://partner.uat-welldyne.com/v2/fill`
+`PUT https://api.uat-healthdyne.com/v2/fill`
 
 #### Sample Update Fill Request Body
 
@@ -329,14 +329,14 @@ Once an order has been created in the HealthDyne system (using a Fill request), 
 
 ###### Only HTTPS connections are accepted.
 
-| METHOD TYPE | ENDPOINT                                |
-| :---------- | :-------------------------------------- |
-| POST (Test) | partner.uat-welldyne.com/v2/fill/cancel |
-| POST (Prod) | partner.welldyne.com/v2/fill/cancel     |
+| METHOD TYPE | ENDPOINT                              |
+| :---------- | :------------------------------------ |
+| POST (Test) | api.uat-healthdyne.com/v2/fill/cancel |
+| POST (Prod) | api.healthdyne.com/v2/fill/cancel     |
 
 #### Sample Cancel Fill Request
 
-`POST https://partner.uat-welldyne.com/v2/fill/cancel`
+`POST https://api.uat-healthdyne.com/v2/fill/cancel`
 
 #### Sample Cancel Fill Request Body
 
