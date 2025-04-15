@@ -161,9 +161,9 @@ The below table lists the potential response codes that can be received in respo
 }
 ```
 
-# Get Patient Scripts/prescriptions
+# Get Patient Scripts/Prescriptions
 
-The "Get Patient script/Prescription" endpoint allows retrieval of all scripts associated with a specific patient key. If no prescriptions are found for the provided patient key, the endpoint will return a 200 status with the message "No record found."
+The "Get Patient Script/Prescription" endpoint allows retrieval of all scripts associated with a specific patient key. If no prescriptions are found for the provided patient key, the endpoint will return a 200 status with the message "No record found."
 
 ### Server
 
