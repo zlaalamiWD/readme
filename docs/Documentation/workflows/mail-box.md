@@ -429,4 +429,8 @@ Once the Rx has been shipped successfully by pharmacy, then send update for each
 
 ```
 
+<br />
+
+> ❗️ NOTE: the address attribute only return null for now
+
 ##
