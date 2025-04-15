@@ -31,7 +31,7 @@ next:
 | eventId       | String   |                                      | Required          | Unique Event Identifier for the Fill Request. |
 | eventDateUtc  | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Required          | Date and time of the event in UTC (ISO 8601). |
 | scriptKey     | String   | 50                                   | Required          | Unique ID associated with script request.     |
-| verifiedDate  | DateTime |                                      | Required          |                                               |
+| verifiedDate  | DateTime | YYYY-MM-DD T HH:MM:SS Z              | Required          | Date and Time of Fill Request verified.       |
 | statusMessage | String   | Max                                  | Required          |                                               |
 
 ### RxShipped
@@ -41,7 +41,7 @@ next:
 | eventId        | String   |                                      | Required          | Unique Event Identifier for the Fill Request. |
 | eventDateUtc   | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Required          | Date and time of the event in UTC (ISO 8601). |
 | scriptKey      | String   | 50                                   | Required          | Unique ID associated with script request.     |
-| shipmentDate   | DateTime |                                      | Required          |                                               |
+| shipmentDate   | DateTime | YYYY-MM-DD T HH:MM:SS Z              | Required          | Date and Time of Fill Request Shipped.        |
 | trackingNumber | String   | 40                                   | Required          |                                               |
 
 ### RxIssue
