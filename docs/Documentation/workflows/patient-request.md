@@ -43,8 +43,6 @@ Once a patient has been registered successfully, the GET Patient API allows clie
 
 `GET https://partner.uat-welldyne.com/v2/patient?patientkey=TestreadPatient171`
 
-This tells the API to query for PatientKey TESTREADPATIENT171 and return relevant details.
-
 Click here to see (GET Patient Request Query Data)
 
 #### Sample GET Status Response
