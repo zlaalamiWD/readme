@@ -10,23 +10,23 @@ metadata:
 next:
   description: ''
 ---
-# Status Request 
+# Status Request
 
 View the [MailBox](ref:post_v2-mailbox) API Reference for detailed request body information.
 
-This endpoint should be used to obtain the status of Script and/or Fill requests previously submitted. No request body is required.  
-HealthDyne employs a mailbox style order status reporting methodology. Therefore, when an order has a status update, the status message is delivered to the partner’s mailbox. This status message remains in the mailbox until the status message is retrieved by the partner and receipt of the message is acknowledged.  
-A maximum of 100 status messages will be returned with a single request. Multiple requests may be necessary to receive all outstanding status messages. Please refer to the Status Codes returned to determine if all messages have been retrieved.  
+This endpoint should be used to obtain the status of Script and/or Fill requests previously submitted. No request body is required.\
+HealthDyne employs a mailbox style order status reporting methodology. Therefore, when an order has a status update, the status message is delivered to the partner’s mailbox. This status message remains in the mailbox until the status message is retrieved by the partner and receipt of the message is acknowledged.
+A maximum of 100 status messages will be returned with a single request. Multiple requests may be necessary to receive all outstanding status messages. Please refer to the Status Codes returned to determine if all messages have been retrieved.
 Note, the status messages are not considered delivered and removed from the mailbox until the receipt of the message is acknowledged by using a POST method with the batchId as a query parameter. Hence, another status request should not be submitted until the previous status response is acknowledged.
 
 ### Server
 
 ##### Only https connections are accepted.
 
-| REQUEST TYPE       | ENDPOINT                          |
-| :----------------- | :-------------------------------- |
-| GET or Post (Test) | api.uat-healthdyne.com/v2/mailbox |
-| GET or Post (Prod) | api.healthdyne.com/v2/mailbox     |
+| REQUEST TYPE       | ENDPOINT                              |
+| :----------------- | :------------------------------------ |
+| GET or Post (Test) | partner.uat-healthdyne.com/v2/mailbox |
+| GET or Post (Prod) | partner.healthdyne.com/v2/mailbox     |
 
 ### Header
 
@@ -40,9 +40,9 @@ Note, the status messages are not considered delivered and removed from the mail
 
 #### Sample GET Request
 
-> `<https://api.uat-healthdyne.com/v2/mailbox?messageCount=10>`
+> `<https://partner.uat-healthdyne.com/v2/mailbox?messageCount=10>`
 
-This tells the API to only respond with 10 messages. The default message count is 25 messages.
+This tells the API to only respond with 10 messages. The default message count is 100 messages. The Mailbox only allows 100 messages to be pulled at a time.
 
 # GET Status Response
 
@@ -97,7 +97,7 @@ The below table lists the potential response codes that can be received in respo
 
 #### Sample POST Request
 
-> `<https://api.uat-healthdyne.com/v2/mailbox?batchId=6be689c3-3306-4a75-b0d3-a769be788c99>`
+> `<https://partner.uat-healthdyne.com/v2/mailbox?batchId=6be689c3-3306-4a75-b0d3-a769be788c99>`
 
 #### Sample POST Response
 
@@ -116,9 +116,9 @@ The below table lists the potential response codes that can be received in respo
 
 # Rx Status Events
 
-## RxReceived _(eRx, fax, phone intake only)_
+## RxReceived *(eRx, fax, phone intake only)*
 
-A RxReceived event will produced when HealthDyne successfully receives an eRx from Surescripts for a registered patient.
+A RxReceived event will be produced when HealthDyne successfully receives an eRx from Surescripts for a registered patient.
 
 ```json
 {
@@ -130,7 +130,7 @@ A RxReceived event will produced when HealthDyne successfully receives an eRx fr
   "status": "Received", 
   "statusMessage": "A new prescription has been received",   
   "detail": {
-    "Reason":null
+    "reason":null
   }
 }
 ```
@@ -144,12 +144,11 @@ RxDiscontinued events will be generated anytime an Rx has been discontinued by t
   "eventId": "1000003",
   "eventDateUtc": "2023-05-08T19:14:55.22818Z",
   "eventType": "RXSTATUS",
-  "patientKey": "1000002",
   "scriptKey": "1000001",
   "status": "Discontinued",
   "statusMessage": "The prescription has been discontinued by pharmacy",
   "detail": {
-    "Reason":"Rx Transferred out of pharmacy"
+    "reason":"Rx Transferred out of pharmacy"
   }
 }
 ```
@@ -167,7 +166,9 @@ RxRefillReady event will be generated anytime an Rx is ready for refill. NOTE: T
          "statusMessage": "The prescription is ready for refill.",
          "scriptKey": "f324f6d0894f4abdba6b252158a2313d",
          "patientKey": "AB1890001",
-         "detail": {"reason": null}
+         "detail": {
+           "reason": null
+         }
       }
 ```
 
@@ -184,7 +185,9 @@ RxOverdue event will be generated anytime an Rx is overdue for a refill. NOTE: T
          "statusMessage": "The prescription is overdue for refill",
          "scriptKey": "f324f6d0894f4abdba6b252158a2313d",
          "patientKey": "AB1890001",
-         "detail": {"reason": null}
+         "detail": {
+           "reason": null
+         }
       }
 ```
 
@@ -201,11 +204,13 @@ RxRenewalReady event will be generated anytime an Rx is ready for prescriber to 
          "statusMessage": "The prescription needs to be renewed.",
          "scriptKey": "2fbb38d736b74d83bccf13c2e98ad3a4",
          "patientKey": "AB1890001",
-         "detail": {"reason": null}
+         "detail": {
+           "reason": null
+         }
       }
 ```
 
-## Transferred _(Rx Transfer only)_
+## Transferred *(Rx Transfer only)*
 
 Once the PNG or XML has been successfully downloaded, HealthDyne will store the file and create the prescription record in HealthDyne's pharmacy management system. Once the Rx has been created, HealthDyne will generate a ‘Transferred’ event.
 
@@ -226,7 +231,7 @@ Once the PNG or XML has been successfully downloaded, HealthDyne will store the 
 }
 ```
 
-## Rejected _(Rx Transfer only)_
+## Rejected *(During Rx Transfer)*
 
 When a RxTransfer request can't be validated, HealthDyne generates a rejection event with status "Rejected". RxTransfers will be rejected if the PNG or XML download was unsuccessful after two (2) failed attempts.
 
@@ -239,11 +244,7 @@ When a RxTransfer request can't be validated, HealthDyne generates a rejection e
   "eventType": "RXTRANSFER",
   "scriptKey": "1000004",
   "status": "Rejected",
-  "statusMessage": "The file [http://somedomain.com/files/12548.png] could not be retrieved.",
-  "detail": {
-    "patientKey": "1000002",
-    "rxNumber": null
-  }
+  "statusMessage": "The file [http://somedomain.com/files/12548.png] could not be retrieved."  
 }
 ```
 
@@ -264,7 +265,8 @@ HealthDyne will create the order after receiving a Fill Request by sending creat
   "status": "Submitted",
   "statusMessage": "The order is being processed",
   "detail": {
-    "orderNumber": "12345"
+    "orderNumber": "12345",
+    "fillNumber": 0
   }
 }
 ```
@@ -288,6 +290,7 @@ A "RxVerified" event will be generated once a Pharmacist has completed PV1 and r
   "detail": {
     "orderNumber": "12345",
     "scriptKey": "1000004",
+    "fillNumber": 0,
     "dispenseDrug": {
       "dispenseNDC": "780000001290",
       "dispenseDrugName": "Tylenol",
@@ -321,7 +324,7 @@ If order creation errors/rejects; then Rejected event will be created. Possible 
 
 ## RxIssue
 
-When an Order is successfully created, and then one of the Rx is subsequently rejected by pharmacy because it has issue (reason such as: Insurance reason/DUR/Pharmacy unable to read the prescription)- then RxIssue event will be pushed only for Rx that has an issue. 
+When an Order is successfully created, and then one of the Rx is subsequently rejected by pharmacy because it has issue (reason such as: Insurance reason/DUR/Pharmacy unable to read the prescription)- then RxIssue event will be pushed only for Rx that has an issue.
 
 > 📃 NOTE: This is at Rx level (i.e. for each Rx)
 
@@ -338,6 +341,7 @@ When an Order is successfully created, and then one of the Rx is subsequently re
   "detail": {
     "orderNumber": "56789",
     "scriptKey": "1000003",
+		"fillNumber": 0,
     "issueMessage": "REJECTED 533 HEALTHDYNE RX REJECTED",
     "ClaimRejectCode": "388",
     "ClaimRejectDescription": "PRIOR AUTHORIZATION SUPPORTING DOCUMENT IS NOT USED FOR THIS TRANSACTION CODE" 
