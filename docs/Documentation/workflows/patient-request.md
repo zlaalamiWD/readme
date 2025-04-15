@@ -289,3 +289,76 @@ The below table lists the potential response codes that can be received in respo
 ```
 
 Click here to see [Patient Request Fields](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#/)
+
+<br />
+
+# Put Patient
+
+### Server
+
+##### Only https connections are accepted.
+
+| REQUEST TYPE | ENDPOINT                              |
+| :----------- | :------------------------------------ |
+| PUT (Test)   | partner.uat-healthdyne.com/v2/patient |
+| PUT (Prod)   | partner.healthdyne.com/v2/patient     |
+
+### Header
+
+| Key                         | Value                  |
+| :-------------------------- | :--------------------- |
+| Accept                      | application/json       |
+| Content-Type                | application/json       |
+| HealthDyne-Subscription-Key | Provided by HealthDyne |
+
+### Sample Patient Request
+
+```json
+{
+  "patient": {
+    "patientKey":"12389990",
+    "firstName": "JANE",
+    "lastName": "DOE",
+    "birthDate": "1956-03-02",
+    "gender": "F",
+    "address": {
+      "addressType": "HOME",
+      "line1": "100 Rivers Edge Dr.",
+      "line2": null,
+      "line3": null,
+      "city": "Temple Terrace",
+      "state": "FL",
+      "zipCode": "02155",
+      "countryCode": "US",
+      "defaultAddress":True
+    },
+    "contact": {
+      "contactType": "PHONE",
+      "contactAddress": "5712345678"
+    },
+    "allergies": ["Amoxicillin"],
+    "externalMedications": [
+      {
+        "ndc": "00045049660",
+        "startDate": "2022-03-02",
+        "endDate": "2022-04-02"
+      }
+    ]
+  }
+}
+```
+
+# Successful Response Messages
+
+<br />
+
+#### Patient Updated
+
+```json
+{
+  "patientKey": "12389990",
+  "message": "The patient was updated."
+}
+```
+
+Click here to see [Patient Request Fields](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#/)
