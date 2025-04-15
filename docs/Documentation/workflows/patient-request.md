@@ -258,7 +258,7 @@ The "Create Patient" endpoint uses the POST method to add a new patient record. 
       "state": "FL",
       "zipCode": "02155",
       "countryCode": "US",
-      "defaultAddress":True
+      "defaultAddress":true
     },
     "contact": {
       "contactType": "PHONE",
