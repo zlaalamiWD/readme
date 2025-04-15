@@ -231,7 +231,7 @@ Once the PNG or XML has been successfully downloaded, HealthDyne will store the 
 }
 ```
 
-## Rejected *(Rx Transfer only)*
+## Rejected *(During Rx Transfer)*
 
 When a RxTransfer request can't be validated, HealthDyne generates a rejection event with status "Rejected". RxTransfers will be rejected if the PNG or XML download was unsuccessful after two (2) failed attempts.
 
@@ -341,6 +341,7 @@ When an Order is successfully created, and then one of the Rx is subsequently re
   "detail": {
     "orderNumber": "56789",
     "scriptKey": "1000003",
+		"fillNumber": 0,
     "issueMessage": "REJECTED 533 HEALTHDYNE RX REJECTED",
     "ClaimRejectCode": "388",
     "ClaimRejectDescription": "PRIOR AUTHORIZATION SUPPORTING DOCUMENT IS NOT USED FOR THIS TRANSACTION CODE" 
