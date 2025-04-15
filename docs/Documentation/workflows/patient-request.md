@@ -171,8 +171,8 @@ The "Get Patient Script/Prescription" endpoint allows retrieval of all scripts a
 
 | REQUEST TYPE | ENDPOINT                                                                    |
 | :----------- | :-------------------------------------------------------------------------- |
-| GET (Test)   | partner.uat-healthdyne.com/v2/patient/prescription?patientKey=\<patientKey> |
-| GET (Prod)   | partner.healthdyne.com/v2/patient/prescription?patientKey=\<patientKey>     |
+| GET (Test)   | partner.uat-healthdyne.com/v2/patient/prescription?patientkey=\<patientKey> |
+| GET (Prod)   | partner.healthdyne.com/v2/patient/prescription?patientkey=\<patientKey>     |
 
 ### Header
 
@@ -184,7 +184,7 @@ The "Get Patient Script/Prescription" endpoint allows retrieval of all scripts a
 
 #### Sample GET Request
 
-> \<[https://partner.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece](https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece)
+> \<[https://partner.uat-healthdyne.com/v2/patient/prescription?patientkey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece](https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece)
 
 This tells the API to query for patientKey 4e1e76ca-520f-4e7a-a6c7-d837a9e3cece  and return relevant details.
 
