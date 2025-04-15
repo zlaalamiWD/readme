@@ -216,16 +216,6 @@ The below table lists the potential response codes that can be received in respo
 | 401  | Unauthorized                                  |
 | 500  | Internal Server Error                         |
 
-#### Sample Status Response
-
-```json
-{
-    "scriptKeys": [
-        "0ed290dbb11224ea0f9e27"
-    ]
-}
-```
-
 <br />
 
 # Create Patient
