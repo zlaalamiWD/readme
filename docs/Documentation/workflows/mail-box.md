@@ -40,7 +40,7 @@ Note, the status messages are not considered delivered and removed from the mail
 
 #### Sample GET Request
 
-> api.uat-healthdyne.com/v2/mailbox?messageCount=10
+> '\<https\://api.uat-healthdyne.com/v2/mailbox?messageCount=10>'
 
 This tells the API to only respond with 10 messages. The default message count is 100 messages. The Mailbox only allows 100 messages to be pulled at a time.
 
