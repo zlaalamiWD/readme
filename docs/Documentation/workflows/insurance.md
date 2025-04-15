@@ -39,7 +39,7 @@ Use POST method to add/create an insurance plan and assign to an existing patien
 
 `Get:https://api.uat-healthdyne.com/v2/patient/insurance?patientKey=ds76sa5765sad`
 
-### Sample Insurance Plan Response
+### Sample Get Insurance Plan Response
 
 ```json
 {
@@ -49,12 +49,19 @@ Use POST method to add/create an insurance plan and assign to an existing patien
       "planNumber":"209235",
       "bin": "123456",
       "groupId": "123456789",
-      "pcn": "15948546"
+      "pcn": "15948546",
+      "personCode": "001",
+      "relationshipCode": "1",
+      "insuranceMemberID": "23456"
     },
     {
-      "planNumber":"204152",
-      "bin": "121234",
-      "groupId": "1232165"
+      "planNumber": "162311",
+      "bin": "",
+      "groupId": "ABCD123",
+      "pcn": "",
+      "personCode": "001",
+      "relationshipCode": "1",
+      "insuranceMemberID": null
     }
   ]
 }
