@@ -315,8 +315,6 @@ Click here to see [Update Fill Response Data Object](https://docs.healthdyne.com
 
 ***
 
-<br />
-
 # Cancel Fill Request
 
 Once an order has been created in the HealthDyne system (using a Fill request), the Cancel API endpoint allows the client to cancel a fill request or specific script(s) within a Fill Request. **NOTE: The cancelation will be applied if the order has not been sent to our dispensing system for fulfillment.**
