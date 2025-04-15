@@ -218,10 +218,10 @@ The below table lists the potential response codes that can be received in respo
 
 ##### Only https connections are accepted.
 
-| REQUEST TYPE       | ENDPOINT                              |
-| :----------------- | :------------------------------------ |
-| POST or PUT (Test) | partner.uat-healthdyne.com/v2/patient |
-| POST or PUT (Prod) | partner.healthdyne.com/v2/patient     |
+| REQUEST TYPE | ENDPOINT                              |
+| :----------- | :------------------------------------ |
+| POST (Test)  | partner.uat-healthdyne.com/v2/patient |
+| POST (Prod)  | partner.healthdyne.com/v2/patient     |
 
 ### Header
 
