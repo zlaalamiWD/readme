@@ -98,7 +98,7 @@ Click here to see [GET Patient Request Query Data]()
 }
 ```
 
-Click here to see [Get Fill Request Data Object]()
+Click here to see [Get Fill Response Data Object]()
 
 The below table lists the potential response codes that can be received in response to a GET request.
 
