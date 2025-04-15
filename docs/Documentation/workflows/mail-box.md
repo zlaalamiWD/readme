@@ -411,18 +411,18 @@ Once the Rx has been shipped successfully by pharmacy, then send update for each
     "orderNumber": "12345",
     "scriptKey": "1000004",
     "shipments": [{
-        "Cost": 4.88,
-        "Weight": 0.6,
-        "DaysSupply": "45",
-        "TrackingUrl": "https://tools.usps.com/go/TrackConfirmAction?tLabels=?92001122222222222",
-        "DispensedQty": "90",
-        "ShipmentCode": "POS 1C",
-        "ShipmentDate": "2024-04-04T19:30:36Z",
-        "TrackingNumber": "122222222222"
+        "cost": 4.88,
+        "weight": 0.6,
+        "daysSupply": "45",
+        "trackingUrl": "https://tools.usps.com/go/TrackConfirmAction?tLabels=?92001122222222222",
+        "dispensedQty": "90",
+        "shipmentCode": "POS 1C",
+        "shipmentDate": "2024-04-04T19:30:36Z",
+        "trackingNumber": "122222222222"
       }],
     "fillNumber": 2,
-    "RemainingRefills": "2",
-    "RefillByDate": "2024-04-29T06:00:00Z"
+    "remainingRefills": "2",
+    "refillByDate": "2024-04-29T06:00:00Z"
   }
 }
 
