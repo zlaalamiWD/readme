@@ -119,7 +119,7 @@ The Find Patient API (GET method) allows clients to lookup patientKey in HD syst
 
 ### Server
 
-##### Only https connections are accepted.
+##### Only HTTPS connections are accepted.
 
 | REQUEST TYPE | ENDPOINT                                  |
 | :----------- | :---------------------------------------- |
