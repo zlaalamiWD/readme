@@ -59,10 +59,10 @@ next:
 
 #### Request Object
 
-| Field      | Type                                                                                                                              | Character Limit | Required/Optional | Description                                        |
-| :--------- | :-------------------------------------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------- |
-| patientKey | String                                                                                                                            | 50              | Required          | Unique patient ID in Client system.                |
-| insurance  | Object\[[CreateInsuranceDataObject](https://docs.healthdyne.com/v2.171/docs/insurance-request-fields#createinsurancedataobject) ] |                 | Required          | Object containing patient's insurance information. |
+| Field      | Type                                                                                                                       | Character Limit | Required/Optional | Description                                        |
+| :--------- | :------------------------------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------- |
+| patientKey | String                                                                                                                     | 50              | Required          | Unique patient ID in Client system.                |
+| insurance  | Object\[[CreateInsuranceDataObject](https://docs.healthdyne.com/docs/insurance-request-fields#createinsurancedataobject) ] |                 | Required          | Object containing patient's insurance information. |
 
 #### CreateInsuranceDataObject
 
