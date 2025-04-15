@@ -136,9 +136,9 @@ The Find Patient API (GET method) allows clients to lookup patientKey in HD syst
 
 #### Sample GET Request
 
-> [https://partner.uat-welldyne.com/v2/patient/find?firstname=ABC\&lastname=XYZ\&birthdate=1981-01-01\&zipcode=80017](https://partner.uat-welldyne.com/v2/Patient/find?FirstName=ABC\&LastName=XYZ\&Birthdate=1981-01-01\&ZipCode=80017)
->
-> Click here to see GET Find Patient Request Query Data
+`GET https://partner.uat-welldyne.com/v2/Patient/find?FirstName=ABC&LastName=XYZ&Birthdate=1981-01-01&ZipCode=80017`
+
+Click here to see GET Find Patient Request Query Data
 
 #### Sample GET Status Response
 
