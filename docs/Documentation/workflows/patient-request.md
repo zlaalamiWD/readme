@@ -152,7 +152,7 @@ Click here to see [GET Find Patient Request Query Data]()
 }
 ```
 
-Click here to see [Get Find Patient Request Data Object]()
+Click here to see [Get Find Patient Response Data Object]()
 
 The below table lists the potential response codes that can be received in response to a GET Find patient request.
 
