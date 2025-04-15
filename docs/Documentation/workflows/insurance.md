@@ -82,7 +82,7 @@ Click here to see [Get Insurance Data Object](https://docs.healthdyne.com/v2.171
     "groupId": "123456789",
     "pcn": "15948546",
     "personCode": "1",
-    "relationshipCode": "1"
+    "relationshipCode": "1",
     "insuranceMemberID": "67844"
   }
 }
