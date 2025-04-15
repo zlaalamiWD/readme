@@ -1,5 +1,5 @@
 ---
-title: Insurance Request Fields
+title: Insurance Data Object (Schemas)
 excerpt: ''
 deprecated: false
 hidden: false
@@ -14,14 +14,22 @@ next:
 >
 > An empty string "" is considered a value and validation rules will apply (length/valid code/etc). Only null or missing elements will use default values.
 
-# Insurance Request
+# Get Insurance Data Object
 
-| Field      | Type   | Character Limit | Required/Optional | Description                                        |
-| :--------- | :----- | :-------------- | :---------------- | :------------------------------------------------- |
-| patientKey | String | 50              | Required          | Unique patient ID in Client system.                |
-| insurance  | object |                 | Required          | Object containing patient's insurance information. |
+#### Query Parameter
 
-# Insurance Object
+| Field      | Type   | Character Limit | Required/Optional | Description                         |
+| :--------- | :----- | :-------------- | :---------------- | :---------------------------------- |
+| patientKey | String | 50              | Required          | Unique patient ID in Client system. |
+
+**Response Object**
+
+| Field      | Type                                                                                                                 | Character Limit | Required/Optional | Description                                        |
+| :--------- | :------------------------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------- |
+| patientKey | String                                                                                                               | 50              | Required          | Unique patient ID in Client system.                |
+| insurance  | Object\[[InsuranceDataObject](https://docs.healthdyne.com/v2.171/docs/insurance-request-fields#insurancedataobject)] |                 | Required          | Object containing patient's insurance information. |
+
+#### InsuranceDataObject
 
 | Field            | Type    | Character Limit | Required/Optional | Description                                              |
 | :--------------- | :------ | :-------------- | :---------------- | :------------------------------------------------------- |
