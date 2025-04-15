@@ -289,7 +289,7 @@ Click here to see [POST Patient Request Data Object]()
 }
 ```
 
-Click here to see [Patient Request Fields](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#/)
+Click here to see [Create Patient Response Data Object](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#/)
 
 <br />
 
