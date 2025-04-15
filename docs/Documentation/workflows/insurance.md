@@ -22,10 +22,10 @@ Use POST method to add/create an insurance plan and assign to an existing patien
 
 ##### Only https connections are accepted.
 
-| REQUEST TYPE                | ENDPOINT                                        |
-| :-------------------------- | :---------------------------------------------- |
-| GET, POST, or DELETE (Test) | partner.uat-healthdyne.com/v2/patient/insurance |
-| GET, POST, or DELETE (Prod) | partner.healthdyne.com/v2/patient/insurance     |
+| REQUEST TYPE                | ENDPOINT                                    |
+| :-------------------------- | :------------------------------------------ |
+| GET, POST, or DELETE (Test) | api.uat-healthdyne.com/v2/patient/insurance |
+| GET, POST, or DELETE (Prod) | api.healthdyne.com/v2/patient/insurance     |
 
 ### Header
 
@@ -37,7 +37,7 @@ Use POST method to add/create an insurance plan and assign to an existing patien
 
 ### Sample Insurance Plan GET Request
 
-[https://partner.uat-healthdyne.com/v2/patient/insurance?patientKey=ds76sa5765sad](https://api.uat-healthdyne.com/v2/patient/insurance?patientKey=ds76sa5765sad)
+[https://api.uat-healthdyne.com/v2/patient/insurance?patientKey=ds76sa5765sad](https://api.uat-healthdyne.com/v2/patient/insurance?patientKey=ds76sa5765sad)
 
 ### Sample Get Insurance Plan Response
 
@@ -104,7 +104,7 @@ Click here to see [Create Insurance Data Object](https://docs.healthdyne.com/v2.
 
 ### Sample DELETE insurance plan request
 
-[https://partner.uat-healthdyne.com/v2/patient/insurance?patientKey=ds76sa5765sad\&planNumber=209235](https://api.uat-healthdyne.com/v2/patient/insurance?patientKey=ds76sa5765sad\&planNumber=209235)
+[https://api.uat-healthdyne.com/v2/patient/insurance?patientKey=ds76sa5765sad\&planNumber=209235](https://api.uat-healthdyne.com/v2/patient/insurance?patientKey=ds76sa5765sad\&planNumber=209235)
 
 ### Sample DELETE Insurance Plan Response Message
 
