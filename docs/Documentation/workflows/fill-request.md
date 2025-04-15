@@ -147,6 +147,24 @@ Click here to see [GET Fill Request Query Data](https://docs.healthdyne.com/v2.1
     ]
 }
 ```
+```json
+{
+    "fillRequestKey": "FillPatientSample1404",
+    "submitted": [
+        {
+            "eventId": "289526",
+            "eventDateUtc": "2025-04-14T08:40:37.328768Z",
+            "scriptKeys": []
+        }
+    ],
+    "rxVerified": ],
+    "rxShipped": [],
+    "rxIssue": [],
+    "rxCanceled": [],
+    "rejected": []
+}
+NOTE: For a Single-line Rx.
+```
 
 Click here to see [Get Fill Request Data Object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object)
 
