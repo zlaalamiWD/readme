@@ -41,7 +41,7 @@ next:
 | relationshipCode  | Numeric | 1               | Optional          | See relationship code table below.                       |
 | insuranceMemberId | String  | 20              | Optional          | HealthDyne Member ID                                     |
 
-# Relationship Codes
+#### Relationship Codes
 
 | code | Description                    |
 | :--- | :----------------------------- |
