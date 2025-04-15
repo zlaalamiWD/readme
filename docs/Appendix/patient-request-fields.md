@@ -25,7 +25,7 @@ next:
 | gender              | String                                                                            | 1               | Required          | Patient’s Gender – M, F or U                                                                                                                                                                                                                                                                                                                  |
 | address             | Object [(address)](doc:patient-request-fields#address)                            |                 | Required          | Object containing patient’s address information. See [Address](doc:patient-request-fields#address) table.                                                                                                                                                                                                                                     |
 | contact             | Object [(contact)](doc:patient-request-fields#contact)                            |                 | Required          | Object containing patient’s contact information. See [Contact](doc:patient-request-fields#contact) table.                                                                                                                                                                                                                                     |
-| allergies           | Array [\[allergies\]](doc:patient-request-fields#allergies)                       |                 | Required          | Array containing patient’s allergy information. See the [Allergies](doc:patient-request-fields#allergies) table for valid list of allergies.                                                                                                                                                                                                  |
+| allergies           | Array \[\[allergies]]\(doc:patient-request-fields#allergies)                      |                 | Required          | Array containing patient’s allergy information. See the [Allergies](doc:patient-request-fields#allergies) table for valid list of allergies.                                                                                                                                                                                                  |
 | externalMedications | Array \[\[externalMedications]]\(doc:patient-request-fields#external-medications) |                 | Optional          | Array containing patient’s external medications objects. List any external Medications the patient is taking for pharmacy to know if there is any drug interaction. If there are  external medications, then ensure all the object elements are populated. See [External Medications](doc:patient-request-fields#external-medications) table. |
 
 # Address
@@ -81,3 +81,11 @@ next:
 | endDate   | Date-time | YYYY-MM-DD      | Optional          | Date when medication was ended   |
 
 \*NDC is required if the External Medications object is being provided in the Patient object.
+
+## GET Patient Request
+
+#### Query Parameter
+
+| Field      | Type   | Character Limit | Required/Optional | Description                         |
+| :--------- | :----- | :-------------- | :---------------- | :---------------------------------- |
+| patientKey | String | 50              | Required          | Unique patient ID in Client system. |
