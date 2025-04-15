@@ -299,10 +299,10 @@ Click here to see [Create Patient Response Data Object](https://docs.healthdyne.
 
 ##### Only HTTPS connections are accepted.
 
-| REQUEST TYPE | ENDPOINT                              |
-| :----------- | :------------------------------------ |
-| PUT (Test)   | partner.uat-healthdyne.com/v2/patient |
-| PUT (Prod)   | partner.healthdyne.com/v2/patient     |
+| REQUEST TYPE | ENDPOINT                            |
+| :----------- | :---------------------------------- |
+| PUT (Test)   | partner.uat-welldyne.com/v2/patient |
+| PUT (Prod)   | partner.welldyne.com/v2/patient     |
 
 ### Header
 
