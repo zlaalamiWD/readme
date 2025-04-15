@@ -23,10 +23,10 @@ Note, the status messages are not considered delivered and removed from the mail
 
 ##### Only https connections are accepted.
 
-| REQUEST TYPE       | ENDPOINT                              |
-| :----------------- | :------------------------------------ |
-| GET or Post (Test) | partner.uat-healthdyne.com/v2/mailbox |
-| GET or Post (Prod) | partner.healthdyne.com/v2/mailbox     |
+| REQUEST TYPE       | ENDPOINT                          |
+| :----------------- | :-------------------------------- |
+| GET or Post (Test) | api.uat-healthdyne.com/v2/mailbox |
+| GET or Post (Prod) | api.healthdyne.com/v2/mailbox     |
 
 ### Header
 
@@ -40,7 +40,7 @@ Note, the status messages are not considered delivered and removed from the mail
 
 #### Sample GET Request
 
-> `<https://partner.uat-healthdyne.com/v2/mailbox?messageCount=10>`
+> `<https://api.uat-healthdyne.com/v2/mailbox?messageCount=10>`
 
 This tells the API to only respond with 10 messages. The default message count is 100 messages. The Mailbox only allows 100 messages to be pulled at a time.
 
@@ -97,7 +97,7 @@ The below table lists the potential response codes that can be received in respo
 
 #### Sample POST Request
 
-> `<https://partner.uat-healthdyne.com/v2/mailbox?batchId=6be689c3-3306-4a75-b0d3-a769be788c99>`
+> `<https://api.uat-healthdyne.com/v2/mailbox?batchId=6be689c3-3306-4a75-b0d3-a769be788c99>`
 
 #### Sample POST Response
 
