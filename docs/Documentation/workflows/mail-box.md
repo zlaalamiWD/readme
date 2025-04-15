@@ -122,16 +122,16 @@ A RxReceived event will be produced when HealthDyne successfully receives an eRx
 
 ```json
 {
-  "eventId": "1000003",
-  "eventDateUtc": "2023-05-08T19:14:55.22818Z",
-  "eventType": "RXSTATUS",
-  "patientKey": "1000002",
-  "scriptKey": "1000001",
-  "status": "Received", 
-  "statusMessage": "A new prescription has been received",   
-  "detail": {
-    "reason":null
-  }
+    "eventId": "1000003",
+    "eventDateUtc": "2023-05-08T19:14:55.22818Z",
+    "eventType": "RXSTATUS",
+    "patientKey": "1000002",
+    "scriptKey": "1000001",
+    "status": "Received",
+    "statusMessage": "A new prescription has been received",
+    "detail": {
+        "reason": null
+    }
 }
 ```
 
@@ -141,15 +141,15 @@ RxDiscontinued events will be generated anytime an Rx has been discontinued by t
 
 ```json
 {
-  "eventId": "1000003",
-  "eventDateUtc": "2023-05-08T19:14:55.22818Z",
-  "eventType": "RXSTATUS",
-  "scriptKey": "1000001",
-  "status": "Discontinued",
-  "statusMessage": "The prescription has been discontinued by pharmacy",
-  "detail": {
-    "reason":"Rx Transferred out of pharmacy"
-  }
+    "eventId": "1000003",
+    "eventDateUtc": "2023-05-08T19:14:55.22818Z",
+    "eventType": "RXSTATUS",
+    "scriptKey": "1000001",
+    "status": "Discontinued",
+    "statusMessage": "The prescription has been discontinued by pharmacy",
+    "detail": {
+        "reason": "Rx Transferred out of pharmacy"
+    }
 }
 ```
 
