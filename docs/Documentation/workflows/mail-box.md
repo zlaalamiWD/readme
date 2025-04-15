@@ -428,3 +428,41 @@ Once the Rx has been shipped successfully by pharmacy, an update is sent for eac
 ```
 
 ## RxCopay
+
+Once the Rx has been adjudicated successfully by pharmacy, an update is sent for each RX with adjudication summary and insurance used to adjudicate the order. This event will be  a ‘RxCopay’ event sent for each Rx. For example, if an order has 2 RXs, you will receive 2 RxCopay messages.
+
+#### Sample "RxCopay" event
+
+<br />
+
+```json
+{
+    "eventId": "176357",
+    "eventDateUtc": "2025-04-15T12:26:20.613448Z",
+    "eventType": "FILLREQUEST",
+    "status": "RxCopay",
+    "statusMessage": "The prescription has been adjudicated.",
+    "fillRequestKey": "FILL85ea1e519bd146ed89b96f3f0066ff",
+    "detail": {
+        "orderNumber": "7546472",
+        "scriptKey": "993c869261204aecbea1a4a84a58329408ff6129da5243a79b",
+        "fillNumber": 0,
+        "adjudicationSummary": {
+            "claimStatus": "PAID",
+            "claimType": "B1",
+            "claimAdjRunDate": "2025-04-15T12:21:10.367Z",
+            "copayAmount": 14.77,
+            "clientCoPay": 126.36
+        },
+        "insurance": {
+            "bin": "4341",
+            "pcn": "341",
+            "payorPlanNumber": "58146",
+            "memberId": "341",
+            "policyHolderId": "341",
+            "personCode": "341",
+            "relationshipCode": "1"
+        }
+    }
+}
+```
