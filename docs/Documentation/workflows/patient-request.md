@@ -132,13 +132,13 @@ The Find Patient API (GET method) allows clients to lookup patientKey in HD syst
 | Content-Type                | application/json       |
 | HealthDyne-Subscription-Key | Provided by HealthDyne |
 
-#### Sample GET Request
+#### Sample GET Find Patient Request
 
 `GET https://partner.uat-welldyne.com/v2/Patient/find?FirstName=ABC&LastName=XYZ&Birthdate=1981-01-01&ZipCode=80017`
 
 Click here to see GET Find Patient Request Query Data
 
-#### Sample GET Status Response
+#### Sample GET Find Patient Response
 
 ```json
 {
