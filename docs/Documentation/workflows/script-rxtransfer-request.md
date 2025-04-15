@@ -157,7 +157,9 @@ The below table lists the potential response codes that can be received in respo
 ```json
 {
     "scriptKeys": [
-        "0ed290dbb11224ea0f9e27"
+        "0ed290dbb11224ea0f9e27",
+      	"0ed290dbb114ea0f9e27981",
+      	"0ed290dbb11224ea0f9e232167"
     ]
 }
 ```
@@ -178,10 +180,10 @@ API field validation information in Appendix [Script / RxTransfer Fields](doc:sc
 
 ##### Only https connections are accepted.
 
-| REQUEST TYPE | ENDPOINT                         |
-| :----------- | :------------------------------- |
-| POST (Test)  | api.uat-healthdyne.com/v2/script |
-| POST (Prod)  | api.healthdyne.com/v2/script     |
+| REQUEST TYPE | ENDPOINT                             |
+| :----------- | :----------------------------------- |
+| POST (Test)  | partner.uat-healthdyne.com/v2/script |
+| POST (Prod)  | partner.healthdyne.com/v2/script     |
 
 ### Header
 
