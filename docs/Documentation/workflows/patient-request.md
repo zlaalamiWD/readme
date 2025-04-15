@@ -220,6 +220,8 @@ The below table lists the potential response codes that can be received in respo
 
 # Create Patient
 
+The "Create Patient" endpoint uses the POST method to add a new patient record. The request body must include all required patient information. Upon successful creation, the endpoint returns a 200 status along with a confirmation message. If any mandatory fields are missing or invalid, a corresponding error message will be returned.
+
 ### Server
 
 ##### Only HTTPS connections are accepted.
