@@ -244,11 +244,7 @@ When a RxTransfer request can't be validated, HealthDyne generates a rejection e
   "eventType": "RXTRANSFER",
   "scriptKey": "1000004",
   "status": "Rejected",
-  "statusMessage": "The file [http://somedomain.com/files/12548.png] could not be retrieved.",
-  "detail": {
-    "patientKey": "1000002",
-    "rxNumber": null
-  }
+  "statusMessage": "The file [http://somedomain.com/files/12548.png] could not be retrieved."  
 }
 ```
 
@@ -269,7 +265,8 @@ HealthDyne will create the order after receiving a Fill Request by sending creat
   "status": "Submitted",
   "statusMessage": "The order is being processed",
   "detail": {
-    "orderNumber": "12345"
+    "orderNumber": "12345",
+    "fillNumber": 0
   }
 }
 ```
