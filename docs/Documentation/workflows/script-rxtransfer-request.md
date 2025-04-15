@@ -24,10 +24,10 @@ The Script API (GET) allows clients to retrieve prescription information for a s
 
 ##### Only https connections are accepted.
 
-| REQUEST TYPE | ENDPOINT                                                    |
-| :----------- | :---------------------------------------------------------- |
-| GET (Test)   | partner.uat-healthdyne.com/v2/script?scriptKey=\<scriptKey> |
-| GET (Prod)   | partner.healthdyne.com/v2/script?scriptKey=\<scriptKey>     |
+| REQUEST TYPE | ENDPOINT                                                |
+| :----------- | :------------------------------------------------------ |
+| GET (Test)   | api.uat-healthdyne.com/v2/script?scriptKey=\<scriptKey> |
+| GET (Prod)   | api.healthdyne.com/v2/script?scriptKey=\<scriptKey>     |
 
 ### Header
 
@@ -39,7 +39,7 @@ The Script API (GET) allows clients to retrieve prescription information for a s
 
 #### Sample GET Request
 
-> [https://partner.uat-healthdyne.com/v2/script?scriptkey=092723-123876A](https://api.uat-healthdyne.com/v2/script?scriptkey=092723-123876A)
+> [https://api.uat-healthdyne.com/v2/script?scriptkey=092723-123876A](https://api.uat-healthdyne.com/v2/script?scriptkey=092723-123876A)
 
 This tells the API to query for scriptKey 092723-123876A and return relevant details.
 
@@ -119,10 +119,10 @@ The "Get Patient script/Prescription" endpoint allows retrieval of all scripts a
 
 ##### Only https connections are accepted.
 
-| REQUEST TYPE | ENDPOINT                                                                    |
-| :----------- | :-------------------------------------------------------------------------- |
-| GET (Test)   | partner.uat-healthdyne.com/v2/patient/prescription?patientKey=\<patientKey> |
-| GET (Prod)   | partner.healthdyne.com/v2/patient/prescription?patientKey=\<patientKey>     |
+| REQUEST TYPE | ENDPOINT                                                                |
+| :----------- | :---------------------------------------------------------------------- |
+| GET (Test)   | api.uat-healthdyne.com/v2/patient/prescription?patientKey=\<patientKey> |
+| GET (Prod)   | api.healthdyne.com/v2/patient/prescription?patientKey=\<patientKey>     |
 
 ### Header
 
@@ -134,7 +134,7 @@ The "Get Patient script/Prescription" endpoint allows retrieval of all scripts a
 
 #### Sample GET Request
 
-> \<[https://partner.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece](https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece)
+> \<[https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece](https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece)
 
 This tells the API to query for patientKey 4e1e76ca-520f-4e7a-a6c7-d837a9e3cece  and returns a list of all scripts associated to that patient.
 
@@ -180,10 +180,10 @@ API field validation information in Appendix [Script / RxTransfer Fields](doc:sc
 
 ##### Only https connections are accepted.
 
-| REQUEST TYPE | ENDPOINT                             |
-| :----------- | :----------------------------------- |
-| POST (Test)  | partner.uat-healthdyne.com/v2/script |
-| POST (Prod)  | partner.healthdyne.com/v2/script     |
+| REQUEST TYPE | ENDPOINT                         |
+| :----------- | :------------------------------- |
+| POST (Test)  | api.uat-healthdyne.com/v2/script |
+| POST (Prod)  | api.healthdyne.com/v2/script     |
 
 ### Header
 
