@@ -163,7 +163,9 @@ Client must send a Fill request with following details:
 ```json
 {
   "fillRequestKey": "FillPatientSample1404",
-  "scriptKeys": ["TestScriptKey1404"],
+  "scriptKeys": [
+    "TestScriptKey1404"
+  ],
   "shipping": {
     "address": {
       "line1": "500 Eagles Landin Dr",
@@ -179,10 +181,10 @@ Client must send a Fill request with following details:
     "signatureRequired": true
   },
   "insurance": {
-    "planNumber":"209235",
-    "coPay":"32.50",
-    "transactionNumber":"pi_305qndABfMSbKdKQ0NA1r4L5",
-		"personCode": "001",
+    "planNumber": "209235",
+    "coPay": "32.50",
+    "transactionNumber": "pi_305qndABfMSbKdKQ0NA1r4L5",
+    "personCode": "001",
     "relationshipCode": "02"
   }
 }
