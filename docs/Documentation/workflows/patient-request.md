@@ -113,57 +113,6 @@ The below table lists the potential response codes that can be received in respo
 
 <br />
 
-```json
-{
-    "patientKey": "TESTPATIENT",
-    "firstName": "TEST",
-    "lastName": "TESTREADPATIENT17",
-    "gender": "F",
-    "patientLanguage": "ENG",
-    "birthDate": "1997-02-03",
-    "healthCondition": [],
-    "address": [
-        {
-            "line1": "123 Main St",
-            "line2": null,
-            "line3": null,
-            "city": "LAKELAND",
-            "state": "FL",
-            "zipCode": "33810",
-            "countryCode": "US",
-            "addressType": "HOME",
-            "defaultAddress": true
-        },
-        {
-            "line1": "678 Main St",
-            "line2": null,
-            "line3": null,
-            "city": "LAKELAND",
-            "state": "FL",
-            "zipCode": "33810",
-            "countryCode": "US",
-            "addressType": "HOME",
-            "defaultAddress": false
-        }
-    ],
-    "contact": [
-        {
-            "contactType": "HOME PHONE",
-            "contactAddress": "3233731379"
-        }
-    ],
-    "externalMedications": [
-        "00002445385",
-        "99207012010"
-    ],
-    "pregnancyIndicator": "N",
-    "allergies": [
-        "CEPHALOSPORINS",
-        "SALICYLATES"
-    ]
-}
-```
-
 # Find Patient
 
 The Find Patient API (GET method) allows clients to lookup patientKey in HD system using following parameters: First Name, Last Name, DOB and Zip code. NOTE: The parameter fields should be separated with an ampersand (&) when using the API endpoint. If a match is found, HD returns matching patientKey to retrieve details using Get Patient API.
