@@ -55,6 +55,35 @@ next:
 | 7    | Relation is ADULT DEPENDENT    |
 | 8    | Relation is SIGNIFICANT OTHER  |
 
+# Create Insurance Data Object
+
+#### Request Object
+
+| Field      | Type                                                                                                                              | Character Limit | Required/Optional | Description                                        |
+| :--------- | :-------------------------------------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------- |
+| patientKey | String                                                                                                                            | 50              | Required          | Unique patient ID in Client system.                |
+| insurance  | Object\[[CreateInsuranceDataObject](https://docs.healthdyne.com/v2.171/docs/insurance-request-fields#createinsurancedataobject) ] |                 | Required          | Object containing patient's insurance information. |
+
+#### CreateInsuranceDataObject
+
+| Field             | Type   | Character Limit | Required/Optional | Description                                              |
+| :---------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------- |
+| policyHolderId    | string | 20              | Required          | Insurance policy holder ID                               |
+| bin               | String | 4-6             | Required          | Insurance BIN information. Minimum of 4 digits required. |
+| groupId           | String | 15              | Optional          | Insurance group Id information.                          |
+| pcn               | String | 10              | Optional          | Insurance PCN information.                               |
+| personCode        | String | 3               | Optional          | Number 0 to 9.                                           |
+| relationshipCode  | String | 1               | Optional          | Number 0 to 9. See relationship code table below.        |
+| insuranceMemberID | String | 20              | Optional          | HealthDyne Member ID                                     |
+
+#### Response Object
+
+| Field      | Type   | Character Limit | Required/Optional | Description                         |
+| :--------- | :----- | :-------------- | :---------------- | :---------------------------------- |
+| patientKey | String | 50              | Required          | Unique patient ID in Client system. |
+| planNumber | String | 40              | Required          | Insurance Plan Number               |
+| message    | String | Max             | Required          | Plan added to patient profile.      |
+
 ### Sample POST request.
 
 ```json
