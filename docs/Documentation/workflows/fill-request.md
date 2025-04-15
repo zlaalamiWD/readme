@@ -226,24 +226,24 @@ Once an order has been created in HealthDyne system (using a Fill request), the 
 
 ```json
 {
-    "fillRequestKey": "FillPatientSample1404",
-    "scriptKeys": [
-        "TestScriptKey1404"
-    ],
-    "shipping": {
-        "address": {
-            "line1": "UpdateAgain1",
-            "line2": null,
-            "line3": null,
-            "city": "LAKELAND",
-            "state": "FL",
-            "zipCode": "33810",
-            "countryCode": "US"
-        },
-        "shippingCode": "POS 1C",
-        "saturdayDelivery": false,
-        "signatureRequired": false
-    }
+  "fillRequestKey": "FillPatientSample1404",
+  "scriptKeys": [
+    "TestScriptKey1404"
+  ],
+  "shipping": {
+    "address": {
+      "line1": "UpdateAgain1",
+      "line2": null,
+      "line3": null,
+      "city": "LAKELAND",
+      "state": "FL",
+      "zipCode": "33810",
+      "countryCode": "US"
+    },
+    "shippingCode": "POS 1C",
+    "saturdayDelivery": false,
+    "signatureRequired": false
+  }
 }
 ```
 
@@ -283,11 +283,11 @@ Once an order has been created in the HealthDyne system (using a Fill request), 
 
 ```json
 {
-    "fillRequestKey": "FillPatientSample1404",
-    "scriptKeys": [
-        "TestScriptKey1404"
-    ],
-   "cancelReason" : "Cancelled"
+  "fillRequestKey": "FillPatientSample1404",
+  "scriptKeys": [
+    "TestScriptKey1404"
+  ],
+  "cancelReason": "Cancelled"
 }
 ```
 
