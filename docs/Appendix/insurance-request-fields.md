@@ -31,14 +31,15 @@ next:
 
 #### InsuranceDataObject
 
-| Field            | Type    | Character Limit | Required/Optional | Description                                              |
-| :--------------- | :------ | :-------------- | :---------------- | :------------------------------------------------------- |
-| policyHolderId   | string  | 20              | Required          | Insurance policy/member ID.                              |
-| bin              | String  | 4-6             | Required          | Insurance BIN information. Minimum of 4 digits required. |
-| groupId          | String  | 15              | Optional          | Insurance group Id information.                          |
-| pcn              | String  | 10              | Optional          | Insurance PCN information.                               |
-| personCode       | Numeric | 3               | Optional          | Person code provided by insurance plan.                  |
-| relationshipCode | Numeric | 1               | Optional          | See relationship code table below.                       |
+| Field             | Type    | Character Limit | Required/Optional | Description                                              |
+| :---------------- | :------ | :-------------- | :---------------- | :------------------------------------------------------- |
+| policyHolderId    | string  | 20              | Required          | Insurance policy holder ID                               |
+| bin               | String  | 4-6             | Required          | Insurance BIN information. Minimum of 4 digits required. |
+| groupId           | String  | 15              | Optional          | Insurance group Id information.                          |
+| pcn               | String  | 10              | Optional          | Insurance PCN information.                               |
+| personCode        | Numeric | 3               | Optional          | Person code provided by insurance plan.                  |
+| relationshipCode  | Numeric | 1               | Optional          | See relationship code table below.                       |
+| insuranceMemberId | String  | 20              | Optional          | HealthDyne Member ID                                     |
 
 # Relationship Codes
 
