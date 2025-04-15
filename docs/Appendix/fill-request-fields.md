@@ -118,8 +118,6 @@ next:
 
 ***
 
-<br />
-
 ## GET Fill Request
 
 #### Query Parameter
@@ -139,7 +137,7 @@ next:
 | rxIssue        | Array \[[rxissue](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#rxissue)]       |                 | Optional          | Array of rxIssue objects containing issued information.                   |
 | rxCanceled     | Array \[[rxcanceled](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#rxcanceled)] |                 | Optional          | Array of rxCanceled objects containing cancel reason information.         |
 
-<br />
+***
 
 ## SUBMIT Fill Request
 
@@ -159,7 +157,7 @@ next:
 | fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
 | message        | String | Max             | Required          | Status messages string.                                                   |
 
-<br />
+***
 
 ## UPDATE Fill Request
 
@@ -178,7 +176,7 @@ next:
 | fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
 | message        | String | Max             | Required          | Status messages string.                                                   |
 
-<br />
+***
 
 ## CANCEL Fill Request
 
