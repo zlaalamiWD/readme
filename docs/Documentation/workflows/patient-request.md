@@ -280,9 +280,7 @@ The below table lists the potential response codes that can be received in respo
 
 Click here to see [POST Patient Request Data Object]()
 
-# Successful Response Messages
-
-#### Patient Added
+#### Sample Create Patient Response
 
 ```json
 {
