@@ -138,18 +138,7 @@ The Find Patient API (GET method) allows clients to lookup patientKey in HD syst
 
 > [https://partner.uat-welldyne.com/v2/patient/find?firstname=ABC\&lastname=XYZ\&birthdate=1981-01-01\&zipcode=80017](https://partner.uat-welldyne.com/v2/Patient/find?FirstName=ABC\&LastName=XYZ\&Birthdate=1981-01-01\&ZipCode=80017)
 >
-> Click here to see GET Find Patient Query Data
-
-# Find Patient Response
-
-The below table lists the potential response codes that can be received in response to a GET Find patient request.
-
-| Code | Description                   |
-| :--- | :---------------------------- |
-| 200  | Patient details returned      |
-| 400  | No record returned for search |
-| 401  | Unauthorized                  |
-| 500  | Internal Server Error         |
+> Click here to see GET Find Patient Request Query Data
 
 #### Sample GET Status Response
 
@@ -164,6 +153,17 @@ The below table lists the potential response codes that can be received in respo
     "zipCode": "33810"
 }
 ```
+
+Click here to see Get Find Patient Request Data Object
+
+The below table lists the potential response codes that can be received in response to a GET Find patient request.
+
+| Code | Description                   |
+| :--- | :---------------------------- |
+| 200  | Patient details returned      |
+| 400  | No record returned for search |
+| 401  | Unauthorized                  |
+| 500  | Internal Server Error         |
 
 # Get Patient Scripts/Prescriptions:
 
