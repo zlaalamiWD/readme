@@ -299,10 +299,10 @@ The "Update Patient" endpoint uses the PUT method to modify the details of an ex
 
 ##### Only HTTPS connections are accepted.
 
-| REQUEST TYPE | ENDPOINT                            |
-| :----------- | :---------------------------------- |
-| PUT (Test)   | partner.uat-welldyne.com/v2/patient |
-| PUT (Prod)   | partner.welldyne.com/v2/patient     |
+| REQUEST TYPE | ENDPOINT                          |
+| :----------- | :-------------------------------- |
+| PUT (Test)   | api.uat-healthdyne.com/v2/patient |
+| PUT (Prod)   | api.healthdyne.com/v2/patient     |
 
 ### Header
 
