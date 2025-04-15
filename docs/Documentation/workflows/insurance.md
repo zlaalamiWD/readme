@@ -115,3 +115,5 @@ Click here to see [Create Insurance Data Object](https://docs.healthdyne.com/v2.
   "message": "Patient Insurance plan number is inactivated successfully"
 }
 ```
+
+Click here to see [Delete Insurance Data Object](https://docs.healthdyne.com/v2.171/docs/insurance-request-fields#delete-insurance-request-path-query-parameter)
