@@ -258,16 +258,16 @@ HealthDyne will create the order after receiving a Fill Request by sending creat
 
 ```json
 {
-  "eventId": "1000007",
-  "eventDateUtc": "2023-05-08T19:16:55.22818Z",
-  "eventType": "FILLREQUEST",
-  "fillRequestKey": "1000006",
-  "status": "Submitted",
-  "statusMessage": "The order is being processed",
-  "detail": {
-    "orderNumber": "12345",
-    "fillNumber": 0
-  }
+    "eventId": "1000007",
+    "eventDateUtc": "2023-05-08T19:16:55.22818Z",
+    "eventType": "FILLREQUEST",
+    "fillRequestKey": "1000006",
+    "status": "Submitted",
+    "statusMessage": "The order is being processed",
+    "detail": {
+        "orderNumber": "12345",
+        "fillNumber": 0
+    }
 }
 ```
 
@@ -281,27 +281,27 @@ A "RxVerified" event will be generated once a Pharmacist has completed PV1 and r
 
 ```json
 {
-  "eventId": "1000008",
-  "eventDateUtc": "2023-05-08T19:17:55.22818Z",
-  "eventType": "FILLREQUEST",
-  "fillRequestKey": "1000006",
-  "status": "RxVerified",
-  "statusMessage": "The Rx has been verified by the pharmacist (PV1)",
-  "detail": {
-    "orderNumber": "12345",
-    "scriptKey": "1000004",
-    "fillNumber": 0,
-    "dispenseDrug": {
-      "dispenseNDC": "780000001290",
-      "dispenseDrugName": "Tylenol",
-      "daySupply": 30,
-      "prescribedQuantity": 60,
-      "labelDirections": "TAKE 1 TABLET DAILY",
-      "dosageForm": "TABLET",
-      "drugStrength": "200",
-      "drugStrengthUOM": "Mg"
+    "eventId": "1000008",
+    "eventDateUtc": "2023-05-08T19:17:55.22818Z",
+    "eventType": "FILLREQUEST",
+    "fillRequestKey": "1000006",
+    "status": "RxVerified",
+    "statusMessage": "The Rx has been verified by the pharmacist (PV1)",
+    "detail": {
+        "orderNumber": "12345",
+        "scriptKey": "1000004",
+        "fillNumber": 0,
+        "dispenseDrug": {
+            "dispenseNDC": "780000001290",
+            "dispenseDrugName": "Tylenol",
+            "daySupply": 30,
+            "prescribedQuantity": 60,
+            "labelDirections": "TAKE 1 TABLET DAILY",
+            "dosageForm": "TABLET",
+            "drugStrength": "200",
+            "drugStrengthUOM": "Mg"
+        }
     }
-  }
 }
 ```
 
@@ -313,12 +313,12 @@ If order creation errors/rejects; then Rejected event will be created. Possible 
 
 ```json
 {
-  "eventId": "1000012",
-  "eventDateUtc": "2023-05-08T19:19:55.22818Z",
-  "eventType": "FILLREQUEST",
-  "fillRequestKey": "1000010",
-  "status": "Rejected",
-  "statusMessage": "An open order exists for one or more RXs"
+    "eventId": "1000012",
+    "eventDateUtc": "2023-05-08T19:19:55.22818Z",
+    "eventType": "FILLREQUEST",
+    "fillRequestKey": "1000010",
+    "status": "Rejected",
+    "statusMessage": "An open order exists for one or more RXs"
 }
 ```
 
@@ -332,22 +332,21 @@ When an Order is successfully created, and then one of the Rx is subsequently re
 
 ```json
 {
-  "eventId": "1000016",
-  "eventDateUtc": "2023-05-08T19:20:55.22818Z",
-  "eventType": "FILLREQUEST",
-  "fillRequestKey": "1000013",
-  "status": "RxIssue",
-  "statusMessage": "HEALTHDYNE RX REJECTED",
-  "detail": {
-    "orderNumber": "56789",
-    "scriptKey": "1000003",
-		"fillNumber": 0,
-    "issueMessage": "REJECTED 533 HEALTHDYNE RX REJECTED",
-    "claimRejectCode": "388",
-    "claimRejectDescription": "PRIOR AUTHORIZATION SUPPORTING DOCUMENT IS NOT USED FOR THIS TRANSACTION CODE" 
-  }
+    "eventId": "1000016",
+    "eventDateUtc": "2023-05-08T19:20:55.22818Z",
+    "eventType": "FILLREQUEST",
+    "fillRequestKey": "1000013",
+    "status": "RxIssue",
+    "statusMessage": "HEALTHDYNE RX REJECTED",
+    "detail": {
+        "orderNumber": "56789",
+        "scriptKey": "1000003",
+        "fillNumber": 0,
+        "issueMessage": "REJECTED 533 HEALTHDYNE RX REJECTED",
+        "claimRejectCode": "388",
+        "claimRejectDescription": "PRIOR AUTHORIZATION SUPPORTING DOCUMENT IS NOT USED FOR THIS TRANSACTION CODE"
+    }
 }
-
 ```
 
 The 'statusMessage' field will show the pharmacy defined reason for the RxIssue status. Please see the Status Message table for a list of issues.
@@ -377,17 +376,17 @@ When a Rx or multiple Rx(s) in the order have been canceled pharmacy, HealthDyne
 
 ```json
 {
-  "eventId": "1000017",
-  "eventDateUtc": "2023-05-08T19:20:55.22818Z",
-  "eventType": "FILLREQUEST",
-  "fillRequestKey": "1000013",
-  "status": "RxCanceled",
-  "statusMessage": "Order canceled",
-  "detail": {
-    "orderNumber": "56789",
-    "scriptKey": "1000003",
-		"fillNumber": 0
-  }
+    "eventId": "1000017",
+    "eventDateUtc": "2023-05-08T19:20:55.22818Z",
+    "eventType": "FILLREQUEST",
+    "fillRequestKey": "1000013",
+    "status": "RxCanceled",
+    "statusMessage": "Order canceled",
+    "detail": {
+        "orderNumber": "56789",
+        "scriptKey": "1000003",
+        "fillNumber": 0
+    }
 }
 ```
 
