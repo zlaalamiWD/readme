@@ -40,7 +40,7 @@ Note, the status messages are not considered delivered and removed from the mail
 
 #### Sample GET Request
 
-[https://partner.uat-healthdyne.com/v2/mailbox?messageCount=10](https://partner.uat-healthdyne.com/v2/mailbox?messageCount=10)
+partner.uat-healthdyne.com/v2/mailbox?messageCount=10
 
 This tells the API to only respond with 10 messages. The default message count is 100 messages. The Mailbox only allows 100 messages to be pulled at a time.
 
@@ -159,17 +159,17 @@ RxRefillReady event will be generated anytime an Rx is ready for refill. NOTE: T
 
 ```json
 {
-         "eventId": "118081",
-         "eventDateUtc": "2024-05-01T06:01:25.527727Z",
-         "eventType": "RXSTATUS",
-         "status": "RefillReady",
-         "statusMessage": "The prescription is ready for refill.",
-         "scriptKey": "f324f6d0894f4abdba6b252158a2313d",
-         "patientKey": "AB1890001",
-         "detail": {
-           "reason": null
-         }
-      }
+    "eventId": "118081",
+    "eventDateUtc": "2024-05-01T06:01:25.527727Z",
+    "eventType": "RXSTATUS",
+    "status": "RefillReady",
+    "statusMessage": "The prescription is ready for refill.",
+    "scriptKey": "f324f6d0894f4abdba6b252158a2313d",
+    "patientKey": "AB1890001",
+    "detail": {
+        "reason": null
+    }
+}
 ```
 
 ## RxOverdue
@@ -178,17 +178,17 @@ RxOverdue event will be generated anytime an Rx is overdue for a refill. NOTE: T
 
 ```json
 {
-         "eventId": "118087",
-         "eventDateUtc": "2024-05-05T06:02:19.771002Z",
-         "eventType": "RXSTATUS",
-         "status": "Overdue",
-         "statusMessage": "The prescription is overdue for refill",
-         "scriptKey": "f324f6d0894f4abdba6b252158a2313d",
-         "patientKey": "AB1890001",
-         "detail": {
-           "reason": null
-         }
-      }
+    "eventId": "118087",
+    "eventDateUtc": "2024-05-05T06:02:19.771002Z",
+    "eventType": "RXSTATUS",
+    "status": "Overdue",
+    "statusMessage": "The prescription is overdue for refill",
+    "scriptKey": "f324f6d0894f4abdba6b252158a2313d",
+    "patientKey": "AB1890001",
+    "detail": {
+        "reason": null
+    }
+}
 ```
 
 ## RxRenewalReady
@@ -197,17 +197,17 @@ RxRenewalReady event will be generated anytime an Rx is ready for prescriber to 
 
 ```json
 {
-         "eventId": "118079",
-         "eventDateUtc": "2024-04-30T15:01:50.250195Z",
-         "eventType": "RXSTATUS",
-         "status": "RenewalReady",
-         "statusMessage": "The prescription needs to be renewed.",
-         "scriptKey": "2fbb38d736b74d83bccf13c2e98ad3a4",
-         "patientKey": "AB1890001",
-         "detail": {
-           "reason": null
-         }
-      }
+    "eventId": "118079",
+    "eventDateUtc": "2024-04-30T15:01:50.250195Z",
+    "eventType": "RXSTATUS",
+    "status": "RenewalReady",
+    "statusMessage": "The prescription needs to be renewed.",
+    "scriptKey": "2fbb38d736b74d83bccf13c2e98ad3a4",
+    "patientKey": "AB1890001",
+    "detail": {
+        "reason": null
+    }
+}
 ```
 
 ## Transferred *(Rx Transfer only)*
@@ -218,16 +218,16 @@ Once the PNG or XML has been successfully downloaded, HealthDyne will store the 
 
 ```json
 {
-  "eventId": "1000003",
-  "eventDateUtc": "2023-05-08T19:14:55.22818Z",
-  "eventType": "RXTRANSFER",
-  "scriptKey": "1000001",
-  "status": "Transferred",
-  "statusMessage": "The Rx has been transferred successfully",
-  "detail": {
-    "patientKey": "1000002",
-    "rxNumber": "RX12345"
-   }
+    "eventId": "1000003",
+    "eventDateUtc": "2023-05-08T19:14:55.22818Z",
+    "eventType": "RXTRANSFER",
+    "scriptKey": "1000001",
+    "status": "Transferred",
+    "statusMessage": "The Rx has been transferred successfully",
+    "detail": {
+        "patientKey": "1000002",
+        "rxNumber": "RX12345"
+    }
 }
 ```
 
@@ -239,12 +239,12 @@ When a RxTransfer request can't be validated, HealthDyne generates a rejection e
 
 ```json
 {
-  "eventId": "1000005",
-  "eventDateUtc": "2023-05-08T19:15:55.22818Z",
-  "eventType": "RXTRANSFER",
-  "scriptKey": "1000004",
-  "status": "Rejected",
-  "statusMessage": "The file [http://somedomain.com/files/12548.png] could not be retrieved."  
+    "eventId": "1000005",
+    "eventDateUtc": "2023-05-08T19:15:55.22818Z",
+    "eventType": "RXTRANSFER",
+    "scriptKey": "1000004",
+    "status": "Rejected",
+    "statusMessage": "The file [http://somedomain.com/files/12548.png] could not be retrieved."
 }
 ```
 
@@ -258,16 +258,16 @@ HealthDyne will create the order after receiving a Fill Request by sending creat
 
 ```json
 {
-  "eventId": "1000007",
-  "eventDateUtc": "2023-05-08T19:16:55.22818Z",
-  "eventType": "FILLREQUEST",
-  "fillRequestKey": "1000006",
-  "status": "Submitted",
-  "statusMessage": "The order is being processed",
-  "detail": {
-    "orderNumber": "12345",
-    "fillNumber": 0
-  }
+    "eventId": "1000007",
+    "eventDateUtc": "2023-05-08T19:16:55.22818Z",
+    "eventType": "FILLREQUEST",
+    "fillRequestKey": "1000006",
+    "status": "Submitted",
+    "statusMessage": "The order is being processed",
+    "detail": {
+        "orderNumber": "12345",
+        "fillNumber": 0
+    }
 }
 ```
 
@@ -281,27 +281,27 @@ A "RxVerified" event will be generated once a Pharmacist has completed PV1 and r
 
 ```json
 {
-  "eventId": "1000008",
-  "eventDateUtc": "2023-05-08T19:17:55.22818Z",
-  "eventType": "FILLREQUEST",
-  "fillRequestKey": "1000006",
-  "status": "RxVerified",
-  "statusMessage": "The Rx has been verified by the pharmacist (PV1)",
-  "detail": {
-    "orderNumber": "12345",
-    "scriptKey": "1000004",
-    "fillNumber": 0,
-    "dispenseDrug": {
-      "dispenseNDC": "780000001290",
-      "dispenseDrugName": "Tylenol",
-      "daySupply": 30,
-      "prescribedQuantity": 60,
-      "labelDirections": "TAKE 1 TABLET DAILY",
-      "dosageForm": "TABLET",
-      "drugStrength": "200",
-      "drugStrengthUOM": "Mg"
+    "eventId": "1000008",
+    "eventDateUtc": "2023-05-08T19:17:55.22818Z",
+    "eventType": "FILLREQUEST",
+    "fillRequestKey": "1000006",
+    "status": "RxVerified",
+    "statusMessage": "The Rx has been verified by the pharmacist (PV1)",
+    "detail": {
+        "orderNumber": "12345",
+        "scriptKey": "1000004",
+        "fillNumber": 0,
+        "dispenseDrug": {
+            "dispenseNDC": "780000001290",
+            "dispenseDrugName": "Tylenol",
+            "daySupply": 30,
+            "prescribedQuantity": 60,
+            "labelDirections": "TAKE 1 TABLET DAILY",
+            "dosageForm": "TABLET",
+            "drugStrength": "200",
+            "drugStrengthUOM": "Mg"
+        }
     }
-  }
 }
 ```
 
@@ -313,12 +313,12 @@ If order creation errors/rejects; then Rejected event will be created. Possible 
 
 ```json
 {
-  "eventId": "1000012",
-  "eventDateUtc": "2023-05-08T19:19:55.22818Z",
-  "eventType": "FILLREQUEST",
-  "fillRequestKey": "1000010",
-  "status": "Rejected",
-  "statusMessage": "An open order exists for one or more RXs"
+    "eventId": "1000012",
+    "eventDateUtc": "2023-05-08T19:19:55.22818Z",
+    "eventType": "FILLREQUEST",
+    "fillRequestKey": "1000010",
+    "status": "Rejected",
+    "statusMessage": "An open order exists for one or more RXs"
 }
 ```
 
@@ -332,22 +332,21 @@ When an Order is successfully created, and then one of the Rx is subsequently re
 
 ```json
 {
-  "eventId": "1000016",
-  "eventDateUtc": "2023-05-08T19:20:55.22818Z",
-  "eventType": "FILLREQUEST",
-  "fillRequestKey": "1000013",
-  "status": "RxIssue",
-  "statusMessage": "HEALTHDYNE RX REJECTED",
-  "detail": {
-    "orderNumber": "56789",
-    "scriptKey": "1000003",
-		"fillNumber": 0,
-    "issueMessage": "REJECTED 533 HEALTHDYNE RX REJECTED",
-    "ClaimRejectCode": "388",
-    "ClaimRejectDescription": "PRIOR AUTHORIZATION SUPPORTING DOCUMENT IS NOT USED FOR THIS TRANSACTION CODE" 
-  }
+    "eventId": "1000016",
+    "eventDateUtc": "2023-05-08T19:20:55.22818Z",
+    "eventType": "FILLREQUEST",
+    "fillRequestKey": "1000013",
+    "status": "RxIssue",
+    "statusMessage": "HEALTHDYNE RX REJECTED",
+    "detail": {
+        "orderNumber": "56789",
+        "scriptKey": "1000003",
+        "fillNumber": 0,
+        "issueMessage": "REJECTED 533 HEALTHDYNE RX REJECTED",
+        "ClaimRejectCode": "388",
+        "ClaimRejectDescription": "PRIOR AUTHORIZATION SUPPORTING DOCUMENT IS NOT USED FOR THIS TRANSACTION CODE"
+    }
 }
-
 ```
 
 The 'statusMessage' field will show the pharmacy defined reason for the RxIssue status. Please see the Status Message table for a list of issues.
