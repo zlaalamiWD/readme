@@ -67,6 +67,8 @@ Use POST method to add/create an insurance plan and assign to an existing patien
 }
 ```
 
+Click here to see [Get Insurance Data Object](https://docs.healthdyne.com/v2.171/docs/insurance-request-fields#get-insurance-data-object)
+
 # POST / Create
 
 ### Sample Insurance Plan POST Request
