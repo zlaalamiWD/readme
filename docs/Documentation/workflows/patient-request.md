@@ -312,6 +312,12 @@ Click here to see [Create Patient Response Data Object](https://docs.healthdyne.
 | Content-Type                | application/json       |
 | HealthDyne-Subscription-Key | Provided by HealthDyne |
 
+### Sample Update Patient Request
+
+`PUT https://partner.uat-welldyne.com/v2/patient`
+
+### Sample Update Patient Request Body
+
 ### Sample Patient Request
 
 ```json
