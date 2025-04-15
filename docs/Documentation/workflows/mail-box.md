@@ -352,7 +352,7 @@ When an Order is successfully created, and then one of the Rx is subsequently re
 
 The 'statusMessage' field will show the pharmacy defined reason for the RxIssue status. Please see the Status Message table for a list of issues.
 
-|                                                                |                                               |
+| Issue Message Examples List 1                                  | Issue Message Examples List 2                 |
 | :------------------------------------------------------------- | :-------------------------------------------- |
 | PATIENT PROFILE                                                | CREDIT CARD                                   |
 | NDC NOT COVERED                                                | DOCTOR DENIED/NON-RESPONSE                    |
@@ -385,7 +385,8 @@ When a Rx or multiple Rx(s) in the order have been canceled pharmacy, HealthDyne
   "statusMessage": "Order canceled",
   "detail": {
     "orderNumber": "56789",
-    "scriptKey": "1000003"
+    "scriptKey": "1000003",
+		"fillNumber": 0
   }
 }
 ```
