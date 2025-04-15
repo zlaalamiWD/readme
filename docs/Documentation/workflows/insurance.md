@@ -110,8 +110,8 @@ Click here to see [Create Insurance Data Object](https://docs.healthdyne.com/v2.
 
 ```json
 {
-  "patientKey": "ds76sa5765sad",
+  "patientKey": "ds76sa5765sad",
   "planNumber": "209235",
-  "message": "Plannumber was succussfully removed"
+  "message": "Patient Insurance plan number is inactivated successfully"
 }
 ```
