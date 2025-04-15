@@ -147,7 +147,7 @@ Client must send a Fill request with following details:
 
 #### Sample Submit Fill Request
 
-`https://partner.uat-welldyne.com/v2/fill`
+`POST https://partner.uat-welldyne.com/v2/fill`
 
 #### Sample Submit Fill Request Body
 
