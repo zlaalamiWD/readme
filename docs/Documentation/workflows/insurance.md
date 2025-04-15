@@ -98,7 +98,7 @@ Click here to see [Get Insurance Data Object](https://docs.healthdyne.com/docs/i
 }
 ```
 
-Click here to see [Create Insurance Data Object](https://docs.healthdyne.com/v2.171/docs/insurance-request-fields#create-insurance-request-data-object)
+Click here to see [Create Insurance Data Object](https://docs.healthdyne.com/docs/insurance-request-fields#create-insurance-data-object)
 
 # DELETE
 
