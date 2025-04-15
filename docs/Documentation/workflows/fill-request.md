@@ -211,7 +211,7 @@ Once an order has been created in HealthDyne system (using a Fill request), the 
 
 #### Sample Update Fill Request
 
-> [PUT https://(ENDPOINT)/v2/fill](https://\(ENDPOINT\)/v2/fill)
+`PUT https://partner.uat-welldyne.com/v2/fill`
 
 #### Sample Update Fill Request Body
 
