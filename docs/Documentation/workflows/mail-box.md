@@ -393,7 +393,9 @@ When a Rx or multiple Rx(s) in the order have been canceled pharmacy, HealthDyne
 
 ## Shipped
 
-Once the Rx has been shipped successfully by pharmacy, then send update for each Rx within the order will be sent to client. This event will be ‘Shipped’ event sent for each Rx.
+<br />
+
+Once the Rx has been shipped successfully by pharmacy, an update is sent for each Rx within the order. This event will be  a ‘Shipped’ event sent for each Rx. For example, if an order has 2 RXs, you will receive 2 shipped messages.
 
 > 📃 NOTE: This is at Rx level (i.e. for each Rx)
 
@@ -401,36 +403,74 @@ Once the Rx has been shipped successfully by pharmacy, then send update for each
 
 ```json
 {
-  "eventId": "1000009",
-  "eventDateUtc": "2023-05-08T19:18:55.22818Z",
-  "eventType": "FILLREQUEST",
-  "fillRequestKey": "1000006",
-  "status": "RxShipped",
-  "statusMessage": "The Rx has been shipped",
-  "detail": {
-    "orderNumber": "12345",
-    "scriptKey": "1000004",
-    "shipments": [{
-      	"address": null,
-        "cost": 4.88,
-        "weight": 0.6,
-        "daysSupply": "45",
-        "trackingUrl": "https://tools.usps.com/go/TrackConfirmAction?tLabels=?92001122222222222",
-        "dispensedQty": "90",
-        "shipmentCode": "POS 1C",
-        "shipmentDate": "2024-04-04T19:30:36Z",
-        "trackingNumber": "122222222222"
-      }],
-    "fillNumber": 2,
-    "remainingRefills": "2",
-    "refillByDate": "2024-04-29T06:00:00Z"
-  }
+    "eventId": "1000009",
+    "eventDateUtc": "2023-05-08T19:18:55.22818Z",
+    "eventType": "FILLREQUEST",
+    "fillRequestKey": "1000006",
+    "status": "RxShipped",
+    "statusMessage": "The Rx has been shipped",
+    "detail": {
+        "orderNumber": "12345",
+        "scriptKey": "1000004",
+        "shipments": [
+            {
+                "Cost": 4.88,
+                "Weight": 0.6,
+                "DaysSupply": "45",
+                "TrackingUrl": "https://tools.usps.com/go/TrackConfirmAction?tLabels=?92001122222222222",
+                "DispensedQty": "90",
+                "ShipmentCode": "POS 1C",
+                "ShipmentDate": "2024-04-04T19:30:36Z",
+                "TrackingNumber": "122222222222"
+            }
+        ],
+        "fillNumber": 2,
+        "RemainingRefills": "2",
+        "RefillByDate": "2024-04-29T06:00:00Z"
+    }
 }
-
 ```
 
 <br />
 
 > ❗️ NOTE: the address attribute only return null for now
 
-##
+<br />
+
+## RxCopay
+
+Once the Rx has been adjudicated successfully by pharmacy, an update is sent for each RX with adjudication summary and insurance used to adjudicate the order. This event will be  a ‘RxCopay’ event sent for each Rx. For example, if an order has 2 RXs, you will receive 2 RxCopay messages.
+
+#### Sample "RxCopay" event
+
+```json
+{
+    "eventId": "176357",
+    "eventDateUtc": "2025-04-15T12:26:20.613448Z",
+    "eventType": "FILLREQUEST",
+    "status": "RxCopay",
+    "statusMessage": "The prescription has been adjudicated.",
+    "fillRequestKey": "FILL85ea1e519bd146ed89b96f3f0066ff",
+    "detail": {
+        "orderNumber": "7546472",
+        "scriptKey": "993c869261204aecbea1a4a84a58329408ff6129da5243a79b",
+        "fillNumber": 0,
+        "adjudicationSummary": {
+            "claimStatus": "PAID",
+            "claimType": "B1",
+            "claimAdjRunDate": "2025-04-15T12:21:10.367Z",
+            "copayAmount": 14.77,
+            "clientCoPay": 126.36
+        },
+        "insurance": {
+            "bin": "4341",
+            "pcn": "341",
+            "payorPlanNumber": "58146",
+            "memberId": "341",
+            "policyHolderId": "341",
+            "personCode": "341",
+            "relationshipCode": "1"
+        }
+    }
+}
+```
