@@ -37,7 +37,7 @@ Use POST method to add/create an insurance plan and assign to an existing patien
 
 ### Sample Insurance Plan GET Request
 
-[https://api.uat-healthdyne.com/v2/patient/insurance?patientKey=ds76sa5765sad](https://api.uat-healthdyne.com/v2/patient/insurance?patientKey=ds76sa5765sad)
+`Get:https://api.uat-healthdyne.com/v2/patient/insurance?patientKey=ds76sa5765sad`
 
 ### Sample Insurance Plan Response
 
