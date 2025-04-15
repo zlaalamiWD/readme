@@ -102,11 +102,11 @@ Click here to see [Create Insurance Data Object](https://docs.healthdyne.com/v2.
 
 # DELETE
 
-### Sample DELETE insurance plan request
+### Sample DELETE Insurance plan request
 
 `Delete:https://api.uat-healthdyne.com/v2/patient/insurance?patientKey=ds76sa5765sad&planNumber=209235`
 
-### Successful DELETE Response Message
+### Successful DELETE Insurance Plan Response Message
 
 ```json
 {
