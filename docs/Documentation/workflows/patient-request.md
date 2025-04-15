@@ -186,7 +186,7 @@ The "Get Patient Script/Prescription" endpoint allows retrieval of all scripts a
 
 #### Sample GET Patient Scripts/Prescriptions Request
 
-`GET https://partner.uat-welldyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece`
+`GET https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece`
 
 Click here to see [GET Patient Scripts/Prescriptions Query Data]()
 
