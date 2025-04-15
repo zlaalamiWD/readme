@@ -100,9 +100,7 @@ Click here to see (Add Label to the table TBD)
 }
 ```
 
-#
-
-# GET Patient Response
+Click here to see Get Fill Request Data Object (TBD)
 
 The below table lists the potential response codes that can be received in response to a GET request.
 
