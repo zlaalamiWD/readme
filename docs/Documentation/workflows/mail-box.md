@@ -102,13 +102,13 @@ The below table lists the potential response codes that can be received in respo
 #### Sample POST Response
 
 ```json
-{ 
-    "batchId": "6be689c3-3306-4a75-b0d3-a769be788c99", 
-    "status": "MARKED DELIVERED", 
-    "eventId": [ 
-        "1000003", 
+{
+    "batchId": "6be689c3-3306-4a75-b0d3-a769be788c99",
+    "status": "MARKED DELIVERED",
+    "eventId": [
+        "1000003",
         "1000005"
-    ] 
+    ]
 }
 ```
 
