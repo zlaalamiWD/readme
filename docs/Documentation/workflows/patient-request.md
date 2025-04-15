@@ -335,7 +335,7 @@ The "Update Patient" endpoint uses the PUT method to modify the details of an ex
       "state": "FL",
       "zipCode": "02155",
       "countryCode": "US",
-      "defaultAddress":True
+      "defaultAddress":true
     },
     "contact": {
       "contactType": "PHONE",
