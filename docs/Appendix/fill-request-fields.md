@@ -32,7 +32,7 @@ next:
 | eventDateUtc  | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Required          | Date and time of the event in UTC (ISO 8601). |
 | scriptKey     | String   | 50                                   | Required          | Unique ID associated with script request.     |
 | verifiedDate  | DateTime | YYYY-MM-DD T HH:MM:SS Z              | Required          | Date and Time of Fill Request verified.       |
-| statusMessage | String   | Max                                  | Required          |                                               |
+| statusMessage | String   | Max                                  | Required          | Status message from Pharmacy.                 |
 
 ### RxShipped
 
@@ -42,7 +42,7 @@ next:
 | eventDateUtc   | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Required          | Date and time of the event in UTC (ISO 8601). |
 | scriptKey      | String   | 50                                   | Required          | Unique ID associated with script request.     |
 | shipmentDate   | DateTime | YYYY-MM-DD T HH:MM:SS Z              | Required          | Date and Time of Fill Request Shipped.        |
-| trackingNumber | String   | 40                                   | Required          |                                               |
+| trackingNumber | String   | 40                                   | Required          | Shipment tracking number.                     |
 
 ### RxIssue
 
@@ -51,7 +51,7 @@ next:
 | eventId      | String   | 4 bytes (32-bit signed int)          | Required          | Unique Event Identifier for the Fill Request. |
 | eventDateUtc | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Required          | Date and time of the event in UTC (ISO 8601). |
 | scriptKey    | String   | 50                                   | Required          | Unique ID associated with script request.     |
-| issueMessage | String   | Max                                  | Required          |                                               |
+| issueMessage | String   | Max                                  | Required          | Issue message from Pharmacy.                  |
 
 ### RxCanceled
 
@@ -60,7 +60,7 @@ next:
 | eventId       | String   | 4 bytes (32-bit signed int)          | Required          | Unique Event Identifier for the Fill Request. |
 | eventDateUtc  | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Required          | Date and time of the event in UTC (ISO 8601). |
 | scriptKey     | String   | 50                                   | Required          | Unique ID associated with script request.     |
-| statusMessage | String   | Max                                  | Required          |                                               |
+| statusMessage | String   | Max                                  | Required          | Status message from Pharmacy.                 |
 
 # Fill Request Data Object
 
