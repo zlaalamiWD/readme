@@ -110,13 +110,27 @@ next:
 
 # Insurance Data Object
 
-| Field             | Type   | Character Limit | Required/Optional | Description                                                                                                          |
-| :---------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------------- |
-| planNumber        | String | 40              | Required          | Insurance plan number to be used on order that was previously provided by HealthDyne on a create Insurance response. |
-| coPay             | String | 6               | Required          | Payment collected from the patient at checkout. Format "xx.xx" or "xxx.xx"                                           |
-| transactionNumber | String |                 | Required          | The payment transaction number. This should be the stripe transaction number if payment is managed by HealthDyne.    |
+| Field             | Type   | Character Limit | Required/Optional | Description                                                                                                                                |
+| :---------------- | :----- | :-------------- | :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------- |
+| planNumber        | String | 40              | Required          | Insurance plan number to be used on order that was previously provided by HealthDyne on a create Insurance response.                       |
+| coPay             | String | 6               | Required          | Payment collected from the patient at checkout. Format "xx.xx" or "xxx.xx"                                                                 |
+| transactionNumber | String |                 | Required          | The payment transaction number. This should be the stripe transaction number if payment is managed by HealthDyne.                          |
+| personCode        | String | 3               | Optional          | Number 0 to 9.                                                                                                                             |
+| relationshipCode  | String | 1               | Optional          | Number 0 to 9. See relationship code table \[[below](https://docs.healthdyne.com/v2.171/docs/insurance-request-fields#relationship-codes)] |
 
-***
+#### Relationship Codes
+
+| code | Description                    |
+| :--- | :----------------------------- |
+| 0    | Relation is  NOT SPECIFIED     |
+| 1    | Relation is CARDHOLDER         |
+| 2    | Relation is SPOUSE             |
+| 3    | Relation is CHILD              |
+| 4    | Relation is OTHER DEPENDENT    |
+| 5    | Relation is STUDENT DEPENDENT  |
+| 6    | Relation is DISABLED DEPENDENT |
+| 7    | Relation is ADULT DEPENDENT    |
+| 8    | Relation is SIGNIFICANT OTHER  |
 
 ## GET Fill Request
 
