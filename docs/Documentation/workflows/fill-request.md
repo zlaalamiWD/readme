@@ -270,7 +270,7 @@ Once an order has been created in the HealthDyne system (using a Fill request), 
 
 #### Sample Cancel Fill Request
 
-> [POST https://(ENDPOINT)/v2/fill/cancel](https://\(ENDPOINT\)/v2/fill/cancel)
+`POST https://partner.uat-welldyne.com/v2/fill/cancel`
 
 #### Sample Cancel Fill Request Body
 
