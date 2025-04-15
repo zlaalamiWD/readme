@@ -89,7 +89,8 @@ The below table lists the potential response codes that can be received in respo
     "lastFillDate":null,
     "patientKey": "JWf782u3409wsed",
     "fillsRemaining": "6",
-    "quantityRemaining": "180",
+    "quantityRemaining": "180",    
+    "metricQuantity": "",
     "nextFillDate": null,
     "provider": {
       "name": "UBARRA",
