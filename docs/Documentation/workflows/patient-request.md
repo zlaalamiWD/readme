@@ -151,7 +151,7 @@ The below table lists the potential response codes that can be received in respo
 | 401  | Unauthorized                  |
 | 500  | Internal Server Error         |
 
-#### Sample Status Response
+#### Sample GET Status Response
 
 ```json
 {
