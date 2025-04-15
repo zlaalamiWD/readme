@@ -26,10 +26,10 @@ Once a patient has been registered successfully, the GET Patient API allows clie
 
 ##### Only HTTPS connections are accepted.
 
-| METHOD TYPE | ENDPOINT                                                     |
-| :---------- | :----------------------------------------------------------- |
-| GET (Test)  | partner.uat-welldyne.com/v2/patient?patientkey=\<patientKey> |
-| GET (Prod)  | partner.welldyne.com/v2/patient?patientkey=\<patientKey>     |
+| METHOD TYPE | ENDPOINT                                                   |
+| :---------- | :--------------------------------------------------------- |
+| GET (Test)  | api.uat-healthdyne.com/v2/patient?patientkey=\<patientKey> |
+| GET (Prod)  | api.healthdyne.com/v2/patient?patientkey=\<patientKey>     |
 
 ### Header
 
