@@ -14,11 +14,9 @@ next:
 
 See the [Patient](ref:post_v2-patient) API reference for request message fields.
 
-This API lets clients define and update patient information in the HealthDyne system.
+This API lets clients define and update patient information in the HealthDyne system. A client can also use the GET method of Patient Request to retrieve patient.
 
 Use POST method to add/create a patient and PUT method to update existing patient details.
-
-API field validation information in Appendix [Patient Request Fields](doc:patient-request-fields)
 
 # Get Patient
 
@@ -26,12 +24,12 @@ Once a patient has been registered successfully, the GET Patient API allows clie
 
 ### Server
 
-##### Only https connections are accepted.
+##### Only HTTPS connections are accepted.
 
-| REQUEST TYPE | ENDPOINT                             |
-| :----------- | :----------------------------------- |
-| GET (Test)   | partner.uat-welldyne.com/v2/patient? |
-| GET (Prod)   | partner.welldyne.com/v2/patient?     |
+| REQUEST TYPE | ENDPOINT                                           |
+| :----------- | :------------------------------------------------- |
+| GET (Test)   | partner.uat-welldyne.com/v2/patient?=\<patientKey> |
+| GET (Prod)   | partner.welldyne.com/v2/patient?=\<patientKey>     |
 
 ### Header
 
