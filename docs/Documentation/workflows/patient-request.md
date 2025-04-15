@@ -297,6 +297,8 @@ Click here to see [Create Patient Response Data Object](https://docs.healthdyne.
 
 # Update Patient
 
+The "Update Patient" endpoint uses the PUT method to modify the details of an existing patient. The request must include the patientKey along with the updated information in the request body. A successful update returns a 200 status and a confirmation message. If the patient is not found or the input data is invalid, an appropriate error response will be provided.
+
 ### Server
 
 ##### Only HTTPS connections are accepted.
