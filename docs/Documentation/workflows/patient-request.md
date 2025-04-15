@@ -173,10 +173,10 @@ The "Get Patient Script/Prescription" endpoint allows retrieval of all scripts a
 
 ##### Only https connections are accepted.
 
-| METHOD TYPE | ENDPOINT                                                                    |
-| :---------- | :-------------------------------------------------------------------------- |
-| GET (Test)  | partner.uat-healthdyne.com/v2/patient/prescription?patientkey=\<patientKey> |
-| GET (Prod)  | partner.healthdyne.com/v2/patient/prescription?patientkey=\<patientKey>     |
+| METHOD TYPE | ENDPOINT                                                                  |
+| :---------- | :------------------------------------------------------------------------ |
+| GET (Test)  | partner.uat-welldyne.com/v2/patient/prescription?patientkey=\<patientKey> |
+| GET (Prod)  | partner.welldyne.com/v2/patient/prescription?patientkey=\<patientKey>     |
 
 ### Header
 
@@ -188,7 +188,7 @@ The "Get Patient Script/Prescription" endpoint allows retrieval of all scripts a
 
 #### Sample GET Request
 
-`GET https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece`
+`GET https://partner.uat-welldyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece`
 
 This tells the API to query for patientKey 4e1e76ca-520f-4e7a-a6c7-d837a9e3cece and return relevant details.
 
@@ -224,10 +224,10 @@ The below table lists the potential response codes that can be received in respo
 
 ##### Only HTTPS connections are accepted.
 
-| METHOD TYPE | ENDPOINT                              |
-| :---------- | :------------------------------------ |
-| POST (Test) | partner.uat-healthdyne.com/v2/patient |
-| POST (Prod) | partner.healthdyne.com/v2/patient     |
+| METHOD TYPE | ENDPOINT                            |
+| :---------- | :---------------------------------- |
+| POST (Test) | partner.uat-welldyne.com/v2/patient |
+| POST (Prod) | partner.welldyne.com/v2/patient     |
 
 ### Header
 
