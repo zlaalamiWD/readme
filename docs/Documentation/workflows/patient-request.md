@@ -353,6 +353,8 @@ Click here to see [Create Patient Response Data Object](https://docs.healthdyne.
 }
 ```
 
+Click here to see [PUT Patient Request Data Object]()
+
 #### Sample Update Patient Response
 
 ```json
@@ -362,4 +364,4 @@ Click here to see [Create Patient Response Data Object](https://docs.healthdyne.
 }
 ```
 
-Click here to see [Patient Request Fields](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#/)
+Click here to see [PUT Patient Response Data Object](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#/)
