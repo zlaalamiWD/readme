@@ -20,47 +20,47 @@ next:
 
 | Field        | Type     | Character Limit | Required/Optional | Description                                                                            |
 | :----------- | :------- | :-------------- | :---------------- | :------------------------------------------------------------------------------------- |
-| eventId      | String   |                 | Required          | TBD                                                                                    |
-| eventDateUtc | DateTime |                 | Required          | TBD                                                                                    |
+| eventId      | String   |                 | Required          | Unique Event Identifier for the Fill Request.                                          |
+| eventDateUtc | DateTime |                 | Required          | Date and time of the event (UTC).                                                      |
 | scriptKeys   | Array    | 50              | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
 
 ### RxVerified
 
-| Field         | Type     | Character Limit | Required/Optional | Description |
-| :------------ | :------- | :-------------- | :---------------- | :---------- |
-| eventId       | String   |                 | Required          | TBD         |
-| eventDateUtc  | DateTime |                 | Required          | TBD         |
-| scriptKey     | String   | 50              | Required          |             |
-| verifiedDate  | DateTime |                 | Required          |             |
-| statusMessage | String   | Max             | Required          |             |
+| Field         | Type     | Character Limit | Required/Optional | Description                                   |
+| :------------ | :------- | :-------------- | :---------------- | :-------------------------------------------- |
+| eventId       | String   |                 | Required          | Unique Event Identifier for the Fill Request. |
+| eventDateUtc  | DateTime |                 | Required          | Date and time of the event (UTC).             |
+| scriptKey     | String   | 50              | Required          | Unique ID associated with script request.     |
+| verifiedDate  | DateTime |                 | Required          |                                               |
+| statusMessage | String   | Max             | Required          |                                               |
 
 ### RxShipped
 
-| Field          | Type     | Character Limit | Required/Optional | Description |
-| :------------- | :------- | :-------------- | :---------------- | :---------- |
-| eventId        | String   |                 | Required          | TBD         |
-| eventDateUtc   | DateTime |                 | Required          | TBD         |
-| scriptKey      | String   | 50              | Required          |             |
-| shipmentDate   | DateTime |                 | Required          |             |
-| trackingNumber | String   | 40              | Required          |             |
+| Field          | Type     | Character Limit | Required/Optional | Description                                   |
+| :------------- | :------- | :-------------- | :---------------- | :-------------------------------------------- |
+| eventId        | String   |                 | Required          | Unique Event Identifier for the Fill Request. |
+| eventDateUtc   | DateTime |                 | Required          | Date and time of the event (UTC).             |
+| scriptKey      | String   | 50              | Required          | Unique ID associated with script request.     |
+| shipmentDate   | DateTime |                 | Required          |                                               |
+| trackingNumber | String   | 40              | Required          |                                               |
 
 ### RxIssue
 
-| Field        | Type     | Character Limit | Required/Optional | Description |
-| :----------- | :------- | :-------------- | :---------------- | :---------- |
-| eventId      | String   |                 | Required          | TBD         |
-| eventDateUtc | DateTime |                 | Required          | TBD         |
-| scriptKey    | String   | 50              | Required          |             |
-| issueMessage | String   | Max             | Required          |             |
+| Field        | Type     | Character Limit | Required/Optional | Description                                   |
+| :----------- | :------- | :-------------- | :---------------- | :-------------------------------------------- |
+| eventId      | String   |                 | Required          | Unique Event Identifier for the Fill Request. |
+| eventDateUtc | DateTime |                 | Required          | Date and time of the event (UTC).             |
+| scriptKey    | String   | 50              | Required          | Unique ID associated with script request.     |
+| issueMessage | String   | Max             | Required          |                                               |
 
 ### RxCanceled
 
-| Field         | Type     | Character Limit | Required/Optional | Description |
-| :------------ | :------- | :-------------- | :---------------- | :---------- |
-| eventId       | String   |                 | Required          | TBD         |
-| eventDateUtc  | DateTime |                 | Required          | TBD         |
-| scriptKey     | String   | 50              | Required          |             |
-| statusMessage | String   | Max             | Required          |             |
+| Field         | Type     | Character Limit | Required/Optional | Description                                   |
+| :------------ | :------- | :-------------- | :---------------- | :-------------------------------------------- |
+| eventId       | String   |                 | Required          | Unique Event Identifier for the Fill Request. |
+| eventDateUtc  | DateTime |                 | Required          | Date and time of the event (UTC).             |
+| scriptKey     | String   | 50              | Required          | Unique ID associated with script request.     |
+| statusMessage | String   | Max             | Required          |                                               |
 
 # Fill Request Data Object
 
