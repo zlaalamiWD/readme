@@ -314,7 +314,7 @@ The "Update Patient" endpoint uses the PUT method to modify the details of an ex
 
 ### Sample Update Patient Request
 
-`PUT https://partner.uat-welldyne.com/v2/patient`
+`PUT https://api.uat-healthdyne.com/v2/patient`
 
 ### Sample Update Patient Request Body
 
