@@ -171,10 +171,10 @@ The "Get Patient Script/Prescription" endpoint allows retrieval of all scripts a
 
 ##### Only https connections are accepted.
 
-| METHOD TYPE | ENDPOINT                                                                  |
-| :---------- | :------------------------------------------------------------------------ |
-| GET (Test)  | partner.uat-welldyne.com/v2/patient/prescription?patientkey=\<patientKey> |
-| GET (Prod)  | partner.welldyne.com/v2/patient/prescription?patientkey=\<patientKey>     |
+| METHOD TYPE | ENDPOINT                                                                |
+| :---------- | :---------------------------------------------------------------------- |
+| GET (Test)  | api.uat-healthdyne.com/v2/patient/prescription?patientkey=\<patientKey> |
+| GET (Prod)  | api.healthdyne.com/v2/patient/prescription?patientkey=\<patientKey>     |
 
 ### Header
 
