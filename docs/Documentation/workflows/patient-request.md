@@ -222,10 +222,10 @@ The "Create Patient" endpoint uses the POST method to add a new patient record. 
 
 ##### Only HTTPS connections are accepted.
 
-| METHOD TYPE | ENDPOINT                            |
-| :---------- | :---------------------------------- |
-| POST (Test) | partner.uat-welldyne.com/v2/patient |
-| POST (Prod) | partner.welldyne.com/v2/patient     |
+| METHOD TYPE | ENDPOINT                          |
+| :---------- | :-------------------------------- |
+| POST (Test) | api.uat-healthdyne.com/v2/patient |
+| POST (Prod) | api.healthdyne.com/v2/patient     |
 
 ### Header
 
@@ -237,7 +237,7 @@ The "Create Patient" endpoint uses the POST method to add a new patient record. 
 
 ### Sample Create Patient Request
 
-`POST https://partner.uat-welldyne.com/v2/patient`
+`POST https://api.uat-healthdyne.com/v2/patient`
 
 ### Sample Create Patient Request Body
 
