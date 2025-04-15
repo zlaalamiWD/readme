@@ -20,7 +20,7 @@ next:
 
 | Field        | Type     | Character Limit                      | Required/Optional | Description                                                                            |
 | :----------- | :------- | :----------------------------------- | :---------------- | :------------------------------------------------------------------------------------- |
-| eventId      | String   |                                      | Required          | Unique Event Identifier for the Fill Request.                                          |
+| eventId      | String   | 4 bytes (32-bit signed int)          | Required          | Unique Event Identifier for the Fill Request.                                          |
 | eventDateUtc | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Required          | Date and time of the event in UTC (ISO 8601).                                          |
 | scriptKeys   | Array    | 50                                   | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
 
@@ -28,7 +28,7 @@ next:
 
 | Field         | Type     | Character Limit                      | Required/Optional | Description                                   |
 | :------------ | :------- | :----------------------------------- | :---------------- | :-------------------------------------------- |
-| eventId       | String   |                                      | Required          | Unique Event Identifier for the Fill Request. |
+| eventId       | String   | 4 bytes (32-bit signed int)          | Required          | Unique Event Identifier for the Fill Request. |
 | eventDateUtc  | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Required          | Date and time of the event in UTC (ISO 8601). |
 | scriptKey     | String   | 50                                   | Required          | Unique ID associated with script request.     |
 | verifiedDate  | DateTime | YYYY-MM-DD T HH:MM:SS Z              | Required          | Date and Time of Fill Request verified.       |
@@ -38,7 +38,7 @@ next:
 
 | Field          | Type     | Character Limit                      | Required/Optional | Description                                   |
 | :------------- | :------- | :----------------------------------- | :---------------- | :-------------------------------------------- |
-| eventId        | String   |                                      | Required          | Unique Event Identifier for the Fill Request. |
+| eventId        | String   | 4 bytes (32-bit signed int)          | Required          | Unique Event Identifier for the Fill Request. |
 | eventDateUtc   | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Required          | Date and time of the event in UTC (ISO 8601). |
 | scriptKey      | String   | 50                                   | Required          | Unique ID associated with script request.     |
 | shipmentDate   | DateTime | YYYY-MM-DD T HH:MM:SS Z              | Required          | Date and Time of Fill Request Shipped.        |
@@ -48,7 +48,7 @@ next:
 
 | Field        | Type     | Character Limit                      | Required/Optional | Description                                   |
 | :----------- | :------- | :----------------------------------- | :---------------- | :-------------------------------------------- |
-| eventId      | String   |                                      | Required          | Unique Event Identifier for the Fill Request. |
+| eventId      | String   | 4 bytes (32-bit signed int)          | Required          | Unique Event Identifier for the Fill Request. |
 | eventDateUtc | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Required          | Date and time of the event in UTC (ISO 8601). |
 | scriptKey    | String   | 50                                   | Required          | Unique ID associated with script request.     |
 | issueMessage | String   | Max                                  | Required          |                                               |
@@ -57,7 +57,7 @@ next:
 
 | Field         | Type     | Character Limit                      | Required/Optional | Description                                   |
 | :------------ | :------- | :----------------------------------- | :---------------- | :-------------------------------------------- |
-| eventId       | String   |                                      | Required          | Unique Event Identifier for the Fill Request. |
+| eventId       | String   | 4 bytes (32-bit signed int)          | Required          | Unique Event Identifier for the Fill Request. |
 | eventDateUtc  | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Required          | Date and time of the event in UTC (ISO 8601). |
 | scriptKey     | String   | 50                                   | Required          | Unique ID associated with script request.     |
 | statusMessage | String   | Max                                  | Required          |                                               |
