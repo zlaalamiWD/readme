@@ -121,10 +121,10 @@ The Find Patient API (GET method) allows clients to lookup patientKey in HD syst
 
 ##### Only HTTPS connections are accepted.
 
-| REQUEST TYPE | ENDPOINT                                  |
-| :----------- | :---------------------------------------- |
-| GET (Test)   | partner.uat-welldyne.com/v2/patient/find? |
-| GET (Prod)   | partner.welldyne.com/v2/patient/find?     |
+| REQUEST TYPE | ENDPOINT                                                                                                                                  |
+| :----------- | :---------------------------------------------------------------------------------------------------------------------------------------- |
+| GET (Test)   | partner.uat-welldyne.com/v2/patient/find?firstname=\<firstName>\\\&lastname=\<lastName>\\\&birthdate=\<birthDate>\\\&zipcode=\<zipCode>   |
+| GET (Prod)   | partner.welldyne.com/v2/patient/find?firstname=\<firstName>\\\\\&lastname=\<lastName>\\\\\&birthdate=\<birthDate>\\\\\&zipcode=\<zipCode> |
 
 ### Header
 
