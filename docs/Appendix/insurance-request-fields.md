@@ -84,16 +84,19 @@ next:
 | planNumber | String | 40              | Required          | Insurance Plan Number               |
 | message    | String | Max             | Required          | Plan added to patient profile.      |
 
-### Sample POST request.
+# Delete Insurance Data Object
 
-```json
-{
-  "patientKey": "ds76sa5765sad",
-  "insurance": {
-    "policyHolderId": "68945143",
-    "bin": "123456", 
-    "groupId": "123456789",
-    "pcn": "15948546"
-  }
-}
-```
+#### Query Parameter
+
+| Parameter  | Type   | Character Limit | Required/Optional | Description                         |
+| :--------- | :----- | :-------------- | :---------------- | :---------------------------------- |
+| patientKey | String | 50              | Required          | Unique patient ID in Client system. |
+| planNumber | String | 40              | Required          | Insurance Plan Number               |
+
+#### Response Object
+
+| Field      | Type   | Character Limit | Required/Optional | Description                                               |
+| :--------- | :----- | :-------------- | :---------------- | :-------------------------------------------------------- |
+| patientKey | String | 50              | Required          | Unique patient ID in Client system.                       |
+| planNumber | String | 40              | Required          | Insurance Plan Number                                     |
+| message    | String | Max             | Required          | Patient Insurance plan number is inactivated successfully |
