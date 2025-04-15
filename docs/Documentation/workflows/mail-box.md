@@ -343,8 +343,8 @@ When an Order is successfully created, and then one of the Rx is subsequently re
     "scriptKey": "1000003",
 		"fillNumber": 0,
     "issueMessage": "REJECTED 533 HEALTHDYNE RX REJECTED",
-    "ClaimRejectCode": "388",
-    "ClaimRejectDescription": "PRIOR AUTHORIZATION SUPPORTING DOCUMENT IS NOT USED FOR THIS TRANSACTION CODE" 
+    "claimRejectCode": "388",
+    "claimRejectDescription": "PRIOR AUTHORIZATION SUPPORTING DOCUMENT IS NOT USED FOR THIS TRANSACTION CODE" 
   }
 }
 
