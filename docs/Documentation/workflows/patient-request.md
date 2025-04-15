@@ -279,15 +279,6 @@ The below table lists the potential response codes that can be received in respo
 }
 ```
 
-#### Patient Updated
-
-```json
-{
-  "patientKey": "12389990",
-  "message": "The patient was updated."
-}
-```
-
 Click here to see [Patient Request Fields](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#/)
 
 <br />
