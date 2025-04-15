@@ -30,8 +30,8 @@ Once a patient has been registered successfully, the GET Patient API allows clie
 
 | REQUEST TYPE | ENDPOINT                             |
 | :----------- | :----------------------------------- |
-| GET (Test)   | partner.uat-welldyne.com/v2/Patient? |
-| GET (Prod)   | partner.welldyne.com/v2/Patient?     |
+| GET (Test)   | partner.uat-welldyne.com/v2/patient? |
+| GET (Prod)   | partner.welldyne.com/v2/patient?     |
 
 ### Header
 
@@ -43,7 +43,7 @@ Once a patient has been registered successfully, the GET Patient API allows clie
 
 #### Sample GET Request
 
-> [https://partner.uat-welldyne.com/v2/Patient?PatientKey=TestreadPatient171](https://partner.uat-welldyne.com/v2/Patient?PatientKey=TestreadPatient171)
+> [https://partner.uat-welldyne.com/v2/patient?patientkey=TestreadPatient171](https://partner.uat-welldyne.com/v2/Patient?PatientKey=TestreadPatient171)
 
 This tells the API to query for PatientKey TESTREADPATIENT171 and return relevant details.
 
@@ -121,8 +121,8 @@ The Find Patient API (GET method) allows clients to lookup patientKey in HD syst
 
 | REQUEST TYPE | ENDPOINT                                  |
 | :----------- | :---------------------------------------- |
-| GET (Test)   | partner.uat-welldyne.com/v2/Patient/find? |
-| GET (Prod)   | partner.welldyne.com/v2/Patient/find?     |
+| GET (Test)   | partner.uat-welldyne.com/v2/patient/find? |
+| GET (Prod)   | partner.welldyne.com/v2/patient/find?     |
 
 ### Header
 
@@ -134,7 +134,7 @@ The Find Patient API (GET method) allows clients to lookup patientKey in HD syst
 
 #### Sample GET Request
 
-> [https://partner.uat-welldyne.com/v2/Patient/find?FirstName=ABC\&LastName=XYZ\&Birthdate=1981-01-01\&ZipCode=80017](https://partner.uat-welldyne.com/v2/Patient/find?FirstName=ABC\&LastName=XYZ\&Birthdate=1981-01-01\&ZipCode=80017)
+> [https://partner.uat-welldyne.com/v2/patient/find?firstname=ABC\&lastname=XYZ\&birthdate=1981-01-01\&zipcode=80017](https://partner.uat-welldyne.com/v2/Patient/find?FirstName=ABC\&LastName=XYZ\&Birthdate=1981-01-01\&ZipCode=80017)
 
 # Find Patient Response
 
