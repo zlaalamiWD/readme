@@ -222,7 +222,7 @@ The below table lists the potential response codes that can be received in respo
 
 ### Server
 
-##### Only https connections are accepted.
+##### Only HTTPS connections are accepted.
 
 | REQUEST TYPE | ENDPOINT                              |
 | :----------- | :------------------------------------ |
