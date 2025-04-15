@@ -194,6 +194,18 @@ This tells the API to query for patientKey 4e1e76ca-520f-4e7a-a6c7-d837a9e3cece 
 
 Click here to see [GET Patient Scripts/Prescriptions Query Data]()
 
+#### Sample Status Response
+
+```json
+{
+    "scriptKeys": [
+        "0ed290dbb11224ea0f9e27"
+    ]
+}
+```
+
+Click here to see [GET Patient Scripts/Prescriptions Data Object]()
+
 The below table lists the potential response codes that can be received in response to a GET request.
 
 | Code | Description                                   |
