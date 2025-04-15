@@ -133,7 +133,7 @@ The "Get Patient script/Prescription" endpoint allows retrieval of all scripts a
 
 #### Sample GET Request
 
-> \<[https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece](https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece)
+> \<[https://partner.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece](https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece)
 
 This tells the API to query for patientKey 4e1e76ca-520f-4e7a-a6c7-d837a9e3cece  and return relevant details.
 
@@ -221,7 +221,7 @@ API field validation information in Appendix [Script / RxTransfer Fields](doc:sc
 	"receivingPharmacy": {
 		"pharmacyName": "HEALTHDYNE",
 		"pharmacyNpi": "1093974982",
-    	"pharmacyNcPdp": "1093974982",
+    "pharmacyNcPdp": "1093974982",
 		"deaNumber": "1093974982",
 		"phone": "3456789012",
 		"fax": null,
