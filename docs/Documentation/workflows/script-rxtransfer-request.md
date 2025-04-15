@@ -136,7 +136,7 @@ The "Get Patient script/Prescription" endpoint allows retrieval of all scripts a
 
 > \<[https://partner.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece](https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece)
 
-This tells the API to query for patientKey 4e1e76ca-520f-4e7a-a6c7-d837a9e3cece  and return relevant details.
+This tells the API to query for patientKey 4e1e76ca-520f-4e7a-a6c7-d837a9e3cece  and returns a list of all scripts associated to that patient.
 
 # GET Patient Script Response
 
