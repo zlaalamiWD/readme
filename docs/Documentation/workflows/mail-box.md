@@ -122,16 +122,16 @@ A RxReceived event will be produced when HealthDyne successfully receives an eRx
 
 ```json
 {
-  "eventId": "1000003",
-  "eventDateUtc": "2023-05-08T19:14:55.22818Z",
-  "eventType": "RXSTATUS",
-  "patientKey": "1000002",
-  "scriptKey": "1000001",
-  "status": "Received", 
-  "statusMessage": "A new prescription has been received",   
-  "detail": {
-    "reason":null
-  }
+    "eventId": "1000003",
+    "eventDateUtc": "2023-05-08T19:14:55.22818Z",
+    "eventType": "RXSTATUS",
+    "patientKey": "1000002",
+    "scriptKey": "1000001",
+    "status": "Received",
+    "statusMessage": "A new prescription has been received",
+    "detail": {
+        "reason": null
+    }
 }
 ```
 
@@ -141,15 +141,15 @@ RxDiscontinued events will be generated anytime an Rx has been discontinued by t
 
 ```json
 {
-  "eventId": "1000003",
-  "eventDateUtc": "2023-05-08T19:14:55.22818Z",
-  "eventType": "RXSTATUS",
-  "scriptKey": "1000001",
-  "status": "Discontinued",
-  "statusMessage": "The prescription has been discontinued by pharmacy",
-  "detail": {
-    "reason":"Rx Transferred out of pharmacy"
-  }
+    "eventId": "1000003",
+    "eventDateUtc": "2023-05-08T19:14:55.22818Z",
+    "eventType": "RXSTATUS",
+    "scriptKey": "1000001",
+    "status": "Discontinued",
+    "statusMessage": "The prescription has been discontinued by pharmacy",
+    "detail": {
+        "reason": "Rx Transferred out of pharmacy"
+    }
 }
 ```
 
@@ -159,17 +159,17 @@ RxRefillReady event will be generated anytime an Rx is ready for refill. NOTE: T
 
 ```json
 {
-         "eventId": "118081",
-         "eventDateUtc": "2024-05-01T06:01:25.527727Z",
-         "eventType": "RXSTATUS",
-         "status": "RefillReady",
-         "statusMessage": "The prescription is ready for refill.",
-         "scriptKey": "f324f6d0894f4abdba6b252158a2313d",
-         "patientKey": "AB1890001",
-         "detail": {
-           "reason": null
-         }
-      }
+    "eventId": "118081",
+    "eventDateUtc": "2024-05-01T06:01:25.527727Z",
+    "eventType": "RXSTATUS",
+    "status": "RefillReady",
+    "statusMessage": "The prescription is ready for refill.",
+    "scriptKey": "f324f6d0894f4abdba6b252158a2313d",
+    "patientKey": "AB1890001",
+    "detail": {
+        "reason": null
+    }
+}
 ```
 
 ## RxOverdue
@@ -178,17 +178,17 @@ RxOverdue event will be generated anytime an Rx is overdue for a refill. NOTE: T
 
 ```json
 {
-         "eventId": "118087",
-         "eventDateUtc": "2024-05-05T06:02:19.771002Z",
-         "eventType": "RXSTATUS",
-         "status": "Overdue",
-         "statusMessage": "The prescription is overdue for refill",
-         "scriptKey": "f324f6d0894f4abdba6b252158a2313d",
-         "patientKey": "AB1890001",
-         "detail": {
-           "reason": null
-         }
-      }
+    "eventId": "118087",
+    "eventDateUtc": "2024-05-05T06:02:19.771002Z",
+    "eventType": "RXSTATUS",
+    "status": "Overdue",
+    "statusMessage": "The prescription is overdue for refill",
+    "scriptKey": "f324f6d0894f4abdba6b252158a2313d",
+    "patientKey": "AB1890001",
+    "detail": {
+        "reason": null
+    }
+}
 ```
 
 ## RxRenewalReady
@@ -197,17 +197,17 @@ RxRenewalReady event will be generated anytime an Rx is ready for prescriber to 
 
 ```json
 {
-         "eventId": "118079",
-         "eventDateUtc": "2024-04-30T15:01:50.250195Z",
-         "eventType": "RXSTATUS",
-         "status": "RenewalReady",
-         "statusMessage": "The prescription needs to be renewed.",
-         "scriptKey": "2fbb38d736b74d83bccf13c2e98ad3a4",
-         "patientKey": "AB1890001",
-         "detail": {
-           "reason": null
-         }
-      }
+    "eventId": "118079",
+    "eventDateUtc": "2024-04-30T15:01:50.250195Z",
+    "eventType": "RXSTATUS",
+    "status": "RenewalReady",
+    "statusMessage": "The prescription needs to be renewed.",
+    "scriptKey": "2fbb38d736b74d83bccf13c2e98ad3a4",
+    "patientKey": "AB1890001",
+    "detail": {
+        "reason": null
+    }
+}
 ```
 
 ## Transferred *(Rx Transfer only)*
@@ -218,16 +218,16 @@ Once the PNG or XML has been successfully downloaded, HealthDyne will store the 
 
 ```json
 {
-  "eventId": "1000003",
-  "eventDateUtc": "2023-05-08T19:14:55.22818Z",
-  "eventType": "RXTRANSFER",
-  "scriptKey": "1000001",
-  "status": "Transferred",
-  "statusMessage": "The Rx has been transferred successfully",
-  "detail": {
-    "patientKey": "1000002",
-    "rxNumber": "RX12345"
-   }
+    "eventId": "1000003",
+    "eventDateUtc": "2023-05-08T19:14:55.22818Z",
+    "eventType": "RXTRANSFER",
+    "scriptKey": "1000001",
+    "status": "Transferred",
+    "statusMessage": "The Rx has been transferred successfully",
+    "detail": {
+        "patientKey": "1000002",
+        "rxNumber": "RX12345"
+    }
 }
 ```
 
@@ -239,12 +239,12 @@ When a RxTransfer request can't be validated, HealthDyne generates a rejection e
 
 ```json
 {
-  "eventId": "1000005",
-  "eventDateUtc": "2023-05-08T19:15:55.22818Z",
-  "eventType": "RXTRANSFER",
-  "scriptKey": "1000004",
-  "status": "Rejected",
-  "statusMessage": "The file [http://somedomain.com/files/12548.png] could not be retrieved."  
+    "eventId": "1000005",
+    "eventDateUtc": "2023-05-08T19:15:55.22818Z",
+    "eventType": "RXTRANSFER",
+    "scriptKey": "1000004",
+    "status": "Rejected",
+    "statusMessage": "The file [http://somedomain.com/files/12548.png] could not be retrieved."
 }
 ```
 
