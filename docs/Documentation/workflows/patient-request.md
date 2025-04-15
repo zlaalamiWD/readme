@@ -45,6 +45,65 @@ Once a patient has been registered successfully, the GET Patient API allows clie
 
 This tells the API to query for PatientKey TESTREADPATIENT171 and return relevant details.
 
+Click here to see (Add Label to the table TBD)
+
+<br />
+
+#### Sample GET Status Response
+
+```json
+{
+    "patientKey": "TESTPATIENT",
+    "firstName": "TEST",
+    "lastName": "TESTREADPATIENT17",
+    "gender": "F",
+    "patientLanguage": "ENG",
+    "birthDate": "1997-02-03",
+    "healthCondition": [],
+    "address": [
+        {
+            "line1": "123 Main St",
+            "line2": null,
+            "line3": null,
+            "city": "LAKELAND",
+            "state": "FL",
+            "zipCode": "33810",
+            "countryCode": "US",
+            "addressType": "HOME",
+            "defaultAddress": true
+        },
+        {
+            "line1": "678 Main St",
+            "line2": null,
+            "line3": null,
+            "city": "LAKELAND",
+            "state": "FL",
+            "zipCode": "33810",
+            "countryCode": "US",
+            "addressType": "HOME",
+            "defaultAddress": false
+        }
+    ],
+    "contact": [
+        {
+            "contactType": "HOME PHONE",
+            "contactAddress": "3233731379"
+        }
+    ],
+    "externalMedications": [
+        "00002445385",
+        "99207012010"
+    ],
+    "pregnancyIndicator": "N",
+    "allergies": [
+        "CEPHALOSPORINS",
+        "SALICYLATES"
+    ]
+}
+```
+
+#
+
 # GET Patient Response
 
 The below table lists the potential response codes that can be received in response to a GET request.
@@ -56,7 +115,7 @@ The below table lists the potential response codes that can be received in respo
 | 401  | Unauthorized                  |
 | 500  | Internal Server Error         |
 
-#### Sample Status Response
+<br />
 
 ```json
 {
