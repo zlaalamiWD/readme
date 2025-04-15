@@ -41,7 +41,7 @@ Once a patient has been registered successfully, the GET Patient API allows clie
 
 #### Sample GET Request
 
-> [https://partner.uat-welldyne.com/v2/patient?patientkey=TestreadPatient171](https://partner.uat-welldyne.com/v2/Patient?PatientKey=TestreadPatient171)
+`GET https://partner.uat-welldyne.com/v2/patient?patientkey=TestreadPatient171`
 
 This tells the API to query for PatientKey TESTREADPATIENT171 and return relevant details.
 
