@@ -47,8 +47,6 @@ This tells the API to query for PatientKey TESTREADPATIENT171 and return relevan
 
 Click here to see (Add Label to the table TBD)
 
-<br />
-
 #### Sample GET Status Response
 
 ```json
