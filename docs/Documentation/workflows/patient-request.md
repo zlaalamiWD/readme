@@ -350,8 +350,6 @@ Click here to see [Patient Request Fields](https://docs.healthdyne.com/v2.171/do
 
 # Successful Response Messages
 
-<br />
-
 #### Patient Updated
 
 ```json
