@@ -112,7 +112,7 @@ next:
 
 | Field             | Type   | Character Limit | Required/Optional | Description                                                                                                                           |
 | :---------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------------------------------ |
-| planNumber        | String | 40              | Required          | Insurance plan number to be used on order that was previously provided by HealthDyne on a create Insurance response.                  |
+| planNumber        | String | 100             | Required          | Insurance plan number to be used on order that was previously provided by HealthDyne on a create Insurance response.                  |
 | coPay             | String | 6               | Required          | Payment collected from the patient at checkout. Format "xx.xx" or "xxx.xx"                                                            |
 | transactionNumber | String | Max             | Required          | The payment transaction number. This should be the stripe transaction number if payment is managed by HealthDyne.                     |
 | personCode        | String | 3               | Optional          | Number 0 to 9.                                                                                                                        |
