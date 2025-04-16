@@ -150,17 +150,17 @@ next:
 
 # medicationPrescribed
 
-| Field           | Type   | Character Limit | Description                                                                                                |
-| :-------------- | :----- | :-------------- | :--------------------------------------------------------------------------------------------------------- |
-| writtenDrugName | String | 20              | Rx number of the prescription                                                                              |
-| writtenDrugNdc  | String | 20              | Name of the medication as prescribed by the prescriber.                                                    |
-| writtenGPI      | String |                 | Object containing prescriber information. See [Prescriber](doc:script-rxtransfer-fields#prescriber) table. |
-| quantityWritten |        |                 |                                                                                                            |
-| writtenDate     |        |                 |                                                                                                            |
-| expirationDate  |        |                 |                                                                                                            |
-| strength        |        |                 |                                                                                                            |
-| strengthUOM     |        |                 |                                                                                                            |
-| dosageFOrm      |        |                 |                                                                                                            |
+| Field           | Type    | Character Limit | Description                                     |
+| :-------------- | :------ | :-------------- | :---------------------------------------------- |
+| writtenDrugName | String  | 100             | Name of the drug as written by the provider.    |
+| writtenDrugNdc  | String  | 11              | NDC of the written medication.                  |
+| writtenGPI      | String  | 20              | Generic Product Identifier code.                |
+| quantityWritten | Integer |                 | Quantity prescribed.                            |
+| writtenDate     | String  | 10              | Date when the prescription was written.         |
+| expirationDate  | String  | 10              | Date the prescription expires.                  |
+| strength        | String  | 10              | Strength of the medication.                     |
+| strengthUOM     | String  | 10              | Unit of measurement for strength.               |
+| dosageForm      | String  | 50              | Form of the medication (e.g., Tablet, Capsule). |
 
 ## GET Patient Scripts/Prescriptions Request
 
