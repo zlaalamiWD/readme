@@ -200,7 +200,7 @@ Click here to see [GET Patient Scripts/Prescriptions Request Query Data](https:/
 }
 ```
 
-Click here to see [GET Patient Scripts/Prescriptions Data Object](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#response-object-2)
+Click here to see [GET Patient Scripts/Prescriptions Response Data Object](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#response-object-2)
 
 The below table lists the potential response codes that can be received in response to a GET request.
 
