@@ -162,6 +162,21 @@ next:
 | strengthUOM     | String  | 10              | Unit of measurement for strength.               |
 | dosageForm      | String  | 50              | Form of the medication (e.g., Tablet, Capsule). |
 
+# medicationDispensed
+
+| Field             | Type   | Character Limit | Description                                                  |
+| :---------------- | :----- | :-------------- | :----------------------------------------------------------- |
+| drugNdc           | String | 11              | NDC of the dispensed drug.                                   |
+| drugGPI           | String | 20              | Generic Product Identifier for the dispensed drug.           |
+| drugName          | String | 100             | Name of the dispensed drug.                                  |
+| daysSupply        | String | 3               | Number of days the dispensed medication is intended to last. |
+| strength          | String | 10              | Strength of the dispensed drug.                              |
+| strengthUOM       | String | 10              | Unit of measurement for strength.                            |
+| dosageFOrm        | String | 50              | Form of the dispensed medication.                            |
+| sigInstructions   | String | 255             | Instructions for use (SIG).                                  |
+| daw               | String | 1               | Dispense As Written code.                                    |
+| refillsAuthorized | String | 2               | Number of refills authorized.                                |
+
 ## GET Patient Scripts/Prescriptions Request
 
 #### Query Parameter
