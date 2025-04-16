@@ -159,3 +159,5 @@ next:
 | :--------- | :----- | :-------------- | :---------------- | :---------------------------------- |
 | patientKey | String | 50              | Required          | Unique patient ID in Client system. |
 | message    | String | max             | Required          | Status messages string.             |
+
+# Update Patient
