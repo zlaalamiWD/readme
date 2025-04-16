@@ -152,7 +152,7 @@ Click here to see [GET Find Patient Request Query Data](https://docs.healthdyne.
 }
 ```
 
-Click here to see [Get Find Patient Response Data Object]()
+Click here to see [Get Find Patient Response Data Object](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#response-object-1)
 
 The below table lists the potential response codes that can be received in response to a GET Find patient request.
 
