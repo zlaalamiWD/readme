@@ -19,15 +19,15 @@ metadata:
 
 **Response Object**
 
-| Field         | Type                                                                                              | Character Limit | Description                                                                             |
-| :------------ | :------------------------------------------------------------------------------------------------ | :-------------- | :-------------------------------------------------------------------------------------- |
-| eventId       | string                                                                                            | max             | Unique event identifier in HealthDyne system.                                           |
-| eventDateUtc  | string                                                                                            | 27              | UTC timestamp of when the event occurred.                                               |
-| eventType     | string                                                                                            | 50              | Type of event, e.g., "RXTRANSFER".                                                      |
-| status        | string                                                                                            | 20              | Current status of the event.                                                            |
-| statusMessage | string                                                                                            | max             | Descriptive message explaining the status.                                              |
-| scriptKey     | string                                                                                            | 255             | Unique identifier for the script being transferred which is initialy defined by client. |
-| detail        | [Object](https://docs.healthdyne.com/v2.171/docs/mailbox-data-object-schemas#insurancedataobject) |                 | Nested object containing extra details specific to the event type                       |
+| Field         | Type                                                                                                                                                                        | Character Limit | Description                                                                             |
+| :------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------- | :-------------------------------------------------------------------------------------- |
+| eventId       | string                                                                                                                                                                      | max             | Unique event identifier in HealthDyne system.                                           |
+| eventDateUtc  | string                                                                                                                                                                      | 27              | UTC timestamp of when the event occurred.                                               |
+| eventType     | string                                                                                                                                                                      | 50              | Type of event, e.g., "RXTRANSFER".                                                      |
+| status        | string                                                                                                                                                                      | 20              | Current status of the event.                                                            |
+| statusMessage | string                                                                                                                                                                      | max             | Descriptive message explaining the status.                                              |
+| scriptKey     | string                                                                                                                                                                      | 255             | Unique identifier for the script being transferred which is initialy defined by client. |
+| detail        | \[Object]\([https://docs.healthdyne.com/v2.171/docs/mailbox-data-object-schemas#detail](https://docs.healthdyne.com/v2.171/docs/mailbox-data-object-schemas#detail) object) |                 | Nested object containing extra details specific to the event type                       |
 
 #### detail object
 
