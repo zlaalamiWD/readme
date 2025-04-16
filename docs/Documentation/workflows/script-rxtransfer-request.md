@@ -81,7 +81,7 @@ The below table lists the potential response codes that can be received in respo
       "daysSupply": "10",
       "strength": "10",
       "strengthUOM": "MG",
-      "dosageFOrm":"TABLET",
+      "dosageForm":"TABLET",
       "sigInstructions": "TAKE 1 TABLET DAILY",
       "daw": "0",
       "refillsAuthorized": "2"
