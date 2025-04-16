@@ -385,15 +385,27 @@ next:
 
 #### Query Parameter
 
-| Field | Type | Character Limit | Required/Optional | Description |
-| :---- | :--- | :-------------- | :---------------- | :---------- |
-|       |      |                 |                   |             |
+| Field     | Type   | Character Limit | Required/Optional | Description |
+| :-------- | :----- | :-------------- | :---------------- | :---------- |
+| scriptKey | String | 50              | Required          |             |
 
 #### Response Object
 
-| Field | Type | Character Limit | Required/Optional | Description |
-| :---- | :--- | :-------------- | :---------------- | :---------- |
-|       |      |                 |                   |             |
+| Field              | Type   | Character Limit | Required/Optional | Description |
+| :----------------- | :----- | :-------------- | :---------------- | :---------- |
+| scriptKey          | String | 50              | Required          |             |
+| prescription       | Object |                 | Required          |             |
+| medicationDispense | Object |                 | Required          |             |
+| lastFillDate       |        |                 |                   |             |
+| patientKey         |        |                 |                   |             |
+| fillsRemaining     |        |                 |                   |             |
+| quantityRemaining  |        |                 |                   |             |
+| metricQuantity     |        |                 |                   |             |
+| nextFillDate       |        |                 |                   |             |
+| provider           |        |                 |                   |             |
+| supervisor         |        |                 |                   |             |
+|                    |        |                 |                   |             |
+|                    |        |                 |                   |             |
 
 <br />
 
@@ -401,17 +413,15 @@ next:
 
 #### Query Parameter
 
-| Field | Type | Character Limit | Required/Optional | Description |
-| :---- | :--- | :-------------- | :---------------- | :---------- |
-|       |      |                 |                   |             |
+| Field      | Type   | Character Limit | Required/Optional | Description |
+| :--------- | :----- | :-------------- | :---------------- | :---------- |
+| patientKey | String |                 |                   |             |
 
 #### Response Object
 
-| Field | Type | Character Limit | Required/Optional | Description |
-| :---- | :--- | :-------------- | :---------------- | :---------- |
-|       |      |                 |                   |             |
-
-<br />
+| Field      | Type  | Character Limit | Required/Optional | Description |
+| :--------- | :---- | :-------------- | :---------------- | :---------- |
+| scriptKeys | Array |                 |                   |             |
 
 <br />
 
