@@ -16,17 +16,17 @@ View the [MailBox](ref:post_v2-mailbox) API Reference for detailed request body 
 
 This endpoint should be used to obtain the status of Script and/or Fill requests previously submitted. No request body is required.\
 HealthDyne employs a mailbox style order status reporting methodology. Therefore, when an order has a status update, the status message is delivered to the partner’s mailbox. This status message remains in the mailbox until the status message is retrieved by the partner and receipt of the message is acknowledged.
-A maximum of 100 status messages will be returned with a single request. Each request will have the same batch id and messages until marked as delivered. To receive the next set of messages, the current batch id need to be confirmed as delivered through the POST call. Multiple requests may be necessary to receive all outstanding status messages. Please refer to the Status Codes returned to determine if all messages have been retrieved.
+A maximum of 100 status messages will be returned with a single request. Multiple requests may be necessary to receive all outstanding status messages. Please refer to the Status Codes returned to determine if all messages have been retrieved.
 Note, the status messages are not considered delivered and removed from the mailbox until the receipt of the message is acknowledged by using a POST method with the batchId as a query parameter. Hence, another status request should not be submitted until the previous status response is acknowledged.
 
 ### Server
 
 ##### Only https connections are accepted.
 
-| REQUEST TYPE       | ENDPOINT                              |
-| :----------------- | :------------------------------------ |
-| GET or Post (Test) | partner.uat-healthdyne.com/v2/mailbox |
-| GET or Post (Prod) | partner.healthdyne.com/v2/mailbox     |
+| REQUEST TYPE       | ENDPOINT                          |
+| :----------------- | :-------------------------------- |
+| GET or Post (Test) | api.uat-healthdyne.com/v2/mailbox |
+| GET or Post (Prod) | api.healthdyne.com/v2/mailbox     |
 
 ### Header
 
@@ -40,7 +40,7 @@ Note, the status messages are not considered delivered and removed from the mail
 
 #### Sample GET Request
 
-partner.uat-healthdyne.com/v2/mailbox?messageCount=10
+> `<https://api.uat-healthdyne.com/v2/mailbox?messageCount=10>`
 
 This tells the API to only respond with 10 messages. The default message count is 100 messages. The Mailbox only allows 100 messages to be pulled at a time.
 
@@ -97,18 +97,18 @@ The below table lists the potential response codes that can be received in respo
 
 #### Sample POST Request
 
-> `<https://partner.uat-healthdyne.com/v2/mailbox?batchId=6be689c3-3306-4a75-b0d3-a769be788c99>`
+> `<https://api.uat-healthdyne.com/v2/mailbox?batchId=6be689c3-3306-4a75-b0d3-a769be788c99>`
 
 #### Sample POST Response
 
 ```json
-{ 
-    "batchId": "6be689c3-3306-4a75-b0d3-a769be788c99", 
-    "status": "MARKED DELIVERED", 
-    "eventId": [ 
-        "1000003", 
+{
+    "batchId": "6be689c3-3306-4a75-b0d3-a769be788c99",
+    "status": "MARKED DELIVERED",
+    "eventId": [
+        "1000003",
         "1000005"
-    ] 
+    ]
 }
 ```
 
@@ -343,15 +343,15 @@ When an Order is successfully created, and then one of the Rx is subsequently re
         "scriptKey": "1000003",
         "fillNumber": 0,
         "issueMessage": "REJECTED 533 HEALTHDYNE RX REJECTED",
-        "ClaimRejectCode": "388",
-        "ClaimRejectDescription": "PRIOR AUTHORIZATION SUPPORTING DOCUMENT IS NOT USED FOR THIS TRANSACTION CODE"
+        "claimRejectCode": "388",
+        "claimRejectDescription": "PRIOR AUTHORIZATION SUPPORTING DOCUMENT IS NOT USED FOR THIS TRANSACTION CODE"
     }
 }
 ```
 
 The 'statusMessage' field will show the pharmacy defined reason for the RxIssue status. Please see the Status Message table for a list of issues.
 
-|                                                                |                                               |
+| Issue Message Examples List 1                                  | Issue Message Examples List 2                 |
 | :------------------------------------------------------------- | :-------------------------------------------- |
 | PATIENT PROFILE                                                | CREDIT CARD                                   |
 | NDC NOT COVERED                                                | DOCTOR DENIED/NON-RESPONSE                    |
@@ -384,7 +384,8 @@ When a Rx or multiple Rx(s) in the order have been canceled pharmacy, HealthDyne
     "statusMessage": "Order canceled",
     "detail": {
         "orderNumber": "56789",
-        "scriptKey": "1000003"
+        "scriptKey": "1000003",
+        "fillNumber": 0
     }
 }
 ```
@@ -427,13 +428,13 @@ Once the Rx has been shipped successfully by pharmacy, an update is sent for eac
 }
 ```
 
+> ❗️ NOTE: the address attribute only return null for now
+
 ## RxCopay
 
 Once the Rx has been adjudicated successfully by pharmacy, an update is sent for each RX with adjudication summary and insurance used to adjudicate the order. This event will be  a ‘RxCopay’ event sent for each Rx. For example, if an order has 2 RXs, you will receive 2 RxCopay messages.
 
 #### Sample "RxCopay" event
-
-<br />
 
 ```json
 {
