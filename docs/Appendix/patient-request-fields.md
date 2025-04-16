@@ -137,3 +137,7 @@ next:
 | patientKey | String | 50              | Required          | Unique patient ID in Client system. |
 
 #### Response Object
+
+| Field      | Type  | Character Limit | Required/Optional | Description                                  |
+| :--------- | :---- | :-------------- | :---------------- | :------------------------------------------- |
+| scriptKeys | Array |                 | Required          | Array of scriptKey(s) associated to Patient. |
