@@ -127,3 +127,5 @@ next:
 | lastName   | String    | 35              | Required          | Patient's last name.                                                  |
 | birthDate  | Date-time | YYYY-MM-DD      | Required          | Patient's Date of Birth                                               |
 | zipCode    | String    | 10              | Required          | Format NNNNN or NNNNN-NNNN                                            |
+
+# Get Patient Scripts/Prescriptions Request
