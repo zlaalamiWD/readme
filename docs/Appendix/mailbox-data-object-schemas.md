@@ -1,5 +1,5 @@
 ---
-title: Mailbox Data Object Schemas
+title: Mailbox Data Object (Schemas)
 deprecated: false
 hidden: false
 metadata:
