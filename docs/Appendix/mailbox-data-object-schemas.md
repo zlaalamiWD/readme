@@ -98,7 +98,7 @@ metadata:
 | daysSupply     | string                                                                                                        | 20              | Number of days the dispensed medication will last. |
 | shipmentDate   | string                                                                                                        | 30              | The date the shipment was sent.                    |
 
-#### AddresstObject
+#### AddressObject
 
 | Field    | Type   | Character Limit | Description            |
 | :------- | :----- | :-------------- | :--------------------- |
