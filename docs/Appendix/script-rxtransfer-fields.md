@@ -394,3 +394,37 @@ next:
 | Field | Type | Character Limit | Required/Optional | Description |
 | :---- | :--- | :-------------- | :---------------- | :---------- |
 |       |      |                 |                   |             |
+
+<br />
+
+## GET Patient Scripts/Prescriptions Request
+
+#### Query Parameter
+
+| Field | Type | Character Limit | Required/Optional | Description |
+| :---- | :--- | :-------------- | :---------------- | :---------- |
+|       |      |                 |                   |             |
+
+#### Response Object
+
+| Field | Type | Character Limit | Required/Optional | Description |
+| :---- | :--- | :-------------- | :---------------- | :---------- |
+|       |      |                 |                   |             |
+
+<br />
+
+<br />
+
+## RxTransfer Request
+
+#### Request Object
+
+| Field | Type | Character Limit | Required/Optional | Description |
+| :---- | :--- | :-------------- | :---------------- | :---------- |
+|       |      |                 |                   |             |
+
+#### Response Object
+
+| Field | Type | Character Limit | Required/Optional | Description |
+| :---- | :--- | :-------------- | :---------------- | :---------- |
+|       |      |                 |                   |             |
