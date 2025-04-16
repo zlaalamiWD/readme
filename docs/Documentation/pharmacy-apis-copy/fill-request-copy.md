@@ -6,7 +6,7 @@ metadata:
   robots: index
 next:
   pages:
-    - slug: mail-box
+    - slug: mailbox-copy-1
       title: Mailbox
       type: basic
 ---
