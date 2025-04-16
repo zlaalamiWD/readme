@@ -243,7 +243,7 @@ Once an order has been created in HealthDyne system (using a Fill request), the 
 }
 ```
 
-Click here to see [Update Fill Request Data Object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#request-object-1)
+Click here to see [Update Fill Request Data Object](https://docs.healthdyne.com/docs/fill-request-fields#request-object-1)
 
 #### Sample Update Fill Response
 
@@ -254,7 +254,7 @@ Click here to see [Update Fill Request Data Object](https://docs.healthdyne.com/
 }
 ```
 
-Click here to see [Update Fill Response Data Object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object-2)
+Click here to see [Update Fill Response Data Object](https://docs.healthdyne.com/docs/fill-request-fields#response-object-2)
 
 ***
 
