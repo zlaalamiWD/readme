@@ -129,3 +129,11 @@ next:
 | zipCode    | String    | 10              | Required          | Format NNNNN or NNNNN-NNNN                                            |
 
 # Get Patient Scripts/Prescriptions Request
+
+#### Query Parameter
+
+| Field      | Type   | Character Limit | Required/Optional | Description                         |
+| :--------- | :----- | :-------------- | :---------------- | :---------------------------------- |
+| patientKey | String | 50              | Required          | Unique patient ID in Client system. |
+
+#### Response Object
