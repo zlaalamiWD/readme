@@ -60,47 +60,47 @@ next:
 | :-------- | :---- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | allergies | Array | 40              | Required          | Array of string. Character limit is for each string in Array. See valid allergy types below. The allergies field is required, if patient has no allergies pass "NO KNOWN". |
 
-| Allergy Name             | Allergy Class            |
-| :----------------------- | :----------------------- |
-| ACE INHIBITORS           | ACE INHIBITORS           |
-| ACETAMINOPHEN            | ACETAMINOPHEN            |
-| Amoxicillin              | Penicillins              |
-| Aspirin                  | Salicylates              |
-| Atenolol                 | BETA ADRENERGIC BLOCKERS |
-| Atorvastatin             | STATINS                  |
-| Benazepril               | ACE INHIBITORS           |
-| BETA ADRENERGIC BLOCKERS | BETA ADRENERGIC BLOCKERS |
-| Cephalosporins           | Cephalosporins           |
-| Ciprofloxacin            | QUINOLONES               |
-| Codeine                  | Morphine and Related     |
-| Demerol                  | MEPERIDINE AND RELATED   |
-| Erythromycin             | Macrolides and Ketolides |
-| Fosinopril               | ACE INHIBITORS           |
-| IBUPROFEN                | NSAIDS                   |
-| IODIDES                  | IODINATED CONTRAST MEDIA |
-|                          |                          |
-|                          |                          |
-|                          |                          |
-|                          |                          |
-|                          |                          |
-|                          |                          |
-|                          |                          |
-|                          |                          |
-|                          |                          |
-|                          |                          |
-|                          |                          |
-|                          |                          |
-|                          |                          |
-|                          |                          |
-|                          |                          |
-|                          |                          |
-|                          |                          |
-|                          |                          |
-|                          |                          |
-|                          |                          |
-|                          |                          |
-|                          |                          |
-|                          |                          |
+| Allergy Name                           | Allergy Class                          |
+| :------------------------------------- | :------------------------------------- |
+| ACE INHIBITORS                         | ACE INHIBITORS                         |
+| ACETAMINOPHEN                          | ACETAMINOPHEN                          |
+| Amoxicillin                            | Penicillins                            |
+| Aspirin                                | Salicylates                            |
+| Atenolol                               | BETA ADRENERGIC BLOCKERS               |
+| Atorvastatin                           | STATINS                                |
+| Benazepril                             | ACE INHIBITORS                         |
+| BETA ADRENERGIC BLOCKERS               | BETA ADRENERGIC BLOCKERS               |
+| Cephalosporins                         | Cephalosporins                         |
+| Ciprofloxacin                          | QUINOLONES                             |
+| Codeine                                | Morphine and Related                   |
+| Demerol                                | MEPERIDINE AND RELATED                 |
+| Erythromycin                           | Macrolides and Ketolides               |
+| Fosinopril                             | ACE INHIBITORS                         |
+| IBUPROFEN                              | NSAIDS                                 |
+| IODIDES                                | IODINATED CONTRAST MEDIA               |
+| IODINATED CONTRAST MEDIA               | IODINATED CONTRAST MEDIA               |
+| IODINATED DIAGNOSTIC AGENTS            | IODINATED CONTRAST MEDIA               |
+| Levofloxacin                           | QUINOLONES                             |
+| Lisinopril                             | ACE INHIBITORS                         |
+| Macrolides and Ketolides               | Macrolides and Ketolides               |
+| MEPERIDINE AND RELATED                 | MEPERIDINE AND RELATED                 |
+| Metoprolol                             | BETA ADRENERGIC BLOCKERS               |
+| MISC. SULFONAMIDE CONTAINING COMPOUNDS | MISC. SULFONAMIDE CONTAINING COMPOUNDS |
+| Morphine and Related                   | Morphine and Related                   |
+| No Known                               | No Known Drug Allergy                  |
+| No Known Drug Allergy                  | No Known Drug Allergy                  |
+| NSAIDS                                 | NSAIDS                                 |
+| Penicillins                            | Penicillins                            |
+| QUINOLONES                             | QUINOLONES                             |
+| Rosuvastatin                           | STATINS                                |
+|                                        |                                        |
+|                                        |                                        |
+|                                        |                                        |
+|                                        |                                        |
+|                                        |                                        |
+|                                        |                                        |
+|                                        |                                        |
+|                                        |                                        |
 
 > 📃 Additional Allergy Information
 >
