@@ -132,27 +132,27 @@ next:
 
 #### Response Object
 
-| Field        | Type   | Character Limit | Required/Optional | Description                                                                                           |
-| :----------- | :----- | :-------------- | :---------------- | :---------------------------------------------------------------------------------------------------- |
-| scriptKey    | String | 50              | Required          |                                                                                                       |
-| prescription | Object |                 | Required          | See [Prescription Response Detail](doc:script-rxtransfer-fields#prescription-response-detail)  table. |
+| Field        | Type                                                                                                          | Character Limit | Required/Optional | Description                                                                                           |
+| :----------- | :------------------------------------------------------------------------------------------------------------ | :-------------- | :---------------- | :---------------------------------------------------------------------------------------------------- |
+| scriptKey    | String                                                                                                        | 50              | Required          |                                                                                                       |
+| prescription | Object [prescription](https://docs.healthdyne.com/docs/script-rxtransfer-fields#prescription-response-detail) |                 | Required          | See [Prescription Response Detail](doc:script-rxtransfer-fields#prescription-response-detail)  table. |
 
 # Prescription Response Detail
 
-| Field                | Type   | Character Limit | Description                                                                                                                                         |
-| :------------------- | :----- | :-------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------- |
-| rxNumber             | String | 20              | Rx number of the prescription                                                                                                                       |
-| rxStatus             | String | 20              | Name of the medication as prescribed by the prescriber.                                                                                             |
-| medicationPrescribed | Object |                 | Object containing medication prescribed information. See [Medication Prescribed](doc:script-rxtransfer-fields#medication-prescribed) table.         |
-| medicationDispense   | Object |                 | Object containing medication dispensed information. See [Medication Dispensed](doc:script-rxtransfer-fields#medication-dispensed)  table.           |
-| lastFillDate         | String | 10              | Date of the most recent fill.                                                                                                                       |
-| patientKey           | String | 10              | Identifier associated with the patient.                                                                                                             |
-| fillsRemaining       | String | 2               | Number of refills still available.                                                                                                                  |
-| quantityRemaining    | String | 4               | Remaining quantity allowed to be filled.                                                                                                            |
-| metricQuantity       | String | 10              | Quantity in metric units, if available.                                                                                                             |
-| nextFillDate         | String | 10              | Next eligible fill date.                                                                                                                            |
-| provider             | Object |                 | Information about the prescribing provider. Object containing provider  information. See [Provider](doc:script-rxtransfer-fields#provider)   table. |
-| supervisor           | Object |                 | Optional supervisor information. Object containing  supervisor information. See [Supervisor](doc:script-rxtransfer-fields#supervisor)    table.     |
+| Field                | Type                                                                                                           | Character Limit | Description                                                                          |
+| :------------------- | :------------------------------------------------------------------------------------------------------------- | :-------------- | :----------------------------------------------------------------------------------- |
+| rxNumber             | String                                                                                                         | 20              | Rx number of the prescription                                                        |
+| rxStatus             | String                                                                                                         | 20              | Name of the medication as prescribed by the prescriber.                              |
+| medicationPrescribed | Object [medicationPrescribed](https://docs.healthdyne.com/docs/script-rxtransfer-fields#medication-prescribed) |                 | Object containing medication prescribed information.                                 |
+| medicationDispense   | Object [medicationDispensed](https://docs.healthdyne.com/docs/script-rxtransfer-fields#medication-dispensed)   |                 | Object containing medication dispensed information.                                  |
+| lastFillDate         | String                                                                                                         | 10              | Date of the most recent fill.                                                        |
+| patientKey           | String                                                                                                         | 10              | Identifier associated with the patient.                                              |
+| fillsRemaining       | String                                                                                                         | 2               | Number of refills still available.                                                   |
+| quantityRemaining    | String                                                                                                         | 4               | Remaining quantity allowed to be filled.                                             |
+| metricQuantity       | String                                                                                                         | 10              | Quantity in metric units, if available.                                              |
+| nextFillDate         | String                                                                                                         | 10              | Next eligible fill date.                                                             |
+| provider             | Object [provider](https://docs.healthdyne.com/docs/script-rxtransfer-fields#provider)                          |                 | Information about the prescribing provider. Object containing provider  information. |
+| supervisor           | Object [supervisor](https://docs.healthdyne.com/docs/script-rxtransfer-fields#supervisor)                      |                 | Optional supervisor information. Object containing  supervisor information.          |
 
 # Medication Prescribed
 
