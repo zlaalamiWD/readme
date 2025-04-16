@@ -43,7 +43,7 @@ Once a patient has been registered successfully, the GET Patient API allows clie
 
 `GET https://api.uat-healthdyne.com/v2/patient?patientkey=TestreadPatient171`
 
-Click here to see [GET Patient Request Query Data](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#get-patient-request)
+Click here to see [GET Patient Request Query Data](https://docs.healthdyne.com/docs/patient-request-fields#query-parameter)
 
 #### Sample GET Patient Response
 
