@@ -41,7 +41,7 @@ The GET Fill Request Status API lets clients retrieve the status and event summa
 
 `GET https://api.uat-healthdyne.com/v2/fill/fillRequest?fillRequestKey=FillPatientSample1404`
 
-Click here to see [GET Fill Request Query Data](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#query-parameter)
+Click here to see [GET Fill Request Query Data](https://docs.healthdyne.com/docs/fill-request-fields#query-parameter)
 
 #### Sample GET Status Response
 
@@ -109,7 +109,7 @@ Click here to see [GET Fill Request Query Data](https://docs.healthdyne.com/v2.1
 }
 ```
 
-Click here to see [Get Fill Request Data Object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object)
+Click here to see [Get Fill Request Data Object](https://docs.healthdyne.com/docs/fill-request-fields#response-object)
 
 The table below lists the potential response codes that can be received in response to a GET request.
 
@@ -186,7 +186,7 @@ Client must send a Fill request with following details:
 }
 ```
 
-Click here to see [Get Fill Request Data Object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#request-object)
+Click here to see [Submit Fill Request Data Object](https://docs.healthdyne.com/docs/fill-request-fields#request-object)
 
 #### Sample Submit Fill Response
 
@@ -197,7 +197,7 @@ Click here to see [Get Fill Request Data Object](https://docs.healthdyne.com/v2.
 }
 ```
 
-Click here to see [Submit Fill Response Data Object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object-1)
+Click here to see [Submit Fill Response Data Object](https://docs.healthdyne.com/docs/fill-request-fields#response-object-1)
 
 ***
 
