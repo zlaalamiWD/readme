@@ -10,8 +10,8 @@ metadata:
 next:
   description: ''
 ---
-> 📃 Note: 
-> 
+> 📃 Note:
+>
 > An empty string "" is considered a value and validation rules will apply (length/valid code/etc). Only null or missing elements will use default values.
 
 # Script Request
@@ -364,7 +364,6 @@ next:
 </table>
 `}</HTMLBlock>
 
-
 # Prescriber
 
 | Field                | Type   | Character Limit | Required/Optional | Description                                                                                  |
@@ -377,3 +376,21 @@ next:
 | phoneNumberExtension | String | 8               | Optional          | Prescriber's phone extension                                                                 |
 | faxNumber            | String | 10              | Required          | Prescriber's fax number                                                                      |
 | address              | Object |                 | Required          | Prescriber's address information. See [Address](doc:script-rxtransfer-fields#address) table. |
+
+***
+
+<br />
+
+## GET Script Request
+
+#### Query Parameter
+
+| Field | Type | Character Limit | Required/Optional | Description |
+| :---- | :--- | :-------------- | :---------------- | :---------- |
+|       |      |                 |                   |             |
+
+#### Response Object
+
+| Field | Type | Character Limit | Required/Optional | Description |
+| :---- | :--- | :-------------- | :---------------- | :---------- |
+|       |      |                 |                   |             |
