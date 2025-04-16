@@ -98,7 +98,7 @@ Click here to see [GET Patient Request Query Data](https://docs.healthdyne.com/d
 }
 ```
 
-Click here to see [Get Patient Response Data Object](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#response-object)
+Click here to see [Get Patient Response Data Object](https://docs.healthdyne.com/docs/patient-request-fields#response-object)
 
 The below table lists the potential response codes that can be received in response to a GET request.
 
@@ -134,7 +134,7 @@ The Find Patient API (GET method) allows clients to lookup patientKey in HD syst
 
 `GET https://api.uat-healthdyne.com/v2/patient/find?firstname=ABC&lastname=XYZ&birthdate=1981-01-01&zipcode=80017`
 
-Click here to see [GET Find Patient Request Query Data](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#find-patient-request)
+Click here to see [GET Find Patient Request Query Data](https://docs.healthdyne.com/docs/patient-request-fields#query-parameter-1)
 
 #### Sample GET Find Patient Response
 
@@ -150,7 +150,7 @@ Click here to see [GET Find Patient Request Query Data](https://docs.healthdyne.
 }
 ```
 
-Click here to see [Get Find Patient Response Data Object](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#response-object-1)
+Click here to see [Get Find Patient Response Data Object](https://docs.healthdyne.com/docs/patient-request-fields#response-object-1)
 
 The below table lists the potential response codes that can be received in response to a GET Find patient request.
 
@@ -186,7 +186,7 @@ The "Get Patient Script/Prescription" endpoint allows retrieval of all scripts a
 
 `GET https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece`
 
-Click here to see [GET Patient Scripts/Prescriptions Request Query Data](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#get-patient-scriptsprescriptions-request)
+Click here to see [GET Patient Scripts/Prescriptions Request Query Data](https://docs.healthdyne.com/docs/patient-request-fields#query-parameter-2)
 
 #### Sample GET Patient Scripts/Prescriptions Response
 
@@ -198,7 +198,7 @@ Click here to see [GET Patient Scripts/Prescriptions Request Query Data](https:/
 }
 ```
 
-Click here to see [GET Patient Scripts/Prescriptions Response Data Object](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#response-object-2)
+Click here to see [GET Patient Scripts/Prescriptions Response Data Object](https://docs.healthdyne.com/docs/patient-request-fields#response-object-2)
 
 The below table lists the potential response codes that can be received in response to a GET request.
 
@@ -273,7 +273,7 @@ The "Create Patient" endpoint uses the POST method to add a new patient record. 
 }
 ```
 
-Click here to see [POST Create Patient Request Data Object](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#create-patient-request)
+Click here to see [POST Create Patient Request Data Object](https://docs.healthdyne.com/docs/patient-request-fields#request-object)
 
 #### Sample Create Patient Response
 
@@ -284,7 +284,7 @@ Click here to see [POST Create Patient Request Data Object](https://docs.healthd
 }
 ```
 
-Click here to see [Create Patient Response Data Object](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#response-object-3)
+Click here to see [Create Patient Response Data Object](https://docs.healthdyne.com/docs/patient-request-fields#response-object-3)
 
 # Update Patient
 
@@ -349,7 +349,7 @@ The "Update Patient" endpoint uses the PUT method to modify the details of an ex
 }
 ```
 
-Click here to see [PUT Update Patient Request Data Object](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#update-patient-request)
+Click here to see [PUT Update Patient Request Data Object](https://docs.healthdyne.com/docs/patient-request-fields#request-object-1)
 
 #### Sample Update Patient Response
 
@@ -360,7 +360,7 @@ Click here to see [PUT Update Patient Request Data Object](https://docs.healthdy
 }
 ```
 
-Click here to see [PUT Update Patient Response Data Object](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#response-object-4)
+Click here to see [PUT Update Patient Response Data Object](https://docs.healthdyne.com/docs/patient-request-fields#response-object-4)
 
 ```json
 {
