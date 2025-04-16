@@ -61,8 +61,6 @@ metadata:
 | refillByDate     | string                                                                                                         |                 | Date recommended for refill                                                              |
 | shipments        | \[[ShipmentObject](https://docs.healthdyne.com/v2.171/update/docs/mailbox-data-object-schemas#ShipmentObject)] |                 | shipment information                                                                     |
 
-<br />
-
 #### ShipmentObject
 
 | Field          | Type                                                                                                          | Character Limit | Description                                        |
@@ -76,3 +74,13 @@ metadata:
 | dispensedQty   | string                                                                                                        | 20              | Quantity of medication dispensed.                  |
 | daysSupply     | string                                                                                                        | 20              | Number of days the dispensed medication will last. |
 | shipmentDate   | string                                                                                                        | 30              | The date the shipment was sent.                    |
+
+#### AddresstObject
+
+| Field    | Type   | Character Limit | Description                          |
+| :------- | :----- | :-------------- | :----------------------------------- |
+| address1 | string | 255             | address information.                 |
+| address2 | string | 50              | Package tracking number.             |
+| city     | string | 40              | Code representing the shipment type. |
+| state    | string | 2               | URL for tracking the shipment.       |
+| zipcode  | string | 5               | Weight of the shipment.              |
