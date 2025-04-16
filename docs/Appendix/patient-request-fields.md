@@ -155,6 +155,7 @@ next:
 
 #### Response Object
 
-| Field      | Type  | Character Limit | Required/Optional | Description                                  |
-| :--------- | :---- | :-------------- | :---------------- | :------------------------------------------- |
-| scriptKeys | Array |                 | Required          | Array of scriptKey(s) associated to Patient. |
+| Field      | Type   | Character Limit | Required/Optional | Description                         |
+| :--------- | :----- | :-------------- | :---------------- | :---------------------------------- |
+| patientKey | String | 50              | Required          | Unique patient ID in Client system. |
+| message    | string | max             | Required          | Status messages string.             |
