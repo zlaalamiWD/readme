@@ -69,6 +69,17 @@ next:
 
 # Prescription
 
+| Field              | Type   | Character Limit | Required/Optional | Description                                                                     |
+| :----------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------ |
+| rxNumber           | String | 12              | Required          | Rx number of the prescription as per client's system.                           |
+| prescribedDrugName | String | 105             | Required          | Name of the medication as prescribed by the prescriber.                         |
+| prescribedNdc      | String | 11              | Required          | NDC prescribed by the prescriber.                                               |
+| dispenseNdc        | String | 11              | Optional          | Field is required if orTransfer is True. NDC dispensed by the pharmacy.         |
+| dispenseDrugName   | String | 105             | Optional          | Field is required if orTransfer is True. Name of the medication to be dispensed |
+| drugDosageForm     | String | 30              | Required          | Dosage form for the dispensed medication. For example: TABS, SWAB, CHEW, etc.   |
+|                    |        |                 |                   |                                                                                 |
+|                    |        |                 |                   |                                                                                 |
+
 <HTMLBlock>{`
 <table style="width: 100%; border-collapse: collapse;">
 <thead>
