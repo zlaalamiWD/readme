@@ -77,10 +77,10 @@ metadata:
 
 #### AddresstObject
 
-| Field    | Type   | Character Limit | Description                          |
-| :------- | :----- | :-------------- | :----------------------------------- |
-| address1 | string | 255             | address information.                 |
-| address2 | string | 50              | Package tracking number.             |
-| city     | string | 40              | Code representing the shipment type. |
-| state    | string | 2               | URL for tracking the shipment.       |
-| zipcode  | string | 5               | Weight of the shipment.              |
+| Field    | Type   | Character Limit | Description            |
+| :------- | :----- | :-------------- | :--------------------- |
+| address1 | string | 255             | address 1 information. |
+| address2 | string | 50              | address  information.  |
+| city     | string | 40              | Shipped to city.       |
+| state    | string | 2               | Shipped to state.      |
+| zipcode  | string | 5               | Shipped to zip code.   |
