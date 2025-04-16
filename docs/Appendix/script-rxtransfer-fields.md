@@ -196,13 +196,13 @@ next:
 
 # Supervisor
 
-| Field              | Type   | Character Limit | Description                   |
-| :----------------- | :----- | :-------------- | :---------------------------- |
-| lastName           | String | 50              | Provider’s name.              |
-| firstName          | String | 50              | National Provider Identifier. |
-| npi                | String | 10              | State license number.         |
-| dea                | String | 20              | DEA number of the provider.   |
-| stateLicenseNumber | String | 20              |                               |
+| Field              | Type   | Character Limit | Description                        |
+| :----------------- | :----- | :-------------- | :--------------------------------- |
+| lastName           | String | 50              | Supervisor's last name.            |
+| firstName          | String | 50              | Supervisor's first name.           |
+| npi                | String | 10              | Supervisor’s NPI number.           |
+| dea                | String | 20              | DEA number of the provider.        |
+| stateLicenseNumber | String | 20              | Supervisor’s state license number. |
 
 ## GET Patient Scripts/Prescriptions Request
 
