@@ -60,16 +60,47 @@ next:
 | :-------- | :---- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | allergies | Array | 40              | Required          | Array of string. Character limit is for each string in Array. See valid allergy types below. The allergies field is required, if patient has no allergies pass "NO KNOWN". |
 
-|                        |                                        |                          |
-| :--------------------- | :------------------------------------- | :----------------------- |
-| NO KNOWN               | ACE INHIBITORS                         | ACETAMINOPHEN            |
-| AMOXICILLIN            | ASPIRIN                                | BETA ADRENERGIC BLOCKERS |
-| CEPHALOSPORINS         | CODEINE                                | ERYTHROMYCIN             |
-| IODIDES                | IODINATED DIAGNOSTIC AGENTS            | Macrolides and Ketolides |
-| MEPERIDINE AND RELATED | MISC. SULFONAMIDE CONTAINING COMPOUNDS | Morphine and Related     |
-| NSAIDS                 | PENICILLINS                            | QUINOLONES               |
-| Salicylatres           | SHELLFISH-DERIVED PRODUCTS             | STATINS                  |
-| SULFA                  | TETRACYCLINES                          | IBUPROFEN                |
+| Allergy Name             | Allergy Class            |
+| :----------------------- | :----------------------- |
+| ACE INHIBITORS           | ACE INHIBITORS           |
+| ACETAMINOPHEN            | ACETAMINOPHEN            |
+| Amoxicillin              | Penicillins              |
+| Aspirin                  | Salicylates              |
+| Atenolol                 | BETA ADRENERGIC BLOCKERS |
+| Atorvastatin             | STATINS                  |
+| Benazepril               | ACE INHIBITORS           |
+| BETA ADRENERGIC BLOCKERS | BETA ADRENERGIC BLOCKERS |
+| Cephalosporins           | Cephalosporins           |
+| Ciprofloxacin            | QUINOLONES               |
+| Codeine                  | Morphine and Related     |
+| Demerol                  | MEPERIDINE AND RELATED   |
+| Erythromycin             | Macrolides and Ketolides |
+|                          |                          |
+|                          |                          |
+|                          |                          |
+|                          |                          |
+|                          |                          |
+|                          |                          |
+|                          |                          |
+|                          |                          |
+|                          |                          |
+|                          |                          |
+|                          |                          |
+|                          |                          |
+|                          |                          |
+|                          |                          |
+|                          |                          |
+|                          |                          |
+|                          |                          |
+|                          |                          |
+|                          |                          |
+|                          |                          |
+|                          |                          |
+|                          |                          |
+|                          |                          |
+|                          |                          |
+|                          |                          |
+|                          |                          |
 
 > 📃 Additional Allergy Information
 >
