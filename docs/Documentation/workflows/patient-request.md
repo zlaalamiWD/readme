@@ -163,7 +163,7 @@ The below table lists the potential response codes that can be received in respo
 | 401  | Unauthorized                  |
 | 500  | Internal Server Error         |
 
-# Get Patient Scripts/Prescriptions:
+# Get Patient Scripts/Prescriptions
 
 The "Get Patient Script/Prescription" endpoint allows retrieval of all scripts associated with a specific patient key. If no prescriptions are found for the provided patient key, the endpoint will return a 200 status with the message "No record found."
 
