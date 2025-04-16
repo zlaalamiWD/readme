@@ -72,7 +72,7 @@ The below table lists the potential response codes that can be received in respo
       "expirationDate": "01-27-2024",
       "strength": "10",
       "strengthUOM": "MG",
-      "dosageFOrm":"TABLET"
+      "dosageForm":"TABLET"
     },
     "medicationDispense": {
       "drugNdc": "00536478701",
