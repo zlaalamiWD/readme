@@ -98,7 +98,7 @@ Click here to see [GET Patient Request Query Data](https://docs.healthdyne.com/v
 }
 ```
 
-Click here to see [Get Fill Response Data Object](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#response-object)
+Click here to see [Get Patient Response Data Object](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#response-object)
 
 The below table lists the potential response codes that can be received in response to a GET request.
 
