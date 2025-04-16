@@ -65,11 +65,14 @@ metadata:
 
 #### ShipmentObject
 
-| Field            | Type              | Character Limit | Description                                                                              |
-| :--------------- | :---------------- | :-------------- | :--------------------------------------------------------------------------------------- |
-| orderNumber      | string            | 100             | order number                                                                             |
-| scriptKey        | string            | 255             | Unique identifier for the script being transferred which is initially defined by client. |
-| fillNumber       | int               |                 | Shows how many fills have been fulfilled for this Rx                                     |
-| remainingRefills | string            | 10              | Show how many fill remaing for the Rx                                                    |
-| refillByDate     | string            |                 | Date recommended for refill                                                              |
-| shipments        | \[ShipmentObject] |                 | shipment information                                                                     |
+| Field          | Type                                                                                                          | Character Limit | Description                                        |
+| :------------- | :------------------------------------------------------------------------------------------------------------ | :-------------- | :------------------------------------------------- |
+| address        | \[[AddressObject](https://docs.healthdyne.com/v2.171/update/docs/mailbox-data-object-schemas#AddressObject) ] |                 | address information.                               |
+| trackingNumber | string                                                                                                        | 50              | Package tracking number.                           |
+| shipmentCode   | string                                                                                                        | 20              | Code representing the shipment type.               |
+| trackingUrl    | string                                                                                                        | 10              | URL for tracking the shipment.                     |
+| weight         | int                                                                                                           |                 | Weight of the shipment.                            |
+| cost           | int                                                                                                           |                 | Shipping cost.                                     |
+| dispensedQty   | string                                                                                                        | 20              | Quantity of medication dispensed.                  |
+| daysSupply     | string                                                                                                        | 20              | Number of days the dispensed medication will last. |
+| shipmentDate   | string                                                                                                        | 30              | The date the shipment was sent.                    |
