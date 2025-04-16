@@ -141,33 +141,26 @@ next:
 
 # PrescriptionResponseDetail
 
-| Field                      | Type    | Character Limit | Required/Optional | Description                                                                                                |
-| :------------------------- | :------ | :-------------- | :---------------- | :--------------------------------------------------------------------------------------------------------- |
-| rxNumber                   | String  | 12              | Required          | Rx number of the prescription as per client's system.                                                      |
-| prescribedDrugName         | String  | 105             | Required          | Name of the medication as prescribed by the prescriber.                                                    |
-| prescribedNdc              | String  | 11              | Required          | NDC prescribed by the prescriber.                                                                          |
-| dispenseNdc                | String  | 11              | Optional          | Field is required if orTransfer is True. NDC dispensed by the pharmacy.                                    |
-| dispenseDrugName           | String  | 105             | Optional          | Field is required if orTransfer is True. Name of the medication to be dispensed                            |
-| drugDosageForm             | String  | 30              | Required          | Dosage form for the dispensed medication. For example: TABS, SWAB, CHEW, etc.                              |
-| drugStrength               | String  | 10              | Required          | Drug strength (e.g., 125mcg).                                                                              |
-| daysSupply                 | Integer |                 | Required          | Number of days the medication is intended to last.                                                         |
-| quantityDispensedToDate    | Decimal |                 | Optional          | Total quantity dispensed so far.                                                                           |
-| remainingQuantity          | Decimal |                 | Optional          | Remaining quantity left to dispense.                                                                       |
-| labelDirections            | String  | 255             | Required          | Directions for taking the medication.                                                                      |
-| writtenDate                | String  | 10              | Required          | Date the prescription was written.                                                                         |
-| expirationDate             | String  | 10              | Optional          | Date the prescription expires.                                                                             |
-| dawCode                    | String  | 1               | Required          | Dispense As Written code.                                                                                  |
-| lastFillDate               | String  | 10              | Optional          | Date of the last fill, if any.                                                                             |
-| firstFillDate              | String  | 10              | Optional          | Date of the first fill.                                                                                    |
-| fillsToDate                | Integer |                 | Optional          | Number of fills already made.                                                                              |
-| refillsAuthorized          | Integer |                 | Required          | Total refills authorized by the prescriber.                                                                |
-| refillsLeft                | Integer |                 | Optional          | Refills remaining.                                                                                         |
-| refillsTransferred         | Integer |                 | Optional          | Number of refills transferred to another pharmacy.                                                         |
-| inactiveIndicator          | Boolean |                 | Required          | Indicates if the prescription is inactive.                                                                 |
-| quantityWritten            | Decimal |                 | Required          | Quantity prescribed.                                                                                       |
-| firstFillDispensedQuantity | Decimal |                 | Optional          | Quantity dispensed on the first fill.                                                                      |
-| currentFillNumber          | Integer |                 | Optional          | Fill number of the current dispense action.                                                                |
-| prescriber                 | Object  |                 | Required          | Object containing prescriber information. See [Prescriber](doc:script-rxtransfer-fields#prescriber) table. |
+| Field                | Type   | Character Limit | Description                                                                                                                               |
+| :------------------- | :----- | :-------------- | :---------------------------------------------------------------------------------------------------------------------------------------- |
+| rxNumber             | String | 20              | Rx number of the prescription                                                                                                             |
+| rxStatus             | String | 20              | Name of the medication as prescribed by the prescriber.                                                                                   |
+| medicationPrescribed | Object |                 | Object containing medicatino prescribed information. See [medicationPrescribed](doc:script-rxtransfer-fields#medicationPrescribed) table. |
+| medicationDispense   | Object |                 | Object containing medication despensed information. See [medicationDespensed](doc:script-rxtransfer-fields#medicationDespensed)  table.   |
+
+# medicationPrescribed
+
+| Field           | Type   | Character Limit | Description                                                                                                |
+| :-------------- | :----- | :-------------- | :--------------------------------------------------------------------------------------------------------- |
+| writtenDrugName | String | 20              | Rx number of the prescription                                                                              |
+| writtenDrugNdc  | String | 20              | Name of the medication as prescribed by the prescriber.                                                    |
+| writtenGPI      | String |                 | Object containing prescriber information. See [Prescriber](doc:script-rxtransfer-fields#prescriber) table. |
+| quantityWritten |        |                 |                                                                                                            |
+| writtenDate     |        |                 |                                                                                                            |
+| expirationDate  |        |                 |                                                                                                            |
+| strength        |        |                 |                                                                                                            |
+| strengthUOM     |        |                 |                                                                                                            |
+| dosageFOrm      |        |                 |                                                                                                            |
 
 ## GET Patient Scripts/Prescriptions Request
 
