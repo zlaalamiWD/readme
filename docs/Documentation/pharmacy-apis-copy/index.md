@@ -19,7 +19,7 @@ The Central Fill API is a powerful and robust RESTful, JSON-based API designed t
 * Real-Time Status Tracking: Retrieve current fill request statuses, including shipment  updates.
 * Request Cancellations: Cancel a fill request when necessary, ensuring flexibility and control.
 
-Get started by adding reviewing the [RxFill](doc:patient-request), [Cancel](doc:script-rxtransfer-request), and [Mailbox](doc:fill-request) request documentation.
+Get started by adding reviewing the [RxFill](), [Cancel](), and [Mailbox]() request documentation.
 
 # Fulfillment Workflows
 
@@ -27,8 +27,8 @@ Get started by adding reviewing the [RxFill](doc:patient-request), [Cancel](doc:
 
 The RxFill Workflow is a critical process for submitting and tracking prescription fill or refill requests through HealthDyne’s Central Fill API. The steps below outline how your system should interact with the RxFill and Mailbox APIs for proper end-to-end order management.
 
-1. Use the RxFill API to create a fill or refill order [RxFill API Guide](https://docs.healthdyne.com/v2.17/docs/patient-request)
-2. Retrieve and Acknowledge Events [Mailbox API Guide](https://docs.healthdyne.com/v2.17/docs/mail-box)
+1. Use the RxFill API to create a fill or refill order [RxFill API Guide]()
+2. Retrieve and Acknowledge Events [Mailbox API Guide]()
 
 * Use the GET method on the Mailbox API to retrieve current events.
 
