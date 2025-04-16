@@ -429,16 +429,16 @@ next:
 
 #### Request Object
 
-| Field             | Type | Character Limit | Required/Optional | Description |
-| :---------------- | :--- | :-------------- | :---------------- | :---------- |
-| scriptKey         |      |                 |                   |             |
-| sendingPharmacy   |      |                 |                   |             |
-| receivingPharmacy |      |                 |                   |             |
-| patientKey        |      |                 |                   |             |
-| prescription      |      |                 |                   |             |
-| transferFileType  |      |                 |                   |             |
-| transferFileUrl   |      |                 |                   |             |
-| ortransfer        |      |                 |                   |             |
+| Field             | Type    | Character Limit | Required/Optional | Description |
+| :---------------- | :------ | :-------------- | :---------------- | :---------- |
+| scriptKey         | String  |                 |                   |             |
+| sendingPharmacy   | Object  |                 |                   |             |
+| receivingPharmacy | Object  |                 |                   |             |
+| patientKey        | String  |                 |                   |             |
+| prescription      | Object  |                 |                   |             |
+| transferFileType  | String  |                 |                   |             |
+| transferFileUrl   | String  |                 |                   |             |
+| ortransfer        | Boolean |                 |                   |             |
 
 #### Response Object
 
