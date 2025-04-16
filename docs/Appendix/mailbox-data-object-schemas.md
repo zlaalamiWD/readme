@@ -17,7 +17,28 @@ metadata:
 | :----------- | :--- | :-------------- | :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | messageCount | int  | 3               | Required          | used to define how many messages should be returned per batch. Maximum will be 100 messages. if no value passed, the default is 100 messages per batch |
 
-**Response Object**
+\*\* RxTransfer Response Object\*\*
+
+| Field         | Type                                                                                                                 | Character Limit | Description                                                                             |
+| :------------ | :------------------------------------------------------------------------------------------------------------------- | :-------------- | :-------------------------------------------------------------------------------------- |
+| eventId       | string                                                                                                               | max             | Unique event identifier in HealthDyne system.                                           |
+| eventDateUtc  | string                                                                                                               | 27              | UTC timestamp of when the event occurred.                                               |
+| eventType     | string                                                                                                               | 50              | Type of event, e.g., "RXTRANSFER".                                                      |
+| status        | string                                                                                                               | 20              | Current status of the event.                                                            |
+| statusMessage | string                                                                                                               | max             | Descriptive message explaining the status.                                              |
+| scriptKey     | string                                                                                                               | 255             | Unique identifier for the script being transferred which is initialy defined by client. |
+| detail        | [RxTransferDetailObject](https://docs.healthdyne.com/v2.171/docs/mailbox-data-object-schemas#RxTransferDetailObject) |                 | Nested object containing extra details specific to the event type                       |
+
+#### RxTransferDetailObject
+
+| Field      | Type   | Character Limit | Required/Optional | Description                        |
+| :--------- | :----- | :-------------- | :---------------- | :--------------------------------- |
+| patientKey | string | 20              | Required          | Unique identifier for the patient. |
+| rxNumber   | string | 30              | Required          | Prescription number                |
+
+<br />
+
+\*\* FillRequest Response Object\*\*
 
 | Field         | Type                                                                                             | Character Limit | Description                                                                             |
 | :------------ | :----------------------------------------------------------------------------------------------- | :-------------- | :-------------------------------------------------------------------------------------- |
