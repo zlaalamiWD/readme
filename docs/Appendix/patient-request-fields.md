@@ -93,14 +93,14 @@ next:
 | Penicillins                            | Penicillins                            |
 | QUINOLONES                             | QUINOLONES                             |
 | Rosuvastatin                           | STATINS                                |
-|                                        |                                        |
-|                                        |                                        |
-|                                        |                                        |
-|                                        |                                        |
-|                                        |                                        |
-|                                        |                                        |
-|                                        |                                        |
-|                                        |                                        |
+| Salicylates                            | Salicylates                            |
+| SHELLFISH-DERIVED PRODUCTS             | SHELLFISH-DERIVED PRODUCTS             |
+| Simvastatin                            | STATINS                                |
+| STATINS                                | STATINS                                |
+| Sulfa                                  | Sulfa Antibiotics                      |
+| Sulfa Antibiotics                      | Sulfa Antibiotics                      |
+| Tetracyclines                          | Tetracyclines & Related                |
+| Tetracyclines & Related                | Tetracyclines & Related                |
 
 > 📃 Additional Allergy Information
 >
