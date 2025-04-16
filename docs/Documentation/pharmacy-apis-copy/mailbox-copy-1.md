@@ -40,7 +40,7 @@ Note, the status messages are not considered delivered and removed from the mail
 
 > `<   https://>`
 
-This tells the API to only respond with 10 messages. The default message count is 5messages. The Mailbox only allows 25 messages to be pulled at a time.
+This tells the API to only respond with 10 messages. The default message count is 100 messages. The Mailbox only allows 100 messages to be pulled at a time.
 
 # GET Status Response
 
