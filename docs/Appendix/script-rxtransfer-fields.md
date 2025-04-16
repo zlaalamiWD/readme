@@ -198,10 +198,11 @@ next:
 
 | Field              | Type   | Character Limit | Description                   |
 | :----------------- | :----- | :-------------- | :---------------------------- |
-| name               | String | 100             | Provider’s name.              |
-| npi                | String | 10              | National Provider Identifier. |
-| stateLicenseNumber | String | 20              | State license number.         |
+| lastName           | String | 50              | Provider’s name.              |
+| firstName          | String | 50              | National Provider Identifier. |
+| npi                | String | 10              | State license number.         |
 | dea                | String | 20              | DEA number of the provider.   |
+| stateLicenseNumber | String | 20              |                               |
 
 ## GET Patient Scripts/Prescriptions Request
 
