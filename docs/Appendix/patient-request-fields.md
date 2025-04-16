@@ -122,7 +122,7 @@ next:
 
 | Field      | Type      | Character Limit | Required/Optional | Description                         |
 | :--------- | :-------- | :-------------- | :---------------- | :---------------------------------- |
-| patientKey | String    | 50              | Required          | Unique patient ID in Client system. |
+| patientKey | Array     |                 | Required          | Unique patient ID in Client system. |
 | firstName  | String    | 35              | Required          | Patient's first name.               |
 | lastName   | String    | 35              | Required          | Patient's last name.                |
 | birthDate  | Date-time | YYYY-MM-DD      | Required          | Patient's Date of Birth             |
