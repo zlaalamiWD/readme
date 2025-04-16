@@ -145,12 +145,12 @@ next:
 
 #### Query Parameter
 
-| Field     | Type      | Character Limit | Required/Optional | Description                |
-| :-------- | :-------- | :-------------- | :---------------- | :------------------------- |
-| firstName | String    | 35              | Required          | Patient's first name.      |
-| lastName  | String    | 35              | Required          | Patient's last name.       |
-| birthDate | Date-time | YYYY-MM-DD      | Required          | Patient's Date of Birth    |
-| zipCode   | String    | 10              | Required          | Format NNNNN or NNNNN-NNNN |
+| Field     | Type     | Character Limit | Required/Optional | Description                |
+| :-------- | :------- | :-------------- | :---------------- | :------------------------- |
+| firstName | String   | 35              | Required          | Patient's first name.      |
+| lastName  | String   | 35              | Required          | Patient's last name.       |
+| birthDate | DateTime | YYYY-MM-DD      | Required          | Patient's Date of Birth    |
+| zipCode   | String   | 10              | Required          | Format NNNNN or NNNNN-NNNN |
 
 #### Response Object
 
