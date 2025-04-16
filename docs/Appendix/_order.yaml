@@ -1,6 +1,6 @@
 - patient-request-fields
 - insurance-request-fields
-- insurance-data-object-schemas-copy
+- mailbox-data-object-schemas
 - script-rxtransfer-fields
 - fill-request-fields
 - top-reject-reasons
