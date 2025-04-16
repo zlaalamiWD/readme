@@ -9,13 +9,15 @@ metadata:
 >
 > An empty string "" is considered a value and validation rules will apply (length/valid code/etc). Only null or missing elements will use default values.
 
-# RxTransfer event Type
+# Mailbox fetch parameters
 
 #### Query Parameter
 
 | Parameter    | Type | Character Limit | Required/Optional | Description                                                                                                                                            |
 | :----------- | :--- | :-------------- | :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | messageCount | int  | 3               | Required          | used to define how many messages should be returned per batch. Maximum will be 100 messages. if no value passed, the default is 100 messages per batch |
+
+# RxTransfer event Type
 
 \*\* RxTransfer Response Object\*\*
 
@@ -36,7 +38,29 @@ metadata:
 | patientKey | string | 20              | Unique identifier for the patient. |
 | rxNumber   | string | 30              | Prescription number                |
 
-<br />
+# RxStatus event Type
+
+\*\* RxStatus Response Object\*\*
+
+| Field         | Type                                                                                                                 | Character Limit | Description                                                       |
+| :------------ | :------------------------------------------------------------------------------------------------------------------- | :-------------- | :---------------------------------------------------------------- |
+| eventId       | string                                                                                                               | max             | Unique event identifier in HealthDyne system.                     |
+| eventDateUtc  | string                                                                                                               | 27              | UTC timestamp of when the event occurred.                         |
+| eventType     | string                                                                                                               | 50              | Type of event, e.g., "RXTRANSFER".                                |
+| status        | string                                                                                                               | 20              | Current status of the event.                                      |
+| statusMessage | string                                                                                                               | max             | Descriptive message explaining the status.                        |
+|               |                                                                                                                      |                 |                                                                   |
+|               |                                                                                                                      |                 |                                                                   |
+| detail        | [RxTransferDetailObject](https://docs.healthdyne.com/v2.171/docs/mailbox-data-object-schemas#RxTransferDetailObject) |                 | Nested object containing extra details specific to the event type |
+
+#### RxTransferDetailObject
+
+| Field      | Type   | Character Limit | Description                        |
+| :--------- | :----- | :-------------- | :--------------------------------- |
+| patientKey | string | 20              | Unique identifier for the patient. |
+| rxNumber   | string | 30              | Prescription number                |
+
+# FillRequest event Type
 
 \*\* FillRequest Response Object\*\*
 
