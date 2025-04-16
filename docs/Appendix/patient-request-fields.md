@@ -120,10 +120,10 @@ next:
 
 #### Response Object
 
-| Field      | Type      | Character Limit | Required/Optional | Description                         |
-| :--------- | :-------- | :-------------- | :---------------- | :---------------------------------- |
-| patientKey | Array     |                 | Required          | Unique patient ID in Client system. |
-| firstName  | String    | 35              | Required          | Patient's first name.               |
-| lastName   | String    | 35              | Required          | Patient's last name.                |
-| birthDate  | Date-time | YYYY-MM-DD      | Required          | Patient's Date of Birth             |
-| zipCode    | String    | 10              | Required          | Format NNNNN or NNNNN-NNNN          |
+| Field      | Type      | Character Limit | Required/Optional | Description                                                           |
+| :--------- | :-------- | :-------------- | :---------------- | :-------------------------------------------------------------------- |
+| patientKey | Array     |                 | Required          | List of Array of patientKey(s) (Unique patient ID in Client system.). |
+| firstName  | String    | 35              | Required          | Patient's first name.                                                 |
+| lastName   | String    | 35              | Required          | Patient's last name.                                                  |
+| birthDate  | Date-time | YYYY-MM-DD      | Required          | Patient's Date of Birth                                               |
+| zipCode    | String    | 10              | Required          | Format NNNNN or NNNNN-NNNN                                            |
