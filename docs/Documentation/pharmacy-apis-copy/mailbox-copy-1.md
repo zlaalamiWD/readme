@@ -1,11 +1,11 @@
 ---
-title: Mailbox (COPY)
+title: Mailbox
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
-# Status Request
+# RxFill Status Request
 
 View the [MailBox](ref:post_v2-mailbox) API Reference for detailed request body information.
 
