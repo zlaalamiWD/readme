@@ -1,0 +1,109 @@
+---
+title: Mailbox Data Object (Schemas)
+deprecated: false
+hidden: false
+metadata:
+  robots: index
+---
+> 📃 Note:
+>
+> An empty string "" is considered a value and validation rules will apply (length/valid code/etc). Only null or missing elements will use default values.
+
+# Mailbox fetch parameters
+
+#### Query Parameter
+
+| Parameter    | Type | Character Limit | Required/Optional | Description                                                                                                                                            |
+| :----------- | :--- | :-------------- | :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| messageCount | Int  | 3               | Required          | used to define how many messages should be returned per batch. Maximum will be 100 messages. if no value passed, the default is 100 messages per batch |
+
+# RxTransfer event Type
+
+#### RxTransfer Response Object
+
+| Field         | Type                                                                                                                 | Character Limit | Description                                                                              |
+| :------------ | :------------------------------------------------------------------------------------------------------------------- | :-------------- | :--------------------------------------------------------------------------------------- |
+| eventId       | String                                                                                                               | max             | Unique event identifier in HealthDyne system.                                            |
+| eventDateUtc  | String                                                                                                               | 27              | UTC timestamp of when the event occurred.                                                |
+| eventType     | String                                                                                                               | 50              | Type of event, e.g., "RXTRANSFER".                                                       |
+| status        | String                                                                                                               | 20              | Current status of the event.                                                             |
+| statusMessage | String                                                                                                               | max             | Descriptive message explaining the status.                                               |
+| scriptKey     | String                                                                                                               | 255             | Unique identifier for the script being transferred which is initially defined by client. |
+| detail        | [RxTransferDetailObject](https://docs.healthdyne.com/v2.171/docs/mailbox-data-object-schemas#RxTransferDetailObject) |                 | Nested object containing extra details specific to the event type                        |
+
+#### RxTransferDetailObject
+
+| Field      | Type   | Character Limit | Description                        |
+| :--------- | :----- | :-------------- | :--------------------------------- |
+| patientKey | String | 255             | Unique identifier for the patient. |
+| rxNumber   | String | 30              | Prescription number                |
+
+# RxStatus event Type
+
+#### RxStatus Response Object
+
+| Field         | Type                                                                                                             | Character Limit | Description                                                                              |
+| :------------ | :--------------------------------------------------------------------------------------------------------------- | :-------------- | :--------------------------------------------------------------------------------------- |
+| eventId       | String                                                                                                           | max             | Unique event identifier in HealthDyne system.                                            |
+| eventDateUtc  | String                                                                                                           | 27              | UTC timestamp of when the event occurred.                                                |
+| eventType     | String                                                                                                           | 50              | Type of event, e.g., "RXTRANSFER".                                                       |
+| status        | String                                                                                                           | 20              | Current status of the event.                                                             |
+| statusMessage | String                                                                                                           | max             | Descriptive message explaining the status.                                               |
+| scriptKey     | String                                                                                                           | 255             | Unique identifier for the script being transferred which is initially defined by client. |
+| patientKey    | String                                                                                                           | 255             | Unique identifier for the patient.                                                       |
+| detail        | [RxStatusDetailObject](https://docs.healthdyne.com/v2.171/docs/mailbox-data-object-schemas#RxStatusDetailObject) |                 | Nested object containing extra details specific to the event type                        |
+
+#### RxStatusDetailObject
+
+| Field  | Type   | Character Limit | Description                  |
+| :----- | :----- | :-------------- | :--------------------------- |
+| reason | string | 255             | Reason for the status if any |
+
+# FillRequest event Type
+
+#### FillRequest Response Object
+
+| Field          | Type                                                                                                                   | Character Limit | Description                                                                   |
+| :------------- | :--------------------------------------------------------------------------------------------------------------------- | :-------------- | :---------------------------------------------------------------------------- |
+| eventId        | String                                                                                                                 | max             | Unique event identifier in HealthDyne system.                                 |
+| eventDateUtc   | String                                                                                                                 | 27              | UTC timestamp of when the event occurred.                                     |
+| eventType      | String                                                                                                                 | 50              | Type of event, e.g., "RXTRANSFER".                                            |
+| status         | String                                                                                                                 | 20              | Current status of the event.                                                  |
+| statusMessage  | String                                                                                                                 | max             | Descriptive message explaining the status.                                    |
+| fillRequestKey | String                                                                                                                 | 255             | Unique identifier for the fill request  which is initially defined by client. |
+| detail         | [FillRequestDetailObject](https://docs.healthdyne.com/v2.171/docs/mailbox-data-object-schemas#FillRequestDetailObject) |                 | Nested object containing extra details specific to the event type             |
+
+#### FillRequestDetailObject
+
+| Field            | Type                                                                                                           | Character Limit | Description                                                                              |
+| :--------------- | :------------------------------------------------------------------------------------------------------------- | :-------------- | :--------------------------------------------------------------------------------------- |
+| orderNumber      | String                                                                                                         | 100             | order number                                                                             |
+| scriptKey        | String                                                                                                         | 255             | Unique identifier for the script being transferred which is initially defined by client. |
+| fillNumber       | int                                                                                                            |                 | Shows how many fills have been fulfilled for this Rx                                     |
+| remainingRefills | String                                                                                                         | 10              | Show how many fill remaing for the Rx                                                    |
+| refillByDate     | String                                                                                                         |                 | Date recommended for refill                                                              |
+| shipments        | \[[ShipmentObject](https://docs.healthdyne.com/v2.171/update/docs/mailbox-data-object-schemas#ShipmentObject)] |                 | shipment information                                                                     |
+
+#### ShipmentObject
+
+| Field          | Type                                                                                                          | Character Limit | Description                                        |
+| :------------- | :------------------------------------------------------------------------------------------------------------ | :-------------- | :------------------------------------------------- |
+| address        | \[[AddressObject](https://docs.healthdyne.com/v2.171/update/docs/mailbox-data-object-schemas#AddressObject) ] |                 | address information.                               |
+| trackingNumber | String                                                                                                        | 50              | Package tracking number.                           |
+| shipmentCode   | String                                                                                                        | 20              | Code representing the shipment type.               |
+| trackingUrl    | String                                                                                                        | 10              | URL for tracking the shipment.                     |
+| weight         | int                                                                                                           |                 | Weight of the shipment.                            |
+| cost           | int                                                                                                           |                 | Shipping cost.                                     |
+| dispensedQty   | String                                                                                                        | 20              | Quantity of medication dispensed.                  |
+| daysSupply     | String                                                                                                        | 20              | Number of days the dispensed medication will last. |
+| shipmentDate   | String                                                                                                        | 30              | The date the shipment was sent.                    |
+
+#### AddressObject
+
+| Field    | Type   | Character Limit | Description            |
+| :------- | :----- | :-------------- | :--------------------- |
+| address1 | String | 255             | address 1 information. |
+| address2 | String | 50              | address 2 information. |
+| city     | String | 40              | Shipped to city.       |
+| state    | String | 2               | Shipped to state.      |
+| zipcode  | String | 5               | Shipped to zip code.   |
