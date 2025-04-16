@@ -144,7 +144,7 @@ next:
 
 # Create Patient Request
 
-#### Query Parameter
+#### Request Object
 
 | Field      | Type   | Character Limit | Required/Optional | Description                         |
 | :--------- | :----- | :-------------- | :---------------- | :---------------------------------- |
