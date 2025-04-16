@@ -106,7 +106,7 @@ The Cancel Request API enables client systems to submit a cancellation request f
 }
 ```
 
-# Fill Request Status Mailbox Events
+# RxFill Status Mailbox Events
 
 Please see the [Fill Request](doc:mail-box#fill-request-status-events) status events under the [Mailbox](doc:mail-box) API guide for a detailed list of status events.
 
