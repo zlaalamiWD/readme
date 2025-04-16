@@ -134,10 +134,10 @@ next:
 
 #### Response Object
 
-| Field        | Type   | Character Limit | Required/Optional | Description                                                                                             |
-| :----------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------ |
-| scriptKey    | String | 50              | Required          |                                                                                                         |
-| prescription | Object |                 | Required          | See \[Prescription Response Detail]\(doc:script-rxtransfer-fields#Prescription Response Detail)  table. |
+| Field        | Type   | Character Limit | Required/Optional | Description                                                                     |
+| :----------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------ |
+| scriptKey    | String | 50              | Required          |                                                                                 |
+| prescription | Object |                 | Required          | See [PrescriberAddress](doc:script-rxtransfer-fields#prescriberaddress)  table. |
 
 # Prescription Response Detail
 
