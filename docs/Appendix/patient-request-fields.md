@@ -108,11 +108,11 @@ next:
 
 # External Medications
 
-| Field     | Type      | Character Limit | Required/Optional | Description                      |
-| :-------- | :-------- | :-------------- | :---------------- | :------------------------------- |
-| ndc       | String    | 11              | Required\*        | NDC of the medication            |
-| startDate | Date-time | YYYY-MM-DD      | Optional          | Date when medication was started |
-| endDate   | Date-time | YYYY-MM-DD      | Optional          | Date when medication was ended   |
+| Field     | Type     | Character Limit | Required/Optional | Description                      |
+| :-------- | :------- | :-------------- | :---------------- | :------------------------------- |
+| ndc       | String   | 11              | Required\*        | NDC of the medication            |
+| startDate | DateTime | YYYY-MM-DD      | Optional          | Date when medication was started |
+| endDate   | DateTime | YYYY-MM-DD      | Optional          | Date when medication was ended   |
 
 \*NDC is required if the External Medications object is being provided in the Patient object.
 
