@@ -12,7 +12,7 @@ next:
 ---
 # RxFill:
 
-See [RxFill](https://docs.healthdyne.com/v2.17999/update/docs/fill-request-fields-1#/) API reference for request message fields.
+See [RxFill]() API reference for request message fields.
 
 The Rx Fill API provides the ability to submit new prescription fill requests and to retrieve status messages for previously sent prescription fill requests.
 
