@@ -99,20 +99,20 @@ next:
 
 # Prescriber
 
-| Field                | Type   | Character Limit | Required/Optional | Description                                                                                                      |
-| :------------------- | :----- | :-------------- | :---------------- | :--------------------------------------------------------------------------------------------------------------- |
-| firstName            | String | 35              | Required          | Prescriber (Doctor's) First Name                                                                                 |
-| lastName             | String | 35              | Required          | Prescriber (Doctor's) Last Name                                                                                  |
-| npi                  | String | 15              | Required          | Prescriber's NPI ID                                                                                              |
-| dea                  | String | 15              | Optional          | Prescriber's DEA number                                                                                          |
-| phoneNumber          | String | 10              | Required          | Prescriber's phone number                                                                                        |
-| phoneNumberExtension | String | 8               | Optional          | Prescriber's phone extension                                                                                     |
-| faxNumber            | String | 10              | Required          | Prescriber's fax number                                                                                          |
-| address              | Object |                 | Required          | Prescriber's address information. See [PrescriberAddress](doc:script-rxtransfer-fields#prescriberaddress) table. |
+| Field                | Type   | Character Limit | Required/Optional | Description                                                                                                        |
+| :------------------- | :----- | :-------------- | :---------------- | :----------------------------------------------------------------------------------------------------------------- |
+| firstName            | String | 35              | Required          | Prescriber (Doctor's) First Name                                                                                   |
+| lastName             | String | 35              | Required          | Prescriber (Doctor's) Last Name                                                                                    |
+| npi                  | String | 15              | Required          | Prescriber's NPI ID                                                                                                |
+| dea                  | String | 15              | Optional          | Prescriber's DEA number                                                                                            |
+| phoneNumber          | String | 10              | Required          | Prescriber's phone number                                                                                          |
+| phoneNumberExtension | String | 8               | Optional          | Prescriber's phone extension                                                                                       |
+| faxNumber            | String | 10              | Required          | Prescriber's fax number                                                                                            |
+| address              | Object |                 | Required          | Prescriber's address information. See [Prescriber Address](doc:script-rxtransfer-fields#prescriber-address) table. |
 
 ***
 
-# PrescriberAddress
+# Prescriber Address
 
 | Field   | Type   | Character Limit | Required/Optional | Description                |
 | :------ | :----- | :-------------- | :---------------- | :------------------------- |
@@ -224,16 +224,16 @@ next:
 
 #### Request Object
 
-| Field             | Type          | Character Limit | Required/Optional | Description                                                                                                                                                                              |
-| :---------------- | :------------ | :-------------- | :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| scriptKey         | String        | 50              | Required          | Unique ID assigned by sending pharmacy to each prescription transfer request for tracking.                                                                                               |
-| sendingPharmacy   | Object        |                 | Required          | Contains information about the pharmacy transferring the prescription - see [Pharmacy](doc:script-rxtransfer-fields#pharmacy) table.                                                     |
-| receivingPharmacy | Object        |                 | Required          | Contains information about the pharmacy the prescription is being transferred to - see [Pharmacy](doc:script-rxtransfer-fields#pharmacy) table.                                          |
-| patientKey        | String        | 50              | Required          | Unique patient ID in Client system. This key will be sent on the order status message. The patientKey must be unique and patient must exist in the system when sending Transfer Request. |
-| prescription      | Object        |                 | Required          | Contains the prescription information. See [Prescription](doc:script-rxtransfer-fields#prescription) table.                                                                              |
-| transferFileType  | String        | xml/png/pdf     | Required          | The file type for the transfer file. Acceptable values are xml, png, and pdf.                                                                                                            |
-| transferFileUrl   | urlSafeBase64 | 2048            | Required          | Base 64 encoded URL where the XML or PNG transfer file can be downloaded from.                                                                                                           |
-| ortransfer        | Boolean       | true/false      | Required          | If this is a prescription transfer the value is true, for triage the value is false                                                                                                      |
+| Field             | Type    | Character Limit | Required/Optional | Description                                                                                                                                                                              |
+| :---------------- | :------ | :-------------- | :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| scriptKey         | String  | 50              | Required          | Unique ID assigned by sending pharmacy to each prescription transfer request for tracking.                                                                                               |
+| sendingPharmacy   | Object  |                 | Required          | Contains information about the pharmacy transferring the prescription - see [Pharmacy](doc:script-rxtransfer-fields#pharmacy) table.                                                     |
+| receivingPharmacy | Object  |                 | Required          | Contains information about the pharmacy the prescription is being transferred to - see [Pharmacy](doc:script-rxtransfer-fields#pharmacy) table.                                          |
+| patientKey        | String  | 50              | Required          | Unique patient ID in Client system. This key will be sent on the order status message. The patientKey must be unique and patient must exist in the system when sending Transfer Request. |
+| prescription      | Object  |                 | Required          | Contains the prescription information. See [Prescription](doc:script-rxtransfer-fields#prescription) table.                                                                              |
+| transferFileType  | String  | xml/png/pdf     | Required          | The file type for the transfer file. Acceptable values are xml, png, and pdf.                                                                                                            |
+| transferFileUrl   | String  | 2048            | Required          | Base 64 encoded URL where the XML or PNG transfer file can be downloaded from.                                                                                                           |
+| ortransfer        | Boolean | true/false      | Required          | If this is a prescription transfer the value is true, for triage the value is false                                                                                                      |
 
 #### Response Object
 
