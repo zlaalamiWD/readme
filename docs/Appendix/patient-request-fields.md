@@ -75,9 +75,9 @@ next:
 | Codeine                  | Morphine and Related     |
 | Demerol                  | MEPERIDINE AND RELATED   |
 | Erythromycin             | Macrolides and Ketolides |
-|                          |                          |
-|                          |                          |
-|                          |                          |
+| Fosinopril               | ACE INHIBITORS           |
+| IBUPROFEN                | NSAIDS                   |
+| IODIDES                  | IODINATED CONTRAST MEDIA |
 |                          |                          |
 |                          |                          |
 |                          |                          |
