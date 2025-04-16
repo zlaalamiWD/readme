@@ -364,4 +364,4 @@ Click here to see [PUT Update Patient Request Data Object](https://docs.healthdy
 }
 ```
 
-Click here to see [PUT Update Patient Response Data Object](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#/)
+Click here to see [PUT Update Patient Response Data Object](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#response-object-4)
