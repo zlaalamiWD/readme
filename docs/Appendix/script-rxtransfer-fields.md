@@ -391,21 +391,10 @@ next:
 
 #### Response Object
 
-| Field              | Type   | Character Limit | Required/Optional | Description |
-| :----------------- | :----- | :-------------- | :---------------- | :---------- |
-| scriptKey          | String | 50              | Required          |             |
-| prescription       | Object |                 | Required          |             |
-| medicationDispense | Object |                 | Required          |             |
-| lastFillDate       |        |                 |                   |             |
-| patientKey         |        |                 |                   |             |
-| fillsRemaining     |        |                 |                   |             |
-| quantityRemaining  |        |                 |                   |             |
-| metricQuantity     |        |                 |                   |             |
-| nextFillDate       |        |                 |                   |             |
-| provider           |        |                 |                   |             |
-| supervisor         |        |                 |                   |             |
-|                    |        |                 |                   |             |
-|                    |        |                 |                   |             |
+| Field        | Type   | Character Limit | Required/Optional | Description |
+| :----------- | :----- | :-------------- | :---------------- | :---------- |
+| scriptKey    | String | 50              | Required          |             |
+| prescription | Object |                 | Required          |             |
 
 <br />
 
