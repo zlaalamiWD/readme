@@ -287,7 +287,7 @@ Once an order has been created in the HealthDyne system (using a Fill request), 
 }
 ```
 
-Click here to see [Cancel Fill Request Data Object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#request-object-2)
+Click here to see [Cancel Fill Request Data Object](https://docs.healthdyne.com/docs/fill-request-fields#request-object-2)
 
 #### Sample Cancel Fill Request Response
 
@@ -298,7 +298,7 @@ Click here to see [Cancel Fill Request Data Object](https://docs.healthdyne.com/
 }
 ```
 
-Click here to see [Cancel Response Data Object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object-3)
+Click here to see [Cancel Response Data Object](https://docs.healthdyne.com/docs/fill-request-fields#response-object-3)
 
 # Fill Request Status Mailbox Events
 
