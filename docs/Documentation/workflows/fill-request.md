@@ -57,7 +57,7 @@ Click here to see [GET Fill Request Query Data](https://docs.healthdyne.com/docs
             "scriptKeys": []
         }
     ],
-    "rxVerified": ],
+    "rxVerified":[],
     "rxShipped": [],
     "rxIssue": [],
     "rxCanceled": [],
