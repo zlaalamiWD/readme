@@ -103,7 +103,7 @@ metadata:
 | Field    | Type   | Character Limit | Description            |
 | :------- | :----- | :-------------- | :--------------------- |
 | address1 | string | 255             | address 1 information. |
-| address2 | string | 50              | address information.   |
+| address2 | string | 50              | address 2 information. |
 | city     | string | 40              | Shipped to city.       |
 | state    | string | 2               | Shipped to state.      |
 | zipcode  | string | 5               | Shipped to zip code.   |
