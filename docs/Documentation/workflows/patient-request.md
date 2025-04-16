@@ -353,7 +353,7 @@ The "Update Patient" endpoint uses the PUT method to modify the details of an ex
 }
 ```
 
-Click here to see [PUT Update Patient Request Data Object]()
+Click here to see [PUT Update Patient Request Data Object](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#update-patient-request)
 
 #### Sample Update Patient Response
 
