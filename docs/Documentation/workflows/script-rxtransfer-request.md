@@ -14,7 +14,7 @@ next:
 
 See [Script](ref:script) API reference for request message fields.
 
-This API lets HealthDyne clients query (GET) prescription info. The Script API can also be used by a pharmacy to send a prescription transfer request (POST) from their pharmacy to HealthDyne. 
+This API lets HealthDyne clients query (GET) prescription info. The Script API can also be used by a pharmacy to send a prescription transfer request (POST) from their pharmacy to HealthDyne.
 
 # Get Script
 
@@ -24,10 +24,10 @@ The Script API (GET) allows clients to retrieve prescription information for a s
 
 ##### Only https connections are accepted.
 
-| REQUEST TYPE | ENDPOINT                                                 |
-| :----------- | :------------------------------------------------------- |
-| GET (Test)   | api.uat-healthdyne.com/v2/script?scriptKey=\<scriptKey\> |
-| GET (Prod)   | api.healthdyne.com/v2/script?scriptKey=\<scriptKey\>     |
+| REQUEST TYPE | ENDPOINT                                                |
+| :----------- | :------------------------------------------------------ |
+| GET (Test)   | api.uat-healthdyne.com/v2/script?scriptKey=\<scriptKey> |
+| GET (Prod)   | api.healthdyne.com/v2/script?scriptKey=\<scriptKey>     |
 
 ### Header
 
@@ -62,53 +62,52 @@ The below table lists the potential response codes that can be received in respo
   "ScriptKey": "092723-123876A",
   "prescription": {
     "rxNumber": "10494303",
-    "RxStatus": "Active",
+    "rxStatus": "Active",
     "clinicCode": "12345ABC",
-    "MedicationPrescribed": {
-      "WrittenDrugName": "B COMPLEX CAP",
-      "WrittenDrugNdc": "00536478701",
+    "medicationPrescribed": {
+      "writtenDrugName": "B COMPLEX CAP",
+      "writtenDrugNdc": "00536478701",
       "quantityWritten": "10",
-      "WrittenDate": "09-27-2023",
-      "ExpirationDate": "01-27-2024",
-      "Strength": "10",
-      "StrengthUOM": "MG",
-      "DosageFOrm":"TABLET"
+      "writtenDate": "09-27-2023",
+      "expirationDate": "01-27-2024",
+      "strength": "10",
+      "strengthUOM": "MG",
+      "dosageFOrm":"TABLET"
     },
-    "MedicationDispense": {
-      "DrugNdc": "00536478701",
-      "DrugGPI": "00536478701",
-      "DrugName": "B COMPLEX CAP",
+    "medicationDispense": {
+      "drugNdc": "00536478701",
+      "drugGPI": "00536478701",
+      "drugName": "B COMPLEX CAP",
       "daysSupply": "10",
-      "Strength": "10",
-      "StrengthUOM": "MG",
-      "DosageFOrm":"TABLET",
+      "strength": "10",
+      "strengthUOM": "MG",
+      "dosageFOrm":"TABLET",
       "sigInstructions": "TAKE 1 TABLET DAILY",
       "daw": "0",
-      "RefillsAuthorized": "2"
+      "refillsAuthorized": "2"
     },
-    "LastFillDate":null,
-    "PatientKey": "JWf782u3409wsed",
+    "lastFillDate":null,
+    "patientKey": "JWf782u3409wsed",
     "fillsRemaining": "6",
-    "quantityRemaining": "180",
+    "quantityRemaining": "180",    
+    "metricQuantity": "",
     "nextFillDate": null,
-    "Provider": {
-      "Name": "UBARRA",
-      "Npi": "1487737227",
-      "StateLicenseNumber":null,
-      "DEA": "null"
+    "provider": {
+      "name": "UBARRA",
+      "npi": "1487737227",
+      "stateLicenseNumber":null,
+      "dea": "null"
     },
-    "Supervisor":{
-      "LastName": "UBARRA",
-      "FirstName": "UBARRA",
-      "Npi": "1487737227",
-      "StateLicenseNumber": "1487737227",
-      "DEA": "1487737227"
+    "supervisor":{
+      "lastName": "UBARRA",
+      "firstName": "UBARRA",
+      "npi": "1487737227",
+      "stateLicenseNumber": "1487737227",
+      "dea": "1487737227"
     }
   }
 }
 ```
-
-<br />
 
 # Get Patient Scripts/prescriptions
 
@@ -118,10 +117,10 @@ The "Get Patient script/Prescription" endpoint allows retrieval of all scripts a
 
 ##### Only https connections are accepted.
 
-| REQUEST TYPE | ENDPOINT                                                                 |
-| :----------- | :----------------------------------------------------------------------- |
-| GET (Test)   | api.uat-healthdyne.com/v2/patient/prescription?patientKey=\<patientKey\> |
-| GET (Prod)   | api.healthdyne.com/v2/patient/prescription?patientKey=\<patientKey\>     |
+| REQUEST TYPE | ENDPOINT                                                                |
+| :----------- | :---------------------------------------------------------------------- |
+| GET (Test)   | api.uat-healthdyne.com/v2/patient/prescription?patientKey=\<patientKey> |
+| GET (Prod)   | api.healthdyne.com/v2/patient/prescription?patientKey=\<patientKey>     |
 
 ### Header
 
@@ -135,7 +134,7 @@ The "Get Patient script/Prescription" endpoint allows retrieval of all scripts a
 
 > \<[https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece](https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece)
 
-This tells the API to query for patientKey 4e1e76ca-520f-4e7a-a6c7-d837a9e3cece  and return relevant details.
+This tells the API to query for patientKey 4e1e76ca-520f-4e7a-a6c7-d837a9e3cece  and returns a list of all scripts associated to that patient.
 
 # GET Patient Script Response
 
@@ -151,19 +150,19 @@ The below table lists the potential response codes that can be received in respo
 
 #### Sample Status Response
 
-<br />
-
 ```json
 {
     "scriptKeys": [
-        "0ed290dbb11224ea0f9e27"
+        "0ed290dbb11224ea0f9e27",
+      	"0ed290dbb114ea0f9e27981",
+      	"0ed290dbb11224ea0f9e232167"
     ]
 }
 ```
 
 # Rx Transfer
 
-The Rx Transfer process is only available to registered pharmacies and requires direct integration between sending and receiving pharmacies. Prescription transfers also require the sending pharmacy to share a URL in the API call for HealthDyne to retrieve either: 
+The Rx Transfer process is only available to registered pharmacies and requires direct integration between sending and receiving pharmacies. Prescription transfers also require the sending pharmacy to share a URL in the API call for HealthDyne to retrieve either:
 
 1. A PNG image of the prescription
 2. A PDF file of the prescription
@@ -221,7 +220,7 @@ API field validation information in Appendix [Script / RxTransfer Fields](doc:sc
 	"receivingPharmacy": {
 		"pharmacyName": "HEALTHDYNE",
 		"pharmacyNpi": "1093974982",
-    	"pharmacyNcPdp": "1093974982",
+    "pharmacyNcPdp": "1093974982",
 		"deaNumber": "1093974982",
 		"phone": "3456789012",
 		"fax": null,
