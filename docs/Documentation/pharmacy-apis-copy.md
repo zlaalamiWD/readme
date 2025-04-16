@@ -1,31 +1,32 @@
 ---
-title: Pharmacy APIs (COPY)
+title: Central Fill APIs
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: noindex
 ---
-HealthDyne's Pharmacy APIs allow developers to integrate our fulfillment capabilities into their organization's healthcare applications.
+The Central Fill API is a powerful and robust RESTful, JSON-based API designed to seamlessly integrate with your pharmacy or healthcare systems. It provides access to HealthDyne's national fulfillment infrastructure, enabling your organization to scale prescription fulfillment with speed, reliability, and compliance.
 
-Get started by adding reviewing the [Patient](doc:patient-request), [Script](doc:script-rxtransfer-request), and [Fill](doc:fill-request) request documentation. Visit the [API Reference](ref:patient) or check the [Recipes](https://docs.healthdyne.com/v2.0/recipes) page for example requests.
+**Key Features:**
+
+* Nationwide Delivery: Ship medications to all 50 U.S. states and US territories.
+* Prescription Fill/Refill Management: Submit fill or refill requests through RxFill API.
+* Real-Time Status Tracking: Retrieve current fill request statuses, including shipment  updates.
+* Request Cancellations: Cancel a fill request when necessary, ensuring flexibility and control.
+
+Get started by adding reviewing the [RxFill](doc:patient-request), [Cancel](doc:script-rxtransfer-request), and [Mailbox](doc:fill-request) request documentation.
 
 # Rx / Fulfillment Workflows
 
-## eRx / Surescripts
+## Submit a Fill or Refill Request:
 
-1. Create / update patient record using Patient API [Patient API Guide](https://docs.healthdyne.com/v2.17/docs/patient-request)
-2. RxReceived notification in Mailbox API [Mailbox API Guide](https://docs.healthdyne.com/v2.17/docs/mail-box)
-3. Query Script API using scriptKey to retrieve prescription details [Script API Guide](https://docs.healthdyne.com/v2.17/docs/script-rxtransfer-request)
-4. Generate fill request using Fill API [Fill API Guide](https://docs.healthdyne.com/v2.17/docs/fill-request)
-5. Retrieve status updates via Mailbox API [Mailbox API Guide](https://docs.healthdyne.com/v2.17/docs/mail-box)
+The RxFill Workflow is a critical process for submitting and tracking prescription fill or refill requests through HealthDyne’s Central Fill API. The steps below outline how your system should interact with the RxFill and Mailbox APIs for proper end-to-end order management.
 
-See the [eRx / Surescript Workflow Recipe](https://docs.healthdyne.com/v2.17/recipes/escript-surescript-overview) for an example workflow. 
+1. Use the RxFill API to create a fill or refill order [RxFill API Guide](https://docs.healthdyne.com/v2.17/docs/patient-request)
+2. Retrieve and Acknowledge Events [Mailbox API Guide](https://docs.healthdyne.com/v2.17/docs/mail-box)
 
-## Rx Transfer
+* Use the GET method on the Mailbox API to retrieve current events.
 
-1. Create / update patient record using Patient API [Patient API Guide](https://docs.healthdyne.com/v2.17/docs/patient-request)
-2. Submit Rx Transfer via Script API [Script API Guide](https://docs.healthdyne.com/v2.17/docs/script-rxtransfer-request)
-3. Generate fill request using Fill API once RxTransferred notification is received [Fill API Guide](https://docs.healthdyne.com/v2.17/docs/fill-request)
-4. Retrieve status updates via Mailbox API [Mailbox API Guide](https://docs.healthdyne.com/v2.17/docs/mail-box)
+  Important: After successfully retrieving and processing these events, you must call the DELETE method on the same mailbox event(s) to mark them as acknowledged. This step prevents duplicate processing and ensures accurate system state synchronization.
 
-See the [Rx Transfer Workflow Recipe](https://docs.healthdyne.com/v2.17/recipes/prescription-transfer-overview) for an example workflow.
+Note: Failure to acknowledge mailbox events with the DELETE method may result in repeated delivery of the same events.
