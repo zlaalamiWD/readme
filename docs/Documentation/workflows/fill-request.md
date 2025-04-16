@@ -14,9 +14,113 @@ next:
 
 See [Fill](ref:post_v2-fill) API reference for request message fields.
 
-This API lets client define when the order needs to be initiated in HD system and also defines the number of prescription/scripts that needs to be consolidated in one order. A client can also use the GET method of Fill Request to retrieve current status.
+This API lets client define when the order needs to be initiated in HealthDyne system and also defines the number of prescriptions/scripts that need to be consolidated in one order. A client can also use the GET method of Fill Request to retrieve current status.
 
-<br />
+# Get Fill Request Status
+
+The GET Fill Request Status API lets clients retrieve the status and event summary for previously submitted Fill Requests.
+
+#### Server
+
+##### Only HTTPS connections are accepted.
+
+| METHOD TYPE | ENDPOINT                                                                    |
+| :---------- | :-------------------------------------------------------------------------- |
+| GET (Test)  | api.uat-healthdyne.com/v2/FILL/fillRequest?fillRequestKey=\<fillRequestKey> |
+| GET (Prod)  | api.healthdyne.com/v2/FILL/fillRequest?fillRequestKey=\<fillRequestKey>     |
+
+#### Header
+
+| Key                         | Value                  |
+| :-------------------------- | :--------------------- |
+| Accept                      | application/json       |
+| Content-Type                | application/json       |
+| HealthDyne-Subscription-Key | Provided by HealthDyne |
+
+#### Sample GET Status Request
+
+`GET https://api.uat-healthdyne.com/v2/fill/fillRequest?fillRequestKey=FillPatientSample1404`
+
+Click here to see [GET Fill Request Query Data](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#query-parameter)
+
+#### Sample GET Status Response
+
+> 📘 NOTE: For a Single-line Rx.
+
+```json
+{
+    "fillRequestKey": "FillPatientSample1404",
+    "submitted": [
+        {
+            "eventId": "289526",
+            "eventDateUtc": "2025-04-14T08:40:37.328768Z",
+            "scriptKeys": []
+        }
+    ],
+    "rxVerified": ],
+    "rxShipped": [],
+    "rxIssue": [],
+    "rxCanceled": [],
+    "rejected": []
+}
+```
+
+> 📘 NOTE: For a Multiline Rx with different ScriptKeys.
+
+```json
+{
+    "fillRequestKey": "FillPatientSample1404",
+    "submitted": [],
+    "rxVerified": [
+        {
+            "eventId": "288774",
+            "eventDateUtc": "2025-04-11T18:43:07.995451Z",
+            "scriptKey": "TestScriptKey1401",
+            "verifiedDate": null,
+            "statusMessage": "The Rx has been verified by the pharmacist (PV1)"
+        }
+    ],
+    "rxShipped": [
+        {
+            "eventId": "288779",
+            "eventDateUtc": "2025-04-11T18:46:39.670751Z",
+            "scriptKey": "TestScriptKey1402",
+            "shipmentDate": "2025-04-11T21:55:26Z",
+            "trackingNumber": "75474170000"
+        }
+    ],
+    "rxIssue": [],
+    "rxCanceled": [
+        {
+            "eventId": "288784",
+            "eventDateUtc": "2025-04-11T18:50:00.418881Z",
+            "scriptKey": "TestScriptKey1403",
+            "statusMessage": "Cancelled"
+        }
+    ],
+    "rejected": [
+        {
+            "eventId": "156270",
+            "eventDateUtc": "2025-02-18T13:36:57.776842Z",
+            "scriptKeys": [],
+            "statusMessage": "RX: 10524420 found on OPEN order with External ID: NULL; "
+        }
+    ]
+}
+```
+
+Click here to see [Get Fill Request Data Object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object)
+
+The table below lists the potential response codes that can be received in response to a GET request.
+
+| Code | Description                                              |
+| :--- | :------------------------------------------------------- |
+| 200  | Fill Request status details returned \| No records found |
+| 400  | Bad Request – typically the header is missing key        |
+| 401  | Unauthorized                                             |
+| 500  | Internal Server Error                                    |
+
+***
 
 # Submit Fill Request
 
@@ -29,16 +133,16 @@ Client must send a Fill request with following details:
 
 ![](https://files.readme.io/182e876-small-FillRequest.png)
 
-### Server
+#### Server
 
-##### Only https connections are accepted.
+##### Only HTTPS connections are accepted.
 
-| REQUEST TYPE | ENDPOINT                       |
-| :----------- | :----------------------------- |
-| POST (Test)  | api.uat-healthdyne.com/v2/fill |
-| POST (Prod)  | api.healthdyne.com/v2/fill     |
+| METHOD TYPE | ENDPOINT                       |
+| :---------- | :----------------------------- |
+| POST (Test) | api.uat-healthdyne.com/v2/fill |
+| POST (Prod) | api.healthdyne.com/v2/fill     |
 
-### Header
+#### Header
 
 | Key                         | Value                  |
 | :-------------------------- | :--------------------- |
@@ -46,12 +150,18 @@ Client must send a Fill request with following details:
 | Content-Type                | application/json       |
 | HealthDyne-Subscription-Key | Provided by HealthDyne |
 
-### Sample Fill Request
+#### Sample Submit Fill Request
+
+`POST https://api.uat-healthdyne.com/v2/fill`
+
+#### Sample Submit Fill Request Body
 
 ```json
 {
-  "fillRequestKey": "8a97815e-ef31-43ee-af87",
-  "scriptKeys": ["e156daa5-1905-42c5-9e2e"],
+  "fillRequestKey": "FillPatientSample1404",
+  "scriptKeys": [
+    "TestScriptKey1404"
+  ],
   "shipping": {
     "address": {
       "line1": "500 Eagles Landin Dr",
@@ -67,155 +177,128 @@ Client must send a Fill request with following details:
     "signatureRequired": true
   },
   "insurance": {
-    "planNumber":"209235",
-    "coPay":"32.50",
-    "transactionNumber":"pi_305qndABfMSbKdKQ0NA1r4L5"
+    "planNumber": "209235",
+    "coPay": "32.50",
+    "transactionNumber": "pi_305qndABfMSbKdKQ0NA1r4L5",
+    "personCode": "001",
+    "relationshipCode": "02"
   }
 }
 ```
 
-# Cancel a Fill Request:
+Click here to see [Get Fill Request Data Object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#request-object)
 
-Once an order has been created in HD system (using a Fill request), the Cancel API endpoint allows client to cancel a fill request or specific script(s) within a Fill Request. NOTE: The cancelation will be applied as long as order has not been sent to our dispensing system for fulfillment. 
-
-### Server
-
-##### Only https connections are accepted.
-
-| REQUEST TYPE | ENDPOINT                                |
-| :----------- | :-------------------------------------- |
-| POST (Test)  | partner.uat-welldyne.com/v2/fill/cancel |
-| POST (Prod)  | partner.welldyne.com/v2/fill/cancel     |
-
-### Sample Cancel Fill Request
+#### Sample Submit Fill Response
 
 ```json
 {
-  "FillRequestKey": "FR178899",
-  "ScriptKeys": [
-    " 77351bb76d194f338c567b11ab8a789c"
+    "fillRequestKey": "FillPatientSample1404",
+    "message": "The fill request was accepted"
+}
+```
+
+Click here to see [Submit Fill Response Data Object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object-1)
+
+***
+
+# Update Fill Request
+
+Once an order has been created in HealthDyne system (using a Fill request), the update API endpoint allows client to update shipping address or shipping code for a previously submitted fill request. NOTE: The update will be applied as long as order has not been sent to our dispensing system for fulfillment.
+
+#### Server
+
+##### Only HTTPS connections are accepted.
+
+| METHOD TYPE | ENDPOINT                       |
+| :---------- | :----------------------------- |
+| PUT (Test)  | api.uat-healthdyne.com/v2/fill |
+| PUT (Prod)  | api.healthdyne.com/v2/fill     |
+
+#### Sample Update Fill Request
+
+`PUT https://api.uat-healthdyne.com/v2/fill`
+
+#### Sample Update Fill Request Body
+
+```json
+{
+  "fillRequestKey": "FillPatientSample1404",
+  "scriptKeys": [
+    "TestScriptKey1404"
   ],
-  "CancelReason": "TEST"
+  "shipping": {
+    "address": {
+      "line1": "UpdateAgain1",
+      "line2": null,
+      "line3": null,
+      "city": "LAKELAND",
+      "state": "FL",
+      "zipCode": "33810",
+      "countryCode": "US"
+    },
+    "shippingCode": "POS 1C",
+    "saturdayDelivery": false,
+    "signatureRequired": false
+  }
 }
 ```
 
-### Sample Cancel Fill Request Response
+Click here to see [Update Fill Request Data Object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#request-object-1)
+
+#### Sample Update Fill Response
 
 ```json
 {
-    "fillRequestKey": "FR178899",
-    "message": "Order for Fill request Key [FR178899] has been canceled"
+    "fillRequestKey": "FillPatientSample1404",
+    "message": "The fill update request was accepted"
 }
-
 ```
 
-# Update a Fill Request:
+Click here to see [Update Fill Response Data Object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object-2)
 
-Once an order has been created in HD system (using a Fill request), the update API endpoint allows client to update shipping address or shipping code for previously submitted fill request. NOTE: The update will be applied as long as order has not been sent to our dispensing system for fulfillment. 
+***
 
-### Server
+# Cancel Fill Request
 
-##### Only https connections are accepted.
+Once an order has been created in the HealthDyne system (using a Fill request), the Cancel API endpoint allows the client to cancel a fill request or specific script(s) within a Fill Request. **NOTE: The cancelation will be applied if the order has not been sent to our dispensing system for fulfillment.**
 
-| REQUEST TYPE | ENDPOINT                         |
-| :----------- | :------------------------------- |
-| PUT (Test)   | partner.uat-welldyne.com/v2/fill |
-| PUT (Prod)   | partner.welldyne.com/v2/fill     |
+#### Server
 
-### Sample Fill Request
+###### Only HTTPS connections are accepted.
+
+| METHOD TYPE | ENDPOINT                              |
+| :---------- | :------------------------------------ |
+| POST (Test) | api.uat-healthdyne.com/v2/fill/cancel |
+| POST (Prod) | api.healthdyne.com/v2/fill/cancel     |
+
+#### Sample Cancel Fill Request
+
+`POST https://api.uat-healthdyne.com/v2/fill/cancel`
+
+#### Sample Cancel Fill Request Body
 
 ```json
 {
-    "FillRequestKey": "NewNSCP24FILLREQUEST987660117",
-    "Shipping": {
-        "Address": {
-            "Line1": "UpdateAgain1",
-            "Line2": null,
-            "Line3": null,
-            "City": "LAKELAND",
-            "State": "FL",
-            "ZipCode": "33810",
-            "CountryCode": "US",
-            "ZipCodeFour": null
-        },
-        "ShippingCode": "UPS 2D",
-       "SaturdayDelivery": false,
-       "SignatureRequired": false
-    }
+  "fillRequestKey": "FillPatientSample1404",
+  "scriptKeys": [
+    "TestScriptKey1404"
+  ],
+  "cancelReason": "Cancelled"
 }
 ```
 
-# Get Fill Request Status
+Click here to see [Cancel Fill Request Data Object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#request-object-2)
 
-The Fill Request API (GET) allows clients to retrieve status and event summary for previously submitted Fill Requests
-
-### Server
-
-##### Only https connections are accepted.
-
-| REQUEST TYPE | ENDPOINT                                                                     |
-| :----------- | :--------------------------------------------------------------------------- |
-| GET (Test)   | api.uat-healthdyne.com/v2/FILL/fillRequest?fillRequestKey=\<fillRequestKey\> |
-| GET (Prod)   | api.healthdyne.com/v2/FILL/fillRequest?fillRequestKey=\<fillRequestKey\>     |
-
-### Header
-
-| Key                         | Value                  |
-| :-------------------------- | :--------------------- |
-| Accept                      | application/json       |
-| Content-Type                | application/json       |
-| HealthDyne-Subscription-Key | Provided by HealthDyne |
-
-#### Sample GET Request
-
-> [https://api.uat-healthdyne.com/v2/Fill/fillRequest?fillRequestKey=NewNSCP24FILLREQUEST987660102](https://api.uat-healthdyne.com/v2/Fill/fillRequest?fillRequestKey=NewNSCP24FILLREQUEST987660102)
-
-This tells the API to query for fillRequestKey NewNSCP24FILLREQUEST987660102 and return relevant details.
-
-### GET Fill Request Response
-
-The below table lists the potential response codes that can be received in response to a GET request.
-
-| Code | Description                                              |
-| :--- | :------------------------------------------------------- |
-| 200  | Fill Request status details returned \| No records found |
-| 400  | Bad Request – typically header is missing key            |
-| 401  | Unauthorized                                             |
-| 500  | Internal Server Error                                    |
-
-#### Sample Status Response
+#### Sample Cancel Fill Request Response
 
 ```json
 {
-    "fillRequestKey": "NewNSCP24FILLREQUEST987660102",
-    "submitted": [
-        {
-            "eventId": "116957",
-            "eventDateUtc": "2024-03-27T16:22:17.760822Z",
-            "scriptKeys": []
-        }
-    ],
-    "rxVerified": [],
-    "rxShipped": [],
-    "rxIssue": [
-        {
-            "eventId": "116959",
-            "eventDateUtc": "2024-03-27T16:25:35.333628Z",
-            "scriptKey": "3081ccf283ed41b2977a7e67649f8374",
-            "issueMessage": "REJECTED 533 HEALTHDYNE RX REJECTED - TEST FOR ORDER DETAIL"
-        }
-    ],
-    "rxCanceled": [
-        {
-            "eventId": "116960",
-            "eventDateUtc": "2024-03-27T16:30:56.077151Z",
-            "scriptKey": "3081ccf283ed41b2977a7e67649f8374",
-            "statusMessage": "ORDER CANCELED"
-        }
-    ],
-    "rejected": []
+    "fillRequestKey": "FillPatientSample1404",
+    "message": "Prescription fill for [TestScriptKey1404] under Fill request [FillPatientSample1404] has been canceled."
 }
 ```
+
+Click here to see [Cancel Response Data Object](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#response-object-3)
 
 # Fill Request Status Mailbox Events
 
@@ -243,4 +326,4 @@ When an Order is successfully created, and then one of the Rx is subsequently re
 
 # RxCancel
 
-When a Rx or multiple Rx(s) in the order have been canceled pharmacy, HealthDyne will send an update at Rx level for each Rx in the order notifying of the canceled status. By default, unless order split has been configured for the client, the entire order will be cancelled when there is an issue with any of the Rx in the same order. Cancelled Rx that have not also been rejected due to "RxIssue" are available to be assigned to a new Fill Request without additional action via the Script API. See [Fill Request RxCancel Status Event](doc:mail-box#rxcancel).
+When a Rx or multiple Rx(s) in the order have been canceled pharmacy, HealthDyne will send an update at Rx level for each Rx in the order notifying of the canceled status. By default, unless order split has been configured for the client, the entire order will be canceled when there is an issue with any of the Rx in the same order. Cancelled Rx that have not also been rejected due to "RxIssue" are available to be assigned to a new Fill Request without additional action via the Script API. See [Fill Request RxCancel Status Event](doc:mail-box#rxcancel).
