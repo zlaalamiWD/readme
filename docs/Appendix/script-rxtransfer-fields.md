@@ -110,8 +110,6 @@ next:
 | faxNumber            | String                                                                                         | 10              | Required          | Prescriber's fax number           |
 | address              | Object [address](https://docs.healthdyne.com/docs/script-rxtransfer-fields#prescriber-address) |                 | Required          | Prescriber's address information. |
 
-***
-
 # Prescriber Address
 
 | Field   | Type   | Character Limit | Required/Optional | Description                |
@@ -121,6 +119,8 @@ next:
 | city    | String | 35              | Required          | City                       |
 | state   | String | 2               | Required          | US State Abbreviation Code |
 | zipCode | String | 10              | Required          | Format NNNNN or NNNNN-NNNN |
+
+***
 
 ## GET Script Request
 
