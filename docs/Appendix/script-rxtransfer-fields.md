@@ -77,7 +77,7 @@ next:
 | dispenseNdc        | String | 11              | Optional          | Field is required if orTransfer is True. NDC dispensed by the pharmacy.         |
 | dispenseDrugName   | String | 105             | Optional          | Field is required if orTransfer is True. Name of the medication to be dispensed |
 | drugDosageForm     | String | 30              | Required          | Dosage form for the dispensed medication. For example: TABS, SWAB, CHEW, etc.   |
-|                    |        |                 |                   |                                                                                 |
+| prescriber         |        |                 |                   |                                                                                 |
 |                    |        |                 |                   |                                                                                 |
 
 <HTMLBlock>{`
