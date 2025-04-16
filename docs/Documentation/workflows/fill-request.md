@@ -124,7 +124,7 @@ The table below lists the potential response codes that can be received in respo
 
 # Submit Fill Request
 
-API field validation information in Appendix [Fill Request Fields](doc:fill-request-fields)
+API field validation information in Appendix [Fill Request Fields](https://docs.healthdyne.com/docs/fill-request-fields#fill-request-data-object)
 
 Client must send a Fill request with following details:
 
