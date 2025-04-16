@@ -154,6 +154,7 @@ next:
 | metricQuantity       | String | 10              | Quantity in metric units, if available.                                                                                                             |
 | nextFillDate         | String | 10              | Next eligible fill date.                                                                                                                            |
 | provider             | Object |                 | Information about the prescribing provider. Object containing provider  information. See [Provider](doc:script-rxtransfer-fields#provider)   table. |
+| supervisor           | Object |                 | Optional supervisor information. Object containing  supervisor information. See [Supervisor](doc:script-rxtransfer-fields#supervisor)    table.     |
 
 # medicationPrescribed
 
@@ -183,6 +184,24 @@ next:
 | sigInstructions   | String | 255             | Instructions for use (SIG).                                  |
 | daw               | String | 1               | Dispense As Written code.                                    |
 | refillsAuthorized | String | 2               | Number of refills authorized.                                |
+
+# Provider
+
+| Field              | Type   | Character Limit | Description                   |
+| :----------------- | :----- | :-------------- | :---------------------------- |
+| name               | String | 100             | Provider’s name.              |
+| npi                | String | 10              | National Provider Identifier. |
+| stateLicenseNumber | String | 20              | State license number.         |
+| dea                | String | 20              | DEA number of the provider.   |
+
+# Supervisor
+
+| Field              | Type   | Character Limit | Description                   |
+| :----------------- | :----- | :-------------- | :---------------------------- |
+| name               | String | 100             | Provider’s name.              |
+| npi                | String | 10              | National Provider Identifier. |
+| stateLicenseNumber | String | 20              | State license number.         |
+| dea                | String | 20              | DEA number of the provider.   |
 
 ## GET Patient Scripts/Prescriptions Request
 
