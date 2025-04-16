@@ -1,5 +1,5 @@
 ---
-title: Script / RxTransfer Fields
+title: Script / RxTransfer Data Object (Schemas)
 excerpt: ''
 deprecated: false
 hidden: false
