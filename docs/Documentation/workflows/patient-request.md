@@ -276,7 +276,7 @@ The "Create Patient" endpoint uses the POST method to add a new patient record. 
 }
 ```
 
-Click here to see [POST Patient Request Data Object]()
+Click here to see [POST Patient Request Data Object](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#create-patient-request)
 
 #### Sample Create Patient Response
 
