@@ -53,9 +53,9 @@ next:
 
 # Allergies
 
-| Field     | Type            | Character Limit | Required/Optional | Description                                                                                                 |
-| :-------- | :-------------- | :-------------- | :---------------- | :---------------------------------------------------------------------------------------------------------- |
-| allergies | String/\[Array] | 40(each)        | Required          | See valid allergy types below. The allergies field is required, if patient has no allergies pass "NO KNOWN" |
+| Field     | Type  | Character Limit | Required/Optional | Description                                                                                                                                                                |
+| :-------- | :---- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| allergies | Array | 40              | Required          | Array of string. Character limit is for each string in Array. See valid allergy types below. The allergies field is required, if patient has no allergies pass "NO KNOWN". |
 
 |                        |                                        |                          |
 | :--------------------- | :------------------------------------- | :----------------------- |
