@@ -145,8 +145,8 @@ next:
 | :------------------- | :----- | :-------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------- |
 | rxNumber             | String | 20              | Rx number of the prescription                                                                                                                       |
 | rxStatus             | String | 20              | Name of the medication as prescribed by the prescriber.                                                                                             |
-| medicationPrescribed | Object |                 | Object containing medication prescribed information. See [medicationPrescribed](doc:script-rxtransfer-fields#medicationPrescribed) table.           |
-| medicationDispense   | Object |                 | Object containing medication dispensed information. See [medicationDespensed](doc:script-rxtransfer-fields#medicationDespensed)  table.             |
+| medicationPrescribed | Object |                 | Object containing medication prescribed information. See [Medication Prescribed](doc:script-rxtransfer-fields#medication-prescribed) table.         |
+| medicationDispense   | Object |                 | Object containing medication dispensed information. See [Medication Dispensed](doc:script-rxtransfer-fields#medication-dispensed)  table.           |
 | lastFillDate         | String | 10              | Date of the most recent fill.                                                                                                                       |
 | patientKey           | String | 10              | Identifier associated with the patient.                                                                                                             |
 | fillsRemaining       | String | 2               | Number of refills still available.                                                                                                                  |
@@ -156,7 +156,7 @@ next:
 | provider             | Object |                 | Information about the prescribing provider. Object containing provider  information. See [Provider](doc:script-rxtransfer-fields#provider)   table. |
 | supervisor           | Object |                 | Optional supervisor information. Object containing  supervisor information. See [Supervisor](doc:script-rxtransfer-fields#supervisor)    table.     |
 
-# medicationPrescribed
+# Medication Prescribed
 
 | Field           | Type    | Character Limit | Description                                     |
 | :-------------- | :------ | :-------------- | :---------------------------------------------- |
@@ -170,7 +170,7 @@ next:
 | strengthUOM     | String  | 10              | Unit of measurement for strength.               |
 | dosageForm      | String  | 50              | Form of the medication (e.g., Tablet, Capsule). |
 
-# medicationDispensed
+# Medication Dispensed
 
 | Field             | Type   | Character Limit | Description                                                  |
 | :---------------- | :----- | :-------------- | :----------------------------------------------------------- |
