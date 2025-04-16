@@ -96,7 +96,7 @@ The below table lists the potential response codes that can be received in respo
       "name": "UBARRA",
       "npi": "1487737227",
       "stateLicenseNumber":null,
-      "dea": "null"
+      "dea": null
     },
     "supervisor":{
       "lastName": "UBARRA",
