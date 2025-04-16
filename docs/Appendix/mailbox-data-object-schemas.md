@@ -31,10 +31,10 @@ metadata:
 
 #### RxTransferDetailObject
 
-| Field      | Type   | Character Limit | Required/Optional | Description                        |
-| :--------- | :----- | :-------------- | :---------------- | :--------------------------------- |
-| patientKey | string | 20              | Required          | Unique identifier for the patient. |
-| rxNumber   | string | 30              | Required          | Prescription number                |
+| Field      | Type   | Character Limit | Description                        |
+| :--------- | :----- | :-------------- | :--------------------------------- |
+| patientKey | string | 20              | Unique identifier for the patient. |
+| rxNumber   | string | 30              | Prescription number                |
 
 <br />
 
@@ -52,7 +52,24 @@ metadata:
 
 #### FillRequestDetailObject
 
-| Field       | Type   | Character Limit | Required/Optional | Description                                                                              |
-| :---------- | :----- | :-------------- | :---------------- | :--------------------------------------------------------------------------------------- |
-| orderNumber | string | 100             | Required          | order number                                                                             |
-| scriptKey   | string | 255             | Required          | Unique identifier for the script being transferred which is initially defined by client. |
+| Field            | Type                                                                                                                                                                                                                | Character Limit | Description                                                                              |
+| :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :-------------- | :--------------------------------------------------------------------------------------- |
+| orderNumber      | string                                                                                                                                                                                                              | 100             | order number                                                                             |
+| scriptKey        | string                                                                                                                                                                                                              | 255             | Unique identifier for the script being transferred which is initially defined by client. |
+| fillNumber       | int                                                                                                                                                                                                                 |                 | Shows how many fills have been fulfilled for this Rx                                     |
+| remainingRefills | string                                                                                                                                                                                                              | 10              | Show how many fill remaing for the Rx                                                    |
+| refillByDate     | string                                                                                                                                                                                                              |                 | Date recommended for refill                                                              |
+| shipments        | \[FillRequestDetailObject]\[[https://docs.healthdyne.com/v2.171/update/docs/mailbox-data-object-schemas#ShipmentObject](https://docs.healthdyne.com/v2.171/update/docs/mailbox-data-object-schemas#ShipmentObject)] |                 | shipment information                                                                     |
+
+<br />
+
+#### ShipmentObject
+
+| Field            | Type              | Character Limit | Description                                                                              |
+| :--------------- | :---------------- | :-------------- | :--------------------------------------------------------------------------------------- |
+| orderNumber      | string            | 100             | order number                                                                             |
+| scriptKey        | string            | 255             | Unique identifier for the script being transferred which is initially defined by client. |
+| fillNumber       | int               |                 | Shows how many fills have been fulfilled for this Rx                                     |
+| remainingRefills | string            | 10              | Show how many fill remaing for the Rx                                                    |
+| refillByDate     | string            |                 | Date recommended for refill                                                              |
+| shipments        | \[ShipmentObject] |                 | shipment information                                                                     |
