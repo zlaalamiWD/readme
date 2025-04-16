@@ -10,27 +10,75 @@ metadata:
 next:
   description: ''
 ---
-> 📃 Note: 
-> 
+> 📃 Note:
+>
 > An empty string "" is considered a value and validation rules will apply (length/valid code/etc). Only null or missing elements will use default values.
 
-# Fill Request
+# Fill Request Status Constant Data Objects
 
-| Field          | Type   | Character Limit | Required/Optional | Description                                                                                                   |
-| :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------ |
-| fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking.                                     |
-| scriptKeys     | Array  |                 | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request).                        |
-| shipping       | Object |                 | Required          | Object containing shipping information for the order. See [Shipping](doc:fill-request-fields#shipping) table. |
-| insurance      | Object |                 | Optional          | Optionally specify insurance information to be used on the fill request.                                      |
+### Submitted
 
-# Shipping
+| Field        | Type     | Character Limit                      | Required/Optional | Description                                                                            |
+| :----------- | :------- | :----------------------------------- | :---------------- | :------------------------------------------------------------------------------------- |
+| eventId      | String   | 4 bytes (32-bit signed int)          | Required          | Unique Event Identifier for the Fill Request.                                          |
+| eventDateUtc | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Required          | Date and time of the event in UTC (ISO 8601).                                          |
+| scriptKeys   | Array    | 50                                   | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
 
-| Field             | Type    | Character Limit | Required/Optional | Description                                                                                                                                                                                                        |
-| :---------------- | :------ | :-------------- | :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| address           | Object  |                 | Required          | Object containing address information for order to be shipped to. See [Address](doc:fill-request-fields#address) table.                                                                                            |
-| ShippingCode      | String  | 10              | Required          | Shipping method to be used for the order. See [Shipping Codes](doc:fill-request-fields#shipping-codes)below                                                                                                        |
-| SaturdayDelivery  | Boolean | true/false      | Optional          | Values: True/False. Saturday Delivery is an option for certain shipping codes depending on the carrier. To have an order delivered on a Saturday, select the correct Shipping Code and then set this flag to true. |
-| SignatureRequired | Boolean | true/false      | Optional          | Values: True/False. Select the option if the package requires a signature                                                                                                                                          |
+### RxVerified
+
+| Field         | Type     | Character Limit                      | Required/Optional | Description                                   |
+| :------------ | :------- | :----------------------------------- | :---------------- | :-------------------------------------------- |
+| eventId       | String   | 4 bytes (32-bit signed int)          | Required          | Unique Event Identifier for the Fill Request. |
+| eventDateUtc  | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Required          | Date and time of the event in UTC (ISO 8601). |
+| scriptKey     | String   | 50                                   | Required          | Unique ID associated with script request.     |
+| verifiedDate  | DateTime | YYYY-MM-DD T HH:MM:SS Z              | Required          | Date and Time of Fill Request verified.       |
+| statusMessage | String   | Max                                  | Required          | Status message from Pharmacy.                 |
+
+### RxShipped
+
+| Field          | Type     | Character Limit                      | Required/Optional | Description                                   |
+| :------------- | :------- | :----------------------------------- | :---------------- | :-------------------------------------------- |
+| eventId        | String   | 4 bytes (32-bit signed int)          | Required          | Unique Event Identifier for the Fill Request. |
+| eventDateUtc   | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Required          | Date and time of the event in UTC (ISO 8601). |
+| scriptKey      | String   | 50                                   | Required          | Unique ID associated with script request.     |
+| shipmentDate   | DateTime | YYYY-MM-DD T HH:MM:SS Z              | Required          | Date and Time of Fill Request Shipped.        |
+| trackingNumber | String   | 40                                   | Required          | Shipment tracking number.                     |
+
+### RxIssue
+
+| Field        | Type     | Character Limit                      | Required/Optional | Description                                   |
+| :----------- | :------- | :----------------------------------- | :---------------- | :-------------------------------------------- |
+| eventId      | String   | 4 bytes (32-bit signed int)          | Required          | Unique Event Identifier for the Fill Request. |
+| eventDateUtc | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Required          | Date and time of the event in UTC (ISO 8601). |
+| scriptKey    | String   | 50                                   | Required          | Unique ID associated with script request.     |
+| issueMessage | String   | Max                                  | Required          | Issue message from Pharmacy.                  |
+
+### RxCanceled
+
+| Field         | Type     | Character Limit                      | Required/Optional | Description                                   |
+| :------------ | :------- | :----------------------------------- | :---------------- | :-------------------------------------------- |
+| eventId       | String   | 4 bytes (32-bit signed int)          | Required          | Unique Event Identifier for the Fill Request. |
+| eventDateUtc  | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Required          | Date and time of the event in UTC (ISO 8601). |
+| scriptKey     | String   | 50                                   | Required          | Unique ID associated with script request.     |
+| statusMessage | String   | Max                                  | Required          | Status message from Pharmacy.                 |
+
+# Fill Request Data Object
+
+| Field          | Type                                                                                                    | Character Limit | Required/Optional | Description                                                                                                   |
+| :------------- | :------------------------------------------------------------------------------------------------------ | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------ |
+| fillRequestKey | String                                                                                                  | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking.                                     |
+| scriptKeys     | Array                                                                                                   | 50              | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request).                        |
+| shipping       | Object [(shipping)](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#shipping-data-object)   |                 | Required          | Object containing shipping information for the order. See [Shipping](doc:fill-request-fields#shipping) table. |
+| insurance      | Object [(insurance)](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#insurance-data-object) |                 | Optional          | Optionally specify insurance information to be used on the fill request.                                      |
+
+# Shipping Data Object
+
+| Field             | Type                                                                                                | Character Limit | Required/Optional | Description                                                                                                                                                                                                        |
+| :---------------- | :-------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| address           | Object [(address)](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#address-data-object) |                 | Required          | Object containing address information for order to be shipped to. See [Address](doc:fill-request-fields#address) table.                                                                                            |
+| ShippingCode      | String                                                                                              | 10              | Required          | Shipping method to be used for the order. See [Shipping Codes](doc:fill-request-fields#shipping-codes)below                                                                                                        |
+| SaturdayDelivery  | Boolean                                                                                             | true/false      | Optional          | Values: True/False. Saturday Delivery is an option for certain shipping codes depending on the carrier. To have an order delivered on a Saturday, select the correct Shipping Code and then set this flag to true. |
+| SignatureRequired | Boolean                                                                                             | true/false      | Optional          | Values: True/False. Select the option if the package requires a signature                                                                                                                                          |
 
 # Shipping Codes
 
@@ -48,7 +96,7 @@ next:
 | UPS 3DS  | UPS 3 Day Select                          | Saturday delivery |
 | UPS USG  | UPS-USPS Sure Post                        | Saturday delivery |
 
-# Address
+# Address Data Object
 
 | Field       | Type   | Character Limit | Required/Optional | Description                                        |
 | :---------- | :----- | :-------------- | :---------------- | :------------------------------------------------- |
@@ -60,10 +108,105 @@ next:
 | zipCode     | String | 10              | Required          | Format NNNNN or NNNNN-NNNN                         |
 | countryCode | String | 2               | Optional          | ISO-3166 2 character country code. Defaults to US. |
 
-# Insurance
+# Insurance Data Object
 
-| Field             | Type   | Character Limit | Required/Optional | Description                                                                                                          |
-| :---------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------------- |
-| planNumber        | String | 40              | Required          | Insurance plan number to be used on order that was previously provided by HealthDyne on a create Insurance response. |
-| coPay             | String | 6               | Required          | Payment collected from the patient at checkout. Format "xx.xx" or "xxx.xx"                                           |
-| transactionNumber | String |                 | Required          | The payment transaction number. This should be the stripe transaction number if payment is managed by HealthDyne.    |
+| Field             | Type   | Character Limit | Required/Optional | Description                                                                                                                           |
+| :---------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------------------------------ |
+| planNumber        | String | 100             | Required          | Insurance plan number to be used on order previously provided by HealthDyne on a create Insurance response.                           |
+| coPay             | String | 6               | Required          | Payment collected from the patient at checkout. Format "xx.xx" or "xxx.xx"                                                            |
+| transactionNumber | String | Max             | Required          | The payment transaction number. This should be the stripe transaction number if payment is managed by HealthDyne.                     |
+| personCode        | String | 3               | Optional          | Number 0 to 9.                                                                                                                        |
+| relationshipCode  | String | 1               | Optional          | Number 0 to 9. See relationship code table \[[below](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#relationship-codes)] |
+
+#### Relationship Codes
+
+| code | Description                    |
+| :--- | :----------------------------- |
+| 0    | Relation is  NOT SPECIFIED     |
+| 1    | Relation is CARDHOLDER         |
+| 2    | Relation is SPOUSE             |
+| 3    | Relation is CHILD              |
+| 4    | Relation is OTHER DEPENDENT    |
+| 5    | Relation is STUDENT DEPENDENT  |
+| 6    | Relation is DISABLED DEPENDENT |
+| 7    | Relation is ADULT DEPENDENT    |
+| 8    | Relation is SIGNIFICANT OTHER  |
+
+***
+
+## GET Fill Request
+
+#### Query Parameter
+
+| Field          | Type   | Character Limit | Required/Optional | Description                                                               |
+| :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
+| fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
+
+#### Response Object
+
+| Field          | Type                                                                                          | Character Limit | Required/Optional | Description                                                               |
+| :------------- | :-------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
+| fillRequestKey | String                                                                                        | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
+| submitted      | Array \[[submitted](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#submitted)]   |                 | Optional          | Array of submitted Objects containing event details.                      |
+| rxVerified     | Array \[[rxVerified](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#rxverified)] |                 | Optional          | Array of rxVerified objects containing verified information.              |
+| rxShipped      | Array \[[rxshipped](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#rxshipped)]   |                 | Optional          | Array of rxShipped objects containing tracking/shipping information.      |
+| rxIssue        | Array \[[rxissue](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#rxissue)]       |                 | Optional          | Array of rxIssue objects containing issued information.                   |
+| rxCanceled     | Array \[[rxcanceled](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#rxcanceled)] |                 | Optional          | Array of rxCanceled objects containing cancel reason information.         |
+
+***
+
+## SUBMIT Fill Request
+
+#### Request Object
+
+| Field          | Type                                                                                                    | Character Limit | Required/Optional | Description                                                                                                   |
+| :------------- | :------------------------------------------------------------------------------------------------------ | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------ |
+| fillRequestKey | String                                                                                                  | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking.                                     |
+| scriptKeys     | Array                                                                                                   |                 | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request).                        |
+| shipping       | Object [(shipping)](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#shipping-data-object)   |                 | Required          | Object containing shipping information for the order. See [Shipping](doc:fill-request-fields#shipping) table. |
+| insurance      | Object [(insurance)](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#insurance-data-object) |                 | Optional          | Optionally specify insurance information to be used on the fill request.                                      |
+
+#### Response Object
+
+| Field          | Type   | Character Limit | Required/Optional | Description                                                               |
+| :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
+| fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
+| message        | String | Max             | Required          | Status messages string.                                                   |
+
+***
+
+## UPDATE Fill Request
+
+#### Request Object
+
+| Field          | Type                                                                                                  | Character Limit | Required/Optional | Description                                                                                                   |
+| :------------- | :---------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------ |
+| fillRequestKey | String                                                                                                | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking.                                     |
+| scriptKeys     | Array                                                                                                 |                 | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request).                        |
+| shipping       | Object [(shipping)](https://docs.healthdyne.com/v2.171/docs/fill-request-fields#shipping-data-object) |                 | Required          | Object containing shipping information for the order. See [Shipping](doc:fill-request-fields#shipping) table. |
+
+#### Response Object
+
+| Field          | Type   | Character Limit | Required/Optional | Description                                                               |
+| :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
+| fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
+| message        | String | Max             | Required          | Status messages string.                                                   |
+
+***
+
+## CANCEL Fill Request
+
+#### Request Object
+
+| Field          | Type   | Character Limit | Required/Optional | Description                                                                            |
+| :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------------- |
+| fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking.              |
+| scriptKeys     | Array  |                 | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
+| cancelReason   | String | Max             | Required          | TBD                                                                                    |
+
+#### Response Object
+
+| Field          | Type   | Character Limit | Required/Optional | Description                                                               |
+| :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
+| fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
+| message        | String | Max             | Required          | Status messages string.                                                   |
