@@ -4,6 +4,11 @@ deprecated: false
 hidden: true
 metadata:
   robots: index
+next:
+  pages:
+    - slug: mail-box
+      title: Mailbox
+      type: basic
 ---
 # RxFill:
 
