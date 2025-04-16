@@ -16,16 +16,16 @@ next:
 
 # Script Request
 
-| Field             | Type          | Character Limit | Required/Optional | Description                                                                                                                                                                              |
-| :---------------- | :------------ | :-------------- | :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| scriptKey         | String        | 50              | Required          | Unique ID assigned by sending pharmacy to each prescription transfer request for tracking.                                                                                               |
-| sendingPharmacy   | Object        |                 | Required          | Contains information about the pharmacy transferring the prescription - see [Pharmacy](doc:script-rxtransfer-fields#pharmacy) table.                                                     |
-| receivingPharmacy | Object        |                 | Required          | Contains information about the pharmacy the prescription is being transferred to - see [Pharmacy](doc:script-rxtransfer-fields#pharmacy) table.                                          |
-| patientKey        | String        | 50              | Required          | Unique patient ID in Client system. This key will be sent on the order status message. The patientKey must be unique and patient must exist in the system when sending Transfer Request. |
-| prescription      | Object        |                 | Required          | Contains the prescription information. See [Prescription](doc:script-rxtransfer-fields#prescription) table.                                                                              |
-| transferFileType  | String        | xml/png/pdf     | Required          | The file type for the transfer file. Acceptable values are xml, png, and pdf.                                                                                                            |
-| transferFileUrl   | urlSafeBase64 | 2048            | Required          | Base 64 encoded URL where the XML or PNG transfer file can be downloaded from.                                                                                                           |
-| orTransfer        | Boolean       | true/false      | Required          | If this is a prescription transfer the value is true, for triage the value is false                                                                                                      |
+| Field             | Type    | Character Limit | Required/Optional | Description                                                                                                                                                                              |
+| :---------------- | :------ | :-------------- | :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| scriptKey         | String  | 50              | Required          | Unique ID assigned by sending pharmacy to each prescription transfer request for tracking.                                                                                               |
+| sendingPharmacy   | Object  |                 | Required          | Contains information about the pharmacy transferring the prescription - see [Pharmacy](doc:script-rxtransfer-fields#pharmacy) table.                                                     |
+| receivingPharmacy | Object  |                 | Required          | Contains information about the pharmacy the prescription is being transferred to - see [Pharmacy](doc:script-rxtransfer-fields#pharmacy) table.                                          |
+| patientKey        | String  | 50              | Required          | Unique patient ID in Client system. This key will be sent on the order status message. The patientKey must be unique and patient must exist in the system when sending Transfer Request. |
+| prescription      | Object  |                 | Required          | Contains the prescription information. See [Prescription](doc:script-rxtransfer-fields#prescription) table.                                                                              |
+| transferFileType  | String  | 3               | Required          | The file type for the transfer file. Acceptable values are xml, png, and pdf.                                                                                                            |
+| transferFileUrl   | String  | 2048            | Required          | Base 64 encoded URL where the XML or PNG transfer file can be downloaded from.                                                                                                           |
+| orTransfer        | Boolean |                 | Required          | If this is a prescription transfer the value is true, for triage the value is false                                                                                                      |
 
 # Pharmacy
 
@@ -69,16 +69,15 @@ next:
 
 # Prescription
 
-| Field              | Type   | Character Limit | Required/Optional | Description                                                                     |
-| :----------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------ |
-| rxNumber           | String | 12              | Required          | Rx number of the prescription as per client's system.                           |
-| prescribedDrugName | String | 105             | Required          | Name of the medication as prescribed by the prescriber.                         |
-| prescribedNdc      | String | 11              | Required          | NDC prescribed by the prescriber.                                               |
-| dispenseNdc        | String | 11              | Optional          | Field is required if orTransfer is True. NDC dispensed by the pharmacy.         |
-| dispenseDrugName   | String | 105             | Optional          | Field is required if orTransfer is True. Name of the medication to be dispensed |
-| drugDosageForm     | String | 30              | Required          | Dosage form for the dispensed medication. For example: TABS, SWAB, CHEW, etc.   |
-| prescriber         |        |                 |                   |                                                                                 |
-|                    |        |                 |                   |                                                                                 |
+| Field              | Type   | Character Limit | Required/Optional | Description                                                                                                |
+| :----------------- | :----- | :-------------- | :---------------- | :--------------------------------------------------------------------------------------------------------- |
+| rxNumber           | String | 12              | Required          | Rx number of the prescription as per client's system.                                                      |
+| prescribedDrugName | String | 105             | Required          | Name of the medication as prescribed by the prescriber.                                                    |
+| prescribedNdc      | String | 11              | Required          | NDC prescribed by the prescriber.                                                                          |
+| dispenseNdc        | String | 11              | Optional          | Field is required if orTransfer is True. NDC dispensed by the pharmacy.                                    |
+| dispenseDrugName   | String | 105             | Optional          | Field is required if orTransfer is True. Name of the medication to be dispensed                            |
+| drugDosageForm     | String | 30              | Required          | Dosage form for the dispensed medication. For example: TABS, SWAB, CHEW, etc.                              |
+| prescriber         | Object |                 | Required          | Object containing prescriber information. See [Prescriber](doc:script-rxtransfer-fields#prescriber) table. |
 
 <HTMLBlock>{`
 <table style="width: 100%; border-collapse: collapse;">
@@ -374,6 +373,8 @@ next:
 </tbody>
 </table>
 `}</HTMLBlock>
+
+<br />
 
 # Prescriber
 
