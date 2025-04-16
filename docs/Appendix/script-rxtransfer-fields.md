@@ -429,9 +429,16 @@ next:
 
 #### Request Object
 
-| Field | Type | Character Limit | Required/Optional | Description |
-| :---- | :--- | :-------------- | :---------------- | :---------- |
-|       |      |                 |                   |             |
+| Field             | Type | Character Limit | Required/Optional | Description |
+| :---------------- | :--- | :-------------- | :---------------- | :---------- |
+| scriptKey         |      |                 |                   |             |
+| sendingPharmacy   |      |                 |                   |             |
+| receivingPharmacy |      |                 |                   |             |
+| patientKey        |      |                 |                   |             |
+| prescription      |      |                 |                   |             |
+| transferFileType  |      |                 |                   |             |
+| transferFileUrl   |      |                 |                   |             |
+| ortransfer        |      |                 |                   |             |
 
 #### Response Object
 
