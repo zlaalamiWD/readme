@@ -317,37 +317,39 @@ The "Update Patient" endpoint uses the PUT method to modify the details of an ex
 
 ```json
 {
-  "patient": {
-    "patientKey":"12389990",
-    "firstName": "JANE",
-    "lastName": "DOE",
-    "birthDate": "1956-03-02",
-    "gender": "F",
-    "patientLanguage": "ENG",
-    "address": {
-      "addressType": "HOME",
-      "line1": "100 Rivers Edge Dr.",
-      "line2": null,
-      "line3": null,
-      "city": "Temple Terrace",
-      "state": "FL",
-      "zipCode": "02155",
-      "countryCode": "US",
-      "defaultAddress":true
-    },
-    "contact": {
-      "contactType": "PHONE",
-      "contactAddress": "5712345678"
-    },
-    "allergies": ["Amoxicillin"],
-    "externalMedications": [
-      {
-        "ndc": "00045049660",
-        "startDate": "2022-03-02",
-        "endDate": "2022-04-02"
-      }
-    ]
-  }
+    "patient": {
+        "patientKey": "12389990",
+        "firstName": "JANE",
+        "lastName": "DOE",
+        "birthDate": "1956-03-02",
+        "gender": "F",
+        "patientLanguage": "ENG",
+        "address": {
+            "addressType": "HOME",
+            "line1": "100 Rivers Edge Dr.",
+            "line2": null,
+            "line3": null,
+            "city": "Temple Terrace",
+            "state": "FL",
+            "zipCode": "02155",
+            "countryCode": "US",
+            "defaultAddress": true
+        },
+        "contact": {
+            "contactType": "PHONE",
+            "contactAddress": "5712345678"
+        },
+        "allergies": [
+            "Amoxicillin"
+        ],
+        "externalMedications": [
+            {
+                "ndc": "00045049660",
+                "startDate": "2022-03-02",
+                "endDate": "2022-04-02"
+            }
+        ]
+    }
 }
 ```
 
