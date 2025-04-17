@@ -174,7 +174,7 @@ next:
 
 | Field      | Type  | Character Limit | Required/Optional | Description                                  |
 | :--------- | :---- | :-------------- | :---------------- | :------------------------------------------- |
-| scriptKeys | Array |                 | Required          | Array of scriptKey(s) associated to Patient. |
+| scriptKeys | Array | 255 per value   | Required          | Array of scriptKey(s) associated to Patient. |
 
 # Create Patient Request
 
