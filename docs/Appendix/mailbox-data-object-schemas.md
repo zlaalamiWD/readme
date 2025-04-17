@@ -28,7 +28,7 @@ metadata:
 | eventType     | String                                                                                                        | 50              | Type of event, e.g., "RXTRANSFER".                                                       |
 | status        | String                                                                                                        | 20              | Current status of the event.                                                             |
 | statusMessage | String                                                                                                        | max             | Descriptive message explaining the status.                                               |
-| scriptKey     | String                                                                                                        | 255             | Unique identifier for the script being transferred which is initially defined by client. |
+| scriptKey     | String                                                                                                        | 50              | Unique identifier for the script being transferred which is initially defined by client. |
 | detail        | [RxTransferDetailObject](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#rxtransferdetailobject) |                 | Nested object containing extra details specific to the event type                        |
 
 #### RxTransferDetailObject
