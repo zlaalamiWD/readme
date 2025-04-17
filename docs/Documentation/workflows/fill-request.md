@@ -43,7 +43,7 @@ The GET Fill Request Status API lets clients retrieve the status and event summa
 
 Click here to see [GET Fill Request Query Data](https://docs.healthdyne.com/docs/fill-request-fields#query-parameter)
 
-#### Sample GET Status Response
+#### GET Status Response Samples
 
 > 📘 NOTE: For a Single-line Rx.
 
