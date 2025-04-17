@@ -65,7 +65,7 @@ Click here to see [GET Fill Request Query Data](https://docs.healthdyne.com/docs
 }
 ```
 
-> 📘 NOTE: Sample for a Multiline Rx with different ScriptKeys.
+> 📘 NOTE: Sample for a Multiline Rx.
 
 ```json
 {
