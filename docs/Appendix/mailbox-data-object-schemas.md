@@ -35,7 +35,7 @@ metadata:
 
 | Field      | Type   | Character Limit | Description                        |
 | :--------- | :----- | :-------------- | :--------------------------------- |
-| patientKey | String | 255             | Unique identifier for the patient. |
+| patientKey | String | 50              | Unique identifier for the patient. |
 | rxNumber   | String | 30              | Prescription number                |
 
 # RxStatus event Type
@@ -49,8 +49,8 @@ metadata:
 | eventType     | String                                                                                                    | 50              | Type of event, e.g., "RXTRANSFER".                                                       |
 | status        | String                                                                                                    | 20              | Current status of the event.                                                             |
 | statusMessage | String                                                                                                    | max             | Descriptive message explaining the status.                                               |
-| scriptKey     | String                                                                                                    | 255             | Unique identifier for the script being transferred which is initially defined by client. |
-| patientKey    | String                                                                                                    | 255             | Unique identifier for the patient.                                                       |
+| scriptKey     | String                                                                                                    | 50              | Unique identifier for the script being transferred which is initially defined by client. |
+| patientKey    | String                                                                                                    | 50              | Unique identifier for the patient.                                                       |
 | detail        | [RxStatusDetailObject](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#rxstatusdetailobject) |                 | Nested object containing extra details specific to the event type                        |
 
 #### RxStatusDetailObject
@@ -70,7 +70,7 @@ metadata:
 | eventType      | String                                                                                                          | 50              | Type of event, e.g., "RXTRANSFER".                                            |
 | status         | String                                                                                                          | 20              | Current status of the event.                                                  |
 | statusMessage  | String                                                                                                          | max             | Descriptive message explaining the status.                                    |
-| fillRequestKey | String                                                                                                          | 255             | Unique identifier for the fill request  which is initially defined by client. |
+| fillRequestKey | String                                                                                                          | 50              | Unique identifier for the fill request  which is initially defined by client. |
 | detail         | [FillRequestDetailObject](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#fillrequestdetailobject) |                 | Nested object containing extra details specific to the event type             |
 
 #### FillRequestDetailObject
@@ -78,7 +78,7 @@ metadata:
 | Field            | Type                                                                                             | Character Limit | Description                                                                              |
 | :--------------- | :----------------------------------------------------------------------------------------------- | :-------------- | :--------------------------------------------------------------------------------------- |
 | orderNumber      | String                                                                                           | 100             | order number                                                                             |
-| scriptKey        | String                                                                                           | 255             | Unique identifier for the script being transferred which is initially defined by client. |
+| scriptKey        | String                                                                                           | 50              | Unique identifier for the script being transferred which is initially defined by client. |
 | fillNumber       | Int                                                                                              |                 | Shows how many fills have been fulfilled for this Rx                                     |
 | remainingRefills | String                                                                                           | 10              | Show how many fill remaing for the Rx                                                    |
 | refillByDate     | String                                                                                           |                 | Date recommended for refill                                                              |
