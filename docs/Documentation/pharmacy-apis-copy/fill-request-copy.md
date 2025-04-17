@@ -10,11 +10,13 @@ next:
       title: Mailbox
       type: basic
 ---
-# RxFill:
+The Rx Fill API provides the ability to submit new prescription fill requests and to retrieve status messages for previously sent prescription fill requests.#
+
+## Submit Fill Request
 
 See [RxFill]() API reference for request message fields.
 
-The Rx Fill API provides the ability to submit new prescription fill requests and to retrieve status messages for previously sent prescription fill requests.
+![](https://files.readme.io/10b333b9fe319a0bcefff7827b285ad51b27abbfd94eeb64c640b806b6c8341f-image.png)
 
 ### Server
 
