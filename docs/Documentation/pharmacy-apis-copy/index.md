@@ -10,14 +10,15 @@ next:
       title: Fill Request
       type: basic
 ---
-The Central Fill API is a powerful and robust RESTful, JSON-based API designed to seamlessly integrate with your pharmacy or healthcare systems. It provides access to HealthDyne's national fulfillment infrastructure, enabling your organization to scale prescription fulfillment with speed, reliability, and compliance.
+Central Fill is a pharmacy fulfillment model that streamlines the dispensing and shipping of prescriptions by routing orders from healthcare providers or pharmacies to a centralized facility. This centralized approach enables faster, more accurate, and cost-effective prescription processing at scale allowing pharmacies to focus on patient care while leveraging advanced logistics and automation.
+
+HealthDyne's Central Fill solution supports this model through a nationwide fulfillment infrastructure, ensuring timely delivery and regulatory compliance across all 50 states and U.S. territories.  To support seamless integration with your pharmacy or healthcare systems, HealthDyne offers a powerful and robust RESTful, JSON-based API. The Central Fill API provides direct access to our fulfillment platform, enabling your organization to automate and scale prescription processing with speed, reliability, and control.
 
 **Key Features:**
 
-* Nationwide Delivery: Ship medications to all 50 U.S. states and US territories.
-* Prescription Fill/Refill Management: Submit fill or refill requests through RxFill API.
-* Real-Time Status Tracking: Retrieve current fill request statuses, including shipment  updates.
-* Request Cancellations: Cancel a fill request when necessary, ensuring flexibility and control.
+* Prescription Fill/Refill Management: Submit new prescription fill or refill requests via the RxFill API
+* Real-Time Status Tracking: Retrieve current fill request statuses, including acknowledgment, shipment updates.
+* Flexible Cancellations: Cancel fill requests when needed to maintain control over order flow and minimize medication waste.
 
 Get started by adding reviewing the [RxFill](), [Cancel](), and [Mailbox]() request documentation.
 
