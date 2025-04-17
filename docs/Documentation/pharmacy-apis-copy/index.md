@@ -32,6 +32,4 @@ The RxFill Workflow is a critical process for submitting and tracking prescripti
 2. Retrieve and Acknowledge Events [Mailbox API Guide]()
    1. Use the GET method on the Mailbox API to retrieve current events.
 
-> 📘 Important: After successfully retrieving and processing these events, you must call the DELETE method on the same mailbox event(s) to mark them as acknowledged. This step prevents duplicate processing and ensures accurate system state synchronization.
-
-Note: Failure to acknowledge mailbox events with the DELETE method may result in repeated delivery of the same events.
+> 📘 Important: After successfully retrieving and processing these events, you must call the DELETE method on the same mailbox event(s) to mark them as acknowledged. This step prevents duplicate processing and ensures accurate system state synchronization. Failure to acknowledge mailbox events with the DELETE method may result in repeated delivery of the same events.
