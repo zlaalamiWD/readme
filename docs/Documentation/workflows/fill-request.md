@@ -45,7 +45,7 @@ Click here to see [GET Fill Request Query Data](https://docs.healthdyne.com/docs
 
 #### GET Status Response Samples
 
-> 📘 NOTE: For a Single-line Rx.
+> 📘 NOTE: Sample for a Single-line Rx.
 
 ```json
 {
