@@ -56,7 +56,6 @@ Click here to see [GET Patient Request Query Data](https://docs.healthdyne.com/d
     "gender": "F",
     "patientLanguage": "ENG",
     "birthDate": "1997-02-03",
-    "healthCondition": [],
     "address": {
         "line1": "123 Main St",
         "line2": null,
@@ -76,7 +75,6 @@ Click here to see [GET Patient Request Query Data](https://docs.healthdyne.com/d
       "00002445385",
       "99207012010"
     ],
-    "pregnancyIndicator": "N",
     "allergies": [
       "CEPHALOSPORINS",
       "SALICYLATES"
