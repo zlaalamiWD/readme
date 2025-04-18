@@ -49,7 +49,6 @@ Click here to see [GET Patient Request Query Data](https://docs.healthdyne.com/v
 
 ```json
 {
-  "patient": {
     "patientKey": "TESTPATIENT",
     "firstName": "TEST",
     "lastName": "TESTREADPATIENT17",
@@ -58,45 +57,44 @@ Click here to see [GET Patient Request Query Data](https://docs.healthdyne.com/v
     "birthDate": "1997-02-03",
     "healthCondition": [],
     "address": [
-      {
-        "line1": "123 Main St",
-        "line2": null,
-        "line3": null,
-        "city": "LAKELAND",
-        "state": "FL",
-        "zipCode": "33810",
-        "countryCode": "US",
-        "addressType": "HOME",
-        "defaultAddress": true
-      },
-      {
-        "line1": "678 Main St",
-        "line2": null,
-        "line3": null,
-        "city": "LAKELAND",
-        "state": "FL",
-        "zipCode": "33810",
-        "countryCode": "US",
-        "addressType": "HOME",
-        "defaultAddress": false
-      }
+        {
+            "line1": "123 Main St",
+            "line2": null,
+            "line3": null,
+            "city": "LAKELAND",
+            "state": "FL",
+            "zipCode": "33810",
+            "countryCode": "US",
+            "addressType": "HOME",
+            "defaultAddress": true
+        },
+        {
+            "line1": "678 Main St",
+            "line2": null,
+            "line3": null,
+            "city": "LAKELAND",
+            "state": "FL",
+            "zipCode": "33810",
+            "countryCode": "US",
+            "addressType": "HOME",
+            "defaultAddress": false
+        }
     ],
     "contact": [
-      {
-        "contactType": "HOME PHONE",
-        "contactAddress": "3233731379"
-      }
+        {
+            "contactType": "HOME PHONE",
+            "contactAddress": "3233731379"
+        }
     ],
     "externalMedications": [
-      "00002445385",
-      "99207012010"
+        "00002445385",
+        "99207012010"
     ],
     "pregnancyIndicator": "N",
     "allergies": [
-      "CEPHALOSPORINS",
-      "SALICYLATES"
+        "CEPHALOSPORINS",
+        "SALICYLATES"
     ]
-  }
 }
 ```
 
