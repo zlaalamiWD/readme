@@ -57,8 +57,7 @@ Click here to see [GET Patient Request Query Data](https://docs.healthdyne.com/d
     "patientLanguage": "ENG",
     "birthDate": "1997-02-03",
     "healthCondition": [],
-    "address": [
-      {
+    "address": {
         "line1": "123 Main St",
         "line2": null,
         "line3": null,
@@ -69,24 +68,10 @@ Click here to see [GET Patient Request Query Data](https://docs.healthdyne.com/d
         "addressType": "HOME",
         "defaultAddress": true
       },
-      {
-        "line1": "678 Main St",
-        "line2": null,
-        "line3": null,
-        "city": "LAKELAND",
-        "state": "FL",
-        "zipCode": "33810",
-        "countryCode": "US",
-        "addressType": "HOME",
-        "defaultAddress": false
-      }
-    ],
-    "contact": [
-      {
+    "contact": {
         "contactType": "HOME PHONE",
         "contactAddress": "3233731379"
-      }
-    ],
+      },
     "externalMedications": [
       "00002445385",
       "99207012010"
