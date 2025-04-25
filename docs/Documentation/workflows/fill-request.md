@@ -247,44 +247,45 @@ Click here to see [Submit Fill Response Data Object](https://docs.healthdyne.com
 
 ```json
 {
-    "FillRequestKey": "Fill26",
-    "ScriptsKeys": [
+    "fillRequestKey": "Fill26",
+    "scriptsKeys": [
         {
             "scriptsKey": "sc258",
-            "PatientInsurance": {
-                "PlanNumber": "5140000",
-                "ClientItemCost": 123.11,
-                "ClientDispenseFee": 124.11,
-                "ClientOtherFee": 125.2,
-                "ClientCoPay": 126.66
-            },
-            {
-                "scriptsKey": "sc258testing",
-                "PatientInsurance": {
-                    "PlanNumber": "5140000",
-                    "ClientItemCost": 123.11,
-                    "ClientDispenseFee": 124.11,
-                    "ClientOtherFee": 125.2,
-                    "ClientCoPay": 126.66
-                }
+            "patientInsurance": {
+                "planNumber": "5140000",
+                "clientItemCost": 123.11,
+                "clientDispenseFee": 124.11,
+                "clientOtherFee": 125.2,
+                "clientCoPay": 126.66
             }
-        ],
-        "Shipping": {
-            "Address": {
-                "Line1": "16JUL20241206204211",
-                "Line2": "16JUL20241206204213",
-                "Line3": "16JUL20241206204213",
-                "City": "LAKELAND",
-                "State": "FL",
-                "ZipCode": "33810",
-                "CountryCode": "US"
-            },
-            "ShippingCode": "POS 1M",
-            "SaturdayDelivery": false,
-            "SignatureRequired": false
         },
-        "transactionNumber": "asvbbnh"
-    }
+        {
+            "scriptsKey": "sc258testing",
+            "catientInsurance": {
+                "planNumber": "5140000",
+                "clientItemCost": 123.11,
+                "clientDispenseFee": 124.11,
+                "clientOtherFee": 125.2,
+                "clientCoPay": 126.66
+            }
+        }
+    ],
+    "shipping": {
+        "address": {
+            "line1": "16JUL20241206204211",
+            "line2": "16JUL20241206204213",
+            "line3": "16JUL20241206204213",
+            "city": "LAKELAND",
+            "state": "FL",
+            "zipCode": "33810",
+            "countryCode": "US"
+        },
+        "shippingCode": "POS 1M",
+        "saturdayDelivery": false,
+        "signatureRequired": false
+    },
+    "transactionNumber": "asvbbnh"
+}
 ```
 
 Click here to see [Submit Fill Request Data Object](https://docs.healthdyne.com/docs/fill-request-fields#request-object)
