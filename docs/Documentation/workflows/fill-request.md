@@ -94,17 +94,16 @@ Click here to see [GET Fill Request Query Data](https://docs.healthdyne.com/docs
       "scriptKey": "TestScriptKey1401",
       "verifiedDate": null,
       "statusMessage": "The Rx has been verified by the pharmacist (PV1)"
-    }
-  ],
-  "rxShipped": [
+    },
     {
-      "eventId": "288779",
-      "eventDateUtc": "2025-04-11T18:46:39.670751Z",
-      "scriptKey": "TestScriptKey1402",
-      "shipmentDate": "2025-04-11T21:55:26Z",
-      "trackingNumber": "75474170000"
+      "eventId": "2887749",
+      "eventDateUtc": "2025-04-11T18:453:07.995451Z",
+      "scriptKey": "TestScriptKey14091",
+      "verifiedDate": null,
+      "statusMessage": "The Rx has been verified by the pharmacist (PV1)"
     }
   ],
+  "rxShipped": [],
   "rxIssue": [
     {
       "eventId": "289773",
@@ -118,6 +117,12 @@ Click here to see [GET Fill Request Query Data](https://docs.healthdyne.com/docs
       "eventId": "288784",
       "eventDateUtc": "2025-04-11T18:50:00.418881Z",
       "scriptKey": "TestScriptKey1404",
+      "statusMessage": "Cancelled"
+    },
+    {
+      "eventId": "2887864",
+      "eventDateUtc": "2025-04-11T18:50:00.418881Z",
+      "scriptKey": "TestScriptKey14045",
       "statusMessage": "Cancelled"
     }
   ],
