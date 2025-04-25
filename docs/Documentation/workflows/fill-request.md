@@ -49,16 +49,32 @@ Click here to see [GET Fill Request Query Data](https://docs.healthdyne.com/docs
 
 ```json
 {
-    "fillRequestKey": "FillPatientSample1404",
+    "fillRequestKey": "ccdd5fd46a714cc09bc679f0365b2",
     "submitted": [
         {
-            "eventId": "289526",
-            "eventDateUtc": "2025-04-14T08:40:37.328768Z",
+            "eventId": "295955",
+            "eventDateUtc": "2025-04-15T09:12:20.913021+00:00",
             "scriptKeys": []
         }
     ],
-    "rxVerified":[],
-    "rxShipped": [],
+    "rxVerified": [
+        {
+            "eventId": "295965",
+            "eventDateUtc": "2025-04-15T09:16:48.804578+00:00",
+            "scriptKey": "24388f1b53c04b0a89534056c311ece6326",
+            "verifiedDate": null,
+            "statusMessage": "The Rx has been verified by the pharmacist (PV1)"
+        }
+    ],
+    "rxShipped": [
+        {
+            "eventId": "295985",
+            "eventDateUtc": "2025-04-17T09:19:53.417176+00:00",
+            "scriptKey": "24388f1b53c04b0a89534056c311ece6326",
+            "shipmentDate": "2025-04-17T06:00:02Z",
+            "trackingNumber": "7548253"
+        }
+    ],
     "rxIssue": [],
     "rxCanceled": [],
     "rejected": []
