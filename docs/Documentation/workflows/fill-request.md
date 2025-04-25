@@ -190,6 +190,8 @@ Client must send a Fill request with following details:
 
 #### Sample Submit Fill Request Body
 
+> 📘 NOTE: This request only allows to pass one insurance object per fill request
+
 ```json
 {
   "fillRequestKey": "FillPatientSample1404",
@@ -227,6 +229,71 @@ Click here to see [Submit Fill Request Data Object](https://docs.healthdyne.com/
 ```json
 {
     "fillRequestKey": "FillPatientSample1404",
+    "message": "The fill request was accepted"
+}
+```
+
+Click here to see [Submit Fill Response Data Object](https://docs.healthdyne.com/docs/fill-request-fields#response-object-1)
+
+<br />
+
+#### Sample Submit Fill Request
+
+`POST https://api.uat-healthdyne.com/v2/fill/fillrequest`
+
+#### Sample Submit Fill Request Body
+
+> 📘 NOTE: This request allows to pass one insurance object per script  in the fill request
+
+```json
+{
+    "FillRequestKey": "Fill26",
+    "ScriptsKeys": [
+        {
+            "scriptsKey": "sc258",
+            "PatientInsurance": {
+                "PlanNumber": "5140000",
+                "ClientItemCost": 123.11,
+                "ClientDispenseFee": 124.11,
+                "ClientOtherFee": 125.2,
+                "ClientCoPay": 126.66
+            },
+            {
+                "scriptsKey": "sc258testing",
+                "PatientInsurance": {
+                    "PlanNumber": "5140000",
+                    "ClientItemCost": 123.11,
+                    "ClientDispenseFee": 124.11,
+                    "ClientOtherFee": 125.2,
+                    "ClientCoPay": 126.66
+                }
+            }
+        ],
+        "Shipping": {
+            "Address": {
+                "Line1": "16JUL20241206204211",
+                "Line2": "16JUL20241206204213",
+                "Line3": "16JUL20241206204213",
+                "City": "LAKELAND",
+                "State": "FL",
+                "ZipCode": "33810",
+                "CountryCode": "US"
+            },
+            "ShippingCode": "POS 1M",
+            "SaturdayDelivery": false,
+            "SignatureRequired": false
+        },
+        "transactionNumber": "asvbbnh"
+    }
+```
+
+Click here to see [Submit Fill Request Data Object](https://docs.healthdyne.com/docs/fill-request-fields#request-object)
+
+#### Sample Submit Fill Response
+
+```json
+{
+    "fillRequestKey": "Fill26",
     "message": "The fill request was accepted"
 }
 ```
