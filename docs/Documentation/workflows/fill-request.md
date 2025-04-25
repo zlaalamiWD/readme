@@ -184,7 +184,7 @@ Client must send a Fill request with following details:
 | Content-Type                | application/json       |
 | HealthDyne-Subscription-Key | Provided by HealthDyne |
 
-#### Sample Submit Fill Request
+#### Sample Submit Fill Request (single insurance per fill request)
 
 `POST https://api.uat-healthdyne.com/v2/fill`
 
@@ -237,7 +237,7 @@ Click here to see [Submit Fill Response Data Object](https://docs.healthdyne.com
 
 <br />
 
-#### Sample Submit Fill Request
+#### Sample Submit Fill Request (multiple insurances per fill request)
 
 `POST https://api.uat-healthdyne.com/v2/fill/fillrequest`
 
