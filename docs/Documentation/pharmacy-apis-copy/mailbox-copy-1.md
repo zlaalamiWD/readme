@@ -9,12 +9,12 @@ metadata:
 
 View the [MailBox](ref:post_v2-mailbox) API Reference for detailed request body information.
 
-Fill Request status messages are stored in a queue for each partner. Retrieving messages is a two‐step process.
+This endpoint should be used to obtain the status of Rxfill requests previously submitted. No request body is required.\
+HealthDyne employs a mailbox style order status reporting methodology. Therefore, when an order has a status update, the status message is delivered to the partner’s mailbox. This status message remains in the mailbox until the status message is retrieved by the partner and receipt of the message is acknowledged.
+A maximum of 100 status messages will be returned with a single request. Multiple requests may be necessary to receive all outstanding status messages. Please refer to the Status Codes returned to determine if all messages have been retrieved. Retrieving messages is a two‐step process.
 
 1. Retrieve a batch of messages.
-2. Delete the batch using the RequestId returned from #1. After retrieving the batch of status messages, the delete method must be called within 30 seconds, otherwise the messages in the batch will be placed back on the queue.
-
-To deplete the queue, continue the steps above until a status code of 204 is returned. The queue should be checked at regularly scheduled intervals.
+2. Acknowledge the batch using the batchId returned from #1 using a POST method.
 
 Note, the status messages are not considered delivered and removed from the mailbox until the receipt of the message is acknowledged by using a DELETE method with the batchId as a query parameter. Hence, another status request should not be submitted until the previous status response is acknowledged.
 
@@ -64,16 +64,16 @@ The below table lists the potential response codes that can be received in respo
 }
 ```
 
-# Acknowled Batch (POST Method)
+# Acknowledge Batch (POST Method)
 
-The POST method deletes the batch of messages from the queue. The delete must occur within 30 seconds of queue retrieval, otherwise messages will be placed back on the queue.
+The POST method acknowledges the batchID of messages from the queue.
 
 ##### Only https connections are accepted.
 
-| REQUEST TYPE   | ENDPOINT                                                     |
-| :------------- | :----------------------------------------------------------- |
-| DELETE  (Test) | partner.uat-healthdyne.com/v1/fillstatus/queue/\{request id} |
-| DELETE(Prod)   | partner.healthdyne.com/v1/fillstatus/queue/\{request id}     |
+| REQUEST TYPE   | ENDPOINT                                                   |
+| :------------- | :--------------------------------------------------------- |
+| DELETE  (Test) | partner.uat-healthdyne.com/v2/mailbox/\{Batch id}/markread |
+| DELETE(Prod)   | partner.healthdyne.com/v2/mailbox/\{Batch id}/markread     |
 
 ### Header
 
@@ -85,24 +85,15 @@ The POST method deletes the batch of messages from the queue. The delete must oc
 
 #### Sample POST Request
 
-> `<https://partner.uat-healthdyne.com/v2/mailbox?batchId=6be689c3-3306-4a75-b0d3-a769be788c99>`
-
-#### Sample DELETE Response
-
-```json
-{ 
-    
-    ] 
-}
-```
+> `<https://partner.uat-healthdyne.com/v2/mailbox/\{Batch id}/markread>`
 
 # Status Event Types:
 
 # # Fill Request Status Events
 
-## Acknowledged
+## Submitted
 
-HealthDyne will create the order after receiving a RxFill. Once the order has been successfully created, HealthDyne will generate an Acknowledged’ order status message and queues the event up for the client to retrieve it.
+HealthDyne will create the order after receiving a RxFill. Once the order has been successfully created, HealthDyne will generate a submitted order status message and queues the event up for the client to retrieve it.
 
 #### sample "Submitted" event
 
@@ -115,7 +106,7 @@ HealthDyne will create the order after receiving a RxFill. Once the order has be
 
 ## Rejected
 
-If order creation errors/rejects; then Rejected event will be created. Possible reasons for system to reject order request include existing open orders for same order number or Invalid NDC used.
+If order creation errors/rejects; then Rejected event will be created. Possible reasons for system to reject order request include duplicate order number or Invalid NDC used.
 
 #### Sample "Rejected" event
 
