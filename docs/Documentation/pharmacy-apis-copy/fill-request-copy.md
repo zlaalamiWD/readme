@@ -22,10 +22,10 @@ See [RxFill]() API reference for request message fields.
 
 ##### Only https connections are accepted.
 
-| REQUEST TYPE | ENDPOINT                              |
-| :----------- | :------------------------------------ |
-| POST (Test)  | api.uat-healthdyne.com/v2/fillrequest |
-| POST (Prod)  | api.healthdyne.com/v2/fillrequest     |
+| REQUEST TYPE | ENDPOINT                                        |
+| :----------- | :---------------------------------------------- |
+| POST (Test)  | uat.apiservices.azure-api.net/rx/v2/fillrequest |
+| POST (Prod)  | \{base URL}/v2/fillrequest                      |
 
 ### Header
 
