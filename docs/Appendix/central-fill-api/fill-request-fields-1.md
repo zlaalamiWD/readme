@@ -162,6 +162,7 @@ metadata:
 
       <td>
         Only Valid list of ISO-3digit language codes are accepted:                              ENG English                                           SPA Spanish                                         RUS Russian                                       SOM Somali                                         ARA Arabic                                             ZHO Chinese(Simplified)                        VIE VietnameseFAS Farsi
+
         FRA French
         DEU German
         HMN Hmong
@@ -176,10 +177,6 @@ metadata:
     </tr>
   </tbody>
 </Table>
-
-<br />
-
-<br />
 
 ### Prescription
 
