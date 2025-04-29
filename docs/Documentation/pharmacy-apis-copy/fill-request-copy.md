@@ -162,7 +162,8 @@ The Cancel Request API enables client systems to submit a cancellation request f
 
 ```json
 {
-  
-  
+ "messageid": "1w09-4514-b4fc-1286reae0egb07-v2-12",
+  "ordernumber": "TST1234RVVL-v2-12",
+  "CancelReason": "Order submitted in error"
 }
 ```
