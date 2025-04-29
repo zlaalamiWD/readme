@@ -81,20 +81,11 @@ The POST method deletes the batch of messages from the queue. The delete must oc
 | :-------------------------- | :--------------------- |
 | HealthDyne-Subscription-Key | Provided by HealthDyne |
 
-# DELETE Status Response
+# # POST Request
 
-The below table lists the potential response codes that can be received in response to a GET request.
+#### Sample POST Request
 
-| Code | Description                                                      |
-| :--- | :--------------------------------------------------------------- |
-| 200  | The batch has been deleted                                       |
-| 400  | Bad Request                                                      |
-| 404  | RequestId was not found                                          |
-| 410  | Request has expired. Messages have been placed back on the queue |
-
-#### Sample DELETE Request
-
-> `<https://pa>`
+> `<https://partner.uat-healthdyne.com/v2/mailbox?batchId=6be689c3-3306-4a75-b0d3-a769be788c99>`
 
 #### Sample DELETE Response
 
