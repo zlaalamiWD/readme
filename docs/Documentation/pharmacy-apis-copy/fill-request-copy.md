@@ -78,7 +78,8 @@ The below table lists the potential response codes that can be received in respo
 				"manufacturer": "GRIFOLS USA",
 				"name": "MARPLAN TAB 10MG",
 				"strength": "1000",
-				"substituteDrugName": "",
+				"writtenDrugName": "",
+        "dispenseDrugName": "MARPLAN TAB 10MG",
 				"unitOfMeasure": "ML"
 			},
 			"quantity": 1,
@@ -94,7 +95,6 @@ The below table lists the potential response codes that can be received in respo
 				"firstName": "John",
 				"lastName": "Doe"
 			},
-			"writtenDrugName": "MARPLAN TAB 10MG",
 			"writtenDate": "2021-02-02T12:28:59",
 			"dispensedDate": "2020-12-15T00:00:03",
 			"expirationDate": "2021-12-14T00:00:03",
@@ -153,10 +153,10 @@ The Cancel Request API enables client systems to submit a cancellation request f
 
 ##### Only https connections are accepted.
 
-| REQUEST TYPE | ENDPOINT                                  |
-| :----------- | :---------------------------------------- |
-| POST (Test)  | partner.uat-welldyne.com/v2/cancelrequest |
-| POST (Prod)  | partner.welldyne.com/v2/cancelrequest     |
+| REQUEST TYPE | ENDPOINT                                       |
+| :----------- | :--------------------------------------------- |
+| POST (Test)  | uat-apiservices.azure-api.net/v2/cancelrequest |
+| POST (Prod)  | \{base URL}/v2/cancelrequest                   |
 
 ### Sample Cancel Fill Request
 
