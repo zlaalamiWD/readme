@@ -163,8 +163,7 @@ metadata:
       <td>
         Only Valid list of ISO-3digit language codes are accepted:                              ENG English                                           SPA Spanish                                         RUS Russian
 
-        SOM Somali
-        ARA Arabic
+        SOM SomaliARA Arabic
         ZHO Chinese(Simplified)
         VIE Vietnamese
         FAS Farsi
@@ -270,4 +269,22 @@ metadata:
 | :-------- | :----- | :------------- | :---------------- | :----------------------------------------------- |
 | DeaNumber | String | 9              | O                 | The DEA Number for the prescription’s prescriber |
 | FirstName | String | 50             | R                 |                                                  |
-| FirstName | String | 50             | R                 |                                                  |
+| LastName  | String | 50             | R                 |                                                  |
+
+### Pharmacist
+
+| Field     | Type   | CharacterLimit | Required/Optional | Notes                                                                                                                          |
+| :-------- | :----- | :------------- | :---------------- | :----------------------------------------------------------------------------------------------------------------------------- |
+| initials  | String | 50             | R                 | The initials or signature for the pharmacist that approved the prescription. Doctor John Doe Smith would have the initials JDS |
+| FirstName | String | 50             | R                 |                                                                                                                                |
+| LastName  | String | 50             | R                 |                                                                                                                                |
+
+### VialLabel
+
+| Field         | Type    | CharacterLimit | Required/Optional | Notes                                                                                                             |
+| :------------ | :------ | :------------- | :---------------- | :---------------------------------------------------------------------------------------------------------------- |
+| sig           | String  | 500            | R                 | Prescription usage. Also commonly referred to as the Sig or Signature. This must be populated in English language |
+| AdditionalSig | String  | 500            | O                 | Prescription usage in translated language. This must be populated in language other than English.                 |
+| Braille       | Boolean |                | O                 |                                                                                                                   |
+| LargePrint    | Boolean |                | O                 |                                                                                                                   |
+| AudioLabel    | Boolean |                | O                 |                                                                                                                   |
