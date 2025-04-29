@@ -163,8 +163,7 @@ metadata:
       <td>
         Only Valid list of ISO-3digit language codes are accepted:                              ENG English                                           SPA Spanish                                         RUS Russian
 
-        SOM SomaliARA ArabicZHO Chinese(Simplified)
-        VIE Vietnamese
+        SOM SomaliARA ArabicZHO Chinese(Simplified)VIE Vietnamese
         FAS Farsi
         FRA French
         DEU German
@@ -183,22 +182,23 @@ metadata:
 
 ### Prescription
 
-| Field           | Type     | CharacterLimit | Required/Optional | Notes                                                                        |
-| :-------------- | :------- | :------------- | :---------------- | :--------------------------------------------------------------------------- |
-| RxNumber        | String   | 20             | R                 |                                                                              |
-| Drug            | Object   |                | R                 |                                                                              |
-| Quantity        | Decimal  | 9,3            | R                 | Quantity of the drug to dispense with a decimalin the thousandth’s position. |
-| VialLabel       | Object   |                | R                 |                                                                              |
-| Refill          | Object   |                | R                 |                                                                              |
-| Prescriber      | Object   |                | R                 |                                                                              |
-| Pharmacist      | Object   |                | R                 |                                                                              |
-| WrittenDrugName | String   | 50             | R                 | The name of the drug being dispensed.                                        |
-| WrittenDate     | Date     |                | R                 | Written date of the prescription                                             |
-| DispensedDate   | Date     |                | R                 | Prescription’s expiration date                                               |
-| ExpirationDate  | Date     |                | R                 |                                                                              |
-| UnitPrice       | Decimal  | 8,2            | R                 |                                                                              |
-| CopayAmount     | Decimal  | 8,2            | O                 |                                                                              |
-| CustomData      | KeyValue |                | O                 | Array – 1 or more Key Values pairs                                           |
+| Field            | Type     | CharacterLimit | Required/Optional | Notes                                                                        |
+| :--------------- | :------- | :------------- | :---------------- | :--------------------------------------------------------------------------- |
+| RxNumber         | String   | 20             | R                 |                                                                              |
+| Drug             | Object   |                | R                 |                                                                              |
+| Quantity         | Decimal  | 9,3            | R                 | Quantity of the drug to dispense with a decimalin the thousandth’s position. |
+| VialLabel        | Object   |                | R                 |                                                                              |
+| Refill           | Object   |                | R                 |                                                                              |
+| Prescriber       | Object   |                | R                 |                                                                              |
+| Pharmacist       | Object   |                | R                 |                                                                              |
+| dispenseDrugName | String   | 50             | R                 | The name of the drug being dispensed.                                        |
+| writtenDrugName  | String   | 50             | R                 | The name of the drug prescribed by the provider.                             |
+| WrittenDate      | Date     |                | R                 | Written date of the prescription                                             |
+| DispensedDate    | Date     |                | R                 | Prescription’s expiration date                                               |
+| ExpirationDate   | Date     |                | R                 |                                                                              |
+| UnitPrice        | Decimal  | 8,2            | R                 |                                                                              |
+| CopayAmount      | Decimal  | 8,2            | O                 |                                                                              |
+| CustomData       | KeyValue |                | O                 | Array – 1 or more Key Values pairs                                           |
 
 ### Address (for Pharmacy Object)
 
@@ -238,13 +238,12 @@ metadata:
 
 ### Drug
 
-| Field              | Type   | CharacterLimit | Required/Optional | Notes                                                                                                            |
-| :----------------- | :----- | :------------- | :---------------- | :--------------------------------------------------------------------------------------------------------------- |
-| Ndc                | String | 11             | R                 | Format NNNNNNNNNNN                                                                                               |
-| Manufacturer       | String | 50             | O                 |                                                                                                                  |
-| Name               | String | 50             | R                 |                                                                                                                  |
-| SubstituteDrugName | String | 50             | R                 | If WrittenDrug is a substitution for another drug, this should contain thename drug it is being substituted for. |
-| UnitOfMeasure      | String | 10             | R                 |                                                                                                                  |
+| Field         | Type   | CharacterLimit | Required/Optional | Notes              |
+| :------------ | :----- | :------------- | :---------------- | :----------------- |
+| Ndc           | String | 11             | R                 | Format NNNNNNNNNNN |
+| Manufacturer  | String | 50             | O                 |                    |
+| Name          | String | 50             | R                 |                    |
+| UnitOfMeasure | String | 10             | R                 |                    |
 
 ### Refill
 
