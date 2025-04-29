@@ -163,8 +163,7 @@ metadata:
       <td>
         Only Valid list of ISO-3digit language codes are accepted:                              ENG English                                           SPA Spanish                                         RUS Russian
 
-        SOM SomaliARA Arabic
-        ZHO Chinese(Simplified)
+        SOM SomaliARA ArabicZHO Chinese(Simplified)
         VIE Vietnamese
         FAS Farsi
         FRA French
@@ -201,9 +200,7 @@ metadata:
 | CopayAmount     | Decimal  | 8,2            | O                 |                                                                              |
 | CustomData      | KeyValue |                | O                 | Array – 1 or more Key Values pairs                                           |
 
-<br />
-
-### Address
+### Address (for Pharmacy Object)
 
 | Field    | Type   | CharacterLimit | Required/Optional | Notes                      |
 | :------- | :----- | :------------- | :---------------- | :------------------------- |
@@ -213,8 +210,6 @@ metadata:
 | Phone    | String | 15             | R                 | Format NNNNNNNNNN          |
 | State    | String | 2              | R                 | US State Abbreviation Code |
 | Zip      | String | 9              | R                 | Format NNNNN, NNNNNNNNN    |
-
-<br />
 
 ### Shipping
 
@@ -240,8 +235,6 @@ metadata:
 | Zip      | String | 9              | R                 | Format NNNNN, NNNNNNNNN                                           |
 | Name     | String | 100            | R                 | For business address shipments. (E.g. John Smith c/o WellDyneRx). |
 | ClinicId | String | 36             | O                 |                                                                   |
-
-<br />
 
 ### Drug
 
