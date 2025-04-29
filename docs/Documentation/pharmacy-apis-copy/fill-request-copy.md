@@ -78,9 +78,9 @@ The below table lists the potential response codes that can be received in respo
 				"manufacturer": "GRIFOLS USA",
 				"name": "MARPLAN TAB 10MG",
 				"strength": "1000",
+         "dispenseDrugName": "MARPLAN TAB 10MG",
 				"writtenDrugName": "",
-        "dispenseDrugName": "MARPLAN TAB 10MG",
-				"unitOfMeasure": "ML"
+       	"unitOfMeasure": "ML"
 			},
 			"quantity": 1,
 			"refill": {
