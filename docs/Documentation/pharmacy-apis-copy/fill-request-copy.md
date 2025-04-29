@@ -67,7 +67,7 @@ The below table lists the potential response codes that can be received in respo
 		"id": "1569928",
 		"accountNumber": "1569928", 
 		"firstName": "FIRSTNAME",
-		"lastName": LASTNAME
+		"lastName": "LASTNAME",
 		"preferredLanguage": "ENG"
 	},
 	"prescriptions": [
