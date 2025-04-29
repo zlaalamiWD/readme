@@ -22,10 +22,10 @@ Note, the status messages are not considered delivered and removed from the mail
 
 ##### Only https connections are accepted.
 
-| REQUEST TYPE | ENDPOINT                                       |
-| :----------- | :--------------------------------------------- |
-| GET  (Test)  | partner.uat-healthdyne.com/v2/fillstatus/queue |
-| GET  (Prod)  | partner.healthdyne.com/v2/fillstatus/queue     |
+| REQUEST TYPE | ENDPOINT                              |
+| :----------- | :------------------------------------ |
+| GET  (Test)  | partner.uat-healthdyne.com/v2/mailbox |
+| GET  (Prod)  | partner.healthdyne.com/v2/mailbox     |
 
 ### Header
 
@@ -64,9 +64,9 @@ The below table lists the potential response codes that can be received in respo
 }
 ```
 
-# DELETE Request
+# Acknowled Batch (POST Method)
 
-The delete method deletes the batch of messages from the queue. The delete must occur within 30 seconds of queue retrieval, otherwise messages will be placed back on the queue.
+The POST method deletes the batch of messages from the queue. The delete must occur within 30 seconds of queue retrieval, otherwise messages will be placed back on the queue.
 
 ##### Only https connections are accepted.
 
