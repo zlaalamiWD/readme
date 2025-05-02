@@ -12,11 +12,13 @@ next:
 ---
 The Rx Fill API provides the ability to submit new prescription fill requests and to retrieve status messages for previously sent prescription fill requests.
 
+![](https://files.readme.io/49a84efe929cfb3dd495b2629f2b08abfbf97cd01bc96acc1e2a63db8d4cf3b5-image.png)
+
+<br />
+
 ## Submit Fill Request
 
 See [RxFill]() API reference for request message fields.
-
-![](https://files.readme.io/0cbbce628e8a6d0759beef64779c19e2816e823f4153986627972ebdf9c1c039-image.png)
 
 ### Server
 
