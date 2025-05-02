@@ -100,9 +100,16 @@ HealthDyne will create the order after receiving a RxFill. Once the order has be
 
 ```json
 {
-  
-  }
-}
+            "eventId": "5948314D-1152-4475-A29C-4B56FAF77437",
+            "eventDateUtc": "2025-04-23T14:22:05.3118884",
+            "eventType": "FILLREQUEST",
+            "status": "Submitted",
+            "statusMessage": null,
+            "eventDetail": {
+                "OrderId": "FR12004497",
+                "OrderNumber": "23APR075202390"
+            }
+        }
 ```
 
 ## Rejected
