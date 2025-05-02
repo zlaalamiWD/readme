@@ -37,7 +37,7 @@ See [RxFill]() API reference for request message fields.
 | Content-Type                | application/json       |
 | HealthDyne-Subscription-Key | Provided by HealthDyne |
 
-> 📘 Depending on the business model, an additional element may be required in the header to help identify and fulfill the prescription correctly.
+> 📘 Depending on the business model, an additional element may be required in the header to help identify and label the prescription correctly.
 
 ### RxFill Response codes
 
