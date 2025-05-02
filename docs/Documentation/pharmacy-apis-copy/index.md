@@ -31,5 +31,8 @@ The RxFill Workflow is a critical process for submitting and tracking prescripti
 1. Use the RxFill API to create a fill or refill order [RxFill API Guide]()
 2. Retrieve and Acknowledge Events [Mailbox API Guide]()
    1. Use the GET method on the Mailbox API to retrieve current events.
+   2. Use the POST method on the mailbox to acknowledge the batch of events.
 
-> 📘 Important: The status messages are not considered delivered and removed from the mailbox until the receipt of the message is acknowledged by using a POST method with the batchId as a query parameter. Hence, another status request should not be submitted until the previous status response is acknowledged.
+> 📘 Important: Status messages are not considered delivered or removed from the mailbox until an acknowledgment is sent using a POST request with the batchId as a query parameter.\
+> Until this acknowledgment is received, subsequent status fetch requests will return the same events with the same batchId.
+> To avoid duplicate status data, do not submit another status request until the previous response has been acknowledged.
