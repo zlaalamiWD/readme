@@ -16,7 +16,8 @@ A maximum of 100 status messages will be returned with a single request. Multipl
 1. Retrieve a batch of messages.
 2. Acknowledge the batch using the batchId returned from #1 using a POST method.
 
-Note, the status messages are not considered delivered and removed from the mailbox until the receipt of the message is acknowledged by using a DELETE method with the batchId as a query parameter. Hence, another status request should not be submitted until the previous status response is acknowledged.
+Note: Status messages are not considered delivered or removed from the mailbox until an acknowledgment is sent using a POST request with the batchId as a query parameter.\
+Until this acknowledgment is received, subsequent status fetch requests will return the same events with the same batchId. To avoid duplicate status data, do not submit another status request until the previous response has been acknowledged.
 
 ### Server
 
@@ -112,8 +113,15 @@ If order creation errors/rejects; then Rejected event will be created. Possible 
 
 ```json
 {
-  
-  
+            "eventId": "5948314D-1152-4475-A29C-4B56FAF77437",
+            "eventDateUtc": "2025-04-23T14:22:05.3118884",
+            "eventType": "FILLREQUEST",
+            "status": "REJECTED",
+            "statusMessage": "The order has been rejected",
+            "eventDetail": {
+				"OrderNumber": "84438058",
+				"rejectReason": "Validation Failed: Invalid NDC: 12121212121"
+			}	
 }
 ```
 
@@ -138,11 +146,32 @@ Once the order has been shipped successfully by pharmacy, then send update will 
 
 ```json
 {
-
-  
-  }
+            "eventId": "5948314D-1152-4475-A29C-4B56FAF77437",
+            "eventDateUtc": "2025-04-23T14:22:05.3118884",
+            "eventType": "FILLREQUEST",
+            "status": "DISPENSED",
+            "statusMessage": "The order has been shipped",
+            "eventDetail": {
+				"OrderNumber": "84438058",
+				"Packages": [
+					{
+						"ShipmentCode": "UPS GR",
+						"TrackingNumber": "1Z765WF80339910758",
+						"Weight": 4.9,
+						"ShippingCost": 31.34,
+						"ShipDateUtc": "2025-03-21T23:09:26.811Z",
+						"ShippingAddress": {
+							"Address1": "HOSPITAL MENONITA CAYEY ROAD #14",
+							"Address2": "KM 72.2 RINCON WARD SECTOR LAS LOMAS",
+							"City": "CAYEY",
+							"State": "PR",
+							"Zip": "00736"
+						}
+					}
+				],
+				"FulfillingPharmacy": "HEALTHDYNE-FL"
+			}	
 }
-
 ```
 
 ##
