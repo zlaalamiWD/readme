@@ -120,13 +120,15 @@ metadata:
 
 ### RxVerified
 
-| Field         | Type     | Character Limit                      | Required/Optional | Description                                   |
-| :------------ | :------- | :----------------------------------- | :---------------- | :-------------------------------------------- |
-| eventId       | String   | 4 bytes (32-bit signed int)          | Required          | Unique Event Identifier for the Fill Request. |
-| eventDateUtc  | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Required          | Date and time of the event in UTC (ISO 8601). |
-| scriptKey     | String   | 50                                   | Required          | Unique ID associated with script request.     |
-| verifiedDate  | DateTime | YYYY-MM-DD T HH:MM:SS Z              | Required          | Date and Time of Fill Request verified.       |
-| statusMessage | String   | Max                                  | Required          | Status message from Pharmacy.                 |
+| Field          | Type     | Character Limit                      | Description                                         |
+| :------------- | :------- | :----------------------------------- | :-------------------------------------------------- |
+| eventId        | String   | 4 bytes (32-bit signed int)          | Unique Event Identifier for the Fill Request.       |
+| eventDateUtc   | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Date and time of the event in UTC (ISO 8601).       |
+| scriptKey      | String   | 50                                   | Unique ID associated with script request.           |
+| verifiedDate   | DateTime | YYYY-MM-DD T HH:MM:SS Z              | Date and Time of Fill Request verified.             |
+| statusMessage  | String   | Max                                  | Status message from Pharmacy.                       |
+| FillRequestKey | String   | 50                                   | Unique ID associated with fill request.             |
+| detail         | Object   |                                      | Contains details of fill request that was verified. |
 
 ### RxShipped
 
