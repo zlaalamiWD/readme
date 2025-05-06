@@ -124,9 +124,9 @@ metadata:
 | :------------- | :-------------------------------------------------------------------------------------------------- | :----------------------------------- | :-------------------------------------------------- |
 | eventId        | String                                                                                              | 4 bytes (32-bit signed int)          | Unique Event Identifier for the Fill Request.       |
 | eventDateUtc   | DateTime                                                                                            | YYYY-MM-DD T HH:MM:SS.microseconds Z | Date and time of the event in UTC (ISO 8601).       |
-| scriptKey      | String                                                                                              | 50                                   | Unique ID associated with script request.           |
-| verifiedDate   | DateTime                                                                                            | YYYY-MM-DD T HH:MM:SS Z              | Date and Time of Fill Request verified.             |
-| statusMessage  | String                                                                                              | Max                                  | Status message from Pharmacy.                       |
+| eventType      | String                                                                                              | 50                                   | Event type description.                             |
+| status         | String                                                                                              | 20                                   | Current status of the event.                        |
+| statusMessage  | String                                                                                              | max                                  | Descriptive message explaining the status.          |
 | FillRequestKey | String                                                                                              | 50                                   | Unique ID associated with fill request.             |
 | detail         | [RxVerified detail](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#rxverified-detail) |                                      | Contains details of fill request that was verified. |
 
@@ -145,26 +145,48 @@ metadata:
 
 ### Dispense Drug
 
-| Field            | Type   | Character Limit             | Description                      |
-| :--------------- | :----- | :-------------------------- | :------------------------------- |
-| dispenseNDC      | String | 4 bytes (32-bit signed int) | NDC of drug that was dispensed.  |
-| dispenseDrugName | String | 50                          | Drug name that was dispensed.    |
-| daysSupply       | String | 50                          | Days the supply will last for.   |
-| dispenseQuantity | String | 50                          | Dispensed quantity               |
-| labelDirections  | String | 50                          | Drug usage label direction text. |
-| dosageForm       | String | 50                          | Drug dosage form.                |
-| drugStrength     | String | 50                          | Shows strength of the drug.      |
-| drugStrengthUOM  | String | 50                          | Drug strength unit of measure.   |
+| Field            | Type   | Character Limit | Description                      |
+| :--------------- | :----- | :-------------- | :------------------------------- |
+| dispenseNDC      | String | 50              | NDC of drug that was dispensed.  |
+| dispenseDrugName | String | 50              | Drug name that was dispensed.    |
+| daysSupply       | String | 50              | Days the supply will last for.   |
+| dispenseQuantity | String | 50              | Dispensed quantity               |
+| labelDirections  | String | 50              | Drug usage label direction text. |
+| dosageForm       | String | 50              | Drug dosage form.                |
+| drugStrength     | String | 50              | Shows strength of the drug.      |
+| drugStrengthUOM  | String | 50              | Drug strength unit of measure.   |
 
 ### RxShipped
 
-| Field          | Type     | Character Limit                      | Required/Optional | Description                                   |
-| :------------- | :------- | :----------------------------------- | :---------------- | :-------------------------------------------- |
-| eventId        | String   | 4 bytes (32-bit signed int)          | Required          | Unique Event Identifier for the Fill Request. |
-| eventDateUtc   | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Required          | Date and time of the event in UTC (ISO 8601). |
-| scriptKey      | String   | 50                                   | Required          | Unique ID associated with script request.     |
-| shipmentDate   | DateTime | YYYY-MM-DD T HH:MM:SS Z              | Required          | Date and Time of Fill Request Shipped.        |
-| trackingNumber | String   | 40                                   | Required          | Shipment tracking number.                     |
+| Field          | Type     | Character Limit                      | Description                                   |
+| :------------- | :------- | :----------------------------------- | :-------------------------------------------- |
+| eventId        | String   | 4 bytes (32-bit signed int)          | Unique Event Identifier for the Fill Request. |
+| eventDateUtc   | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Date and time of the event in UTC (ISO 8601). |
+| eventType      | String   | 50                                   | Event type description.                       |
+| status         | String   | 50                                   | Unique ID associated with script request.     |
+| statusMessage  | String   | 50                                   | Date and Time of Fill Request Shipped.        |
+| trackingNumber | String   | 40                                   | Shipment tracking number.                     |
+
+### RxShipped detail
+
+| Field        | Type                                                                                | Character Limit | Description                            |
+| :----------- | :---------------------------------------------------------------------------------- | :-------------- | :------------------------------------- |
+| orderNumber  | String                                                                              | 50              | Order number used to track this order. |
+| scriptKey    | String                                                                              | 50              | Unique ID associated with script key.  |
+| dispenseDrug | [shipments](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#shipments) |                 | Dispensed drug object.                 |
+
+### shipments
+
+| Field          | Type   | Character Limit         | Description                                                                        |
+| :------------- | :----- | :---------------------- | :--------------------------------------------------------------------------------- |
+| address        | object |                         | Contains shipment address information (note that currently it will always be null) |
+| trackingNumber | String | 50                      | Drug name that was dispensed.                                                      |
+| shipmentCode   | String | 50                      | Days the supply will last for.                                                     |
+| trackingUrl    | String | 50                      | Dispensed quantity                                                                 |
+| weight         | String | 50                      | Drug usage label direction text.                                                   |
+| dispensedQty   | String | 50                      | Drug dosage form.                                                                  |
+| daysSupply     | String | 50                      | Shows strength of the drug.                                                        |
+| shipmentDate   | String | YYYY-MM-DD T HH:MM:SS Z | Drug strength unit of measure.                                                     |
 
 ### RxIssue
 
