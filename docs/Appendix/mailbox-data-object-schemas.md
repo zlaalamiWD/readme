@@ -158,14 +158,16 @@ metadata:
 
 ### RxShipped
 
-| Field          | Type     | Character Limit                      | Description                                   |
-| :------------- | :------- | :----------------------------------- | :-------------------------------------------- |
-| eventId        | String   | 4 bytes (32-bit signed int)          | Unique Event Identifier for the Fill Request. |
-| eventDateUtc   | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Date and time of the event in UTC (ISO 8601). |
-| eventType      | String   | 50                                   | Event type description.                       |
-| status         | String   | 20                                   | Current status of the event.                  |
-| statusMessage  | String   | max                                  | Descriptive message explaining the status.    |
-| trackingNumber | String   | 40                                   | Shipment tracking number.                     |
+| Field          | Type                                                                                              | Character Limit                      | Description                                   |
+| :------------- | :------------------------------------------------------------------------------------------------ | :----------------------------------- | :-------------------------------------------- |
+| eventId        | String                                                                                            | 4 bytes (32-bit signed int)          | Unique Event Identifier for the Fill Request. |
+| eventDateUtc   | DateTime                                                                                          | YYYY-MM-DD T HH:MM:SS.microseconds Z | Date and time of the event in UTC (ISO 8601). |
+| eventType      | String                                                                                            | 50                                   | Event type description.                       |
+| status         | String                                                                                            | 20                                   | Current status of the event.                  |
+| statusMessage  | String                                                                                            | max                                  | Descriptive message explaining the status.    |
+| FillRequestKey | String                                                                                            | 50                                   | Unique ID associated with fill request.       |
+| trackingNumber | String                                                                                            | 40                                   | Shipment tracking number.                     |
+| detail         | [RxShipped detail](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#RxShipped-detail) |                                      | Shipments info object.                        |
 
 ### RxShipped detail
 
@@ -190,12 +192,23 @@ metadata:
 
 ### RxIssue
 
-| Field        | Type     | Character Limit                      | Required/Optional | Description                                   |
-| :----------- | :------- | :----------------------------------- | :---------------- | :-------------------------------------------- |
-| eventId      | String   | 4 bytes (32-bit signed int)          | Required          | Unique Event Identifier for the Fill Request. |
-| eventDateUtc | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Required          | Date and time of the event in UTC (ISO 8601). |
-| scriptKey    | String   | 50                                   | Required          | Unique ID associated with script request.     |
-| issueMessage | String   | Max                                  | Required          | Issue message from Pharmacy.                  |
+| Field          | Type                                                                                          | Character Limit                      | Description                                   |
+| :------------- | :-------------------------------------------------------------------------------------------- | :----------------------------------- | :-------------------------------------------- |
+| eventId        | String                                                                                        | 4 bytes (32-bit signed int)          | Unique Event Identifier for the Fill Request. |
+| eventDateUtc   | DateTime                                                                                      | YYYY-MM-DD T HH:MM:SS.microseconds Z | Date and time of the event in UTC (ISO 8601). |
+| eventType      | String                                                                                        | 50                                   | Event type description.                       |
+| status         | String                                                                                        | 20                                   | Current status of the event.                  |
+| statusMessage  | String                                                                                        | max                                  | Descriptive message explaining the status.    |
+| FillRequestKey | String                                                                                        | 50                                   | Unique ID associated with fill request.       |
+| detail         | [RxIssue detail](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#RxIssue-detail) |                                      | Shipments info object.                        |
+
+### RxIssue detail
+
+| Field       | Type                                                                                | Character Limit | Description                            |
+| :---------- | :---------------------------------------------------------------------------------- | :-------------- | :------------------------------------- |
+| orderNumber | String                                                                              | 50              | Order number used to track this order. |
+| scriptKey   | String                                                                              | 50              | Unique ID associated with script key.  |
+| shipments   | [shipments](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#shipments) |                 | Shipments info object.                 |
 
 ### RxCanceled
 
