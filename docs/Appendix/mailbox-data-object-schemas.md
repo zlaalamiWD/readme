@@ -163,8 +163,8 @@ metadata:
 | eventId        | String   | 4 bytes (32-bit signed int)          | Unique Event Identifier for the Fill Request. |
 | eventDateUtc   | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Date and time of the event in UTC (ISO 8601). |
 | eventType      | String   | 50                                   | Event type description.                       |
-| status         | String   | 50                                   | Unique ID associated with script request.     |
-| statusMessage  | String   | 50                                   | Date and Time of Fill Request Shipped.        |
+| status         | String   | 20                                   | Current status of the event.                  |
+| statusMessage  | String   | max                                  | Descriptive message explaining the status.    |
 | trackingNumber | String   | 40                                   | Shipment tracking number.                     |
 
 ### RxShipped detail
