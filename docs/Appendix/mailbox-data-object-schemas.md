@@ -120,26 +120,26 @@ metadata:
 
 ### RxVerified
 
-| Field          | Type                                                                                                       | Character Limit                      | Description                                         |
-| :------------- | :--------------------------------------------------------------------------------------------------------- | :----------------------------------- | :-------------------------------------------------- |
-| eventId        | String                                                                                                     | 4 bytes (32-bit signed int)          | Unique Event Identifier for the Fill Request.       |
-| eventDateUtc   | DateTime                                                                                                   | YYYY-MM-DD T HH:MM:SS.microseconds Z | Date and time of the event in UTC (ISO 8601).       |
-| scriptKey      | String                                                                                                     | 50                                   | Unique ID associated with script request.           |
-| verifiedDate   | DateTime                                                                                                   | YYYY-MM-DD T HH:MM:SS Z              | Date and Time of Fill Request verified.             |
-| statusMessage  | String                                                                                                     | Max                                  | Status message from Pharmacy.                       |
-| FillRequestKey | String                                                                                                     | 50                                   | Unique ID associated with fill request.             |
-| detail         | Object [RxVerified detail](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#rxverified-detail) |                                      | Contains details of fill request that was verified. |
+| Field          | Type                                                                                                | Character Limit                      | Description                                         |
+| :------------- | :-------------------------------------------------------------------------------------------------- | :----------------------------------- | :-------------------------------------------------- |
+| eventId        | String                                                                                              | 4 bytes (32-bit signed int)          | Unique Event Identifier for the Fill Request.       |
+| eventDateUtc   | DateTime                                                                                            | YYYY-MM-DD T HH:MM:SS.microseconds Z | Date and time of the event in UTC (ISO 8601).       |
+| scriptKey      | String                                                                                              | 50                                   | Unique ID associated with script request.           |
+| verifiedDate   | DateTime                                                                                            | YYYY-MM-DD T HH:MM:SS Z              | Date and Time of Fill Request verified.             |
+| statusMessage  | String                                                                                              | Max                                  | Status message from Pharmacy.                       |
+| FillRequestKey | String                                                                                              | 50                                   | Unique ID associated with fill request.             |
+| detail         | [RxVerified detail](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#rxverified-detail) |                                      | Contains details of fill request that was verified. |
 
 <br />
 
 ### RxVerified detail
 
-| Field        | Type                                                                                              | Character Limit | Description                            |
-| :----------- | :------------------------------------------------------------------------------------------------ | :-------------- | :------------------------------------- |
-| orderNumber  | String                                                                                            | 50              | Order number used to track this order. |
-| scriptKey    | String                                                                                            | 50              | Unique ID associated with script key.  |
-| fillNumber   | String                                                                                            | 50              | Fill number that was dispensed.        |
-| dispenseDrug | Object [dispenseDrug](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#dispense-drug) |                 | Dispensed drug object.                 |
+| Field        | Type                                                                                       | Character Limit | Description                            |
+| :----------- | :----------------------------------------------------------------------------------------- | :-------------- | :------------------------------------- |
+| orderNumber  | String                                                                                     | 50              | Order number used to track this order. |
+| scriptKey    | String                                                                                     | 50              | Unique ID associated with script key.  |
+| fillNumber   | String                                                                                     | 50              | Fill number that was dispensed.        |
+| dispenseDrug | [dispenseDrug](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#dispense-drug) |                 | Dispensed drug object.                 |
 
 <br />
 
