@@ -169,24 +169,24 @@ metadata:
 
 ### RxShipped detail
 
-| Field        | Type                                                                                | Character Limit | Description                            |
-| :----------- | :---------------------------------------------------------------------------------- | :-------------- | :------------------------------------- |
-| orderNumber  | String                                                                              | 50              | Order number used to track this order. |
-| scriptKey    | String                                                                              | 50              | Unique ID associated with script key.  |
-| dispenseDrug | [shipments](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#shipments) |                 | Dispensed drug object.                 |
+| Field       | Type                                                                                | Character Limit | Description                            |
+| :---------- | :---------------------------------------------------------------------------------- | :-------------- | :------------------------------------- |
+| orderNumber | String                                                                              | 50              | Order number used to track this order. |
+| scriptKey   | String                                                                              | 50              | Unique ID associated with script key.  |
+| shipments   | [shipments](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#shipments) |                 | Shipments info object.                 |
 
 ### shipments
 
 | Field          | Type   | Character Limit         | Description                                                                        |
 | :------------- | :----- | :---------------------- | :--------------------------------------------------------------------------------- |
 | address        | object |                         | Contains shipment address information (note that currently it will always be null) |
-| trackingNumber | String | 50                      | Drug name that was dispensed.                                                      |
-| shipmentCode   | String | 50                      | Days the supply will last for.                                                     |
-| trackingUrl    | String | 50                      | Dispensed quantity                                                                 |
-| weight         | String | 50                      | Drug usage label direction text.                                                   |
-| dispensedQty   | String | 50                      | Drug dosage form.                                                                  |
-| daysSupply     | String | 50                      | Shows strength of the drug.                                                        |
-| shipmentDate   | String | YYYY-MM-DD T HH:MM:SS Z | Drug strength unit of measure.                                                     |
+| trackingNumber | String | 50                      | Order tracking number.                                                             |
+| shipmentCode   | String | 50                      | Shipment code used to ship the order.                                              |
+| trackingUrl    | String | 50                      | URL to track the order shipment status.                                            |
+| weight         | String | 50                      | Package weight.                                                                    |
+| dispensedQty   | String | 50                      | Dispensed quantity in shipped order.                                               |
+| daysSupply     | String | 50                      | Day supply in the order.                                                           |
+| shipmentDate   | String | YYYY-MM-DD T HH:MM:SS Z | Date order was shipped.                                                            |
 
 ### RxIssue
 
