@@ -130,9 +130,9 @@ metadata:
 | FillRequestKey | String                                                                                                     | 50                                   | Unique ID associated with fill request.             |
 | detail         | Object [RxVerified detail](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#rxverified-detail) |                                      | Contains details of fill request that was verified. |
 
-### RxVerified detail
-
 <br />
+
+### RxVerified detail
 
 | Field        | Type                                                                                              | Character Limit | Description                            |
 | :----------- | :------------------------------------------------------------------------------------------------ | :-------------- | :------------------------------------- |
@@ -140,6 +140,8 @@ metadata:
 | scriptKey    | String                                                                                            | 50              | Unique ID associated with script key.  |
 | fillNumber   | String                                                                                            | 50              | Fill number that was dispensed.        |
 | dispenseDrug | Object [dispenseDrug](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#dispense-drug) |                 | Dispensed drug object.                 |
+
+<br />
 
 ### Dispense Drug
 
