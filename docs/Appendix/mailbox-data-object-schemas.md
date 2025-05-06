@@ -139,7 +139,7 @@ metadata:
 | orderNumber  | String                                                                                            | 4 bytes (32-bit signed int) | Unique Event Identifier for the Fill Request.        |
 | scriptKey    | String                                                                                            | 50                          | Unique ID associated with script request.            |
 | fillNumber   | String                                                                                            | 50                          | Shows how many fills have been fulfilled for this Rx |
-| dispenseDrug | Object [dispenseDrug](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#dispense-drug) |                             | Contains details of fill request that was verified.  |
+| dispenseDrug | Object [dispenseDrug](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#dispense-drug) |                             | Dispensed drug object.                               |
 
 ### Dispense Drug
 
