@@ -130,7 +130,29 @@ metadata:
 | FillRequestKey | String                                                                                                     | 50                                   | Unique ID associated with fill request.             |
 | detail         | Object [RxVerified detail](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#rxverified-detail) |                                      | Contains details of fill request that was verified. |
 
-# RxVerified detail
+### RxVerified detail
+
+<br />
+
+| Field        | Type                                                                                              | Character Limit             | Description                                          |
+| :----------- | :------------------------------------------------------------------------------------------------ | :-------------------------- | :--------------------------------------------------- |
+| orderNumber  | String                                                                                            | 4 bytes (32-bit signed int) | Unique Event Identifier for the Fill Request.        |
+| scriptKey    | String                                                                                            | 50                          | Unique ID associated with script request.            |
+| fillNumber   | String                                                                                            | 50                          | Shows how many fills have been fulfilled for this Rx |
+| dispenseDrug | Object [dispenseDrug](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#dispense-drug) |                             | Contains details of fill request that was verified.  |
+
+### Dispense Drug
+
+| Field            | Type   | Character Limit             | Description                      |
+| :--------------- | :----- | :-------------------------- | :------------------------------- |
+| dispenseNDC      | String | 4 bytes (32-bit signed int) | NDC of drug that was dispensed.  |
+| dispenseDrugName | String | 50                          | Drug name that was dispensed.    |
+| daysSupply       | String | 50                          | Days the supply will last for.   |
+| dispenseQuantity | String | 50                          | Dispensed quantity               |
+| labelDirections  | String | 50                          | Drug usage label direction text. |
+| dosageForm       | String | 50                          | Drug dosage form.                |
+| drugStrength     | String | 50                          | Shows strength of the drug.      |
+| drugStrengthUOM  | String | 50                          | Drug strength unit of measure.   |
 
 ### RxShipped
 
