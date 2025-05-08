@@ -127,6 +127,28 @@ next:
 
 ***
 
+## SUBMIT Fill Request
+
+#### Request Object
+
+| Field          | Type                                                                                             | Character Limit | Required/Optional | Description                                                               |
+| :------------- | :----------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
+| fillRequestKey | String                                                                                           | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
+| scriptsKeys    | Array                                                                                            | 50 per value    | Required          | List of Array of scriptsKeys Object.                                      |
+| shipping       | Object [(shipping)](https://docs.healthdyne.com/docs/fill-request-fields#shipping-data-object)   |                 | Required          | Object containing shipping information for the order.                     |
+| insurance      | Object [(insurance)](https://docs.healthdyne.com/docs/fill-request-fields#insurance-data-object) |                 | Optional          | Optionally specify insurance information to be used on the fill request.  |
+
+#### Response Object
+
+| Field          | Type   | Character Limit | Required/Optional | Description                                                               |
+| :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
+| fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
+| message        | String | Max             | Required          | Status messages string.                                                   |
+
+<br />
+
+***
+
 ## UPDATE Fill Request
 
 #### Request Object
