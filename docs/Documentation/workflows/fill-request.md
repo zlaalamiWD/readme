@@ -261,7 +261,7 @@ Click here to see [Submit Fill Response Data Object](https://docs.healthdyne.com
         },
         {
             "scriptsKey": "sc258testing",
-            "catientInsurance": {
+            "patientInsurance": {
                 "planNumber": "5140000",
                 "clientItemCost": 123.11,
                 "clientDispenseFee": 124.11,
