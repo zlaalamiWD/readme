@@ -118,6 +118,15 @@ next:
 | shipping       | Object [(shipping)](https://docs.healthdyne.com/docs/fill-request-fields#shipping-data-object)   |                 | Required          | Object containing shipping information for the order.                                  |
 | insurance      | Object [(insurance)](https://docs.healthdyne.com/docs/fill-request-fields#insurance-data-object) |                 | Optional          | Optionally specify insurance information to be used on the fill request.               |
 
+# Shipping Data Object
+
+| Field             | Type                                                                                         | Character Limit | Required/Optional | Description                                                                                                                                                                                                         |
+| :---------------- | :------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| address           | Object [(address)](https://docs.healthdyne.com/docs/fill-request-fields#address-data-object) |                 | Required          | Object containing address information for order to be shipped to.                                                                                                                                                   |
+| ShippingCode      | String                                                                                       | 10              | Required          | Shipping method to be used for the order. See [Shipping Codes](https://docs.healthdyne.com/docs/fill-request-fields#shipping-codes)below                                                                            |
+| SaturdayDelivery  | Boolean                                                                                      | true/false      | Optional          | Values: True/False. Saturday Delivery is an option for certain shipping codes, depending on the carrier. To have an order delivered on a Saturday, select the correct Shipping Code and then set this flag to true. |
+| SignatureRequired | Boolean                                                                                      | true/false      | Optional          | Values: True/False. Select the option if the package requires a signature                                                                                                                                           |
+
 #### Response Object
 
 | Field          | Type   | Character Limit | Required/Optional | Description                                                               |
@@ -131,12 +140,38 @@ next:
 
 #### Request Object
 
-| Field          | Type                                                                                             | Character Limit | Required/Optional | Description                                                               |
-| :------------- | :----------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
-| fillRequestKey | String                                                                                           | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
-| scriptsKeys    | Array                                                                                            | 50 per value    | Required          | List of Array of scriptsKeys Object.                                      |
-| shipping       | Object [(shipping)](https://docs.healthdyne.com/docs/fill-request-fields#shipping-data-object)   |                 | Required          | Object containing shipping information for the order.                     |
-| insurance      | Object [(insurance)](https://docs.healthdyne.com/docs/fill-request-fields#insurance-data-object) |                 | Optional          | Optionally specify insurance information to be used on the fill request.  |
+| Field             | Type                                                                                               | Character Limit | Required/Optional | Description                                                               |
+| :---------------- | :------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
+| fillRequestKey    | String                                                                                             | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
+| scriptsKeys       | Object [scriptsKeys](https://docs.healthdyne.com/docs/fill-request-fields#scriptskeys-data-object) | 50 per value    | Required          | List of Array of scriptsKeys Object.                                      |
+| shipping          | Object [(shipping)](https://docs.healthdyne.com/docs/fill-request-fields#shipping-data-object)     |                 | Required          | Object containing shipping information for the order.                     |
+| transactionNumber | String                                                                                             |                 | Required          | A unique identifier assigned to each transaction by the client.           |
+
+# scriptsKeys Data Object
+
+| Field            | Type                                                                                                         | Character Limit | Required/Optional | Description                                           |
+| :--------------- | :----------------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :---------------------------------------------------- |
+| scriptsKey       | String                                                                                                       | 50              | Required          | Unique Id associated with script request              |
+| patientInsurance | Object [patientInsurance](https://docs.healthdyne.com/docs/fill-request-fields#patientinsurance-data-object) |                 | Required          | Object containing shipping information for the order. |
+
+# patientInsurance Data Object
+
+| Field             | Type    | Character Limit | Required/Optional | Description                                           |
+| :---------------- | :------ | :-------------- | :---------------- | :---------------------------------------------------- |
+| planNumber        | String  | 10              | Required          | Unique Id associated with script request              |
+| clientItemCost    | Decimal |                 | Required          | Object containing shipping information for the order. |
+| clientDispenseFee | Decimal |                 | Required          |                                                       |
+| clientOtherFee    | Decimal |                 | Required          |                                                       |
+| clientCoPay       | Decimal |                 | Required          |                                                       |
+
+# Shipping Data Object
+
+| Field             | Type                                                                                         | Character Limit | Required/Optional | Description                                                                                                                                                                                                         |
+| :---------------- | :------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| address           | Object [(address)](https://docs.healthdyne.com/docs/fill-request-fields#address-data-object) |                 | Required          | Object containing address information for order to be shipped to.                                                                                                                                                   |
+| ShippingCode      | String                                                                                       | 10              | Required          | Shipping method to be used for the order. See [Shipping Codes](https://docs.healthdyne.com/docs/fill-request-fields#shipping-codes)below                                                                            |
+| SaturdayDelivery  | Boolean                                                                                      | true/false      | Optional          | Values: True/False. Saturday Delivery is an option for certain shipping codes, depending on the carrier. To have an order delivered on a Saturday, select the correct Shipping Code and then set this flag to true. |
+| SignatureRequired | Boolean                                                                                      | true/false      | Optional          | Values: True/False. Select the option if the package requires a signature                                                                                                                                           |
 
 #### Response Object
 
