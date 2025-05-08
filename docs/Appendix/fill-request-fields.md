@@ -156,13 +156,13 @@ next:
 
 # patientInsurance Data Object
 
-| Field             | Type    | Character Limit | Required/Optional | Description                                           |
-| :---------------- | :------ | :-------------- | :---------------- | :---------------------------------------------------- |
-| planNumber        | String  | 10              | Required          | Unique Id associated with script request              |
-| clientItemCost    | Decimal |                 | Required          | Object containing shipping information for the order. |
-| clientDispenseFee | Decimal |                 | Required          |                                                       |
-| clientOtherFee    | Decimal |                 | Required          |                                                       |
-| clientCoPay       | Decimal |                 | Required          |                                                       |
+| Field             | Type    | Character Limit | Required/Optional | Description                                                                                                                     |
+| :---------------- | :------ | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------------------------ |
+| planNumber        | String  | 10              | Required          | An identifier representing a specific insurance or benefit plan associated with a transaction for the client.                   |
+| clientItemCost    | Decimal |                 | Required          | The base cost of the item (e.g., medication, product, or service) billed to the client before any additional fees or discounts. |
+| clientDispenseFee | Decimal |                 | Required          | A fee charged to the client for the dispensing or handling of the item.                                                         |
+| clientOtherFee    | Decimal |                 | Required          | An additional fee billed to the client that does not fall under item cost or dispensing.                                        |
+| clientCoPay       | Decimal |                 | Required          | The portion of the transaction that the client is required to pay out-of-pocket.                                                |
 
 # Shipping Data Object
 
