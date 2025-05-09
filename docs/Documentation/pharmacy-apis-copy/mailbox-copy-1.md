@@ -23,10 +23,10 @@ Until this acknowledgment is received, subsequent status fetch requests will ret
 
 ##### Only https connections are accepted.
 
-| REQUEST TYPE | ENDPOINT                              |
-| :----------- | :------------------------------------ |
-| GET  (Test)  | partner.uat-healthdyne.com/v2/mailbox |
-| GET  (Prod)  | centralfill.healthdyne.com/v2/mailbox |
+| REQUEST TYPE | ENDPOINT                                 |
+| :----------- | :--------------------------------------- |
+| GET  (Test)  | uat.apiservices.azure-api.net/v2/mailbox |
+| GET  (Prod)  | centralfill.healthdyne.com/v2/mailbox    |
 
 ### Header
 
@@ -39,9 +39,9 @@ Until this acknowledgment is received, subsequent status fetch requests will ret
 
 #### Sample GET Request
 
-> `<   https://>`
+> `<https://uat.apiservices.azure-api.net/v2/mailbox?messageCount=2>`
 
-This tells the API to only respond with 10 messages. The default message count is 100 messages. The Mailbox only allows 100 messages to be pulled at a time.
+This tells the API to only respond with 2 messages. The default message count is 100 messages. The Mailbox only allows 100 messages to be pulled at a time.
 
 # GET Status Response
 
@@ -71,10 +71,10 @@ The POST method acknowledges the batchID of messages from the queue.
 
 ##### Only https connections are accepted.
 
-| REQUEST TYPE   | ENDPOINT                                                   |
-| :------------- | :--------------------------------------------------------- |
-| DELETE  (Test) | partner.uat-healthdyne.com/v2/mailbox/\{Batch id}/markread |
-| DELETE(Prod)   | partner.healthdyne.com/v2/mailbox/\{Batch id}/markread     |
+| REQUEST TYPE | ENDPOINT                                                   |
+| :----------- | :--------------------------------------------------------- |
+| POST (Test)  | partner.uat-healthdyne.com/v2/mailbox/\{Batch id}/markread |
+| POST (Prod)  | partner.healthdyne.com/v2/mailbox/\{Batch id}/markread     |
 
 ### Header
 
