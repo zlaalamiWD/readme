@@ -18,7 +18,7 @@ The Rx Fill API provides the ability to submit new prescription fill requests an
 
 ## Submit Fill Request
 
-See [RxFill]() API reference for request message fields.
+See [RxFill](https://docs.healthdyne.com/v2.17999/update/docs/fill-request-fields-1#/versions) API reference for request message fields.
 
 ### Server
 
