@@ -26,7 +26,7 @@ Until this acknowledgment is received, subsequent status fetch requests will ret
 | REQUEST TYPE | ENDPOINT                              |
 | :----------- | :------------------------------------ |
 | GET  (Test)  | partner.uat-healthdyne.com/v2/mailbox |
-| GET  (Prod)  | partner.healthdyne.com/v2/mailbox     |
+| GET  (Prod)  | centralfill.healthdyne.com/v2/mailbox |
 
 ### Header
 
