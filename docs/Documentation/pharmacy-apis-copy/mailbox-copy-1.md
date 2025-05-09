@@ -7,7 +7,7 @@ metadata:
 ---
 # RxFill Status Request
 
-View the [MailBox](ref:post_v2-mailbox) API Reference for detailed request body information.
+View the [MailBox](https://docs.healthdyne.com/v2.17999/update/docs/mailbox-copy-1#/versions) API Reference for detailed request body information.
 
 This endpoint should be used to obtain the status of Rxfill requests previously submitted. No request body is required.\
 HealthDyne employs a mailbox style order status reporting methodology. Therefore, when an order has a status update, the status message is delivered to the partner’s mailbox. This status message remains in the mailbox until the status message is retrieved by the partner and receipt of the message is acknowledged.
