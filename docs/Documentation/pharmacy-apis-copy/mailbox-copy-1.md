@@ -39,7 +39,7 @@ Until this acknowledgment is received, subsequent status fetch requests will ret
 
 #### Sample GET Request
 
-> `<https://uat.apiservices.azure-api.net/v2/mailbox?messageCount=2>`
+> `https://uat.apiservices.azure-api.net/v2/mailbox?messageCount=2`
 
 This tells the API to only respond with 2 messages. The default message count is 100 messages. The Mailbox only allows 100 messages to be pulled at a time.
 
@@ -58,7 +58,30 @@ The below table lists the potential response codes that can be received in respo
 
 ```json
 {
-    
+    "batchId": "e231b030-3788-408e-b374-f1890a0b4fb5",
+    "count": 2,
+    "approximateRemainingCount": 34,
+    "messageList": [
+        {
+            "eventId": "564F7907-24C3-4374-96DA-5E9871B92EEE",
+            "eventDateUtc": "2025-04-23T14:21:28.7169483",
+            "eventType": "FILLREQUEST",
+            "status": "SUBMITTED",
+            "statusMessage": null,
+            "eventDetail": {
+                "OrderId": "XXH12004492",
+                "OrderNumber": "75118113"
+            }
+        },
+        {
+            "eventId": "EF0AD4D1-B167-4604-A671-BC5AD1783747",
+            "eventDateUtc": "2025-04-23T14:21:33.6899836",
+            "eventType": "FILLREQUEST",
+            "status": "SUBMITTED",
+            "statusMessage": null,
+            "eventDetail": {
+                "OrderId": XX2004493",
+                "OrderNumber": "75130257"
             }
         }
     ]
@@ -71,10 +94,10 @@ The POST method acknowledges the batchID of messages from the queue.
 
 ##### Only https connections are accepted.
 
-| REQUEST TYPE | ENDPOINT                                                   |
-| :----------- | :--------------------------------------------------------- |
-| POST (Test)  | partner.uat-healthdyne.com/v2/mailbox/\{Batch id}/markread |
-| POST (Prod)  | partner.healthdyne.com/v2/mailbox/\{Batch id}/markread     |
+| REQUEST TYPE | ENDPOINT                                                      |
+| :----------- | :------------------------------------------------------------ |
+| POST (Test)  | uat.apiservices.azure-api.net/v2/mailbox/\{Batch id}/markread |
+| POST (Prod)  | centralfill.healthdyne.com/v2/mailbox/\{Batch id}/markread    |
 
 ### Header
 
@@ -86,7 +109,22 @@ The POST method acknowledges the batchID of messages from the queue.
 
 #### Sample POST Request
 
-> `<https://partner.uat-healthdyne.com/v2/mailbox/\{Batch id}/markread>`
+> \`[https://uat.apiservices.azure-api.net/v2/mailbox/e231b030-3788-408e-b374-f1890a0b4fb5/markread](https://uat.apiservices.azure-api.net/v2/mailbox/e231b030-3788-408e-b374-f1890a0b4fb5/markread)
+>
+> #### Sample Status Response
+>
+> ```json
+> {
+>     "batchId": "e231b030-3788-408e-b374-f1890a0b4fb5",
+>     "status": "MARKED DELIVERED",
+>     "eventId": [
+>         "564F7907-24C3-4374-96DA-5E9871B92EEE",
+>         "EF0AD4D1-B167-4604-A671-BC5AD1783747"
+>     ]
+> }
+> ```
+>
+> <br />
 
 # Status Event Types:
 
@@ -140,9 +178,16 @@ When an order has been canceled by pharmacy, HealthDyne will send an update noti
 
 ```json
 {
-  
-  
-}
+            "eventId": "048aaccd-1b55-4edb-9493-d23a46dd364e",
+            "eventDateUtc": "2025-05-02T14:49:38.4294261",
+            "eventType": "FILLREQUEST",
+            "status": "CANCELED", 
+            "statusMessage": "The order has been canceled", 
+            "eventDetail": {
+                "OrderNumber": "TT4234459151",
+                "Reason": "cancel reason"
+            }
+        }
 ```
 
 ## Dispensed
