@@ -20,16 +20,14 @@ HealthDyne's Central Fill solution supports this model through a nationwide fulf
 * Real-Time Status Tracking: Retrieve current fill request statuses, including acknowledgment, shipment updates.
 * Flexible Cancellations: Cancel fill requests when needed to maintain control over order flow and minimize medication waste.
 
-Get started by adding reviewing the [RxFill](), [Cancel](), and [Mailbox]() request documentation.
-
 # Fulfillment Workflows
 
 ## Submit a Rxfill Request (Fill/Refill) :
 
 The RxFill Workflow is a critical process for submitting and tracking prescription fill or refill requests through HealthDyne’s Central Fill API. The steps below outline how your system should interact with the RxFill and Mailbox APIs for proper end-to-end order management.
 
-1. Use the RxFill API to create a fill or refill order [RxFill API Guide]()
-2. Retrieve and Acknowledge Events [Mailbox API Guide]()
+1. Use the RxFill API to create a fill or refill order [RxFill API Guide](https://docs.healthdyne.com/v2.17999/update/docs/fill-request-fields-1#/versions)
+2. Retrieve and Acknowledge Events [Mailbox API Guide](https://docs.healthdyne.com/v2.17999/update/docs/mailbox-copy-1#/versions)
    1. Use the GET method on the Mailbox API to retrieve current events.
    2. Use the POST method on the mailbox to acknowledge the batch of events.
 
