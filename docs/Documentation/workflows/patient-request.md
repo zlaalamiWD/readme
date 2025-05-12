@@ -262,12 +262,7 @@ The "Create Patient" endpoint uses the POST method to add a new patient record. 
       "contactAddress": "5712345678"
     },
     "allergies": [
-      "Amoxicillin",
-      "--- START PREGNANT, LACTATING, OR PLAN",
-      "NING TO BECOME PREGNANT WITHIN 90 DAYS -",
-      "--\nfalse\n--- END PREGNANT, LACTATING, OR",
-      " PLANNING TO BECOME PREGNANT WITHIN 90 D",
-      "AYS ---"
+      "Amoxicillin"
     ],
     "externalMedications": [
       {
@@ -279,6 +274,8 @@ The "Create Patient" endpoint uses the POST method to add a new patient record. 
   }
 }
 ```
+
+<br />
 
 Click here to see [POST Create Patient Request Data Object](https://docs.healthdyne.com/docs/patient-request-fields#request-object)
 
