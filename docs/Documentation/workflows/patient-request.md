@@ -261,7 +261,14 @@ The "Create Patient" endpoint uses the POST method to add a new patient record. 
       "contactType": "PHONE",
       "contactAddress": "5712345678"
     },
-    "allergies": ["Amoxicillin"],
+    "allergies": [
+      "Amoxicillin",
+      "--- START PREGNANT, LACTATING, OR PLAN",
+      "NING TO BECOME PREGNANT WITHIN 90 DAYS -",
+      "--\nfalse\n--- END PREGNANT, LACTATING, OR",
+      " PLANNING TO BECOME PREGNANT WITHIN 90 D",
+      "AYS ---"
+    ],
     "externalMedications": [
       {
         "ndc": "00045049660",
