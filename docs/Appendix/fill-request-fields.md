@@ -62,15 +62,15 @@ next:
 
 # Insurance Data Object
 
-| Field               | Type   | Character Limit | Required/Optional | Description                                                                                                                    |
-| :------------------ | :----- | :-------------- | :---------------- | :----------------------------------------------------------------------------------------------------------------------------- |
-| planNumber          | String | 100             | Required          | Insurance plan number to be used on order previously provided by HealthDyne on a create Insurance response.                    |
-| secondaryPlanNumber | String | 10              | Optional          | \<TBD>                                                                                                                         |
-| tertiaryPlanNumber  | String | 10              | Optional          | \<TBD>                                                                                                                         |
-| coPay               | String | 6               | Required          | Payment collected from the patient at checkout. Format "xx.xx" or "xxx.xx"                                                     |
-| transactionNumber   | String | Max             | Required          | The payment transaction number. This should be the stripe transaction number if payment is managed by HealthDyne.              |
-| personCode          | String | 3               | Optional          | Number 0 to 9.                                                                                                                 |
-| relationshipCode    | String | 1               | Optional          | Number 0 to 9. See relationship code table \[[below](https://docs.healthdyne.com/docs/fill-request-fields#relationship-codes)] |
+| Field               | Type   | Character Limit | Required/Optional | Description                                                                                                                                                                                                                 |
+| :------------------ | :----- | :-------------- | :---------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| planNumber          | String | 100             | Required          | Insurance plan number to be used on order previously provided by HealthDyne on a create Insurance response.                                                                                                                 |
+| secondaryPlanNumber | String | 10              | Optional          | An identifier representing an additional insurance or benefit plan that serves as a secondary source of coverage for the client in a transaction is used when the primary plan does not fully cover the service or product. |
+| tertiaryPlanNumber  | String | 10              | Optional          | An identifier representing a third-tier insurance or benefit plan provides supplemental coverage when both the primary and secondary plans do not fully cover the transaction for the client.                               |
+| coPay               | String | 6               | Required          | Payment collected from the patient at checkout. Format "xx.xx" or "xxx.xx"                                                                                                                                                  |
+| transactionNumber   | String | Max             | Required          | The payment transaction number. This should be the stripe transaction number if payment is managed by HealthDyne.                                                                                                           |
+| personCode          | String | 3               | Optional          | Number 0 to 9.                                                                                                                                                                                                              |
+| relationshipCode    | String | 1               | Optional          | Number 0 to 9. See relationship code table \[[below](https://docs.healthdyne.com/docs/fill-request-fields#relationship-codes)]                                                                                              |
 
 #### Relationship Codes
 
@@ -158,16 +158,16 @@ next:
 
 # patientInsurance Data Object
 
-| Field               | Type    | Character Limit | Required/Optional | Description                                                                                                                     |
-| :------------------ | :------ | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------------------------ |
-| planNumber          | String  | 10              | Required          | An identifier representing a specific insurance or benefit plan associated with a transaction for the client.                   |
-| secondaryPlanNumber | String  | 10              | Optional          | \<TBD>                                                                                                                          |
-| tertiaryPlanNumber  | String  | 10              | Optional          | \<TBD>                                                                                                                          |
-| clientItemCost      | Decimal |                 | Required          | The base cost of the item (e.g., medication, product, or service) billed to the client before any additional fees or discounts. |
-|                     |         |                 |                   |                                                                                                                                 |
-| clientDispenseFee   | Decimal |                 | Required          | A fee charged to the client for the dispensing or handling of the item.                                                         |
-| clientOtherFee      | Decimal |                 | Required          | An additional fee billed to the client that does not fall under item cost or dispensing.                                        |
-| clientCoPay         | Decimal |                 | Required          | The portion of the transaction that the client is required to pay out-of-pocket.                                                |
+| Field               | Type    | Character Limit | Required/Optional | Description                                                                                                                                                                                                                 |
+| :------------------ | :------ | :-------------- | :---------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| planNumber          | String  | 10              | Required          | An identifier representing a specific insurance or benefit plan associated with a transaction for the client.                                                                                                               |
+| secondaryPlanNumber | String  | 10              | Optional          | An identifier representing an additional insurance or benefit plan that serves as a secondary source of coverage for the client in a transaction is used when the primary plan does not fully cover the service or product. |
+| tertiaryPlanNumber  | String  | 10              | Optional          | An identifier representing a third-tier insurance or benefit plan provides supplemental coverage when both the primary and secondary plans do not fully cover the transaction for the client.                               |
+| clientItemCost      | Decimal |                 | Required          | The base cost of the item (e.g., medication, product, or service) billed to the client before any additional fees or discounts.                                                                                             |
+|                     |         |                 |                   |                                                                                                                                                                                                                             |
+| clientDispenseFee   | Decimal |                 | Required          | A fee charged to the client for the dispensing or handling of the item.                                                                                                                                                     |
+| clientOtherFee      | Decimal |                 | Required          | An additional fee billed to the client that does not fall under item cost or dispensing.                                                                                                                                    |
+| clientCoPay         | Decimal |                 | Required          | The portion of the transaction that the client is required to pay out-of-pocket.                                                                                                                                            |
 
 # Shipping Data Object
 
