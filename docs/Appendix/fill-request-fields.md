@@ -65,8 +65,8 @@ next:
 | Field               | Type   | Character Limit | Required/Optional | Description                                                                                                                    |
 | :------------------ | :----- | :-------------- | :---------------- | :----------------------------------------------------------------------------------------------------------------------------- |
 | planNumber          | String | 100             | Required          | Insurance plan number to be used on order previously provided by HealthDyne on a create Insurance response.                    |
-| secondaryPlanNumber |        |                 |                   |                                                                                                                                |
-| tertiaryPlanNumber  |        |                 |                   |                                                                                                                                |
+| secondaryPlanNumber |        |                 |                   | \<TBD>                                                                                                                         |
+| tertiaryPlanNumber  |        |                 |                   | \<TBD>                                                                                                                         |
 | coPay               | String | 6               | Required          | Payment collected from the patient at checkout. Format "xx.xx" or "xxx.xx"                                                     |
 | transactionNumber   | String | Max             | Required          | The payment transaction number. This should be the stripe transaction number if payment is managed by HealthDyne.              |
 | personCode          | String | 3               | Optional          | Number 0 to 9.                                                                                                                 |
@@ -161,8 +161,8 @@ next:
 | Field               | Type    | Character Limit | Required/Optional | Description                                                                                                                     |
 | :------------------ | :------ | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------------------------ |
 | planNumber          | String  | 10              | Required          | An identifier representing a specific insurance or benefit plan associated with a transaction for the client.                   |
-| secondaryPlanNumber |         |                 |                   |                                                                                                                                 |
-| tertiaryPlanNumber  |         |                 |                   |                                                                                                                                 |
+| secondaryPlanNumber |         |                 |                   | \<TBD>                                                                                                                          |
+| tertiaryPlanNumber  |         |                 |                   | \<TBD>                                                                                                                          |
 | clientItemCost      | Decimal |                 | Required          | The base cost of the item (e.g., medication, product, or service) billed to the client before any additional fees or discounts. |
 |                     |         |                 |                   |                                                                                                                                 |
 | clientDispenseFee   | Decimal |                 | Required          | A fee charged to the client for the dispensing or handling of the item.                                                         |
