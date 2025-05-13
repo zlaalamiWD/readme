@@ -240,7 +240,7 @@ The "Create Patient" endpoint uses the POST method to add a new patient record. 
 ```json
 {
   "patient": {
-    "patientKey":"12389990",
+    "patientKey": "12389990",
     "firstName": "JANE",
     "lastName": "DOE",
     "birthDate": "1956-03-02",
@@ -255,14 +255,19 @@ The "Create Patient" endpoint uses the POST method to add a new patient record. 
       "state": "FL",
       "zipCode": "02155",
       "countryCode": "US",
-      "defaultAddress":true
+      "defaultAddress": true
     },
     "contact": {
       "contactType": "PHONE",
       "contactAddress": "5712345678"
     },
     "allergies": [
-      "Amoxicillin"
+      "Amoxicillin",
+      "--- START PREGNANT, LACTATING, OR PLAN",
+      "NING TO BECOME PREGNANT WITHIN 90 DAYS -",
+      "--\n false \n--- END PREGNANT, LACTATING, ",
+      "OR PLANNING TO BECOME PREGNANT WITHIN 90",
+      " DAYS ---"
     ],
     "externalMedications": [
       {
@@ -276,6 +281,10 @@ The "Create Patient" endpoint uses the POST method to add a new patient record. 
 ```
 
 <br />
+
+> ❗️ Note:
+>
+> For pregnancy indicator, you will need to submit it under the allergies attribute shown in the sample above. It has to follow exactly the same template and the only value that should be changing is true or false. also the template needs to be submitted on a separate string from the allergies (see example above)
 
 Click here to see [POST Create Patient Request Data Object](https://docs.healthdyne.com/docs/patient-request-fields#request-object)
 
