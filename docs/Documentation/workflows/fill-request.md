@@ -213,7 +213,9 @@ Client must send a Fill request with following details:
     "signatureRequired": true
   },
   "insurance": {
-    "planNumber": "209235",
+    "planNumber": "58189",
+    "secondaryPlanNumber": "78654",
+    "tertiaryPlanNumber": "58200",
     "coPay": "32.50",
     "transactionNumber": "pi_305qndABfMSbKdKQ0NA1r4L5",
     "personCode": "001",
@@ -247,44 +249,48 @@ Click here to see [Submit Fill Response Data Object](https://docs.healthdyne.com
 
 ```json
 {
-    "fillRequestKey": "Fill26",
-    "scriptsKeys": [
-        {
-            "scriptsKey": "sc258",
-            "patientInsurance": {
-                "planNumber": "5140000",
-                "clientItemCost": 123.11,
-                "clientDispenseFee": 124.11,
-                "clientOtherFee": 125.2,
-                "clientCoPay": 126.66
-            }
-        },
-        {
-            "scriptsKey": "sc258testing",
-            "patientInsurance": {
-                "planNumber": "5140000",
-                "clientItemCost": 123.11,
-                "clientDispenseFee": 124.11,
-                "clientOtherFee": 125.2,
-                "clientCoPay": 126.66
-            }
-        }
-    ],
-    "shipping": {
-        "address": {
-            "line1": "16JUL20241206204211",
-            "line2": "16JUL20241206204213",
-            "line3": "16JUL20241206204213",
-            "city": "LAKELAND",
-            "state": "FL",
-            "zipCode": "33810",
-            "countryCode": "US"
-        },
-        "shippingCode": "POS 1M",
-        "saturdayDelivery": false,
-        "signatureRequired": false
+  "fillRequestKey": "Fill26",
+  "scriptsKeys": [
+    {
+      "scriptsKey": "sc258",
+      "patientInsurance": {
+        "planNumber": "12349",
+        "secondaryPlanNumber": "12348",
+        "tertiaryPlanNumber": "12347",
+        "clientItemCost": 123.11,
+        "clientDispenseFee": 124.11,
+        "clientOtherFee": 125.2,
+        "clientCoPay": 126.66
+      }
     },
-    "transactionNumber": "asvbbnh"
+    {
+      "scriptsKey": "sc258testing",
+      "patientInsurance": {
+        "planNumber": "12369",
+        "secondaryPlanNumber": "12389",
+        "tertiaryPlanNumber": "12347",
+        "clientItemCost": 123.11,
+        "clientDispenseFee": 124.11,
+        "clientOtherFee": 125.2,
+        "clientCoPay": 126.66
+      }
+    }
+  ],
+  "shipping": {
+    "address": {
+      "line1": "16JUL20241206204211",
+      "line2": "16JUL20241206204213",
+      "line3": "16JUL20241206204213",
+      "city": "LAKELAND",
+      "state": "FL",
+      "zipCode": "33810",
+      "countryCode": "US"
+    },
+    "shippingCode": "POS 1M",
+    "saturdayDelivery": false,
+    "signatureRequired": false
+  },
+  "transactionNumber": "asvbbnh"
 }
 ```
 
