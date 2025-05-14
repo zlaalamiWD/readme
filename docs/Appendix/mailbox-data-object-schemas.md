@@ -251,3 +251,24 @@ metadata:
 | Field  | Type   | Character Limit | Description                  |
 | :----- | :----- | :-------------- | :--------------------------- |
 | reason | String | 255             | Reason for the status if any |
+
+<br />
+
+### Clarified Event
+
+| Field         | Type                                                                                            | Character Limit | Description                                                                              |
+| :------------ | :---------------------------------------------------------------------------------------------- | :-------------- | :--------------------------------------------------------------------------------------- |
+| eventId       | String                                                                                          | max             | Unique event identifier in HealthDyne system.                                            |
+| eventDateUtc  | String                                                                                          | 27              | UTC timestamp of when the event occurred.                                                |
+| eventType     | String                                                                                          | 50              | Type of event, e.g., "RXSTATUS".                                                         |
+| status        | String                                                                                          | 20              | Current status of the event.                                                             |
+| statusMessage | String                                                                                          | max             | Descriptive message explaining the status.                                               |
+| scriptKey     | String                                                                                          | 50              | Unique identifier for the script being transferred which is initially defined by client. |
+| patientKey    | String                                                                                          | 50              | Unique identifier for the patient.                                                       |
+| detail        | [Received Detail](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#Received-detail) |                 | Nested object containing extra details specific to the event type                        |
+
+#### Clarified Detail
+
+| Field  | Type   | Character Limit | Description                  |
+| :----- | :----- | :-------------- | :--------------------------- |
+| reason | String | 255             | Reason for the status if any |
