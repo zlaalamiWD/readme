@@ -272,6 +272,27 @@ When a RxTransfer request can't be validated, HealthDyne generates a rejection e
 }
 ```
 
+## RxClarified
+
+#### Sample "Clarified" event
+
+```json
+{
+  "eventId": "306794",
+  "eventDateUtc": "2025-05-13T20:31:22.300632+00:00",
+  "eventType": "RXSTATUS",
+  "status": "Clarified",
+  "statusMessage": "TEST TEST",
+  "scriptKey": "fbbf557039844ba681e197d3831ebcfe",
+  "patientKey": "TPNS0025UAT237test3",
+  "detail": {
+    "reason": null
+  }
+}
+```
+
+<br />
+
 # Fill Request Status Events
 
 ## Submitted
