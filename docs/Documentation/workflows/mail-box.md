@@ -418,7 +418,7 @@ When a Rx or multiple Rx(s) in the order have been canceled pharmacy, HealthDyne
 > | 18   | Medication Needs Secondary Insurance               |
 > | 19   | Address Issue                                      |
 
-Once the Rx has been shipped successfully by pharmacy, an update is sent for each Rx within the order. This event will be  a ‘Shipped’ event sent for each Rx. For example, if an order has 2 RXs, you will receive 2 shipped messages.
+Once the Rx has been shipped successfully by pharmacy, an update is sent for each Rx within the order. This event will be a ‘Shipped’ event sent for each Rx. For example, if an order has 2 RXs, you will receive 2 shipped messages.
 
 ## Shipped
 
