@@ -225,11 +225,13 @@ metadata:
 
 ### RxCanceled detail
 
-| Field       | Type   | Character Limit | Description                                          |
-| :---------- | :----- | :-------------- | :--------------------------------------------------- |
-| orderNumber | String | 50              | Order number used to track this order.               |
-| scriptKey   | String | 50              | Unique ID associated with script key.                |
-| fillNumber  | Int    | 2               | Shows how many fills have been fulfilled for this Rx |
+| Field                   | Type   | Character Limit | Description                                                              |
+| :---------------------- | :----- | :-------------- | :----------------------------------------------------------------------- |
+| orderNumber             | String | 50              | Order number used to track this order.                                   |
+| scriptKey               | String | 50              | Unique ID associated with script key.                                    |
+| fillNumber              | Int    | 2               | Shows how many fills have been fulfilled for this Rx                     |
+| orderCanceledReasonCode | String | 2               | Code reason why the order was canceled                                   |
+| orderCanceledReasonDesc | String | max             | Code reason description to explain the reason why the order was canceled |
 
 ### Received Event
 
