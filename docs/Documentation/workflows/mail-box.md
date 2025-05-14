@@ -376,19 +376,49 @@ When a Rx or multiple Rx(s) in the order have been canceled pharmacy, HealthDyne
 
 ```json
 {
-    "eventId": "1000017",
-    "eventDateUtc": "2023-05-08T19:20:55.22818Z",
-    "eventType": "FILLREQUEST",
-    "fillRequestKey": "1000013",
-    "status": "RxCanceled",
-    "statusMessage": "Order canceled",
-    "detail": {
-        "orderNumber": "56789",
-        "scriptKey": "1000003",
-        "fillNumber": 0
-    }
+  "eventId": "1000017",
+  "eventDateUtc": "2023-05-08T19:20:55.22818Z",
+  "eventType": "FILLREQUEST",
+  "fillRequestKey": "1000013",
+  "status": "RxCanceled",
+  "statusMessage": "Order canceled",
+  "detail": {
+    "orderNumber": "56789",
+    "scriptKey": "1000003",
+    "fillNumber": 0,
+    "orderCanceledReasonCode": "19",
+    "orderCanceledReasonDesc": "There is an issue with your address or your medication is cold chain and requires a non-PO Box address. Please review and confirm your address details."
+  }
 }
 ```
+
+<br />
+
+> 📃 NOTE: below is the list of expected order canceled reason codes with their description
+>
+> | Code | Description                                        |
+> | :--- | :------------------------------------------------- |
+> | 1    | Short Term Out of Stock                            |
+> | 2    | Long Term Out of Stock                             |
+> | 3    | Non-Formulary Items                                |
+> | 4    | Invalid Insurance Information/Cannot Process Claim |
+> | 5    | Non-Contracted Pharmacy                            |
+> | 6    | Prior Authorization                                |
+> | 7    | Quantity/Day Supply Limit                          |
+> | 8    | Refill Too Soon                                    |
+> | 9    | Product Not Covered                                |
+> | 10   | DUR Clarification/Rx Clarification                 |
+> | 11   | Allergy Issue                                      |
+> | 12   | Duplicate or Newer Rx for Same Med/GPI             |
+> | 13   | Non-Matching Patient Information                   |
+> | 14   | Item Entry Error                                   |
+> | 15   | Patient Copay exceeds their Codal Threshold        |
+> | 16   | Rx Discontinued                                    |
+> | 17   | Patient Request                                    |
+> | 18   | Medication Needs Secondary Insurance               |
+> | 19   | Address Issue                                      |
+
+Once the Rx has been shipped successfully by pharmacy, an update is sent for each Rx within the order. This event will be  a ‘Shipped’ event sent for each Rx. For example, if an order has 2 RXs, you will receive 2 shipped messages.
 
 ## Shipped
 
