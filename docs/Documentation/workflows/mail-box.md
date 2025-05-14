@@ -274,6 +274,8 @@ When a RxTransfer request can't be validated, HealthDyne generates a rejection e
 
 ## RxClarified
 
+RxClarifiied events are generated when an Rx has a clarified prescription note. The event candidate is identified when an Rx has a clarified prescription note and no previous event generation.
+
 #### Sample "Clarified" event
 
 ```json
