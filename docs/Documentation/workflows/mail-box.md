@@ -117,8 +117,6 @@ The below table lists the potential response codes that can be received in respo
 }
 ```
 
-<br />
-
 # POST Request
 
 #### Sample POST Request
