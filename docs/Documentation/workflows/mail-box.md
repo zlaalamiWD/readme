@@ -57,7 +57,7 @@ The below table lists the potential response codes that can be received in respo
 | 401  | Unauthorized                                                                   |
 | 500  | Internal Server Error                                                          |
 
-#### Sample Status Response
+#### Sample Status Response *(RxTransfer)*
 
 ```json
 {
@@ -92,6 +92,32 @@ The below table lists the potential response codes that can be received in respo
     ]
 }
 ```
+
+#### Sample Status Response *(RxClarified)*
+
+```json
+{
+  "batchId": "ba205118-d0b2-403b-912a-acace449baea",
+  "count": 1,
+  "approximateRemainingCount": 1,
+  "messageList": [
+    {
+      "eventId": "306794",
+      "eventDateUtc": "2025-05-13T20:31:22.300632+00:00",
+      "eventType": "RXSTATUS",
+      "status": "Clarified",
+      "statusMessage": "TEST TEST",
+      "scriptKey": "fbbf557039844ba681e197d3831ebcfe",
+      "patientKey": "TPNS0025UAT237test3",
+      "detail": {
+        "reason": null
+      }
+    }
+  ]
+}
+```
+
+<br />
 
 # POST Request
 
