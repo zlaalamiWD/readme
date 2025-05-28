@@ -299,7 +299,8 @@ RxClarifiied events are generated when an Rx has a clarified prescription note. 
 
 ## Submitted
 
-HealthDyne will create the order after receiving a Fill Request by sending create order command in the downstream pharmacy management system. Once the order has been successfully created, HealthDyne will generate a ‘submitted’ order status message and queues the event up for the client to retrieve it.
+HealthDyne will create the order after receiving a Fill Request by sending create order command in the downstream pharmacy management system. Once the order has been successfully created, HealthDyne will generate a ‘submitted’ order status message and queues the event up for the client to retrieve it.\
+**Note:** scriptKey can contain multiple scriptKey separated by comma.
 
 #### sample "Submitted" event
 
@@ -313,6 +314,7 @@ HealthDyne will create the order after receiving a Fill Request by sending creat
     "statusMessage": "The order is being processed",
     "detail": {
         "orderNumber": "12345",
+       "scriptKey": "SampleScriptKey1,SampleScriptKey2",
         "fillNumber": 0
     }
 }
