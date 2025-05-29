@@ -112,15 +112,15 @@ metadata:
 
 ### Submitted
 
-| Field          | Type                                                                                                | Character Limit                      | Description                                         |
-| :------------- | :-------------------------------------------------------------------------------------------------- | :----------------------------------- | :-------------------------------------------------- |
-| eventId        | String                                                                                              | 4 bytes (32-bit signed int)          | Unique Event Identifier for the Fill Request.       |
-| eventDateUtc   | DateTime                                                                                            | YYYY-MM-DD T HH:MM:SS.microseconds Z | Date and time of the event in UTC (ISO 8601).       |
-| eventType      | String                                                                                              | 50                                   | Event type description.                             |
-| status         | String                                                                                              | 20                                   | Current status of the event.                        |
-| statusMessage  | String                                                                                              | max                                  | Descriptive message explaining the status.          |
-| FillRequestKey | String                                                                                              | 50                                   | Unique ID associated with fill request.             |
-| detail         | [RxVerified detail](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#rxverified-detail) |                                      | Contains details of fill request that was verified. |
+| Field          | Type                                                                                                     | Character Limit                      | Description                                         |
+| :------------- | :------------------------------------------------------------------------------------------------------- | :----------------------------------- | :-------------------------------------------------- |
+| eventId        | String                                                                                                   | 4 bytes (32-bit signed int)          | Unique Event Identifier for the Fill Request.       |
+| eventDateUtc   | DateTime                                                                                                 | YYYY-MM-DD T HH:MM:SS.microseconds Z | Date and time of the event in UTC (ISO 8601).       |
+| eventType      | String                                                                                                   | 50                                   | Event type description.                             |
+| status         | String                                                                                                   | 20                                   | Current status of the event.                        |
+| statusMessage  | String                                                                                                   | max                                  | Descriptive message explaining the status.          |
+| FillRequestKey | String                                                                                                   | 50                                   | Unique ID associated with fill request.             |
+| detail         | [Submitted detail](https://docs.healthdyne.com/v2.181/docs/mailbox-data-object-schemas#submitted-detail) |                                      | Contains details of fill request that was verified. |
 
 ### Submitted detail
 
