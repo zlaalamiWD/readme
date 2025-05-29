@@ -124,11 +124,11 @@ metadata:
 
 ### Submitted detail
 
-| Field       | Type   | Character Limit | Description                                                                |
-| :---------- | :----- | :-------------- | :------------------------------------------------------------------------- |
-| orderNumber | String | 50              | Order number used to track this order.                                     |
-| scriptKey   | String | Max             | Can have multiple comma(,) separated unique ID associated with script key. |
-| fillNumber  | String | 50              | Fill number that was dispensed.                                            |
+| Field       | Type   | Character Limit | Description                                                                 |
+| :---------- | :----- | :-------------- | :-------------------------------------------------------------------------- |
+| orderNumber | String | 50              | Order number used to track this order.                                      |
+| scriptKey   | String | Max             | Can have multiple comma (,) separated unique ID associated with script key. |
+| fillNumber  | String | 50              | Fill number that was dispensed.                                             |
 
 <br />
 
