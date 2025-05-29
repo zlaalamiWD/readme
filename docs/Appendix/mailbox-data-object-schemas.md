@@ -112,11 +112,25 @@ metadata:
 
 ### Submitted
 
-| Field        | Type     | Character Limit                      | Required/Optional | Description                                                                            |
-| :----------- | :------- | :----------------------------------- | :---------------- | :------------------------------------------------------------------------------------- |
-| eventId      | String   | 4 bytes (32-bit signed int)          | Required          | Unique Event Identifier for the Fill Request.                                          |
-| eventDateUtc | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Required          | Date and time of the event in UTC (ISO 8601).                                          |
-| scriptKeys   | Array    | 50 per value                         | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
+| Field          | Type                                                                                                | Character Limit                      | Description                                         |
+| :------------- | :-------------------------------------------------------------------------------------------------- | :----------------------------------- | :-------------------------------------------------- |
+| eventId        | String                                                                                              | 4 bytes (32-bit signed int)          | Unique Event Identifier for the Fill Request.       |
+| eventDateUtc   | DateTime                                                                                            | YYYY-MM-DD T HH:MM:SS.microseconds Z | Date and time of the event in UTC (ISO 8601).       |
+| eventType      | String                                                                                              | 50                                   | Event type description.                             |
+| status         | String                                                                                              | 20                                   | Current status of the event.                        |
+| statusMessage  | String                                                                                              | max                                  | Descriptive message explaining the status.          |
+| FillRequestKey | String                                                                                              | 50                                   | Unique ID associated with fill request.             |
+| detail         | [RxVerified detail](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#rxverified-detail) |                                      | Contains details of fill request that was verified. |
+
+### Submitted detail
+
+| Field       | Type   | Character Limit | Description                            |
+| :---------- | :----- | :-------------- | :------------------------------------- |
+| orderNumber | String | 50              | Order number used to track this order. |
+| scriptKey   | String | 50              | Unique ID associated with script key.  |
+| fillNumber  | String | 50              | Fill number that was dispensed.        |
+
+<br />
 
 ### RxVerified
 
