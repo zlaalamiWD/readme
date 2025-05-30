@@ -83,7 +83,8 @@ Click here to see [GET Patient Request Query Data](https://docs.healthdyne.com/d
     "contact": [
         {
             "contactType": "HOME PHONE",
-            "contactAddress": "3233731379"
+            "contactAddress": "3233731379",
+          	"emailAddress":"testemail@domain.com"
         }
     ],
     "externalMedications": [
