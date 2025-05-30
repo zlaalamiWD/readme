@@ -84,7 +84,7 @@ Click here to see [GET Patient Request Query Data](https://docs.healthdyne.com/d
         {
             "contactType": "HOME PHONE",
             "contactAddress": "3233731379",
-          	"emailAddress":"testemail@domain.com"
+          "emailAddress":"testemail@domain.com"
         }
     ],
     "externalMedications": [
@@ -351,7 +351,7 @@ The "Update Patient" endpoint uses the PUT method to modify the details of an ex
         "contact": {
             "contactType": "PHONE",
             "contactAddress": "5712345678",
-						"emailAddress":"testemail@email.com"
+          "emailAddress":"testemail@email.com"
         },
         "allergies": [
             "Amoxicillin"
