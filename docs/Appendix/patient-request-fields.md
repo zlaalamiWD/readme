@@ -51,6 +51,7 @@ next:
 | :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------- |
 | contactType    | String | 15              | Optional          | Patient Contact – Phone, Home Phone, Day Phone, Work Phone, Fax Number, Cellular Number, Alternate |
 | contactAddress | String | 10              | Required          | Contact Details. For instance: Populate phone number if contact type is phone. Format:XXXXXXXXXX   |
+| emailAddress   | String | 60              | Optional          | Patient Email Address or Email Id.                                                                 |
 
 \*Required if the Contact object is being provided in the Patient object.
 
