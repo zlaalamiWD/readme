@@ -47,11 +47,100 @@ next:
 
 # Contact
 
-| Field          | Type   | Character Limit | Required/Optional | Description                                                                                        |
-| :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------- |
-| contactType    | String | 15              | Optional          | Patient Contact – Phone, Home Phone, Day Phone, Work Phone, Fax Number, Cellular Number, Alternate |
-| contactAddress | String | 10              | Required          | Contact Details. For instance: Populate phone number if contact type is phone. Format:XXXXXXXXXX   |
-| emailAddress   | String | 60              | Optional          | Patient Email Address or Email Id.                                                                 |
+<Table align={["left","left","left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Field
+      </th>
+
+      <th>
+        Type
+      </th>
+
+      <th>
+        Character Limit
+      </th>
+
+      <th>
+        Required/Optional
+      </th>
+
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        contactType
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        15
+      </td>
+
+      <td>
+        Optional
+      </td>
+
+      <td>
+        Patient Contact – Phone, Home Phone, Day Phone, Work Phone, Fax Number, Cellular Number, Alternate
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        contactAddress
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        10
+      </td>
+
+      <td>
+        Required
+      </td>
+
+      <td>
+        Contact Details. For instance: Populate phone number if contact type is phone. Format:XXXXXXXXXX
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        emailAddress
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        60
+      </td>
+
+      <td>
+        Optional
+      </td>
+
+      <td>
+        Patient Email Address or Email Id.
+        **Note**: This field will be visible only if value is not null.
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 \*Required if the Contact object is being provided in the Patient object.
 
