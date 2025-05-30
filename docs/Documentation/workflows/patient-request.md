@@ -259,7 +259,8 @@ The "Create Patient" endpoint uses the POST method to add a new patient record. 
     },
     "contact": {
       "contactType": "PHONE",
-      "contactAddress": "5712345678"
+      "contactAddress": "5712345678",
+      "emailAddress":"testemail@email.com"
     },
     "allergies": [
       "Amoxicillin",
