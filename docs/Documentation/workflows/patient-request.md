@@ -349,7 +349,8 @@ The "Update Patient" endpoint uses the PUT method to modify the details of an ex
         },
         "contact": {
             "contactType": "PHONE",
-            "contactAddress": "5712345678"
+            "contactAddress": "5712345678",
+						"emailAddress":"testemail@email.com"
         },
         "allergies": [
             "Amoxicillin"
