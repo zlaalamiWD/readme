@@ -276,10 +276,11 @@ next:
 
 #### Response Object
 
-| Field      | Type   | Character Limit | Required/Optional | Description                         |
-| :--------- | :----- | :-------------- | :---------------- | :---------------------------------- |
-| patientKey | String | 50              | Required          | Unique patient ID in Client system. |
-| message    | String | max             | Required          | Status messages string.             |
+| Field              | Type   | Character Limit | Required/Optional | Description                         |
+| :----------------- | :----- | :-------------- | :---------------- | :---------------------------------- |
+| patientKey         | String | 50              | Required          | Unique patient ID in Client system. |
+| message            | String | max             | Required          | Status messages string.             |
+| epostPatientNumber | String | 10              | Required          | Unique patient number from EPost.   |
 
 # Update Patient Request
 
