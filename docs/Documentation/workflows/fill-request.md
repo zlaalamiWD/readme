@@ -12,7 +12,7 @@ next:
 ---
 # Fill Request:
 
-See [Fill](ref:post_v2-fill) API reference for request message fields.
+See [Fill](ref:put_v2-fill) API reference for request message fields.
 
 This API lets client define when the order needs to be initiated in HealthDyne system and also defines the number of prescriptions/scripts that need to be consolidated in one order. A client can also use the GET method of Fill Request to retrieve current status.
 
