@@ -295,7 +295,8 @@ Click here to see [POST Create Patient Request Data Object](https://docs.healthd
 ```json
 {
   "patientKey": "12389990",
-  "message": "The patient was added."
+  "message": "The patient was added.",
+  "epostPatientNumber" : "34322332"
 }
 ```
 
