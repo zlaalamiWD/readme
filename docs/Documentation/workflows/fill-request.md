@@ -49,35 +49,46 @@ Click here to see [GET Fill Request Query Data](https://docs.healthdyne.com/docs
 
 ```json
 {
-    "fillRequestKey": "ccdd5fd46a714cc09bc679f0365b2",
-    "submitted": [
-        {
-            "eventId": "295955",
-            "eventDateUtc": "2025-04-15T09:12:20.913021+00:00",
-            "scriptKeys": ["SampleScriptKey007"]
-        }
-    ],
-    "rxVerified": [
-        {
-            "eventId": "295965",
-            "eventDateUtc": "2025-04-15T09:16:48.804578+00:00",
-            "scriptKey": "24388f1b53c04b0a89534056c311ece6326",
-            "verifiedDate": null,
-            "statusMessage": "The Rx has been verified by the pharmacist (PV1)"
-        }
-    ],
-    "rxShipped": [
-        {
-            "eventId": "295985",
-            "eventDateUtc": "2025-04-17T09:19:53.417176+00:00",
-            "scriptKey": "24388f1b53c04b0a89534056c311ece6326",
-            "shipmentDate": "2025-04-17T06:00:02Z",
-            "trackingNumber": "7548253"
-        }
-    ],
-    "rxIssue": [],
-    "rxCanceled": [],
-    "rejected": []
+  "fillRequestKey": "ccdd5fd46a714cc09bc679f0365b2",
+  "submitted": [
+    {
+      "eventId": "295955",
+      "eventDateUtc": "2025-04-15T09:12:20.913021+00:00",
+      "scriptKeys": [
+        "SampleScriptKey007"
+      ]
+    }
+  ],
+  "rxVerified": [
+    {
+      "eventId": "295965",
+      "eventDateUtc": "2025-04-15T09:16:48.804578+00:00",
+      "scriptKey": "24388f1b53c04b0a89534056c311ece6326",
+      "verifiedDate": null,
+      "statusMessage": "The Rx has been verified by the pharmacist (PV1)"
+    }
+  ],
+  "rxShipped": [
+    {
+      "eventId": "295985",
+      "eventDateUtc": "2025-04-17T09:19:53.417176+00:00",
+      "scriptKey": "24388f1b53c04b0a89534056c311ece6326",
+      "shipmentDate": "2025-04-17T06:00:02Z",
+      "trackingNumber": "7548253"
+    }
+  ],
+  "rxIssue": [],
+  "rxCanceled": [],
+  "rejected": [],
+  "renewed": [
+    {
+      "eventId": "191171",
+      "eventDateUtc": "2025-06-02T11:23:23.248905Z",
+      "scriptKeys": [
+        "SampleScriptKey007"
+      ]
+    }
+  ]
 }
 ```
 
@@ -85,61 +96,74 @@ Click here to see [GET Fill Request Query Data](https://docs.healthdyne.com/docs
 
 ```json
 {
-    "fillRequestKey": "FillPatientSample1404",
-    "submitted": [
-        {
-            "eventId": "295955",
-            "eventDateUtc": "2025-04-15T09:12:20.913021+00:00",
-            "scriptKeys": ["SampleScriptKey1","SampleScriptKey2"]
-        }
-    ],
-    "rxVerified": [
-        {
-            "eventId": "288774",
-            "eventDateUtc": "2025-04-11T18:43:07.995451Z",
-            "scriptKey": "TestScriptKey1401",
-            "verifiedDate": null,
-            "statusMessage": "The Rx has been verified by the pharmacist (PV1)"
-        },
-        {
-            "eventId": "2887749",
-            "eventDateUtc": "2025-04-11T18:453:07.995451Z",
-            "scriptKey": "TestScriptKey14091",
-            "verifiedDate": null,
-            "statusMessage": "The Rx has been verified by the pharmacist (PV1)"
-        }
-    ],
-    "rxShipped": [],
-    "rxIssue": [
-        {
-            "eventId": "289773",
-            "eventDateUtc": "2025-04-15T09:30:57.585214+00:00",
-            "scriptKey": "TestScriptKey1401",
-            "issueMessage": "REJECTED 533 HEALTHDYNE RX REJECTED - "
-        }
-    ],
-    "rxCanceled": [
-        {
-            "eventId": "288784",
-            "eventDateUtc": "2025-04-11T18:50:00.418881Z",
-            "scriptKey": "TestScriptKey1401",
-            "statusMessage": "Cancelled"
-        },
-        {
-            "eventId": "2887864",
-            "eventDateUtc": "2025-04-11T18:50:00.418881Z",
-            "scriptKey": "TestScriptKey14091",
-            "statusMessage": "Cancelled"
-        }
-    ],
-    "rejected": [
-        {
-            "eventId": "156270",
-            "eventDateUtc": "2025-02-18T13:36:57.776842Z",
-            "scriptKeys": [],
-            "statusMessage": "RX: 10524420 found on OPEN order with External ID: NULL; "
-        }
-    ]
+  "fillRequestKey": "FillPatientSample1404",
+  "submitted": [
+    {
+      "eventId": "295955",
+      "eventDateUtc": "2025-04-15T09:12:20.913021+00:00",
+      "scriptKeys": [
+        "SampleScriptKey1",
+        "SampleScriptKey2"
+      ]
+    }
+  ],
+  "rxVerified": [
+    {
+      "eventId": "288774",
+      "eventDateUtc": "2025-04-11T18:43:07.995451Z",
+      "scriptKey": "TestScriptKey1401",
+      "verifiedDate": null,
+      "statusMessage": "The Rx has been verified by the pharmacist (PV1)"
+    },
+    {
+      "eventId": "2887749",
+      "eventDateUtc": "2025-04-11T18:453:07.995451Z",
+      "scriptKey": "TestScriptKey14091",
+      "verifiedDate": null,
+      "statusMessage": "The Rx has been verified by the pharmacist (PV1)"
+    }
+  ],
+  "rxShipped": [],
+  "rxIssue": [
+    {
+      "eventId": "289773",
+      "eventDateUtc": "2025-04-15T09:30:57.585214+00:00",
+      "scriptKey": "TestScriptKey1401",
+      "issueMessage": "REJECTED 533 HEALTHDYNE RX REJECTED - "
+    }
+  ],
+  "rxCanceled": [
+    {
+      "eventId": "288784",
+      "eventDateUtc": "2025-04-11T18:50:00.418881Z",
+      "scriptKey": "TestScriptKey1401",
+      "statusMessage": "Cancelled"
+    },
+    {
+      "eventId": "2887864",
+      "eventDateUtc": "2025-04-11T18:50:00.418881Z",
+      "scriptKey": "TestScriptKey14091",
+      "statusMessage": "Cancelled"
+    }
+  ],
+  "rejected": [
+    {
+      "eventId": "156270",
+      "eventDateUtc": "2025-02-18T13:36:57.776842Z",
+      "scriptKeys": [],
+      "statusMessage": "RX: 10524420 found on OPEN order with External ID: NULL; "
+    }
+  ],
+  "renewed": [
+    {
+      "eventId": "191171",
+      "eventDateUtc": "2025-06-02T11:23:23.248905Z",
+      "scriptKeys": [
+        "SampleScriptKey007",
+        "SampleScriptKey2"
+      ]
+    }
+  ]
 }
 ```
 
