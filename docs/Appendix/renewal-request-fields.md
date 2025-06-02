@@ -26,11 +26,11 @@ metadata:
 
 # patientInsurance Data Object
 
-| Field               | Type   | Character Limit | Required/Optional | Description                                                                                                   |
-| :------------------ | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------ |
-| planNumber          | String | 10              | Required          | An identifier representing a specific insurance or benefit plan associated with a transaction for the client. |
-| secondaryPlanNumber | String | 10              | Required          | An identifier representing a specific insurance or benefit plan associated with a transaction for the client. |
-| tertiaryPlanNumber  | String | 10              | Required          | An identifier representing a specific insurance or benefit plan associated with a transaction for the client. |
+| Field               | Type   | Character Limit | Required/Optional | Description                                                                                                                                                                                                                                                                                                                                      |
+| :------------------ | :----- | :-------------- | :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| planNumber          | String | 10              | Required          | An identifier representing a specific insurance or benefit plan associated with a transaction for the client.                                                                                                                                                                                                                                    |
+| secondaryPlanNumber | String | 10              | Required          | An identifier representing an additional insurance or benefit plan that serves as a secondary source of coverage for the client in a transaction is used when the primary plan does not fully cover the service or product. (Note: This attribute is only required if you are planning to provide tertiary insurance, otherwise it is optional.) |
+| tertiaryPlanNumber  | String | 10              | Required          | An identifier representing a third-tier insurance or benefit plan provides supplemental coverage when both the primary and secondary plans do not fully cover the transaction for the client.                                                                                                                                                    |
 
 # Shipping Data Object
 
