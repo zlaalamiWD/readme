@@ -565,6 +565,7 @@ HealthDyne will create the order after receiving a Renewal Request by sending cr
     "statusMessage": "The order is being processed",
     "detail": {
         "orderNumber": "7548504",
+      	"scriptKey": "ScRenewalEnd12",
         "fillNumber": 0
     }
 }
