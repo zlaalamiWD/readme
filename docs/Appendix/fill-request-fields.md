@@ -98,15 +98,15 @@ next:
 
 #### Response Object
 
-| Field          | Type                                                                                                | Character Limit | Required/Optional | Description                                                               |
-| :------------- | :-------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
-| fillRequestKey | String                                                                                              | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
-| submitted      | Array \[[submitted](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#submitted-detail)] |                 | Optional          | Array of submitted Objects containing event details.                      |
-| rxVerified     | Array \[[rxVerified](https://docs.healthdyne.com/docs/fill-request-fields#rxverified)]              |                 | Optional          | Array of rxVerified objects containing verified information.              |
-| rxShipped      | Array \[[rxshipped](https://docs.healthdyne.com/docs/fill-request-fields#rxshipped)]                |                 | Optional          | Array of rxShipped objects containing tracking/shipping information.      |
-| rxIssue        | Array \[[rxissue](https://docs.healthdyne.com/docs/fill-request-fields#rxissue)]                    |                 | Optional          | Array of rxIssue objects containing issued information.                   |
-| rxCanceled     | Array \[[rxcanceled](https://docs.healthdyne.com/docs/fill-request-fields#rxcanceled)]              |                 | Optional          | Array of rxCanceled objects containing cancel reason information.         |
-| renewed        | Array \[[renewed](https://docs.healthdyne.com/docs/fill-request-fields#submitted)]                  |                 | Optional          | Array of submitted Objects containing event details.                      |
+| Field          | Type                                                                                         | Character Limit | Required/Optional | Description                                                               |
+| :------------- | :------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
+| fillRequestKey | String                                                                                       | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
+| submitted      | Array \[[submitted](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#submitted)] |                 | Optional          | Array of submitted Objects containing event details.                      |
+| rxVerified     | Array \[[rxVerified](https://docs.healthdyne.com/docs/fill-request-fields#rxverified)]       |                 | Optional          | Array of rxVerified objects containing verified information.              |
+| rxShipped      | Array \[[rxshipped](https://docs.healthdyne.com/docs/fill-request-fields#rxshipped)]         |                 | Optional          | Array of rxShipped objects containing tracking/shipping information.      |
+| rxIssue        | Array \[[rxissue](https://docs.healthdyne.com/docs/fill-request-fields#rxissue)]             |                 | Optional          | Array of rxIssue objects containing issued information.                   |
+| rxCanceled     | Array \[[rxcanceled](https://docs.healthdyne.com/docs/fill-request-fields#rxcanceled)]       |                 | Optional          | Array of rxCanceled objects containing cancel reason information.         |
+| renewed        | Array \[[renewed](https://docs.healthdyne.com/docs/fill-request-fields#submitted)]           |                 | Optional          | Array of submitted Objects containing event details.                      |
 
 ***
 
