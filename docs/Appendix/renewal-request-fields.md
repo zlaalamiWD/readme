@@ -9,17 +9,7 @@ metadata:
 >
 > An empty string "" is considered a value and validation rules will apply (length/valid code/etc). Only null or missing elements will use default values.
 
-# Renewal Request Status Constant Data Objects
-
-### Renewed
-
-| Field        | Type     | Character Limit                      | Required/Optional | Description                                                                            |
-| :----------- | :------- | :----------------------------------- | :---------------- | :------------------------------------------------------------------------------------- |
-| eventId      | String   | 4 bytes (32-bit signed int)          | Required          | Unique Event Identifier for the Fill Request.                                          |
-| eventDateUtc | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Required          | Date and time of the event in UTC (ISO 8601).                                          |
-| scriptKeys   | Array    | 50 per value                         | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
-
-# Renewal Request Data Object
+# # Renewal Request Data Object
 
 | Field          | Type                                                                                                | Character Limit | Description                                                                  |
 | :------------- | :-------------------------------------------------------------------------------------------------- | :-------------- | :--------------------------------------------------------------------------- |
