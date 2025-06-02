@@ -258,9 +258,9 @@ metadata:
 | statusMessage | String                                                                                          | max             | Descriptive message explaining the status.                                               |
 | scriptKey     | String                                                                                          | 50              | Unique identifier for the script being transferred which is initially defined by client. |
 | patientKey    | String                                                                                          | 50              | Unique identifier for the patient.                                                       |
-| detail        | [Received Detail](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#Received-detail) |                 | Nested object containing extra details specific to the event type                        |
+| detail        | [Received detail](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#Received-detail) |                 | Nested object containing extra details specific to the event type                        |
 
-#### Received Detail
+#### Received detail
 
 | Field  | Type   | Character Limit | Description                  |
 | :----- | :----- | :-------------- | :--------------------------- |
@@ -279,10 +279,32 @@ metadata:
 | statusMessage | String                                                                                          | max             | Descriptive message explaining the status.                                               |
 | scriptKey     | String                                                                                          | 50              | Unique identifier for the script being transferred which is initially defined by client. |
 | patientKey    | String                                                                                          | 50              | Unique identifier for the patient.                                                       |
-| detail        | [Received Detail](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#Received-detail) |                 | Nested object containing extra details specific to the event type                        |
+| detail        | [Received detail](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#Received-detail) |                 | Nested object containing extra details specific to the event type                        |
 
-#### Clarified Detail
+#### Clarified detail
 
 | Field  | Type   | Character Limit | Description                  |
 | :----- | :----- | :-------------- | :--------------------------- |
 | reason | String | 255             | Reason for the status if any |
+
+<br />
+
+### Renewed
+
+| Field          | Type                                                                                                 | Character Limit                      | Description                                            |
+| :------------- | :--------------------------------------------------------------------------------------------------- | :----------------------------------- | :----------------------------------------------------- |
+| eventId        | String                                                                                               | 4 bytes (32-bit signed int)          | Unique Event Identifier for the Fill Request.          |
+| eventDateUtc   | DateTime                                                                                             | YYYY-MM-DD T HH:MM:SS.microseconds Z | Date and time of the event in UTC (ISO 8601).          |
+| eventType      | String                                                                                               | 50                                   | Event type description.                                |
+| status         | String                                                                                               | 20                                   | Current status of the event.                           |
+| statusMessage  | String                                                                                               | max                                  | Descriptive message explaining the status.             |
+| FillRequestKey | String                                                                                               | 50                                   | Unique ID associated with renewal request.             |
+| detail         | [Renewed detail](https://docs.healthdyne.com/v2.181/docs/mailbox-data-object-schemas#renewed-detail) |                                      | Contains details of renewal request that was verified. |
+
+### Renewed detail
+
+| Field       | Type   | Character Limit | Description                                                                 |
+| :---------- | :----- | :-------------- | :-------------------------------------------------------------------------- |
+| orderNumber | String | 50              | Order number used to track this order.                                      |
+| scriptKey   | String | Max             | Can have multiple comma (,) separated unique ID associated with script key. |
+| fillNumber  | String | 50              | Fill number that was dispensed.                                             |
