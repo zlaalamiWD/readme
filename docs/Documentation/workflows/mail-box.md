@@ -547,8 +547,6 @@ Once the Rx has been adjudicated successfully by pharmacy, an update is sent for
 }
 ```
 
-# Renewal Request Status Events
-
 ## Renewed
 
 HealthDyne will create the order after receiving a Renewal Request by sending create order command in the downstream pharmacy management system. Once the order has been successfully created, HealthDyne will generate a ‘renewed’ order status message and queues the event up for the client to retrieve it.
