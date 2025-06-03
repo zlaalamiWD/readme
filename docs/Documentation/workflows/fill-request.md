@@ -518,7 +518,7 @@ Click here to see [Submit Renewal Request Data Object](https://docs.healthdyne.c
 }
 ```
 
-Click here to see [Submit Renewal Response Data Object](https://docs.healthdyne.com/docs/renewal-request-fields#renewal-request-response-object-1)
+Click here to see [Submit Renewal Response Data Object](https://docs.healthdyne.com/docs/fill-request-fields#renewal-response-object)
 
 # Fill Request Status Mailbox Events
 
