@@ -327,7 +327,7 @@ next:
 | zipCode     | String | 10              | Required          | Format NNNNN or NNNNN-NNNN                         |
 | countryCode | String | 2               | Optional          | ISO-3166 2 character country code. Defaults to US. |
 
-#### Response Object
+#### Renewal Request Response Object
 
 | Field          | Type   | Character Limit | Required/Optional | Description                                                                  |
 | :------------- | :----- | :-------------- | :---------------- | :--------------------------------------------------------------------------- |
