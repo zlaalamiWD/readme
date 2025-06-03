@@ -442,7 +442,7 @@ This API lets the client initiate an outreach a request to the Physician for a n
 
 # Submit Renewal Request
 
-API field validation information in Appendix [Renewal Request Fields](https://docs.healthdyne.com/docs/renewal-request-fields#renewal-request-data-object)
+API field validation information in Appendix [Renewal Request Fields](https://docs.healthdyne.com/docs/fill-request-fields#renewal-request-data-object)
 
 Client must send a Renewal request with following details:
 
