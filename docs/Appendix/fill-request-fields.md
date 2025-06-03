@@ -288,20 +288,20 @@ next:
 
 # Renewal Request Data Object
 
-| Field          | Type                                                                                             | Character Limit | Description                                                                  |
-| :------------- | :----------------------------------------------------------------------------------------------- | :-------------- | :--------------------------------------------------------------------------- |
-| fillRequestKey | String                                                                                           | 50              | Unique ID assigned by sending pharmacy to each renewal request for tracking. |
-| scriptKeys     | Object [scriptKeys](https://docs.healthdyne.com/docs/fill-request-fields#scriptkeys-data-object) | 50 per value    | List of Array of scriptKeys Object.                                          |
-| shipping       | Object [(shipping)](https://docs.healthdyne.com/docs/rfill-request-fields#shipping-data-object)  |                 | Object containing shipping information for the order.                        |
+| Field          | Type                                                                                                   | Character Limit | Description                                                                  |
+| :------------- | :----------------------------------------------------------------------------------------------------- | :-------------- | :--------------------------------------------------------------------------- |
+| fillRequestKey | String                                                                                                 | 50              | Unique ID assigned by sending pharmacy to each renewal request for tracking. |
+| scriptKeys     | Object [scriptKeys](https://docs.healthdyne.com/docs/fill-request-fields#scriptkeys-data-object)       | 50 per value    | List of Array of scriptKeys Object.                                          |
+| shipping       | Object [(shipping)](https://docs.healthdyne.com/docs/fill-request-fields#renewal-shipping-data-object) |                 | Object containing shipping information for the order.                        |
 
 # scriptKeys Data Object
 
-| Field            | Type                                                                                                         | Character Limit | Required/Optional | Description                                           |
-| :--------------- | :----------------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :---------------------------------------------------- |
-| scriptKey        | String                                                                                                       | 50              | Required          | Unique Id associated with script request              |
-| patientInsurance | Object [patientInsurance](https://docs.healthdyne.com/docs/fill-request-fields#patientinsurance-data-object) |                 | Required          | Object containing shipping information for the order. |
+| Field            | Type                                                                                                                 | Character Limit | Required/Optional | Description                                           |
+| :--------------- | :------------------------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :---------------------------------------------------- |
+| scriptKey        | String                                                                                                               | 50              | Required          | Unique Id associated with script request              |
+| patientInsurance | Object [patientInsurance](https://docs.healthdyne.com/docs/fill-request-fields#renewal-patientinsurance-data-object) |                 | Required          | Object containing shipping information for the order. |
 
-# patientInsurance Data Object
+# Renewal patientInsurance Data Object
 
 | Field               | Type   | Character Limit | Required/Optional | Description                                                                                                                                                                                                                                                                                                                                      |
 | :------------------ | :----- | :-------------- | :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -309,13 +309,13 @@ next:
 | secondaryPlanNumber | String | 10              | Required          | An identifier representing an additional insurance or benefit plan that serves as a secondary source of coverage for the client in a transaction is used when the primary plan does not fully cover the service or product. (Note: This attribute is only required if you are planning to provide tertiary insurance, otherwise it is optional.) |
 | tertiaryPlanNumber  | String | 10              | Required          | An identifier representing a third-tier insurance or benefit plan provides supplemental coverage when both the primary and secondary plans do not fully cover the transaction for the client.                                                                                                                                                    |
 
-# Shipping Data Object
+# Renewal Shipping Data Object
 
-| Field   | Type                                                                                         | Character Limit | Required/Optional | Description                                                       |
-| :------ | :------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :---------------------------------------------------------------- |
-| address | Object [(address)](https://docs.healthdyne.com/docs/fill-request-fields#address-data-object) |                 | Required          | Object containing address information for order to be shipped to. |
+| Field   | Type                                                                                                 | Character Limit | Required/Optional | Description                                                       |
+| :------ | :--------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :---------------------------------------------------------------- |
+| address | Object [(address)](https://docs.healthdyne.com/docs/fill-request-fields#renewal-address-data-object) |                 | Required          | Object containing address information for order to be shipped to. |
 
-# Address Data Object
+# Renewal Address Data Object
 
 | Field       | Type   | Character Limit | Required/Optional | Description                                        |
 | :---------- | :----- | :-------------- | :---------------- | :------------------------------------------------- |
