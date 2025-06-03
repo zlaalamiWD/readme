@@ -518,7 +518,7 @@ Click here to see [Submit Renewal Request Data Object](https://docs.healthdyne.c
 }
 ```
 
-Click here to see \[Submit Renewal Response Data Object]\([https://docs.healthdyne.com/docs/renewal-request-fields#response-object-1](https://docs.healthdyne.com/docs/renewal-request-fields#response-object-1)
+Click here to see [Submit Renewal Response Data Object](https://docs.healthdyne.com/docs/renewal-request-fields#response-object-1)
 
 # Fill Request Status Mailbox Events
 
@@ -547,3 +547,7 @@ When an Order is successfully created, and then one of the Rx is subsequently re
 # RxCancel
 
 When a Rx or multiple Rx(s) in the order have been canceled pharmacy, HealthDyne will send an update at Rx level for each Rx in the order notifying of the canceled status. By default, unless order split has been configured for the client, the entire order will be canceled when there is an issue with any of the Rx in the same order. Cancelled Rx that have not also been rejected due to "RxIssue" are available to be assigned to a new Fill Request without additional action via the Script API. See [Fill Request RxCancel Status Event](doc:mail-box#rxcancel).
+
+# Renewed Status
+
+HealthDyne will create the order after receiving a Renewal Request by sending create order command in the downstream pharmacy management system. Once the order has been successfully created, HealthDyne will generate a ‘renewed’ order status message and queues the event up for the client to retrieve it. See [Renewal Request Submitted Status Event](doc:mail-box#renewed).
