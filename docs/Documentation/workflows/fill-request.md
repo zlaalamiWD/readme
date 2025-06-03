@@ -507,7 +507,7 @@ Client must send a Renewal request with following details:
 }
 ```
 
-Click here to see [Submit Renewal Request Data Object](https://docs.healthdyne.com/docs/fill-request-fields#request-object)
+Click here to see [Submit Renewal Request Data Object](https://docs.healthdyne.com/docs/fill-request-fields#renewal-request-data-object)
 
 #### Sample Submit Fill Response
 
