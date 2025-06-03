@@ -326,3 +326,10 @@ next:
 | state       | String | 2               | Required          | US State Abbreviation Code                         |
 | zipCode     | String | 10              | Required          | Format NNNNN or NNNNN-NNNN                         |
 | countryCode | String | 2               | Optional          | ISO-3166 2 character country code. Defaults to US. |
+
+#### Response Object
+
+| Field          | Type   | Character Limit | Required/Optional | Description                                                                  |
+| :------------- | :----- | :-------------- | :---------------- | :--------------------------------------------------------------------------- |
+| fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each renewal request for tracking. |
+| message        | String | Max             | Required          | Status messages string.                                                      |
