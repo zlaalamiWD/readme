@@ -507,7 +507,7 @@ Client must send a Renewal request with following details:
 }
 ```
 
-Click here to see [Submit Renewal Request Data Object](https://docs.healthdyne.com/docs/renewal-request-fields#request-object)
+Click here to see [Submit Renewal Request Data Object](https://docs.healthdyne.com/docs/fill-request-fields#request-object)
 
 #### Sample Submit Fill Response
 
@@ -518,7 +518,7 @@ Click here to see [Submit Renewal Request Data Object](https://docs.healthdyne.c
 }
 ```
 
-Click here to see [Submit Renewal Response Data Object](https://docs.healthdyne.com/docs/renewal-request-fields#response-object-1)
+Click here to see [Submit Renewal Response Data Object](https://docs.healthdyne.com/docs/renewal-request-fields#renewal-request-response-object-1)
 
 # Fill Request Status Mailbox Events
 
