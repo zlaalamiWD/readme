@@ -7,7 +7,7 @@ metadata:
 ---
 # Renewal Request:
 
-See [Renewal](ref:post_v2-renewal) API reference for request message fields.
+See [Renewal](ref:put_v2-fill) API reference for request message fields.
 
 This API lets the client initiate an outreach a request to the Physician for a new prescription on behalf of the patient. The API validates that the client has received a Proactive Renewal mail box event and requests that the client get approval from the patient for us to outreach to their physician.
 
