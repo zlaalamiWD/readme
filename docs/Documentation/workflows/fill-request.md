@@ -434,7 +434,7 @@ Click here to see [Cancel Fill Request Data Object](https://docs.healthdyne.com/
 
 Click here to see [Cancel Response Data Object](https://docs.healthdyne.com/docs/fill-request-fields#response-object-3)
 
-# Renewal Request:
+# **Renewal Request:**
 
 See [Renewal](ref:put_v2-fill) API reference for request message fields.
 
