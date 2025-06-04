@@ -1,7 +1,7 @@
 ---
 title: Renewal Request
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
