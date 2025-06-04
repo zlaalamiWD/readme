@@ -348,7 +348,7 @@ next:
       </td>
 
       <td>
-        Patient's Epost Number.
+        Patient's ePost Number.
         **Note**: This field will only be visible for DTC client.
       </td>
     </tr>
