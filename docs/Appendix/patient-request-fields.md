@@ -332,7 +332,7 @@ next:
 
     <tr>
       <td>
-        epostPatientNum
+        epostPatientNumber
       </td>
 
       <td>
