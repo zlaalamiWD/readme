@@ -53,7 +53,7 @@ Click here to see [GET Patient Request Query Data](https://docs.healthdyne.com/d
     "firstName": "TEST",
     "lastName": "TESTREADPATIENT17",
     "gender": "F",
-    "epostPatientNumber": "727793",
+    "epostPatientNum": "727793",
     "patientLanguage": "ENG",
     "birthDate": "1997-02-03",
     "healthCondition": [],
@@ -297,7 +297,7 @@ Click here to see [POST Create Patient Request Data Object](https://docs.healthd
 {
   "patientKey": "12389990",
   "message": "The patient was added.",
-  "epostPatientNumber" : "34322332"
+  "epostPatientNumber" : 7276199
 }
 ```
 
