@@ -576,11 +576,11 @@ next:
 
 #### Response Object
 
-| Field              | Type   | Character Limit | Description                         |
-| :----------------- | :----- | :-------------- | :---------------------------------- |
-| patientKey         | String | 50              | Unique patient ID in Client system. |
-| message            | String | max             | Status messages string.             |
-| epostPatientNumber | String | 10              | Unique patient number from ePost.   |
+| Field              | Type    | Character Limit | Description                         |
+| :----------------- | :------ | :-------------- | :---------------------------------- |
+| patientKey         | String  | 50              | Unique patient ID in Client system. |
+| message            | String  | max             | Status messages string.             |
+| epostPatientNumber | Integer |                 | Unique patient number from ePost.   |
 
 # Update Patient Request
 
