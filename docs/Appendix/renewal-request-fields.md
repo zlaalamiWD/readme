@@ -1,7 +1,7 @@
 ---
 title: Renewal Request Data Object (Schemas)
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
