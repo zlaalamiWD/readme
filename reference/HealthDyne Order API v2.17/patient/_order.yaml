@@ -1,1 +1,8 @@
-[]
+- get_v2-patient
+- post_v2-patient
+- put_v2-patient
+- get_v2-patient-find
+- delete_v2-patient-insurance
+- get_v2-patient-insurance
+- post_v2-patient-insurance
+- get_v2-patient-prescription
