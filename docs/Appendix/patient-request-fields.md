@@ -576,11 +576,84 @@ next:
 
 #### Response Object
 
-| Field              | Type    | Character Limit | Description                         |
-| :----------------- | :------ | :-------------- | :---------------------------------- |
-| patientKey         | String  | 50              | Unique patient ID in Client system. |
-| message            | String  | max             | Status messages string.             |
-| epostPatientNumber | Integer |                 | Unique patient number from ePost.   |
+<Table align={["left","left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Field
+      </th>
+
+      <th>
+        Type
+      </th>
+
+      <th>
+        Character Limit
+      </th>
+
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        patientKey
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        50
+      </td>
+
+      <td>
+        Unique patient ID in Client system.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        message
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        max
+      </td>
+
+      <td>
+        Status messages string.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        epostPatientNumber
+      </td>
+
+      <td>
+        Integer
+      </td>
+
+      <td>
+
+      </td>
+
+      <td>
+        Unique patient number from ePost.
+        **Note**: This field will appear in response only if EPostRxPatientNumberEnabled flag for client is enabled.
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 # Update Patient Request
 
@@ -592,7 +665,81 @@ next:
 
 #### Response Object
 
-| Field      | Type   | Character Limit | Description                         |
-| :--------- | :----- | :-------------- | :---------------------------------- |
-| patientKey | String | 50              | Unique patient ID in Client system. |
-| message    | String | max             | Status messages string.             |
+<Table align={["left","left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Field
+      </th>
+
+      <th>
+        Type
+      </th>
+
+      <th>
+        Character Limit
+      </th>
+
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        patientKey
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        50
+      </td>
+
+      <td>
+        Unique patient ID in Client system.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        message
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        max
+      </td>
+
+      <td>
+        Status messages string.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        epostPatientNumber
+      </td>
+
+      <td>
+        Integer
+      </td>
+
+      <td>
+
+      </td>
+
+      <td>
+        Unique patient number from ePost.
+        **Note**: This field will appear in response only if EPostRxPatientNumberEnabled flag for client is enabled.
+      </td>
+    </tr>
+  </tbody>
+</Table>
