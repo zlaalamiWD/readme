@@ -376,7 +376,8 @@ Click here to see [PUT Update Patient Request Data Object](https://docs.healthdy
 ```json
 {
   "patientKey": "12389990",
-  "message": "The patient was updated."
+  "message": "The patient was updated.",
+  "epostPatientNumber": 727793
 }
 ```
 
