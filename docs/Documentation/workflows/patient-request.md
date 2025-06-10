@@ -246,6 +246,7 @@ The "Create Patient" endpoint uses the POST method to add a new patient record. 
     "birthDate": "1956-03-02",
     "gender": "F",
     "patientLanguage": "ENG",
+		"pregnancyIndicator": true,
     "address": {
       "addressType": "HOME",
       "line1": "100 Rivers Edge Dr.",
