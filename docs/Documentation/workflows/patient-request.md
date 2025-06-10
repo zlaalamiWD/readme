@@ -239,45 +239,45 @@ The "Create Patient" endpoint uses the POST method to add a new patient record. 
 
 ```json
 {
-  "patient": {
-    "patientKey": "12389990",
-    "firstName": "JANE",
-    "lastName": "DOE",
-    "birthDate": "1956-03-02",
-    "gender": "F",
-    "patientLanguage": "ENG",
-		"pregnancyIndicator": true,
-    "address": {
-      "addressType": "HOME",
-      "line1": "100 Rivers Edge Dr.",
-      "line2": null,
-      "line3": null,
-      "city": "Temple Terrace",
-      "state": "FL",
-      "zipCode": "02155",
-      "countryCode": "US",
-      "defaultAddress": true
-    },
-    "contact": {
-      "contactType": "PHONE",
-      "contactAddress": "5712345678"
-    },
-    "allergies": [
-      "Amoxicillin",
-      "--- START PREGNANT, LACTATING, OR PLAN",
-      "NING TO BECOME PREGNANT WITHIN 90 DAYS -",
-      "--\n false \n--- END PREGNANT, LACTATING, ",
-      "OR PLANNING TO BECOME PREGNANT WITHIN 90",
-      " DAYS ---"
-    ],
-    "externalMedications": [
-      {
-        "ndc": "00045049660",
-        "startDate": "2022-03-02",
-        "endDate": "2022-04-02"
-      }
-    ]
-  }
+    "patient": {
+        "patientKey": "12389990",
+        "firstName": "JANE",
+        "lastName": "DOE",
+        "birthDate": "1956-03-02",
+        "gender": "F",
+        "patientLanguage": "ENG",
+        "pregnancyIndicator": true,
+        "address": {
+            "addressType": "HOME",
+            "line1": "100 Rivers Edge Dr.",
+            "line2": null,
+            "line3": null,
+            "city": "Temple Terrace",
+            "state": "FL",
+            "zipCode": "02155",
+            "countryCode": "US",
+            "defaultAddress": true
+        },
+        "contact": {
+            "contactType": "PHONE",
+            "contactAddress": "5712345678"
+        },
+        "allergies": [
+            "Amoxicillin",
+            "--- START PREGNANT, LACTATING, OR PLAN",
+            "NING TO BECOME PREGNANT WITHIN 90 DAYS -",
+            "--\n false \n--- END PREGNANT, LACTATING, ",
+            "OR PLANNING TO BECOME PREGNANT WITHIN 90",
+            " DAYS ---"
+        ],
+        "externalMedications": [
+            {
+                "ndc": "00045049660",
+                "startDate": "2022-03-02",
+                "endDate": "2022-04-02"
+            }
+        ]
+    }
 }
 ```
 
