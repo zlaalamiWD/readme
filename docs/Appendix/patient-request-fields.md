@@ -181,9 +181,9 @@ next:
 
 #### Request Object
 
-| Field   | Type                                                                                       | Character Limit | Required/Optional | Description                                       |
-| :------ | :----------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------ |
-| patient | Object [(patient)](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#patient) |                 | Required          | Object containing patient’s personal information. |
+| Field   | Type                                                                                | Character Limit | Required/Optional | Description                                       |
+| :------ | :---------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------ |
+| patient | Object [(patient)](https://docs.healthdyne.com/docs/patient-request-fields#patient) |                 | Required          | Object containing patient’s personal information. |
 
 #### Response Object
 
@@ -196,9 +196,9 @@ next:
 
 #### Request Object
 
-| Field   | Type                                                                                       | Character Limit | Required/Optional | Description                                       |
-| :------ | :----------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------ |
-| patient | Object [(patient)](https://docs.healthdyne.com/v2.171/docs/patient-request-fields#patient) |                 | Required          | Object containing patient’s personal information. |
+| Field   | Type                                                                                | Character Limit | Required/Optional | Description                                       |
+| :------ | :---------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------ |
+| patient | Object [(patient)](https://docs.healthdyne.com/docs/patient-request-fields#patient) |                 | Required          | Object containing patient’s personal information. |
 
 #### Response Object
 
