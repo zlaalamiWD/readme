@@ -336,6 +336,7 @@ The "Update Patient" endpoint uses the PUT method to modify the details of an ex
         "birthDate": "1956-03-02",
         "gender": "F",
         "patientLanguage": "ENG",
+        "pregnancyIndicator": true,
         "address": {
             "addressType": "HOME",
             "line1": "100 Rivers Edge Dr.",
