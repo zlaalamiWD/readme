@@ -336,7 +336,7 @@ next:
       </td>
 
       <td>
-        String
+        Integer
       </td>
 
       <td>
