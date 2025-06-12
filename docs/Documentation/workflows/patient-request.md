@@ -53,7 +53,7 @@ Click here to see [GET Patient Request Query Data](https://docs.healthdyne.com/d
     "firstName": "TEST",
     "lastName": "TESTREADPATIENT17",
     "gender": "F",
-    "epostPatientNum": "727793",
+    "epostPatientNum": 727793,
     "patientLanguage": "ENG",
     "birthDate": "1997-02-03",
     "healthCondition": [],
