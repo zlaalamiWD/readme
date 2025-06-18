@@ -90,7 +90,7 @@ Click here to see [GET Patient Request Query Data](https://docs.healthdyne.com/d
         "00002445385",
         "99207012010"
     ],
-    "pregnancyIndicator": "N",
+    "pregnancyIndicator": false,
     "allergies": [
         "CEPHALOSPORINS",
         "SALICYLATES"
