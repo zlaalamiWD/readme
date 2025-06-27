@@ -159,10 +159,7 @@ metadata:
       </td>
 
       <td>
-        Only Valid list of ISO-3digit language codes are accepted:                              ENG English                                           SPA Spanish                                         RUS Russian                                       SOM Somali                                         ARA Arabic                                             ZHO Chinese(Simplified)                        VIE VietnameseFAS Farsi
-
-        FRA FrenchDEU GermanHMN Hmong
-        KOR Korean
+        Only Valid list of ISO-3digit language codes are accepted:                              ENG English                                           SPA Spanish                                         RUS Russian                                       SOM Somali                                         ARA Arabic                                             ZHO Chinese(Simplified)                        VIE Vietnamese'                                   FAS Farsi                                                FRA French                                          DEU German                                      HMN HmongKOR Korean
         RON Romanian
         SWA Swahili
         MYA Burmese
@@ -174,7 +171,7 @@ metadata:
   </tbody>
 </Table>
 
-### Prescription
+### Prescriptions
 
 | Field            | Type     | CharacterLimit | Required/Optional | Notes                                                                        |
 | :--------------- | :------- | :------------- | :---------------- | :--------------------------------------------------------------------------- |
@@ -201,7 +198,7 @@ metadata:
 | Address1 | String | 50             | R                 |                            |
 | Address2 | String | 50             | O                 |                            |
 | City     | String | 50             | R                 |                            |
-| Phone    | String | 15             | R                 | Format NNNNNNNNNN          |
+| Phone    | String | 15             | O                 | Format NNNNNNNNNN          |
 | State    | String | 2              | R                 | US State Abbreviation Code |
 | Zip      | String | 9              | R                 | Format NNNNN, NNNNNNNNN    |
 
@@ -224,13 +221,13 @@ metadata:
 | Address1 | String | 50             | R                 |                                                                   |
 | Address2 | String | 50             | O                 |                                                                   |
 | City     | String | 50             | R                 |                                                                   |
-| Phone    | String | 15             | R                 | Format NNNNNNNNNN                                                 |
+| Phone    | String | 15             | O                 | Format NNNNNNNNNN                                                 |
 | State    | String | 2              | R                 | US State Abbreviation Code                                        |
 | Zip      | String | 9              | R                 | Format NNNNN, NNNNNNNNN                                           |
 | Name     | String | 100            | R                 | For business address shipments. (E.g. John Smith c/o WellDyneRx). |
 | ClinicId | String | 36             | O                 |                                                                   |
 
-### Drug
+### Drug (for prescriptions Object)
 
 | Field         | Type   | CharacterLimit | Required/Optional | Notes              |
 | :------------ | :----- | :------------- | :---------------- | :----------------- |
@@ -239,17 +236,17 @@ metadata:
 | Name          | String | 50             | R                 |                    |
 | UnitOfMeasure | String | 10             | R                 |                    |
 
-### Refill
+### Refill (for Pharmacy Object)
 
 | Field             | Type | CharacterLimit | Required/Optional | Notes                                                                                                                                                                                    |
 | :---------------- | :--- | :------------- | :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| FillNumber        | Int  | 999            | R                 |                                                                                                                                                                                          |
+| FillNumber        | Int  | 999            | O                 |                                                                                                                                                                                          |
 | NextRefillDate    | Date |                | R                 | Prescription’s next available refill date                                                                                                                                                |
-| RefillsPrescribed | Int  | 999            | R                 | The total number of refills prescribed.                                                                                                                                                  |
-| RefillsDispensed  | Int  | 999            | R                 | The inclusive number of refills dispensed. If it is a new Rx, this will be 0 the first time HealthDyneRx receives that Rx. The 2nd fill will be the 1st refill, so this value would be 1 |
-| FillNumber        | Int  | 999            | R                 | The exclusive number of refills remaining. The total number of refills on a prescription should equal the sum of RefillsDispensed and RefillsRemaining                                   |
+| RefillsPrescribed | Int  | 999            | O                 | The total number of refills prescribed.                                                                                                                                                  |
+| RefillsDispensed  | Int  | 999            | O                 | The inclusive number of refills dispensed. If it is a new Rx, this will be 0 the first time HealthDyneRx receives that Rx. The 2nd fill will be the 1st refill, so this value would be 1 |
+| FillNumber        | Int  | 999            | O                 | The exclusive number of refills remaining. The total number of refills on a prescription should equal the sum of RefillsDispensed and RefillsRemaining                                   |
 
-### Prescriber
+### Prescriber (for Pharmacy Object)
 
 | Field     | Type   | CharacterLimit | Required/Optional | Notes                                            |
 | :-------- | :----- | :------------- | :---------------- | :----------------------------------------------- |
@@ -257,7 +254,7 @@ metadata:
 | FirstName | String | 50             | R                 |                                                  |
 | LastName  | String | 50             | R                 |                                                  |
 
-### Pharmacist
+### Pharmacist (for Pharmacy Object)
 
 | Field     | Type   | CharacterLimit | Required/Optional | Notes                                                                                                                          |
 | :-------- | :----- | :------------- | :---------------- | :----------------------------------------------------------------------------------------------------------------------------- |
@@ -265,7 +262,7 @@ metadata:
 | FirstName | String | 50             | R                 |                                                                                                                                |
 | LastName  | String | 50             | R                 |                                                                                                                                |
 
-### VialLabel
+### VialLabel (for Pharmacy Object)
 
 | Field         | Type    | CharacterLimit | Required/Optional | Notes                                                                                                             |
 | :------------ | :------ | :------------- | :---------------- | :---------------------------------------------------------------------------------------------------------------- |
