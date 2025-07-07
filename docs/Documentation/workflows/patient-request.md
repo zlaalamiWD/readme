@@ -383,11 +383,3 @@ Click here to see [PUT Update Patient Request Data Object](https://docs.healthdy
 ```
 
 Click here to see [PUT Update Patient Response Data Object](https://docs.healthdyne.com/docs/patient-request-fields#response-object-4)
-
-```json
-{
-    "scriptKeys": [
-        "0ed290dbb11224ea0f9e27"
-    ]
-}
-```
