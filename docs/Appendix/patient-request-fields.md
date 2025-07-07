@@ -414,6 +414,14 @@ next:
 
 \*NDC is required if the External Medications object is being provided in the Patient object.
 
+# Identification
+
+| Field               | Type      | Character Limit | Required/Optional | Description                                                                                                             |
+| :------------------ | :-------- | :-------------- | :---------------- | :---------------------------------------------------------------------------------------------------------------------- |
+| patientId           | String    | 60              | Required\*        | NDC of the medication                                                                                                   |
+| patientIdCode       | String    | 03              | Required\*        | Code to identify the type of identity document. For example: 02 refers to Driver's license. See table for more details. |
+| patientIdExpiration | DateOnly? | YYYY-MM-DD      | Optional          | Date when the identity document will be expired / invalid.                                                              |
+
 ## GET Patient Request
 
 #### Query Parameter
