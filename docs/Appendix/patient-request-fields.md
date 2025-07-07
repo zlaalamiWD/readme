@@ -416,11 +416,34 @@ next:
 
 # Identification
 
-| Field               | Type      | Character Limit | Required/Optional | Description                                                                                                             |
-| :------------------ | :-------- | :-------------- | :---------------- | :---------------------------------------------------------------------------------------------------------------------- |
-| patientId           | String    | 60              | Required\*        | NDC of the medication                                                                                                   |
-| patientIdCode       | String    | 03              | Required\*        | Code to identify the type of identity document. For example: 02 refers to Driver's license. See table for more details. |
-| patientIdExpiration | DateOnly? | YYYY-MM-DD      | Optional          | Date when the identity document will be expired / invalid.                                                              |
+| Field               | Description                                                                                                             |
+| :------------------ | :---------------------------------------------------------------------------------------------------------------------- |
+| patientId           | NDC of the medication                                                                                                   |
+| patientIdCode       | Code to identify the type of identity document. For example: 02 refers to Driver's license. See table for more details. |
+| patientIdExpiration | Date when the identity document will be expired / invalid.                                                              |
+
+<br />
+
+# List of Identification Documents
+
+| Patient Id Code | Description                   |
+| :-------------- | :---------------------------- |
+| 01              | SOCIAL SECURITY NUMBER        |
+| 02              | DRIVERS LICENSE NUMBER        |
+| 03              | U.S. MILITARY ID              |
+| 04              | Non-SSN based ID              |
+| 06              | Medicaid ID assigned by State |
+| 07              | State Issued ID               |
+| 08              | Passport ID                   |
+| 09              | Medicaid HIC#                 |
+| 10              | Employer Assigned ID          |
+| 11              | Payer/PBM Assigned ID         |
+| 12              | Alien Number ID               |
+| 13              | Student Visa ID               |
+| 14              | Indian Tribal ID              |
+| 1J              | Facility ID                   |
+| 99              | OTHER                         |
+| EA              | Medical Record ID(EHR)        |
 
 ## GET Patient Request
 
