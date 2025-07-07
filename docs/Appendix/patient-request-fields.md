@@ -323,7 +323,7 @@ next:
 
       <td>
         This object is used to update the Patient identification documents like driving license and its details in epost.
-        See Identification Document table
+        See [List of Identification Documents](https://docs.healthdyne.com/v2.18/docs/patient-request-fields#list-of-identification-documents).
       </td>
     </tr>
   </tbody>
@@ -524,9 +524,9 @@ next:
 
 #### Request Object
 
-| Field   | Type                                                                                                 | Character Limit | Required/Optional | Description                                       |
-| :------ | :--------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------ |
-| patient | Object [(patient)](https://docs.healthdyne.com/v2.18/docs/patient-request-fields#patient-update-api) |                 | Required          | Object containing patient’s personal information. |
+| Field   | Type                                                                                | Character Limit | Required/Optional | Description                                       |
+| :------ | :---------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------ |
+| patient | Object [(patient)](https://docs.healthdyne.com/docs/patient-request-fields#patient) |                 | Required          | Object containing patient’s personal information. |
 
 #### Response Object
 
