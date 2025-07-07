@@ -416,11 +416,11 @@ next:
 
 # Identification
 
-| Field               | Description                                                                                                             |
-| :------------------ | :---------------------------------------------------------------------------------------------------------------------- |
-| patientId           | NDC of the medication                                                                                                   |
-| patientIdCode       | Code to identify the type of identity document. For example: 02 refers to Driver's license. See table for more details. |
-| patientIdExpiration | Date when the identity document will be expired / invalid.                                                              |
+| Field               | Type      | Character Limit | Required/Optional | Description                                                                                                                                                                                                                          |
+| :------------------ | :-------- | :-------------- | :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| patientId           | String    | 60              | Required\*        | Unique Id of the Identity Document.                                                                                                                                                                                                  |
+| patientIdCode       | String    | 03              | Required\*        | Code to identify the type of identity document. For example: 02 refers to Driver's license. See [List of Identification Documents](https://docs.healthdyne.com/v2.18/docs/patient-request-fields#list-of-identification-documents) . |
+| patientIdExpiration | DateOnly? | YYYY-MM-DD      | Optional          | Date when the identity document will be expired / invalid.                                                                                                                                                                           |
 
 <br />
 
