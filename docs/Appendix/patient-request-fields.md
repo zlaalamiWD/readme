@@ -310,7 +310,7 @@ next:
       </td>
 
       <td>
-        Object [(identification)](doc:patient-request-fields#)
+        Object [(identification)](https://docs.healthdyne.com/v2.18/docs/patient-request-fields#identification)
       </td>
 
       <td>
