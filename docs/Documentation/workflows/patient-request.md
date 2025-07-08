@@ -49,59 +49,59 @@ Click here to see [GET Patient Request Query Data](https://docs.healthdyne.com/d
 
 ```json
 {
-    "patientKey": "TESTPATIENT",
-    "firstName": "TEST",
-    "lastName": "TESTREADPATIENT17",
-    "gender": "F",
-    "epostPatientNum": 727793,
-    "patientLanguage": "ENG",
-    "birthDate": "1997-02-03",
-    "healthCondition": [],
-    "address": [
-        {
-            "line1": "123 Main St",
-            "line2": null,
-            "line3": null,
-            "city": "LAKELAND",
-            "state": "FL",
-            "zipCode": "33810",
-            "countryCode": "US",
-            "addressType": "HOME",
-            "defaultAddress": true
-        },
-        {
-            "line1": "678 Main St",
-            "line2": null,
-            "line3": null,
-            "city": "LAKELAND",
-            "state": "FL",
-            "zipCode": "33810",
-            "countryCode": "US",
-            "addressType": "HOME",
-            "defaultAddress": false
-        }
-    ],
-    "contact": [
-        {
-            "contactType": "HOME PHONE",
-            "contactAddress": "3233731379",
-            "emailAddress": "testemail@domain.com"
-        }
-    ],
-    "externalMedications": [
-        "00002445385",
-        "99207012010"
-    ],
-	 "identification":{
-        "patientId":"DR987EF007",
-        "patientIdCode":"02",
-        "patientIdExpiration":"2030-01-15"
-     }
-    "pregnancyIndicator": "N",
-    "allergies": [
-        "CEPHALOSPORINS",
-        "SALICYLATES"
-    ]
+  "patientKey": "TESTPATIENT",
+  "firstName": "TEST",
+  "lastName": "TESTREADPATIENT17",
+  "gender": "F",
+  "epostPatientNum": 727793,
+  "patientLanguage": "ENG",
+  "birthDate": "1997-02-03",
+  "healthCondition": [],
+  "address": [
+    {
+      "line1": "123 Main St",
+      "line2": null,
+      "line3": null,
+      "city": "LAKELAND",
+      "state": "FL",
+      "zipCode": "33810",
+      "countryCode": "US",
+      "addressType": "HOME",
+      "defaultAddress": true
+    },
+    {
+      "line1": "678 Main St",
+      "line2": null,
+      "line3": null,
+      "city": "LAKELAND",
+      "state": "FL",
+      "zipCode": "33810",
+      "countryCode": "US",
+      "addressType": "HOME",
+      "defaultAddress": false
+    }
+  ],
+  "contact": [
+    {
+      "contactType": "HOME PHONE",
+      "contactAddress": "3233731379",
+      "emailAddress": "testemail@domain.com"
+    }
+  ],
+  "externalMedications": [
+    "00002445385",
+    "99207012010"
+  ],
+  "identification": {
+    "patientId": "DR987EF007",
+    "patientIdCode": "02",
+    "patientIdExpiration": "2030-01-15"
+  },
+  "pregnancyIndicator": "N",
+  "allergies": [
+    "CEPHALOSPORINS",
+    "SALICYLATES"
+  ]
 }
 ```
 
