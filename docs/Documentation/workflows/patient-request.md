@@ -92,6 +92,11 @@ Click here to see [GET Patient Request Query Data](https://docs.healthdyne.com/d
         "00002445385",
         "99207012010"
     ],
+	 "identification":{
+        "patientId":"DR987EF007",
+        "patientIdCode":"02",
+        "patientIdExpiration":"2030-01-15"
+     }
     "pregnancyIndicator": "N",
     "allergies": [
         "CEPHALOSPORINS",
