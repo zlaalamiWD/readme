@@ -206,6 +206,37 @@ next:
 
 \*NDC is required if the External Medications object is being provided in the Patient object.
 
+# Identification
+
+| Field               | Type      | Character Limit | Required/Optional | Description                                                                                                                                                                                                                          |
+| :------------------ | :-------- | :-------------- | :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| patientId           | String    | 60              | Required\*        | Unique Id of the Identity Document.                                                                                                                                                                                                  |
+| patientIdCode       | String    | 03              | Required\*        | Code to identify the type of identity document. For example: 02 refers to Driver's license. See [List of Identification Documents](https://docs.healthdyne.com/v2.18/docs/patient-request-fields#list-of-identification-documents) . |
+| patientIdExpiration | DateOnly? | YYYY-MM-DD      | Optional          | Date when the identity document will be expired / invalid.                                                                                                                                                                           |
+
+<br />
+
+# List of Identification Documents
+
+| Patient Id Code | Description                   |
+| :-------------- | :---------------------------- |
+| 01              | SOCIAL SECURITY NUMBER        |
+| 02              | DRIVERS LICENSE NUMBER        |
+| 03              | U.S. MILITARY ID              |
+| 04              | Non-SSN based ID              |
+| 06              | Medicaid ID assigned by State |
+| 07              | State Issued ID               |
+| 08              | Passport ID                   |
+| 09              | Medicaid HIC#                 |
+| 10              | Employer Assigned ID          |
+| 11              | Payer/PBM Assigned ID         |
+| 12              | Alien Number ID               |
+| 13              | Student Visa ID               |
+| 14              | Indian Tribal ID              |
+| 1J              | Facility ID                   |
+| 99              | OTHER                         |
+| EA              | Medical Record ID(EHR)        |
+
 ## GET Patient Request
 
 #### Query Parameter
@@ -491,7 +522,7 @@ next:
       </td>
 
       <td>
-        Object [(identification)](https://docs.healthdyne.com/v2.18/docs/patient-request-fields#identification)
+        Object [(identification)](https://docs.healthdyne.com/v2.19/docs/patient-request-fields#identification)
       </td>
 
       <td>
@@ -504,7 +535,7 @@ next:
 
       <td>
         This object is used to update the Patient identification documents like driving license and its details in epost.
-        See [List of Identification Documents](https://docs.healthdyne.com/v2.18/docs/patient-request-fields#list-of-identification-documents).
+        See [List of Identification Documents](https://docs.healthdyne.com/v2.19/docs/patient-request-fields#list-of-identification-documents).
       </td>
     </tr>
 
