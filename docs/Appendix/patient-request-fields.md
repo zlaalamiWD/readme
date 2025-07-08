@@ -562,8 +562,6 @@ next:
 | patientIdCode       | String    | 03              | Required\*        | Code to identify the type of identity document. For example: 02 refers to Driver's license. See [List of Identification Documents](https://docs.healthdyne.com/v2.19/docs/patient-request-fields#list-of-identification-documents) . |
 | patientIdExpiration | DateOnly? | YYYY-MM-DD      | Optional          | Date when the identity document will be expired / invalid.                                                                                                                                                                           |
 
-<br />
-
 # List of Identification Documents
 
 | Patient Id Code | Description                   |
@@ -584,8 +582,6 @@ next:
 | 1J              | Facility ID                   |
 | 99              | OTHER                         |
 | EA              | Medical Record ID(EHR)        |
-
-
 
 # Find Patient Request
 
