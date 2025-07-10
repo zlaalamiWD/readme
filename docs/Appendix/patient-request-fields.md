@@ -1038,9 +1038,9 @@ next:
 
 #### Request Object
 
-| Field   | Type                                               | Character Limit | Required/Optional | Description                                       |
-| :------ | :------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------ |
-| patient | Object [(patient)](patient-request-fields#patient) |                 | Required          | Object containing patient’s personal information. |
+| Field   | Type                                                                                                 | Character Limit | Required/Optional | Description                                       |
+| :------ | :--------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------ |
+| patient | Object [(patient)](https://docs.healthdyne.com/v2.19/docs/patient-request-fields#patient-update-api) |                 | Required          | Object containing patient’s personal information. |
 
 #### Response Object
 
