@@ -32,8 +32,6 @@ next:
 | allergies           | Array [\[allergies\]](doc:patient-request-fields#allergies)                      |                 | Required          | Array containing patient’s allergy information. See the [Allergies](doc:patient-request-fields#allergies) table for valid list of allergies.                                                                                                                                                                                                  |
 | externalMedications | Array [\[externalMedications\]](doc:patient-request-fields#external-medications) |                 | Optional          | Array containing patient’s external medications objects. List any external Medications the patient is taking for pharmacy to know if there is any drug interaction. If there are  external medications, then ensure all the object elements are populated. See [External Medications](doc:patient-request-fields#external-medications) table. |
 
-<br />
-
 # Patient (Update Api)
 
 <Table align={["left","left","left","left","left"]}>
