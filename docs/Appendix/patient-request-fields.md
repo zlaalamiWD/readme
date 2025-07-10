@@ -31,6 +31,302 @@ next:
 | allergies           | Array [\[allergies\]](doc:patient-request-fields#allergies)                      |                 | Required          | Array containing patient’s allergy information. See the [Allergies](doc:patient-request-fields#allergies) table for valid list of allergies.                                                                                                                                                                                                  |
 | externalMedications | Array [\[externalMedications\]](doc:patient-request-fields#external-medications) |                 | Optional          | Array containing patient’s external medications objects. List any external Medications the patient is taking for pharmacy to know if there is any drug interaction. If there are  external medications, then ensure all the object elements are populated. See [External Medications](doc:patient-request-fields#external-medications) table. |
 
+# Patient (Update Api)
+
+<Table align={["left","left","left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Field
+      </th>
+
+      <th>
+        Type
+      </th>
+
+      <th>
+        Character Limit
+      </th>
+
+      <th>
+        Required/Optional
+      </th>
+
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        patientKey
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        50
+      </td>
+
+      <td>
+        Required
+      </td>
+
+      <td>
+        Unique patient ID in Client system.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        firstName
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        35
+      </td>
+
+      <td>
+        Required
+      </td>
+
+      <td>
+        Patient's first name.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        lastName
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        35
+      </td>
+
+      <td>
+        Required
+      </td>
+
+      <td>
+        Patient's last name.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        birthDate
+      </td>
+
+      <td>
+        DateTime
+      </td>
+
+      <td>
+        YYYY-MM-DD
+      </td>
+
+      <td>
+        Required
+      </td>
+
+      <td>
+        Patient's Date of Birth
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        gender
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        1
+      </td>
+
+      <td>
+        Required
+      </td>
+
+      <td>
+        Patient’s Gender – M, F or U
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        patientLanguage
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        3
+      </td>
+
+      <td>
+        Optional
+      </td>
+
+      <td>
+        Patient language must be ENG or SPA.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        pregnancyIndicator
+      </td>
+
+      <td>
+        Bool
+      </td>
+
+      <td>
+
+      </td>
+
+      <td>
+        Optional
+      </td>
+
+      <td>
+        Patient's pregnancy state
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        address
+      </td>
+
+      <td>
+        Object [(address)](doc:patient-request-fields#address)
+      </td>
+
+      <td>
+
+      </td>
+
+      <td>
+        Required
+      </td>
+
+      <td>
+        Object containing patient’s address information. See [Address](doc:patient-request-fields#address) table.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        contact
+      </td>
+
+      <td>
+        Object [(contact)](doc:patient-request-fields#contact)
+      </td>
+
+      <td>
+
+      </td>
+
+      <td>
+        Required
+      </td>
+
+      <td>
+        Object containing patient’s contact information. See [Contact](doc:patient-request-fields#contact) table.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        allergies
+      </td>
+
+      <td>
+        Array [\[allergies\]](doc:patient-request-fields#allergies)
+      </td>
+
+      <td>
+
+      </td>
+
+      <td>
+        Required
+      </td>
+
+      <td>
+        Array containing patient’s allergy information. See the [Allergies](doc:patient-request-fields#allergies) table for valid list of allergies.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        externalMedications
+      </td>
+
+      <td>
+        Array [\[externalMedications\]](doc:patient-request-fields#external-medications)
+      </td>
+
+      <td>
+
+      </td>
+
+      <td>
+        Optional
+      </td>
+
+      <td>
+        Array containing patient’s external medications objects. List any external Medications the patient is taking for pharmacy to know if there is any drug interaction. If there are  external medications, then ensure all the object elements are populated. See [External Medications](doc:patient-request-fields#external-medications) table.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        identification
+      </td>
+
+      <td>
+        Object [(identification)](https://docs.healthdyne.com/v2.18/docs/patient-request-fields#identification)
+      </td>
+
+      <td>
+
+      </td>
+
+      <td>
+        Optional
+      </td>
+
+      <td>
+        This object is used to update the Patient identification documents like driving license and its details in epost.
+
+        See [List of Identification Documents](https://docs.healthdyne.com/v2.18/docs/patient-request-fields#list-of-identification-documents).
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
 # Address
 
 | Field          | Type    | Character Limit | Required/Optional | Description                                                                                                                                                        |
