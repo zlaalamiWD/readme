@@ -369,7 +369,12 @@ The "Update Patient" endpoint uses the PUT method to modify the details of an ex
                 "startDate": "2022-03-02",
                 "endDate": "2022-04-02"
             }
-        ]
+        ],
+        "identification":{
+            "patientId":"DR987EF007",
+            "patientIdCode":"02",
+            "patientIdExpiration":"2030-01-15"
+        }
     }
 }
 ```
