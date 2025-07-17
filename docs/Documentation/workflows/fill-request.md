@@ -141,7 +141,7 @@ Click here to see [GET Fill Request Query Data](https://docs.healthdyne.com/docs
             "statusMessage": "RX: 10524420 found on OPEN order with External ID: NULL; "
         }
     ],
-		"renewed": []
+"renewed": []
 }
 ```
 
