@@ -28,13 +28,144 @@ next:
 
 ### RxVerified
 
-| Field         | Type     | Character Limit                      | Required/Optional | Description                                   |
-| :------------ | :------- | :----------------------------------- | :---------------- | :-------------------------------------------- |
-| eventId       | String   | 4 bytes (32-bit signed int)          | Required          | Unique Event Identifier for the Fill Request. |
-| eventDateUtc  | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Required          | Date and time of the event in UTC (ISO 8601). |
-| scriptKey     | String   | 50                                   | Required          | Unique ID associated with script request.     |
-| verifiedDate  | DateTime | YYYY-MM-DD T HH:MM:SS Z              | Required          | Date and Time of Fill Request verified.       |
-| statusMessage | String   | Max                                  | Required          | Status message from Pharmacy.                 |
+<Table align={["left","left","left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Field
+      </th>
+
+      <th>
+        Type
+      </th>
+
+      <th>
+        Character Limit
+      </th>
+
+      <th>
+        Required/Optional
+      </th>
+
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        eventId
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        4 bytes (32-bit signed int)
+      </td>
+
+      <td>
+        Required
+      </td>
+
+      <td>
+        Unique Event Identifier for the Fill Request.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        eventDateUtc
+      </td>
+
+      <td>
+        DateTime
+      </td>
+
+      <td>
+        YYYY-MM-DD T HH:MM:SS.microseconds Z
+      </td>
+
+      <td>
+        Required
+      </td>
+
+      <td>
+        Date and time of the event in UTC (ISO 8601).
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        scriptKey
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        50
+      </td>
+
+      <td>
+        Required
+      </td>
+
+      <td>
+        Unique ID associated with script request.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        verifiedDate
+      </td>
+
+      <td>
+        DateTime?
+      </td>
+
+      <td>
+        YYYY-MM-DD T HH:MM:SS Z
+      </td>
+
+      <td>
+        Optional
+      </td>
+
+      <td>
+        Date and Time of Fill Request verified.
+        **Note**: For null value this Field will not appear in response Json.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        statusMessage
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Max
+      </td>
+
+      <td>
+        Required
+      </td>
+
+      <td>
+        Status message from Pharmacy.
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 ### RxShipped
 
