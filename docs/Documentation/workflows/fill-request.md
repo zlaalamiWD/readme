@@ -91,7 +91,10 @@ Click here to see [GET Fill Request Query Data](https://docs.healthdyne.com/docs
         {
             "eventId": "295955",
             "eventDateUtc": "2025-04-15T09:12:20.913021+00:00",
-            "scriptKeys": ["SampleScriptKey1","SampleScriptKey2"]
+            "scriptKeys": [
+                "SampleScriptKey1",
+                "SampleScriptKey2"
+            ]
         }
     ],
     "rxVerified": [
@@ -141,7 +144,7 @@ Click here to see [GET Fill Request Query Data](https://docs.healthdyne.com/docs
             "statusMessage": "RX: 10524420 found on OPEN order with External ID: NULL; "
         }
     ],
-"renewed": []
+    "renewed": []
 }
 ```
 
