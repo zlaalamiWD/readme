@@ -98,14 +98,14 @@ Click here to see [GET Fill Request Query Data](https://docs.healthdyne.com/docs
             "eventId": "288774",
             "eventDateUtc": "2025-04-11T18:43:07.995451Z",
             "scriptKey": "TestScriptKey1401",
-            "verifiedDate": null,
+            "verifiedDate": "2025-04-15T09:16:48.804578+00:00",
             "statusMessage": "The Rx has been verified by the pharmacist (PV1)"
         },
         {
             "eventId": "2887749",
             "eventDateUtc": "2025-04-11T18:453:07.995451Z",
             "scriptKey": "TestScriptKey14091",
-            "verifiedDate": null,
+            "verifiedDate": "2025-04-15T09:16:48.804578+00:00",
             "statusMessage": "The Rx has been verified by the pharmacist (PV1)"
         }
     ],
