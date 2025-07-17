@@ -77,7 +77,8 @@ Click here to see [GET Fill Request Query Data](https://docs.healthdyne.com/docs
     ],
     "rxIssue": [],
     "rxCanceled": [],
-    "rejected": []
+    "rejected": [],
+		"renewed": []
 }
 ```
 
