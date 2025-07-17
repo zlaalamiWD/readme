@@ -62,7 +62,7 @@ Click here to see [GET Fill Request Query Data](https://docs.healthdyne.com/docs
             "eventId": "295965",
             "eventDateUtc": "2025-04-15T09:16:48.804578+00:00",
             "scriptKey": "24388f1b53c04b0a89534056c311ece6326",
-            "verifiedDate": null,
+            "verifiedDate": "2025-04-15T09:16:48.804578+00:00",
             "statusMessage": "The Rx has been verified by the pharmacist (PV1)"
         }
     ],
