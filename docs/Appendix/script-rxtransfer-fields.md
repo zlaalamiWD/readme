@@ -224,21 +224,21 @@ next:
 
 #### Request Object
 
-| Field              | Type                                                                                                      | Character Limit  | Required/Optional | Description                                                                                                                                                                           |
-| :----------------- | :-------------------------------------------------------------------------------------------------------- | :--------------- | :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| patientKey         | String                                                                                                    | 50               | Required          | Unique patient ID in Client system. This key will be sent on the order status message. The patientKey must be unique and patient must exist in the system while sending this Request. |
-| scriptKey          | Array                                                                                                     | 50 per scriptKey | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request).                                                                                                |
-| fulfillingPharmacy | Object [fulfillingPharmacy](https://docs.healthdyne.com/docs/script-rxtransfer-fields#fulfillingPharmacy) |                  | Required          | Contains information about the pharmacy to which the fax will be sent                                                                                                                 |
-| notes              | Text                                                                                                      |                  | Optional          | Additional transfer notes to specify                                                                                                                                                  |
+| Field              | Type                                                                                                       | Character Limit  | Required/Optional | Description                                                                                                                                                                           |
+| :----------------- | :--------------------------------------------------------------------------------------------------------- | :--------------- | :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| patientKey         | String                                                                                                     | 50               | Required          | Unique patient ID in Client system. This key will be sent on the order status message. The patientKey must be unique and patient must exist in the system while sending this Request. |
+| scriptKey          | Array                                                                                                      | 50 per scriptKey | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request).                                                                                                |
+| fulfillingPharmacy | Object [fulfillingPharmacy](https://docs.healthdyne.com/docs/script-rxtransfer-fields#fulfilling-Pharmacy) |                  | Required          | Contains information about the pharmacy to which the fax will be sent                                                                                                                 |
+| notes              | Text                                                                                                       |                  | Optional          | Additional transfer notes to specify                                                                                                                                                  |
 
 # Fulfilling Pharmacy
 
-| Field           | Type                                                                                | Character Limit | Required/Optional | Description                                         |
-| :-------------- | :---------------------------------------------------------------------------------- | :-------------- | :---------------- | :-------------------------------------------------- |
-| pharmacyName    | String                                                                              | 40              | Required          | Name of the pharmacy                                |
-| pharmacy\_Phone | String                                                                              | 10              | Required          | Pharmacy Phone number                               |
-| pharmacy\_Fax   | String                                                                              | 10              | Optional          | Pharmacy Fax number                                 |
-| address         | Object [address](https://docs.healthdyne.com/docs/script-rxtransfer-fields#address) |                 | Required          | Object containing the pharmacy address information. |
+| Field           | Type                                                                                  | Character Limit | Required/Optional | Description                                         |
+| :-------------- | :------------------------------------------------------------------------------------ | :-------------- | :---------------- | :-------------------------------------------------- |
+| pharmacyName    | String                                                                                | 40              | Required          | Name of the pharmacy                                |
+| pharmacy\_Phone | String                                                                                | 10              | Required          | Pharmacy Phone number                               |
+| pharmacy\_Fax   | String                                                                                | 10              | Optional          | Pharmacy Fax number                                 |
+| address         | Object [address](https://docs.healthdyne.com/docs/script-rxtransfer-fields#address-1) |                 | Required          | Object containing the pharmacy address information. |
 
 # Address
 
