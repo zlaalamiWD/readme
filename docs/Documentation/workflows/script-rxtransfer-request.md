@@ -309,7 +309,7 @@ The Rx Transfer process is only available to registered pharmacies and requires 
 | Content-Type                | application/json       |
 | HealthDyne-Subscription-Key | Provided by HealthDyne |
 
-### Sample Script Outbound Request
+### Sample Script Outbound Request (Single Script)
 
 ```json
 
