@@ -352,7 +352,7 @@ Click here to see [Submit Script Outbound Request Data Object](https://docs.heal
 }
 ```
 
-Click here to see [Submit Script Outbound Response Data Object](https://docs.healthdyne.com/docs/script-rxtransfer-fields#script-outbound-request)
+Click here to see [Submit Script Outbound Response Data Object](https://docs.healthdyne.com/docs/script-rxtransfer-fields#response-object-2)
 
 # Status Events
 
