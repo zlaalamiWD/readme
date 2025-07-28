@@ -309,7 +309,7 @@ The Rx Transfer process is only available to registered pharmacies and requires 
 | Content-Type                | application/json       |
 | HealthDyne-Subscription-Key | Provided by HealthDyne |
 
-### Sample Script Outbound Request (Single Script)
+### Sample Script Outbound Request
 
 ```json
 
@@ -334,7 +334,25 @@ The Rx Transfer process is only available to registered pharmacies and requires 
 }
 ```
 
-<br />
+Click here to see [Submit Script Outbound Request Data Object](https://docs.healthdyne.com/docs/script-rxtransfer-fields#script-outbound-request)
+
+### Sample Script Outbound Response
+
+```json
+{
+    "scriptKey": [
+        "RX-2024-001"
+    ],
+    "message": "All script transfer requests are being processed.",
+    "success": true,
+    "processingScripts": [
+        "RX-2024-001"
+    ],
+    "transferFailedScript": []
+}
+```
+
+Click here to see [Submit Script Outbound Response Data Object](https://docs.healthdyne.com/docs/script-rxtransfer-fields#script-outbound-request)
 
 # Status Events
 
