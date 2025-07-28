@@ -315,7 +315,7 @@ The Rx Transfer process is only available to registered pharmacies and requires 
 
 {
   "patientKey": "PAT-2024-001",
-  "scriptKey": ["RX-2024-001"],
+  "scriptKey": ["RX-2024-001", "RX-2024-002"],
   "fulfillingPharmacy": {
     "pharmacyName": "HealthCare Plus Pharmacy",
     "pharmacy_Phone": "1234516790",
@@ -340,15 +340,17 @@ Click here to see [Submit Script Outbound Request Data Object](https://docs.heal
 
 ```json
 {
-    "scriptKey": [
-        "RX-2024-001"
-    ],
-    "message": "All script transfer requests are being processed.",
-    "success": true,
-    "processingScripts": [
-        "RX-2024-001"
-    ],
-    "transferFailedScript": []
+  "scriptKey": [
+    "RX-2024-001",
+    "RX-2024-002"
+  ],
+  "message": "All script transfer requests are being processed.",
+  "success": true,
+  "processingScripts": [
+    "RX-2024-001",
+    "RX-2024-002"
+  ],
+  "transferFailedScript": []
 }
 ```
 
