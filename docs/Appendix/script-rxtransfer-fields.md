@@ -215,3 +215,32 @@ next:
 | Field      | Type  | Description                                                                               |
 | :--------- | :---- | :---------------------------------------------------------------------------------------- |
 | scriptKeys | Array | List of Unique IDs assigned by client to each prescription transfer request for tracking. |
+
+## Script Outbound Request
+
+#### Request Object
+
+| Field             | Type                                                                                           | Character Limit | Required/Optional | Description                                                                                                                                                                              |
+| :---------------- | :--------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| scriptKey         | String                                                                                         | 50              | Required          | Unique ID assigned by sending pharmacy to each prescription transfer request for tracking.                                                                                               |
+| sendingPharmacy   | Object [sendingPharmacy](https://docs.healthdyne.com/docs/script-rxtransfer-fields#pharmacy)   |                 | Required          | Contains information about the pharmacy transferring the prescription.                                                                                                                   |
+| receivingPharmacy | Object [receivingPharmacy](https://docs.healthdyne.com/docs/script-rxtransfer-fields#pharmacy) |                 | Required          | Contains information about the pharmacy the prescription is being transferred to.                                                                                                        |
+| patientKey        | String                                                                                         | 50              | Required          | Unique patient ID in Client system. This key will be sent on the order status message. The patientKey must be unique and patient must exist in the system when sending Transfer Request. |
+| prescription      | Object [prescription](https://docs.healthdyne.com/docs/script-rxtransfer-fields#prescription)  |                 | Required          | Contains the prescription information.                                                                                                                                                   |
+| transferFileType  | String                                                                                         | 3               | Required          | The file type for the transfer file. Acceptable values are xml, png, and pdf.                                                                                                            |
+| transferFileUrl   | String                                                                                         | 2048            | Required          | Base 64 encoded URL where the XML or PNG transfer file can be downloaded from.                                                                                                           |
+| orTransfer        | Boolean                                                                                        |                 | Required          | If this is a prescription transfer the value is true, for triage the value is false                                                                                                      |
+
+# Pharmacy
+
+| Field         | Type                                                                                      | Character Limit | Required/Optional | Description                                               |
+| :------------ | :---------------------------------------------------------------------------------------- | :-------------- | :---------------- | :-------------------------------------------------------- |
+| pharmacyName  | String                                                                                    | 70              | Required          | Name of the pharmacy                                      |
+| pharmacyNpi   | String                                                                                    | 15              | Required          | Pharmacy NPI ID                                           |
+| pharmacyNcPdp | String                                                                                    | 15              | Optional          | Pharmacy NCPDP ID                                         |
+| deaNumber     | String                                                                                    | 15              | Optional          | Pharmacy DEA number                                       |
+| phone         | String                                                                                    | 10              | Required          | Pharmacy Phone number                                     |
+| fax           | String                                                                                    | 10              | Optional          | Pharmacy Fax number                                       |
+| pharmacist    | Object [pharmacist](https://docs.healthdyne.com/docs/script-rxtransfer-fields#pharmacist) |                 | Required          | Object containing information on the pharmacist.          |
+| contact       | Object [contact](https://docs.healthdyne.com/docs/script-rxtransfer-fields#contact)       |                 | Required          | Object containing contact information for the pharmacist. |
+| address       | Object [address](https://docs.healthdyne.com/docs/script-rxtransfer-fields#address)       |                 | Required          | Object containing the pharmacy address information.       |
