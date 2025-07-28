@@ -251,3 +251,13 @@ next:
 | state       | String | 2               | Required          | US State abbreviation (2-letter code)              |
 | zipCode     | String | 10              | Required          | Format NNNNN or NNNNN-NNNN                         |
 | countryCode | String | 2               | Optional          | ISO-3166 2 character country code. Defaults to US. |
+
+#### Response Object
+
+| Field                | Type    | Description                                                                                                |
+| :------------------- | :------ | :--------------------------------------------------------------------------------------------------------- |
+| scriptKey            | Array   | Array of script keys that were submitted for fax processing                                                |
+| message              | String  | Descriptive message indicating the current status of the Fax request processing                            |
+| success              | Boolean | Boolean flag indicating whether the overall fax request was successfully initiated                         |
+| processingScripts    | Array   | Array of script keys that are currently being processed for transfer (empty if no processing is occurring) |
+| transferFailedScript | Array   | Array of script keys that failed during the transfer process (empty if no failures occurred)               |
