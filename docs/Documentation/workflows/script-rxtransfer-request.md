@@ -288,6 +288,54 @@ API field validation information in Appendix [Script / RxTransfer Fields](doc:sc
 }
 ```
 
+# Script Outbound Transfer
+
+The Rx Transfer process is only available to registered pharmacies and requires direct integration between sending and receiving pharmacies. Prescription transfers also require the sending pharmacy to share a URL in the API call for HealthDyne to retrieve either.
+
+### Server
+
+##### Only https connections are accepted.
+
+| REQUEST TYPE | ENDPOINT                                  |
+| :----------- | :---------------------------------------- |
+| POST (Test)  | api.uat-healthdyne.com/v2/script/transfer |
+| POST (Prod)  | api.healthdyne.com/v2/script/transfer     |
+
+### Header
+
+| Key                         | Value                  |
+| :-------------------------- | :--------------------- |
+| Accept                      | application/json       |
+| Content-Type                | application/json       |
+| HealthDyne-Subscription-Key | Provided by HealthDyne |
+
+### Sample Script Request
+
+```json
+
+{
+  "patientKey": "PAT-2024-001",
+  "scriptKey": ["RX-2024-001"],
+  "fulfillingPharmacy": {
+    "pharmacyName": "HealthCare Plus Pharmacy",
+    "pharmacy_Phone": "1234516790",
+    "pharmacy_Fax": "2234567890",
+    "address": {
+      "line1": "123 Main Street",
+      "line2": "Suite 200",
+      "line3": "Medical Plaza",
+      "city": "Los Angeles",
+      "state": "FL",
+      "zipCode": "90210",
+      "countryCode": "US"
+    }
+  },
+  "notes": "Patient requires temperature-controlled medication storage and delivery confirmation"
+}
+```
+
+<br />
+
 # Status Events
 
 Please see the [RxTransfer](doc:mail-box#rxtransfer-status-events) status events under the [Mailbox](doc:mail-box) API guide for a detailed list of status events.
