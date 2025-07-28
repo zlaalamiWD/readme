@@ -228,7 +228,7 @@ next:
 | :----------------- | :-------------------------------------------------------------------------------------------------------- | :--------------- | :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | patientKey         | String                                                                                                    | 50               | Required          | Unique patient ID in Client system. This key will be sent on the order status message. The patientKey must be unique and patient must exist in the system while sending this Request. |
 | scriptKey          | Array                                                                                                     | 50 per scriptKey | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request).                                                                                                |
-| fulfillingPharmacy | Object [fulfillingPharmacy](https://docs.healthdyne.com/docs/script-rxtransfer-fields#fulfillingPharmacy) |                  | Required          | Contains information about the pharmacy transferring the prescription.                                                                                                                |
+| fulfillingPharmacy | Object [fulfillingPharmacy](https://docs.healthdyne.com/docs/script-rxtransfer-fields#fulfillingPharmacy) |                  | Required          | Contains information about the pharmacy to which the fax will be sent                                                                                                                 |
 | notes              | Text                                                                                                      |                  | Optional          | Additional transfer notes to specify                                                                                                                                                  |
 
 # Fulfilling Pharmacy
@@ -239,3 +239,15 @@ next:
 | pharmacy\_Phone | String                                                                              | 10              | Required          | Pharmacy Phone number                               |
 | pharmacy\_Fax   | String                                                                              | 10              | Optional          | Pharmacy Fax number                                 |
 | address         | Object [address](https://docs.healthdyne.com/docs/script-rxtransfer-fields#address) |                 | Required          | Object containing the pharmacy address information. |
+
+# Address
+
+| Field       | Type   | Character Limit | Required/Optional | Description                                        |
+| :---------- | :----- | :-------------- | :---------------- | :------------------------------------------------- |
+| line1       | String | 40              | Required          | Street Address                                     |
+| line2       | String | 40              | Optional          | Street Address                                     |
+| line3       | String | 40              | Optional          | Street Address                                     |
+| city        | String | 35              | Required          | City                                               |
+| state       | String | 2               | Required          | US State abbreviation (2-letter code)              |
+| zipCode     | String | 10              | Required          | Format NNNNN or NNNNN-NNNN                         |
+| countryCode | String | 2               | Optional          | ISO-3166 2 character country code. Defaults to US. |
