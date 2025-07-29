@@ -293,6 +293,28 @@ RxClarifiied events are generated when an Rx has a clarified prescription note. 
 }
 ```
 
+## Routed
+
+When fax is successfully transferred to pharmacy, We send mailbox event and update the Routed status in HealthDyne System.
+
+#### Sample "Routed" event
+
+```json
+{
+	"eventId": "213258",
+	"eventDateUtc": "2025-07-28T12:11:29.594001Z",
+	"eventType": "RXTRANSFER",
+	"status": "Routed",
+	"statusMessage": "The script has been routed successfully.",
+	"scriptKey": "RX-2024-001",
+	"detail": {
+		"patientKey": "PAT-2024-001",
+		"rxNumber": "10552281",
+		"receivingPharmacy": "HealthCare Plus Pharmacy"
+	}
+}
+```
+
 <br />
 
 # Fill Request Status Events
