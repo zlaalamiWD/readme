@@ -366,7 +366,7 @@ When a RxTransfer request can't be validated, HealthDyne generates a rejection e
 
 ## Transferred Status
 
-Once the PNG or XML has been successfully downloaded, HealthDyne will store the file and create the prescription record in HealthDyne's pharmacy management system. Once the Rx has been created, HealthDyne will generate a ‘Transferred’ event. See [RxTransfer Transferred Status Event](doc:mail-box#sample-transferred-request).
+Once the PNG or XML has been successfully downloaded, HealthDyne will store the file and create the prescription record in HealthDyne's pharmacy management system. Once the Rx has been created, HealthDyne will generate a ‘Transferred’ event. See [RxTransfer Transferred Status Event](doc:mail-box#sample-transferred-event).
 
 ## Routed Status
 
