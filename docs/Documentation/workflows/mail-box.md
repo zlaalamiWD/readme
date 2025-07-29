@@ -301,17 +301,17 @@ When fax is successfully transferred to pharmacy, We send mailbox event and upda
 
 ```json
 {
-	"eventId": "213258",
-	"eventDateUtc": "2025-07-28T12:11:29.594001Z",
-	"eventType": "RXTRANSFER",
-	"status": "Routed",
-	"statusMessage": "The script has been routed successfully.",
-	"scriptKey": "RX-2024-001",
-	"detail": {
-		"patientKey": "PAT-2024-001",
-		"rxNumber": "10552281",
-		"receivingPharmacy": "HealthCare Plus Pharmacy"
-	}
+  "eventId": "213258",
+  "eventDateUtc": "2025-07-28T12:11:29.594001Z",
+  "eventType": "RXTRANSFER",
+  "status": "Routed",
+  "statusMessage": "The script has been routed successfully.",
+  "scriptKey": "RX-2024-001",
+  "detail": {
+    "patientKey": "PAT-2024-001",
+    "rxNumber": "10552281",
+    "receivingPharmacy": "HealthCare Plus Pharmacy"
+  }
 }
 ```
 
@@ -323,18 +323,18 @@ When fax is not transferred to pharmacy even after trying 3 attempts, We send ma
 
 ```json
 {
-	"eventId": "213258",
-	"eventDateUtc": "2025-07-28T12:11:29.594001Z",
-	"eventType": "RXTRANSFER",
-	"status": "Failed Routing",
-	"statusMessage": "The Script routing has failed.",
-	"scriptKey": "RX-2024-001",
-	"detail": {
-		"patientKey": "PAT-2024-001",
-		"rxNumber": "10552281",
-		"receivingPharmacy": "HealthCare Plus Pharmacy",
-		"issueMessage": "An unexpected error seems to have occurred. Please contact our support team if the problem persists"
-	}
+  "eventId": "213258",
+  "eventDateUtc": "2025-07-28T12:11:29.594001Z",
+  "eventType": "RXTRANSFER",
+  "status": "Failed Routing",
+  "statusMessage": "The Script routing has failed.",
+  "scriptKey": "RX-2024-001",
+  "detail": {
+    "patientKey": "PAT-2024-001",
+    "rxNumber": "10552281",
+    "receivingPharmacy": "HealthCare Plus Pharmacy",
+    "issueMessage": "An unexpected error seems to have occurred. Please contact our support team if the problem persists"
+  }
 }
 ```
 
