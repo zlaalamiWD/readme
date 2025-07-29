@@ -315,18 +315,18 @@ When fax is successfully transferred to pharmacy, We send mailbox event and upda
 }
 ```
 
-## Failed Routing
+## RoutingFailed
 
 When fax is not transferred to pharmacy even after trying 3 attempts, We send mailbox event and update the FailedRouting status in HealthDyne System.
 
-#### Sample "Failed Routing" event
+#### Sample "RoutingFailed" event
 
 ```json
 {
   "eventId": "213258",
   "eventDateUtc": "2025-07-28T12:11:29.594001Z",
   "eventType": "RXTRANSFER",
-  "status": "Failed Routing",
+  "status": "RoutingFailed",
   "statusMessage": "The Script routing has failed.",
   "scriptKey": "RX-2024-001",
   "detail": {
