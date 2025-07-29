@@ -33,10 +33,12 @@ metadata:
 
 #### RxTransferDetailObject
 
-| Field      | Type   | Character Limit | Description                        |
-| :--------- | :----- | :-------------- | :--------------------------------- |
-| patientKey | String | 50              | Unique identifier for the patient. |
-| rxNumber   | String | 30              | Prescription number                |
+| Field             | Type   | Character Limit | Description                                                                                             |
+| :---------------- | :----- | :-------------- | :------------------------------------------------------------------------------------------------------ |
+| patientKey        | String | 50              | Unique identifier for the patient.                                                                      |
+| rxNumber          | String | 30              | Prescription number                                                                                     |
+| receivingPharmacy | String | 40              | receivingPharmacy will be added only for Script Outbound API mailbox Events of Routed and RoutingFailed |
+| issueMessage      | String | 255             | issueMessage will be added only for Script Outbound API mailbox Events of RoutingFailed                 |
 
 # RxStatus event Type
 
