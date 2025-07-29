@@ -427,7 +427,7 @@ HealthDyne will create the order after receiving a Fill Request by sending creat
 
 # Rejected Status
 
-If order creation errors/rejects; then Rejected event will be created. Possible reasons for system to reject order request include existing open orders for an Rx. See [Fill Request Rejected Status Event](doc:mail-box#rejected-1)
+If order creation errors/rejects; then Rejected event will be created. Possible reasons for system to reject order request include existing open orders for an Rx. See [Fill Request Rejected Status Event](doc:mail-box#rejected)
 
 # RxVerified
 
