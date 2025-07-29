@@ -362,7 +362,7 @@ Please see the [RxTransfer](doc:mail-box#rxtransfer-status-events) status events
 
 ## Rejected Status
 
-When a RxTransfer request can't be validated, HealthDyne generates a rejection event with status "Rejected". RxTransfers will be rejected if the PNG or XML download was unsuccessful after two (2) failed attempts. See [RxTransfer Rejected Status Event](doc:mail-box#rejected).
+When a RxTransfer request can't be validated, HealthDyne generates a rejection event with status "Rejected". RxTransfers will be rejected if the PNG or XML download was unsuccessful after two (2) failed attempts. See [RxTransfer Rejected Status Event](doc:mail-box#rejected-\(during-rx-transfer\)).
 
 ## Transferred Status
 
