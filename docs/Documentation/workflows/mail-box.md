@@ -340,12 +340,6 @@ When fax is not transferred to pharmacy even after trying 3 attempts, We send ma
 
 <br />
 
-<br />
-
-<br />
-
-<br />
-
 # Fill Request Status Events
 
 ## Submitted
