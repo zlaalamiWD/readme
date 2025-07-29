@@ -372,6 +372,6 @@ Once the PNG or XML has been successfully downloaded, HealthDyne will store the 
 
 When fax is successfully transferred to pharmacy, We send mailbox event and update the Routed status in HealthDyne System. See [RxTransfer Routed Status Event](doc:mail-box#routed)
 
-## FailedRouting Status
+## Failed Routing Status
 
-When fax is not transferred to pharmacy even after trying 3 attempts, We send mailbox event and update the FailedRouting status in HealthDyne System. See [RxTransfer Routed Status Event](doc:mail-box#failedrouting)
+When fax is not transferred to pharmacy even after trying 3 attempts, We send mailbox event and update the FailedRouting status in HealthDyne System. See [RxTransfer Routed Status Event](doc:mail-box#failed-routing)
