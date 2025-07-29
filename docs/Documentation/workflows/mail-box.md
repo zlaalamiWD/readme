@@ -315,6 +315,29 @@ When fax is successfully transferred to pharmacy, We send mailbox event and upda
 }
 ```
 
+## Failed Routing
+
+When fax is not transferred to pharmacy even after trying 3 attempts, We send mailbox event and update the FailedRouting status in HealthDyne System.
+
+#### Sample "Failed Routing" event
+
+```json
+{
+	"eventId": "213258",
+	"eventDateUtc": "2025-07-28T12:11:29.594001Z",
+	"eventType": "RXTRANSFER",
+	"status": "Failed Routing",
+	"statusMessage": "The Script routing has failed.",
+	"scriptKey": "RX-2024-001",
+	"detail": {
+		"patientKey": "PAT-2024-001",
+		"rxNumber": "10552281",
+		"receivingPharmacy": "HealthCare Plus Pharmacy",
+		"issueMessage": "An unexpected error seems to have occurred. Please contact our support team if the problem persists"
+	}
+}
+```
+
 <br />
 
 # Fill Request Status Events
