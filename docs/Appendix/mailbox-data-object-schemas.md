@@ -5,9 +5,11 @@ hidden: false
 metadata:
   robots: index
 ---
-> 📃 Note:
->
-> An empty string "" is considered a value and validation rules will apply (length/valid code/etc). Only null or missing elements will use default values.
+<Callout icon="📃" theme="default">
+  ### Note:
+
+  An empty string "" is considered a value and validation rules will apply (length/valid code/etc). Only null or missing elements will use default values.
+</Callout>
 
 # Mailbox fetch parameters
 
@@ -161,16 +163,17 @@ metadata:
 
 ### Dispense Drug
 
-| Field            | Type   | Character Limit | Description                      |
-| :--------------- | :----- | :-------------- | :------------------------------- |
-| dispenseNDC      | String | 50              | NDC of drug that was dispensed.  |
-| dispenseDrugName | String | 50              | Drug name that was dispensed.    |
-| daysSupply       | String | 50              | Days the supply will last for.   |
-| dispenseQuantity | String | 50              | Dispensed quantity               |
-| labelDirections  | String | 50              | Drug usage label direction text. |
-| dosageForm       | String | 50              | Drug dosage form.                |
-| drugStrength     | String | 50              | Shows strength of the drug.      |
-| drugStrengthUOM  | String | 50              | Drug strength unit of measure.   |
+| Field            | Type    | Character Limit | Description                      |
+| :--------------- | :------ | :-------------- | :------------------------------- |
+| dispenseNDC      | String  | 9 to 11         | NDC of drug that was dispensed.  |
+| dispenseDrugName | String  | 105             | Drug name that was dispensed.    |
+| daysSupply       | int     |                 | Days the supply will last for.   |
+| dispenseQuantity | decimal |                 | Dispensed quantity               |
+| labelDirections  | String  | 50              | Drug usage label direction text. |
+| dosageForm       | String  | 30              | Drug dosage form.                |
+| drugStrength     | String  | 70              | Shows strength of the drug.      |
+| drugStrengthUOM  | String  | 50              | Drug strength unit of measure.   |
+| quantityWritten  | decimal |                 |                                  |
 
 ### RxShipped
 
