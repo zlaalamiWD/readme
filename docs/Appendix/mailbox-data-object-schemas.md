@@ -169,7 +169,7 @@ metadata:
 | dispenseDrugName | String  | 105             | Drug name that was dispensed.    |
 | daysSupply       | int     |                 | Days the supply will last for.   |
 | dispenseQuantity | decimal |                 | Dispensed quantity               |
-| labelDirections  | String  | 50              | Drug usage label direction text. |
+| labelDirections  | String  | 1000            | Drug usage label direction text. |
 | dosageForm       | String  | 30              | Drug dosage form.                |
 | drugStrength     | String  | 70              | Shows strength of the drug.      |
 | drugStrengthUOM  | String  | 50              | Drug strength unit of measure.   |
