@@ -369,33 +369,36 @@ HealthDyne will create the order after receiving a Fill Request by sending creat
 
 A "RxVerified" event will be generated once a Pharmacist has completed PV1 and released the prescription for fulfillment.
 
-> 📃 NOTE: This is at Rx level (i.e. for each Rx)
+<Callout icon="📃" theme="default">
+  ### NOTE: This is at Rx level (i.e. for each Rx)
+</Callout>
 
 #### sample "RxVerified" event
 
 ```json
 {
-    "eventId": "1000008",
-    "eventDateUtc": "2023-05-08T19:17:55.22818Z",
-    "eventType": "FILLREQUEST",
-    "fillRequestKey": "1000006",
-    "status": "RxVerified",
-    "statusMessage": "The Rx has been verified by the pharmacist (PV1)",
-    "detail": {
-        "orderNumber": "12345",
-        "scriptKey": "1000004",
-        "fillNumber": 0,
-        "dispenseDrug": {
-            "dispenseNDC": "780000001290",
-            "dispenseDrugName": "Tylenol",
-            "daySupply": 30,
-            "prescribedQuantity": 60,
-            "labelDirections": "TAKE 1 TABLET DAILY",
-            "dosageForm": "TABLET",
-            "drugStrength": "200",
-            "drugStrengthUOM": "Mg"
-        }
+  "eventId": "1000008",
+  "eventDateUtc": "2023-05-08T19:17:55.22818Z",
+  "eventType": "FILLREQUEST",
+  "fillRequestKey": "1000006",
+  "status": "RxVerified",
+  "statusMessage": "The Rx has been verified by the pharmacist (PV1)",
+  "detail": {
+    "orderNumber": "12345",
+    "scriptKey": "1000004",
+    "fillNumber": 0,
+    "dispenseDrug": {
+      "dispenseNDC": "780000001290",
+      "dispenseDrugName": "Tylenol",
+      "daySupply": 30,
+      "dispenseQuantity": 7,
+      "labelDirections": "TAKE 1 TABLET DAILY",
+      "dosageForm": "TABLET",
+      "drugStrength": "200",
+      "drugStrengthUOM": "Mg",
+      "quantityWritten": 7
     }
+  }
 }
 ```
 
@@ -420,7 +423,9 @@ If order creation errors/rejects; then Rejected event will be created. Possible 
 
 When an Order is successfully created, and then one of the Rx is subsequently rejected by pharmacy because it has issue (reason such as: Insurance reason/DUR/Pharmacy unable to read the prescription)- then RxIssue event will be pushed only for Rx that has an issue.
 
-> 📃 NOTE: This is at Rx level (i.e. for each Rx)
+<Callout icon="📃" theme="default">
+  ### NOTE: This is at Rx level (i.e. for each Rx)
+</Callout>
 
 #### Sample "RxIssue" event
 
@@ -458,13 +463,17 @@ The 'statusMessage' field will show the pharmacy defined reason for the RxIssue 
 
 Additional details will be provided via free form text notes from the pharmacy in the 'issueMessage' field. For example, "Clarification required from prescriber"
 
-> 📃 The 'issueMessage' field is a free form text field and can vary in response.
+<Callout icon="📃" theme="default">
+  ### The 'issueMessage' field is a free form text field and can vary in response.
+</Callout>
 
 ## RxCancel
 
 When a Rx or multiple Rx(s) in the order have been canceled pharmacy, HealthDyne will send an update at Rx level for each Rx in the order notifying of the canceled status. By default, unless order split has been configured for the client, the entire order will be cancelled when there is an issue with any of the Rx in the same order. Cancelled Rx that have not also been rejected due to "RxIssue" are available to be assigned to a new Fill Request without additional action via the Script API.
 
-> 📃 NOTE: This is at Rx level (i.e. for each Rx)
+<Callout icon="📃" theme="default">
+  ### NOTE: This is at Rx level (i.e. for each Rx)
+</Callout>
 
 #### Sample "RxCancel" event
 
@@ -488,29 +497,31 @@ When a Rx or multiple Rx(s) in the order have been canceled pharmacy, HealthDyne
 
 <br />
 
-> 📃 NOTE: below is the list of expected order canceled reason codes with their description
->
-> | Code | Description                                        |
-> | :--- | :------------------------------------------------- |
-> | 1    | Short Term Out of Stock                            |
-> | 2    | Long Term Out of Stock                             |
-> | 3    | Non-Formulary Items                                |
-> | 4    | Invalid Insurance Information/Cannot Process Claim |
-> | 5    | Non-Contracted Pharmacy                            |
-> | 6    | Prior Authorization                                |
-> | 7    | Quantity/Day Supply Limit                          |
-> | 8    | Refill Too Soon                                    |
-> | 9    | Product Not Covered                                |
-> | 10   | DUR Clarification/Rx Clarification                 |
-> | 11   | Allergy Issue                                      |
-> | 12   | Duplicate or Newer Rx for Same Med/GPI             |
-> | 13   | Non-Matching Patient Information                   |
-> | 14   | Item Entry Error                                   |
-> | 15   | Patient Copay exceeds their Codal Threshold        |
-> | 16   | Rx Discontinued                                    |
-> | 17   | Patient Request                                    |
-> | 18   | Medication Needs Secondary Insurance               |
-> | 19   | Address Issue                                      |
+<Callout icon="📃" theme="default">
+  ### NOTE: below is the list of expected order canceled reason codes with their description
+
+  | Code | Description                                        |
+  | :--- | :------------------------------------------------- |
+  | 1    | Short Term Out of Stock                            |
+  | 2    | Long Term Out of Stock                             |
+  | 3    | Non-Formulary Items                                |
+  | 4    | Invalid Insurance Information/Cannot Process Claim |
+  | 5    | Non-Contracted Pharmacy                            |
+  | 6    | Prior Authorization                                |
+  | 7    | Quantity/Day Supply Limit                          |
+  | 8    | Refill Too Soon                                    |
+  | 9    | Product Not Covered                                |
+  | 10   | DUR Clarification/Rx Clarification                 |
+  | 11   | Allergy Issue                                      |
+  | 12   | Duplicate or Newer Rx for Same Med/GPI             |
+  | 13   | Non-Matching Patient Information                   |
+  | 14   | Item Entry Error                                   |
+  | 15   | Patient Copay exceeds their Codal Threshold        |
+  | 16   | Rx Discontinued                                    |
+  | 17   | Patient Request                                    |
+  | 18   | Medication Needs Secondary Insurance               |
+  | 19   | Address Issue                                      |
+</Callout>
 
 Once the Rx has been shipped successfully by pharmacy, an update is sent for each Rx within the order. This event will be a ‘Shipped’ event sent for each Rx. For example, if an order has 2 RXs, you will receive 2 shipped messages.
 
@@ -518,7 +529,9 @@ Once the Rx has been shipped successfully by pharmacy, an update is sent for eac
 
 Once the Rx has been shipped successfully by pharmacy, an update is sent for each Rx within the order. This event will be  a ‘Shipped’ event sent for each Rx. For example, if an order has 2 RXs, you will receive 2 shipped messages.
 
-> 📃 NOTE: This is at Rx level (i.e. for each Rx)
+<Callout icon="📃" theme="default">
+  ### NOTE: This is at Rx level (i.e. for each Rx)
+</Callout>
 
 #### Sample "Shipped" event
 
