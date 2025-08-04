@@ -173,7 +173,7 @@ metadata:
 | dosageForm       | String  | 30              | Drug dosage form.                |
 | drugStrength     | String  | 70              | Shows strength of the drug.      |
 | drugStrengthUOM  | String  | 50              | Drug strength unit of measure.   |
-| quantityWritten  | decimal |                 |                                  |
+| quantityWritten  | decimal |                 | Written quantity                 |
 
 ### RxShipped
 
