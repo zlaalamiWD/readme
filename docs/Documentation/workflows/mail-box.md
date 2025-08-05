@@ -295,7 +295,7 @@ RxClarifiied events are generated when an Rx has a clarified prescription note. 
 
 ## Routed
 
-Upon a successfully transferred to the pharmacy, the system sends a mailbox event and updates the status to **Routed** in the HealthDyne System
+Upon a successfully transferred to the pharmacy, the system sends a mailbox event and updates the status to **Routed** in the HealthDyne System.
 
 #### Sample "Routed" event
 
