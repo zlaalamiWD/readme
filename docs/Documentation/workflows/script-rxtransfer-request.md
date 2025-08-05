@@ -371,8 +371,8 @@ Once the PNG or XML has been successfully downloaded, HealthDyne will store the 
 
 ## Routed Status
 
-Upon a successfully transferred to the pharmacy, the system sends a mailbox event and updates the status to \*\*Routed \*\*in the HealthDyne System.  See [RxTransfer Routed Status Event](doc:mail-box#routed)
+Upon a successfully transferred to the pharmacy, the system sends a mailbox event and updates the status to **Routed** in the HealthDyne System.  See [RxTransfer Routed Status Event](doc:mail-box#routed)
 
 ## RoutingFailed Status
 
-Upon a failed prescription transfer to the pharmacy, the system sends a mailbox event and updates the status to **RoutingFailed** in the HealthDyne System. See [RxTransfer Routed Status Event](doc:mail-box#routingfailed)
+Upon a failed prescription transfer to the pharmacy, the system sends a mailbox event and updates the status to **RoutingFailed** in the HealthDyne System. See [RxTransfer RoutingFailed Status Event](doc:mail-box#routingfailed)
