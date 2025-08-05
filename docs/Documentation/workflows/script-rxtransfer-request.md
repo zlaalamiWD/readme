@@ -62,6 +62,7 @@ The below table lists the potential response codes that can be received in respo
   "ScriptKey": "092723-123876A",
   "prescription": {
     "rxNumber": "10494303",
+		"dispenseQuantity": "7",
     "rxStatus": "Active",
     "clinicCode": "12345ABC",
     "medicationPrescribed": {
