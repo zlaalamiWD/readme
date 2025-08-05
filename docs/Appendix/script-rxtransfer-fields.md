@@ -10,9 +10,11 @@ metadata:
 next:
   description: ''
 ---
-> 📃 Note:
->
-> An empty string "" is considered a value and validation rules will apply (length/valid code/etc). Only null or missing elements will use default values.
+<Callout icon="📃" theme="default">
+  ### Note:
+
+  An empty string "" is considered a value and validation rules will apply (length/valid code/etc). Only null or missing elements will use default values.
+</Callout>
 
 # Script Request
 
@@ -142,6 +144,7 @@ next:
 | Field                | Type                                                                                                           | Character Limit | Description                                                                          |
 | :------------------- | :------------------------------------------------------------------------------------------------------------- | :-------------- | :----------------------------------------------------------------------------------- |
 | rxNumber             | String                                                                                                         | 20              | Rx number of the prescription                                                        |
+| dispenseQuantity     | String                                                                                                         | 5               | Dispensed quantity by pharmacy                                                       |
 | rxStatus             | String                                                                                                         | 20              | Name of the medication as prescribed by the prescriber.                              |
 | medicationPrescribed | Object [medicationPrescribed](https://docs.healthdyne.com/docs/script-rxtransfer-fields#medication-prescribed) |                 | Object containing medication prescribed information.                                 |
 | medicationDispense   | Object [medicationDispensed](https://docs.healthdyne.com/docs/script-rxtransfer-fields#medication-dispensed)   |                 | Object containing medication dispensed information.                                  |
