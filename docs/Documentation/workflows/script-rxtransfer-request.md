@@ -290,7 +290,7 @@ API field validation information in Appendix [Script / RxTransfer Fields](doc:sc
 
 # Script Outbound Transfer
 
-The Rx Transfer process is only available to registered pharmacies and requires direct integration between sending and receiving pharmacies. Prescription transfers also require the sending pharmacy to share a URL in the API call for HealthDyne to retrieve either.
+This prescription transfer API allows the client to initiate an outbound prescription transfer from HealthDyne to a pharmacy of the patient's choice by fax. For receiving pharmacies that are in states that restrict prescription transfers our Pharmacy may decline the API request. Once the API is successfully called, outbound prescriptions will no longer be fillable in HealthDyne systems.
 
 ### Server
 
@@ -370,8 +370,8 @@ Once the PNG or XML has been successfully downloaded, HealthDyne will store the 
 
 ## Routed Status
 
-When fax is successfully transferred to pharmacy, We send mailbox event and update the Routed status in HealthDyne System. See [RxTransfer Routed Status Event](doc:mail-box#routed)
+When a fax is successfully transferred to the pharmacy, the system sends a mailbox event and updates the status to "Routed" in the HealthDyne System. See [RxTransfer Routed Status Event](doc:mail-box#routed)
 
 ## RoutingFailed Status
 
-When fax is not transferred to pharmacy even after trying 3 attempts, We send mailbox event and update the RoutingFailed status in HealthDyne System. See [RxTransfer Routed Status Event](doc:mail-box#routingfailed)
+When a fax fails to transfer to the pharmacy, the system sends a mailbox event and updates the status to "RoutingFailed" in the HealthDyne System. See [RxTransfer Routed Status Event](doc:mail-box#routingfailed)
