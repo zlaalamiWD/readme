@@ -295,7 +295,7 @@ RxClarifiied events are generated when an Rx has a clarified prescription note. 
 
 ## Routed
 
-When fax is successfully transferred to pharmacy, We send mailbox event and update the Routed status in HealthDyne System.
+When a fax is successfully transferred to the pharmacy, the system sends a mailbox event and updates the status to \*\*Routed \*\*in the HealthDyne System.
 
 #### Sample "Routed" event
 
@@ -317,7 +317,7 @@ When fax is successfully transferred to pharmacy, We send mailbox event and upda
 
 ## RoutingFailed
 
-When fax is not transferred to pharmacy even after trying 3 attempts, We send mailbox event and update the FailedRouting status in HealthDyne System.
+When a fax fails to transfer to the pharmacy, the system sends a mailbox event and updates the status to \*\*RoutingFailed \*\*in the HealthDyne System.
 
 #### Sample "RoutingFailed" event
 
