@@ -62,7 +62,7 @@ The below table lists the potential response codes that can be received in respo
   "ScriptKey": "092723-123876A",
   "prescription": {
     "rxNumber": "10494303",
-		"dispenseQuantity": "7",
+    "dispenseQuantity": "7",
     "rxStatus": "Active",
     "clinicCode": "12345ABC",
     "medicationPrescribed": {
@@ -73,7 +73,7 @@ The below table lists the potential response codes that can be received in respo
       "expirationDate": "01-27-2024",
       "strength": "10",
       "strengthUOM": "MG",
-      "dosageForm":"TABLET"
+      "dosageForm": "TABLET"
     },
     "medicationDispense": {
       "drugNdc": "00536478701",
@@ -82,24 +82,24 @@ The below table lists the potential response codes that can be received in respo
       "daysSupply": "10",
       "strength": "10",
       "strengthUOM": "MG",
-      "dosageForm":"TABLET",
+      "dosageForm": "TABLET",
       "sigInstructions": "TAKE 1 TABLET DAILY",
       "daw": "0",
       "refillsAuthorized": "2"
     },
-    "lastFillDate":null,
+    "lastFillDate": null,
     "patientKey": "JWf782u3409wsed",
     "fillsRemaining": "6",
-    "quantityRemaining": "180",    
+    "quantityRemaining": "180",
     "metricQuantity": "",
     "nextFillDate": null,
     "provider": {
       "name": "UBARRA",
       "npi": "1487737227",
-      "stateLicenseNumber":null,
+      "stateLicenseNumber": null,
       "dea": null
     },
-    "supervisor":{
+    "supervisor": {
       "lastName": "UBARRA",
       "firstName": "UBARRA",
       "npi": "1487737227",
