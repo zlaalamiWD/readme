@@ -291,7 +291,7 @@ API field validation information in Appendix [Script / RxTransfer Fields](doc:sc
 
 # Script Outbound Transfer
 
-This prescription transfer API allows the client to initiate an outbound prescription transfer from HealthDyne to a pharmacy of the patient's choice by fax. For receiving pharmacies that are in states that restrict prescription transfers our Pharmacy may decline the API request. Once the API is successfully called, outbound prescriptions will no longer be fillable in HealthDyne systems.
+This prescription transfer API allows the client to initiate an outbound prescription transfer from HealthDyne to a pharmacy of the patient’s choice, by fax. For receiving pharmacies in states that restrict prescription transfers, our pharmacy may decline the API request. Once the API is successfully called, outbound prescriptions will no longer be fillable in HealthDyne systems.
 
 ### Server
 
