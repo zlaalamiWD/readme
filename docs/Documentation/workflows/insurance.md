@@ -126,7 +126,7 @@ Click here to see [Create Insurance Data Object](https://docs.healthdyne.com/doc
 }
 ```
 
-Click here to see [Update Insurance Data Object](https://docs.healthdyne.com/docs/insurance-request-fields#create-insurance-data-object)
+Click here to see [Update Insurance Data Object](https://docs.healthdyne.com/docs/insurance-request-fields#udpate-insurance-data-object)
 
 # DELETE
 
