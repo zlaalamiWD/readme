@@ -100,6 +100,34 @@ Click here to see [Get Insurance Data Object](https://docs.healthdyne.com/docs/i
 
 Click here to see [Create Insurance Data Object](https://docs.healthdyne.com/docs/insurance-request-fields#create-insurance-data-object)
 
+# PUT/ Update
+
+### Sample Insurance Plan PUT Request
+
+```json
+{
+  "patientKey": "ds76sa5765sad",
+  "insurance": {
+    "planNumber": "123456789",
+    "personCode": "1",
+    "relationshipCode": "1",
+    "insuranceMemberID": "67844"
+  }
+}
+```
+
+### Sample ADD Insurance Plan Response Message
+
+```json
+{
+  "patientKey": "ds76sa5765sad",
+  "planNumber": "209235",
+  "message": "Plan added to patient profile."
+}
+```
+
+Click here to see [Create Insurance Data Object](https://docs.healthdyne.com/docs/insurance-request-fields#create-insurance-data-object)
+
 # DELETE
 
 ### Sample DELETE Insurance Plan Request
