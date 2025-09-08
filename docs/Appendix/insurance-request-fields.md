@@ -95,9 +95,9 @@ next:
 | Field      | Type                                                                                                                      | Character Limit | Required/Optional | Description                                        |
 | :--------- | :------------------------------------------------------------------------------------------------------------------------ | :-------------- | :---------------- | :------------------------------------------------- |
 | patientKey | String                                                                                                                    | 50              | Required          | Unique patient ID in Client system.                |
-| insurance  | Object[[CreateInsuranceDataObject](https://docs.healthdyne.com/docs/insurance-request-fields#createinsurancedataobject) ] |                 | Required          | Object containing patient's insurance information. |
+| insurance  | Object[[UpdateInsuranceDataObject](https://docs.healthdyne.com/docs/insurance-request-fields#UpdateInsuranceDataObject) ] |                 | Required          | Object containing patient's insurance information. |
 
-#### CreateInsuranceDataObject
+#### UpdateInsuranceDataObject
 
 | Field            | Type   | Character Limit | Required/Optional | Description                                       |
 | :--------------- | :----- | :-------------- | :---------------- | :------------------------------------------------ |
