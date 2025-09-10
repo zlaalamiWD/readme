@@ -390,7 +390,7 @@ A "RxVerified" event will be generated once a Pharmacist has completed PV1 and r
     "dispenseDrug": {
       "dispenseNDC": "780000001290",
       "dispenseDrugName": "Tylenol",
-      "daySupply": 30,
+      "daysSupply": 30,
       "dispenseQuantity": 7,
       "labelDirections": "TAKE 1 TABLET DAILY",
       "dosageForm": "TABLET",
