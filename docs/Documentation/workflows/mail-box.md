@@ -14,7 +14,7 @@ next:
 
 View the [MailBox](ref:post_v2-mailbox) API Reference for detailed request body information.
 
-This endpoint should be used to obtain the status of Script and/or Fill requests previously submitted. No request body is required.\
+This endpoint should be used to obtain the status of Script and/or Fill requests previously submitted. No request body is required.
 HealthDyne employs a mailbox style order status reporting methodology. Therefore, when an order has a status update, the status message is delivered to the partner’s mailbox. This status message remains in the mailbox until the status message is retrieved by the partner and receipt of the message is acknowledged.
 A maximum of 100 status messages will be returned with a single request. Multiple requests may be necessary to receive all outstanding status messages. Please refer to the Status Codes returned to determine if all messages have been retrieved.
 Note, the status messages are not considered delivered and removed from the mailbox until the receipt of the message is acknowledged by using a POST method with the batchId as a query parameter. Hence, another status request should not be submitted until the previous status response is acknowledged.
@@ -57,7 +57,7 @@ The below table lists the potential response codes that can be received in respo
 | 401  | Unauthorized                                                                   |
 | 500  | Internal Server Error                                                          |
 
-#### Sample Status Response *(RxTransfer)*
+#### Sample Status Response _(RxTransfer)_
 
 ```json
 {
@@ -93,7 +93,7 @@ The below table lists the potential response codes that can be received in respo
 }
 ```
 
-#### Sample Status Response *(RxClarified)*
+#### Sample Status Response _(RxClarified)_
 
 ```json
 {
@@ -140,7 +140,7 @@ The below table lists the potential response codes that can be received in respo
 
 # Rx Status Events
 
-## RxReceived *(eRx, fax, phone intake only)*
+## RxReceived _(eRx, fax, phone intake only)_
 
 A RxReceived event will be produced when HealthDyne successfully receives an eRx from Surescripts for a registered patient.
 
@@ -234,7 +234,7 @@ RxRenewalReady event will be generated anytime an Rx is ready for prescriber to 
 }
 ```
 
-## Transferred *(Rx Transfer only)*
+## Transferred _(Rx Transfer only)_
 
 Once the PNG or XML has been successfully downloaded, HealthDyne will store the file and create the prescription record in HealthDyne's pharmacy management system. Once the Rx has been created, HealthDyne will generate a ‘Transferred’ event.
 
@@ -255,7 +255,7 @@ Once the PNG or XML has been successfully downloaded, HealthDyne will store the 
 }
 ```
 
-## Rejected *(During Rx Transfer)*
+## Rejected _(During Rx Transfer)_
 
 When a RxTransfer request can't be validated, HealthDyne generates a rejection event with status "Rejected". RxTransfers will be rejected if the PNG or XML download was unsuccessful after two (2) failed attempts.
 
@@ -344,7 +344,7 @@ Upon a failed prescription transfer to the pharmacy, the system sends a mailbox 
 
 ## Submitted
 
-HealthDyne will create the order after receiving a Fill Request by sending create order command in the downstream pharmacy management system. Once the order has been successfully created, HealthDyne will generate a ‘submitted’ order status message and queues the event up for the client to retrieve it.\
+HealthDyne will create the order after receiving a Fill Request by sending create order command in the downstream pharmacy management system. Once the order has been successfully created, HealthDyne will generate a ‘submitted’ order status message and queues the event up for the client to retrieve it.
 **Note:** scriptKey can contain multiple scriptKey separated by comma.
 
 #### sample "Submitted" event
@@ -547,15 +547,15 @@ Once the Rx has been shipped successfully by pharmacy, an update is sent for eac
         "orderNumber": "12345",
         "scriptKey": "1000004",
         "shipments": [
-            {
-                "Cost": 4.88,
-                "Weight": 0.6,
-                "DaysSupply": "45",
-                "TrackingUrl": "https://tools.usps.com/go/TrackConfirmAction?tLabels=?92001122222222222",
-                "DispensedQty": "90",
-                "ShipmentCode": "POS 1C",
-                "ShipmentDate": "2024-04-04T19:30:36Z",
-                "TrackingNumber": "122222222222"
+             {
+                "cost": 4.88,
+                "weight": 0.6,
+                "daysSupply": "45",
+                "trackingUrl": "https://tools.usps.com/go/TrackConfirmAction?tLabels=?92001122222222222",
+                "dispensedQty": "90",
+                "shipmentCode": "POS 1C",
+                "shipmentDate": "2024-04-04T19:30:36Z",
+                "trackingNumber": "122222222222"
             }
         ],
         "fillNumber": 2,
