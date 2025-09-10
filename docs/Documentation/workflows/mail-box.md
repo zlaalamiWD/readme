@@ -14,7 +14,7 @@ next:
 
 View the [MailBox](ref:post_v2-mailbox) API Reference for detailed request body information.
 
-This endpoint should be used to obtain the status of Script and/or Fill requests previously submitted. No request body is required.\
+This endpoint should be used to obtain the status of Script and/or Fill requests previously submitted. No request body is required.
 HealthDyne employs a mailbox style order status reporting methodology. Therefore, when an order has a status update, the status message is delivered to the partner’s mailbox. This status message remains in the mailbox until the status message is retrieved by the partner and receipt of the message is acknowledged.
 A maximum of 100 status messages will be returned with a single request. Multiple requests may be necessary to receive all outstanding status messages. Please refer to the Status Codes returned to determine if all messages have been retrieved.
 Note, the status messages are not considered delivered and removed from the mailbox until the receipt of the message is acknowledged by using a POST method with the batchId as a query parameter. Hence, another status request should not be submitted until the previous status response is acknowledged.
@@ -57,7 +57,7 @@ The below table lists the potential response codes that can be received in respo
 | 401  | Unauthorized                                                                   |
 | 500  | Internal Server Error                                                          |
 
-#### Sample Status Response *(RxTransfer)*
+#### Sample Status Response _(RxTransfer)_
 
 ```json
 {
@@ -93,7 +93,7 @@ The below table lists the potential response codes that can be received in respo
 }
 ```
 
-#### Sample Status Response *(RxClarified)*
+#### Sample Status Response _(RxClarified)_
 
 ```json
 {
@@ -140,7 +140,7 @@ The below table lists the potential response codes that can be received in respo
 
 # Rx Status Events
 
-## RxReceived *(eRx, fax, phone intake only)*
+## RxReceived _(eRx, fax, phone intake only)_
 
 A RxReceived event will be produced when HealthDyne successfully receives an eRx from Surescripts for a registered patient.
 
@@ -234,7 +234,7 @@ RxRenewalReady event will be generated anytime an Rx is ready for prescriber to 
 }
 ```
 
-## Transferred *(Rx Transfer only)*
+## Transferred _(Rx Transfer only)_
 
 Once the PNG or XML has been successfully downloaded, HealthDyne will store the file and create the prescription record in HealthDyne's pharmacy management system. Once the Rx has been created, HealthDyne will generate a ‘Transferred’ event.
 
@@ -255,7 +255,7 @@ Once the PNG or XML has been successfully downloaded, HealthDyne will store the 
 }
 ```
 
-## Rejected *(During Rx Transfer)*
+## Rejected _(During Rx Transfer)_
 
 When a RxTransfer request can't be validated, HealthDyne generates a rejection event with status "Rejected". RxTransfers will be rejected if the PNG or XML download was unsuccessful after two (2) failed attempts.
 
@@ -299,7 +299,7 @@ RxClarifiied events are generated when an Rx has a clarified prescription note. 
 
 ## Submitted
 
-HealthDyne will create the order after receiving a Fill Request by sending create order command in the downstream pharmacy management system. Once the order has been successfully created, HealthDyne will generate a ‘submitted’ order status message and queues the event up for the client to retrieve it.\
+HealthDyne will create the order after receiving a Fill Request by sending create order command in the downstream pharmacy management system. Once the order has been successfully created, HealthDyne will generate a ‘submitted’ order status message and queues the event up for the client to retrieve it.
 **Note:** scriptKey can contain multiple scriptKey separated by comma.
 
 #### sample "Submitted" event
@@ -324,7 +324,9 @@ HealthDyne will create the order after receiving a Fill Request by sending creat
 
 A "RxVerified" event will be generated once a Pharmacist has completed PV1 and released the prescription for fulfillment.
 
-> 📃 NOTE: This is at Rx level (i.e. for each Rx)
+<Callout icon="📃" theme="default">
+  ### NOTE: This is at Rx level (i.e. for each Rx)
+</Callout>
 
 #### sample "RxVerified" event
 
@@ -375,7 +377,9 @@ If order creation errors/rejects; then Rejected event will be created. Possible 
 
 When an Order is successfully created, and then one of the Rx is subsequently rejected by pharmacy because it has issue (reason such as: Insurance reason/DUR/Pharmacy unable to read the prescription)- then RxIssue event will be pushed only for Rx that has an issue.
 
-> 📃 NOTE: This is at Rx level (i.e. for each Rx)
+<Callout icon="📃" theme="default">
+  ### NOTE: This is at Rx level (i.e. for each Rx)
+</Callout>
 
 #### Sample "RxIssue" event
 
@@ -413,13 +417,17 @@ The 'statusMessage' field will show the pharmacy defined reason for the RxIssue 
 
 Additional details will be provided via free form text notes from the pharmacy in the 'issueMessage' field. For example, "Clarification required from prescriber"
 
-> 📃 The 'issueMessage' field is a free form text field and can vary in response.
+<Callout icon="📃" theme="default">
+  ### The 'issueMessage' field is a free form text field and can vary in response.
+</Callout>
 
 ## RxCancel
 
 When a Rx or multiple Rx(s) in the order have been canceled pharmacy, HealthDyne will send an update at Rx level for each Rx in the order notifying of the canceled status. By default, unless order split has been configured for the client, the entire order will be cancelled when there is an issue with any of the Rx in the same order. Cancelled Rx that have not also been rejected due to "RxIssue" are available to be assigned to a new Fill Request without additional action via the Script API.
 
-> 📃 NOTE: This is at Rx level (i.e. for each Rx)
+<Callout icon="📃" theme="default">
+  ### NOTE: This is at Rx level (i.e. for each Rx)
+</Callout>
 
 #### Sample "RxCancel" event
 
@@ -443,29 +451,31 @@ When a Rx or multiple Rx(s) in the order have been canceled pharmacy, HealthDyne
 
 <br />
 
-> 📃 NOTE: below is the list of expected order canceled reason codes with their description
->
-> | Code | Description                                        |
-> | :--- | :------------------------------------------------- |
-> | 1    | Short Term Out of Stock                            |
-> | 2    | Long Term Out of Stock                             |
-> | 3    | Non-Formulary Items                                |
-> | 4    | Invalid Insurance Information/Cannot Process Claim |
-> | 5    | Non-Contracted Pharmacy                            |
-> | 6    | Prior Authorization                                |
-> | 7    | Quantity/Day Supply Limit                          |
-> | 8    | Refill Too Soon                                    |
-> | 9    | Product Not Covered                                |
-> | 10   | DUR Clarification/Rx Clarification                 |
-> | 11   | Allergy Issue                                      |
-> | 12   | Duplicate or Newer Rx for Same Med/GPI             |
-> | 13   | Non-Matching Patient Information                   |
-> | 14   | Item Entry Error                                   |
-> | 15   | Patient Copay exceeds their Codal Threshold        |
-> | 16   | Rx Discontinued                                    |
-> | 17   | Patient Request                                    |
-> | 18   | Medication Needs Secondary Insurance               |
-> | 19   | Address Issue                                      |
+<Callout icon="📃" theme="default">
+  ### NOTE: below is the list of expected order canceled reason codes with their description
+
+  | Code | Description                                        |
+  | :--- | :------------------------------------------------- |
+  | 1    | Short Term Out of Stock                            |
+  | 2    | Long Term Out of Stock                             |
+  | 3    | Non-Formulary Items                                |
+  | 4    | Invalid Insurance Information/Cannot Process Claim |
+  | 5    | Non-Contracted Pharmacy                            |
+  | 6    | Prior Authorization                                |
+  | 7    | Quantity/Day Supply Limit                          |
+  | 8    | Refill Too Soon                                    |
+  | 9    | Product Not Covered                                |
+  | 10   | DUR Clarification/Rx Clarification                 |
+  | 11   | Allergy Issue                                      |
+  | 12   | Duplicate or Newer Rx for Same Med/GPI             |
+  | 13   | Non-Matching Patient Information                   |
+  | 14   | Item Entry Error                                   |
+  | 15   | Patient Copay exceeds their Codal Threshold        |
+  | 16   | Rx Discontinued                                    |
+  | 17   | Patient Request                                    |
+  | 18   | Medication Needs Secondary Insurance               |
+  | 19   | Address Issue                                      |
+</Callout>
 
 Once the Rx has been shipped successfully by pharmacy, an update is sent for each Rx within the order. This event will be a ‘Shipped’ event sent for each Rx. For example, if an order has 2 RXs, you will receive 2 shipped messages.
 
@@ -473,7 +483,9 @@ Once the Rx has been shipped successfully by pharmacy, an update is sent for eac
 
 Once the Rx has been shipped successfully by pharmacy, an update is sent for each Rx within the order. This event will be  a ‘Shipped’ event sent for each Rx. For example, if an order has 2 RXs, you will receive 2 shipped messages.
 
-> 📃 NOTE: This is at Rx level (i.e. for each Rx)
+<Callout icon="📃" theme="default">
+  ### NOTE: This is at Rx level (i.e. for each Rx)
+</Callout>
 
 #### Sample "Shipped" event
 
@@ -490,14 +502,14 @@ Once the Rx has been shipped successfully by pharmacy, an update is sent for eac
         "scriptKey": "1000004",
         "shipments": [
             {
-                "Cost": 4.88,
-                "Weight": 0.6,
-                "DaysSupply": "45",
-                "TrackingUrl": "https://tools.usps.com/go/TrackConfirmAction?tLabels=?92001122222222222",
-                "DispensedQty": "90",
-                "ShipmentCode": "POS 1C",
-                "ShipmentDate": "2024-04-04T19:30:36Z",
-                "TrackingNumber": "122222222222"
+                "cost": 4.88,
+                "weight": 0.6,
+                "daysSupply": "45",
+                "trackingUrl": "https://tools.usps.com/go/TrackConfirmAction?tLabels=?92001122222222222",
+                "dispensedQty": "90",
+                "shipmentCode": "POS 1C",
+                "shipmentDate": "2024-04-04T19:30:36Z",
+                "trackingNumber": "122222222222"
             }
         ],
         "fillNumber": 2,
