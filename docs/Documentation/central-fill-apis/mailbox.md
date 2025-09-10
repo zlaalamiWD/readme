@@ -9,14 +9,14 @@ metadata:
 
 View the [MailBox](https://docs.healthdyne.com/v2.17999/update/docs/mailbox-copy-1#/versions) API Reference for detailed request body information.
 
-This endpoint should be used to obtain the status of Rxfill requests previously submitted. No request body is required.\
+This endpoint should be used to obtain the status of Rxfill requests previously submitted. No request body is required.
 HealthDyne employs a mailbox style order status reporting methodology. Therefore, when an order has a status update, the status message is delivered to the partner’s mailbox. This status message remains in the mailbox until the status message is retrieved by the partner and receipt of the message is acknowledged.
 A maximum of 100 status messages will be returned with a single request. Multiple requests may be necessary to receive all outstanding status messages. Please refer to the Status Codes returned to determine if all messages have been retrieved. Retrieving messages is a two‐step process.
 
 1. Retrieve a batch of messages.
 2. Acknowledge the batch using the batchId returned from #1 using a POST method.
 
-Note: Status messages are not considered delivered or removed from the mailbox until an acknowledgment is sent using a POST request with the batchId as a query parameter.\
+Note: Status messages are not considered delivered or removed from the mailbox until an acknowledgment is sent using a POST request with the batchId as a query parameter.
 Until this acknowledgment is received, subsequent status fetch requests will return the same events with the same batchId. To avoid duplicate status data, do not submit another status request until the previous response has been acknowledged.
 
 ### Server
@@ -109,7 +109,7 @@ The POST method acknowledges the batchID of messages from the queue.
 
 #### Sample POST Request
 
-> \`[https://uat.apiservices.azure-api.net/v2/mailbox/e231b030-3788-408e-b374-f1890a0b4fb5/markread](https://uat.apiservices.azure-api.net/v2/mailbox/e231b030-3788-408e-b374-f1890a0b4fb5/markread)
+> `[https://uat.apiservices.azure-api.net/v2/mailbox/e231b030-3788-408e-b374-f1890a0b4fb5/markread](https://uat.apiservices.azure-api.net/v2/mailbox/e231b030-3788-408e-b374-f1890a0b4fb5/markread)
 >
 > #### Sample Status Response
 >
@@ -204,24 +204,24 @@ Once the order has been shipped successfully by pharmacy, then send update will 
             "status": "DISPENSED",
             "statusMessage": "The order has been shipped",
             "eventDetail": {
-				"OrderNumber": "84438058",
-				"Packages": [
+				"orderNumber": "84438058",
+				"packages": [
 					{
-						"ShipmentCode": "UPS GR",
-						"TrackingNumber": "1Z765WF80339910758",
-						"Weight": 4.9,
-						"ShippingCost": 31.34,
-						"ShipDateUtc": "2025-03-21T23:09:26.811Z",
-						"ShippingAddress": {
-							"Address1": "HOSPITAL MENONITA CAYEY ROAD #14",
-							"Address2": "KM 72.2 RINCON WARD SECTOR LAS LOMAS",
-							"City": "CAYEY",
-							"State": "PR",
-							"Zip": "00736"
+						"shipmentCode": "UPS GR",
+						"trackingNumber": "1Z765WF80339910758",
+						"weight": 4.9,
+						"shippingCost": 31.34,
+						"shipDateUtc": "2025-03-21T23:09:26.811Z",
+						"shippingAddress": {
+							"address1": "HOSPITAL MENONITA CAYEY ROAD #14",
+							"address2": "KM 72.2 RINCON WARD SECTOR LAS LOMAS",
+							"city": "CAYEY",
+							"state": "PR",
+							"zip": "00736"
 						}
 					}
 				],
-				"FulfillingPharmacy": "HEALTHDYNE-FL"
+				"fulFillingPharmacy": "HEALTHDYNE-FL"
 			}	
 }
 ```
