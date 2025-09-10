@@ -512,9 +512,9 @@ Once the Rx has been shipped successfully by pharmacy, an update is sent for eac
                 "trackingNumber": "122222222222"
             }
         ],
-        "fillNumber": 2,
-        "RemainingRefills": "2",
-        "RefillByDate": "2024-04-29T06:00:00Z"
+        "fillNumber": 2,        
+        "remainingRefills": "2",
+        "refillByDate": "2024-04-29T06:00:00Z"
     }
 }
 ```
