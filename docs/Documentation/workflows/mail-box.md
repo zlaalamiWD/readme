@@ -559,8 +559,8 @@ Once the Rx has been shipped successfully by pharmacy, an update is sent for eac
             }
         ],
         "fillNumber": 2,
-        "RemainingRefills": "2",
-        "RefillByDate": "2024-04-29T06:00:00Z"
+        "remainingRefills": "2",
+        "refillByDate": "2024-04-29T06:00:00Z"
     }
 }
 ```
