@@ -15,6 +15,8 @@ metadata:
 | UPS 2D        | UPS 2nd Day (12:00 PM Delivery)           |
 | UPS 2DAM      | UPS 2nd Day (Morning Delivery)            |
 | UPS GR        | UPS Ground                                |
+| UPS USG       | SurePost (1lb or more)                    |
+| UPS SP1       | SurePost (less than 1lb)                  |
 | UPS MID       | Mail Innovations                          |
 | FDX FST       | FedEx First Overnight                     |
 | FDX PRI       | FedEx Priority Overnight                  |
