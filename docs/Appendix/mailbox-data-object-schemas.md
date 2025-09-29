@@ -79,28 +79,28 @@ metadata:
 
 #### FillRequestDetailObject
 
-| Field            | Type                                                                                             | Character Limit | Description                                                                              |
-| :--------------- | :----------------------------------------------------------------------------------------------- | :-------------- | :--------------------------------------------------------------------------------------- |
-| orderNumber      | String                                                                                           | 100             | order number                                                                             |
-| scriptKey        | String                                                                                           | 50              | Unique identifier for the script being transferred which is initially defined by client. |
-| fillNumber       | Int                                                                                              |                 | Shows how many fills have been fulfilled for this Rx                                     |
-| remainingRefills | String                                                                                           | 10              | Show how many fill remaing for the Rx                                                    |
-| refillByDate     | String                                                                                           |                 | Date recommended for refill                                                              |
-| shipments        | \[[ShipmentObject](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#shipmentobject)] |                 | shipment information                                                                     |
+| Field            | Type                                                                                            | Character Limit | Description                                                                              |
+| :--------------- | :---------------------------------------------------------------------------------------------- | :-------------- | :--------------------------------------------------------------------------------------- |
+| orderNumber      | String                                                                                          | 100             | order number                                                                             |
+| scriptKey        | String                                                                                          | 50              | Unique identifier for the script being transferred which is initially defined by client. |
+| fillNumber       | Int                                                                                             |                 | Shows how many fills have been fulfilled for this Rx                                     |
+| remainingRefills | String                                                                                          | 10              | Show how many fill remaing for the Rx                                                    |
+| refillByDate     | String                                                                                          |                 | Date recommended for refill                                                              |
+| shipments        | [[ShipmentObject](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#shipmentobject)] |                 | shipment information                                                                     |
 
 #### ShipmentObject
 
-| Field          | Type                                                                                            | Character Limit | Description                                        |
-| :------------- | :---------------------------------------------------------------------------------------------- | :-------------- | :------------------------------------------------- |
-| address        | \[[AddressObject](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#addressobject) ] |                 | address information.                               |
-| trackingNumber | String                                                                                          | 50              | Package tracking number.                           |
-| shipmentCode   | String                                                                                          | 20              | Code representing the shipment type.               |
-| trackingUrl    | String                                                                                          | 10              | URL for tracking the shipment.                     |
-| weight         | Int                                                                                             |                 | Weight of the shipment.                            |
-| cost           | Int                                                                                             |                 | Shipping cost.                                     |
-| dispensedQty   | String                                                                                          | 20              | Quantity of medication dispensed.                  |
-| daysSupply     | String                                                                                          | 20              | Number of days the dispensed medication will last. |
-| shipmentDate   | String                                                                                          | 30              | The date the shipment was sent.                    |
+| Field          | Type                                                                                           | Character Limit | Description                                        |
+| :------------- | :--------------------------------------------------------------------------------------------- | :-------------- | :------------------------------------------------- |
+| address        | [[AddressObject](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#addressobject) ] |                 | address information.                               |
+| trackingNumber | String                                                                                         | 50              | Package tracking number.                           |
+| shipmentCode   | String                                                                                         | 20              | Code representing the shipment type.               |
+| trackingUrl    | String                                                                                         | 10              | URL for tracking the shipment.                     |
+| weight         | Int                                                                                            |                 | Weight of the shipment.                            |
+| cost           | Int                                                                                            |                 | Shipping cost.                                     |
+| dispensedQty   | String                                                                                         | 20              | Quantity of medication dispensed.                  |
+| daysSupply     | String                                                                                         | 20              | Number of days the dispensed medication will last. |
+| shipmentDate   | String                                                                                         | 30              | The date the shipment was sent.                    |
 
 #### AddressObject
 
@@ -267,11 +267,39 @@ metadata:
 
 #### Received Detail
 
-| Field  | Type   | Character Limit | Description                  |
-| :----- | :----- | :-------------- | :--------------------------- |
-| reason | String | 255             | Reason for the status if any |
+| Field        | Type                                                                                              | Character Limit | Description                  |
+| :----------- | :------------------------------------------------------------------------------------------------ | :-------------- | :--------------------------- |
+| reason       | String                                                                                            | 255             | Reason for the status if any |
+| writtendrug  | [writtendrug](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#written-drug)          |                 | Written drug object.         |
+| dispenseDrug | [dispenseDrug](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#dispense-drug-object) |                 | Dispensed drug object.       |
 
-<br />
+### Written Drug Object
+
+| Field           | Type    | Character Limit | Description                      |
+| :-------------- | :------ | :-------------- | :------------------------------- |
+| writtenDrugNdc  | String  | 9 to 11         | NDC of drug that was prescribed. |
+| writtenDrugName | String  | 105             | Drug name that was prescribed.   |
+| daysSupply      | int     |                 | Days the supply will last for.   |
+| quantityWritten | decimal |                 | Quantity prescribed.             |
+| labelDirections | String  | 1000            | Drug usage label direction text. |
+| dosageForm      | String  | 30              | Drug dosage form.                |
+| drugStrength    | String  | 70              | Shows strength of the drug.      |
+| drugStrengthUOM | String  | 50              | Drug strength unit of measure.   |
+
+### Dispense Drug Object
+
+| Field            | Type     | Character Limit | Description                      |
+| :--------------- | :------- | :-------------- | :------------------------------- |
+| dispenseNDC      | String   | 9 to 11         | NDC of drug that was dispensed.  |
+| dispenseDrugName | String   | 105             | Drug name that was dispensed.    |
+| daysSupply       | int      |                 | Days the supply will last for.   |
+| dispenseQuantity | decimal  |                 | Dispensed quantity               |
+| labelDirections  | String   | 1000            | Drug usage label direction text. |
+| dosageForm       | String   | 30              | Drug dosage form.                |
+| drugStrength     | String   | 70              | Shows strength of the drug.      |
+| drugStrengthUOM  | String   | 50              | Drug strength unit of measure.   |
+| lastFillDate     | DateTime |                 | Date of the last fill.           |
+| nextFillDate     | DateTime |                 | Date of the next fill.          |
 
 ### Clarified Event
 
