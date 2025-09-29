@@ -263,7 +263,7 @@ metadata:
 | statusMessage | String                                                                                          | max             | Descriptive message explaining the status.                                               |
 | scriptKey     | String                                                                                          | 50              | Unique identifier for the script being transferred which is initially defined by client. |
 | patientKey    | String                                                                                          | 50              | Unique identifier for the patient.                                                       |
-| detail        | [Received Detail](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#Received-detail) |                 | Nested object containing extra details specific to the event type                        |
+| detail        | [Received Detail](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#received-detail) |                 | Nested object containing extra details specific to the event type                        |
 
 #### Received Detail
 
