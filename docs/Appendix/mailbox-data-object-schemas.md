@@ -270,7 +270,7 @@ metadata:
 | Field        | Type                                                                                              | Character Limit | Description                  |
 | :----------- | :------------------------------------------------------------------------------------------------ | :-------------- | :--------------------------- |
 | reason       | String                                                                                            | 255             | Reason for the status if any |
-| writtendrug  | [writtenDrug](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#written-drug-2)        |                 | Written drug object.         |
+| writtendrug  | [writtenDrug](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#written-drug)          |                 | Written drug object.         |
 | dispenseDrug | [dispenseDrug](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#dispense-drug-object) |                 | Dispensed drug object.       |
 
 ### Written Drug
@@ -286,7 +286,7 @@ metadata:
 | drugStrength    | String  | 70              | Shows strength of the drug.      |
 | drugStrengthUOM | String  | 50              | Drug strength unit of measure.   |
 
-### Dispense Drug Object
+### Dispense Drug
 
 | Field            | Type     | Character Limit | Description                      |
 | :--------------- | :------- | :-------------- | :------------------------------- |
