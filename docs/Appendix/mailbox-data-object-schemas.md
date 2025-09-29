@@ -267,11 +267,11 @@ metadata:
 
 #### Received Detail
 
-| Field        | Type                                                                                              | Character Limit | Description                  |
-| :----------- | :------------------------------------------------------------------------------------------------ | :-------------- | :--------------------------- |
-| reason       | String                                                                                            | 255             | Reason for the status if any |
-| writtendrug  | [writtenDrug](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#written-drug)          |                 | Written drug object.         |
-| dispenseDrug | [dispenseDrug](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#dispense-drug-object) |                 | Dispensed drug object.       |
+| Field        | Type                                                                                         | Character Limit | Description                  |
+| :----------- | :------------------------------------------------------------------------------------------- | :-------------- | :--------------------------- |
+| reason       | String                                                                                       | 255             | Reason for the status if any |
+| writtendrug  | [writtenDrug](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#written-drug)     |                 | Written drug object.         |
+| dispenseDrug | [dispenseDrug](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#dispense-drug-1) |                 | Dispensed drug object.       |
 
 ### Written Drug
 
