@@ -146,16 +146,38 @@ A RxReceived event will be produced when HealthDyne successfully receives an eRx
 
 ```json
 {
-    "eventId": "1000003",
-    "eventDateUtc": "2023-05-08T19:14:55.22818Z",
-    "eventType": "RXSTATUS",
-    "patientKey": "1000002",
-    "scriptKey": "1000001",
-    "status": "Received",
-    "statusMessage": "A new prescription has been received",
-    "detail": {
-        "reason": null
+  "eventId": "245307",
+  "eventDateUtc": "2025-09-24T19:56:27.073979+05:30",
+  "eventType": "RXSTATUS",
+  "status": "Received",
+  "statusMessage": "A new prescription has been received",
+  "scriptKey": "Sc00001",
+  "patientKey": "Pt00001",
+  "detail": {
+    "reason": null,
+    "writtenDrug": {
+      "writtenDrugNdc": "61703035038",
+      "writtenDrugName": "METHOTREXATE 25MG/ML VIAL",
+      "daysSupply": 7,
+      "quantityWritten": 7,
+      "labelDirections": "TAKE  1  TABLET  DAILY",
+      "dosageForm": "SOLUTION (GM)",
+      "drugStrength": "50",
+      "drugStrengthUOM": "MG/2ML"
+    },
+    "dispenseDrug": {
+      "dispenseNDC": "61703035038",
+      "dispenseDrugName": "METHOTREXATE 25MG/ML VIAL",
+      "daysSupply": 7,
+      "dispenseQuantity": 7,
+      "labelDirections": "TAKE  1  TABLET  DAILY",
+      "dosageForm": "SOLUTION (GM)",
+      "drugStrength": "50",
+      "drugStrengthUOM": "MG/2ML",
+      "lastFillDate": "2024-04-29T06:00:00Z",
+      "nextFillDate": "2024-05-29T06:00:00Z"
     }
+  }
 }
 ```
 
