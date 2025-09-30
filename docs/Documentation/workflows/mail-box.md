@@ -277,23 +277,6 @@ Once the PNG or XML has been successfully downloaded, HealthDyne will store the 
 }
 ```
 
-## Rejected _(During Rx Transfer)_
-
-When a RxTransfer request can't be validated, HealthDyne generates a rejection event with status "Rejected". RxTransfers will be rejected if the PNG or XML download was unsuccessful after two (2) failed attempts.
-
-#### Sample "Rejected" event
-
-```json
-{
-    "eventId": "1000005",
-    "eventDateUtc": "2023-05-08T19:15:55.22818Z",
-    "eventType": "RXTRANSFER",
-    "scriptKey": "1000004",
-    "status": "Rejected",
-    "statusMessage": "The file [http://somedomain.com/files/12548.png] could not be retrieved."
-}
-```
-
 ## RxClarified
 
 RxClarifiied events are generated when an Rx has a clarified prescription note. The event candidate is identified when an Rx has a clarified prescription note and no previous event generation.
