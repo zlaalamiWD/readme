@@ -76,18 +76,6 @@ The below table lists the potential response codes that can be received in respo
                 "patientKey": "1000002",
                 "rxNumber": "RX12345"
             }
-        },
-        {
-            "eventId": "1000005",
-            "eventDateUtc": "2023-05-08T19:15:55.22818Z",
-            "eventType": "RXTRANSFER",
-            "scriptKey": "1000004",
-            "status": "Rejected",
-            "statusMessage": "The file [http://somedomain.com/files/12548.png] could not be retrieved.",
-            "detail": {
-                "patientKey": "1000002",
-                "rxNumber": null
-            }
         }
     ]
 }
