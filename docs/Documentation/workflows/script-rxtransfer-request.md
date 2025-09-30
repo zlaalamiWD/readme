@@ -174,7 +174,7 @@ The Rx Transfer process is only available to registered pharmacies and requires 
 
 API field validation information in Appendix [Script / RxTransfer Fields](doc:script-rxtransfer-fields)
 
-![](https://files.readme.io/e54bd23-small-Script_Request.png)
+<Image border={false} src="https://files.readme.io/e54bd23-small-Script_Request.png" />
 
 ### Server
 
@@ -295,10 +295,6 @@ API field validation information in Appendix [Script / RxTransfer Fields](doc:sc
 # Status Events
 
 Please see the [RxTransfer](doc:mail-box#rxtransfer-status-events) status events under the [Mailbox](doc:mail-box) API guide for a detailed list of status events.
-
-## Rejected Status
-
-When a RxTransfer request can't be validated, HealthDyne generates a rejection event with status "Rejected". RxTransfers will be rejected if the PNG or XML download was unsuccessful after two (2) failed attempts. See [RxTransfer Rejected Status Event](doc:mail-box#rejected).
 
 ## Transferred Status
 
