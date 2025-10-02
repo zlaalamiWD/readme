@@ -12,7 +12,7 @@ next:
 ---
 # Fill Request:
 
-See [Fill](https://docs.healthdyne.com/v2.19/docs/fill-request-fields#/) API reference for request message fields.
+See [Fill](https://docs.healthdyne.com/v2.19/reference/post_v2-fill-fillrequest#/) API reference for request message fields.
 
 This API lets client define when the order needs to be initiated in HealthDyne system and also defines the number of prescriptions/scripts that need to be consolidated in one order. A client can also use the GET method of Fill Request to retrieve current status.
 
@@ -154,12 +154,12 @@ Click here to see [Get Fill Request Data Object](https://docs.healthdyne.com/doc
 
 The table below lists the potential response codes that can be received in response to a GET request.
 
-| Code | Description                                             |
-| :--- | :------------------------------------------------------ |
-| 200  | Fill Request status details returned | No records found |
-| 400  | Bad Request – typically the header is missing key       |
-| 401  | Unauthorized                                            |
-| 500  | Internal Server Error                                   |
+| Code | Description                                       |                  |
+| :--- | :------------------------------------------------ | :--------------- |
+| 200  | Fill Request status details returned              | No records found |
+| 400  | Bad Request – typically the header is missing key |                  |
+| 401  | Unauthorized                                      |                  |
+| 500  | Internal Server Error                             |                  |
 
 ***
 
