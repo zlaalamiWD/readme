@@ -150,10 +150,10 @@ The Cancel Request API enables client systems to submit a cancellation request f
 
 ##### Only https connections are accepted.
 
-| REQUEST TYPE | ENDPOINT                                            |
-| :----------- | :-------------------------------------------------- |
-| POST (Test)  | uat-apiservices.azure-api.net/v2/fillrequest/cancel |
-| POST (Prod)  | centralfill.healthdyne.com/fillrequest/cancel       |
+| REQUEST TYPE | ENDPOINT                                                         |
+| :----------- | :--------------------------------------------------------------- |
+| POST (Test)  | https://services-uat.welldynerx.com/rxfill/v2/fillrequest/cancel |
+| POST (Prod)  | https://services.welldynerx.com/rxfill/v2/fillrequest/cancel     |
 
 ### Sample Cancel Fill Request
 
