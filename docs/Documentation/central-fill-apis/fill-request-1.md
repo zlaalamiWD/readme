@@ -7,7 +7,7 @@ metadata:
 ---
 The Rx Fill API provides the ability to submit new prescription fill requests and to retrieve status messages for previously sent prescription fill requests.
 
-![](https://files.readme.io/355dfb9f385a68021f985b7b429e6dffd6635c1916e7b9321d2987da77354a08-image.png)
+<Image border={false} src="https://files.readme.io/355dfb9f385a68021f985b7b429e6dffd6635c1916e7b9321d2987da77354a08-image.png" />
 
 ## Submit Fill Request
 
@@ -17,10 +17,10 @@ See [RxFill](https://docs.healthdyne.com/v2.17999/update/docs/fill-request-field
 
 ##### Only https connections are accepted.
 
-| REQUEST TYPE | ENDPOINT                                        |
-| :----------- | :---------------------------------------------- |
-| POST (Test)  | uat.apiservices.azure-api.net/rx/v2/fillrequest |
-| POST (Prod)  | centralfill.healthdyne.com/rxfill/fillRequest   |
+| REQUEST TYPE | ENDPOINT                                                  |
+| :----------- | :-------------------------------------------------------- |
+| POST (Test)  | https://services-uat.welldynerx.com/rxfill/v2/fillrequest |
+| POST (Prod)  | https://services.welldynerx.com/rxfill/v2/fillrequest     |
 
 ### Header
 
