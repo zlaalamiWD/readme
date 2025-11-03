@@ -16,9 +16,9 @@ This API lets clients add and update patient payment cards information in the He
 
 Use POST method to add a payment card to the patient profile  and PUT method to update existing patient payment card details.
 
-# Get Patient
+# Get Patient Payment card
 
-Once a patient has been registered successfully, the GET Patient API allows clients to retrieve patient details (active details) from HD pharmacy system using PatientKey.
+Once a patient payment card has been registered successfully, the GET Patient Payment Card API allows clients to retrieve Payment Card details (active details) from HD pharmacy system using PatientKey.
 
 ### Server
 
