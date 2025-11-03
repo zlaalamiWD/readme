@@ -10,26 +10,28 @@ metadata:
 next:
   description: ''
 ---
-> 📃 Note:
->
-> An empty string "" is considered a value and validation rules will apply (length/valid code/etc). Only null or missing elements will use default values.
+<Callout icon="📃" theme="default">
+  ### Note:
+
+  An empty string "" is considered a value and validation rules will apply (length/valid code/etc). Only null or missing elements will use default values.
+</Callout>
 
 # Patient Request Data Object
 
 # Patient
 
-| Field               | Type                                                                             | Character Limit | Required/Optional | Description                                                                                                                                                                                                                                                                                                                                   |
-| :------------------ | :------------------------------------------------------------------------------- | :-------------- | :---------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| patientKey          | String                                                                           | 50              | Required          | Unique patient ID in Client system.                                                                                                                                                                                                                                                                                                           |
-| firstName           | String                                                                           | 35              | Required          | Patient's first name.                                                                                                                                                                                                                                                                                                                         |
-| lastName            | String                                                                           | 35              | Required          | Patient's last name.                                                                                                                                                                                                                                                                                                                          |
-| birthDate           | DateTime                                                                         | YYYY-MM-DD      | Required          | Patient's Date of Birth                                                                                                                                                                                                                                                                                                                       |
-| gender              | String                                                                           | 1               | Required          | Patient’s Gender – M, F or U                                                                                                                                                                                                                                                                                                                  |
-| patientLanguage     | String                                                                           | 3               | Optional          | Patient language must be ENG or SPA.                                                                                                                                                                                                                                                                                                          |
-| address             | Object [(address)](doc:patient-request-fields#address)                           |                 | Required          | Object containing patient’s address information. See [Address](doc:patient-request-fields#address) table.                                                                                                                                                                                                                                     |
-| contact             | Object [(contact)](doc:patient-request-fields#contact)                           |                 | Required          | Object containing patient’s contact information. See [Contact](doc:patient-request-fields#contact) table.                                                                                                                                                                                                                                     |
-| allergies           | Array [\[allergies\]](doc:patient-request-fields#allergies)                      |                 | Required          | Array containing patient’s allergy information. See the [Allergies](doc:patient-request-fields#allergies) table for valid list of allergies.                                                                                                                                                                                                  |
-| externalMedications | Array [\[externalMedications\]](doc:patient-request-fields#external-medications) |                 | Optional          | Array containing patient’s external medications objects. List any external Medications the patient is taking for pharmacy to know if there is any drug interaction. If there are  external medications, then ensure all the object elements are populated. See [External Medications](doc:patient-request-fields#external-medications) table. |
+| Field               | Type                                                                           | Character Limit | Required/Optional | Description                                                                                                                                                                                                                                                                                                                                   |
+| :------------------ | :----------------------------------------------------------------------------- | :-------------- | :---------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| patientKey          | String                                                                         | 50              | Required          | Unique patient ID in Client system.                                                                                                                                                                                                                                                                                                           |
+| firstName           | String                                                                         | 35              | Required          | Patient's first name.                                                                                                                                                                                                                                                                                                                         |
+| lastName            | String                                                                         | 35              | Required          | Patient's last name.                                                                                                                                                                                                                                                                                                                          |
+| birthDate           | DateTime                                                                       | YYYY-MM-DD      | Required          | Patient's Date of Birth                                                                                                                                                                                                                                                                                                                       |
+| gender              | String                                                                         | 1               | Required          | Patient’s Gender – M, F or U                                                                                                                                                                                                                                                                                                                  |
+| patientLanguage     | String                                                                         | 3               | Optional          | Patient language must be ENG or SPA.                                                                                                                                                                                                                                                                                                          |
+| address             | Object [(address)](doc:patient-request-fields#address)                         |                 | Required          | Object containing patient’s address information. See [Address](doc:patient-request-fields#address) table.                                                                                                                                                                                                                                     |
+| contact             | Object [(contact)](doc:patient-request-fields#contact)                         |                 | Required          | Object containing patient’s contact information. See [Contact](doc:patient-request-fields#contact) table.                                                                                                                                                                                                                                     |
+| allergies           | Array [[allergies]](doc:patient-request-fields#allergies)                      |                 | Required          | Array containing patient’s allergy information. See the [Allergies](doc:patient-request-fields#allergies) table for valid list of allergies.                                                                                                                                                                                                  |
+| externalMedications | Array [[externalMedications]](doc:patient-request-fields#external-medications) |                 | Optional          | Array containing patient’s external medications objects. List any external Medications the patient is taking for pharmacy to know if there is any drug interaction. If there are  external medications, then ensure all the object elements are populated. See [External Medications](doc:patient-request-fields#external-medications) table. |
 
 # Patient (Update Api)
 
@@ -263,7 +265,7 @@ next:
       </td>
 
       <td>
-        Array [\[allergies\]](doc:patient-request-fields#allergies)
+        Array [[allergies]](doc:patient-request-fields#allergies)
       </td>
 
       <td>
@@ -285,7 +287,7 @@ next:
       </td>
 
       <td>
-        Array [\[externalMedications\]](doc:patient-request-fields#external-medications)
+        Array [[externalMedications]](doc:patient-request-fields#external-medications)
       </td>
 
       <td>
@@ -438,7 +440,7 @@ next:
   </tbody>
 </Table>
 
-\*Required if the Contact object is being provided in the Patient object.
+*Required if the Contact object is being provided in the Patient object.
 
 # Allergies
 
@@ -488,26 +490,28 @@ next:
 | Tetracyclines                          | Tetracyclines & Related                |
 | Tetracyclines & Related                | Tetracyclines & Related                |
 
-> 📃 Additional Allergy Information
->
-> Allergy information not matching the defined allergy list will still be accepted. However the information will be added in the HealthDyne system under the "notes" section of the Patient's profile for pharmacist to review. Each non-defined allergy list entry has a 40 character limit.
+<Callout icon="📃" theme="default">
+  ### Additional Allergy Information
+
+  Allergy information not matching the defined allergy list will still be accepted. However the information will be added in the HealthDyne system under the "notes" section of the Patient's profile for pharmacist to review. Each non-defined allergy list entry has a 40 character limit.
+</Callout>
 
 # External Medications
 
 | Field     | Type     | Character Limit | Required/Optional | Description                      |
 | :-------- | :------- | :-------------- | :---------------- | :------------------------------- |
-| ndc       | String   | 11              | Required\*        | NDC of the medication            |
+| ndc       | String   | 11              | Required*         | NDC of the medication            |
 | startDate | DateTime | YYYY-MM-DD      | Optional          | Date when medication was started |
 | endDate   | DateTime | YYYY-MM-DD      | Optional          | Date when medication was ended   |
 
-\*NDC is required if the External Medications object is being provided in the Patient object.
+*NDC is required if the External Medications object is being provided in the Patient object.
 
 # Identification
 
 | Field               | Type      | Character Limit | Required/Optional | Description                                                                                                                                                                                                                          |
 | :------------------ | :-------- | :-------------- | :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| patientId           | String    | 60              | Required\*        | Unique Id of the Identity Document.                                                                                                                                                                                                  |
-| patientIdCode       | String    | 03              | Required\*        | Code to identify the type of identity document. For example: 02 refers to Driver's license. See [List of Identification Documents](https://docs.healthdyne.com/v2.19/docs/patient-request-fields#list-of-identification-documents) . |
+| patientId           | String    | 60              | Required*         | Unique Id of the Identity Document.                                                                                                                                                                                                  |
+| patientIdCode       | String    | 03              | Required*         | Code to identify the type of identity document. For example: 02 refers to Driver's license. See [List of Identification Documents](https://docs.healthdyne.com/v2.19/docs/patient-request-fields#list-of-identification-documents) . |
 | patientIdExpiration | DateOnly? | YYYY-MM-DD      | Optional          | Date when the identity document will be expired / invalid.                                                                                                                                                                           |
 
 <br />
@@ -537,9 +541,9 @@ next:
 
 #### Query Parameter
 
-| Field      | Type   | Character Limit | Required/Optional | Description                         |
-| :--------- | :----- | :-------------- | :---------------- | :---------------------------------- |
-| patientKey | String | 50              | Required          | Unique patient ID in Client system. |
+| Field      | Character Limit | Type   | Required/Optional | Description                         |
+| :--------- | :-------------- | :----- | :---------------- | :---------------------------------- |
+| patientKey | 50              | String | Required          | Unique patient ID in Client system. |
 
 #### Response Object
 
@@ -796,7 +800,7 @@ next:
       </td>
 
       <td>
-        Array \[[externalMedications](doc:patient-request-fields#external-medications)]
+        Array [[externalMedications](doc:patient-request-fields#external-medications)]
       </td>
 
       <td>
@@ -863,7 +867,7 @@ next:
       </td>
 
       <td>
-        Array [\[allergies\]](doc:patient-request-fields#allergies)
+        Array [[allergies]](doc:patient-request-fields#allergies)
       </td>
 
       <td>
@@ -1035,6 +1039,97 @@ next:
 </Table>
 
 # Update Patient Request
+
+#### Request Object
+
+| Field   | Type                                                                                                 | Character Limit | Required/Optional | Description                                       |
+| :------ | :--------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------ |
+| patient | Object [(patient)](https://docs.healthdyne.com/v2.19/docs/patient-request-fields#patient-update-api) |                 | Required          | Object containing patient’s personal information. |
+
+#### Response Object
+
+<Table align={["left","left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Field
+      </th>
+
+      <th>
+        Type
+      </th>
+
+      <th>
+        Character Limit
+      </th>
+
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        patientKey
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        50
+      </td>
+
+      <td>
+        Unique patient ID in Client system.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        message
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        max
+      </td>
+
+      <td>
+        Status messages string.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        epostPatientNumber
+      </td>
+
+      <td>
+        Integer
+      </td>
+
+      <td>
+
+      </td>
+
+      <td>
+        Unique patient number from ePost.
+        **Note**: This field will appear in response only if EPostRxPatientNumberEnabled flag for client is enabled.
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+# Patient Payment Cards Objects
+
+# Get Patient Payment Cards Request
 
 #### Request Object
 
