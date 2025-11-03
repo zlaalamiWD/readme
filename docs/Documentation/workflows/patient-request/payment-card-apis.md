@@ -24,10 +24,10 @@ Once a patient payment card has been registered successfully, the GET Patient Pa
 
 ##### Only HTTPS connections are accepted.
 
-| METHOD TYPE | ENDPOINT                                                   |
-| :---------- | :--------------------------------------------------------- |
-| GET (Test)  | api.uat-healthdyne.com/v2/patient?patientkey=\<patientKey> |
-| GET (Prod)  | api.healthdyne.com/v2/patient?patientkey=\<patientKey>     |
+| METHOD TYPE | ENDPOINT                                               |
+| :---------- | :----------------------------------------------------- |
+| GET (Test)  | api.uat-healthdyne.com/v2/\<patientKey>/paymentcard    |
+| GET (Prod)  | api.healthdyne.com/v2/patient?patientkey=\<patientKey> |
 
 ### Header
 
