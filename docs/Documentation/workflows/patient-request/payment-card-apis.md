@@ -95,8 +95,6 @@ The POST Patient Payment Card API allows clients to add Payment Card details to 
 
 #### Sample POST Patient Payment Card Request
 
-<br />
-
 ```json
 {
     "patientKey": "TestreadPatient171",
