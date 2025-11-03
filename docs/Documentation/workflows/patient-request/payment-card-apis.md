@@ -8,11 +8,13 @@ hidden: true
 metadata:
   robots: index
 ---
-# Add Payment Card Request:
+# Payment Card Request:
 
-This API lets clients define and update patient information in the HealthDyne system. A client can also use the GET method of Patient Request to retrieve patient.
+See the Payment Card API reference for request message fields.
 
-Use POST method to add/create a patient and PUT method to update existing patient details.
+This API lets clients add and update patient payment cards information in the HealthDyne system. A client can also use the GET method of patient payment request to retrieve patient payment card information.
+
+Use POST method to add a payment card to the patient profile  and PUT method to update existing patient payment card details.
 
 # Get Patient
 
