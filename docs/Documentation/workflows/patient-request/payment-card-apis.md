@@ -42,73 +42,34 @@ Once a patient payment card has been registered successfully, the GET Patient Pa
 
 Click here to see [GET Patient Request Query Data](https://docs.healthdyne.com/docs/patient-request-fields#query-parameter)
 
-#### Sample GET Patient Response
+#### Sample GET Patient Payment Card Response
 
 ```json
 {
-  "patientKey": "TESTPATIENT",
-  "firstName": "TEST",
-  "lastName": "TESTREADPATIENT17",
-  "gender": "F",
-  "epostPatientNum": 727793,
-  "patientLanguage": "ENG",
-  "birthDate": "1997-02-03",
-  "healthCondition": [],
-  "address": [
-    {
-      "line1": "123 Main St",
-      "line2": null,
-      "line3": null,
-      "city": "LAKELAND",
-      "state": "FL",
-      "zipCode": "33810",
-      "countryCode": "US",
-      "addressType": "HOME",
-      "defaultAddress": true
-    },
-    {
-      "line1": "678 Main St",
-      "line2": null,
-      "line3": null,
-      "city": "LAKELAND",
-      "state": "FL",
-      "zipCode": "33810",
-      "countryCode": "US",
-      "addressType": "HOME",
-      "defaultAddress": false
-    }
-  ],
-  "contact": [
-    {
-      "contactType": "HOME PHONE",
-      "contactAddress": "3233731379",
-      "emailAddress": "testemail@domain.com"
-    }
-  ],
-  "externalMedications": [
-    "00002445385",
-    "99207012010"
-  ],
-  "identification": {
-    "patientId": "DR987EF007",
-    "patientIdCode": "02",
-    "patientIdExpiration": "2030-01-15"
-  },
-  "pregnancyIndicator": "N",
-  "allergies": [
-    "CEPHALOSPORINS",
-    "SALICYLATES"
-  ]
+    "patientKey": "TestreadPatient171",
+    "cards": [
+        {
+            "cardType": 1,
+            "cardNumber": "*********************1111",
+            "cardHolderFirstName": "Test",
+            "cardHolderLastName": "Partient",
+            "cardExpireMonth": 3,
+            "cardExpireYear": 2027,
+            "defaultCard": true
+        }
+    ]
 }
 ```
 
-Click here to see [Get Patient Response Data Object](https://docs.healthdyne.com/docs/patient-request-fields#response-object)
+Click here to see [Get Patient Payment Card Response Data Object](https://docs.healthdyne.com/docs/patient-request-fields#response-object)
 
 The below table lists the potential response codes that can be received in response to a GET request.
 
-| Code | Description                   |
-| :--- | :---------------------------- |
-| 200  | Patient details returned      |
-| 400  | No record returned for search |
-| 401  | Unauthorized                  |
-| 500  | Internal Server Error         |
+| Code | Description                            |
+| :--- | :------------------------------------- |
+| 200  | Patient Payment Cards details returned |
+| 204  | No record returned for search          |
+| 401  | Unauthorized                           |
+| 500  | Internal Server Error                  |
+
+<br />
