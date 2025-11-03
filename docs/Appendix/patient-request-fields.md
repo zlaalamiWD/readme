@@ -1140,7 +1140,12 @@ next:
 
 ###### cards Object
 
-| Field    | Type   | Description                         |
-| :------- | :----- | :---------------------------------- |
-| cardType | String | Unique patient ID in Client system. |
-| cards    | Array  | Cards info object                   |
+| Field               | Type    | Description                                                                              |
+| :------------------ | :------ | :--------------------------------------------------------------------------------------- |
+| cardType            | String  | Indicates the type of card (e.g., Visa, MasterCard, Amex) represented by a numeric code. |
+| cardNumber          | Array   | The masked payment card number, showing only the last four digits for security.          |
+| cardHolderFirstName | String  | First name of the cardholder as it appears on the card.                                  |
+| cardHolderLastName  | String  | Last name of the cardholder as it appears on the card.                                   |
+| cardExpireMonth     | Integer | The expiration month of the card.                                                        |
+| cardExpireYear      | Integer | The expiration year of the card.                                                         |
+| defaultCard         | Bool    | Indicates whether this card is the primary/default card on file (true/false).            |
