@@ -106,18 +106,7 @@ The POST Patient Payment Card API allows clients to add Payment Card details to 
 
 ```json
 {
-    "patientKey": "TestreadPatient171",
-    "cards": [
-        {
-            "cardType": 1,
-            "cardNumber": "*********************1111",
-            "cardHolderFirstName": "Test",
-            "cardHolderLastName": "Partient",
-            "cardExpireMonth": 3,
-            "cardExpireYear": 2027,
-            "defaultCard": true
-        }
-    ]
+    "returnUrl": "https://cardcenter.qa-healthdyne.com/AddCard/c440977f-dba1-4d5f-aa5f-2862cd81"
 }
 ```
 
