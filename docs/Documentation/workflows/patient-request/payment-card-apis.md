@@ -90,7 +90,7 @@ The POST Patient Payment Card API allows clients to add Payment Card details to 
 | Key                         | Value                  |
 | :-------------------------- | :--------------------- |
 | Accept                      | application/json       |
-| Content-type                | application/json       |
+| Content-Type                | application/json       |
 | HealthDyne-Subscription-Key | Provided by HealthDyne |
 
 #### Sample POST Patient Payment Card Request
@@ -102,7 +102,7 @@ The POST Patient Payment Card API allows clients to add Payment Card details to 
 }
 ```
 
-#### Sample GET Patient Payment Card Response
+#### Sample POST Patient Payment Card Response
 
 ```json
 {
@@ -138,14 +138,25 @@ Once a patient payment card has been registered successfully, the PUT Patient Pa
 
 ### Header
 
-| Key                         | Value                       |
-| :-------------------------- | :-------------------------- |
-| Accept                      | application/json (optional) |
-| HealthDyne-Subscription-Key | Provided by HealthDyne      |
+| Key                         | Value                  |
+| :-------------------------- | :--------------------- |
+| Accept                      | application/json       |
+| Content-Type                | application/json       |
+| HealthDyne-Subscription-Key | Provided by HealthDyne |
 
-#### Sample GET Patient Request
+#### Sample PUT Patient Payment Card Request
 
-`GET https://api.uat-healthdyne.com/v2/TestreadPatient171/paymentcard`
+```json
+{
+  "patientKey": "TestreadPatient171",
+  "cardSequenceNumber": *********************1111
+  "expirationMonth": 3,
+  "expirationYear": 2028,
+  "cardFirstName": "test",
+  "cardMiddleName": "u",
+  "cardLastName": "patient"
+}
+```
 
 #### Sample GET Patient Payment Card Response
 
@@ -173,6 +184,6 @@ The below table lists the potential response codes that can be received in respo
 | Code | Description                            |
 | :--- | :------------------------------------- |
 | 200  | Patient Payment Cards details returned |
-| 204  | No record returned for search          |
+| 400  | No record returned for search          |
 | 401  | Unauthorized                           |
 | 500  | Internal Server Error                  |
