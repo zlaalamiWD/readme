@@ -1131,89 +1131,16 @@ next:
 
 # Get Patient Payment Cards Request
 
-#### Request Object
+###### Response Object
 
-| Field   | Type                                                                                                 | Character Limit | Required/Optional | Description                                       |
-| :------ | :--------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------ |
-| patient | Object [(patient)](https://docs.healthdyne.com/v2.19/docs/patient-request-fields#patient-update-api) |                 | Required          | Object containing patient’s personal information. |
+| Field      | Type   | Description                         |
+| :--------- | :----- | :---------------------------------- |
+| patientKey | String | Unique patient ID in Client system. |
+| cards      | Array  | Cards info object                   |
 
-#### Response Object
+###### cards Object
 
-<Table align={["left","left","left","left"]}>
-  <thead>
-    <tr>
-      <th>
-        Field
-      </th>
-
-      <th>
-        Type
-      </th>
-
-      <th>
-        Character Limit
-      </th>
-
-      <th>
-        Description
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-        patientKey
-      </td>
-
-      <td>
-        String
-      </td>
-
-      <td>
-        50
-      </td>
-
-      <td>
-        Unique patient ID in Client system.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        message
-      </td>
-
-      <td>
-        String
-      </td>
-
-      <td>
-        max
-      </td>
-
-      <td>
-        Status messages string.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        epostPatientNumber
-      </td>
-
-      <td>
-        Integer
-      </td>
-
-      <td>
-
-      </td>
-
-      <td>
-        Unique patient number from ePost.
-        **Note**: This field will appear in response only if EPostRxPatientNumberEnabled flag for client is enabled.
-      </td>
-    </tr>
-  </tbody>
-</Table>
+| Field    | Type   | Description                         |
+| :------- | :----- | :---------------------------------- |
+| cardType | String | Unique patient ID in Client system. |
+| cards    | Array  | Cards info object                   |
