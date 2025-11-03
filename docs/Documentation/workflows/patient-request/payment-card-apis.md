@@ -114,9 +114,9 @@ Click here to see [Add Patient Payment Card Response Data Object](https://docs.h
 
 The below table lists the potential response codes that can be received in response to a GET request.
 
-| Code | Description                            |
-| :--- | :------------------------------------- |
-| 200  | Patient Payment Cards details returned |
-| 400  | No record returned for search          |
-| 401  | Unauthorized                           |
-| 500  | Internal Server Error                  |
+| Code | Description                               |
+| :--- | :---------------------------------------- |
+| 200  | Patient Payment Cards details returned    |
+| 400  | Patient Key provided does not exist in HD |
+| 401  | Unauthorized                              |
+| 500  | Internal Server Error                     |
