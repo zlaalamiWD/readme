@@ -93,9 +93,9 @@ The POST Patient Payment Card API allows clients to add Payment Card details to 
 | Content-type                | application/json       |
 | HealthDyne-Subscription-Key | Provided by HealthDyne |
 
-#### Sample GET Patient Request
+#### Sample POST Patient Payment Card Request
 
-`GET https://api.uat-healthdyne.com/v2/TestreadPatient171/paymentcard`
+`POST https://api.uat-healthdyne.com/v2/paymentcard`
 
 #### Sample GET Patient Payment Card Response
 
