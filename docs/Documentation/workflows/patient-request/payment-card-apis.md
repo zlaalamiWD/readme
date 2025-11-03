@@ -40,8 +40,6 @@ Once a patient payment card has been registered successfully, the GET Patient Pa
 
 `GET https://api.uat-healthdyne.com/v2/TestreadPatient171/paymentcard`
 
-Click here to see [GET Patient Payment Cards Request Query Data](https://docs.healthdyne.com/docs/patient-request-fields#query-parameter)
-
 #### Sample GET Patient Payment Card Response
 
 ```json
