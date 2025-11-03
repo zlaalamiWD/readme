@@ -31,11 +31,10 @@ Once a patient payment card has been registered successfully, the GET Patient Pa
 
 ### Header
 
-| Key                         | Value                  |
-| :-------------------------- | :--------------------- |
-| Accept                      | application/json       |
-| Content-Type                | application/json       |
-| HealthDyne-Subscription-Key | Provided by HealthDyne |
+| Key                         | Value                       |
+| :-------------------------- | :-------------------------- |
+| Accept                      | application/json (optional) |
+| HealthDyne-Subscription-Key | Provided by HealthDyne      |
 
 #### Sample GET Patient Request
 
