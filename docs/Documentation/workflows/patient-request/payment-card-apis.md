@@ -71,3 +71,58 @@ The below table lists the potential response codes that can be received in respo
 | 500  | Internal Server Error                  |
 
 <br />
+
+# Add Patient Payment card
+
+The POST Patient Payment Card API allows clients to add Payment Card details to HD pharmacy system.
+
+### Server
+
+##### Only HTTPS connections are accepted.
+
+| METHOD TYPE | ENDPOINT                              |
+| :---------- | :------------------------------------ |
+| GET (Test)  | api.uat-healthdyne.com/v2/paymentcard |
+| GET (Prod)  | api.healthdyne.com/v2/paymentcard     |
+
+### Header
+
+| Key                         | Value                       |
+| :-------------------------- | :-------------------------- |
+| Accept                      | application/json (optional) |
+| Content-type                |                             |
+| HealthDyne-Subscription-Key | Provided by HealthDyne      |
+
+#### Sample GET Patient Request
+
+`GET https://api.uat-healthdyne.com/v2/TestreadPatient171/paymentcard`
+
+#### Sample GET Patient Payment Card Response
+
+```json
+{
+    "patientKey": "TestreadPatient171",
+    "cards": [
+        {
+            "cardType": 1,
+            "cardNumber": "*********************1111",
+            "cardHolderFirstName": "Test",
+            "cardHolderLastName": "Partient",
+            "cardExpireMonth": 3,
+            "cardExpireYear": 2027,
+            "defaultCard": true
+        }
+    ]
+}
+```
+
+Click here to see [Get Patient Payment Card Response Data Object](https://docs.healthdyne.com/docs/patient-payment-card-fields#response-object)
+
+The below table lists the potential response codes that can be received in response to a GET request.
+
+| Code | Description                            |
+| :--- | :------------------------------------- |
+| 200  | Patient Payment Cards details returned |
+| 204  | No record returned for search          |
+| 401  | Unauthorized                           |
+| 500  | Internal Server Error                  |
