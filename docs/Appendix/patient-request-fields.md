@@ -1158,14 +1158,13 @@ The Add Patient Payment Card endpoint accepts a request payload containing patie
 
 ###### Request Object
 
-| Field      | Type   | Character Limit | Description                         |
-| :--------- | :----- | :-------------- | :---------------------------------- |
-| patientKey | String | 50              | Unique patient ID in Client system. |
-| returnUrl  | String |                 | Cards info object                   |
+| Field      | Type   | Character Limit | Description                                                                                 |
+| :--------- | :----- | :-------------- | :------------------------------------------------------------------------------------------ |
+| patientKey | String | 50              | Unique patient ID in Client system.                                                         |
+| returnUrl  | String |                 | This is the callback URL that the patient will be directed to after adding the payment card |
 
 ###### Response Object
 
-| Field      | Type   | Character Limit | Description                         |
-| :--------- | :----- | :-------------- | :---------------------------------- |
-| patientKey | String | 50              | Unique patient ID in Client system. |
-| returnUrl  | String |                 | Cards info object                   |
+| Field     | Type   | Character Limit | Description                                                                                                                    |
+| :-------- | :----- | :-------------- | :----------------------------------------------------------------------------------------------------------------------------- |
+| returnUrl | String |                 | This the URL that the client will use to re-direct the patient to the page where they will enter the payment card information. |
