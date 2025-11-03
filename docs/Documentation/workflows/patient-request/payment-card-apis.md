@@ -87,11 +87,11 @@ The POST Patient Payment Card API allows clients to add Payment Card details to 
 
 ### Header
 
-| Key                         | Value                       |
-| :-------------------------- | :-------------------------- |
-| Accept                      | application/json (optional) |
-| Content-type                | application/json            |
-| HealthDyne-Subscription-Key | Provided by HealthDyne      |
+| Key                         | Value                  |
+| :-------------------------- | :--------------------- |
+| Accept                      | application/json       |
+| Content-type                | application/json       |
+| HealthDyne-Subscription-Key | Provided by HealthDyne |
 
 #### Sample GET Patient Request
 
