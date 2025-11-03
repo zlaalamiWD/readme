@@ -1165,6 +1165,6 @@ The Add Patient Payment Card endpoint accepts a request payload containing patie
 
 ###### Response Object
 
-| Field     | Type   | Character Limit | Description                                                                                                                    |
-| :-------- | :----- | :-------------- | :----------------------------------------------------------------------------------------------------------------------------- |
-| returnUrl | String |                 | This the URL that the client will use to re-direct the patient to the page where they will enter the payment card information. |
+| Field     | Type   | Character Limit | Description                                                                            |
+| :-------- | :----- | :-------------- | :------------------------------------------------------------------------------------- |
+| returnUrl | String |                 | This URL is used by the client to redirect the patient to the payment card entry page. |
