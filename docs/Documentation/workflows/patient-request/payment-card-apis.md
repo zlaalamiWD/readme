@@ -160,6 +160,8 @@ Once a patient payment card has been registered successfully, the PUT Patient Pa
 }
 ```
 
+Click here to see [Update Patient Payment Card Request Data Object](https://docs.healthdyne.com/v2.20/update/docs/patient-request-fields?isFramePreview=true#request-object-3)
+
 #### Sample Put Patient Payment Card Response
 
 ```json
