@@ -158,7 +158,7 @@ Once a patient payment card has been registered successfully, the PUT Patient Pa
 }
 ```
 
-#### Sample GET Patient Payment Card Response
+#### Sample Put Patient Payment Card Response
 
 ```json
 {
