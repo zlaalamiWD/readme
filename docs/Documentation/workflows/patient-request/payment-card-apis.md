@@ -59,7 +59,7 @@ Once a patient payment card has been registered successfully, the GET Patient Pa
 }
 ```
 
-Click here to see [Get Patient Payment Card Response Data Object](https://docs.healthdyne.com/docs/patient-payment-card-fields#response-object)
+Click here to see [Get Patient Payment Card Response Data Object](<https://docs.healthdyne.com/v2.20/update/docs/patient-request-fields#/#Get Patient-Payment-Cards-Request>)
 
 The below table lists the potential response codes that can be received in response to a GET request.
 
