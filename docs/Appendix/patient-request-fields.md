@@ -1168,3 +1168,27 @@ The Add Patient Payment Card endpoint accepts a request payload containing patie
 | Field     | Type   | Character Limit | Description                                                                            |
 | :-------- | :----- | :-------------- | :------------------------------------------------------------------------------------- |
 | returnUrl | String |                 | This URL is used by the client to redirect the patient to the payment card entry page. |
+
+## Update Patient Payment Cards Request
+
+###### Request Object
+
+| Field              | Type    | Description                                                                                                                          |
+| :----------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------- |
+| patientKey         | String  | Unique patient ID in Client system.                                                                                                  |
+| cardSequenceNumber | String  | A unique sequence or reference number associated with the card. Typically used to identify the card in external or internal systems. |
+| expirationMonth    | Integer | The month (1–12) when the card expires.                                                                                              |
+| expirationYear     | Integer | The 4-digit year when the card expires.                                                                                              |
+| cardFirstName      | String  | The cardholder’s first name as it appears on the card.                                                                               |
+| cardMiddleName     | String  | The cardholder’s middle name or initial, if applicable.                                                                              |
+| cardLastName       | String  | The cardholder’s last name as it appears on the card.                                                                                |
+
+<br />
+
+###### Response Object
+
+| Field              | Type   | Description                                                                                                                          |
+| :----------------- | :----- | :----------------------------------------------------------------------------------------------------------------------------------- |
+| patientKey         | String | Unique patient ID in Client system.                                                                                                  |
+| cardSequenceNumber | String | A unique sequence or reference number associated with the card. Typically used to identify the card in external or internal systems. |
+| message            | String | Message or status details related to the request.                                                                                    |
