@@ -172,7 +172,7 @@ Click here to see [Update Patient Payment Card Request Data Object](https://docs
 }
 ```
 
-Click here to see [Get Patient Payment Card Response Data Object](https://docs.healthdyne.com/docs/patient-payment-card-fields#response-object)
+Click here to see [Update Patient Payment Card Response Data Object](https://docs.healthdyne.com/v2.20/update/docs/patient-request-fields?isFramePreview=true#response-object-7)
 
 The below table lists the potential response codes that can be received in response to a GET request.
 
