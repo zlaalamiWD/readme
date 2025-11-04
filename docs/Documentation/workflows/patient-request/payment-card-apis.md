@@ -149,7 +149,7 @@ Once a patient payment card has been registered successfully, the PUT Patient Pa
 ```json
 {
   "patientKey": "TestreadPatient171",
-  "cardSequenceNumber": *********************1111
+  "cardSequenceNumber": "1234567891111",
   "expirationMonth": 3,
   "expirationYear": 2028,
   "cardFirstName": "test",
@@ -162,18 +162,9 @@ Once a patient payment card has been registered successfully, the PUT Patient Pa
 
 ```json
 {
-    "patientKey": "TestreadPatient171",
-    "cards": [
-        {
-            "cardType": 1,
-            "cardNumber": "*********************1111",
-            "cardHolderFirstName": "Test",
-            "cardHolderLastName": "Partient",
-            "cardExpireMonth": 3,
-            "cardExpireYear": 2027,
-            "defaultCard": true
-        }
-    ]
+  "patientKey": "TestreadPatient171",
+  "cardSequenceNumber": "1234567891111",
+  "message" : "Payment card updated."
 }
 ```
 
