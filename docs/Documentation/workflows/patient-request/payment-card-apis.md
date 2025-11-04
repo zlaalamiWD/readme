@@ -102,6 +102,8 @@ The POST Patient Payment Card API allows clients to add Payment Card details to 
 }
 ```
 
+Click here to see [Add Patient Payment Card Request Data Object](https://docs.healthdyne.com/v2.20/update/docs/patient-request-fields?isFramePreview=true#request-object-2)
+
 #### Sample POST Patient Payment Card Response
 
 ```json
@@ -110,7 +112,7 @@ The POST Patient Payment Card API allows clients to add Payment Card details to 
 }
 ```
 
-Click here to see [Add Patient Payment Card Response Data Object](https://docs.healthdyne.com/docs/add-patient-payment-card-fields)
+Click here to see [Add Patient Payment Card Response Data Object](https://docs.healthdyne.com/v2.20/update/docs/patient-request-fields?isFramePreview=true#response-object-6)
 
 The below table lists the potential response codes that can be received in response to a GET request.
 
