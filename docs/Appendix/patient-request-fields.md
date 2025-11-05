@@ -1202,6 +1202,8 @@ The Add Patient Payment Card endpoint accepts a request payload containing patie
 
 <br />
 
+###### Response Object
+
 | Field              | Type   | Description                                                                                                                          |
 | :----------------- | :----- | :----------------------------------------------------------------------------------------------------------------------------------- |
 | patientKey         | String | Unique patient ID in Client system.                                                                                                  |
