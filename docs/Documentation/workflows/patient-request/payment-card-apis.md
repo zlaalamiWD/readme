@@ -213,7 +213,7 @@ The DELETE Patient Payment Card API allows clients to deactivate a Payment Card 
 }
 ```
 
-Click here to see [Deactivate Patient Payment Card Request Data Object](https://docs.healthdyne.com/docs/patient-request-fields#request-object)
+Click here to see [Deactivate Patient Payment Card Request Data Object](https://docs.healthdyne.com/docs/patient-request-fields#request-object-3)
 
 #### Sample Put Patient Payment Card Response
 
