@@ -182,3 +182,56 @@ The below table lists the potential response codes that can be received in respo
 | 400  | No record returned for search          |
 | 401  | Unauthorized                           |
 | 500  | Internal Server Error                  |
+
+# Deactivate Patient Payment card
+
+The DELETE Patient Payment Card API allows clients to deactivate a Payment Card in HD pharmacy system.
+
+### Server
+
+##### Only HTTPS connections are accepted.
+
+| METHOD TYPE   | ENDPOINT                              |
+| :------------ | :------------------------------------ |
+| DELETE (Test) | api.uat-healthdyne.com/v2/paymentcard |
+| DELETE (Prod) | api.healthdyne.com/v2/paymentcard     |
+
+### Header
+
+| Key                         | Value                  |
+| :-------------------------- | :--------------------- |
+| Accept                      | application/json       |
+| Content-Type                | application/json       |
+| HealthDyne-Subscription-Key | Provided by HealthDyne |
+
+#### Sample PUT Patient Payment Card Request
+
+```json
+{
+  "patientKey": "TestreadPatient171",
+  "cardSequenceNumber": "1234567891111"
+}
+```
+
+Click here to see [Deactivate Patient Payment Card Request Data Object](https://docs.healthdyne.com/v2.20/update/docs/patient-request-fields?isFramePreview=true#request-object-3)
+
+#### Sample Put Patient Payment Card Response
+
+```json
+{
+  "patientKey": "TestreadPatient171",
+  "cardSequenceNumber": "1234567891111",
+  "message" : "Payment card updated."
+}
+```
+
+Click here to see [Deactivate Patient Payment Card Response Data Object]()
+
+The below table lists the potential response codes that can be received in response to a GET request.
+
+| Code | Description                            |
+| :--- | :------------------------------------- |
+| 200  | Patient Payment Cards details returned |
+| 400  | No record returned for search          |
+| 401  | Unauthorized                           |
+| 500  | Internal Server Error                  |
