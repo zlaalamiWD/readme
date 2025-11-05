@@ -213,7 +213,7 @@ The DELETE Patient Payment Card API allows clients to deactivate a Payment Card 
 }
 ```
 
-Click here to see [Deactivate Patient Payment Card Request Data Object](https://docs.healthdyne.com/v2.20/update/docs/patient-request-fields?isFramePreview=true#request-object-3)
+Click here to see [Deactivate Patient Payment Card Request Data Object](https://docs.healthdyne.com/v2.20/docs/introduction?isFramePreview=true#deactivate-patient-payment-cards-request)
 
 #### Sample Put Patient Payment Card Response
 
@@ -225,7 +225,7 @@ Click here to see [Deactivate Patient Payment Card Request Data Object](https://
 }
 ```
 
-Click here to see [Deactivate Patient Payment Card Response Data Object]()
+Click here to see [Deactivate Patient Payment Card Response Data Object](https://docs.healthdyne.com/v2.20/docs/introduction?isFramePreview=true#response-object-8)
 
 The below table lists the potential response codes that can be received in response to a GET request.
 
