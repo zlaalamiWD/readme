@@ -1192,3 +1192,20 @@ The Add Patient Payment Card endpoint accepts a request payload containing patie
 | patientKey         | String | Unique patient ID in Client system.                                                                                                  |
 | cardSequenceNumber | String | A unique sequence or reference number associated with the card. Typically used to identify the card in external or internal systems. |
 | message            | String | Message or status details related to the request.                                                                                    |
+
+## Deactivate Patient Payment Cards Request
+
+###### Request Object
+
+| Field              | Type   | Description                                                                                                                          |
+| :----------------- | :----- | :----------------------------------------------------------------------------------------------------------------------------------- |
+| patientKey         | String | Unique patient ID in Client system.                                                                                                  |
+| cardSequenceNumber | String | A unique sequence or reference number associated with the card. Typically used to identify the card in external or internal systems. |
+
+###### Response Object
+
+| Field              | Type   | Description                                                                                                                          |
+| :----------------- | :----- | :----------------------------------------------------------------------------------------------------------------------------------- |
+| patientKey         | String | Unique patient ID in Client system.                                                                                                  |
+| cardSequenceNumber | String | A unique sequence or reference number associated with the card. Typically used to identify the card in external or internal systems. |
+| message            | String | Message or status details related to the request.                                                                                    |
