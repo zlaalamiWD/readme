@@ -208,8 +208,8 @@ The DELETE Patient Payment Card API allows clients to deactivate a Payment Card 
 
 ```json
 {
-  "patientKey": "TestreadPatient171",
-  "cardSequenceNumber": "1234567891111"
+    "patientKey": "TestreadPatient171",
+    "cardSequenceNumber": "1234567891111"
 }
 ```
 
@@ -219,9 +219,9 @@ Click here to see [Deactivate Patient Payment Card Request Data Object](https://
 
 ```json
 {
-  "patientKey": "TestreadPatient171",
-  "cardSequenceNumber": "1234567891111",
-  "message" : "Payment card updated."
+    "patientKey": "DTCUserM101",
+    "cardSequenceNumber": "415051",
+    "message": "Deactivated"
 }
 ```
 
