@@ -174,7 +174,7 @@ Click here to see [Update Patient Payment Card Request Data Object](https://docs
 
 Click here to see [Update Patient Payment Card Response Data Object](https://docs.healthdyne.com/v2.20/update/docs/patient-request-fields?isFramePreview=true#response-object-7)
 
-The below table lists the potential response codes that can be received in response to a GET request.
+The below table lists the potential response codes that can be received in response to a POST request.
 
 | Code | Description                            |
 | :--- | :------------------------------------- |
@@ -204,7 +204,7 @@ The DELETE Patient Payment Card API allows clients to deactivate a Payment Card 
 | Content-Type                | application/json       |
 | HealthDyne-Subscription-Key | Provided by HealthDyne |
 
-#### Sample PUT Patient Payment Card Request
+#### Sample DELETE Patient Payment Card Request
 
 ```json
 {
@@ -213,9 +213,9 @@ The DELETE Patient Payment Card API allows clients to deactivate a Payment Card 
 }
 ```
 
-Click here to see [Deactivate Patient Payment Card Request Data Object](https://docs.healthdyne.com/docs/patient-request-fields#request-object-4)
+Click here to see [Deactivate Patient Payment Card Request Data Object](https://docs.healthdyne.com/v2.20/docs/patient-request-fields#/request-object-4)
 
-#### Sample Put Patient Payment Card Response
+#### Sample DELETE Patient Payment Card Response
 
 ```json
 {
@@ -225,9 +225,9 @@ Click here to see [Deactivate Patient Payment Card Request Data Object](https://
 }
 ```
 
-Click here to see [Deactivate Patient Payment Card Response Data Object](https://docs.healthdyne.com/v2.20/docs/patient-request-fields#/#response-object-8)
+Click here to see [Deactivate Patient Payment Card Response Data Object](https://docs.healthdyne.com/v2.20/docs/patient-request-fields#/response-object-8)
 
-The below table lists the potential response codes that can be received in response to a GET request.
+The below table lists the potential response codes that can be received in response to a DELETE request.
 
 | Code | Description                            |
 | :--- | :------------------------------------- |
