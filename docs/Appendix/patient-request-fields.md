@@ -1195,12 +1195,12 @@ The Add Patient Payment Card endpoint accepts a request payload containing patie
 
 ###### Request Object
 
-| Field              | Type   | Description                                                                                                                          |
-| :----------------- | :----- | :----------------------------------------------------------------------------------------------------------------------------------- |
-| patientKey         | String | Unique patient ID in Client system.                                                                                                  |
-| cardSequenceNumber | String | A unique sequence or reference number associated with the card. Typically used to identify the card in external or internal systems. |
+| Type   | Description                                                                                                                          |
+| :----- | :----------------------------------------------------------------------------------------------------------------------------------- |
+| String | Unique patient ID in Client system.                                                                                                  |
+| String | A unique sequence or reference number associated with the card. Typically used to identify the card in external or internal systems. |
 
-###### Response Object
+<br />
 
 | Field              | Type   | Description                                                                                                                          |
 | :----------------- | :----- | :----------------------------------------------------------------------------------------------------------------------------------- |
