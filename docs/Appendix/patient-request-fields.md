@@ -1183,8 +1183,6 @@ The Add Patient Payment Card endpoint accepts a request payload containing patie
 | cardMiddleName     | String  | The cardholder’s middle name or initial, if applicable.                                                                              |
 | cardLastName       | String  | The cardholder’s last name as it appears on the card.                                                                                |
 
-<br />
-
 ###### Response Object
 
 | Field              | Type   | Description                                                                                                                          |
