@@ -1200,8 +1200,6 @@ The Add Patient Payment Card endpoint accepts a request payload containing patie
 | String | Unique patient ID in Client system.                                                                                                  |
 | String | A unique sequence or reference number associated with the card. Typically used to identify the card in external or internal systems. |
 
-<br />
-
 ###### Response Object
 
 | Field              | Type   | Description                                                                                                                          |
