@@ -225,7 +225,7 @@ Click here to see [Deactivate Patient Payment Card Request Data Object](https://
 }
 ```
 
-Click here to see [Deactivate Patient Payment Card Response Data Object](https://docs.healthdyne.com/docs/patient-request-fields#response-object)
+Click here to see [Deactivate Patient Payment Card Response Data Object](https://docs.healthdyne.com/docs/patient-request-fields#response-object-3)
 
 The below table lists the potential response codes that can be received in response to a GET request.
 
