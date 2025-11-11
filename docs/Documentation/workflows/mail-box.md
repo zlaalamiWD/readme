@@ -597,3 +597,26 @@ Once the Rx has been adjudicated successfully by pharmacy, an update is sent for
     }
 }
 ```
+
+## &#x20;RxPaymentDeclined
+
+The **RxPaymentDeclined** event is triggered when a patient’s payment for an order is declined during the billing/ fulfillment process. This mailbox event notifies the client that the payment could not be processed successfully, allowing them to proactively alert the patient and request updated payment information so that order can be processed.
+
+#### &#x20;Sample "RxPaymentDeclined" event
+
+```json
+{
+  "eventId": "252665",
+  "eventDateUtc": "2025-11-11T10:56:29.22712Z",
+  "eventType": "FILLREQUEST",
+  "status": "RxPaymentDeclined",
+  "statusMessage": "Payment was declined. Please provide a new payment card.",
+  "fillRequestKey": "FILL85ea1e519bd146ed89b96f3f0066ff",
+  "detail": {
+    "orderNumber": "7559938",
+    "scriptKey": "Sc85ea1e519bd146ed89b96f3f0066ff",
+    "fillNumber": 2,
+    "declinedAmount": 2500.6
+  }
+}
+```
