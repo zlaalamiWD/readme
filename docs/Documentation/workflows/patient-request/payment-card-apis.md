@@ -168,7 +168,7 @@ Click here to see [Update Patient Payment Card Request Data Object](https://docs
 {
   "patientKey": "TestreadPatient171",
   "cardSequenceNumber": "1234567891111",
-  "message" : "Payment card updated."
+  "message" : "Payment card updated successfully."
 }
 ```
 
