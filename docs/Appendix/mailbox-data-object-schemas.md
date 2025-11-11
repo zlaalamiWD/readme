@@ -321,4 +321,23 @@ metadata:
 | :----- | :----- | :-------------- | :--------------------------- |
 | reason | String | 255             | Reason for the status if any |
 
-<br />
+### RxPaymentDeclined
+
+| Field          | Type                                                                                                              | Character Limit                      | Description                                         |
+| :------------- | :---------------------------------------------------------------------------------------------------------------- | :----------------------------------- | :-------------------------------------------------- |
+| eventId        | String                                                                                                            | 4 bytes (32-bit signed int)          | Unique Event Identifier for the Fill Request.       |
+| eventDateUtc   | DateTime                                                                                                          | YYYY-MM-DD T HH:MM:SS.microseconds Z | Date and time of the event in UTC (ISO 8601).       |
+| eventType      | String                                                                                                            | 50                                   | Event type description.                             |
+| status         | String                                                                                                            | 20                                   | Current status of the event.                        |
+| statusMessage  | String                                                                                                            | max                                  | Descriptive message explaining the status.          |
+| FillRequestKey | String                                                                                                            | 50                                   | Unique ID associated with fill request.             |
+| detail         | [RxPaymentDeclined detail](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#rxpaymentdeclined-detail) |                                      | Contains details of fill request that was verified. |
+
+### RxPaymentDeclined detail
+
+| Field          | Type    | Character Limit | Description                                                           |
+| :------------- | :------ | :-------------- | :-------------------------------------------------------------------- |
+| orderNumber    | String  | 50              | Order number used to track this order.                                |
+| scriptKey      | String  | 50              | Unique ID associated with script key.                                 |
+| fillNumber     | Int     | 2               | Shows how many fills have been fulfilled for this Rx                  |
+| declinedAmount | decimal |                 | Declined amount is the value of transactions rejected during payment. |
