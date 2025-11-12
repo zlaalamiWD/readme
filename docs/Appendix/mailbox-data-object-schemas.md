@@ -167,13 +167,13 @@ metadata:
 | :--------------- | :------ | :-------------- | :------------------------------- |
 | dispenseNDC      | String  | 9 to 11         | NDC of drug that was dispensed.  |
 | dispenseDrugName | String  | 105             | Drug name that was dispensed.    |
-| daysSupply       | int     |                 | Days the supply will last for.   |
-| dispenseQuantity | decimal |                 | Dispensed quantity               |
+| daysSupply       | Int     |                 | Days the supply will last for.   |
+| dispenseQuantity | Decimal |                 | Dispensed quantity               |
 | labelDirections  | String  | 1000            | Drug usage label direction text. |
 | dosageForm       | String  | 30              | Drug dosage form.                |
 | drugStrength     | String  | 70              | Shows strength of the drug.      |
 | drugStrengthUOM  | String  | 50              | Drug strength unit of measure.   |
-| quantityWritten  | decimal |                 | Written quantity                 |
+| quantityWritten  | Decimal |                 | Written quantity                 |
 
 ### RxShipped
 
@@ -200,7 +200,7 @@ metadata:
 
 | Field          | Type   | Character Limit         | Description                                                                        |
 | :------------- | :----- | :---------------------- | :--------------------------------------------------------------------------------- |
-| address        | object |                         | Contains shipment address information (note that currently it will always be null) |
+| address        | Object |                         | Contains shipment address information (note that currently it will always be null) |
 | trackingNumber | String | 50                      | Order tracking number.                                                             |
 | shipmentCode   | String | 50                      | Shipment code used to ship the order.                                              |
 | trackingUrl    | String | 50                      | URL to track the order shipment status.                                            |
@@ -279,8 +279,8 @@ metadata:
 | :-------------- | :------ | :-------------- | :------------------------------- |
 | writtenDrugNdc  | String  | 9 to 11         | NDC of drug that was prescribed. |
 | writtenDrugName | String  | 105             | Drug name that was prescribed.   |
-| daysSupply      | int     |                 | Days the supply will last for.   |
-| quantityWritten | decimal |                 | Quantity prescribed.             |
+| daysSupply      | Int     |                 | Days the supply will last for.   |
+| quantityWritten | Decimal |                 | Quantity prescribed.             |
 | labelDirections | String  | 1000            | Drug usage label direction text. |
 | dosageForm      | String  | 30              | Drug dosage form.                |
 | drugStrength    | String  | 70              | Shows strength of the drug.      |
@@ -292,8 +292,8 @@ metadata:
 | :--------------- | :------- | :-------------- | :------------------------------- |
 | dispenseNDC      | String   | 9 to 11         | NDC of drug that was dispensed.  |
 | dispenseDrugName | String   | 105             | Drug name that was dispensed.    |
-| daysSupply       | int      |                 | Days the supply will last for.   |
-| dispenseQuantity | decimal  |                 | Dispensed quantity               |
+| daysSupply       | Int      |                 | Days the supply will last for.   |
+| dispenseQuantity | Decimal  |                 | Dispensed quantity               |
 | labelDirections  | String   | 1000            | Drug usage label direction text. |
 | dosageForm       | String   | 30              | Drug dosage form.                |
 | drugStrength     | String   | 70              | Shows strength of the drug.      |
@@ -339,5 +339,5 @@ metadata:
 | :------------- | :------ | :-------------- | :-------------------------------------------------------------------- |
 | orderNumber    | String  | 50              | Order number used to track this order.                                |
 | scriptKey      | String  | 50              | Unique ID associated with script key.                                 |
-| fillNumber     | Int     | 2               | Shows how many fills have been fulfilled for this Rx                  |
-| declinedAmount | decimal |                 | Declined amount is the value of transactions rejected during payment. |
+| fillNumber     | Int     |                 | Shows how many fills have been fulfilled for this Rx                  |
+| declinedAmount | Decimal |                 | Declined amount is the value of transactions rejected during payment. |
