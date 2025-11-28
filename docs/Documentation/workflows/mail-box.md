@@ -397,9 +397,12 @@ A "RxVerified" event will be generated once a Pharmacist has completed PV1 and r
 
 ## Rejected
 
-If order creation errors/rejects; then Rejected event will be created. Possible reasons for system to reject order request include existing open orders for an Rx or when one of the Rx is discontinued.
+If order creation errors/rejects; then Rejected event will be created. 
 
-<br />
+| Possible Reason                                                                                | Status Message in below Event                                                                      |
+| :--------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------- |
+| Order is rejected due to Existing open orders for an Rx or when one of the Rx is discontinued. | RX: 10544965 found on OPEN order with External ID: db992f57-9437-4cda-baaf-18018505e59b prior fill |
+| Order is rejected due to invalid address combination of Statue, City and Zip                   | Order rejected due to address issue: Invalid combination of state, city, and ZIP code              |
 
 #### Sample "Rejected" event
 
