@@ -399,6 +399,8 @@ A "RxVerified" event will be generated once a Pharmacist has completed PV1 and r
 
 If order creation errors/rejects; then Rejected event will be created. Possible reasons for system to reject order request include existing open orders for an Rx or when one of the Rx is discontinued.
 
+<br />
+
 #### Sample "Rejected" event
 
 ```json
