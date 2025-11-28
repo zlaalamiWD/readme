@@ -413,7 +413,7 @@ If order creation errors/rejects; then Rejected event will be created.
     "eventType": "FILLREQUEST",
     "fillRequestKey": "1000010",
     "status": "Rejected",
-    "statusMessage": "An open order exists for one or more RXs"
+    "statusMessage": "Order rejected due to address issue: Invalid combination of state, city, and ZIP code"
 }
 ```
 
