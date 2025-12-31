@@ -625,3 +625,28 @@ The **RxPaymentDeclined** event is triggered when a patient’s payment for an o
   }
 }
 ```
+
+## RxPaymentRequired
+
+The **RxPaymentRequired** event is triggered when a patient’s payment for an order is required before order is shipped. This mailbox event notifies the client that order is ready to be shipped and payment is required, allowing them to proactively alert the patient and request for payment so that order can be shipped.
+
+#### Sample "RxPaymentDeclined" event
+
+```json
+{
+  "eventId": "452664",
+  "eventDateUtc": "2025-12-31T10:56:29.22712Z",
+  "eventType": "FILLREQUEST",
+  "status": "RxPaymentRequired",
+  "statusMessage": "Payment is required before order is shipped.",
+  "fillRequestKey": "FILL85ea1e519bd146ed89b96f3f0066ff",
+  "detail": {
+    "orderNumber": "7559938",
+    "scriptKey": "Sc85ea1e519bd146ed89b96f3f0066ff",
+    "fillNumber": 2,
+    "outstandingBalanceAmount": 150.6
+  }
+}
+```
+
+<br />
