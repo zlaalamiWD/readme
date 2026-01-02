@@ -172,7 +172,7 @@ Client must send a Fill request with following details:
 1. fillRequestKey: Unique key used to track each Fill Request.
 2. scriptKeys: an array of scriptKey(s) sent in Script API and in a "Transferred" status.
 
-![](https://files.readme.io/182e876-small-FillRequest.png)
+<Image border={false} src="https://files.readme.io/182e876-small-FillRequest.png" />
 
 #### Server
 
@@ -257,6 +257,7 @@ Click here to see [Submit Fill Response Data Object](https://docs.healthdyne.com
 ```json
 {
   "fillRequestKey": "Fill26",
+  "paymentCardSequenceNumber" : "12345",
   "scriptsKeys": [
     {
       "scriptsKey": "sc258",
