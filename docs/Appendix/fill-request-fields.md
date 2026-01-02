@@ -207,12 +207,13 @@ next:
 
 # Fill Request Data Object
 
-| Field          | Type                                                                                             | Character Limit | Required/Optional | Description                                                                            |
-| :------------- | :----------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------------------- |
-| fillRequestKey | String                                                                                           | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking.              |
-| scriptKeys     | Array                                                                                            | 50              | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
-| shipping       | Object [(shipping)](https://docs.healthdyne.com/docs/fill-request-fields#shipping-data-object)   |                 | Required          | Object containing shipping information for the order.                                  |
-| insurance      | Object [(insurance)](https://docs.healthdyne.com/docs/fill-request-fields#insurance-data-object) |                 | Optional          | Optionally specify insurance information to be used on the fill request.               |
+| Field                     | Type                                                                                             | Character Limit | Required/Optional | Description                                                                            |
+| :------------------------ | :----------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------------------- |
+| fillRequestKey            | String                                                                                           | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking.              |
+| paymentCardSequenceNumber | String                                                                                           |                 | Optional          | Contains payment card sequence number of patient                                       |
+| scriptKeys                | Array                                                                                            | 50              | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
+| shipping                  | Object [(shipping)](https://docs.healthdyne.com/docs/fill-request-fields#shipping-data-object)   |                 | Required          | Object containing shipping information for the order.                                  |
+| insurance                 | Object [(insurance)](https://docs.healthdyne.com/docs/fill-request-fields#insurance-data-object) |                 | Optional          | Optionally specify insurance information to be used on the fill request.               |
 
 # Shipping Data Object
 
@@ -304,13 +305,12 @@ next:
 
 #### Request Object
 
-| Field                     | Type                                                                                             | Character Limit | Required/Optional | Description                                                                            |
-| :------------------------ | :----------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------------------- |
-| fillRequestKey            | String                                                                                           | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking.              |
-| paymentCardSequenceNumber | String                                                                                           |                 | Optional          | Contains payment card sequence number of patient                                       |
-| scriptKeys                | Array                                                                                            | 50 per value    | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
-| shipping                  | Object [(shipping)](https://docs.healthdyne.com/docs/fill-request-fields#shipping-data-object)   |                 | Required          | Object containing shipping information for the order.                                  |
-| insurance                 | Object [(insurance)](https://docs.healthdyne.com/docs/fill-request-fields#insurance-data-object) |                 | Optional          | Optionally specify insurance information to be used on the fill request.               |
+| Field          | Type                                                                                             | Character Limit | Required/Optional | Description                                                                            |
+| :------------- | :----------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------------------- |
+| fillRequestKey | String                                                                                           | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking.              |
+| scriptKeys     | Array                                                                                            | 50 per value    | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
+| shipping       | Object [(shipping)](https://docs.healthdyne.com/docs/fill-request-fields#shipping-data-object)   |                 | Required          | Object containing shipping information for the order.                                  |
+| insurance      | Object [(insurance)](https://docs.healthdyne.com/docs/fill-request-fields#insurance-data-object) |                 | Optional          | Optionally specify insurance information to be used on the fill request.               |
 
 # Shipping Data Object
 
