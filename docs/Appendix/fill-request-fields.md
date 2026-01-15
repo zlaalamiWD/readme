@@ -304,12 +304,12 @@ next:
 
 #### Request Object
 
-| Field          | Type                                                                                           | Character Limit | Required/Optional | Description                                                                            |
-| :------------- | :--------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------------------- |
-| fillRequestKey | String                                                                                         | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking.              |
-| scriptKeys     | Array                                                                                          | 50 per value    | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
-| shipping       | Object [(shipping)](https://docs.healthdyne.com/docs/fill-request-fields#shipping-data-object) |                 | Required          | Object containing shipping information for the order.                                  |
-|                |                                                                                                |                 |                   |                                                                                        |
+| Field          | Type                                                                                               | Character Limit | Required/Optional | Description                                                                            |
+| :------------- | :------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------------------- |
+| fillRequestKey | String                                                                                             | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking.              |
+| scriptKeys     | Object [(scriptKeys)](https://docs.healthdyne.com/docs/fill-request-fields#scriptkeys-data-object) |                 | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
+| shipping       | Object [(shipping)](https://docs.healthdyne.com/docs/fill-request-fields#shipping-data-object)     |                 | Required          | Object containing shipping information for the order.                                  |
+|                |                                                                                                    |                 |                   |                                                                                        |
 
 <br />
 
