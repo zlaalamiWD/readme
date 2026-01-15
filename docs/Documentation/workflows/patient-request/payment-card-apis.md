@@ -44,20 +44,20 @@ Once a patient payment card has been registered successfully, the GET Patient Pa
 
 ```json
 {
-    "patientKey": "TestreadPatient171",
-    "cards": [
-        {
-            "cardType": 1,
-            "cardNumber": "*********************1111",
-            "cardHolderFirstName": "Test",
-            "cardHolderLastName": "Partient",
-            "cardExpireMonth": 3,
-            "cardExpireYear": 2027,
-            "defaultCard": true,
-      			"cardSequenceNumber": "415129",
-      			"cardStatus": "Active"
-        }
-    ]
+  "patientKey": "TestreadPatient171",
+  "cards": [
+    {
+      "cardType": 1,
+      "cardNumber": "*********************1111",
+      "cardHolderFirstName": "Test",
+      "cardHolderLastName": "Partient",
+      "cardExpireMonth": 3,
+      "cardExpireYear": 2027,
+      "defaultCard": true,
+      "cardSequenceNumber": "415129",
+      "cardStatus": "Active"
+    }
+  ]
 }
 ```
 
