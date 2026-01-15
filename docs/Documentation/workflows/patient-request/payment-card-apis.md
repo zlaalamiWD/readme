@@ -53,7 +53,9 @@ Once a patient payment card has been registered successfully, the GET Patient Pa
             "cardHolderLastName": "Partient",
             "cardExpireMonth": 3,
             "cardExpireYear": 2027,
-            "defaultCard": true
+            "defaultCard": true,
+      			"cardSequenceNumber": "415129",
+      			"cardStatus": "Active"
         }
     ]
 }
