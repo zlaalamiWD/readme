@@ -1149,6 +1149,8 @@ next:
 | cardExpireMonth     | Integer | The expiration month of the card.                                                        |
 | cardExpireYear      | Integer | The expiration year of the card.                                                         |
 | defaultCard         | Bool    | Indicates whether this card is the primary/default card on file (true/false).            |
+| cardSequenceNumber  | String  | Payment Card Sequence Number                                                             |
+| cardStatus          | String  | Payment Card Status                                                                      |
 
 <br />
 
