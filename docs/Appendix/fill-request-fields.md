@@ -10,9 +10,11 @@ metadata:
 next:
   description: ''
 ---
-> 📃 Note:
->
-> An empty string "" is considered a value and validation rules will apply (length/valid code/etc). Only null or missing elements will use default values.
+<Callout icon="📃" theme="default">
+  ### Note:
+
+  An empty string "" is considered a value and validation rules will apply (length/valid code/etc). Only null or missing elements will use default values.
+</Callout>
 
 <br />
 
@@ -205,12 +207,13 @@ next:
 
 # Fill Request Data Object
 
-| Field          | Type                                                                                             | Character Limit | Required/Optional | Description                                                                            |
-| :------------- | :----------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------------------- |
-| fillRequestKey | String                                                                                           | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking.              |
-| scriptKeys     | Array                                                                                            | 50              | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
-| shipping       | Object [(shipping)](https://docs.healthdyne.com/docs/fill-request-fields#shipping-data-object)   |                 | Required          | Object containing shipping information for the order.                                  |
-| insurance      | Object [(insurance)](https://docs.healthdyne.com/docs/fill-request-fields#insurance-data-object) |                 | Optional          | Optionally specify insurance information to be used on the fill request.               |
+| Field                     | Type                                                                                             | Character Limit | Required/Optional | Description                                                                            |
+| :------------------------ | :----------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------------------- |
+| fillRequestKey            | String                                                                                           | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking.              |
+| paymentCardSequenceNumber | String                                                                                           |                 | Optional          | Contains payment card sequence number of patient                                       |
+| scriptKeys                | Array                                                                                            | 50              | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
+| shipping                  | Object [(shipping)](https://docs.healthdyne.com/docs/fill-request-fields#shipping-data-object)   |                 | Required          | Object containing shipping information for the order.                                  |
+| insurance                 | Object [(insurance)](https://docs.healthdyne.com/docs/fill-request-fields#insurance-data-object) |                 | Optional          | Optionally specify insurance information to be used on the fill request.               |
 
 # Shipping Data Object
 
@@ -259,7 +262,7 @@ next:
 | coPay               | String | 6               | Required          | Payment collected from the patient at checkout. Format "xx.xx" or "xxx.xx"                                                                                                                                                                                                                                                                       |
 | transactionNumber   | String | Max             | Required          | The payment transaction number. This should be the stripe transaction number if payment is managed by HealthDyne.                                                                                                                                                                                                                                |
 | personCode          | String | 3               | Optional          | Number 0 to 9.                                                                                                                                                                                                                                                                                                                                   |
-| relationshipCode    | String | 1               | Optional          | Number 0 to 9. See relationship code table \[[below](https://docs.healthdyne.com/docs/fill-request-fields#relationship-codes)]                                                                                                                                                                                                                   |
+| relationshipCode    | String | 1               | Optional          | Number 0 to 9. See relationship code table [[below](https://docs.healthdyne.com/docs/fill-request-fields#relationship-codes)]                                                                                                                                                                                                                    |
 
 #### Relationship Codes
 
@@ -287,14 +290,14 @@ next:
 
 #### Response Object
 
-| Field          | Type                                                                                   | Character Limit | Required/Optional | Description                                                               |
-| :------------- | :------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
-| fillRequestKey | String                                                                                 | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
-| submitted      | Array \[[submitted](https://docs.healthdyne.com/docs/fill-request-fields#submitted)]   |                 | Optional          | Array of submitted Objects containing event details.                      |
-| rxVerified     | Array \[[rxVerified](https://docs.healthdyne.com/docs/fill-request-fields#rxverified)] |                 | Optional          | Array of rxVerified objects containing verified information.              |
-| rxShipped      | Array \[[rxshipped](https://docs.healthdyne.com/docs/fill-request-fields#rxshipped)]   |                 | Optional          | Array of rxShipped objects containing tracking/shipping information.      |
-| rxIssue        | Array \[[rxissue](https://docs.healthdyne.com/docs/fill-request-fields#rxissue)]       |                 | Optional          | Array of rxIssue objects containing issued information.                   |
-| rxCanceled     | Array \[[rxcanceled](https://docs.healthdyne.com/docs/fill-request-fields#rxcanceled)] |                 | Optional          | Array of rxCanceled objects containing cancel reason information.         |
+| Field          | Type                                                                                  | Character Limit | Required/Optional | Description                                                               |
+| :------------- | :------------------------------------------------------------------------------------ | :-------------- | :---------------- | :------------------------------------------------------------------------ |
+| fillRequestKey | String                                                                                | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
+| submitted      | Array [[submitted](https://docs.healthdyne.com/docs/fill-request-fields#submitted)]   |                 | Optional          | Array of submitted Objects containing event details.                      |
+| rxVerified     | Array [[rxVerified](https://docs.healthdyne.com/docs/fill-request-fields#rxverified)] |                 | Optional          | Array of rxVerified objects containing verified information.              |
+| rxShipped      | Array [[rxshipped](https://docs.healthdyne.com/docs/fill-request-fields#rxshipped)]   |                 | Optional          | Array of rxShipped objects containing tracking/shipping information.      |
+| rxIssue        | Array [[rxissue](https://docs.healthdyne.com/docs/fill-request-fields#rxissue)]       |                 | Optional          | Array of rxIssue objects containing issued information.                   |
+| rxCanceled     | Array [[rxcanceled](https://docs.healthdyne.com/docs/fill-request-fields#rxcanceled)] |                 | Optional          | Array of rxCanceled objects containing cancel reason information.         |
 
 ***
 
