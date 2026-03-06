@@ -4,7 +4,7 @@ excerpt: >-
   This section provides an overview of the patient payment card features and
   functionality.
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
