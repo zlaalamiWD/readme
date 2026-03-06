@@ -40,7 +40,7 @@ Note, the status messages are not considered delivered and removed from the mail
 
 #### Sample GET Request
 
-> `<https://api.uat-healthdyne.com/v2/mailbox?messageCount=10>`
+> <br />
 
 This tells the API to only respond with 10 messages. The default message count is 100 messages. The Mailbox only allows 100 messages to be pulled at a time.
 
@@ -109,7 +109,7 @@ The below table lists the potential response codes that can be received in respo
 
 #### Sample POST Request
 
-> `<https://api.uat-healthdyne.com/v2/mailbox?batchId=6be689c3-3306-4a75-b0d3-a769be788c99>`
+> <br />
 
 #### Sample POST Response
 
@@ -416,54 +416,6 @@ When an order creation process results in an error or rejection, the system gene
     "statusMessage": "Order rejected due to address issue: Invalid combination of state, city, and ZIP code"
 }
 ```
-
-## RxIssue
-
-When an Order is successfully created, and then one of the Rx is subsequently rejected by pharmacy because it has issue (reason such as: Insurance reason/DUR/Pharmacy unable to read the prescription)- then RxIssue event will be pushed only for Rx that has an issue.
-
-<Callout icon="📃" theme="default">
-  ### NOTE: This is at Rx level (i.e. for each Rx)
-</Callout>
-
-#### Sample "RxIssue" event
-
-```json
-{
-    "eventId": "1000016",
-    "eventDateUtc": "2023-05-08T19:20:55.22818Z",
-    "eventType": "FILLREQUEST",
-    "fillRequestKey": "1000013",
-    "status": "RxIssue",
-    "statusMessage": "HEALTHDYNE RX REJECTED",
-    "detail": {
-        "orderNumber": "56789",
-        "scriptKey": "1000003",
-        "fillNumber": 0,
-        "issueMessage": "REJECTED 533 HEALTHDYNE RX REJECTED",
-        "claimRejectCode": "388",
-        "claimRejectDescription": "PRIOR AUTHORIZATION SUPPORTING DOCUMENT IS NOT USED FOR THIS TRANSACTION CODE"
-    }
-}
-```
-
-The 'statusMessage' field will show the pharmacy defined reason for the RxIssue status. Please see the Status Message table for a list of issues.
-
-| Issue Message Examples List 1                                  | Issue Message Examples List 2                 |
-| :------------------------------------------------------------- | :-------------------------------------------- |
-| PATIENT PROFILE                                                | CREDIT CARD                                   |
-| NDC NOT COVERED                                                | DOCTOR DENIED/NON-RESPONSE                    |
-| ORDER ISSUE                                                    | PRIOR AUTHORIZATION REQUIRED                  |
-| HIGH COPAY                                                     | ALLERGY/MEDICAL CONDITION INFO                |
-| PAYMENT REQUIRED                                               | COPAY ASSISTANCE ENROLLMENT MANDATORY         |
-| RPH NEEDS MEMBER CONSULTATION                                  | SHORT-TERM ANTIBIOTICS MUST BE FILLED LOCALLY |
-| SPECIALTY MEDICATION MUST BE FILLED THROUGH SPECIALTY PHARMACY | HEALTHDYNE RX REJECTED                        |
-| INSURANCE ISSUE                                                |                                               |
-
-Additional details will be provided via free form text notes from the pharmacy in the 'issueMessage' field. For example, "Clarification required from prescriber"
-
-<Callout icon="📃" theme="default">
-  ### The 'issueMessage' field is a free form text field and can vary in response.
-</Callout>
 
 ## RxCancel
 
