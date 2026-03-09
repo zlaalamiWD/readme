@@ -172,7 +172,7 @@ Client must send a Fill request with following details:
 1. fillRequestKey: Unique key used to track each Fill Request.
 2. scriptKeys: an array of scriptKey(s) sent in Script API and in a "Transferred" status.
 
-<Image border={false} src="https://files.readme.io/182e876-small-FillRequest.png" />
+![](https://files.readme.io/182e876-small-FillRequest.png)
 
 #### Server
 
@@ -190,61 +190,6 @@ Client must send a Fill request with following details:
 | Accept                      | application/json       |
 | Content-Type                | application/json       |
 | HealthDyne-Subscription-Key | Provided by HealthDyne |
-
-#### Sample Submit Fill Request (single insurance per fill request)
-
-`POST https://api.uat-healthdyne.com/v2/fill`
-
-#### Sample Submit Fill Request Body
-
-> 📘 NOTE: This request only allows to pass one insurance object per fill request
-
-```json
-{
-  "fillRequestKey": "FillPatientSample1404",
-  "scriptKeys": [
-    "TestScriptKey1404"
-  ],
-  "shipping": {
-    "address": {
-      "line1": "500 Eagles Landin Dr",
-      "line2": null,
-      "line3": null,
-      "city": "Lakeland",
-      "state": "FL",
-      "zipCode": "33810",
-      "countryCode": "US"
-    },
-    "shippingCode": "UPS 1D",
-    "saturdayDelivery": true,
-    "signatureRequired": true
-  },
-  "insurance": {
-    "planNumber": "58189",
-    "secondaryPlanNumber": "78654",
-    "tertiaryPlanNumber": "58200",
-    "coPay": "32.50",
-    "transactionNumber": "pi_305qndABfMSbKdKQ0NA1r4L5",
-    "personCode": "001",
-    "relationshipCode": "02"
-  }
-}
-```
-
-Click here to see [Submit Fill Request Data Object](https://docs.healthdyne.com/docs/fill-request-fields#request-object)
-
-#### Sample Submit Fill Response
-
-```json
-{
-    "fillRequestKey": "FillPatientSample1404",
-    "message": "The fill request was accepted"
-}
-```
-
-Click here to see [Submit Fill Response Data Object](https://docs.healthdyne.com/docs/fill-request-fields#response-object-1)
-
-<br />
 
 #### Sample Submit Fill Request (multiple insurances per fill request)
 
