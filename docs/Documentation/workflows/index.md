@@ -19,7 +19,7 @@ Get started by adding reviewing the [Patient](doc:patient-request), [Script](doc
 ## eRx / Surescripts
 
 1. Create / update patient record using Patient API [Patient API Guide](doc:patient-request)
-2. RxReceived notification in Mailbox API [Mailbox API Guide](https://docs.healthdyne.com/v2.17/docs/mail-box)
+2. RxReceived notification in Mailbox API [Mailbox API Guide](doc:mail-box)
 3. Query Script API using scriptKey to retrieve prescription details [Script API Guide](https://docs.healthdyne.com/v2.17/docs/script-rxtransfer-request)
 4. Generate fill request using Fill API [Fill API Guide](https://docs.healthdyne.com/v2.17/docs/fill-request)
 5. Retrieve status updates via Mailbox API [Mailbox API Guide](https://docs.healthdyne.com/v2.17/docs/mail-box)
