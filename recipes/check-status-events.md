@@ -4,7 +4,7 @@ description: |-
   Example of retrieving and acknowledging status events using the Mailbox API.
   1. Retrieve Messages
   2. Acknowledge Receipt
-hidden: true
+hidden: false
 recipe:
   color: '#018FF4'
   icon: ''
@@ -161,7 +161,7 @@ fetch('https://api.uat-healthdyne.com/v2/mailbox?batchId=1000018', options)
 <!-- csharp@1-5 -->
 <!-- javascript@1-6 -->
 
-HealthDyne's MailBox API utilizes a delivery method similar to the post office mailbox. Events such as status updates will be posted to the mailbox where clients can retrieve the events for ingestion into their internal systems. By default 25 messages will be returned when the MailBox API is called using the GET method. If you would like to retrieve more or less events per call you can specify the query parameter "messageCount" in order to adjust the number of events returned i.e. https://api.uat-healthdyne.com/v2/mailbox?messageCount=15. A maximum of 100 events can be returned in a single call. See the successful GET response in the window below.
+HealthDyne's MailBox API utilizes a delivery method similar to the post office mailbox. Events such as status updates will be posted to the mailbox where clients can retrieve the events for ingestion into their internal systems. By default 25 messages will be returned when the MailBox API is called using the GET method. If you would like to retrieve more or less events per call you can specify the query parameter "messageCount" in order to adjust the number of events returned i.e. <https://api.uat-healthdyne.com/v2/mailbox?messageCount=15>. A maximum of 100 events can be returned in a single call. See the successful GET response in the window below.
 
 # Acknowledge Receipt
 
@@ -170,4 +170,4 @@ HealthDyne's MailBox API utilizes a delivery method similar to the post office m
 <!-- csharp@10-14 -->
 <!-- javascript@11-19 -->
 
-In order to retrieve the next batch of events you must first acknowledge receipt of the current batch of events by POSTin back to the MailBox API with the batchId as a query parameter i.e. https://api.uat-healthdyne.com/v2/mailbox?batchId=1000018. See the successful POST response in the window below.
+In order to retrieve the next batch of events you must first acknowledge receipt of the current batch of events by POSTin back to the MailBox API with the batchId as a query parameter i.e. <https://api.uat-healthdyne.com/v2/mailbox?batchId=1000018>. See the successful POST response in the window below.
