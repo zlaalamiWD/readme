@@ -33,4 +33,4 @@ See the [eRx / Surescript Workflow Recipe](https://docs.healthdyne.com/recipes/e
 3. Generate fill request using Fill API once RxTransferred notification is received [Fill API Guide](https://docs.healthdyne.com/v2.17/docs/fill-request)
 4. Retrieve status updates via Mailbox API [Mailbox API Guide](https://docs.healthdyne.com/v2.17/docs/mail-box)
 
-See the [Rx Transfer Workflow Recipe](https://docs.healthdyne.com/v2.17/recipes/prescription-transfer-overview) for an example workflow.
+See the [Rx Transfer Workflow Recipe](https://docs.healthdyne.com/recipes/prescription-transfer-overview) for an example workflow.
