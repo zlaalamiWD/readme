@@ -9,7 +9,7 @@ description: >-
   2. Request the Prescription Transfer.
 
   3. Submit a Fill request.
-hidden: true
+hidden: false
 recipe:
   color: '#018FF4'
   icon: ''
