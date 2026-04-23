@@ -24,7 +24,7 @@ Get started by adding reviewing the [Patient](doc:patient-request), [Script](doc
 4. Generate fill request using Fill API [Fill API Guide](doc:fill-request)
 5. Retrieve status updates via Mailbox API [Mailbox API Guide](doc:mail-box)
 
-See the [eRx / Surescript Workflow Recipe](recipes:escript-surescript-overview) for an example workflow.
+See the [eRx / Surescript Workflow Recipe](recipe:escript-surescript-overview) for an example workflow.
 
 ## Rx Transfer
 
