@@ -28,7 +28,7 @@ See the [eRx / Surescript Workflow Recipe](recipes:escript-surescript-overview) 
 
 ## Rx Transfer
 
-1. Create / update patient record using Patient API [Patient API Guide](docs:patient-request)
+1. Create / update patient record using Patient API [Patient API Guide](doc:patient-request)
 2. Submit Rx Transfer via Script API [Script API Guide](https://docs.healthdyne.com/v2.17/docs/script-rxtransfer-request)
 3. Generate fill request using Fill API once RxTransferred notification is received [Fill API Guide](https://docs.healthdyne.com/v2.17/docs/fill-request)
 4. Retrieve status updates via Mailbox API [Mailbox API Guide](https://docs.healthdyne.com/v2.17/docs/mail-box)
