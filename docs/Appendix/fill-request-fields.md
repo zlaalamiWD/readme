@@ -228,7 +228,7 @@ next:
 
 | Code     | Description                               | Notes             |
 | :------- | :---------------------------------------- | :---------------- |
-| POS 1C   | USPS 1st Class                            | Saturday delivery |
+| POS 1C   | USPS Ground Advantage                     | Saturday delivery |
 | POS 1M   | USPS Priority                             | Saturday delivery |
 | UPS 1D   | UPS Next Day Air (12:00 PM Delivery)      | Saturday delivery |
 | UPS 1DAM | UPS Next Day Air AM Delivery              | Saturday delivery |
@@ -262,7 +262,7 @@ next:
 | coPay               | String | 6               | Required          | Payment collected from the patient at checkout. Format "xx.xx" or "xxx.xx"                                                                                                                                                                                                                                                                       |
 | transactionNumber   | String | Max             | Required          | The payment transaction number. This should be the stripe transaction number if payment is managed by HealthDyne.                                                                                                                                                                                                                                |
 | personCode          | String | 3               | Optional          | Number 0 to 9.                                                                                                                                                                                                                                                                                                                                   |
-| relationshipCode    | String | 1               | Optional          | Number 0 to 9. See relationship code table [[below](https://docs.healthdyne.com/docs/fill-request-fields#relationship-codes)]                                                                                                                                                                                                                    |
+| relationshipCode    | String | 1               | Optional          | Number 0 to 9. See relationship code table \[[below](https://docs.healthdyne.com/docs/fill-request-fields#relationship-codes)]                                                                                                                                                                                                                   |
 
 #### Relationship Codes
 
@@ -290,14 +290,14 @@ next:
 
 #### Response Object
 
-| Field          | Type                                                                                  | Character Limit | Required/Optional | Description                                                               |
-| :------------- | :------------------------------------------------------------------------------------ | :-------------- | :---------------- | :------------------------------------------------------------------------ |
-| fillRequestKey | String                                                                                | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
-| submitted      | Array [[submitted](https://docs.healthdyne.com/docs/fill-request-fields#submitted)]   |                 | Optional          | Array of submitted Objects containing event details.                      |
-| rxVerified     | Array [[rxVerified](https://docs.healthdyne.com/docs/fill-request-fields#rxverified)] |                 | Optional          | Array of rxVerified objects containing verified information.              |
-| rxShipped      | Array [[rxshipped](https://docs.healthdyne.com/docs/fill-request-fields#rxshipped)]   |                 | Optional          | Array of rxShipped objects containing tracking/shipping information.      |
-| rxIssue        | Array [[rxissue](https://docs.healthdyne.com/docs/fill-request-fields#rxissue)]       |                 | Optional          | Array of rxIssue objects containing issued information.                   |
-| rxCanceled     | Array [[rxcanceled](https://docs.healthdyne.com/docs/fill-request-fields#rxcanceled)] |                 | Optional          | Array of rxCanceled objects containing cancel reason information.         |
+| Field          | Type                                                                                   | Character Limit | Required/Optional | Description                                                               |
+| :------------- | :------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
+| fillRequestKey | String                                                                                 | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
+| submitted      | Array \[[submitted](https://docs.healthdyne.com/docs/fill-request-fields#submitted)]   |                 | Optional          | Array of submitted Objects containing event details.                      |
+| rxVerified     | Array \[[rxVerified](https://docs.healthdyne.com/docs/fill-request-fields#rxverified)] |                 | Optional          | Array of rxVerified objects containing verified information.              |
+| rxShipped      | Array \[[rxshipped](https://docs.healthdyne.com/docs/fill-request-fields#rxshipped)]   |                 | Optional          | Array of rxShipped objects containing tracking/shipping information.      |
+| rxIssue        | Array \[[rxissue](https://docs.healthdyne.com/docs/fill-request-fields#rxissue)]       |                 | Optional          | Array of rxIssue objects containing issued information.                   |
+| rxCanceled     | Array \[[rxcanceled](https://docs.healthdyne.com/docs/fill-request-fields#rxcanceled)] |                 | Optional          | Array of rxCanceled objects containing cancel reason information.         |
 
 ***
 
@@ -416,3 +416,5 @@ next:
 | :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
 | fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
 | message        | String | Max             | Required          | Status messages string.                                                   |
+
+<br />
