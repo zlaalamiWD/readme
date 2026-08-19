@@ -19,16 +19,16 @@ HealthDyne employs a mailbox style order status reporting methodology. Therefore
 A maximum of 100 status messages will be returned with a single request. Multiple requests may be necessary to receive all outstanding status messages. Please refer to the Status Codes returned to determine if all messages have been retrieved.
 Note, the status messages are not considered delivered and removed from the mailbox until the receipt of the message is acknowledged by using a POST method with the batchId as a query parameter. Hence, another status request should not be submitted until the previous status response is acknowledged.
 
-### Server
+## Server
 
-##### Only https connections are accepted.
+Only HTTPS connections are accepted.
 
 | REQUEST TYPE       | ENDPOINT                          |
 | :----------------- | :-------------------------------- |
 | GET or Post (Test) | api.uat-healthdyne.com/v2/mailbox |
 | GET or Post (Prod) | api.healthdyne.com/v2/mailbox     |
 
-### Header
+## Header
 
 | Key                         | Value                  |
 | :-------------------------- | :--------------------- |
@@ -36,15 +36,13 @@ Note, the status messages are not considered delivered and removed from the mail
 | Content-Type                | application/json       |
 | HealthDyne-Subscription-Key | Provided by HealthDyne |
 
-# GET Request
+## GET Request
 
-#### Sample GET Request
-
-> <br />
+### Sample GET Request
 
 This tells the API to only respond with 10 messages. The default message count is 100 messages. The Mailbox only allows 100 messages to be pulled at a time.
 
-# GET Status Response
+## GET Status Response
 
 The below table lists the potential response codes that can be received in response to a GET request.
 
@@ -57,7 +55,7 @@ The below table lists the potential response codes that can be received in respo
 | 401  | Unauthorized                                                                   |
 | 500  | Internal Server Error                                                          |
 
-#### Sample Status Response _(RxTransfer)_
+### Sample Status Response _(RxTransfer)_
 
 ```json
 {
@@ -81,7 +79,7 @@ The below table lists the potential response codes that can be received in respo
 }
 ```
 
-#### Sample Status Response _(RxClarified)_
+### Sample Status Response _(RxClarified)_
 
 ```json
 {
@@ -105,13 +103,11 @@ The below table lists the potential response codes that can be received in respo
 }
 ```
 
-# POST Request
+## POST Request
 
-#### Sample POST Request
+### Sample POST Request
 
-> <br />
-
-#### Sample POST Response
+### Sample POST Response
 
 ```json
 {
@@ -124,11 +120,11 @@ The below table lists the potential response codes that can be received in respo
 }
 ```
 
-# Status Event Types:
+## Status Event Types
 
-# Rx Status Events
+### Rx Status Events
 
-## RxReceived _(eRx, fax, phone intake only)_
+#### RxReceived _(eRx, fax, phone intake only)_
 
 A RxReceived event will be produced when HealthDyne successfully receives an eRx from Surescripts for a registered patient.
 
@@ -169,7 +165,7 @@ A RxReceived event will be produced when HealthDyne successfully receives an eRx
 }
 ```
 
-## RxDiscontinued
+#### RxDiscontinued
 
 RxDiscontinued events will be generated anytime an Rx has been discontinued by the pharmacy. The discontinued status means the Rx is no longer valid and cannot be used for any future Fill requests.
 
@@ -187,7 +183,7 @@ RxDiscontinued events will be generated anytime an Rx has been discontinued by t
 }
 ```
 
-## RxRefillReady
+#### RxRefillReady
 
 RxRefillReady event will be generated anytime an Rx is ready for refill. NOTE: The event is configurable to be turned on/off to be received by client.
 
@@ -206,7 +202,7 @@ RxRefillReady event will be generated anytime an Rx is ready for refill. NOTE: T
 }
 ```
 
-## RxOverdue
+#### RxOverdue
 
 RxOverdue event will be generated anytime an Rx is overdue for a refill. NOTE: The event is configurable to be turned on/off to be received by client.
 
@@ -225,7 +221,7 @@ RxOverdue event will be generated anytime an Rx is overdue for a refill. NOTE: T
 }
 ```
 
-## RxRenewalReady
+#### RxRenewalReady
 
 RxRenewalReady event will be generated anytime an Rx is ready for prescriber to renew (Rx has exhausted all fills or when Rx has expired). The event is configurable to be turned on/off to be received by client.
 
@@ -244,11 +240,11 @@ RxRenewalReady event will be generated anytime an Rx is ready for prescriber to 
 }
 ```
 
-## Transferred _(Rx Transfer only)_
+#### Transferred _(Rx Transfer only)_
 
 Once the PNG or XML has been successfully downloaded, HealthDyne will store the file and create the prescription record in HealthDyne's pharmacy management system. Once the Rx has been created, HealthDyne will generate a ‘Transferred’ event.
 
-#### Sample "Transferred" event
+##### Sample "Transferred" event
 
 ```json
 {
@@ -265,11 +261,11 @@ Once the PNG or XML has been successfully downloaded, HealthDyne will store the 
 }
 ```
 
-## RxClarified
+#### RxClarified
 
 RxClarifiied events are generated when an Rx has a clarified prescription note. The event candidate is identified when an Rx has a clarified prescription note and no previous event generation.
 
-#### Sample "Clarified" event
+##### Sample "Clarified" event
 
 ```json
 {
@@ -286,11 +282,11 @@ RxClarifiied events are generated when an Rx has a clarified prescription note. 
 }
 ```
 
-## Routed
+#### Routed
 
 Upon a successfully transferred to the pharmacy, the system sends a mailbox event and updates the status to **Routed** in the HealthDyne System.
 
-#### Sample "Routed" event
+##### Sample "Routed" event
 
 ```json
 {
@@ -308,11 +304,11 @@ Upon a successfully transferred to the pharmacy, the system sends a mailbox even
 }
 ```
 
-## RoutingFailed
+#### RoutingFailed
 
 Upon a failed prescription transfer to the pharmacy, the system sends a mailbox event and updates the status to **RoutingFailed** in the HealthDyne System.
 
-#### Sample "RoutingFailed" event
+##### Sample "RoutingFailed" event
 
 ```json
 {
@@ -333,14 +329,14 @@ Upon a failed prescription transfer to the pharmacy, the system sends a mailbox 
 
 <br />
 
-# Fill Request Status Events
+### Fill Request Status Events
 
-## Submitted
+#### Submitted
 
 HealthDyne will create the order after receiving a Fill Request by sending create order command in the downstream pharmacy management system. Once the order has been successfully created, HealthDyne will generate a ‘submitted’ order status message and queues the event up for the client to retrieve it.
 **Note:** scriptKey can contain multiple scriptKey separated by comma.
 
-#### sample "Submitted" event
+##### Sample "Submitted" event
 
 ```json
 {
@@ -358,7 +354,7 @@ HealthDyne will create the order after receiving a Fill Request by sending creat
 }
 ```
 
-## RxVerified
+#### RxVerified
 
 A "RxVerified" event will be generated once a Pharmacist has completed PV1 and released the prescription for fulfillment.
 
@@ -366,7 +362,7 @@ A "RxVerified" event will be generated once a Pharmacist has completed PV1 and r
   ### NOTE: This is at Rx level (i.e. for each Rx)
 </Callout>
 
-#### sample "RxVerified" event
+##### Sample "RxVerified" event
 
 ```json
 {
@@ -395,7 +391,7 @@ A "RxVerified" event will be generated once a Pharmacist has completed PV1 and r
 }
 ```
 
-## Rejected
+#### Rejected
 
 When an order creation process results in an error or rejection, the system generates a Rejected event. The possible causes for this rejection are:
 
@@ -404,7 +400,7 @@ When an order creation process results in an error or rejection, the system gene
 | Order is rejected due to existing open orders for an Rx, or when one of the Rx items is discontinued. | RX: 10544965 found on OPEN order with External ID: db992f57-9437-4cda-baaf-18018505e59b prior fill |
 | Order is rejected due to an invalid address combination of state, city, and ZIP.                      | Order rejected due to address issue: Invalid combination of state, city, and ZIP code              |
 
-#### Sample "Rejected" event
+##### Sample "Rejected" event
 
 ```json
 {
@@ -417,7 +413,7 @@ When an order creation process results in an error or rejection, the system gene
 }
 ```
 
-## RxCancel
+#### RxCancel
 
 When a Rx or multiple Rx(s) in the order have been canceled pharmacy, HealthDyne will send an update at Rx level for each Rx in the order notifying of the canceled status. By default, unless order split has been configured for the client, the entire order will be cancelled when there is an issue with any of the Rx in the same order. Cancelled Rx that have not also been rejected due to "RxIssue" are available to be assigned to a new Fill Request without additional action via the Script API.
 
@@ -425,7 +421,7 @@ When a Rx or multiple Rx(s) in the order have been canceled pharmacy, HealthDyne
   ### NOTE: This is at Rx level (i.e. for each Rx)
 </Callout>
 
-#### Sample "RxCancel" event
+##### Sample "RxCancel" event
 
 ```json
 {
@@ -475,7 +471,7 @@ When a Rx or multiple Rx(s) in the order have been canceled pharmacy, HealthDyne
 
 Once the Rx has been shipped successfully by pharmacy, an update is sent for each Rx within the order. This event will be a ‘Shipped’ event sent for each Rx. For example, if an order has 2 RXs, you will receive 2 shipped messages.
 
-## Shipped
+#### Shipped
 
 Once the Rx has been shipped successfully by pharmacy, an update is sent for each Rx within the order. This event will be  a ‘Shipped’ event sent for each Rx. For example, if an order has 2 RXs, you will receive 2 shipped messages.
 
@@ -483,7 +479,7 @@ Once the Rx has been shipped successfully by pharmacy, an update is sent for eac
   ### NOTE: This is at Rx level (i.e. for each Rx)
 </Callout>
 
-#### Sample "Shipped" event
+##### Sample "Shipped" event
 
 ```json
 {
@@ -515,13 +511,13 @@ Once the Rx has been shipped successfully by pharmacy, an update is sent for eac
 }
 ```
 
-> ❗️ NOTE: the address attribute only return null for now
+**Note:** The `address` attribute currently returns `null`.
 
-## RxCopay
+#### RxCopay
 
 Once the Rx has been adjudicated successfully by pharmacy, an update is sent for each RX with adjudication summary and insurance used to adjudicate the order. This event will be  a ‘RxCopay’ event sent for each Rx. For example, if an order has 2 RXs, you will receive 2 RxCopay messages.
 
-#### Sample "RxCopay" event
+##### Sample "RxCopay" event
 
 ```json
 {
@@ -555,11 +551,11 @@ Once the Rx has been adjudicated successfully by pharmacy, an update is sent for
 }
 ```
 
-## &#x20;RxPaymentDeclined
+#### RxPaymentDeclined
 
 The **RxPaymentDeclined** event is triggered when a patient’s payment for an order is declined during the billing/ fulfillment process. This mailbox event notifies the client that the payment could not be processed successfully, allowing them to proactively alert the patient and request updated payment information so that order can be processed.
 
-#### &#x20;Sample "RxPaymentDeclined" event
+##### Sample "RxPaymentDeclined" event
 
 ```json
 {
@@ -578,11 +574,11 @@ The **RxPaymentDeclined** event is triggered when a patient’s payment for an o
 }
 ```
 
-## RxPaymentRequired
+#### RxPaymentRequired
 
 The **RxPaymentRequired** event is triggered when a patient’s payment for an order is required before order is shipped. This mailbox event notifies the client that order is ready to be shipped and payment is required, allowing them to proactively alert the patient and request for payment so that order can be shipped.
 
-#### Sample "RxPaymentRequired" event
+##### Sample "RxPaymentRequired" event
 
 ```json
 {
