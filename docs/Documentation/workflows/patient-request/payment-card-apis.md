@@ -82,10 +82,10 @@ The POST Patient Payment Card API allows clients to add Payment Card details to 
 
 ##### Only HTTPS connections are accepted.
 
-| METHOD TYPE | ENDPOINT                              |
-| :---------- | :------------------------------------ |
-| POST (Test) | api.uat-healthdyne.com/v2/paymentcard |
-| POST (Prod) | api.healthdyne.com/v2/paymentcard     |
+| METHOD TYPE | ENDPOINT                                      |
+| :---------- | :-------------------------------------------- |
+| POST (Test) | api.uat-healthdyne.com/v2/patient/paymentcard |
+| POST (Prod) | api.healthdyne.com/v2/patient/paymentcard     |
 
 ### Header
 
@@ -135,10 +135,10 @@ Once a patient payment card has been registered successfully, the PUT Patient Pa
 
 ##### Only HTTPS connections are accepted.
 
-| METHOD TYPE | ENDPOINT                              |
-| :---------- | :------------------------------------ |
-| PUT (Test)  | api.uat-healthdyne.com/v2/paymentcard |
-| PUT (Prod)  | api.healthdyne.com/v2/paymentcard     |
+| METHOD TYPE | ENDPOINT                                      |
+| :---------- | :-------------------------------------------- |
+| PUT (Test)  | api.uat-healthdyne.com/v2/patient/paymentcard |
+| PUT (Prod)  | api.healthdyne.com/v2/patient/paymentcard     |
 
 ### Header
 
@@ -193,10 +193,10 @@ The DELETE Patient Payment Card API allows clients to deactivate a Payment Card 
 
 ##### Only HTTPS connections are accepted.
 
-| METHOD TYPE   | ENDPOINT                              |
-| :------------ | :------------------------------------ |
-| DELETE (Test) | api.uat-healthdyne.com/v2/paymentcard |
-| DELETE (Prod) | api.healthdyne.com/v2/paymentcard     |
+| METHOD TYPE   | ENDPOINT                                      |
+| :------------ | :-------------------------------------------- |
+| DELETE (Test) | api.uat-healthdyne.com/v2/patient/paymentcard |
+| DELETE (Prod) | api.healthdyne.com/v2/patient/paymentcard     |
 
 ### Header
 
