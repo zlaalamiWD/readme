@@ -110,7 +110,7 @@ Click here to see [Add Patient Payment Card Request Data Object](https://docs.he
 
 ```json
 {
-    "returnUrl": "https://cardcenter.qa-healthdyne.com/AddCard/c440977f-dba1-4d5f-aa5f-2862cd81"
+    "cardUrl": "https://cardcenter.qa-healthdyne.com/AddCard/c440977f-dba1-4d5f-aa5f-2862cd81"
 }
 ```
 
