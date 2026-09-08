@@ -10,6 +10,7 @@ metadata:
 next:
   description: ''
 ---
+For current model additions and operation-specific distinctions, see [Current HD Order API Models](doc:current-order-api-models).
 <Callout icon="📃" theme="default">
   ### Note:
 

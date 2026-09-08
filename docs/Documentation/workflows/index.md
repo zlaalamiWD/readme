@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-HealthDyne's Pharmacy APIs allow developers to integrate our fulfillment capabilities into their organization's healthcare applications.
+HealthDyne's Pharmacy APIs allow developers to integrate our fulfillment capabilities into their organization's healthcare applications. This page is a workflow overview; see the API Reference for the complete endpoint contract and the Appendix for shared request and response object definitions.
 
 Get started by adding reviewing the [Patient](doc:patient-request), [Script](doc:script-rxtransfer-request), and [Fill](doc:fill-request) request documentation. Visit the [API Reference](ref:patient) or check the [Recipes](https://docs.healthdyne.com/v2.0/recipes) page for example requests.
 
