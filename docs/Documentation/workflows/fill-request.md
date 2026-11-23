@@ -42,7 +42,7 @@ Use the client-assigned `fillRequestKey` for the lookup. The response groups eve
 
 #### Sample GET Status Request
 
-`GET https://api.uat-healthdyne.com/v2/fill/fillRequest?fillRequestKey=FILL-EXAMPLE-1001`
+`GET https://api.uat-healthdyne.com/v2/fill/fillRequest?fillRequestKey=FillPatientSample1404`
 
 Click here to see [GET Fill Request Query Data](doc:fill-request-fields#query-parameter)
 
@@ -52,38 +52,38 @@ Click here to see [GET Fill Request Query Data](doc:fill-request-fields#query-pa
 
 ```json
 {
-  "fillRequestKey": "FILL-EXAMPLE-1000",
-  "submitted": [
-    {
-      "eventId": "295955",
-      "eventDateUtc": "2025-04-15T09:12:20.913021+00:00",
-      "scriptKeys": [
-        "SCRIPT-EXAMPLE-000"
-      ]
-    }
-  ],
-  "rxVerified": [
-    {
-      "eventId": "295965",
-      "eventDateUtc": "2025-04-15T09:16:48.804578+00:00",
-      "scriptKey": "SCRIPT-EXAMPLE-000",
-      "verifiedDate": "2025-04-15T09:16:48.804578+00:00",
-      "statusMessage": "The Rx has been verified by the pharmacist (PV1)"
-    }
-  ],
-  "rxShipped": [
-    {
-      "eventId": "295985",
-      "eventDateUtc": "2025-04-17T09:19:53.417176+00:00",
-      "scriptKey": "SCRIPT-EXAMPLE-000",
-      "shipmentDate": "2025-04-17T06:00:02Z",
-      "trackingNumber": "7548253"
-    }
-  ],
-  "rxIssue": [],
-  "rxCanceled": [],
-  "rejected": [],
-  "renewed": []
+    "fillRequestKey": "ccdd5fd46a714cc09bc679f0365b2",
+    "submitted": [
+        {
+            "eventId": "295955",
+            "eventDateUtc": "2025-04-15T09:12:20.913021+00:00",
+            "scriptKeys": [
+                "SampleScriptKey007"
+            ]
+        }
+    ],
+    "rxVerified": [
+        {
+            "eventId": "295965",
+            "eventDateUtc": "2025-04-15T09:16:48.804578+00:00",
+            "scriptKey": "24388f1b53c04b0a89534056c311ece6326",
+            "verifiedDate": "2025-04-15T09:16:48.804578+00:00",
+            "statusMessage": "The Rx has been verified by the pharmacist (PV1)"
+        }
+    ],
+    "rxShipped": [
+        {
+            "eventId": "295985",
+            "eventDateUtc": "2025-04-17T09:19:53.417176+00:00",
+            "scriptKey": "24388f1b53c04b0a89534056c311ece6326",
+            "shipmentDate": "2025-04-17T06:00:02Z",
+            "trackingNumber": "7548253"
+        }
+    ],
+    "rxIssue": [],
+    "rxCanceled": [],
+    "rejected": [],
+    "renewed": []
 }
 ```
 
@@ -91,58 +91,65 @@ Click here to see [GET Fill Request Query Data](doc:fill-request-fields#query-pa
 
 ```json
 {
-  "fillRequestKey": "FILL-EXAMPLE-1001",
-  "submitted": [
-    {
-      "eventId": "295955",
-      "eventDateUtc": "2025-04-15T09:12:20.913021+00:00",
-      "scriptKeys": [
-        "SCRIPT-EXAMPLE-001",
-        "SCRIPT-EXAMPLE-002"
-      ]
-    }
-  ],
-  "rxVerified": [
-    {
-      "eventId": "288774",
-      "eventDateUtc": "2025-04-15T09:16:48.804578+00:00",
-      "scriptKey": "SCRIPT-EXAMPLE-001",
-      "verifiedDate": "2025-04-15T09:16:48.804578+00:00",
-      "statusMessage": "The Rx has been verified by the pharmacist (PV1)"
-    },
-    {
-      "eventId": "2887749",
-      "eventDateUtc": "2025-04-15T09:16:48.804578+00:00",
-      "scriptKey": "SCRIPT-EXAMPLE-002",
-      "verifiedDate": "2025-04-15T09:16:48.804578+00:00",
-      "statusMessage": "The Rx has been verified by the pharmacist (PV1)"
-    }
-  ],
-  "rxShipped": [],
-  "rxIssue": [
-    {
-      "eventId": "289773",
-      "eventDateUtc": "2025-04-15T09:30:57.585214+00:00",
-      "scriptKey": "SCRIPT-EXAMPLE-001",
-      "issueMessage": "REJECTED 533 HEALTHDYNE RX REJECTED - "
-    }
-  ],
-  "rxCanceled": [
-    {
-      "eventId": "288784",
-      "eventDateUtc": "2025-04-15T09:50:00Z",
-      "scriptKey": "SCRIPT-EXAMPLE-001",
-      "statusMessage": "Cancelled"
-    },
-    {
-      "eventId": "2887864",
-      "eventDateUtc": "2025-04-15T09:50:00Z",
-      "scriptKey": "SCRIPT-EXAMPLE-002",
-      "statusMessage": "Cancelled"
-    }
-  ],
-  "rejected": [],
-  "renewed": []
+    "fillRequestKey": "FillPatientSample1404",
+    "submitted": [
+        {
+            "eventId": "295955",
+            "eventDateUtc": "2025-04-15T09:12:20.913021+00:00",
+            "scriptKeys": [
+                "SampleScriptKey1",
+                "SampleScriptKey2"
+            ]
+        }
+    ],
+    "rxVerified": [
+        {
+            "eventId": "288774",
+            "eventDateUtc": "2025-04-11T18:43:07.995451Z",
+            "scriptKey": "TestScriptKey1401",
+            "verifiedDate": "2025-04-15T09:16:48.804578+00:00",
+            "statusMessage": "The Rx has been verified by the pharmacist (PV1)"
+        },
+        {
+            "eventId": "2887749",
+            "eventDateUtc": "2025-04-11T18:453:07.995451Z",
+            "scriptKey": "TestScriptKey14091",
+            "verifiedDate": "2025-04-15T09:16:48.804578+00:00",
+            "statusMessage": "The Rx has been verified by the pharmacist (PV1)"
+        }
+    ],
+    "rxShipped": [],
+    "rxIssue": [
+        {
+            "eventId": "289773",
+            "eventDateUtc": "2025-04-15T09:30:57.585214+00:00",
+            "scriptKey": "TestScriptKey1401",
+            "issueMessage": "REJECTED 533 HEALTHDYNE RX REJECTED - "
+        }
+    ],
+    "rxCanceled": [
+        {
+            "eventId": "288784",
+            "eventDateUtc": "2025-04-11T18:50:00.418881Z",
+            "scriptKey": "TestScriptKey1401",
+            "statusMessage": "Cancelled"
+        },
+        {
+            "eventId": "2887864",
+            "eventDateUtc": "2025-04-11T18:50:00.418881Z",
+            "scriptKey": "TestScriptKey14091",
+            "statusMessage": "Cancelled"
+        }
+    ],
+    "rejected": [
+        {
+            "eventId": "156270",
+            "eventDateUtc": "2025-02-18T13:36:57.776842Z",
+            "scriptKeys": [],
+            "statusMessage": "RX: 10524420 found on OPEN order with External ID: NULL; "
+        }
+    ],
+    "renewed": []
 }
 ```
 
@@ -499,6 +506,71 @@ Use top-level `otcItems` to include eligible products with at least one prescrip
 
 ```json
 {
+  "fillRequestKey": "Fill26",
+  "paymentCardSequenceNumber" : "12345",
+  "scriptsKeys": [
+    {
+      "scriptsKey": "sc258",
+      "patientInsurance": {
+        "planNumber": "12349",
+        "secondaryPlanNumber": "12348",
+        "tertiaryPlanNumber": "12347",
+        "clientItemCost": 123.11,
+        "clientDispenseFee": 124.11,
+        "clientOtherFee": 125.2,
+        "clientCoPay": 126.66
+      }
+    },
+    {
+      "scriptsKey": "sc258testing",
+      "patientInsurance": {
+        "planNumber": "12369",
+        "secondaryPlanNumber": "12389",
+        "tertiaryPlanNumber": "12347",
+        "clientItemCost": 123.11,
+        "clientDispenseFee": 124.11,
+        "clientOtherFee": 125.2,
+        "clientCoPay": 126.66
+      }
+    }
+  ],
+  "shipping": {
+    "address": {
+      "line1": "16JUL20241206204211",
+      "line2": "16JUL20241206204213",
+      "line3": "16JUL20241206204213",
+      "city": "LAKELAND",
+      "state": "FL",
+      "zipCode": "33810",
+      "countryCode": "US"
+    },
+    "shippingCode": "POS 1M",
+    "saturdayDelivery": false,
+    "signatureRequired": false
+  },
+  "transactionNumber": "asvbbnh"
+}
+```
+
+Click here to see [Per-prescription request](doc:fill-request-fields#request-object-1)
+
+#### Sample Submit Fill Response
+
+```json
+{
+    "fillRequestKey": "Fill26",
+    "message": "The fill request was accepted"
+}
+```
+
+Click here to see [Standard submit response](doc:fill-request-fields#response-object-1) · [Per-prescription submit response](doc:fill-request-fields#response-object-2)
+
+#### Sample Submit Fill Request With Inline Insurance and OTC Items
+
+This example uses the per-prescription endpoint with inline primary insurance, an existing secondary plan, and an eligible OTC item.
+
+```json
+{
   "fillRequestKey": "FILL-EXAMPLE-1002",
   "paymentCardSequenceNumber": "12345",
   "scriptsKeys": [
@@ -551,19 +623,6 @@ Use top-level `otcItems` to include eligible products with at least one prescrip
 }
 ```
 
-Click here to see [Per-prescription request](doc:fill-request-fields#request-object-1)
-
-#### Sample Submit Fill Response
-
-```json
-{
-  "fillRequestKey": "FILL-EXAMPLE-1002",
-  "message": "The fill request was accepted"
-}
-```
-
-Click here to see [Standard submit response](doc:fill-request-fields#response-object-1) · [Per-prescription submit response](doc:fill-request-fields#response-object-2)
-
 HTTP 200 acknowledges receipt for processing. Use `Submitted` or `Rejected` to determine the order outcome. Read `validationErrors` or problem details on a failed request. A duplicate key returns HTTP 400. If the original result is uncertain, look up the existing key before submitting another request.
 
 For submit and update, use a supported shipping code and include line 1, city, a two-letter state, and a five-digit ZIP or ZIP+4. Set Saturday delivery only for a service that supports it. [Address](doc:fill-request-fields#address-data-object) · [Shipping codes](doc:fill-request-fields#shipping-codes)
@@ -593,7 +652,7 @@ Send the existing `fillRequestKey` and the address and shipping code in `shippin
 
 ```json
 {
-  "fillRequestKey": "FILL-EXAMPLE-1002",
+  "fillRequestKey": "FillPatientSample1404",
   "shipping": {
     "address": {
       "line1": "UpdateAgain1",
@@ -617,8 +676,8 @@ Click here to see [Update Fill Request Data Object](doc:fill-request-fields#requ
 
 ```json
 {
-  "fillRequestKey": "FILL-EXAMPLE-1002",
-  "message": "The fill update request was accepted"
+    "fillRequestKey": "FillPatientSample1404",
+    "message": "The fill update request was accepted"
 }
 ```
 
@@ -651,9 +710,9 @@ Supply the existing `fillRequestKey` and a `cancelReason` of up to 255 character
 
 ```json
 {
-  "fillRequestKey": "FILL-EXAMPLE-1002",
+  "fillRequestKey": "FillPatientSample1404",
   "scriptKeys": [
-    "SCRIPT-EXAMPLE-004"
+    "TestScriptKey1404"
   ],
   "cancelReason": "Cancelled"
 }
@@ -665,8 +724,8 @@ Click here to see [Cancel Fill Request Data Object](doc:fill-request-fields#requ
 
 ```json
 {
-  "fillRequestKey": "FILL-EXAMPLE-1002",
-  "message": "Prescription fill for [SCRIPT-EXAMPLE-004] under Fill request [FILL-EXAMPLE-1002] has been canceled."
+    "fillRequestKey": "FillPatientSample1404",
+    "message": "Prescription fill for [TestScriptKey1404] under Fill request [FillPatientSample1404] has been canceled."
 }
 ```
 
