@@ -1,6 +1,5 @@
 ---
 title: Patient
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

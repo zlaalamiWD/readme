@@ -1,6 +1,5 @@
 ---
 title: Fill
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

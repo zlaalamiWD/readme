@@ -1,6 +1,5 @@
 ---
 title: Mailbox
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:

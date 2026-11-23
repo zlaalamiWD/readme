@@ -1,6 +1,5 @@
 ---
 title: Script
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
