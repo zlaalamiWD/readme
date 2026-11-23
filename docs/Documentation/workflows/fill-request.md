@@ -159,7 +159,59 @@ The table below lists the potential response codes that can be received in respo
 
 Use a new `fillRequestKey` of up to 50 characters for each new request. Supply one or more unique prescription keys for the same patient. A transfer must be in `Transferred` status. Eligible prescriptions from HealthDyne intake can be in `Received` status. Discontinued prescriptions, prescriptions with no fills available, and keys outside the authorized client scope can fail validation. Replace sample values with valid values for the target environment. [Fill Request schemas](doc:fill-request-fields)
 
-![](https://files.readme.io/182e876-small-FillRequest.png)
+#### Fill Request Sequence
+
+```mermaid
+sequenceDiagram
+    participant C as Client
+    participant H as HealthDyne API
+    participant W as Order processing
+    participant P as Pharmacy system
+    C->>H: POST /v2/fill or POST /v2/fill/fillRequest
+    H->>H: Validate request and prescription eligibility
+    alt Request fails validation
+        H-->>C: HTTP 400 with validation details
+    else Request is accepted for processing
+        H-)W: Queue order request
+        H-->>C: HTTP 200 with fillRequestKey and acceptance message
+        W->>P: Create pharmacy order
+        alt Order created or confirmed
+            P-->>W: Order confirmed
+            Note over W,H: Submitted is recorded
+        else Order creation rejected
+            P-->>W: Rejection reason
+            Note over W,H: Rejected is recorded
+        end
+        opt Client requests a status snapshot
+            C->>H: GET /v2/fill/fillRequest?fillRequestKey=...
+            H-->>C: Recorded events grouped by status
+        end
+        opt Client retrieves Mailbox events
+            C->>H: GET /v2/mailbox
+            H-->>C: Individual FILLREQUEST events in a batch
+            C->>H: POST /v2/mailbox to mark the batch delivered
+        end
+    end
+```
+
+#### Fill Request API Flow
+
+Use the flow to distinguish request acceptance from the pharmacy order outcome and see when shipping updates and cancellation apply.
+
+```mermaid
+flowchart TD
+    A["Client submits a Fill Request"] --> B{"Request valid?"}
+    B -->|No| C["HTTP 400 · Review validation details"]
+    B -->|Yes| D["HTTP 200 · Accepted for processing"]
+    D --> E{"Pharmacy order outcome"}
+    E -->|Created or confirmed| F["Submitted · Follow prescription progress"]
+    E -->|Rejected| G["Rejected · Review the cause before resubmitting"]
+    F --> H["GET Fill Request status or retrieve Mailbox events"]
+    G --> H
+    F --> I{"Order still eligible for changes?"}
+    I -->|Update shipping| J["PUT /v2/fill"]
+    I -->|Cancel order or selected lines| K["POST /v2/fill/cancel"]
+```
 
 #### Server
 
