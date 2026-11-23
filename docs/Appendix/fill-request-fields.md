@@ -206,24 +206,34 @@ For current model additions and operation-specific distinctions, see [Current HD
 | eventDateUtc | DateTime | YYYY-MM-DD T HH:MM:SS.microseconds Z | Required          | Date and time of the event in UTC (ISO 8601).                                          |
 | scriptKeys   | Array    | 50 per value                         | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
 
+### Rejected
+
+| Field | Type | Description |
+| :--- | :--- | :--- |
+| `eventId` | String | HealthDyne event identifier. |
+| `eventDateUtc` | Date-time | Event timestamp in UTC. |
+| `scriptKeys` | Array of strings | Associated prescription keys when available. |
+| `statusMessage` | String | Order rejection reason. |
+
 # Fill Request Data Object
 
-| Field                     | Type                                                                                             | Character Limit | Required/Optional | Description                                                                            |
-| :------------------------ | :----------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------------------- |
-| fillRequestKey            | String                                                                                           | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking.              |
-| paymentCardSequenceNumber | String                                                                                           |                 | Optional          | Contains payment card sequence number of patient                                       |
-| scriptKeys                | Array                                                                                            | 50              | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
-| shipping                  | Object [(shipping)](https://docs.healthdyne.com/docs/fill-request-fields#shipping-data-object)   |                 | Required          | Object containing shipping information for the order.                                  |
-| insurance                 | Object [(insurance)](https://docs.healthdyne.com/docs/fill-request-fields#insurance-data-object) |                 | Optional          | Optionally specify insurance information to be used on the fill request.               |
+Use this object with `POST /v2/fill`.
+
+| Field | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `fillRequestKey` | String | Yes | Client-assigned key. Maximum 50 characters. |
+| `scriptKeys` | Array of strings | Yes | One or more unique prescription keys for the same patient. |
+| `shipping` | Object | Yes | Address and method. [Shipping Data Object](#shipping-data-object) |
+| `insurance` | Object | No | Order-level insurance and payment details. [Insurance Data Object](#insurance-data-object) |
 
 # Shipping Data Object
 
-| Field             | Type                                                                                         | Character Limit | Required/Optional | Description                                                                                                                                                                                                         |
-| :---------------- | :------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| address           | Object [(address)](https://docs.healthdyne.com/docs/fill-request-fields#address-data-object) |                 | Required          | Object containing address information for order to be shipped to.                                                                                                                                                   |
-| ShippingCode      | String                                                                                       | 10              | Required          | Shipping method to be used for the order. See [Shipping Codes](https://docs.healthdyne.com/docs/fill-request-fields#shipping-codes)below                                                                            |
-| SaturdayDelivery  | Boolean                                                                                      | true/false      | Optional          | Values: True/False. Saturday Delivery is an option for certain shipping codes, depending on the carrier. To have an order delivered on a Saturday, select the correct Shipping Code and then set this flag to true. |
-| SignatureRequired | Boolean                                                                                      | true/false      | Optional          | Values: True/False. Select the option if the package requires a signature                                                                                                                                           |
+| Field | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `address` | Object | Yes | Delivery address. [Address Data Object](#address-data-object) |
+| `shippingCode` | String | Yes | Supported shipping method. Maximum 10 characters. [Shipping Codes](#shipping-codes) |
+| `saturdayDelivery` | Boolean | No | Defaults to false. Use true with a shipping method that supports Saturday delivery. |
+| `signatureRequired` | Boolean | No | Defaults to false. Use true when delivery requires a signature. |
 
 # Shipping Codes
 
@@ -243,27 +253,34 @@ For current model additions and operation-specific distinctions, see [Current HD
 
 # Address Data Object
 
-| Field       | Type   | Character Limit | Required/Optional | Description                                        |
-| :---------- | :----- | :-------------- | :---------------- | :------------------------------------------------- |
-| line1       | String | 40              | Required          | Street Address                                     |
-| line2       | String | 40              | Optional          | Street Address                                     |
-| line3       | String | 40              | Optional          | Street Address                                     |
-| city        | String | 35              | Required          | City                                               |
-| state       | String | 2               | Required          | US State Abbreviation Code                         |
-| zipCode     | String | 10              | Required          | Format NNNNN or NNNNN-NNNN                         |
-| countryCode | String | 2               | Optional          | ISO-3166 2 character country code. Defaults to US. |
+| Field | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `line1` | String | Yes | Street address, up to 40 characters. |
+| `line2` | String | No | Additional address line, up to 40 characters. |
+| `line3` | String | No | Additional address line, up to 40 characters. |
+| `city` | String | Yes | City, up to 35 characters. |
+| `state` | String | Yes | Two-letter state code. |
+| `zipCode` | String | Yes | Five-digit ZIP or ZIP+4. |
+| `countryCode` | String | No | Two-letter country code when supplied. |
 
 # Insurance Data Object
 
-| Field               | Type   | Character Limit | Required/Optional | Description                                                                                                                                                                                                                                                                                                                                      |
-| :------------------ | :----- | :-------------- | :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| planNumber          | String | 100             | Required          | Insurance plan number to be used on order previously provided by HealthDyne on a create Insurance response.                                                                                                                                                                                                                                      |
-| secondaryPlanNumber | String | 10              | Optional          | An identifier representing an additional insurance or benefit plan that serves as a secondary source of coverage for the client in a transaction is used when the primary plan does not fully cover the service or product. (Note: This attribute is only required if you are planning to provide tertiary insurance, otherwise it is optional.) |
-| tertiaryPlanNumber  | String | 10              | Optional          | An identifier representing a third-tier insurance or benefit plan provides supplemental coverage when both the primary and secondary plans do not fully cover the transaction for the client.                                                                                                                                                    |
-| coPay               | String | 6               | Required          | Payment collected from the patient at checkout. Format "xx.xx" or "xxx.xx"                                                                                                                                                                                                                                                                       |
-| transactionNumber   | String | Max             | Required          | The payment transaction number. This should be the stripe transaction number if payment is managed by HealthDyne.                                                                                                                                                                                                                                |
-| personCode          | String | 3               | Optional          | Number 0 to 9.                                                                                                                                                                                                                                                                                                                                   |
-| relationshipCode    | String | 1               | Optional          | Number 0 to 9. See relationship code table \[[below](https://docs.healthdyne.com/docs/fill-request-fields#relationship-codes)]                                                                                                                                                                                                                   |
+| Field | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `planNumber` | String | Conditional | Supply an existing primary plan number or inline primary details. |
+| `secondaryPlanNumber` | String | Conditional | Existing secondary plan number. Secondary coverage is required with tertiary coverage. |
+| `tertiaryPlanNumber` | String | No | Existing tertiary plan number. Supply primary and secondary coverage when using this field. |
+| `coPay` | String | Yes | Numeric payment amount when insurance is present. Maximum 8 characters. |
+| `transactionNumber` | String | Yes | Payment transaction identifier when insurance is present. |
+| `personCode` | String | No | Person code when applicable. |
+| `bin` | String | For inline details | 4–6 digits. |
+| `groupNumber` | String | For inline details | Insurance group number, up to 15 characters. |
+| `memberId` | String | For inline details | Member ID, up to 20 characters, without special characters. |
+| `pcn` | String | For inline details | Processor control number, up to 10 characters. |
+| `relationship` | String | For inline details if relationshipCode is absent | One digit from 0 through 8. [Relationship Codes](#relationship-codes) |
+| `relationshipCode` | String | For inline details if relationship is absent | Supported relationship code. |
+
+Use distinct plan numbers across coverage levels.
 
 #### Relationship Codes
 
@@ -291,36 +308,40 @@ For current model additions and operation-specific distinctions, see [Current HD
 
 #### Response Object
 
-| Field          | Type                                                                                   | Character Limit | Required/Optional | Description                                                               |
-| :------------- | :------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
-| fillRequestKey | String                                                                                 | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
-| submitted      | Array \[[submitted](https://docs.healthdyne.com/docs/fill-request-fields#submitted)]   |                 | Optional          | Array of submitted Objects containing event details.                      |
-| rxVerified     | Array \[[rxVerified](https://docs.healthdyne.com/docs/fill-request-fields#rxverified)] |                 | Optional          | Array of rxVerified objects containing verified information.              |
-| rxShipped      | Array \[[rxshipped](https://docs.healthdyne.com/docs/fill-request-fields#rxshipped)]   |                 | Optional          | Array of rxShipped objects containing tracking/shipping information.      |
-| rxIssue        | Array \[[rxissue](https://docs.healthdyne.com/docs/fill-request-fields#rxissue)]       |                 | Optional          | Array of rxIssue objects containing issued information.                   |
-| rxCanceled     | Array \[[rxcanceled](https://docs.healthdyne.com/docs/fill-request-fields#rxcanceled)] |                 | Optional          | Array of rxCanceled objects containing cancel reason information.         |
+| Field | Type | Description |
+| :--- | :--- | :--- |
+| `fillRequestKey` | String | Client-assigned key for the Fill Request. |
+| `submitted` | Array | [Submitted](#submitted) events. |
+| `rxVerified` | Array | [RxVerified](#rxverified) events. |
+| `rxShipped` | Array | [RxShipped](#rxshipped) events. |
+| `rxIssue` | Array | [RxIssue](#rxissue) events. |
+| `rxCanceled` | Array | [RxCanceled](#rxcanceled) events. |
+| `rejected` | Array | [Rejected](#rejected) events. |
+| `renewed` | Array | [Renewed](#renewed) events. |
 
-***
+Event arrays can be empty. If no matching record is visible, the API returns HTTP 200 with a problem details body whose `detail` is `No record(s) found`.
 
 ## SUBMIT Fill Request
 
 #### Request Object
 
-| Field          | Type                                                                                             | Character Limit | Required/Optional | Description                                                                            |
-| :------------- | :----------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------------------- |
-| fillRequestKey | String                                                                                           | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking.              |
-| scriptKeys     | Array                                                                                            | 50 per value    | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
-| shipping       | Object [(shipping)](https://docs.healthdyne.com/docs/fill-request-fields#shipping-data-object)   |                 | Required          | Object containing shipping information for the order.                                  |
-| insurance      | Object [(insurance)](https://docs.healthdyne.com/docs/fill-request-fields#insurance-data-object) |                 | Optional          | Optionally specify insurance information to be used on the fill request.               |
+Use this object with `POST /v2/fill`.
+
+| Field | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `fillRequestKey` | String | Yes | Client-assigned key. Maximum 50 characters. |
+| `scriptKeys` | Array of strings | Yes | One or more unique prescription keys for the same patient. |
+| `shipping` | Object | Yes | Address and method. [Shipping Data Object](#shipping-data-object) |
+| `insurance` | Object | No | Order-level insurance and payment details. [Insurance Data Object](#insurance-data-object) |
 
 # Shipping Data Object
 
-| Field             | Type                                                                                         | Character Limit | Required/Optional | Description                                                                                                                                                                                                         |
-| :---------------- | :------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| address           | Object [(address)](https://docs.healthdyne.com/docs/fill-request-fields#address-data-object) |                 | Required          | Object containing address information for order to be shipped to.                                                                                                                                                   |
-| ShippingCode      | String                                                                                       | 10              | Required          | Shipping method to be used for the order. See [Shipping Codes](https://docs.healthdyne.com/docs/fill-request-fields#shipping-codes)below                                                                            |
-| SaturdayDelivery  | Boolean                                                                                      | true/false      | Optional          | Values: True/False. Saturday Delivery is an option for certain shipping codes, depending on the carrier. To have an order delivered on a Saturday, select the correct Shipping Code and then set this flag to true. |
-| SignatureRequired | Boolean                                                                                      | true/false      | Optional          | Values: True/False. Select the option if the package requires a signature                                                                                                                                           |
+| Field | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `address` | Object | Yes | Delivery address. [Address Data Object](#address-data-object) |
+| `shippingCode` | String | Yes | Supported shipping method. Maximum 10 characters. [Shipping Codes](#shipping-codes) |
+| `saturdayDelivery` | Boolean | No | Defaults to false. Use true with a shipping method that supports Saturday delivery. |
+| `signatureRequired` | Boolean | No | Defaults to false. Use true when delivery requires a signature. |
 
 #### Response Object
 
@@ -335,41 +356,77 @@ For current model additions and operation-specific distinctions, see [Current HD
 
 #### Request Object
 
-| Field             | Type                                                                                               | Character Limit | Required/Optional | Description                                                               |
-| :---------------- | :------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------ |
-| fillRequestKey    | String                                                                                             | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking. |
-| scriptsKeys       | Object [scriptsKeys](https://docs.healthdyne.com/docs/fill-request-fields#scriptskeys-data-object) | 50 per value    | Required          | List of Array of scriptsKeys Object.                                      |
-| shipping          | Object [(shipping)](https://docs.healthdyne.com/docs/fill-request-fields#shipping-data-object)     |                 | Required          | Object containing shipping information for the order.                     |
-| transactionNumber | String                                                                                             |                 | Required          | A unique identifier assigned to each transaction by the client.           |
+Use this object with `POST /v2/fill/fillRequest`.
+
+| Field | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `fillRequestKey` | String | Yes | Client-assigned key. Maximum 50 characters. |
+| `scriptsKeys` | Array of objects | Yes | One or more unique entries for the same patient. [Prescription entry](#scriptskeys-data-object) |
+| `shipping` | Object | Yes | Address and method. [Shipping Data Object](#shipping-data-object-2) |
+| `transactionNumber` | String | Yes | Client transaction reference. |
+| `paymentCardSequenceNumber` | String | No | Digits-only sequence number for a card on the patient profile. |
+| `otcItems` | Array of objects | No | Eligible over-the-counter items. [OTC item object](#otc-item-data-object) |
 
 # scriptsKeys Data Object
 
-| Field            | Type                                                                                                         | Character Limit | Required/Optional | Description                                           |
-| :--------------- | :----------------------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :---------------------------------------------------- |
-| scriptsKey       | String                                                                                                       | 50              | Required          | Unique Id associated with script request              |
-| patientInsurance | Object [patientInsurance](https://docs.healthdyne.com/docs/fill-request-fields#patientinsurance-data-object) |                 | Required          | Object containing shipping information for the order. |
+| Field | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `scriptsKey` | String | Yes | Prescription key, up to 50 characters. |
+| `patientInsurance` | Object or null | No | Omit or send null for applicable default plan handling. [Patient insurance](#patientinsurance-data-object) |
 
 # patientInsurance Data Object
 
-| Field               | Type    | Character Limit | Required/Optional | Description                                                                                                                                                                                                                                                                                                                                      |
-| :------------------ | :------ | :-------------- | :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| planNumber          | String  | 10              | Required          | An identifier representing a specific insurance or benefit plan associated with a transaction for the client.                                                                                                                                                                                                                                    |
-| secondaryPlanNumber | String  | 10              | Optional          | An identifier representing an additional insurance or benefit plan that serves as a secondary source of coverage for the client in a transaction is used when the primary plan does not fully cover the service or product. (Note: This attribute is only required if you are planning to provide tertiary insurance, otherwise it is optional.) |
-| tertiaryPlanNumber  | String  | 10              | Optional          | An identifier representing a third-tier insurance or benefit plan provides supplemental coverage when both the primary and secondary plans do not fully cover the transaction for the client.                                                                                                                                                    |
-| clientItemCost      | Decimal |                 | Required          | The base cost of the item (e.g., medication, product, or service) billed to the client before any additional fees or discounts.                                                                                                                                                                                                                  |
-|                     |         |                 |                   |                                                                                                                                                                                                                                                                                                                                                  |
-| clientDispenseFee   | Decimal |                 | Required          | A fee charged to the client for the dispensing or handling of the item.                                                                                                                                                                                                                                                                          |
-| clientOtherFee      | Decimal |                 | Required          | An additional fee billed to the client that does not fall under item cost or dispensing.                                                                                                                                                                                                                                                         |
-| clientCoPay         | Decimal |                 | Required          | The portion of the transaction that the client is required to pay out-of-pocket.                                                                                                                                                                                                                                                                 |
+Use flat fields, nested coverage objects, or a combination. Supply primary coverage whenever you send insurance. Tertiary requires primary and secondary. Plans across levels must be distinct. Flat and nested values for the same level must agree.
+
+| Field | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `planNumber` | String | Conditional | Supply an existing primary plan number or inline primary details. |
+| `secondaryPlanNumber` | String | Conditional | Existing secondary plan number. Secondary coverage is required with tertiary coverage. |
+| `tertiaryPlanNumber` | String | No | Existing tertiary plan number. Supply primary and secondary coverage when using this field. |
+| `primaryInsurance` | Object | No | Existing plan number or inline coverage details. |
+| `secondaryInsurance` | Object | No | Existing plan number or inline coverage details. |
+| `tertiaryInsurance` | Object | No | Existing plan number or inline coverage details. |
+| `bin, pcn, groupNumber, memberId, relationship` | Strings | Conditional | Inline primary coverage fields in the flat representation. The flat representation also accepts relationshipCode. |
+| `clientItemCost` | Number | Yes | Client payment amount. |
+| `clientDispenseFee` | Number | Yes | Client payment amount. |
+| `clientOtherFee` | Number | Yes | Client payment amount. |
+| `clientCoPay` | Number | Yes | Client copay. Its numeric representation is limited to eight characters. |
+
+### Nested coverage objects
+
+| Object | Existing plan number field |
+| :--- | :--- |
+| `primaryInsurance` | `planNumber` |
+| `secondaryInsurance` | `secondaryPlanNumber` |
+| `tertiaryInsurance` | `tertiaryPlanNumber` |
+
+For inline details, use these fields. If you also submit a plan number for the same level, it must match the resolved plan.
+
+| Field | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `bin` | String | Yes | 4–6 digits. |
+| `pcn` | String or null | No | Optional for per-prescription inline details. A nonblank value has a 10-character maximum. Omitted, null, empty, and whitespace-only values are accepted. |
+| `groupNumber` | String | Yes | Insurance group number, up to 15 characters. |
+| `memberId` | String | Yes | Member ID, up to 20 characters, without special characters. |
+| `relationship` | String | Yes | One digit from 0 through 8. [Relationship Codes](#relationship-codes) |
+
+### OTC Item Data Object
+
+| Field | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `productId` | String | Yes | Product identifier mapped to an eligible client NDC. Maximum 20 characters. |
+| `quantity` | Integer | Yes | Whole number greater than zero. |
+
+Include at least one prescription. Unsupported products and invalid quantities return HTTP 400.
 
 # Shipping Data Object
 
-| Field             | Type                                                                                         | Character Limit | Required/Optional | Description                                                                                                                                                                                                         |
-| :---------------- | :------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| address           | Object [(address)](https://docs.healthdyne.com/docs/fill-request-fields#address-data-object) |                 | Required          | Object containing address information for order to be shipped to.                                                                                                                                                   |
-| ShippingCode      | String                                                                                       | 10              | Required          | Shipping method to be used for the order. See [Shipping Codes](https://docs.healthdyne.com/docs/fill-request-fields#shipping-codes)below                                                                            |
-| SaturdayDelivery  | Boolean                                                                                      | true/false      | Optional          | Values: True/False. Saturday Delivery is an option for certain shipping codes, depending on the carrier. To have an order delivered on a Saturday, select the correct Shipping Code and then set this flag to true. |
-| SignatureRequired | Boolean                                                                                      | true/false      | Optional          | Values: True/False. Select the option if the package requires a signature                                                                                                                                           |
+| Field | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `address` | Object | Yes | Delivery address. [Address Data Object](#address-data-object) |
+| `shippingCode` | String | Yes | Supported shipping method. Maximum 10 characters. [Shipping Codes](#shipping-codes) |
+| `saturdayDelivery` | Boolean | No | Defaults to false. Use true with a shipping method that supports Saturday delivery. |
+| `signatureRequired` | Boolean | No | Defaults to false. Use true when delivery requires a signature. |
 
 #### Response Object
 
@@ -386,11 +443,10 @@ For current model additions and operation-specific distinctions, see [Current HD
 
 #### Request Object
 
-| Field          | Type                                                                                           | Character Limit | Required/Optional | Description                                                                            |
-| :------------- | :--------------------------------------------------------------------------------------------- | :-------------- | :---------------- | :------------------------------------------------------------------------------------- |
-| fillRequestKey | String                                                                                         | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking.              |
-| scriptKeys     | Array                                                                                          | 50 per value    | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
-| shipping       | Object [(shipping)](https://docs.healthdyne.com/docs/fill-request-fields#shipping-data-object) |                 | Required          | Object containing shipping information for the order.                                  |
+| Field | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `fillRequestKey` | String | Yes | Existing Fill Request key. Maximum 50 characters. |
+| `shipping` | Object | Yes | Order-level address and method. [Shipping Data Object](#shipping-data-object) |
 
 #### Response Object
 
@@ -405,11 +461,11 @@ For current model additions and operation-specific distinctions, see [Current HD
 
 #### Request Object
 
-| Field          | Type   | Character Limit | Required/Optional | Description                                                                            |
-| :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------------- |
-| fillRequestKey | String | 50              | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking.              |
-| scriptKeys     | Array  | 50 per value    | Required          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request). |
-| cancelReason   | String | Max             | Required          | TBD                                                                                    |
+| Field | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `fillRequestKey` | String | Yes | Existing Fill Request key. Maximum 50 characters. |
+| `scriptKeys` | Array of strings | No | Associated lines to cancel. Omit or send an empty array for whole-order cancellation. |
+| `cancelReason` | String | Yes | Reason for cancellation. Maximum 255 characters. |
 
 #### Response Object
 
