@@ -16,20 +16,25 @@ next:
 
 # Fill Request
 
-| Field          | Type   | Character Limit | Required/Optional | Description                                                                                                   |
-| :------------- | :----- | :-------------- | :---------------- | :------------------------------------------------------------------------------------------------------------ |
-| fillRequestKey | String | 255             | Required          | Unique ID assigned by sending pharmacy to each fill request for tracking.                                     |
-| scriptKeys     | Array  |                 | Optional          | List of Array of scriptKey(s) (scriptKey is unique Id associated with script request).                        |
-| shipping       | Object |                 | Required          | Object containing shipping information for the order. See [Shipping](doc:fill-request-fields#shipping) table. |
+Use this object with `POST /v2/fill`.
+
+| Field | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `fillRequestKey` | String | Yes | Client-assigned key. Maximum 50 characters. |
+| `scriptKeys` | Array of strings | Yes | One or more unique prescription keys for the same patient. |
+| `shipping` | Object | Yes | Address and method. [Shipping Data Object](doc:fill-request-fields#shipping-data-object) |
+| `insurance` | Object | No | Order-level insurance and payment details. [Insurance Data Object](doc:fill-request-fields#insurance-data-object) |
+
+[Per-prescription request object](doc:fill-request-fields#request-object-1)
 
 # Shipping
 
-| Field             | Type    | Character Limit | Required/Optional | Description                                                                                                                                                                                                        |
-| :---------------- | :------ | :-------------- | :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| address           | Object  |                 | Required          | Object containing address information for order to be shipped to. See [Address](doc:fill-request-fields#address) table.                                                                                            |
-| ShippingCode      | String  | 10              | Required          | Shipping method to be used for the order. See [Shipping Codes](doc:fill-request-fields#shipping-codes)below                                                                                                        |
-| SaturdayDelivery  | Boolean | true/false      | Optional          | Values: True/False. Saturday Delivery is an option for certain shipping codes depending on the carrier. To have an order delivered on a Saturday, select the correct Shipping Code and then set this flag to true. |
-| SignatureRequired | Boolean | true/false      | Optional          | Values: True/False. Select the option if the package requires a signature                                                                                                                                          |
+| Field | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `address` | Object | Yes | Delivery address. [Address Data Object](#address) |
+| `shippingCode` | String | Yes | Supported shipping method. Maximum 10 characters. [Shipping Codes](#shipping-codes) |
+| `saturdayDelivery` | Boolean | No | Defaults to false. Use true with a shipping method that supports Saturday delivery. |
+| `signatureRequired` | Boolean | No | Defaults to false. Use true when delivery requires a signature. |
 
 # Shipping Codes
 
@@ -49,12 +54,13 @@ next:
 
 # Address
 
-| Field       | Type   | Character Limit | Required/Optional | Description                                        |
-| :---------- | :----- | :-------------- | :---------------- | :------------------------------------------------- |
-| line1       | String | 40              | Required          | Street Address                                     |
-| line2       | String | 40              | Optional          | Street Address                                     |
-| line3       | String | 40              | Optional          | Street Address                                     |
-| city        | String | 20              | Required          | City                                               |
-| state       | String | 2               | Required          | US State Abbreviation Code                         |
-| zipCode     | String | 5               | Required          | Format NNNNN                                       |
-| countryCode | String | 2               | Optional          | ISO-3166 2 character country code. Defaults to US. |
+| Field | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `line1` | String | Yes | Street address, up to 40 characters. |
+| `line2` | String | No | Additional address line, up to 40 characters. |
+| `line3` | String | No | Additional address line, up to 40 characters. |
+| `city` | String | Yes | City, up to 35 characters. |
+| `state` | String | Yes | Two-letter state code. |
+| `zipCode` | String | Yes | Five-digit ZIP or ZIP+4. |
+| `countryCode` | String | No | Two-letter country code when supplied. |
+
