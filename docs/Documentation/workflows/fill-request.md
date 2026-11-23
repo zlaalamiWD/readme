@@ -12,11 +12,15 @@ next:
 ---
 # Fill Request:
 
-Use a Fill Request to initiate a HealthDyne pharmacy order for one or more prescriptions for the same patient. Check the Fill Request status endpoint or Mailbox for the downstream outcome. [Fill Request Data Object (Schemas)](doc:fill-request-fields)
+See [Fill](ref:post_v2-fill) API reference for request message fields.
+
+This API lets client define when the order needs to be initiated in HealthDyne system and also defines the number of prescriptions/scripts that need to be consolidated in one order. A client can also use the GET method of Fill Request to retrieve current status.
 
 # Get Fill Request Status
 
-Look up a previously submitted Fill Request by its client-assigned `fillRequestKey`. The response groups events by type. Match prescription events using `scriptKey` and use the event timestamps to reconstruct the history. The `renewed` array contains recorded renewal events when available. [GET API reference](ref:get_v2-fill-fillrequest)
+The GET Fill Request Status API lets clients retrieve the status and event summary for previously submitted Fill Requests.
+
+Use the client-assigned `fillRequestKey` for the lookup. The response groups events by type. Match prescription events using `scriptKey` and use the event timestamps to reconstruct the history. The `renewed` array contains recorded renewal events when available. [GET API reference](ref:get_v2-fill-fillrequest)
 
 #### Server
 
@@ -157,7 +161,14 @@ The table below lists the potential response codes that can be received in respo
 
 # Submit Fill Request
 
-Use a new `fillRequestKey` of up to 50 characters for each new request. Supply one or more unique prescription keys for the same patient. A transfer must be in `Transferred` status. Eligible prescriptions from HealthDyne intake can be in `Received` status. Discontinued prescriptions, prescriptions with no fills available, and keys outside the authorized client scope can fail validation. Replace sample values with valid values for the target environment. [Fill Request schemas](doc:fill-request-fields)
+API field validation information in Appendix [Fill Request Fields](doc:fill-request-fields#fill-request-data-object).
+
+Client must send a Fill request with following details:
+
+1. `fillRequestKey`: Unique key used to track each Fill Request. Maximum 50 characters.
+2. For the standard request, `scriptKeys`: an array of `scriptKey` values for the same patient. For the per-prescription request, use `scriptsKeys` entries with a `scriptsKey` in each.
+
+Transferred prescriptions must be in `Transferred` status. Eligible prescriptions from HealthDyne intake can be in `Received` status. Discontinued prescriptions, prescriptions with no fills available, and keys outside the authorized client scope can fail validation. Replace sample values with valid values for the target environment.
 
 #### Fill Request Sequence
 
@@ -561,7 +572,9 @@ For submit and update, use a supported shipping code and include line 1, city, a
 
 # Update Fill Request
 
-Send the existing `fillRequestKey` and the address and shipping code in `shipping`. The update applies to the order. Pharmacy locks and fulfillment status can prevent changes. [PUT API reference](ref:put_v2-fill)
+Once an order has been created in HealthDyne system (using a Fill request), the update API endpoint allows client to update shipping address or shipping code for a previously submitted fill request. NOTE: The update will be applied as long as order has not been sent to our dispensing system for fulfillment.
+
+Send the existing `fillRequestKey` and the address and shipping code in `shipping`. The update applies to the order. A pharmacy lock can prevent changes. [PUT API reference](ref:put_v2-fill)
 
 #### Server
 
@@ -617,6 +630,8 @@ Click here to see [Update Fill Response Data Object](doc:fill-request-fields#res
 
 # Cancel Fill Request
 
+Once an order has been created in the HealthDyne system (using a Fill request), the Cancel API endpoint allows the client to cancel a fill request or specific script(s) within a Fill Request. **NOTE: The cancelation will be applied if the order has not been sent to our dispensing system for fulfillment.**
+
 Supply the existing `fillRequestKey` and a `cancelReason` of up to 255 characters. Supply associated `scriptKeys` for a line cancellation. Omit the array or send `[]` to request cancellation of the whole order while it remains eligible. [Cancel API reference](ref:post_v2-fill-cancel)
 
 #### Server
@@ -659,7 +674,9 @@ Click here to see [Cancel Response Data Object](doc:fill-request-fields#response
 
 # Fill Request Status Mailbox Events
 
-Mailbox returns individual `FILLREQUEST` messages. Correlate by `fillRequestKey` and by `detail.scriptKey` when present. Order-level messages can contain comma-separated prescription keys. Use Mailbox for copay and payment events. [Fill Request status events](doc:mail-box#fill-request-status-events)
+Please see the [Fill Request](doc:mail-box#fill-request-status-events) status events under the [Mailbox](doc:mail-box) API guide for a detailed list of status events.
+
+Mailbox returns individual `FILLREQUEST` messages. Correlate by `fillRequestKey` and by `detail.scriptKey` when present. Order-level messages can contain comma-separated prescription keys. Use Mailbox for copay and payment events.
 
 # Submitted Status
 
