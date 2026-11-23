@@ -14,7 +14,7 @@ The Fill Request guide now documents the two ways to submit one or more prescrip
 
 ## Fill Request Status, Shipping, and Cancellation
 
-* Get Fill Request: Look up events by `fillRequestKey`. The response groups events by status and describes the HTTP 200 response when no record is found. [GET API reference](ref:get_v2-fill-fillrequest)
+* Get Fill Request: Look up events by `fillRequestKey`. The response groups events by status. When no matching record is found, the API returns HTTP 200 with problem details. [GET API reference](ref:get_v2-fill-fillrequest)
 * Update shipping: Send the Fill Request key and shipping details while the order is still editable. The update applies to the whole order. [PUT API reference](ref:put_v2-fill)
 * Cancel Fill Request: Specify prescription keys to cancel selected lines. Omit the keys or send an empty array to request cancellation of the whole order. [Cancel API reference](ref:post_v2-fill-cancel)
 
