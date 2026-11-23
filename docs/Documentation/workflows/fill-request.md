@@ -261,181 +261,933 @@ Expand a scenario to see the API call, response, and next step.
 ##### Submit
 
 <Accordion title="Standard request accepted">
-  **API call**
+  Send `scriptKeys` for one patient. Standard requests can include order-level insurance.
 
-  `POST /v2/fill`
+  **Server**
 
-  1. Send scriptKeys for one patient with optional order-level insurance.
-  2. HTTP 200 acknowledges processing. Save fillRequestKey and check GET status or Mailbox for the downstream Submitted or Rejected event.
+  Only HTTPS connections are accepted.
 
-  [Standard POST reference](ref:post_v2-fill)
+  | **METHOD TYPE** | **ENDPOINT** |
+  | :--- | :--- |
+  | POST (Test) | api.uat-healthdyne.com/v2/fill |
+  | POST (Prod) | api.healthdyne.com/v2/fill |
+
+  **Sample Submit Fill Request**
+
+  `POST https://api.uat-healthdyne.com/v2/fill`
+
+  **Sample Submit Fill Request Body**
+
+  ```json
+  {
+    "fillRequestKey": "FILL-EXAMPLE-1001",
+    "scriptKeys": [
+      "SCRIPT-EXAMPLE-001",
+      "SCRIPT-EXAMPLE-002"
+    ],
+    "shipping": {
+      "address": {
+        "line1": "100 Example Street",
+        "city": "LAKELAND",
+        "state": "FL",
+        "zipCode": "33810",
+        "countryCode": "US"
+      },
+      "shippingCode": "POS 1M",
+      "saturdayDelivery": false,
+      "signatureRequired": false
+    }
+  }
+  ```
+
+  Click here to see [Standard Fill Request Data Object](doc:fill-request-fields#request-object)
+
+  **Sample Submit Fill Response**
+
+  **HTTP 200**
+
+  ```json
+  {
+    "fillRequestKey": "FILL-EXAMPLE-1001",
+    "message": "The fill request was accepted"
+  }
+  ```
+
+  Click here to see [Standard Submit Response Data Object](doc:fill-request-fields#response-object-1)
+
+  Save the `fillRequestKey`. Check GET status or Mailbox for `Submitted` or `Rejected` after the pharmacy processes the request.
+
+  [Standard POST API reference](ref:post_v2-fill)
 </Accordion>
 
 <Accordion title="Per-prescription request accepted">
-  **API call**
+  Send `scriptsKeys` entries with a `scriptsKey` for each prescription. Options include `patientInsurance`, a saved payment card sequence, and eligible OTC items. PCN is optional for inline insurance on this route.
 
-  `POST /v2/fill/fillRequest`
+  **Server**
 
-  1. Send scriptsKeys entries. Options include patientInsurance, inline details with optional PCN, a saved payment card sequence, and eligible OTC items.
-  2. HTTP 200 acknowledges processing. Save fillRequestKey and check GET status or Mailbox for the downstream outcome.
+  Only HTTPS connections are accepted.
 
-  [Per-prescription POST reference](ref:post_v2-fill-fillrequest)
+  | **METHOD TYPE** | **ENDPOINT** |
+  | :--- | :--- |
+  | POST (Test) | api.uat-healthdyne.com/v2/fill/fillRequest |
+  | POST (Prod) | api.healthdyne.com/v2/fill/fillRequest |
+
+  **Sample Submit Fill Request**
+
+  `POST https://api.uat-healthdyne.com/v2/fill/fillRequest`
+
+  **Sample Submit Fill Request Body**
+
+  ```json
+  {
+    "fillRequestKey": "FILL-EXAMPLE-1002",
+    "paymentCardSequenceNumber": "12345",
+    "scriptsKeys": [
+      {
+        "scriptsKey": "SCRIPT-EXAMPLE-003",
+        "patientInsurance": {
+          "primaryInsurance": {
+            "bin": "123456",
+            "groupNumber": "EXAMPLEGRP",
+            "memberId": "EXAMPLE001",
+            "relationship": "1"
+          },
+          "secondaryPlanNumber": "502",
+          "clientItemCost": 12.5,
+          "clientDispenseFee": 2.25,
+          "clientOtherFee": 0,
+          "clientCoPay": 4
+        }
+      },
+      {
+        "scriptsKey": "SCRIPT-EXAMPLE-004",
+        "patientInsurance": {
+          "planNumber": "501",
+          "clientItemCost": 13.5,
+          "clientDispenseFee": 2.25,
+          "clientOtherFee": 0,
+          "clientCoPay": 5
+        }
+      }
+    ],
+    "shipping": {
+      "address": {
+        "line1": "100 Example Street",
+        "city": "LAKELAND",
+        "state": "FL",
+        "zipCode": "33810",
+        "countryCode": "US"
+      },
+      "shippingCode": "POS 1M",
+      "saturdayDelivery": false,
+      "signatureRequired": false
+    },
+    "transactionNumber": "TXN-EXAMPLE-1002",
+    "otcItems": [
+      {
+        "productId": "00000000001",
+        "quantity": 2
+      }
+    ]
+  }
+  ```
+
+  Click here to see [Per-prescription Fill Request Data Object](doc:fill-request-fields#request-object-1)
+
+  **Sample Submit Fill Response**
+
+  **HTTP 200**
+
+  ```json
+  {
+    "fillRequestKey": "FILL-EXAMPLE-1002",
+    "message": "The fill request was accepted"
+  }
+  ```
+
+  Click here to see [Per-prescription Submit Response Data Object](doc:fill-request-fields#response-object-2)
+
+  Save the `fillRequestKey` and check GET status or Mailbox for the order outcome.
+
+  [Per-prescription POST API reference](ref:post_v2-fill-fillrequest)
 </Accordion>
 
 <Accordion title="Validation error or duplicate key">
-  **API call**
+  The API validates request fields, prescription eligibility, and any insurance or OTC items supplied. The examples below show two HTTP 400 responses.
 
-  `POST /v2/fill or POST /v2/fill/fillRequest`
+  **Server**
 
-  1. The API checks request fields, prescription eligibility, and any insurance or OTC fields included in the request.
-  2. HTTP 400 returns validation details or Problem Details. If the key already exists or the original response is uncertain, look up that key before sending a new request.
+  Only HTTPS connections are accepted.
 
-  [Submit Fill Request](#submit-fill-request)
+  | **METHOD TYPE** | **ENDPOINT** |
+  | :--- | :--- |
+  | POST (Test) | api.uat-healthdyne.com/v2/fill |
+  | POST (Prod) | api.healthdyne.com/v2/fill |
+  | POST (Test) | api.uat-healthdyne.com/v2/fill/fillRequest |
+  | POST (Prod) | api.healthdyne.com/v2/fill/fillRequest |
+
+  **Sample Submit Fill Request**
+
+  `POST https://api.uat-healthdyne.com/v2/fill`
+
+  **Sample Submit Fill Request Body**
+
+  ```json
+  {
+    "fillRequestKey": "FILL-EXAMPLE-1001",
+    "scriptKeys": [
+      "SCRIPT-EXAMPLE-001",
+      "SCRIPT-EXAMPLE-002"
+    ],
+    "shipping": {
+      "address": {
+        "line1": "100 Example Street",
+        "city": "LAKELAND",
+        "state": "FL",
+        "zipCode": "33810",
+        "countryCode": "US"
+      },
+      "shippingCode": "POS 1M",
+      "saturdayDelivery": false,
+      "signatureRequired": false
+    }
+  }
+  ```
+
+  **Sample Per-prescription Submit Fill Request**
+
+  `POST https://api.uat-healthdyne.com/v2/fill/fillRequest`
+
+  **Sample Per-prescription Submit Fill Request Body**
+
+  ```json
+  {
+    "fillRequestKey": "FILL-EXAMPLE-1002",
+    "paymentCardSequenceNumber": "12345",
+    "scriptsKeys": [
+      {
+        "scriptsKey": "SCRIPT-EXAMPLE-003",
+        "patientInsurance": {
+          "primaryInsurance": {
+            "bin": "123456",
+            "groupNumber": "EXAMPLEGRP",
+            "memberId": "EXAMPLE001",
+            "relationship": "1"
+          },
+          "secondaryPlanNumber": "502",
+          "clientItemCost": 12.5,
+          "clientDispenseFee": 2.25,
+          "clientOtherFee": 0,
+          "clientCoPay": 4
+        }
+      },
+      {
+        "scriptsKey": "SCRIPT-EXAMPLE-004",
+        "patientInsurance": {
+          "planNumber": "501",
+          "clientItemCost": 13.5,
+          "clientDispenseFee": 2.25,
+          "clientOtherFee": 0,
+          "clientCoPay": 5
+        }
+      }
+    ],
+    "shipping": {
+      "address": {
+        "line1": "100 Example Street",
+        "city": "LAKELAND",
+        "state": "FL",
+        "zipCode": "33810",
+        "countryCode": "US"
+      },
+      "shippingCode": "POS 1M",
+      "saturdayDelivery": false,
+      "signatureRequired": false
+    },
+    "transactionNumber": "TXN-EXAMPLE-1002",
+    "otcItems": [
+      {
+        "productId": "00000000001",
+        "quantity": 0
+      }
+    ]
+  }
+  ```
+
+  Click here to see [Standard Fill Request Data Object](doc:fill-request-fields#request-object) · [Per-prescription Fill Request Data Object](doc:fill-request-fields#request-object-1)
+
+  **Sample Submit Fill Responses**
+
+  **HTTP 400** · Standard request with a duplicate key.
+
+  ```json
+  {
+    "fillRequestKey": "FILL-EXAMPLE-1001",
+    "message": "The request already exists"
+  }
+  ```
+
+  **HTTP 400** · Per-prescription request with an invalid OTC quantity.
+
+  ```json
+  {
+    "fillRequestKey": "FILL-EXAMPLE-1002",
+    "message": "The request failed validation",
+    "validationErrors": [
+      "OTC quantity must be greater than 0."
+    ]
+  }
+  ```
+
+  Click here to see [Standard Submit Response Data Object](doc:fill-request-fields#response-object-1) · [Per-prescription Submit Response Data Object](doc:fill-request-fields#response-object-2)
+
+  Correct invalid fields before retrying. If the key already exists or the original response is uncertain, look up the existing key before submitting another request.
+
+  [Standard POST API reference](ref:post_v2-fill) · [Per-prescription POST API reference](ref:post_v2-fill-fillrequest)
 </Accordion>
 
 <Accordion title="Unauthorized request">
-  **API call**
+  This example uses GET status. Use a valid `HealthDyne-Subscription-Key` for the relevant client and a `HealthDyne-Relationship-Key` when authorized to act as a vendor.
 
-  `Any Fill Request operation`
+  **Server**
 
-  1. Use the subscription key for the relevant client and a relationship key when authorized to act as a vendor.
-  2. On HTTP 401, check the credentials and permissions for the selected operation.
+  Only HTTPS connections are accepted.
 
-  [Fill Request headers](#header)
+  | **METHOD TYPE** | **ENDPOINT** |
+  | :--- | :--- |
+  | GET (Test) | api.uat-healthdyne.com/v2/fill/fillRequest |
+  | GET (Prod) | api.healthdyne.com/v2/fill/fillRequest |
+
+  **Sample GET Status Request**
+
+  `GET https://api.uat-healthdyne.com/v2/fill/fillRequest?fillRequestKey=FillPatientSample1404`
+
+  Click here to see [GET Fill Request Query Data](doc:fill-request-fields#query-parameter)
+
+  **Sample GET Status Response**
+
+  **HTTP 401** · Unauthorized. The example uses missing or invalid credentials.
+
+  Click here to see [Get Fill Request Data Object](doc:fill-request-fields#response-object)
+
+  Check the credentials, environment, and permissions for the selected operation. See [Fill Request headers](#header).
+
+  [GET Status API reference](ref:get_v2-fill-fillrequest)
 </Accordion>
 
 <Accordion title="Pharmacy rejects order">
-  **API call**
+  A valid submit can return HTTP 200 before the pharmacy attempts to create the order. The resulting rejection appears in GET status or as a Mailbox event.
 
-  `GET /v2/fill/fillRequest or GET /v2/mailbox`
+  **Server**
 
-  1. A valid submit can return HTTP 200 before the pharmacy attempts to create the order.
-  2. If order creation fails, read Rejected and its reason in the status response or Mailbox before resubmitting.
+  Only HTTPS connections are accepted.
 
-  [Rejected status](#rejected-status)
+  | **METHOD TYPE** | **ENDPOINT** |
+  | :--- | :--- |
+  | GET (Test) | api.uat-healthdyne.com/v2/fill/fillRequest |
+  | GET (Prod) | api.healthdyne.com/v2/fill/fillRequest |
+  | GET (Test) | api.uat-healthdyne.com/v2/mailbox |
+  | GET (Prod) | api.healthdyne.com/v2/mailbox |
+
+  **Sample GET Status Request**
+
+  `GET https://api.uat-healthdyne.com/v2/fill/fillRequest?fillRequestKey=FillPatientSample1404`
+
+  **Sample Mailbox Request**
+
+  `GET https://api.uat-healthdyne.com/v2/mailbox`
+
+  Click here to see [GET Fill Request Query Data](doc:fill-request-fields#query-parameter) · [Mailbox Data Object](doc:mailbox-data-object-schemas)
+
+  **Sample GET Status Response**
+
+  **HTTP 200** · GET status reports the downstream rejection.
+
+  ```json
+  {
+    "fillRequestKey": "FillPatientSample1404",
+    "submitted": [],
+    "rxVerified": [],
+    "rxShipped": [],
+    "rxIssue": [],
+    "rxCanceled": [],
+    "rejected": [
+      {
+        "eventId": "156270",
+        "eventDateUtc": "2025-02-18T13:36:57.776842Z",
+        "scriptKeys": [],
+        "statusMessage": "RX: 10524420 found on OPEN order with External ID: NULL; "
+      }
+    ],
+    "renewed": []
+  }
+  ```
+
+  Click here to see [Get Fill Request Data Object](doc:fill-request-fields#response-object)
+
+  Read the rejection reason before resubmitting. See the [Mailbox Rejected event](doc:mail-box#rejected).
+
+  [GET Status API reference](ref:get_v2-fill-fillrequest) · [Mailbox API guide](doc:mail-box)
 </Accordion>
 
 ##### Track
 
 <Accordion title="Status lookup finds no record">
-  **API call**
+  Use the client-assigned `fillRequestKey` in the query. This example looks up a key with no matching record.
 
-  `GET /v2/fill/fillRequest`
+  **Server**
 
-  1. Query using the existing fillRequestKey.
-  2. HTTP 200 can contain Problem Details with No record(s) found. Check the key, environment, and client scope.
+  Only HTTPS connections are accepted.
 
-  [Get Fill Request Status](#get-fill-request-status)
+  | **METHOD TYPE** | **ENDPOINT** |
+  | :--- | :--- |
+  | GET (Test) | api.uat-healthdyne.com/v2/fill/fillRequest |
+  | GET (Prod) | api.healthdyne.com/v2/fill/fillRequest |
+
+  **Sample GET Status Request**
+
+  `GET https://api.uat-healthdyne.com/v2/fill/fillRequest?fillRequestKey=FILL-EXAMPLE-NOT-FOUND`
+
+  Click here to see [GET Fill Request Query Data](doc:fill-request-fields#query-parameter)
+
+  **Sample GET Status Response**
+
+  **HTTP 200** · Problem Details excerpt.
+
+  ```json
+  {
+    "status": 200,
+    "detail": "No record(s) found"
+  }
+  ```
+
+  Click here to see [Get Fill Request Data Object](doc:fill-request-fields#response-object)
+
+  Check the key, environment, and client scope.
+
+  [GET Status API reference](ref:get_v2-fill-fillrequest)
 </Accordion>
 
 <Accordion title="Status lookup fails">
-  **API call**
+  This request omits the required `fillRequestKey` query parameter.
 
-  `GET /v2/fill/fillRequest`
+  **Server**
 
-  1. Check that the query includes fillRequestKey and that the request uses the correct credentials.
-  2. HTTP 400 indicates a request problem, 401 indicates an unauthorized request, and 500 indicates an unexpected server error.
+  Only HTTPS connections are accepted.
 
-  [GET status reference](ref:get_v2-fill-fillrequest)
+  | **METHOD TYPE** | **ENDPOINT** |
+  | :--- | :--- |
+  | GET (Test) | api.uat-healthdyne.com/v2/fill/fillRequest |
+  | GET (Prod) | api.healthdyne.com/v2/fill/fillRequest |
+
+  **Sample GET Status Request**
+
+  `GET https://api.uat-healthdyne.com/v2/fill/fillRequest`
+
+  Click here to see [GET Fill Request Query Data](doc:fill-request-fields#query-parameter)
+
+  **Sample GET Status Responses**
+
+  **HTTP 400** · Problem Details excerpt.
+
+  ```json
+  {
+    "status": 400,
+    "detail": "Please provide a fill request key"
+  }
+  ```
+
+  **HTTP 401** · Unauthorized. Check the credentials and permissions.
+
+  **HTTP 500** · Internal Server Error. Record the request details and try the lookup again.
+
+  Click here to see [Get Fill Request Data Object](doc:fill-request-fields#response-object)
+
+  Supply the original `fillRequestKey` and use the correct credentials for the environment.
+
+  [GET Status API reference](ref:get_v2-fill-fillrequest)
 </Accordion>
 
 <Accordion title="Prescription verified and shipped">
-  **API call**
+  Use `scriptKey` to match the `RxVerified` and `RxShipped` events for a prescription. Shipment events can include tracking details.
 
-  `GET /v2/fill/fillRequest or GET /v2/mailbox`
+  **Server**
 
-  1. Track RxVerified and RxShipped by scriptKey. Shipment events can include tracking details.
-  2. Read grouped events in GET status or retrieve individual events in Mailbox. Acknowledge retrieved batches using POST /v2/mailbox.
+  Only HTTPS connections are accepted.
 
-  [Shipment events](doc:mail-box#shipped)
+  | **METHOD TYPE** | **ENDPOINT** |
+  | :--- | :--- |
+  | GET (Test) | api.uat-healthdyne.com/v2/fill/fillRequest |
+  | GET (Prod) | api.healthdyne.com/v2/fill/fillRequest |
+  | GET (Test) | api.uat-healthdyne.com/v2/mailbox |
+  | GET (Prod) | api.healthdyne.com/v2/mailbox |
+
+  **Sample GET Status Request**
+
+  `GET https://api.uat-healthdyne.com/v2/fill/fillRequest?fillRequestKey=FillPatientSample1404`
+
+  **Sample Mailbox Request**
+
+  `GET https://api.uat-healthdyne.com/v2/mailbox`
+
+  Click here to see [GET Fill Request Query Data](doc:fill-request-fields#query-parameter) · [Mailbox Data Object](doc:mailbox-data-object-schemas)
+
+  **Sample GET Status Response**
+
+  **HTTP 200** · GET status groups the verification and shipment events.
+
+  ```json
+  {
+    "fillRequestKey": "FillPatientSample1404",
+    "submitted": [],
+    "rxVerified": [
+      {
+        "eventId": "295965",
+        "eventDateUtc": "2025-04-15T09:16:48.804578+00:00",
+        "scriptKey": "TestScriptKey1404",
+        "verifiedDate": "2025-04-15T09:16:48.804578+00:00",
+        "statusMessage": "The Rx has been verified by the pharmacist (PV1)"
+      }
+    ],
+    "rxShipped": [
+      {
+        "eventId": "295985",
+        "eventDateUtc": "2025-04-17T09:19:53.417176+00:00",
+        "scriptKey": "TestScriptKey1404",
+        "shipmentDate": "2025-04-17T06:00:02Z",
+        "trackingNumber": "7548253"
+      }
+    ],
+    "rxIssue": [],
+    "rxCanceled": [],
+    "rejected": [],
+    "renewed": []
+  }
+  ```
+
+  Click here to see [Get Fill Request Data Object](doc:fill-request-fields#response-object)
+
+  Use Mailbox for individual events. After processing a Mailbox batch, acknowledge it with `POST /v2/mailbox?batchId=...`. See [RxVerified](doc:mail-box#rxverified) and [Shipped](doc:mail-box#shipped).
+
+  [GET Status API reference](ref:get_v2-fill-fillrequest) · [Mailbox API guide](doc:mail-box)
 </Accordion>
 
 <Accordion title="Prescription issue or cancellation">
-  **API call**
+  Use `scriptKey` to identify the prescription with an `RxIssue` or `RxCanceled` event.
 
-  `GET /v2/fill/fillRequest or GET /v2/mailbox`
+  **Server**
 
-  1. Read RxIssue for a prescription issue or RxCanceled for a canceled line. Use scriptKey to identify the affected prescription.
-  2. For orders with multiple prescriptions, check the events for all affected lines. Order splitting can change which lines are canceled.
+  Only HTTPS connections are accepted.
 
-  [RxIssue](doc:mail-box#rxissue) · [RxCanceled](doc:mail-box#rxcancel)
+  | **METHOD TYPE** | **ENDPOINT** |
+  | :--- | :--- |
+  | GET (Test) | api.uat-healthdyne.com/v2/fill/fillRequest |
+  | GET (Prod) | api.healthdyne.com/v2/fill/fillRequest |
+  | GET (Test) | api.uat-healthdyne.com/v2/mailbox |
+  | GET (Prod) | api.healthdyne.com/v2/mailbox |
+
+  **Sample GET Status Request**
+
+  `GET https://api.uat-healthdyne.com/v2/fill/fillRequest?fillRequestKey=FillPatientSample1404`
+
+  **Sample Mailbox Request**
+
+  `GET https://api.uat-healthdyne.com/v2/mailbox`
+
+  Click here to see [GET Fill Request Query Data](doc:fill-request-fields#query-parameter) · [Mailbox Data Object](doc:mailbox-data-object-schemas)
+
+  **Sample GET Status Response**
+
+  **HTTP 200** · GET status groups the issue and cancellation events.
+
+  ```json
+  {
+    "fillRequestKey": "FillPatientSample1404",
+    "submitted": [],
+    "rxVerified": [],
+    "rxShipped": [],
+    "rxIssue": [
+      {
+        "eventId": "289773",
+        "eventDateUtc": "2025-04-15T09:30:57.585214+00:00",
+        "scriptKey": "TestScriptKey1404",
+        "issueMessage": "REJECTED 533 HEALTHDYNE RX REJECTED - "
+      }
+    ],
+    "rxCanceled": [
+      {
+        "eventId": "288784",
+        "eventDateUtc": "2025-04-15T09:35:00Z",
+        "scriptKey": "TestScriptKey1404",
+        "statusMessage": "Cancelled"
+      }
+    ],
+    "rejected": [],
+    "renewed": []
+  }
+  ```
+
+  Click here to see [Get Fill Request Data Object](doc:fill-request-fields#response-object)
+
+  Review events for all affected prescriptions. Order splitting can change which lines are canceled. See [RxIssue](doc:mail-box#rxissue) and [RxCanceled](doc:mail-box#rxcancel).
+
+  [GET Status API reference](ref:get_v2-fill-fillrequest) · [Mailbox API guide](doc:mail-box)
 </Accordion>
 
 <Accordion title="Copay and payment events">
-  **API call**
+  Use Mailbox to retrieve `RxCopay`, `RxPaymentRequired`, and `RxPaymentDeclined` events.
 
-  `GET /v2/mailbox`
+  **Server**
 
-  1. Look for RxCopay, RxPaymentRequired, or RxPaymentDeclined in an available Mailbox batch.
-  2. Match the event to the Fill Request and prescription when keys are present. Acknowledge the retrieved batch using POST /v2/mailbox.
+  Only HTTPS connections are accepted.
 
-  [Mailbox status events](doc:mail-box#fill-request-status-events)
+  | **METHOD TYPE** | **ENDPOINT** |
+  | :--- | :--- |
+  | GET (Test) | api.uat-healthdyne.com/v2/mailbox |
+  | GET (Prod) | api.healthdyne.com/v2/mailbox |
+
+  **Sample GET Mailbox Request**
+
+  `GET https://api.uat-healthdyne.com/v2/mailbox?messageCount=100`
+
+  Click here to see [Mailbox Data Object](doc:mailbox-data-object-schemas)
+
+  **Sample GET Mailbox Response**
+
+  **HTTP 200** · Mailbox response excerpt for a batch containing `RxPaymentRequired`.
+
+  ```json
+  {
+    "batchId": "BATCH-EXAMPLE-001",
+    "count": 1,
+    "messageList": [
+      {
+        "eventId": "295965",
+        "eventDateUtc": "2025-04-15T09:16:48.804578+00:00",
+        "eventType": "FILLREQUEST",
+        "status": "RxPaymentRequired",
+        "fillRequestKey": "FillPatientSample1404"
+      }
+    ]
+  }
+  ```
+
+  Match the event using `fillRequestKey` and `detail.scriptKey` when present. After processing a Mailbox batch, acknowledge it with `POST /v2/mailbox?batchId=...`. See [Fill Request status events](doc:mail-box#fill-request-status-events).
+
+  [Mailbox API guide](doc:mail-box)
 </Accordion>
 
 <Accordion title="Recorded renewal event">
-  **API call**
+  Use the original `fillRequestKey` to look up recorded renewal events.
 
-  `GET /v2/fill/fillRequest`
+  **Server**
 
-  1. Query using the Fill Request key.
-  2. Read the renewed array for recorded renewal events when available.
+  Only HTTPS connections are accepted.
 
-  [GET response schema](doc:fill-request-fields#response-object)
+  | **METHOD TYPE** | **ENDPOINT** |
+  | :--- | :--- |
+  | GET (Test) | api.uat-healthdyne.com/v2/fill/fillRequest |
+  | GET (Prod) | api.healthdyne.com/v2/fill/fillRequest |
+
+  **Sample GET Status Request**
+
+  `GET https://api.uat-healthdyne.com/v2/fill/fillRequest?fillRequestKey=FillPatientSample1404`
+
+  Click here to see [GET Fill Request Query Data](doc:fill-request-fields#query-parameter)
+
+  **Sample GET Status Response**
+
+  **HTTP 200** · The `renewed` array contains events when available.
+
+  ```json
+  {
+    "fillRequestKey": "FillPatientSample1404",
+    "submitted": [],
+    "rxVerified": [],
+    "rxShipped": [],
+    "rxIssue": [],
+    "rxCanceled": [],
+    "rejected": [],
+    "renewed": [
+      {
+        "eventId": "295955",
+        "eventDateUtc": "2025-04-15T09:12:20.913021+00:00",
+        "scriptKeys": [
+          "TestScriptKey1404"
+        ]
+      }
+    ]
+  }
+  ```
+
+  Click here to see [Get Fill Request Data Object](doc:fill-request-fields#response-object)
+
+  Use `scriptKeys` and `eventDateUtc` to identify the prescriptions and when the renewal was recorded.
+
+  [GET Status API reference](ref:get_v2-fill-fillrequest)
 </Accordion>
 
 ##### Change an order
 
 <Accordion title="Update shipping">
-  **API call**
+  Send the existing `fillRequestKey` and the updated address or shipping code in `shipping`. The order must still be eligible for an update.
 
-  `PUT /v2/fill`
+  **Server**
 
-  1. Send fillRequestKey and shipping details for the existing order while it remains editable.
-  2. HTTP 200 reports that the order-level shipping update was accepted.
+  Only HTTPS connections are accepted.
 
-  [PUT shipping reference](ref:put_v2-fill)
+  | **METHOD TYPE** | **ENDPOINT** |
+  | :--- | :--- |
+  | PUT (Test) | api.uat-healthdyne.com/v2/fill |
+  | PUT (Prod) | api.healthdyne.com/v2/fill |
+
+  **Sample Update Fill Request**
+
+  `PUT https://api.uat-healthdyne.com/v2/fill`
+
+  **Sample Update Fill Request Body**
+
+  ```json
+  {
+    "fillRequestKey": "FillPatientSample1404",
+    "shipping": {
+      "address": {
+        "line1": "UpdateAgain1",
+        "line2": null,
+        "line3": null,
+        "city": "LAKELAND",
+        "state": "FL",
+        "zipCode": "33810",
+        "countryCode": "US"
+      },
+      "shippingCode": "POS 1C",
+      "saturdayDelivery": false,
+      "signatureRequired": false
+    }
+  }
+  ```
+
+  Click here to see [Update Fill Request Data Object](doc:fill-request-fields#request-object-2)
+
+  **Sample Update Fill Response**
+
+  **HTTP 200**
+
+  ```json
+  {
+    "fillRequestKey": "FillPatientSample1404",
+    "message": "The fill update request was accepted"
+  }
+  ```
+
+  Click here to see [Update Fill Response Data Object](doc:fill-request-fields#response-object-3)
+
+  Read the response for confirmation that the order-level shipping update was accepted.
+
+  [PUT API reference](ref:put_v2-fill)
 </Accordion>
 
 <Accordion title="Shipping update denied">
-  **API call**
+  The pharmacy can deny a shipping update if the order is already locked or ineligible. Invalid shipping details can also cause a rejection.
 
-  `PUT /v2/fill`
+  **Server**
 
-  1. Submit shipping details for the existing order. The pharmacy can reject the change due to a lock, order status, or invalid shipping details.
-  2. On HTTP 400, review the returned reason before retrying.
+  Only HTTPS connections are accepted.
 
-  [Update Fill Request](#update-fill-request)
+  | **METHOD TYPE** | **ENDPOINT** |
+  | :--- | :--- |
+  | PUT (Test) | api.uat-healthdyne.com/v2/fill |
+  | PUT (Prod) | api.healthdyne.com/v2/fill |
+
+  **Sample Update Fill Request**
+
+  `PUT https://api.uat-healthdyne.com/v2/fill`
+
+  **Sample Update Fill Request Body**
+
+  ```json
+  {
+    "fillRequestKey": "FillPatientSample1404",
+    "shipping": {
+      "address": {
+        "line1": "UpdateAgain1",
+        "line2": null,
+        "line3": null,
+        "city": "LAKELAND",
+        "state": "FL",
+        "zipCode": "33810",
+        "countryCode": "US"
+      },
+      "shippingCode": "POS 1C",
+      "saturdayDelivery": false,
+      "signatureRequired": false
+    }
+  }
+  ```
+
+  Click here to see [Update Fill Request Data Object](doc:fill-request-fields#request-object-2)
+
+  **Sample Update Fill Response**
+
+  **HTTP 400** · Example for an order locked by the pharmacy.
+
+  ```json
+  {
+    "fillRequestKey": "FillPatientSample1404",
+    "message": "The fill update request was Failed",
+    "validationErrors": [
+      " The fill request is being dispensed by pharmacy"
+    ]
+  }
+  ```
+
+  Click here to see [Update Fill Response Data Object](doc:fill-request-fields#response-object-3)
+
+  Review the returned reason before retrying. A shipping correction does not unlock an order already being dispensed.
+
+  [PUT API reference](ref:put_v2-fill)
 </Accordion>
 
 <Accordion title="Cancel the whole order">
-  **API call**
+  Use the existing `fillRequestKey` and `cancelReason`. Omit `scriptKeys` or send an empty array to request cancellation of the whole eligible order.
 
-  `POST /v2/fill/cancel`
+  **Server**
 
-  1. Send fillRequestKey and cancelReason. Omit scriptKeys or send an empty array to request cancellation of the whole order.
-  2. If cancellation is accepted, HTTP 200 returns a whole-order confirmation.
+  Only HTTPS connections are accepted.
+
+  | **METHOD TYPE** | **ENDPOINT** |
+  | :--- | :--- |
+  | POST (Test) | api.uat-healthdyne.com/v2/fill/cancel |
+  | POST (Prod) | api.healthdyne.com/v2/fill/cancel |
+
+  **Sample Cancel Fill Request**
+
+  `POST https://api.uat-healthdyne.com/v2/fill/cancel`
+
+  **Sample Cancel Fill Request Body**
+
+  ```json
+  {
+    "fillRequestKey": "FillPatientSample1404",
+    "cancelReason": "Cancelled"
+  }
+  ```
+
+  Click here to see [Cancel Fill Request Data Object](doc:fill-request-fields#request-object-3)
+
+  **Sample Cancel Fill Response**
+
+  **HTTP 200**
+
+  ```json
+  {
+    "fillRequestKey": "FillPatientSample1404",
+    "message": "Order for Fill request Key [FillPatientSample1404] has been canceled"
+  }
+  ```
+
+  Click here to see [Cancel Response Data Object](doc:fill-request-fields#response-object-4)
+
+  Read the whole-order confirmation. Use GET status or Mailbox to review the prescription-level events.
 
   [Cancel API reference](ref:post_v2-fill-cancel)
 </Accordion>
 
 <Accordion title="Cancel selected prescriptions">
-  **API call**
+  Send the associated `scriptKeys` to request cancellation of specific prescriptions on the existing Fill Request.
 
-  `POST /v2/fill/cancel`
+  **Server**
 
-  1. Send fillRequestKey, cancelReason, and the associated scriptKeys to cancel.
-  2. Read the response to see which lines were canceled.
+  Only HTTPS connections are accepted.
 
-  [Cancel Fill Request](#cancel-fill-request)
+  | **METHOD TYPE** | **ENDPOINT** |
+  | :--- | :--- |
+  | POST (Test) | api.uat-healthdyne.com/v2/fill/cancel |
+  | POST (Prod) | api.healthdyne.com/v2/fill/cancel |
+
+  **Sample Cancel Fill Request**
+
+  `POST https://api.uat-healthdyne.com/v2/fill/cancel`
+
+  **Sample Cancel Fill Request Body**
+
+  ```json
+  {
+    "fillRequestKey": "FillPatientSample1404",
+    "scriptKeys": [
+      "TestScriptKey1404"
+    ],
+    "cancelReason": "Cancelled"
+  }
+  ```
+
+  Click here to see [Cancel Fill Request Data Object](doc:fill-request-fields#request-object-3)
+
+  **Sample Cancel Fill Response**
+
+  **HTTP 200**
+
+  ```json
+  {
+    "fillRequestKey": "FillPatientSample1404",
+    "message": "Prescription fill for [TestScriptKey1404] under Fill request [FillPatientSample1404] has been canceled."
+  }
+  ```
+
+  Click here to see [Cancel Response Data Object](doc:fill-request-fields#response-object-4)
+
+  Read the response to see which prescriptions were canceled.
+
+  [Cancel API reference](ref:post_v2-fill-cancel)
 </Accordion>
 
 <Accordion title="Cancellation denied">
-  **API call**
+  The selected prescriptions must be associated with the Fill Request and eligible for cancellation. This example uses a key associated with another Fill Request.
 
-  `POST /v2/fill/cancel`
+  **Server**
 
-  1. The API checks that the order or selected prescriptions are eligible and associated with the Fill Request.
-  2. On HTTP 400, review the reason, such as an ineligible line or a scriptKey associated with a different Fill Request.
+  Only HTTPS connections are accepted.
+
+  | **METHOD TYPE** | **ENDPOINT** |
+  | :--- | :--- |
+  | POST (Test) | api.uat-healthdyne.com/v2/fill/cancel |
+  | POST (Prod) | api.healthdyne.com/v2/fill/cancel |
+
+  **Sample Cancel Fill Request**
+
+  `POST https://api.uat-healthdyne.com/v2/fill/cancel`
+
+  **Sample Cancel Fill Request Body**
+
+  ```json
+  {
+    "fillRequestKey": "FillPatientSample1404",
+    "scriptKeys": [
+      "SCRIPT-OTHER"
+    ],
+    "cancelReason": "Cancelled"
+  }
+  ```
+
+  Click here to see [Cancel Fill Request Data Object](doc:fill-request-fields#request-object-3)
+
+  **Sample Cancel Fill Response**
+
+  **HTTP 400**
+
+  ```json
+  {
+    "fillRequestKey": "FillPatientSample1404",
+    "message": "The request failed validation",
+    "validationErrors": [
+      "Scriptkey [SCRIPT-OTHER] is not associated to fill request [FillPatientSample1404]"
+    ]
+  }
+  ```
+
+  Click here to see [Cancel Response Data Object](doc:fill-request-fields#response-object-4)
+
+  Review the returned reason and verify the Fill Request key, prescription keys, and eligibility before retrying.
 
   [Cancel API reference](ref:post_v2-fill-cancel)
 </Accordion>
