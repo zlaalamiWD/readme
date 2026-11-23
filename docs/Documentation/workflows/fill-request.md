@@ -230,6 +230,192 @@ flowchart TD
     H --> I["POST /v2/mailbox<br/>Mark the retrieved batch delivered"]
 ```
 
+#### Interactive Fill Request Scenarios
+
+Expand a scenario to see the API call, response, and next step.
+
+##### Submit
+
+<Accordion title="Standard request accepted">
+  **API call**
+
+  `POST /v2/fill`
+
+  1. Send scriptKeys for one patient with optional order-level insurance.
+  2. HTTP 200 acknowledges processing. Save fillRequestKey and check GET status or Mailbox for the downstream Submitted or Rejected event.
+
+  [Standard POST reference](ref:post_v2-fill)
+</Accordion>
+
+<Accordion title="Per-prescription request accepted">
+  **API call**
+
+  `POST /v2/fill/fillRequest`
+
+  1. Send scriptsKeys entries. Options include patientInsurance, inline details with optional PCN, a saved payment card sequence, and eligible OTC items.
+  2. HTTP 200 acknowledges processing. Save fillRequestKey and check GET status or Mailbox for the downstream outcome.
+
+  [Per-prescription POST reference](ref:post_v2-fill-fillrequest)
+</Accordion>
+
+<Accordion title="Validation error or duplicate key">
+  **API call**
+
+  `POST /v2/fill or POST /v2/fill/fillRequest`
+
+  1. The API checks request fields, prescription eligibility, and any insurance or OTC fields included in the request.
+  2. HTTP 400 returns validation details or Problem Details. If the key already exists or the original response is uncertain, look up that key before sending a new request.
+
+  [Submit Fill Request](#submit-fill-request)
+</Accordion>
+
+<Accordion title="Unauthorized request">
+  **API call**
+
+  `Any Fill Request operation`
+
+  1. Use the subscription key for the relevant client and a relationship key when authorized to act as a vendor.
+  2. On HTTP 401, check the credentials and permissions for the selected operation.
+
+  [Fill Request headers](#header)
+</Accordion>
+
+<Accordion title="Pharmacy rejects order">
+  **API call**
+
+  `GET /v2/fill/fillRequest or GET /v2/mailbox`
+
+  1. A valid submit can return HTTP 200 before the pharmacy attempts to create the order.
+  2. If order creation fails, read Rejected and its reason in the status response or Mailbox before resubmitting.
+
+  [Rejected status](#rejected-status)
+</Accordion>
+
+##### Track
+
+<Accordion title="Status lookup finds no record">
+  **API call**
+
+  `GET /v2/fill/fillRequest`
+
+  1. Query using the existing fillRequestKey.
+  2. HTTP 200 can contain Problem Details with No record(s) found. Check the key, environment, and client scope.
+
+  [Get Fill Request Status](#get-fill-request-status)
+</Accordion>
+
+<Accordion title="Status lookup fails">
+  **API call**
+
+  `GET /v2/fill/fillRequest`
+
+  1. Check that the query includes fillRequestKey and that the request uses the correct credentials.
+  2. HTTP 400 indicates a request problem, 401 indicates an unauthorized request, and 500 indicates an unexpected server error.
+
+  [GET status reference](ref:get_v2-fill-fillrequest)
+</Accordion>
+
+<Accordion title="Prescription verified and shipped">
+  **API call**
+
+  `GET /v2/fill/fillRequest or GET /v2/mailbox`
+
+  1. Track RxVerified and RxShipped by scriptKey. Shipment events can include tracking details.
+  2. Read grouped events in GET status or retrieve individual events in Mailbox. Acknowledge retrieved batches using POST /v2/mailbox.
+
+  [Shipment events](doc:mail-box#shipped)
+</Accordion>
+
+<Accordion title="Prescription issue or cancellation">
+  **API call**
+
+  `GET /v2/fill/fillRequest or GET /v2/mailbox`
+
+  1. Read RxIssue for a prescription issue or RxCanceled for a canceled line. Use scriptKey to identify the affected prescription.
+  2. For orders with multiple prescriptions, check the events for all affected lines. Order splitting can change which lines are canceled.
+
+  [RxIssue](doc:mail-box#rxissue) · [RxCanceled](doc:mail-box#rxcancel)
+</Accordion>
+
+<Accordion title="Copay and payment events">
+  **API call**
+
+  `GET /v2/mailbox`
+
+  1. Look for RxCopay, RxPaymentRequired, or RxPaymentDeclined in an available Mailbox batch.
+  2. Match the event to the Fill Request and prescription when keys are present. Acknowledge the retrieved batch using POST /v2/mailbox.
+
+  [Mailbox status events](doc:mail-box#fill-request-status-events)
+</Accordion>
+
+<Accordion title="Recorded renewal event">
+  **API call**
+
+  `GET /v2/fill/fillRequest`
+
+  1. Query using the Fill Request key.
+  2. Read the renewed array for recorded renewal events when available.
+
+  [GET response schema](doc:fill-request-fields#response-object)
+</Accordion>
+
+##### Change an order
+
+<Accordion title="Update shipping">
+  **API call**
+
+  `PUT /v2/fill`
+
+  1. Send fillRequestKey and shipping details for the existing order while it remains editable.
+  2. HTTP 200 reports that the order-level shipping update was accepted.
+
+  [PUT shipping reference](ref:put_v2-fill)
+</Accordion>
+
+<Accordion title="Shipping update denied">
+  **API call**
+
+  `PUT /v2/fill`
+
+  1. Submit shipping details for the existing order. The pharmacy can reject the change due to a lock, order status, or invalid shipping details.
+  2. On HTTP 400, review the returned reason before retrying.
+
+  [Update Fill Request](#update-fill-request)
+</Accordion>
+
+<Accordion title="Cancel the whole order">
+  **API call**
+
+  `POST /v2/fill/cancel`
+
+  1. Send fillRequestKey and cancelReason. Omit scriptKeys or send an empty array to request cancellation of the whole order.
+  2. If cancellation is accepted, HTTP 200 returns a whole-order confirmation.
+
+  [Cancel API reference](ref:post_v2-fill-cancel)
+</Accordion>
+
+<Accordion title="Cancel selected prescriptions">
+  **API call**
+
+  `POST /v2/fill/cancel`
+
+  1. Send fillRequestKey, cancelReason, and the associated scriptKeys to cancel.
+  2. Read the response to see which lines were canceled.
+
+  [Cancel Fill Request](#cancel-fill-request)
+</Accordion>
+
+<Accordion title="Cancellation denied">
+  **API call**
+
+  `POST /v2/fill/cancel`
+
+  1. The API checks that the order or selected prescriptions are eligible and associated with the Fill Request.
+  2. On HTTP 400, review the reason, such as an ineligible line or a scriptKey associated with a different Fill Request.
+
+  [Cancel API reference](ref:post_v2-fill-cancel)
+</Accordion>
+
 #### Server
 
 ##### Only HTTPS connections are accepted.
