@@ -161,56 +161,73 @@ Use a new `fillRequestKey` of up to 50 characters for each new request. Supply o
 
 #### Fill Request Sequence
 
+Both submit routes queue pharmacy order creation after validation. Use the original Fill Request key to check the outcome if a submission response is uncertain.
+
 ```mermaid
 sequenceDiagram
     participant C as Client
     participant H as HealthDyne API
     participant W as Order processing
     participant P as Pharmacy system
-    C->>H: POST /v2/fill or POST /v2/fill/fillRequest
-    H->>H: Validate request and prescription eligibility
-    alt Request fails validation
-        H-->>C: HTTP 400 with validation details
-    else Request is accepted for processing
+    alt Standard Fill Request
+        C->>H: POST /v2/fill with scriptKeys
+    else Per-prescription Fill Request
+        C->>H: POST /v2/fill/fillRequest with scriptsKeys entries
+    end
+    H->>H: Check authorization and validate request
+    alt Request is unauthorized
+        H-->>C: HTTP 401
+    else Validation fails or Fill Request key already exists
+        H-->>C: HTTP 400 with error details
+    else Request accepted
         H-)W: Queue order request
-        H-->>C: HTTP 200 with fillRequestKey and acceptance message
+        H-->>C: HTTP 200 acceptance with fillRequestKey
         W->>P: Create pharmacy order
-        alt Order created or confirmed
+        alt Order confirmed
             P-->>W: Order confirmed
-            Note over W,H: Submitted is recorded
+            Note over H,W: Submitted is recorded
         else Order creation rejected
             P-->>W: Rejection reason
-            Note over W,H: Rejected is recorded
-        end
-        opt Client requests a status snapshot
-            C->>H: GET /v2/fill/fillRequest?fillRequestKey=...
-            H-->>C: Recorded events grouped by status
-        end
-        opt Client retrieves Mailbox events
-            C->>H: GET /v2/mailbox
-            H-->>C: Individual FILLREQUEST events in a batch
-            C->>H: POST /v2/mailbox to mark the batch delivered
+            Note over H,W: Rejected is recorded
         end
     end
 ```
 
 #### Fill Request API Flow
 
-Use the flow to distinguish request acceptance from the pharmacy order outcome and see when shipping updates and cancellation apply.
+Use the existing Fill Request key to check status, change shipping, or request cancellation.
 
 ```mermaid
 flowchart TD
-    A["Client submits a Fill Request"] --> B{"Request valid?"}
-    B -->|No| C["HTTP 400 · Review validation details"]
-    B -->|Yes| D["HTTP 200 · Accepted for processing"]
-    D --> E{"Pharmacy order outcome"}
-    E -->|Created or confirmed| F["Submitted · Follow prescription progress"]
-    E -->|Rejected| G["Rejected · Review the cause before resubmitting"]
-    F --> H["GET Fill Request status or retrieve Mailbox events"]
-    G --> H
-    F --> I{"Order still eligible for changes?"}
-    I -->|Update shipping| J["PUT /v2/fill"]
-    I -->|Cancel order or selected lines| K["POST /v2/fill/cancel"]
+    A["Existing Fill Request"] --> B{"Client action"}
+    B -->|Track request or prescriptions| C["GET status or retrieve Mailbox events"]
+    B -->|Change shipping| D["PUT /v2/fill<br/>fillRequestKey and shipping"]
+    B -->|Cancel| E{"What should be canceled?"}
+    E -->|Whole order| F["POST /v2/fill/cancel<br/>Omit scriptKeys or send an empty array"]
+    E -->|Selected prescriptions| G["POST /v2/fill/cancel<br/>Supply associated scriptKeys"]
+    D --> H{"Update accepted?"}
+    H -->|Yes| I["HTTP 200 · Update accepted"]
+    H -->|No| J["Review error details<br/>Order status, pharmacy lock, or shipping details"]
+    F --> K{"Cancellation accepted?"}
+    G --> K
+    K -->|Yes| L["HTTP 200 · Read the cancellation result"]
+    K -->|No| M["Review error details<br/>Ineligible order or lines, or mismatched keys"]
+```
+
+#### Fill Request Status and Mailbox Flow
+
+Use GET status for grouped history and Mailbox for batch delivery, including copay and payment events. Prescription events can occur at different times for individual lines. Order splitting can affect which lines are canceled. [Fill Request status events](doc:mail-box#fill-request-status-events) · [Response codes](#get-fill-request-status)
+
+```mermaid
+flowchart TD
+    A["Check a Fill Request using fillRequestKey"] --> B{"Choose how to retrieve updates"}
+    B -->|Status snapshot| C["GET /v2/fill/fillRequest"]
+    C --> D{"Matching record visible?"}
+    D -->|No| E["HTTP 200 · Problem details<br/>No record(s) found"]
+    D -->|Yes| F["Grouped status events<br/>Submitted, Rejected, Renewed<br/>RxVerified, RxShipped, RxIssue, RxCanceled"]
+    B -->|Event delivery| G["GET /v2/mailbox"]
+    G --> H["Eligible events in a batch<br/>Order outcomes and prescription events<br/>RxCopay, RxPaymentRequired, RxPaymentDeclined"]
+    H --> I["POST /v2/mailbox<br/>Mark the retrieved batch delivered"]
 ```
 
 #### Server
