@@ -177,6 +177,12 @@ Client must send a Fill request with following details:
 
 Transferred prescriptions must be in `Transferred` status. Eligible prescriptions from HealthDyne intake can be in `Received` status. Discontinued prescriptions, prescriptions with no fills available, and keys outside the authorized client scope can fail validation. Replace sample values with valid values for the target environment.
 
+![](https://files.readme.io/182e876-small-FillRequest.png)
+
+#### v2.32 API Walkthrough
+
+The diagrams and interactive scenarios below show the documented v2.32 API flows.
+
 #### Fill Request Sequence
 
 Both submit routes queue pharmacy order creation after validation. Use the original Fill Request key to check the outcome if a submission response is uncertain.
