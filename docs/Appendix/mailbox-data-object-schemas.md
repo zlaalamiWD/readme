@@ -32,7 +32,7 @@ For current model additions and operation-specific distinctions, see [Current HD
 | status        | String                                                                                                        | 20              | Current status of the event.                                                             |
 | statusMessage | String                                                                                                        | max             | Descriptive message explaining the status.                                               |
 | scriptKey     | String                                                                                                        | 50              | Unique identifier for the script being transferred which is initially defined by client. |
-| detail        | [RxTransferDetailObject](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#rxtransferdetailobject) |                 | Nested object containing extra details specific to the event type                        |
+| detail        | [RxTransferDetailObject](doc:mailbox-data-object-schemas#rxtransferdetailobject) |                 | Nested object containing extra details specific to the event type                        |
 
 #### RxTransferDetailObject
 
@@ -56,7 +56,7 @@ For current model additions and operation-specific distinctions, see [Current HD
 | statusMessage | String                                                                                                    | max             | Descriptive message explaining the status.                                               |
 | scriptKey     | String                                                                                                    | 50              | Unique identifier for the script being transferred which is initially defined by client. |
 | patientKey    | String                                                                                                    | 50              | Unique identifier for the patient.                                                       |
-| detail        | [RxStatusDetailObject](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#rxstatusdetailobject) |                 | Nested object containing extra details specific to the event type                        |
+| detail        | [RxStatusDetailObject](doc:mailbox-data-object-schemas#rxstatusdetailobject) |                 | Nested object containing extra details specific to the event type                        |
 
 #### RxStatusDetailObject
 
@@ -72,11 +72,11 @@ For current model additions and operation-specific distinctions, see [Current HD
 | :------------- | :-------------------------------------------------------------------------------------------------------------- | :-------------- | :---------------------------------------------------------------------------- |
 | eventId        | String                                                                                                          | max             | Unique event identifier in HealthDyne system.                                 |
 | eventDateUtc   | String                                                                                                          | 27              | UTC timestamp of when the event occurred.                                     |
-| eventType      | String                                                                                                          | 50              | Type of event, e.g., "RXTRANSFER".                                            |
+| eventType      | String                                                                                                          | 50              | `FILLREQUEST` for Fill Request events. |
 | status         | String                                                                                                          | 20              | Current status of the event.                                                  |
 | statusMessage  | String                                                                                                          | max             | Descriptive message explaining the status.                                    |
 | fillRequestKey | String                                                                                                          | 50              | Unique identifier for the fill request  which is initially defined by client. |
-| detail         | [FillRequestDetailObject](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#fillrequestdetailobject) |                 | Nested object containing extra details specific to the event type             |
+| detail         | [FillRequestDetailObject](doc:mailbox-data-object-schemas#fillrequestdetailobject) |                 | Nested object containing extra details specific to the event type             |
 
 #### FillRequestDetailObject
 
@@ -87,13 +87,13 @@ For current model additions and operation-specific distinctions, see [Current HD
 | fillNumber       | Int                                                                                             |                 | Shows how many fills have been fulfilled for this Rx                                     |
 | remainingRefills | String                                                                                          | 10              | Show how many fill remaing for the Rx                                                    |
 | refillByDate     | String                                                                                          |                 | Date recommended for refill                                                              |
-| shipments        | [[ShipmentObject](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#shipmentobject)] |                 | shipment information                                                                     |
+| shipments        | [[ShipmentObject](doc:mailbox-data-object-schemas#shipmentobject)] |                 | shipment information                                                                     |
 
 #### ShipmentObject
 
 | Field          | Type                                                                                           | Character Limit | Description                                        |
 | :------------- | :--------------------------------------------------------------------------------------------- | :-------------- | :------------------------------------------------- |
-| address        | [[AddressObject](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#addressobject) ] |                 | address information.                               |
+| address        | [[AddressObject](doc:mailbox-data-object-schemas#addressobject) ] |                 | address information.                               |
 | trackingNumber | String                                                                                         | 50              | Package tracking number.                           |
 | shipmentCode   | String                                                                                         | 20              | Code representing the shipment type.               |
 | trackingUrl    | String                                                                                         | 10              | URL for tracking the shipment.                     |
@@ -124,7 +124,7 @@ For current model additions and operation-specific distinctions, see [Current HD
 | eventType      | String                                                                                                   | 50                                   | Event type description.                             |
 | status         | String                                                                                                   | 20                                   | Current status of the event.                        |
 | statusMessage  | String                                                                                                   | max                                  | Descriptive message explaining the status.          |
-| FillRequestKey | String                                                                                                   | 50                                   | Unique ID associated with fill request.             |
+| fillRequestKey | String                                                                                                   | 50                                   | Unique ID associated with fill request.             |
 | detail         | [Submitted detail](https://docs.healthdyne.com/v2.181/docs/mailbox-data-object-schemas#submitted-detail) |                                      | Contains details of fill request that was verified. |
 
 ### Submitted detail
@@ -132,7 +132,7 @@ For current model additions and operation-specific distinctions, see [Current HD
 | Field       | Type   | Character Limit | Description                                                                 |
 | :---------- | :----- | :-------------- | :-------------------------------------------------------------------------- |
 | orderNumber | String | 50              | Order number used to track this order.                                      |
-| scriptKey   | String | Max             | Can have multiple comma (,) separated unique ID associated with script key. |
+| scriptKey   | String |  | Prescription key. Order-level Submitted messages can carry comma-separated prescription keys. |
 | fillNumber  | String | 50              | Fill number that was dispensed.                                             |
 
 <br />
@@ -146,8 +146,8 @@ For current model additions and operation-specific distinctions, see [Current HD
 | eventType      | String                                                                                              | 50                                   | Event type description.                             |
 | status         | String                                                                                              | 20                                   | Current status of the event.                        |
 | statusMessage  | String                                                                                              | max                                  | Descriptive message explaining the status.          |
-| FillRequestKey | String                                                                                              | 50                                   | Unique ID associated with fill request.             |
-| detail         | [RxVerified detail](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#rxverified-detail) |                                      | Contains details of fill request that was verified. |
+| fillRequestKey | String                                                                                              | 50                                   | Unique ID associated with fill request.             |
+| detail         | [RxVerified detail](doc:mailbox-data-object-schemas#rxverified-detail) |                                      | Contains details of fill request that was verified. |
 
 <br />
 
@@ -158,7 +158,7 @@ For current model additions and operation-specific distinctions, see [Current HD
 | orderNumber  | String                                                                                     | 50              | Order number used to track this order. |
 | scriptKey    | String                                                                                     | 50              | Unique ID associated with script key.  |
 | fillNumber   | String                                                                                     | 50              | Fill number that was dispensed.        |
-| dispenseDrug | [dispenseDrug](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#dispense-drug) |                 | Dispensed drug object.                 |
+| dispenseDrug | [dispenseDrug](doc:mailbox-data-object-schemas#dispense-drug) |                 | Dispensed drug object.                 |
 
 <br />
 
@@ -185,9 +185,9 @@ For current model additions and operation-specific distinctions, see [Current HD
 | eventType      | String                                                                                            | 50                                   | Event type description.                       |
 | status         | String                                                                                            | 20                                   | Current status of the event.                  |
 | statusMessage  | String                                                                                            | max                                  | Descriptive message explaining the status.    |
-| FillRequestKey | String                                                                                            | 50                                   | Unique ID associated with fill request.       |
+| fillRequestKey | String                                                                                            | 50                                   | Unique ID associated with fill request.       |
 | trackingNumber | String                                                                                            | 40                                   | Shipment tracking number.                     |
-| detail         | [RxShipped detail](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#RxShipped-detail) |                                      | Shipments info object.                        |
+| detail         | [RxShipped detail](doc:mailbox-data-object-schemas#RxShipped-detail) |                                      | Shipments info object.                        |
 
 ### RxShipped detail
 
@@ -195,7 +195,7 @@ For current model additions and operation-specific distinctions, see [Current HD
 | :---------- | :---------------------------------------------------------------------------------- | :-------------- | :------------------------------------- |
 | orderNumber | String                                                                              | 50              | Order number used to track this order. |
 | scriptKey   | String                                                                              | 50              | Unique ID associated with script key.  |
-| shipments   | [shipments](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#shipments) |                 | Shipments info object.                 |
+| shipments   | [shipments](doc:mailbox-data-object-schemas#shipments) |                 | Shipments info object.                 |
 
 ### shipments
 
@@ -216,11 +216,14 @@ For current model additions and operation-specific distinctions, see [Current HD
 | :------------- | :-------------------------------------------------------------------------------------------- | :----------------------------------- | :-------------------------------------------- |
 | eventId        | String                                                                                        | 4 bytes (32-bit signed int)          | Unique Event Identifier for the Fill Request. |
 | eventDateUtc   | DateTime                                                                                      | YYYY-MM-DD T HH:MM:SS.microseconds Z | Date and time of the event in UTC (ISO 8601). |
-| eventType      | String                                                                                        | 50                                   | Event type description.                       |
-| status         | String                                                                                        | 20                                   | Current status of the event.                  |
+| eventType      | String                                                                                        | 50                                   | `FILLREQUEST` |
+| status         | String                                                                                        | 20                                   | `RxIssue` |
 | statusMessage  | String                                                                                        | max                                  | Descriptive message explaining the status.    |
-| FillRequestKey | String                                                                                        | 50                                   | Unique ID associated with fill request.       |
-| detail         | [RxIssue detail](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#RxIssue-detail) |                                      | Shipments info object.                        |
+| fillRequestKey | String                                                                                        | 50                                   | Unique ID associated with fill request.       |
+| detail         | [RxIssue detail](doc:mailbox-data-object-schemas#RxIssue-detail) |                                      | Details of the issue for the affected prescription. |
+
+
+[RxIssue Mailbox example](doc:mail-box#rxissue) · [RxIssue GET status summary](doc:fill-request-fields#rxissue)
 
 ### RxIssue detail
 
@@ -229,7 +232,7 @@ For current model additions and operation-specific distinctions, see [Current HD
 | orderNumber  | String | 50              | Order number used to track this order.               |
 | scriptKey    | String | 50              | Unique ID associated with script key.                |
 | fillNumber   | Int    | 2               | Shows how many fills have been fulfilled for this Rx |
-| issueMessage | String | 50              | Descriptive message explaining the issue.            |
+| issueMessage | String | 50              | Additional pharmacy information about the prescription issue, when available. |
 
 ### RxCanceled
 
@@ -238,10 +241,10 @@ For current model additions and operation-specific distinctions, see [Current HD
 | eventId        | String                                                                                              | 4 bytes (32-bit signed int)          | Unique Event Identifier for the Fill Request. |
 | eventDateUtc   | DateTime                                                                                            | YYYY-MM-DD T HH:MM:SS.microseconds Z | Date and time of the event in UTC (ISO 8601). |
 | eventType      | String                                                                                              | 50                                   | Event type description.                       |
-| status         | String                                                                                              | 20                                   | Current status of the event.                  |
+| status         | String                                                                                              | 20                                   | `RxCanceled` |
 | statusMessage  | String                                                                                              | max                                  | Descriptive message explaining the status.    |
-| FillRequestKey | String                                                                                              | 50                                   | Unique ID associated with fill request.       |
-| detail         | [RxCanceled detail](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#RxCanceled-detail) |                                      | Shipments info object.                        |
+| fillRequestKey | String                                                                                              | 50                                   | Unique ID associated with fill request.       |
+| detail         | [RxCanceled detail](doc:mailbox-data-object-schemas#RxCanceled-detail) |                                      | Details about the canceled prescription and the reason, when available. |
 
 ### RxCanceled detail
 
@@ -264,15 +267,15 @@ For current model additions and operation-specific distinctions, see [Current HD
 | statusMessage | String                                                                                          | max             | Descriptive message explaining the status.                                               |
 | scriptKey     | String                                                                                          | 50              | Unique identifier for the script being transferred which is initially defined by client. |
 | patientKey    | String                                                                                          | 50              | Unique identifier for the patient.                                                       |
-| detail        | [Received Detail](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#received-detail) |                 | Nested object containing extra details specific to the event type                        |
+| detail        | [Received Detail](doc:mailbox-data-object-schemas#received-detail) |                 | Nested object containing extra details specific to the event type                        |
 
 #### Received Detail
 
 | Field        | Type                                                                                         | Character Limit | Description                  |
 | :----------- | :------------------------------------------------------------------------------------------- | :-------------- | :--------------------------- |
 | reason       | String                                                                                       | 255             | Reason for the status if any |
-| writtendrug  | [writtenDrug](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#written-drug)     |                 | Written drug object.         |
-| dispenseDrug | [dispenseDrug](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#dispense-drug-1) |                 | Dispensed drug object.       |
+| writtendrug  | [writtenDrug](doc:mailbox-data-object-schemas#written-drug)     |                 | Written drug object.         |
+| dispenseDrug | [dispenseDrug](doc:mailbox-data-object-schemas#dispense-drug-1) |                 | Dispensed drug object.       |
 
 ### Written Drug
 
@@ -314,7 +317,7 @@ For current model additions and operation-specific distinctions, see [Current HD
 | statusMessage | String                                                                                            | max             | Descriptive message explaining the status.                                               |
 | scriptKey     | String                                                                                            | 50              | Unique identifier for the script being transferred which is initially defined by client. |
 | patientKey    | String                                                                                            | 50              | Unique identifier for the patient.                                                       |
-| detail        | [Clarified Detail](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#clarified-detail) |                 | Nested object containing extra details specific to the event type                        |
+| detail        | [Clarified Detail](doc:mailbox-data-object-schemas#clarified-detail) |                 | Nested object containing extra details specific to the event type                        |
 
 #### Clarified Detail
 
@@ -331,8 +334,8 @@ For current model additions and operation-specific distinctions, see [Current HD
 | eventType      | String                                                                                                            | 50                                   | Event type description.                             |
 | status         | String                                                                                                            | 20                                   | Current status of the event.                        |
 | statusMessage  | String                                                                                                            | max                                  | Descriptive message explaining the status.          |
-| FillRequestKey | String                                                                                                            | 50                                   | Unique ID associated with fill request.             |
-| detail         | [RxPaymentDeclined detail](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#rxpaymentdeclined-detail) |                                      | Contains details of fill request that was verified. |
+| fillRequestKey | String                                                                                                            | 50                                   | Unique ID associated with fill request.             |
+| detail         | [RxPaymentDeclined detail](doc:mailbox-data-object-schemas#rxpaymentdeclined-detail) |                                      | Contains details of fill request that was verified. |
 
 ### RxPaymentDeclined detail
 
@@ -352,8 +355,8 @@ For current model additions and operation-specific distinctions, see [Current HD
 | eventType      | String                                                                                                            | 50                                   | Event type description.                             |
 | status         | String                                                                                                            | 20                                   | Current status of the event.                        |
 | statusMessage  | String                                                                                                            | max                                  | Descriptive message explaining the status.          |
-| FillRequestKey | String                                                                                                            | 50                                   | Unique ID associated with fill request.             |
-| detail         | [RxPaymentRequired detail](https://docs.healthdyne.com/docs/mailbox-data-object-schemas#rxpaymentrequired-detail) |                                      | Contains details of fill request that was verified. |
+| fillRequestKey | String                                                                                                            | 50                                   | Unique ID associated with fill request.             |
+| detail         | [RxPaymentRequired detail](doc:mailbox-data-object-schemas#rxpaymentrequired-detail) |                                      | Contains details of fill request that was verified. |
 
 ### RxPaymentRequired detail
 
