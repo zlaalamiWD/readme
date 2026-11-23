@@ -331,6 +331,8 @@ Upon a failed prescription transfer to the pharmacy, the system sends a mailbox 
 
 ### Fill Request Status Events
 
+Mailbox returns individual `FILLREQUEST` messages. Correlate by `fillRequestKey` and by `detail.scriptKey` when present. GET Fill Request returns events grouped by status. Use Mailbox for copay and payment events. [Fill Request status guide](doc:fill-request#get-fill-request-status) · [Mailbox event schema](doc:mailbox-data-object-schemas#fillrequest-event-type)
+
 #### Submitted
 
 HealthDyne will create the order after receiving a Fill Request by sending create order command in the downstream pharmacy management system. Once the order has been successfully created, HealthDyne will generate a ‘submitted’ order status message and queues the event up for the client to retrieve it.
@@ -413,7 +415,34 @@ When an order creation process results in an error or rejection, the system gene
 }
 ```
 
+#### RxIssue
+
+HealthDyne reports an issue for an individual prescription after order creation, such as a claim rejection or a request for clarification.
+
+##### Sample "RxIssue" event
+
+```json
+{
+  "eventId": "289773",
+  "eventDateUtc": "2025-04-15T09:30:57.585214Z",
+  "eventType": "FILLREQUEST",
+  "fillRequestKey": "FILL-EXAMPLE-1001",
+  "status": "RxIssue",
+  "statusMessage": "Prescriber clarification required",
+  "detail": {
+    "orderNumber": "10001",
+    "scriptKey": "SCRIPT-EXAMPLE-001",
+    "fillNumber": 0,
+    "issueMessage": "Clarify prescription directions"
+  }
+}
+```
+
+[RxIssue event schema](doc:mailbox-data-object-schemas#rxissue)
+
 #### RxCancel
+
+The status value in the Mailbox payload is `RxCanceled`.
 
 When a Rx or multiple Rx(s) in the order have been canceled pharmacy, HealthDyne will send an update at Rx level for each Rx in the order notifying of the canceled status. By default, unless order split has been configured for the client, the entire order will be cancelled when there is an issue with any of the Rx in the same order. Cancelled Rx that have not also been rejected due to "RxIssue" are available to be assigned to a new Fill Request without additional action via the Script API.
 
