@@ -59,7 +59,7 @@ sequenceDiagram
   Use the `Discontinued` status to indicate that the prescription can no longer be selected for a future fill. Display the optional discontinued reason code and description to authorized staff when the event supplies them.
 </Accordion>
 
-[Mailbox event schemas](doc:mailbox-data-object-schemas) · [Acknowledge batch API reference](ref:post_v2-mailbox) · [Script](doc:script-rxtransfer-request) · [Fill Request](doc:fill-request)
+[Mailbox event schemas](doc:mailbox-data-object-schemas) · [GET Mailbox API reference](ref:get_v2-mailbox) · [Acknowledge batch API reference](ref:post_v2-mailbox) · [Script](doc:script-rxtransfer-request) · [Fill Request](doc:fill-request)
 
 ## Server
 
