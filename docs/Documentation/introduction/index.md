@@ -1,6 +1,5 @@
 ---
 title: Introduction
-excerpt: ''
 deprecated: false
 hidden: true
 metadata:
@@ -10,26 +9,20 @@ metadata:
 next:
   description: ''
 ---
-# About HealthDyne
+# **About HealthDyne**
 
-HealthDyne helps large and small companies alike refine, launch and scale big ideas, fulfilling a mission to empower better healthcare for consumers. HealthDyne was built for speed — helping companies launch their ideas, capitalize on market opportunities, and extend their brand value. Speed creates a competitive advantage and helps you build a<br />leadership edge. For those who turn to us for flexible pharmacy solutions, our capabilities accelerate their growth and help them move forward with speed and confidence.<br />Full API integration capabilities create a seamless consumer experience with your brand. We harness the latest<br />connectivity and patient engagement advances and make them available to those who want to scale and grow<br />quickly.
+HealthDyne provides technology-enabled pharmacy solutions that help healthcare organizations, digital health platforms, and pharmacy partners deliver seamless medication access and fulfillment experiences.
+
+Through our API-driven platform, we enable organizations to integrate pharmacy capabilities into their existing applications, streamline prescription workflows, and create connected healthcare experiences for their patients.
+
+# **Our Mission**
+
+To simplify medication access through innovative, reliable, and scalable pharmacy technology, empowering our partners to deliver efficient, connected, and patient-centered healthcare experiences.
+
+# **Our Vision**
+
+To create a connected pharmacy ecosystem where technology enables seamless integration, automated workflows, and greater accessibility to medications—helping healthcare organizations deliver better experiences and outcomes for patients.
 
 HealthDyne operates in partnership with WellDyne – each company operating in different areas of the pharmacy industry. WellDyne provides pharmacy benefit management (PBM) services to healthcare payers. And<br />HealthDyne provides pharmacy services to all types of healthcare organizations that need to ship medications to patients. Because we take a modular approach, HealthDyne clients can choose the exact services – pharmacies, technology, consumer engagement, clinical expertise – they need to complement their own capabilities, resources and talent in order to grow their business.
 
-### Medication Access
-
-* Mail Order
-* Discount Program
-* Specialty Pharmacy
-
-### Pharmacy Solutions
-
-* Copay Support
-* Formulary
-* Clinical Programs
-
-### Technology Enablement
-
-* API Integration
-* Text Engagement
-* Pharmacy Network
+<br />
