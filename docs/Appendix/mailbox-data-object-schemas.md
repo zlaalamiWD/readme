@@ -18,7 +18,7 @@ For current model additions and operation-specific distinctions, see [Current HD
 
 | Parameter    | Type | Character Limit | Required/Optional | Description                                                                                                                                            |
 | :----------- | :--- | :-------------- | :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| messageCount | Int  | 3               | Required          | used to define how many messages should be returned per batch. Maximum will be 100 messages. if no value passed, the default is 100 messages per batch |
+| messageCount | Int | 3 | Optional | Target messages per new batch. Valid values are 1 to 300. Default is 300. An unacknowledged batch can be returned first. |
 
 # RxTransfer event Type
 
@@ -63,6 +63,8 @@ For current model additions and operation-specific distinctions, see [Current HD
 | Field  | Type   | Character Limit | Description                  |
 | :----- | :----- | :-------------- | :--------------------------- |
 | reason | String | 255             | Reason for the status if any |
+| discontinuedReasonCode | String | | Optional reason code for a discontinued prescription, when supplied. |
+| discontinuedReasonDesc | String | | Optional reason description for a discontinued prescription, when supplied. |
 
 # FillRequest event Type
 
