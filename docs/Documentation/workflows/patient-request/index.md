@@ -35,27 +35,13 @@ flowchart LR
   D --> G[Insurance, payment cards, or prescriptions]
 ```
 
-| When | What the app does | What staff should see |
+| Patient situation | What to do | What to show in the app |
 | :--- | :--- | :--- |
-| Open a known patient | Read the profile using its patient key. | The current profile and the information available to this client. |
-| Find an existing patient | Use demographic search with the fields in the Find Patient guide. | Candidate matches or a no-match result so staff can decide the next action. |
-| Create a patient | Submit the verified details and retain the patient key. | A confirmed profile only after a successful create response. |
-| Correct a profile | Update the existing patient using the same key. | The saved changes or a message that identifies what needs correction. |
-| Review prescriptions | Retrieve the patient's prescriptions and save the relevant script key for follow-up. | A prescription list and current statuses for the selected patient. |
-
-### Common scenarios
-
-<Accordion title="A patient moves or changes contact details">
-  Open the existing profile and confirm the identity before editing. Review the saved details using Get Patient. If the patient already has a fill order, use the [Fill Request shipping update](doc:fill-request#update-fill-request) for that order while it is eligible.
-</Accordion>
-
-<Accordion title="The search returns no confirmed match">
-  Check spelling, birth date, and ZIP with the patient. Proceed with Create Patient when staff establish that a new profile is needed. If a known-key lookup fails, verify the key and client context before opening a new record.
-</Accordion>
-
-<Accordion title="The patient is ready to place an order">
-  Continue to [Insurance](doc:insurance) and [Payment Cards](doc:payment-card-apis) as appropriate. Open the prescription in [Script](doc:script-rxtransfer-request), then use [Fill Request](doc:fill-request) when it is eligible to be filled.
-</Accordion>
+| You already have a patient key | Use Get Patient to open the profile. If it doesn't load, check the key and client account before creating a new record. | The current patient profile, or a message asking staff to verify the record. |
+| You need to find a patient | Search by name, date of birth, and ZIP code. Review possible matches and confirm the patient's identity. | Matching profiles or a clear no-match result. |
+| You confirmed the patient has no profile | Create the profile and save the patient key after the request succeeds. | The new profile, with access to [Insurance](doc:insurance) and [Payment Cards](doc:payment-card-apis) as needed. |
+| A patient's address or contact details changed | Update the existing profile, then reopen it to confirm the change. For an order already placed, use [Update Fill Request](doc:fill-request#update-fill-request) while the order is eligible. | The saved profile details and, if requested, the result of the separate order update. |
+| You need to work with a prescription | Open the patient's prescription list. Use the script key to look up the [prescription](doc:script-rxtransfer-request) or submit a [Fill Request](doc:fill-request) when eligible. | The prescription list and each prescription's current status. |
 
 [Patient schema](doc:patient-request-fields) · [Create Patient API reference](ref:post_v2-patient)
 
