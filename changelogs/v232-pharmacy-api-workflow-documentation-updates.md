@@ -6,7 +6,7 @@ published_at: '2026-11-24T05:44:59.025Z'
 ---
 **Internal review only**
 
-The v2.32 Pharmacy API guides now explain what each workflow is for, how a client application hands off to HealthDyne, and what staff or patients can see at each step. Each guide includes a workflow diagram and expandable examples.
+The v2.32 Pharmacy API guides now explain what each workflow is for, how a client application hands off to HealthDyne, and what staff or patients can see at each step. Each guide includes a workflow diagram and a table showing what to do in specific situations. The Fill Request guide also includes expandable API examples.
 
 ## Patient and Payment Card Updates
 
