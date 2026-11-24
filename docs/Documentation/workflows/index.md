@@ -1,8 +1,8 @@
 ---
-title: Pharmacy APIs
+title: HD APIs
 excerpt: ''
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''
