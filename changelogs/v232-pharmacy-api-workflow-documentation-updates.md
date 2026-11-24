@@ -25,3 +25,4 @@ The v2.32 Pharmacy API guides now explain what each workflow is for, how a clien
 ## Mailbox Updates
 
 - The Mailbox guide explains how applications retrieve, process, and acknowledge batches, then update prescription and order timelines. The linked schema records the optional message count of 1 to 300, default of 300, and optional discontinued-reason fields. [Mailbox guide](doc:mail-box#how-pharmacy-events-reach-your-application) · [Mailbox schemas](doc:mailbox-data-object-schemas)
+- The GET Mailbox API reference now shows the same optional count and response codes as the workflow guide. [GET Mailbox API reference](ref:get_v2-mailbox)
