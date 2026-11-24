@@ -10,11 +10,54 @@ metadata:
 ---
 # Payment Card Request:
 
-See the Payment Card API reference for request message fields.
+See the [Payment Card field definitions](doc:patient-request-fields#patient-payment-cards-objects) for request message fields.
 
 This API lets clients add and update patient payment cards information in the HealthDyne system. A client can also use the GET method of patient payment request to retrieve patient payment card information.
 
 Use POST method to add a payment card to the patient profile  and PUT method to update existing patient payment card details.
+
+## How a patient saves and uses a payment card
+
+Use Payment Cards to add or manage a card on a HealthDyne patient profile. When adding a card, the client app starts the request and sends the patient to HealthDyne's hosted card form. For order checkout, the app references a saved card using its sequence number.
+
+```mermaid
+sequenceDiagram
+  participant P as Patient
+  participant C as Client app
+  participant H as HealthDyne Patient API
+  participant F as Hosted card form
+  P->>C: Select Add payment card
+  C->>H: Send patient key and return URL
+  H-->>C: Return card URL
+  C->>F: Open the hosted form for the patient
+  P->>F: Complete the card form
+  F-->>C: Redirect to the return URL
+  C->>H: Refresh the saved card list
+  H-->>C: Return masked cards and sequence numbers
+```
+
+| Patient action | What happens | What the app can show |
+| :--- | :--- | :--- |
+| Add a card | Create a hosted form session using the patient key and an absolute return URL with a scheme. | A link to the form and a refreshed list after the patient returns. |
+| Choose a saved card | Read the active cards for the patient. | Masked card details for selection. Keep the sequence number for the order request. |
+| Edit a saved card | Send the patient key, card sequence number and at least one supported name or expiration field. | Updated card details after the operation succeeds. |
+| Remove a card from use | Deactivate the chosen card on the patient profile. | The updated choices after refreshing the card list. |
+
+### Common scenarios
+
+<Accordion title="The patient returns from the hosted form">
+  The redirect returns the patient to the client app. Refresh the list to confirm the card is available before offering it at checkout. Use the masked display fields so the patient can recognize the card.
+</Accordion>
+
+<Accordion title="Use a saved card on a Fill Request">
+  On the per-prescription Fill Request route, send the saved card sequence as the digits-only string `paymentCardSequenceNumber`. It must belong to the patient on the order. Check the [Mailbox payment events](doc:mail-box#rxpaymentrequired) for later payment outcomes.
+</Accordion>
+
+<Accordion title="The patient needs to use a different card">
+  Start the hosted Add Card flow for a different card number. Use Update Card for the supported cardholder name or expiration changes on the existing card. Deactivate the previous card when it should no longer be offered.
+</Accordion>
+
+[Payment card field definitions](doc:patient-request-fields#patient-payment-cards-objects) · [Fill Request](doc:fill-request)
 
 # Get Patient Payment card
 
@@ -61,7 +104,7 @@ Once a patient payment card has been registered successfully, the GET Patient Pa
 }
 ```
 
-Click here to see [Get Patient Payment Card Response Data Object](https://docs.healthdyne.com/docs/patient-request-fields#get-patient-payment-cards-request)
+Click here to see [Get Patient Payment Card Response Data Object](doc:patient-request-fields#get-patient-payment-cards-request)
 
 The below table lists the potential response codes that can be received in response to a GET request.
 
@@ -100,11 +143,11 @@ The POST Patient Payment Card API allows clients to add Payment Card details to 
 ```json
 {
     "patientKey": "TestreadPatient171",
-    "returnUrl" : "www.callbackurl.com"
+    "returnUrl" : "https://www.callbackurl.com"
 }
 ```
 
-Click here to see [Add Patient Payment Card Request Data Object](https://docs.healthdyne.com/v2.20/update/docs/patient-request-fields?isFramePreview=true#request-object-2)
+Click here to see [Add Patient Payment Card Request Data Object](doc:patient-request-fields#add-patient-payment-cards-request)
 
 #### Sample POST Patient Payment Card Response
 
@@ -114,7 +157,7 @@ Click here to see [Add Patient Payment Card Request Data Object](https://docs.he
 }
 ```
 
-Click here to see [Add Patient Payment Card Response Data Object](https://docs.healthdyne.com/v2.20/update/docs/patient-request-fields?isFramePreview=true#response-object-6)
+Click here to see [Add Patient Payment Card Response Data Object](doc:patient-request-fields#add-patient-payment-cards-request)
 
 The below table lists the potential response codes that can be received in response to a GET request.
 
@@ -162,7 +205,7 @@ Once a patient payment card has been registered successfully, the PUT Patient Pa
 }
 ```
 
-Click here to see [Update Patient Payment Card Request Data Object](https://docs.healthdyne.com/v2.20/update/docs/patient-request-fields?isFramePreview=true#request-object-3)
+Click here to see [Update Patient Payment Card Request Data Object](doc:patient-request-fields#update-patient-payment-cards-request)
 
 #### Sample Put Patient Payment Card Response
 
@@ -174,7 +217,7 @@ Click here to see [Update Patient Payment Card Request Data Object](https://docs
 }
 ```
 
-Click here to see [Update Patient Payment Card Response Data Object](https://docs.healthdyne.com/v2.20/update/docs/patient-request-fields?isFramePreview=true#response-object-7)
+Click here to see [Update Patient Payment Card Response Data Object](doc:patient-request-fields#update-patient-payment-cards-request)
 
 The below table lists the potential response codes that can be received in response to a POST request.
 
@@ -215,7 +258,7 @@ The DELETE Patient Payment Card API allows clients to deactivate a Payment Card 
 }
 ```
 
-Click here to see [Deactivate Patient Payment Card Request Data Object](https://docs.healthdyne.com/v2.20/docs/patient-request-fields#/request-object-4)
+Click here to see [Deactivate Patient Payment Card Request Data Object](doc:patient-request-fields#deactivate-patient-payment-cards-request)
 
 #### Sample DELETE Patient Payment Card Response
 
@@ -227,7 +270,7 @@ Click here to see [Deactivate Patient Payment Card Request Data Object](https://
 }
 ```
 
-Click here to see [Deactivate Patient Payment Card Response Data Object](https://docs.healthdyne.com/v2.20/docs/patient-request-fields#/response-object-8)
+Click here to see [Deactivate Patient Payment Card Response Data Object](doc:patient-request-fields#deactivate-patient-payment-cards-request)
 
 The below table lists the potential response codes that can be received in response to a DELETE request.
 
