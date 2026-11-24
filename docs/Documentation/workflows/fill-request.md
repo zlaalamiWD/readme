@@ -16,6 +16,43 @@ See [Fill](ref:post_v2-fill) API reference for request message fields.
 
 This API lets client define when the order needs to be initiated in HealthDyne system and also defines the number of prescriptions/scripts that need to be consolidated in one order. A client can also use the GET method of Fill Request to retrieve current status.
 
+## How a fill moves from checkout to shipment
+
+Use Fill Request after you have selected prescriptions eligible for filling for the same patient. The client app collects shipping details and any applicable insurance or payment choices. HealthDyne accepts the request for processing and the pharmacy determines the order outcome.
+
+```mermaid
+flowchart LR
+  A[Client app: select prescriptions] --> B[Checkout: shipping, coverage and payment]
+  B --> C[HealthDyne Fill API: accept request for processing]
+  C --> D[Pharmacy: create order and adjudicate prescriptions]
+  D --> E[Mailbox or GET Status: publish available outcome]
+  E --> F[Client app: update order timeline and actions]
+```
+
+| Checkout choice or status | What it means for the user | What the integration does |
+| :--- | :--- | :--- |
+| One order-level insurance choice | The client supplies one optional insurance object for the order. | Use standard submit. |
+| Coverage varies by prescription | Each selected prescription can carry its own plan information. | Use per-prescription submit. Send an existing plan or supported inline details. PCN may be omitted for detailed inline insurance on this route. |
+| Include an eligible OTC item | Add a product to the same fulfillment request as the prescriptions. | On per-prescription submit send the mapped product ID and positive whole-number quantity with at least one prescription. |
+| Use a saved payment card | Reference a card already on the patient's profile. | Send its sequence number and use Mailbox for later payment events. |
+| Change shipping or cancel | The order or selected prescription can be changed while eligible. | Use the existing Fill Request key and honor the pharmacy decision. |
+
+### Common scenarios
+
+<Accordion title="The order says accepted">
+  Show the request as received for processing. Confirm whether the pharmacy created the order by checking `Submitted` or `Rejected`. Keep the same `fillRequestKey` for tracking and follow-up.
+</Accordion>
+
+<Accordion title="A prescription needs payment or attention">
+  Use Mailbox to track copay and payment events. On a prescription issue, display the affected prescription and reason for authorized staff. Track individual prescription lines separately because their outcomes and timestamps can differ.
+</Accordion>
+
+<Accordion title="The patient requests a last-minute change">
+  Use Update Fill Request for an eligible shipping change and Cancel Fill Request for an eligible order or line cancellation. If the pharmacy denies the request, surface the returned reason and refresh the order status.
+</Accordion>
+
+[Interactive API scenarios](#interactive-fill-request-scenarios) · [Patient](doc:patient-request) · [Insurance](doc:insurance) · [Payment Cards](doc:payment-card-apis) · [Mailbox](doc:mail-box)
+
 # Get Fill Request Status
 
 The GET Fill Request Status API lets clients retrieve the status and event summary for previously submitted Fill Requests.
