@@ -2531,10 +2531,14 @@
             "in": "query",
             "name": "messageCount",
             "schema": {
-              "default": 25,
+              "default": 300,
               "format": "int32",
-              "type": "integer"
-            }
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 300
+            },
+            "required": false,
+            "description": "Number of messages requested for a new batch. Valid values are 1 to 300. An existing unacknowledged batch can be returned first."
           }
         ],
         "responses": {
@@ -2556,33 +2560,13 @@
                 }
               }
             },
-            "description": "Success"
+            "description": "A batch was returned. Process the messages and acknowledge the batch ID before requesting the next batch."
           },
           "204": {
-            "description": "Success"
-          },
-          "206": {
-            "description": "Success"
+            "description": "No messages are available for the current caller."
           },
           "400": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MailboxResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MailboxResponse"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/MailboxResponse"
-                }
-              }
-            },
-            "description": "Bad Request"
+            "description": "Invalid request, such as a message count outside 1 to 300."
           },
           "401": {
             "content": {
@@ -2603,6 +2587,9 @@
               }
             },
             "description": "Unauthorized"
+          },
+          "500": {
+            "description": "An internal error occurred while retrieving Mailbox messages."
           }
         },
         "tags": [
