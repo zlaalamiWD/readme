@@ -54,7 +54,7 @@ sequenceDiagram
   Check the current script and related Mailbox events before submitting again. Use the returned status and reason to distinguish a document correction, a routing issue, and an order that has not yet finished processing.
 </Accordion>
 
-[Script API reference](ref:script) · [Script and transfer schemas](doc:script-rxtransfer-fields) · [Mailbox](doc:mail-box)
+[Inbound transfer API reference](ref:post_v2-script) · [Script and transfer schemas](doc:script-rxtransfer-fields) · [Mailbox](doc:mail-box)
 
 # Get Script
 
