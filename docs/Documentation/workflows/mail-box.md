@@ -16,8 +16,50 @@ View the [MailBox](ref:post_v2-mailbox) API Reference for detailed request body 
 
 This endpoint should be used to obtain the status of Script and/or Fill requests previously submitted. No request body is required.
 HealthDyne employs a mailbox style order status reporting methodology. Therefore, when an order has a status update, the status message is delivered to the partner’s mailbox. This status message remains in the mailbox until the status message is retrieved by the partner and receipt of the message is acknowledged.
-A maximum of 100 status messages will be returned with a single request. Multiple requests may be necessary to receive all outstanding status messages. Please refer to the Status Codes returned to determine if all messages have been retrieved.
+Use the optional `messageCount` query parameter to request 1 to 300 messages. The default is 300. Process and acknowledge each returned batch before fetching the next one.
 Note, the status messages are not considered delivered and removed from the mailbox until the receipt of the message is acknowledged by using a POST method with the batchId as a query parameter. Hence, another status request should not be submitted until the previous status response is acknowledged.
+
+## How pharmacy events reach your application
+
+Use Mailbox to bring pharmacy events into the client app. A background service retrieves a batch, saves and applies the messages, and acknowledges the batch. The app can then show a prescription or order timeline, a payment action, or an item that needs staff review.
+
+```mermaid
+sequenceDiagram
+  participant P as HealthDyne pharmacy systems
+  participant M as HealthDyne Mailbox
+  participant I as Client integration
+  participant U as Client app
+  P->>M: Record an eligible status event
+  I->>M: GET available messages
+  M-->>I: Return batch ID and messages
+  I->>I: Save and process events
+  I->>U: Update timeline or flag follow-up
+  I->>M: POST acknowledgement with batch ID
+```
+
+| Event or situation | How to match it | Example client app behavior |
+| :--- | :--- | :--- |
+| Prescription status or transfer | Use the script key when returned. | Update the prescription timeline or send the item to a staff queue. |
+| Fill Request status | Use the Fill Request key and the prescription key for line-level events when present. | Show order creation, a rejection reason, verification, a prescription issue, or shipment details. |
+| Copay or payment event | Match the Fill Request and prescription when those keys are present. | Show the amount or payment action indicated by the event. |
+| The same batch returns after a retry | Match its batch ID and deduplicate processing by event ID within the integration's scope. | Continue from the batch already in progress. |
+| No batch is available | HTTP 204 signals no content for the current caller. | Keep the last known timeline and poll again on the regular schedule. |
+
+### Common scenarios
+
+<Accordion title="Decide when to acknowledge a batch">
+  Acknowledge the exact `batchId` after the integration has durably saved and processed the messages. If processing is interrupted, fetch again and resume from the open batch. Keep acknowledgement separate from updating prescription or order status.
+</Accordion>
+
+<Accordion title="Choose between Mailbox and GET Fill Request Status">
+  Use Mailbox for batch event delivery across requests, including copay and payment events. Use [GET Fill Request Status](doc:fill-request#get-fill-request-status) to check the grouped history of one Fill Request.
+</Accordion>
+
+<Accordion title="Show a discontinued prescription">
+  Use the `Discontinued` status to indicate that the prescription can no longer be selected for a future fill. Display the optional discontinued reason code and description to authorized staff when the event supplies them.
+</Accordion>
+
+[Mailbox event schemas](doc:mailbox-data-object-schemas) · [Acknowledge batch API reference](ref:post_v2-mailbox) · [Script](doc:script-rxtransfer-request) · [Fill Request](doc:fill-request)
 
 ## Server
 
@@ -40,7 +82,9 @@ Only HTTPS connections are accepted.
 
 ### Sample GET Request
 
-This tells the API to only respond with 10 messages. The default message count is 100 messages. The Mailbox only allows 100 messages to be pulled at a time.
+`GET https://api.uat-healthdyne.com/v2/mailbox?messageCount=10`
+
+This requests up to 10 messages in a new batch. If the caller already has an unacknowledged batch, the API can return that batch first.
 
 ## GET Status Response
 
@@ -48,10 +92,9 @@ The below table lists the potential response codes that can be received in respo
 
 | Code | Description                                                                    |
 | :--- | :----------------------------------------------------------------------------- |
-| 200  | All messages delivered                                                         |
+| 200  | A batch of messages was returned. Process it, then acknowledge its batch ID. |
 | 204  | No messages                                                                    |
-| 206  | Max allowed messages delivered - submit another request for remaining messages |
-| 400  | Bad Request – typically header is missing key                                  |
+| 400  | Invalid request, such as a message count outside 1 to 300.                  |
 | 401  | Unauthorized                                                                   |
 | 500  | Internal Server Error                                                          |
 
