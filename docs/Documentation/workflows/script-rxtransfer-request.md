@@ -33,26 +33,13 @@ sequenceDiagram
   S->>M: Retrieve status and update the app
 ```
 
-| What the user needs | What the integration does | What to show |
-| :--- | :--- | :--- |
-| Find one prescription | Read it using its script key. | The current prescription details and status. |
-| See a patient's prescriptions | Use the patient key to retrieve the list. | Prescriptions for the selected profile. |
-| Transfer to HealthDyne | Submit the transfer with pharmacy details and a prescription document source. | Show submission as pending until the pharmacy outcome is known. |
-| Transfer out of HealthDyne | Select the destination pharmacy and request the outbound transfer. | Explain that a successfully initiated outbound transfer prevents filling that prescription in HealthDyne. |
-
-### Common scenarios
-
-<Accordion title="Choose a document source for an inbound transfer">
-  Existing integrations can send a Base64-encoded URL in `transferFileUrl`. The inline option accepts one attachment containing the Base64-encoded file bytes. Use the [attachment field rules](doc:script-rxtransfer-fields#inline-transfer-attachment) and confirm inline processing is enabled in the target environment before using it.
-</Accordion>
-
-<Accordion title="A transfer request was accepted">
-  Keep the `scriptKey` and track its status. Show a pending state while the pharmacy processes the request. Use the [Mailbox event guide](doc:mail-box) for transfer updates. An eligible transferred prescription can then be selected in a [Fill Request](doc:fill-request).
-</Accordion>
-
-<Accordion title="A transfer is delayed or needs follow-up">
-  Check the current script and related Mailbox events before submitting again. Use the returned status and reason to distinguish a document correction, a routing issue, and an order that has not yet finished processing.
-</Accordion>
+| What you need to do | What the app does |
+| :--- | :--- |
+| Look up one prescription | Use its script key to show the current prescription details and status. |
+| Find a patient's prescriptions | Use the patient key to open the patient's prescription list. |
+| Send a prescription to HealthDyne | Submit the pharmacy details and a document source. Use the Base64-encoded file URL or [one inline attachment](doc:script-rxtransfer-fields#inline-transfer-attachment) where enabled. Keep the script key and show **Pending** while HealthDyne processes the request. |
+| Check the transfer outcome | Check the current prescription and [Mailbox](doc:mail-box) using the script key. If processing is delayed or an error is reported, check the status and reason before resubmitting. Once a transferred prescription is eligible, it can be selected for a [Fill Request](doc:fill-request). |
+| Transfer a prescription out of HealthDyne | Confirm the destination pharmacy before sending the request. Explain that a successfully initiated outbound transfer prevents filling that prescription in HealthDyne. |
 
 [Inbound transfer API reference](ref:post_v2-script) · [Script and transfer schemas](doc:script-rxtransfer-fields) · [Mailbox](doc:mail-box)
 
