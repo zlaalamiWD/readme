@@ -66,9 +66,9 @@ The Script API (GET) allows clients to retrieve prescription information for a s
 
 #### Sample GET Request
 
-> [https://api.uat-healthdyne.com/v2/script?scriptkey=092723-123876A](https://api.uat-healthdyne.com/v2/script?scriptkey=092723-123876A)
+`GET https://api.uat-healthdyne.com/v2/script?scriptkey=092723-123876A`
 
-This tells the API to query for scriptKey 092723-123876A and return relevant details.
+This tells the API to query for scriptKey 092723-123876A and return relevant details. Send the example from your API client with the required HealthDyne headers. [GET Script API reference](ref:get_v2-script)
 
 # GET Script Response
 
@@ -160,7 +160,7 @@ The "Get Patient script/Prescription" endpoint allows retrieval of all scripts a
 
 #### Sample GET Request
 
-> \<[https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece](https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece)
+`GET https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece`
 
 This tells the API to query for patientKey 4e1e76ca-520f-4e7a-a6c7-d837a9e3cece  and returns a list of all scripts associated to that patient.
 
@@ -388,7 +388,7 @@ Click here to see [Submit Script Outbound Response Data Object](doc:script-rxtra
 
 # Status Events
 
-Please see the [RxTransfer](doc:mail-box#rxtransfer-status-events) status events under the [Mailbox](doc:mail-box) API guide for a detailed list of status events.
+Please see the [RxTransfer](doc:mail-box#rx-status-events) status events under the [Mailbox](doc:mail-box) API guide for a detailed list of status events.
 
 ## Transferred Status
 
