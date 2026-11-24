@@ -18,6 +18,47 @@ This API lets clients define and update patient information in the HealthDyne sy
 
 Use POST method to add/create a patient and PUT method to update existing patient details.
 
+## Patient onboarding and profile workflow
+
+Use the Patient API when a client app needs to identify an existing patient or create a HealthDyne record before collecting insurance, saving a payment card, or working with prescriptions. The app should keep the agreed patient key with its own patient record so staff can reopen the same profile later.
+
+The screens in this walkthrough are examples of how a client app can present the workflow.
+
+```mermaid
+flowchart LR
+  A[Client app: search patient] --> B[HealthDyne Patient API: find by demographics]
+  B --> C{Matching profile confirmed?}
+  C -- Yes --> D[Client app: open patient profile]
+  C -- No match --> E[Client app: review details and create patient]
+  C -- Uncertain --> F[Staff verifies identity before proceeding]
+  E --> D
+  D --> G[Insurance, payment cards, or prescriptions]
+```
+
+| When | What the app does | What staff should see |
+| :--- | :--- | :--- |
+| Open a known patient | Read the profile using its patient key. | The current profile and the information available to this client. |
+| Find an existing patient | Use demographic search with the fields in the Find Patient guide. | Candidate matches or a no-match result so staff can decide the next action. |
+| Create a patient | Submit the verified details and retain the patient key. | A confirmed profile only after a successful create response. |
+| Correct a profile | Update the existing patient using the same key. | The saved changes or a message that identifies what needs correction. |
+| Review prescriptions | Retrieve the patient's prescriptions and save the relevant script key for follow-up. | A prescription list and current statuses for the selected patient. |
+
+### Common scenarios
+
+<Accordion title="A patient moves or changes contact details">
+  Open the existing profile and confirm the identity before editing. Review the saved details using Get Patient. If the patient already has a fill order, use the [Fill Request shipping update](doc:fill-request#update-fill-request) for that order while it is eligible.
+</Accordion>
+
+<Accordion title="The search returns no confirmed match">
+  Check spelling, birth date, and ZIP with the patient. Proceed with Create Patient when staff establish that a new profile is needed. If a known-key lookup fails, verify the key and client context before opening a new record.
+</Accordion>
+
+<Accordion title="The patient is ready to place an order">
+  Continue to [Insurance](doc:insurance) and [Payment Cards](doc:payment-card-apis) as appropriate. Open the prescription in [Script](doc:script-rxtransfer-request), then use [Fill Request](doc:fill-request) when it is eligible to be filled.
+</Accordion>
+
+[Patient schema](doc:patient-request-fields) · [Create Patient API reference](ref:post_v2-patient)
+
 # Get Patient
 
 Once a patient has been registered successfully, the GET Patient API allows clients to retrieve patient details (active details) from HD pharmacy system using PatientKey.
@@ -43,7 +84,7 @@ Once a patient has been registered successfully, the GET Patient API allows clie
 
 `GET https://api.uat-healthdyne.com/v2/patient?patientkey=TestreadPatient171`
 
-Click here to see [GET Patient Request Query Data](https://docs.healthdyne.com/docs/patient-request-fields#query-parameter)
+Click here to see [GET Patient Request Query Data](doc:patient-request-fields#query-parameter)
 
 #### Sample GET Patient Response
 
@@ -105,7 +146,7 @@ Click here to see [GET Patient Request Query Data](https://docs.healthdyne.com/d
 }
 ```
 
-Click here to see [Get Patient Response Data Object](https://docs.healthdyne.com/docs/patient-request-fields#response-object)
+Click here to see [Get Patient Response Data Object](doc:patient-request-fields#response-object)
 
 The below table lists the potential response codes that can be received in response to a GET request.
 
@@ -141,7 +182,7 @@ The Find Patient API (GET method) allows clients to lookup patientKey in HD syst
 
 `GET https://api.uat-healthdyne.com/v2/patient/find?firstname=ABC&lastname=XYZ&birthdate=1981-01-01&zipcode=80017`
 
-Click here to see [GET Find Patient Request Query Data](https://docs.healthdyne.com/docs/patient-request-fields#query-parameter-1)
+Click here to see [GET Find Patient Request Query Data](doc:patient-request-fields#query-parameter-1)
 
 #### Sample GET Find Patient Response
 
@@ -157,7 +198,7 @@ Click here to see [GET Find Patient Request Query Data](https://docs.healthdyne.
 }
 ```
 
-Click here to see [Get Find Patient Response Data Object](https://docs.healthdyne.com/docs/patient-request-fields#response-object-1)
+Click here to see [Get Find Patient Response Data Object](doc:patient-request-fields#response-object-1)
 
 The below table lists the potential response codes that can be received in response to a GET Find patient request.
 
@@ -193,7 +234,7 @@ The "Get Patient Script/Prescription" endpoint allows retrieval of all scripts a
 
 `GET https://api.uat-healthdyne.com/v2/patient/prescription?patientKey=4e1e76ca-520f-4e7a-a6c7-d837a9e3cece`
 
-Click here to see [GET Patient Scripts/Prescriptions Request Query Data](https://docs.healthdyne.com/docs/patient-request-fields#query-parameter-2)
+Click here to see [GET Patient Scripts/Prescriptions Request Query Data](doc:patient-request-fields#query-parameter-2)
 
 #### Sample GET Patient Scripts/Prescriptions Response
 
@@ -205,7 +246,7 @@ Click here to see [GET Patient Scripts/Prescriptions Request Query Data](https:/
 }
 ```
 
-Click here to see [GET Patient Scripts/Prescriptions Response Data Object](https://docs.healthdyne.com/docs/patient-request-fields#response-object-2)
+Click here to see [GET Patient Scripts/Prescriptions Response Data Object](doc:patient-request-fields#response-object-2)
 
 The below table lists the potential response codes that can be received in response to a GET request.
 
@@ -294,7 +335,7 @@ The "Create Patient" endpoint uses the POST method to add a new patient record. 
 >
 > For pregnancy indicator, you will need to submit it under the allergies attribute shown in the sample above. It has to follow exactly the same template and the only value that should be changing is true or false. also the template needs to be submitted on a separate string from the allergies (see example above)
 
-Click here to see [POST Create Patient Request Data Object](https://docs.healthdyne.com/docs/patient-request-fields#request-object)
+Click here to see [POST Create Patient Request Data Object](doc:patient-request-fields#request-object)
 
 #### Sample Create Patient Response
 
@@ -306,7 +347,7 @@ Click here to see [POST Create Patient Request Data Object](https://docs.healthd
 }
 ```
 
-Click here to see [Create Patient Response Data Object](https://docs.healthdyne.com/docs/patient-request-fields#response-object-3)
+Click here to see [Create Patient Response Data Object](doc:patient-request-fields#response-object-3)
 
 # Update Patient
 
@@ -379,7 +420,7 @@ The "Update Patient" endpoint uses the PUT method to modify the details of an ex
 }
 ```
 
-Click here to see [PUT Update Patient Request Data Object](https://docs.healthdyne.com/docs/patient-request-fields#request-object-1)
+Click here to see [PUT Update Patient Request Data Object](doc:patient-request-fields#request-object-1)
 
 #### Sample Update Patient Response
 
@@ -391,7 +432,7 @@ Click here to see [PUT Update Patient Request Data Object](https://docs.healthdy
 }
 ```
 
-Click here to see [PUT Update Patient Response Data Object](https://docs.healthdyne.com/docs/patient-request-fields#response-object-4)
+Click here to see [PUT Update Patient Response Data Object](doc:patient-request-fields#response-object-4)
 
 ```json
 {
