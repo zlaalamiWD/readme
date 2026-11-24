@@ -1534,7 +1534,7 @@
           },
           "scriptKey": {
             "description": "Unique ID assigned by sending pharmacy to each prescription transfer request for tracking.",
-            "maxLength": 255,
+            "maxLength": 50,
             "type": "string"
           },
           "sendingPharmacy": {
@@ -1542,18 +1542,42 @@
             "description": "information about the pharmacy transferring the prescription."
           },
           "transferFileType": {
-            "description": "The file type for the transfer file. Acceptable values are xml and png.",
-            "enum": [
-              "xml",
-              "png"
-            ],
-            "maxLength": 3,
+            "description": "Document type for a URL-based transfer. Supported values are PDF, PNG, XML, TIF and TIFF, case-insensitive.",
+            "maxLength": 4,
+            "nullable": true,
             "type": "string"
           },
           "transferFileUrl": {
-            "description": "URL where the transfer file can be downloaded from in urlSafeBase64 format",
+            "description": "Base64-encoded URL for the transfer document. Used when an inline attachment is absent.",
             "maxLength": 2048,
+            "nullable": true,
             "type": "string"
+          },
+          "attachments": {
+            "description": "Single inline transfer document. This source takes precedence when supplied.",
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "body": {
+                  "description": "Base64-encoded file bytes without a data URI prefix. Maximum decoded size is 10 MiB.",
+                  "format": "byte",
+                  "type": "string"
+                },
+                "fileType": {
+                  "description": "PDF, PNG, XML, TIF or TIFF, case-insensitive. Must match the document content.",
+                  "maxLength": 4,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "body",
+                "fileType"
+              ],
+              "type": "object"
+            },
+            "maxItems": 1,
+            "nullable": true,
+            "type": "array"
           }
         },
         "required": [
@@ -1562,11 +1586,38 @@
           "prescription",
           "scriptKey",
           "sendingPharmacy",
-          "transferFileType",
-          "receivingPharmacy",
-          "transferFileUrl"
+          "receivingPharmacy"
         ],
-        "type": "object"
+        "type": "object",
+        "anyOf": [
+          {
+            "required": [
+              "transferFileType",
+              "transferFileUrl"
+            ],
+            "properties": {
+              "transferFileType": {
+                "type": "string",
+                "minLength": 1
+              },
+              "transferFileUrl": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          {
+            "required": [
+              "attachments"
+            ],
+            "properties": {
+              "attachments": {
+                "type": "array",
+                "minItems": 1
+              }
+            }
+          }
+        ]
       },
       "TransferRequestError": {
         "additionalProperties": false,
@@ -3261,7 +3312,8 @@
                 "$ref": "#/components/schemas/TransferRequest"
               }
             }
-          }
+          },
+          "description": "Supply one inline attachment with Base64-encoded document bytes, or the legacy Base64-encoded URL and file type. A supplied attachment is validated as the document source, even when a URL is also supplied. Verify that inline transfer processing is available in the target environment."
         },
         "responses": {
           "200": {
@@ -3282,7 +3334,7 @@
                 }
               }
             },
-            "description": "Success"
+            "description": "The API accepted and queued the transfer. Check prescription status and Mailbox for the pharmacy outcome."
           },
           "400": {
             "content": {
