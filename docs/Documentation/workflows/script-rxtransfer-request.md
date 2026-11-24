@@ -16,6 +16,46 @@ See [Script](ref:script) API reference for request message fields.
 
 This API lets HealthDyne clients query (GET) prescription info. The Script API can also be used by a pharmacy to send a prescription transfer request (POST) from their pharmacy to HealthDyne.
 
+## Prescription lookup and transfer workflow
+
+Use Script to view a prescription HealthDyne already knows about, send a transfer from a registered pharmacy, or request an outbound transfer to the patient's chosen pharmacy. A prescription transfer moves the prescription record. A Fill Request asks HealthDyne to dispense an eligible prescription.
+
+```mermaid
+sequenceDiagram
+  participant S as Sending pharmacy app
+  participant H as HealthDyne Script API
+  participant P as Pharmacy system
+  participant M as Mailbox
+  S->>H: Request inbound transfer and provide prescription document
+  H-->>S: Return acceptance when queued
+  H->>P: Process transfer
+  P-->>M: Make transfer result available when generated
+  S->>M: Retrieve status and update the app
+```
+
+| What the user needs | What the integration does | What to show |
+| :--- | :--- | :--- |
+| Find one prescription | Read it using its script key. | The current prescription details and status. |
+| See a patient's prescriptions | Use the patient key to retrieve the list. | Prescriptions for the selected profile. |
+| Transfer to HealthDyne | Submit the transfer with pharmacy details and a prescription document source. | Show submission as pending until the pharmacy outcome is known. |
+| Transfer out of HealthDyne | Select the destination pharmacy and request the outbound transfer. | Explain that a successfully initiated outbound transfer prevents filling that prescription in HealthDyne. |
+
+### Common scenarios
+
+<Accordion title="Choose a document source for an inbound transfer">
+  Existing integrations can send a Base64-encoded URL in `transferFileUrl`. The inline option accepts one attachment containing the Base64-encoded file bytes. Use the [attachment field rules](doc:script-rxtransfer-fields#inline-transfer-attachment) and confirm inline processing is enabled in the target environment before using it.
+</Accordion>
+
+<Accordion title="A transfer request was accepted">
+  Keep the `scriptKey` and track its status. Show a pending state while the pharmacy processes the request. Use the [Mailbox event guide](doc:mail-box) for transfer updates. An eligible transferred prescription can then be selected in a [Fill Request](doc:fill-request).
+</Accordion>
+
+<Accordion title="A transfer is delayed or needs follow-up">
+  Check the current script and related Mailbox events before submitting again. Use the returned status and reason to distinguish a document correction, a routing issue, and an order that has not yet finished processing.
+</Accordion>
+
+[Script API reference](ref:script) · [Script and transfer schemas](doc:script-rxtransfer-fields) · [Mailbox](doc:mail-box)
+
 # Get Script
 
 The Script API (GET) allows clients to retrieve prescription information for a specific scriptKey.
@@ -163,11 +203,13 @@ The below table lists the potential response codes that can be received in respo
 
 # Rx Transfer
 
-The Rx Transfer process is only available to registered pharmacies and requires direct integration between sending and receiving pharmacies. Prescription transfers also require the sending pharmacy to share a URL in the API call for HealthDyne to retrieve either:
+The Rx Transfer process is only available to registered pharmacies and requires direct integration between sending and receiving pharmacies. For URL-based transfers, the sending pharmacy supplies a Base64-encoded URL in the API call. The existing examples include:
 
 1. A PNG image of the prescription
 2. A PDF file of the prescription
 3. A XML file containing only the Surescript XML
+
+Alternatively, clients can send one inline attachment on the same endpoint in an environment with inline transfer processing enabled. For supported formats and validation, see [Inline transfer attachment](doc:script-rxtransfer-fields#inline-transfer-attachment).
 
 API field validation information in Appendix [Script / RxTransfer Fields](doc:script-rxtransfer-fields)
 
@@ -335,7 +377,7 @@ This prescription transfer API allows the client to initiate an outbound prescri
 }
 ```
 
-Click here to see [Submit Script Outbound Request Data Object](https://docs.healthdyne.com/docs/script-rxtransfer-fields#script-outbound-request)
+Click here to see [Submit Script Outbound Request Data Object](doc:script-rxtransfer-fields#script-outbound-request)
 
 ### Sample Script Outbound Response
 
@@ -355,7 +397,7 @@ Click here to see [Submit Script Outbound Request Data Object](https://docs.heal
 }
 ```
 
-Click here to see [Submit Script Outbound Response Data Object](https://docs.healthdyne.com/docs/script-rxtransfer-fields#response-object-2)
+Click here to see [Submit Script Outbound Response Data Object](doc:script-rxtransfer-fields#response-object-2)
 
 # Status Events
 
