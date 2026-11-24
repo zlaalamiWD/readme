@@ -1,5 +1,5 @@
 ---
-title: HD APIs
+title: HD API Catalog
 excerpt: ''
 deprecated: false
 hidden: true
