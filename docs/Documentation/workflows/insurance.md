@@ -153,7 +153,7 @@ Click here to see [Create Insurance Data Object](doc:insurance-request-fields#cr
 }
 ```
 
-Click here to see [Update Insurance Data Object](doc:insurance-request-fields#udpate-insurance-data-object)
+Click here to see [Update Insurance Data Object](doc:insurance-request-fields#update-insurance-data-object)
 
 # DELETE
 
