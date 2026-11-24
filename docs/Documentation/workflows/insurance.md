@@ -35,26 +35,13 @@ flowchart LR
   G --> H[Mailbox: copay or prescription issue when available]
 ```
 
-| Task | Why it matters | What to retain |
-| :--- | :--- | :--- |
-| List patient plans | Lets staff review the patient's available coverage before order entry. | The patient key and the plan numbers returned for selection. |
-| Add a plan | Associates payer and member details with the patient for reuse. | The plan number returned on success. Supply BIN when PCN or Group ID is provided. |
-| Update a plan | Corrects supported details for a selected plan. | Use the existing plan number under the same patient. |
-| Deactivate a plan | Removes outdated coverage from future selection. | Use the right patient and plan number, then refresh the plan list. |
-
-### Common scenarios
-
-<Accordion title="A patient has primary and secondary coverage">
-  Review the patient's existing plans and confirm their priority before placing the order. Use the per-prescription Fill Request route if different prescriptions need different plans. Tertiary coverage requires both primary and secondary, and the plan numbers must be distinct.
-</Accordion>
-
-<Accordion title="The insurance card has no PCN">
-  Use the rules for the endpoint you are calling. The per-prescription Fill Request route allows PCN to be omitted for inline insurance while Group Number remains required in that detailed request. Use the [patient insurance schema](doc:insurance-request-fields#create-insurance-data-object) when creating an insurance record on the profile.
-</Accordion>
-
-<Accordion title="Staff need to know whether a prescription was covered">
-  After the fill is submitted, review Mailbox for [RxCopay](doc:mail-box#rxcopay) or an [RxIssue](doc:mail-box#rxissue) for the affected prescription. Keep the plan information available to support follow-up.
-</Accordion>
+| What you need to do | Which information to use |
+| :--- | :--- |
+| Review coverage | Open the patient profile and list its plans. Confirm which plan is primary and which is secondary before placing an order. |
+| Add coverage to a patient profile | Enter the payer and member details. Supply BIN when you provide PCN or Group ID. Save the returned plan number for later use. Follow the [patient insurance schema](doc:insurance-request-fields#create-insurance-data-object) for profile fields. |
+| Correct or deactivate an existing plan | Use the patient key and the plan number. Refresh the plan list after the update so staff can see which options are available. |
+| Choose coverage for individual prescriptions | Use the per-prescription Fill Request when prescriptions need different plans. Tertiary coverage requires distinct primary and secondary plans. For detailed inline insurance on that route, Group Number is required and PCN can be omitted. |
+| Check the pharmacy's result | Look for [RxCopay](doc:mail-box#rxcopay) for the adjudicated copay or [RxIssue](doc:mail-box#rxissue) for a problem that needs follow-up. Match the event to the affected prescription. |
 
 [Insurance schema](doc:insurance-request-fields) · [Insurance API reference](ref:get_v2-patient-insurance) · [Per-prescription insurance in Fill Request](doc:fill-request-fields#patientinsurance-data-object)
 
