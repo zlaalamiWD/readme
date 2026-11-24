@@ -20,7 +20,7 @@ The v2.32 Pharmacy API guides now explain what each workflow is for, how a clien
 
 ## Prescription Transfer Updates
 
-- The Script guide shows prescription lookup and inbound and outbound transfer workflows. It explains queued acceptance and when to check the pharmacy outcome. The linked schema adds the inline document format and validation rules for environments where inline processing is available. [Script guide](doc:script-rxtransfer-request#prescription-lookup-and-transfer-workflow) · [Attachment schema](doc:script-rxtransfer-fields#inline-transfer-attachment)
+- The Script guide shows prescription lookup and inbound and outbound transfer workflows. It explains queued acceptance and when to check the pharmacy outcome. The linked schema adds the inline document format and validation rules for environments where inline processing is available. [Script guide](doc:script-rxtransfer-request#prescription-lookup-and-transfer-workflow) · [Attachment schema](doc:script-rxtransfer-fields#inline-transfer-attachment) · [Script POST API reference](ref:post_v2-script)
 
 ## Mailbox Updates
 
