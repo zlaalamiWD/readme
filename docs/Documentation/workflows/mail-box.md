@@ -37,27 +37,15 @@ sequenceDiagram
   I->>M: POST acknowledgement with batch ID
 ```
 
-| Event or situation | How to match it | Example client app behavior |
-| :--- | :--- | :--- |
-| Prescription status or transfer | Use the script key when returned. | Update the prescription timeline or send the item to a staff queue. |
-| Fill Request status | Use the Fill Request key and the prescription key for line-level events when present. | Show order creation, a rejection reason, verification, a prescription issue, or shipment details. |
-| Copay or payment event | Match the Fill Request and prescription when those keys are present. | Show the amount or payment action indicated by the event. |
-| The same batch returns after a retry | Match its batch ID and deduplicate processing by event ID within the integration's scope. | Continue from the batch already in progress. |
-| No batch is available | HTTP 204 signals no content for the current caller. | Keep the last known timeline and poll again on the regular schedule. |
+| What came back | What the app should do |
+| :--- | :--- |
+| Prescription status or transfer | Match the script key when available and update the prescription timeline. When a prescription is discontinued, show it as unavailable for future fills and display the reason if supplied. |
+| Fill Request status | Match the Fill Request key and the prescription key for individual prescription events. Show order creation, rejection, verification, a prescription issue, or shipment details as reported. |
+| Copay or payment event | Match the Fill Request and prescription when those keys are present. Show the copay amount or the payment action indicated by the event. |
+| A batch you already started | Recognize the batch ID and skip events already processed. Continue processing the rest of the batch. |
+| No messages, HTTP 204 | Keep the last known timeline and check again on the normal schedule. |
 
-### Common scenarios
-
-<Accordion title="Decide when to acknowledge a batch">
-  Acknowledge the exact `batchId` after the integration has durably saved and processed the messages. If processing is interrupted, fetch again and resume from the open batch. Keep acknowledgement separate from updating prescription or order status.
-</Accordion>
-
-<Accordion title="Choose between Mailbox and GET Fill Request Status">
-  Use Mailbox for batch event delivery across requests, including copay and payment events. Use [GET Fill Request Status](doc:fill-request#get-fill-request-status) to check the grouped history of one Fill Request.
-</Accordion>
-
-<Accordion title="Show a discontinued prescription">
-  Use the `Discontinued` status to indicate that the prescription can no longer be selected for a future fill. Display the optional discontinued reason code and description to authorized staff when the event supplies them.
-</Accordion>
+Acknowledge the returned `batchId` only after saving and processing its messages. If processing stops, retrieve and resume that batch. To check the grouped history of **one** fill, use [GET Fill Request Status](doc:fill-request#get-fill-request-status).
 
 [Mailbox event schemas](doc:mailbox-data-object-schemas) · [GET Mailbox API reference](ref:get_v2-mailbox) · [Acknowledge batch API reference](ref:post_v2-mailbox) · [Script](doc:script-rxtransfer-request) · [Fill Request](doc:fill-request)
 
