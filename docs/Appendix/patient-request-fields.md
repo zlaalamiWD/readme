@@ -608,13 +608,13 @@ The Add Patient Payment Card endpoint accepts a request payload containing patie
 | Field      | Type   | Character Limit | Description                                                                                 |
 | :--------- | :----- | :-------------- | :------------------------------------------------------------------------------------------ |
 | patientKey | String | 50              | Unique patient ID in Client system.                                                         |
-| returnUrl  | String |                 | This is the callback URL that the patient will be directed to after adding the payment card |
+| returnUrl  | String |                 | Absolute callback URL supplied by the client, including an HTTP or HTTPS scheme |
 
 ###### Response Object
 
 | Field   | Type   | Character Limit | Description                                                                            |
 | :------ | :----- | :-------------- | :------------------------------------------------------------------------------------- |
-| cardUrl | String |                 | This URL is used by the client to redirect the patient to the payment card entry page. |
+| cardUrl | String |                 | Hosted card-entry URL. Direct the patient to this form, then refresh the active card list after the patient returns. |
 
 ## Update Patient Payment Cards Request
 
