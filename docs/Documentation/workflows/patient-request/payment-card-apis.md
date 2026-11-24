@@ -36,26 +36,12 @@ sequenceDiagram
   H-->>C: Return masked cards and sequence numbers
 ```
 
-| Patient action | What happens | What the app can show |
-| :--- | :--- | :--- |
-| Add a card | Create a hosted form session using the patient key and an absolute return URL with a scheme. | A link to the form and a refreshed list after the patient returns. |
-| Choose a saved card | Read the active cards for the patient. | Masked card details for selection. Keep the sequence number for the order request. |
-| Edit a saved card | Send the patient key, card sequence number and at least one supported name or expiration field. | Updated card details after the operation succeeds. |
-| Remove a card from use | Deactivate the chosen card on the patient profile. | The updated choices after refreshing the card list. |
-
-### Common scenarios
-
-<Accordion title="The patient returns from the hosted form">
-  The redirect returns the patient to the client app. Refresh the list to confirm the card is available before offering it at checkout. Use the masked display fields so the patient can recognize the card.
-</Accordion>
-
-<Accordion title="Use a saved card on a Fill Request">
-  On the per-prescription Fill Request route, send the saved card sequence as the digits-only string `paymentCardSequenceNumber`. It must belong to the patient on the order. Check the [Mailbox payment events](doc:mail-box#rxpaymentrequired) for later payment outcomes.
-</Accordion>
-
-<Accordion title="The patient needs to use a different card">
-  Start the hosted Add Card flow for a different card number. Use Update Card for the supported cardholder name or expiration changes on the existing card. Deactivate the previous card when it should no longer be offered.
-</Accordion>
+| What the patient wants to do | What the app does |
+| :--- | :--- |
+| Add a card | Request the hosted form using the patient key and a complete return URL such as `https://example.com/checkout`. Open the returned form. When the patient returns, reload the active card list to confirm the card was saved before offering it at checkout. |
+| Pay with a saved card | Show masked card details. For a per-prescription Fill Request, send the selected card's sequence number as the digits-only string `paymentCardSequenceNumber`. Use a card belonging to that patient. Check [Mailbox payment events](doc:mail-box#rxpaymentrequired) for the payment outcome. |
+| Update the name or expiration | Send the patient key, card sequence number, and the supported details that changed. Show the updated card after the request succeeds. |
+| Replace a card or stop using it | Open the hosted form to add a different card number. Deactivate the previous card when it should no longer be offered, then refresh the list. |
 
 [Payment card field definitions](doc:patient-request-fields#patient-payment-cards-objects) · [Fill Request](doc:fill-request)
 
