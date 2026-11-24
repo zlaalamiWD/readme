@@ -26,9 +26,21 @@ For current model additions and operation-specific distinctions, see [Current HD
 | receivingPharmacy | Object [receivingPharmacy](https://docs.healthdyne.com/docs/script-rxtransfer-fields#pharmacy) |                 | Required          | Contains information about the pharmacy the prescription is being transferred to.                                                                                                        |
 | patientKey        | String                                                                                         | 50              | Required          | Unique patient ID in Client system. This key will be sent on the order status message. The patientKey must be unique and patient must exist in the system when sending Transfer Request. |
 | prescription      | Object [prescription](https://docs.healthdyne.com/docs/script-rxtransfer-fields#prescription)  |                 | Required          | Contains the prescription information.                                                                                                                                                   |
-| transferFileType  | String                                                                                         | 3               | Required          | The file type for the transfer file. Acceptable values are xml, png, and pdf.                                                                                                            |
-| transferFileUrl   | String                                                                                         | 2048            | Required          | Base 64 encoded URL where the XML or PNG transfer file can be downloaded from.                                                                                                           |
+| transferFileType | String | 4 | Conditional | Required for URL-based transfers. Supported values are PDF, PNG, XML, TIF and TIFF. |
+| transferFileUrl | String | 2048 | Conditional | Base64-encoded URL for the transfer document. Required when an inline attachment is absent. |
+| attachments | Array | One item | Conditional | Inline document source. Supply one attachment when the URL is absent. See [Inline transfer attachment](#inline-transfer-attachment). |
 | orTransfer        | Boolean                                                                                        |                 | Required          | If this is a prescription transfer the value is true, for triage the value is false                                                                                                      |
+
+### Inline transfer attachment
+
+For `POST /v2/script`, the inline source is a single attachment in an environment with inline transfer processing enabled. The pharmacy and prescription fields still apply.
+
+| Field | Type | Rule |
+| :--- | :--- | :--- |
+| `attachments[0].body` | String | Raw Base64-encoded document bytes without a data URI prefix. Maximum decoded size is 10 MiB. |
+| `attachments[0].fileType` | String | PDF, PNG, XML, TIF or TIFF, case-insensitive. The content must match the declared type. |
+
+When an attachment is present, the API validates it as the document source. An invalid attachment rejects the request even when a URL is also supplied. URL-only integrations can continue to send `transferFileType` and `transferFileUrl`. The submission response represents the transfer being queued. Track the pharmacy outcome separately. See the [Script workflow](doc:script-rxtransfer-request#prescription-lookup-and-transfer-workflow).
 
 # Pharmacy
 
