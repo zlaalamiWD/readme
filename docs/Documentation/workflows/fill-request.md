@@ -29,27 +29,15 @@ flowchart LR
   E --> F[Client app: update order timeline and actions]
 ```
 
-| Checkout choice or status | What it means for the user | What the integration does |
-| :--- | :--- | :--- |
-| One order-level insurance choice | The client supplies one optional insurance object for the order. | Use standard submit. |
-| Coverage varies by prescription | Each selected prescription can carry its own plan information. | Use per-prescription submit. Send an existing plan or supported inline details. PCN may be omitted for detailed inline insurance on this route. |
-| Include an eligible OTC item | Add a product to the same fulfillment request as the prescriptions. | On per-prescription submit send the mapped product ID and positive whole-number quantity with at least one prescription. |
-| Use a saved payment card | Reference a card already on the patient's profile. | Send its sequence number and use Mailbox for later payment events. |
-| Change shipping or cancel | The order or selected prescription can be changed while eligible. | Use the existing Fill Request key and honor the pharmacy decision. |
-
-### Common scenarios
-
-<Accordion title="The order says accepted">
-  Show the request as received for processing. Confirm whether the pharmacy created the order by checking `Submitted` or `Rejected`. Keep the same `fillRequestKey` for tracking and follow-up.
-</Accordion>
-
-<Accordion title="A prescription needs payment or attention">
-  Use Mailbox to track copay and payment events. On a prescription issue, display the affected prescription and reason for authorized staff. Track individual prescription lines separately because their outcomes and timestamps can differ.
-</Accordion>
-
-<Accordion title="The patient requests a last-minute change">
-  Use Update Fill Request for an eligible shipping change and Cancel Fill Request for an eligible order or line cancellation. If the pharmacy denies the request, surface the returned reason and refresh the order status.
-</Accordion>
+| What the user needs to do | What the app should do |
+| :--- | :--- |
+| Choose one insurance plan for the order | Use the standard submit route with optional order-level insurance. |
+| Choose coverage for individual prescriptions | Use the per-prescription route. For each prescription, send an existing plan or supported inline insurance details. PCN is optional for detailed inline insurance on this route. |
+| Include an eligible OTC item | Use the per-prescription route. Send the mapped product ID and a positive whole-number quantity with at least one prescription. |
+| Choose a saved card | Use the saved card sequence number for that patient and check Mailbox for the payment outcome. |
+| Check whether the pharmacy created the order | After HTTP 200, show **Received for processing**. Keep the Fill Request key and check for `Submitted` or `Rejected` before showing the outcome. |
+| Review payment or prescription issues | Track events for each prescription separately. Use Mailbox to display the relevant copay, payment action, or prescription issue when available. |
+| Change shipping or cancel | Use the existing Fill Request key. Request an eligible shipping update or cancel the whole order or selected prescriptions. If the pharmacy denies the change, show the reason and refresh the status. |
 
 [Interactive API scenarios](#interactive-fill-request-scenarios) · [Patient](doc:patient-request) · [Insurance](doc:insurance) · [Payment Cards](doc:payment-card-apis) · [Mailbox](doc:mail-box)
 
