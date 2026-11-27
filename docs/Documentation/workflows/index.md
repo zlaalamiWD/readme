@@ -1,5 +1,5 @@
 ---
-title: HD API Catalog
+title: HD Pharmacy API Catalog
 excerpt: ''
 deprecated: false
 hidden: true
